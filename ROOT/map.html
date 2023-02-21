@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Map</title>
+    <style>
+      /* Set the size of the map */
+      #map {
+        height: 400px;
+        width: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Add a div element where the map will be displayed -->
+    <div id="map"></div>
+
+    <!-- Include the Google Maps JavaScript API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBicfOJqKecv8AunaLFvEC0bRBWMVUtQus"></script>
+
+    <!-- Add a script to create and display the map -->
+    <script>
+      // Create a map
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center: {lat: -34.397, lng: 150.644}
+      });
+
+      // Create a marker
+      var marker = new google.maps.Marker({
+        position: {lat: -34.397, lng: 150.644},
+        map: map
+      });
+    </script>
+  </body>
+</html>
