@@ -118,8 +118,15 @@
                   String api_key = request.getParameter("api_key");
                   String username = request.getParameter("username");
                   String password = request.getParameter("password");
+                  int orderId = 0;
+                  if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+                    orderId = Integer.parseInt(request.getParameter("orderId"));
+                  }
 
                   Entity entity = mferDao.signinMotherFucker(customerId, api_key, username, password);
+                  if(orderId >0){
+                      mferDao.updateOrder(customerId, api_key, username, password, orderId, 'Approved');
+                  }
                           %>
 
                           First Name: <%= entity.getFirstName() %><br>
