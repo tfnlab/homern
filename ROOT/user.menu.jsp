@@ -196,19 +196,19 @@
 
               <div class="row">
                 <div class="col-3 link-col">
-                  <a href="expense.list.jsp" tabindex="13" ><i class="fa fa-money-bill-alt"></i></a>
+                  <a href="#" tabindex="13" ><i class="fa fa-money-bill-alt"></i></a>
                   <p>Assets</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="user.edit.social.jsp" tabindex="3" ><i class="fa fa-file-invoice-dollar"></i></a>
+                  <a href="#" tabindex="3" ><i class="fa fa-file-invoice-dollar"></i></a>
                   <p>Liabilities</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="user.edit.referred_by.jsp" tabindex="3" ><i class="fa fa-chart-pie"></i></a>
+                  <a href="#" tabindex="3" ><i class="fa fa-chart-pie"></i></a>
                   <p>Equity</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="dmp.list.jsp" tabindex="3" ><i class="fa fa-chart-line"></i></a>
+                  <a href="#" tabindex="3" ><i class="fa fa-chart-line"></i></a>
                   <p>Forecasting</p>
                 </div>
               </div>
