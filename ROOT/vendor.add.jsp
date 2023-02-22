@@ -73,10 +73,11 @@
           String address = request.getParameter("address");
           String phone = request.getParameter("phone");
           String email = request.getParameter("email");
+          String notes = request.getParameter("notes");
           boolean isApproved = request.getParameter("is_approved") != null;
           Timestamp timeCreated = new Timestamp(new Date().getTime());
           Timestamp timeUpdated = timeCreated;
-          Vendor vendor = new Vendor(0, name, address, phone, email, isApproved, timeCreated, timeUpdated, username);
+          Vendor vendor = new Vendor(0, name, address, phone, email, isApproved, timeCreated, timeUpdated, username, notes);
 
           // Save the vendor to the database using the DAO
           VendorDAO vendorDAO = new VendorDAO();
@@ -112,6 +113,11 @@
             <input class="form-check-input" type="checkbox" name="is_approved" value="1"> Approved
         </label>
     </div>
+    <div class="form-group">
+        <label for="name">Notes:</label>
+        <textarea class="form-control" id="notes" name="notes" rows="5" tabindex="3"></textarea>          
+    </div>
+    <HR>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
           </div>
