@@ -213,6 +213,25 @@
                   <p>Forecasting</p>
                 </div>
               </div>
+              <div class="row">
+                <div class="col-3 link-col">
+                  <a href="#" tabindex="13" ><i class="fa fa-truck"></i></a>
+                  <p>Vendors</p>
+                </div>
+                <div class="col-3 link-col">
+                  <a href="#" tabindex="3" ><i class="fa fa-user-secret"></i></a>
+                  <p>[top secret]</p>
+                </div>
+                <div class="col-3 link-col">
+                  <a href="#" tabindex="3" ><i class="fa fa-user-secret"></i></a>
+                  <p>[top secret]</p>
+                </div>
+                <div class="col-3 link-col">
+                  <a href="#" tabindex="3" ><i class="fa fa-user-secret"></i></a>
+                  <p>[top secret]</p>
+                </div>
+              </div>
+
             <HR>
             <p>Our home service software offers a range of features to help companies streamline their operations:</p>
             <ul>
