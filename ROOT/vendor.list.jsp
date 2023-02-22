@@ -18,6 +18,8 @@
 <%@ page import="com.tfnlab.mysql.ProductDashBoard" %>
 <%@ page import="java.util.UUID" %>
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
+<%@ page import="com.example.dao.VendorDAO" %>
+<%@ page import="com.example.model.Vendor" %>
 <%@ include file="auth.jsp" %>
 <%
           User user = (User)session.getAttribute("usernameOBJ");
@@ -63,8 +65,15 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
-                    CONTENT GO HERE
                     <a href="vendor.add.jsp" >add vendor</a>
+                    <BR>
+                    <%
+                    VendorDAO vendorDAO = new VendorDAO();
+                    List<Vendor> vendors = vendorDAO.getVendorsByUsername(username);
+                    for (Vendor vendor : vendors) {
+                        %><%=vendor.getName()%><%
+                    }
+                    %>
           </div>
       </div>
     </section><!-- End Blog Section -->
