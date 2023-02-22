@@ -124,8 +124,8 @@
                   }
 
                   Entity entity = mferDao.signinMotherFucker(customerId, api_key, username, password);
-                  if(orderId >0){
-                      mferDao.updateOrder(customerId, api_key, username, password, orderId, 'Approved');
+                  if(orderId > 0){
+                      mferDao.updateOrder(customerId, api_key, username, password, orderId, "Approved");
                   }
                           %>
 
