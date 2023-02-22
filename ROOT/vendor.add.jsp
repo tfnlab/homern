@@ -83,7 +83,9 @@
           VendorDAO vendorDAO = new VendorDAO();
           try {
               vendorDAO.insertVendor(vendor);
-              %>Vendor added successfully.<%
+              %>
+              <HR>Vendor added successfully.
+              <HR><%
           } catch (Exception e) {
               out.println("Error adding vendor: " + e.getMessage());
           }
@@ -108,14 +110,16 @@
         <label for="email">Email:</label>
         <input type="email" class="form-control" id="email" name="email" required>
     </div>
+    <HR>
     <div class="form-group form-check">
         <label class="form-check-label">
             <input class="form-check-input" type="checkbox" name="is_approved" value="1"> Approved
         </label>
     </div>
+    <HR>
     <div class="form-group">
         <label for="name">Notes:</label>
-        <textarea class="form-control" id="notes" name="notes" rows="5" tabindex="3"></textarea>          
+        <textarea class="form-control" id="notes" name="notes" rows="5" tabindex="3"></textarea>
     </div>
     <HR>
     <button type="submit" class="btn btn-primary">Submit</button>
