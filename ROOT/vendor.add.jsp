@@ -76,7 +76,6 @@
           boolean isApproved = request.getParameter("is_approved") != null;
           Timestamp timeCreated = new Timestamp(new Date().getTime());
           Timestamp timeUpdated = timeCreated;
-          String username = "admin";  // Replace with the actual username of the current user
           Vendor vendor = new Vendor(0, name, address, phone, email, isApproved, timeCreated, timeUpdated, username);
 
           // Save the vendor to the database using the DAO
