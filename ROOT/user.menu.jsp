@@ -215,7 +215,7 @@
               </div>
               <div class="row">
                 <div class="col-3 link-col">
-                  <a href="#" tabindex="13" ><i class="fa fa-truck"></i></a>
+                  <a href="vendor.list.jsp" tabindex="13" ><i class="fa fa-truck"></i></a>
                   <p>Vendors</p>
                 </div>
                 <div class="col-3 link-col">
