@@ -175,6 +175,8 @@
                         <HR>
                         <a href="orders.jsp" >Get Orders</a>
                         <HR>
+                        <a href="orders.jsp?orderId=<%=orderId%>" >Update Order Status</a>
+                        <HR>
                         <%
                             MFOrder mfo =  mferDao.getOrder(customerId, api_key, username, password, orderId);
                             List<ProductLineItem> pliList = mfo.getPlItems();
