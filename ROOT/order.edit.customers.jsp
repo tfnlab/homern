@@ -306,6 +306,7 @@
                     <HR>
                     <%= ocItem.getCustomer().getEmail() %><br>
                     <%= ocItem.getCustomer().getPhone() %><br>
+                    <%= ocItem.getCustomer_approval_status() %><br>
                     <HR>
                     <a href="customer.edit.payments.jsp?action=remove&orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" ><i class="fas fa-plus"></i> Payment<a><br>
                     <HR>
