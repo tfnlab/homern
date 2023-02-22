@@ -9,6 +9,7 @@
 <%@ page import="com.tfnlab.mysql.ProductDao" %>
 <%@ page import="java.sql.Timestamp" %>
 <%@ page import="java.util.Calendar" %>
+<%@ page import="java.util.Date" %>
 <%@ page import="java.math.BigDecimal" %>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.HashMap"%>
@@ -64,21 +65,64 @@
         <h2>Template</h2>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
+        <%
+        // Get form data and create a new vendor object
+        String name = request.getParameter("name");
+
+        if (name != null && name.trim().length() > 0) {
+          String address = request.getParameter("address");
+          String phone = request.getParameter("phone");
+          String email = request.getParameter("email");
+          String notes = request.getParameter("notes");
+          boolean isApproved = request.getParameter("is_approved") != null;
+          Timestamp timeCreated = new Timestamp(new Date().getTime());
+          Timestamp timeUpdated = timeCreated;
+          Vendor vendor = new Vendor(0, name, address, phone, email, isApproved, timeCreated, timeUpdated, username, notes);
+
+          // Save the vendor to the database using the DAO
+          VendorDAO vendorDAO = new VendorDAO();
+          try {
+              vendorDAO.insertVendor(vendor);
+              %>
+              <HR>Vendor added successfully.
+              <HR><%
+          } catch (Exception e) {
+              out.println("Error adding vendor: " + e.getMessage());
+          }
+        }
+        %>
           <div class="container mt-5">
-                    <a href="vendor.add.jsp" >add vendor</a>
-                    <BR>
-                    <%
-                    VendorDAO vendorDAO = new VendorDAO();
-                    List<Vendor> vendors = vendorDAO.getVendorsByUsername(username);
-                    for (Vendor vendor : vendors) {
-                        %>
-                          <a href="vendor.edit.jsp?vendorId=<%=vendor.getId()%>" ><%=vendor.getName()%></a>
-                          <BR>
-                          <%=vendor.getNotes()%>
-                          <HR>
-                        <%
-                    }
-                    %>
+                    <form method="post" action="vendor.add.jsp">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" class="form-control" id="address" name="address">
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" class="form-control" id="phone" name="phone">
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <HR>
+    <div class="form-group form-check">
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="is_approved" value="1"> Approved
+        </label>
+    </div>
+    <HR>
+    <div class="form-group">
+        <label for="name">Notes:</label>
+        <textarea class="form-control" id="notes" name="notes" rows="5" tabindex="3"></textarea>
+    </div>
+    <HR>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
           </div>
       </div>
     </section><!-- End Blog Section -->
