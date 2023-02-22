@@ -9,6 +9,7 @@
 <%@ page import="com.tfnlab.mysql.ProductDao" %>
 <%@ page import="java.sql.Timestamp" %>
 <%@ page import="java.util.Calendar" %>
+<%@ page import="java.util.Date" %>
 <%@ page import="java.math.BigDecimal" %>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.HashMap"%>
@@ -83,7 +84,7 @@
           try {
               vendorDAO.insertVendor(vendor);
               %>Vendor added successfully.<%
-          } catch (SQLException e) {
+          } catch (Exception e) {
               out.println("Error adding vendor: " + e.getMessage());
           }
         }
