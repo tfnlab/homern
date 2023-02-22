@@ -101,7 +101,7 @@
           <div class="container">
             <h4><%
             User usernameOBJ = (User) session.getAttribute("usernameOBJ");
-            %><%=usernameOBJ.getBusiness_name%></h4>
+            %><%=usernameOBJ.getBusiness_name()%></h4>
               <style>
                 .fa {
                   font-size: 48px;
