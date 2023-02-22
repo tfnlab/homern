@@ -98,9 +98,8 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-          <div class="container mt-5">
+          <div class="container">
             <h4>Service Operations Center</h4>
-            <hr>
               <style>
                 .fa {
                   font-size: 48px;
