@@ -126,11 +126,11 @@
                   <p>Home</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="dashboard.jsp" tabindex="2" ><i class="fa fa-cog"></i></a>
+                  <a href="dashboard.jsp" tabindex="2" ><i class="fa fa-tachometer-alt"></i></a>
                   <p>Dashboard</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="user.edit.jsp" tabindex="3" ><i class="fa fa-handshake"></i></a>
+                  <a href="user.edit.jsp" tabindex="3" ><i class="fa fa-cog"></i></a>
                   <p>Settings</p>
                 </div>
                 <div class="col-3 link-col">
