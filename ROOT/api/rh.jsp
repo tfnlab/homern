@@ -119,7 +119,7 @@
                   String username = request.getParameter("username");
                   String password = request.getParameter("password");
                   int orderId = 0;
-                  if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
+                  if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty() && !request.getParameter("orderId").equals("null")) {
                     orderId = Integer.parseInt(request.getParameter("orderId"));
                   }
 
