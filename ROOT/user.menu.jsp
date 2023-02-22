@@ -193,6 +193,25 @@
                   <p>Data Management Platform</p>
                 </div>
               </div>
+
+              <div class="row">
+                <div class="col-3 link-col">
+                  <a href="expense.list.jsp" tabindex="13" ><i class="fa fa-money-bill-alt"></i></a>
+                  <p>Assets</p>
+                </div>
+                <div class="col-3 link-col">
+                  <a href="user.edit.social.jsp" tabindex="3" ><i class="fa fa-file-invoice-dollar"></i></a>
+                  <p>Liabilities</p>
+                </div>
+                <div class="col-3 link-col">
+                  <a href="user.edit.referred_by.jsp" tabindex="3" ><i class="fa fa-chart-pie"></i></a>
+                  <p>Equity</p>
+                </div>
+                <div class="col-3 link-col">
+                  <a href="dmp.list.jsp" tabindex="3" ><i class="fa fa-chart-line"></i></a>
+                  <p>Forecasting</p>
+                </div>
+              </div>
             <HR>
             <p>Our home service software offers a range of features to help companies streamline their operations:</p>
             <ul>
