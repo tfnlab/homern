@@ -92,7 +92,6 @@
         }
         %>
           <div class="container mt-5">
-                    <a href="vendor.add.jsp" >add vendor</a>
                     <form method="post" action="vendor.add.jsp">
     <div class="form-group">
         <label for="name">Name:</label>
