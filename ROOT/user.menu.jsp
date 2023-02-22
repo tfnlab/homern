@@ -177,7 +177,7 @@
 
               <div class="row">
                 <div class="col-3 link-col">
-                  <a href="expense.list.jsp" tabindex="13" ><i class="fa fa-plane"></i></a>
+                  <a href="#" tabindex="13" ><i class="fa fa-plane"></i></a>
                   <p>Expenses</p>
                 </div>
                 <div class="col-3 link-col">
