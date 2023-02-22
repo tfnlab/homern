@@ -18,8 +18,8 @@
 <%@ page import="com.tfnlab.mysql.ProductDashBoard" %>
 <%@ page import="java.util.UUID" %>
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
-<%@ page import="com.example.dao.VendorDAO" %>
-<%@ page import="com.example.model.Vendor" %>
+<%@ page import="com.tfnlab.mysql.VendorDAO" %>
+<%@ page import="com.tfnlab.mysql.Vendor" %>
 <%@ include file="auth.jsp" %>
 <%
           User user = (User)session.getAttribute("usernameOBJ");
