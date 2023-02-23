@@ -76,8 +76,11 @@
                       String expenseDescription = request.getParameter("expenseDescription");
                       String expenseAmountStr = request.getParameter("expenseAmount");
                       String vendorIdStr = request.getParameter("vendorId");
+                      // Parse the form data
+                      Date date = Date.valueOf(expenseDate);
                       double amount = Double.parseDouble(expenseAmountStr);
                       int vendorId = Integer.parseInt(vendorIdStr);
+                      
                       Expense expense = new Expense();
                       expense.setExpenseDate(date);
                       expense.setExpenseDescription(expenseDescription);
