@@ -69,16 +69,39 @@
                     <% VendorDAO vDao = new VendorDAO();
                     List<Vendor> vendors = vDao.getVendorsByUsername(username);
                     %>
-                    <%-- Assuming you have a List<Vendor> vendors available --%>
-                    <select name="vendorId">
-                        <%
-                            for (Vendor vendor : vendors) {
-                        %>
-                            <option value="<%=vendor.getId()%>"><%=vendor.getName()%></option>
-                        <%
-                            }
-                        %>
-                    </select>
+                    <div class="container">
+                        <form action="addExpense" method="post">
+                            <h2>Add Expense</h2>
+                            <div class="form-group">
+                                <label for="expenseDate">Expense Date:</label>
+                                <input type="date" class="form-control" id="expenseDate" name="expenseDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="expenseDescription">Expense Description:</label>
+                                <input type="text" class="form-control" id="expenseDescription" name="expenseDescription" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="expenseAmount">Expense Amount:</label>
+                                <input type="number" class="form-control" id="expenseAmount" name="expenseAmount" step="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="vendorId">Vendor:</label>
+                                <select class="form-control" id="vendorId" name="vendorId" required>
+                                    <%
+                                        for (Vendor vendor : vendors) {
+                                            String vendorId = Integer.toString(vendor.getId());
+                                            String vendorName = vendor.getName();
+                                    %>
+                                        <option value="<%=vendorId%>"><%=vendorName%></option>
+                                    <%
+                                        }
+                                    %>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Expense</button>
+                        </form>
+                    </div>
+
           </div>
       </div>
     </section><!-- End Blog Section -->
