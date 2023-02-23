@@ -72,7 +72,7 @@
                     <%
 
                     String expenseDate = request.getParameter("expenseDate");
-
+                    ExpenseDao expenseDao = new ExpenseDao();
                     if (expenseDate != null && expenseDate.trim().length() > 0) {
                       String expenseDescription = request.getParameter("expenseDescription");
                       String expenseAmountStr = request.getParameter("expenseAmount");
