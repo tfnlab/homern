@@ -285,34 +285,34 @@
                     <div class="form-group mt-3">
                   <div class="row">
                     <div class="col">
-              		<label for="firstName"><%= (new Translate()).translate("First Name")%>:</label><br>
+              		<label for="firstName"><%= (new Translate()).translate("First Name", request.getParameter("language"))%>:</label><br>
               		<input type="text"  class="form-control mt-1" id="firstName" name="firstName"  required><br>
                     </div>
                     <div class="col">
-              		<label for="middleInitial"><%= (new Translate()).translate("Middle Initial")%>:</label><br>
+              		<label for="middleInitial"><%= (new Translate()).translate("Middle Initial", request.getParameter("language"))%>:</label><br>
               		<input type="text"  class="form-control mt-1" id="middleInitial" name="middleInitial"><br>
                     </div>
                     <div class="col">
-              		<label for="lastName"><%= (new Translate()).translate("Last Name")%>:</label><br>
+              		<label for="lastName"><%= (new Translate()).translate("Last Name", request.getParameter("language"))%>:</label><br>
               		<input type="text"  class="form-control mt-1" id="lastName" name="lastName" required><br>
                     </div>
                   </div>
                     </div>
 
                   <div class="form-group mt-3">
-              		<label for="email"><%= (new Translate()).translate("Email")%>:</label><br>
+              		<label for="email"><%= (new Translate()).translate("Email", request.getParameter("language"))%>:</label><br>
               		<input type="email"  class="form-control" id="email" name="email" required><br>
                   </div>
                   <div class="form-group mt-3">
-              		<label for="phone"><%= (new Translate()).translate("Phone")%>:</label><br>
+              		<label for="phone"><%= (new Translate()).translate("Phone", request.getParameter("language"))%>:</label><br>
               		<input type="text"  class="form-control" id="phone" name="phone" required><br>
                   </div>
                   <div class="form-group mt-3">
-              		<label for="username"><%= (new Translate()).translate("Username")%>:</label><br>
+              		<label for="username"><%= (new Translate()).translate("Username", request.getParameter("language"))%>:</label><br>
               		<input type="text"  class="form-control" id="username" name="username" required><br>
                   </div>
                   <div class="form-group mt-3">
-              		<label for="password"><%= (new Translate()).translate("Password")%>:</label><br>
+              		<label for="password"><%= (new Translate()).translate("Password", request.getParameter("language"))%>:</label><br>
               		<input type="password"  class="form-control" id="password" name="password" required><br>
                   </div>
 
@@ -320,14 +320,14 @@
                   <div class="form-group mt-3">
 
                   <div class="form-group  mt-3">
-                    <label for="url_facebook"><%= (new Translate()).translate("Referred By")%></label>
+                    <label for="url_facebook"><%= (new Translate()).translate("Referred By", request.getParameter("language"))%></label>
                     <input type="text" class="form-control" id="referred_by" name="referred_by" <% if (request.getParameter("referred_by") !=null) { %>value="<%=request.getParameter("referred_by")%>" <% } %> >
                   </div>
                   <hr class="mt-3">
-                    <a href="signup.tos.jsp" ><%= (new Translate()).translate("Terms Of Service")%></a>
+                    <a href="signup.tos.jsp" ><%= (new Translate()).translate("Terms Of Service", request.getParameter("language"))%></a>
                   <hr class="mt-3">
 
-                      <button type="submit" class="btn btn-primary"><%= (new Translate()).translate("Sign-up")%></button>
+                      <button type="submit" class="btn btn-primary"><%= (new Translate()).translate("Sign-up", request.getParameter("language"))%></button>
                   	</form>
 
                  <%}%>
