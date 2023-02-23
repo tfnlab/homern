@@ -67,7 +67,7 @@
           <div class="container mt-5">
                     CONTENT GO HERE
                     <% VendorDAO vDao = new VendorDAO();
-                    List<Vendor> vendors = vendorDAO.getVendorsByUsername(username);
+                    List<Vendor> vendors = vDao.getVendorsByUsername(username);
                     %>
                     <%-- Assuming you have a List<Vendor> vendors available --%>
                     <select name="vendorId">
