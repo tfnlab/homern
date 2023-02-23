@@ -262,22 +262,20 @@
                 <%= (new Translate()).translate("Are you a field service professional looking to simplify your business operations? Look no further than Home Renovation Nation! Our platform provides a one-stop-shop for all your business needs, from order to cash. Join now and access our advanced tools for free as a homeowner. Field service professionals can upgrade to our premium service for just $1 a day and unlock even more possibilities. Don't miss out on this opportunity to take your business to the next level. Sign up today and experience the difference Home Renovation Nation can make.", request.getParameter("language")) %>
 
                 </p>
+                <%
+                const values = ["general-contractor", "carpenter", "plumber", "electrician", "hers-rating-company", "hvac-technician", "landscaper", "roofing-contractor", "painter", "flooring-contractor"];
+
+                const names = ["General contractor","Carpenter", "Plumber", "Electrician", "HERS rating company", "HVAC technician", "Landscaper", "Roofing contractor", "Painter", "Flooring contractor"];
+
+                %>
 
                 <form action="signup.jsp" method="POST">
                   <div class="form-group  mt-3">
                     <label for="business-type">Select Your Role:</label>
                     <select class="form-control  mt-1" id="business_type" name="business_type">
-                      <option value="home-owner">Home Owner</option>
-                      <option value="general-contractor">General contractor</option>
-                      <option value="carpenter">Carpenter</option>
-                      <option value="plumber">Plumber</option>
-                      <option value="electrician">Electrician</option>
-                      <option value="hers-rating-company">HERS rating company</option>
-                      <option value="hvac-technician">HVAC technician</option>
-                      <option value="landscaper">Landscaper</option>
-                      <option value="roofing-contractor">Roofing contractor</option>
-                      <option value="painter">Painter</option>
-                      <option value="flooring-contractor">Flooring contractor</option>
+                    <%for(int j=0;j<names.length();j++){%>
+                      <option value="<%=values[j]%>"><%= (new Translate()).translate(names[j],  request.getParameter("language"))%></option>
+                    <%}%>
                     </select>
                   </div>
                   <HR>
