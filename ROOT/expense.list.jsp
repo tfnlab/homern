@@ -290,7 +290,7 @@
                               <%
                           }
                         }else{
-                          expenses = expenseDao.selectExpensesByVendor(username);
+                          expenses = expenseDao.selectExpensesByVendor(username, expenseDateFromDate, expenseDateToDate);
                           for (Expense expense : expenses) {
                               %>
                               <div class="row">
