@@ -172,14 +172,14 @@
                         if (expenseDateTo != null && expenseDateTo.trim().length() > 0) {
                              expenseDateToDate = dateFormat.parse(expenseDateTo);
                         }else{
-                             expenseDateToDate = new Date();                          
+                             expenseDateToDate = new Date();
                         }
 
                         %>
                         <HR>
                           <a href="expense.list.jsp" >Vendor</a> |
                            <a href="expense.list.jsp?expense_type_search=true" >Type</a>
-
+                           <HR>
                            <div class="row">
                              <form action="expense.list.jsp" method="post">
                                <%if(request.getParameter("expense_type_search")!=null){%>
