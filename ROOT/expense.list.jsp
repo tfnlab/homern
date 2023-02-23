@@ -78,6 +78,13 @@
                     if (request.getParameter("vendorId") != null && !request.getParameter("vendorId").isEmpty()) {
                       vendorId = Integer.parseInt(request.getParameter("vendorId"));
                     }
+                    int expenseId = 0;
+                    if (request.getParameter("expenseId") != null && !request.getParameter("expenseId").isEmpty()) {
+                      expenseId = Integer.parseInt(request.getParameter("expenseId"));
+                    }
+                    if(expenseId>0){
+                      expenseDao.deleteExpenseById(expenseId, username);
+                    }
                     if (expenseDate != null && expenseDate.trim().length() > 0) {
                       String expenseDescription = request.getParameter("expenseDescription");
                       String expenseAmountStr = request.getParameter("expenseAmount");
@@ -159,6 +166,11 @@
                                 </div>
                                 <div class="col">
                                   <%=expense.getExpenseAmount()%>
+                                </div>
+                                <div class="col">
+                                  <a href="expense.list.jsp?expenseId=<%=expense.getExpenseId()%>&vendorId=<%=expense.getVendor().getId()%>">
+                                  <i class="fas fa-trash-alt"></i>
+                                  </a>
                                 </div>
                               </div>
                               <hr>
