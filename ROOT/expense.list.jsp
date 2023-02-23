@@ -157,6 +157,25 @@
                             <HR>
                             <button type="submit" class="btn btn-primary">Add Expense</button>
                         </form>
+                        <%
+                        String expense_type_search = request.getParameter("expense_type_search");
+                        String expense_type_search_type = request.getParameter("expense_type_search_type");
+                        String expenseDateFrom = request.getParameter("expenseDateFrom");
+                        String expenseDateTo = request.getParameter("expenseDateTo");
+                        Date expenseDateFromDate = new Date();
+                        Date expenseDateToDate = new Date();
+                        if (expenseDateFrom != null && expenseDateFrom.trim().length() > 0) {
+                             expenseDateFromDate = dateFormat.parse(expenseDateFrom);
+                        }else{
+                             expenseDateFromDate = new Date();
+                        }
+                        if (expenseDateTo != null && expenseDateTo.trim().length() > 0) {
+                             expenseDateToDate = dateFormat.parse(expenseDateTo);
+                        }else{
+                             expenseDateToDate = new Date();                          
+                        }
+
+                        %>
                         <HR>
                           <a href="expense.list.jsp" >Vendor</a> |
                            <a href="expense.list.jsp?expense_type_search=true" >Type</a>
@@ -168,11 +187,11 @@
                                <%}%>
                                <div class="col">
                                  From
-                                 <input type="date" class="form-control" id="expenseDate" name="expenseDateFrom" required value="<%=currentDate%>">
+                                 <input type="date" class="form-control" id="expenseDate" name="expenseDateFrom" required value="<%=dateFormat.format(expenseDateFromDate)%>">
                                </div>
                                <div class="col">
                                  To
-                                 <input type="date" class="form-control" id="expenseDate" name="expenseDateTo" required value="<%=currentDate%>">
+                                 <input type="date" class="form-control" id="expenseDate" name="expenseDateTo" required value="<%=dateFormat.format(expenseDateToDate)%>">
                                </div>
                                <div class="col">
                                  <button type="submit" class="btn btn-primary">Search</button>
@@ -183,18 +202,6 @@
                         <HR>
                         <%
                         List<Expense> expenses ;
-                        String expense_type_search = request.getParameter("expense_type_search");
-                        String expense_type_search_type = request.getParameter("expense_type_search_type");
-                        String expenseDateFrom = request.getParameter("expenseDateFrom");
-                        String expenseDateTo = request.getParameter("expenseDateTo");
-                        Date expenseDateFromDate = new Date();
-                        Date expenseDateToDate = new Date();
-                        if (expenseDateFrom != null && expenseDateFrom.trim().length() > 0) {
-                             expenseDateFromDate = dateFormat.parse(expenseDateFrom);
-                        }
-                        if (expenseDateTo != null && expenseDateTo.trim().length() > 0) {
-                             expenseDateToDate = dateFormat.parse(expenseDateTo);
-                        }
                         if (expense_type_search_type != null && expense_type_search_type.trim().length() > 0) {
                           expenses = expenseDao.selectExpensesByExpenseType(expense_type_search_type, username);
                           for (Expense expense : expenses) {
