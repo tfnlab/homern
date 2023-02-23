@@ -135,11 +135,11 @@
                         <HR>
                         <%
                         List<Expense> expenses = expenseDao.selectExpensesByVendor(username);
-                        %><%=expenses.size()%> SIZE<%
                         for (Expense expense : expenses) {
                             %>
+                            <%=expense.getVendor().getId()%> 
                             <%=expense.getVendor().getName()%>
-                            <%=expense.getExpenseAmount()%> <BR>
+                            <%=expense.getExpenseAmount()%>
                             <HR>
                             <%
                         }
