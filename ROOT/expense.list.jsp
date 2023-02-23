@@ -163,6 +163,9 @@
 
                            <div class="row">
                              <form action="expense.list.jsp" method="post">
+                               <%if(request.getParameter("expense_type_search")!=null){%>
+                                <input type="hidden"     name="expense_type_search" id="expense_type_search" value="<%=request.getParameter("expense_type_search")%>" >
+                               <%}%>
                                <div class="col">
                                  From
                                  <input type="date" class="form-control" id="expenseDate" name="expenseDateFrom" required value="<%=currentDate%>">
