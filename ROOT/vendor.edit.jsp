@@ -100,30 +100,30 @@
                     <form method="post" action="vendor.add.jsp">
     <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name" name="name" required>
+        <input type="text" class="form-control" id="name" name="name" required value="<%=vendorview.getName()%>">
     </div>
     <div class="form-group">
         <label for="address">Address:</label>
-        <input type="text" class="form-control" id="address" name="address" value="<%=vendorview.getNotes()%>">
+        <input type="text" class="form-control" id="address" name="address" value="<%=vendorview.getAddress()%>">
     </div>
     <div class="form-group">
         <label for="phone">Phone:</label>
-        <input type="tel" class="form-control" id="phone" name="phone">
+        <input type="tel" class="form-control" id="phone" name="phone" value="<%=vendorview.getPhone()%>">
     </div>
     <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" class="form-control" id="email" name="email" required>
+        <input type="email" class="form-control" id="email" name="email" required value="<%=vendorview.getEmail()%>">
     </div>
     <HR>
     <div class="form-group form-check">
         <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="is_approved" value="1"> Approved
+            <input class="form-check-input" type="checkbox" name="is_approved" value="1" <% if (vendorview.isApproved()) { %>checked<% } %>> Approved
         </label>
     </div>
     <HR>
     <div class="form-group">
         <label for="name">Notes:</label>
-        <textarea class="form-control" id="notes" name="notes" rows="5" tabindex="3"></textarea>
+        <textarea class="form-control" id="notes" name="notes" rows="5" tabindex="3"><%=vendorview.getNotes()%></textarea>
     </div>
     <HR>
     <button type="submit" class="btn btn-primary">Submit</button>
