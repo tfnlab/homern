@@ -116,8 +116,8 @@
                     <div class="container">
                         <form action="expense.list.jsp" method="post">
                           <div class="form-group">
-                          <select name="expense_type" id="expense_type">
-                            <option value="0">Select an expense type</option>
+                          <select class="form-control" name="expense_type" id="expense_type">
+                            <option value="Select an expense type">Select an expense type</option>
                             <option value="Office Supplies">Office Supplies</option>
                             <option value="Travel Expenses">Travel Expenses</option>
                             <option value="Equipment Maintenance">Equipment Maintenance</option>
@@ -126,7 +126,7 @@
                             <option value="Professional Fees">Professional Fees</option>
                           </select>
                         </div>
-
+                            <HR>
                             <div class="form-group">
                                 <label for="expenseDate">Expense Date:</label>
                                 <input type="date" class="form-control" id="expenseDate" name="expenseDate" required>
