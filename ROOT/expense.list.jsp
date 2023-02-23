@@ -122,10 +122,9 @@
                                 <select class="form-control" id="vendorId" name="vendorId" required>
                                     <%
                                         for (Vendor vendor : vendors) {
-                                            String vendorId = Integer.toString(vendor.getId());
                                             String vendorName = vendor.getName();
                                     %>
-                                        <option value="<%=vendorId%>"><%=vendorName%></option>
+                                        <option value="<%=vendor.getId()%>"><%=vendorName%></option>
                                     <%
                                         }
                                     %>
