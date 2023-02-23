@@ -132,6 +132,7 @@
                             <HR>
                             <button type="submit" class="btn btn-primary">Add Expense</button>
                         </form>
+                        <HR>
                         <%
                         List<Expense> expenses = expenseDao.selectExpensesByVendor(username);
                         for (Expense expense : expenses) {
