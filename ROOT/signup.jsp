@@ -273,7 +273,7 @@
                   <div class="form-group  mt-3">
                     <label for="business-type">Select Your Role:</label>
                     <select class="form-control  mt-1" id="business_type" name="business_type">
-                    <%for(int j=0;j<names.length();j++){%>
+                    <%for(int j=0;j<names.length;j++){%>
                       <option value="<%=values[j]%>"><%= (new Translate()).translate(names[j],  request.getParameter("language"))%></option>
                     <%}%>
                     </select>
