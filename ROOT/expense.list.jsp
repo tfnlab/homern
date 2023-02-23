@@ -23,6 +23,7 @@
 <%@ page import="com.tfnlab.mysql.Vendor" %>
 <%@ page import="com.tfnlab.mysql.ExpenseDao" %>
 <%@ page import="com.tfnlab.mysql.Expense" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ include file="auth.jsp" %>
 <%
           User user = (User)session.getAttribute("usernameOBJ");
@@ -77,10 +78,13 @@
                       String expenseAmountStr = request.getParameter("expenseAmount");
                       String vendorIdStr = request.getParameter("vendorId");
                       // Parse the form data
-                      Date date = Date.valueOf(expenseDate);
+
+                      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                      Date date = dateFormat.parse(expenseDate);
+
                       double amount = Double.parseDouble(expenseAmountStr);
                       int vendorId = Integer.parseInt(vendorIdStr);
-                      
+
                       Expense expense = new Expense();
                       expense.setExpenseDate(date);
                       expense.setExpenseDescription(expenseDescription);
