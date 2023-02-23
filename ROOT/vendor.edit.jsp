@@ -68,7 +68,11 @@
         <%
         // Get form data and create a new vendor object
         String name = request.getParameter("name");
-
+        VendorDAO vendorDAO = new VendorDAO();
+        int vendorId = 0;
+        if (request.getParameter("vendorId") != null && !request.getParameter("vendorId").isEmpty()) {
+          vendorId = Integer.parseInt(request.getParameter("orderId"));
+        }
         if (name != null && name.trim().length() > 0) {
           String address = request.getParameter("address");
           String phone = request.getParameter("phone");
@@ -80,7 +84,7 @@
           Vendor vendor = new Vendor(0, name, address, phone, email, isApproved, timeCreated, timeUpdated, username, notes);
 
           // Save the vendor to the database using the DAO
-          VendorDAO vendorDAO = new VendorDAO();
+
           try {
               vendorDAO.insertVendor(vendor);
               %>
@@ -89,6 +93,7 @@
           } catch (Exception e) {
               out.println("Error adding vendor: " + e.getMessage());
           }
+          Vendor vendorview vendorDAO.getVendorByIdAndUsername(vendorId, username);
         }
         %>
           <div class="container mt-5">
@@ -99,7 +104,7 @@
     </div>
     <div class="form-group">
         <label for="address">Address:</label>
-        <input type="text" class="form-control" id="address" name="address">
+        <input type="text" class="form-control" id="address" name="address" value="<%=vendorview.getNotes()%>">
     </div>
     <div class="form-group">
         <label for="phone">Phone:</label>
