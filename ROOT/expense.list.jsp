@@ -137,11 +137,14 @@
                         <%
                         List<Expense> expenses ;
                         if(vendorId>0){
-                          %><a href="expense.list.jsp" tabindex="13" >Expense List</a><HR><%  
+                          %><a href="expense.list.jsp" tabindex="13" >Expense List</a><HR><%
                           expenses = expenseDao.selectExpensesByVendor(vendorId, username);
                           for (Expense expense : expenses) {
                               %>
                               <div class="row">
+                                <div class="col">
+                                  <%=expense.getExpenseId()%>
+                                </div>
                                 <div class="col">
                                   <a href="expense.list.jsp?vendorId=<%=expense.getVendor().getId()%>"><%=expense.getVendor().getId()%></a>
                                 </div>
