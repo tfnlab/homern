@@ -157,9 +157,26 @@
                             <button type="submit" class="btn btn-primary">Add Expense</button>
                         </form>
                         <HR>
+                          <a href="expense.list.jsp?expense_type_search=true" >Expense Type</a>
+                        <HR>  
                         <%
                         List<Expense> expenses ;
-                        if(vendorId>0){
+                        String expense_type_search = request.getParameter("expense_type_search");
+                        if (expense_type_search != null && expense_type_search.trim().length() > 0) {
+                          expenses = expenseDao.selectExpensesByExpenseType( username);
+                          for (Expense expense : expenses) {
+                            %>
+                            <div class="row">
+                              <div class="col">
+                                <%=expense.getExpense_type()%>
+                              </div>
+                                <div class="col">
+                                  <%=expense.getExpenseAmount()%>
+                                </div>
+                            </div>
+                            <%
+                          }
+                        }else if(vendorId>0){
                           %><a href="expense.list.jsp" tabindex="13" >Expense List</a><HR><%
                           expenses = expenseDao.selectExpensesByVendor(vendorId, username);
                           for (Expense expense : expenses) {
