@@ -191,7 +191,7 @@
                                 <%=expense.getExpenseAmount()%>
                               </div>
                               <div class="col">
-                                <a href="expense.list.jsp?expenseId=<%=expense.getExpenseId()%>&vendorId=<%=expense.getVendor().getId()%>">
+                                <a href="expense.list.jsp?expenseId=<%=expense.getExpenseId()%>&vendorId=<%=expense.getVendor().getId()%>&expense_type_search_type=<%=expense_type_search_type%>">
                                 <i class="fas fa-trash-alt"></i>
                                 </a>
                               </div>
@@ -217,7 +217,6 @@
                             <%
                           }
                         }else if(vendorId>0){
-                          %><a href="expense.list.jsp" tabindex="13" >Expense List</a><HR><%
                           expenses = expenseDao.selectExpensesByVendor(vendorId, username);
                           for (Expense expense : expenses) {
                               %>
