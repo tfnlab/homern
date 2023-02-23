@@ -73,6 +73,8 @@
                     <%
 
                     String expenseDate = request.getParameter("expenseDate");
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    String currentDate = dateFormat.format(new Date());
                     ExpenseDao expenseDao = new ExpenseDao();
                     int vendorId = 0;
                     if (request.getParameter("vendorId") != null && !request.getParameter("vendorId").isEmpty()) {
@@ -92,7 +94,6 @@
 
                       // Parse the form data
 
-                      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                       Date date = dateFormat.parse(expenseDate);
 
                       double amount = Double.parseDouble(expenseAmountStr);
@@ -129,7 +130,7 @@
                             <HR>
                             <div class="form-group">
                                 <label for="expenseDate">Expense Date:</label>
-                                <input type="date" class="form-control" id="expenseDate" name="expenseDate" required>
+                                <input type="date" class="form-control" id="expenseDate" name="expenseDate" required value="<%=currentDate%>">
                             </div>
                             <div class="form-group">
                                 <label for="expenseDescription">Expense Description:</label>
