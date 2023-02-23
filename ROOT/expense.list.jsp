@@ -20,6 +20,8 @@
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
 <%@ page import="com.tfnlab.mysql.VendorDAO" %>
 <%@ page import="com.tfnlab.mysql.Vendor" %>
+<%@ page import="com.tfnlab.mysql.ExpenseDao" %>
+<%@ page import="com.tfnlab.mysql.Expense" %>
 <%@ include file="auth.jsp" %>
 <%
           User user = (User)session.getAttribute("usernameOBJ");
@@ -65,12 +67,35 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
-                    CONTENT GO HERE
-                    <% VendorDAO vDao = new VendorDAO();
+                    <%
+
+                    String expenseDate = request.getParameter("expenseDate");
+
+                    if (expenseDate != null && expenseDate.trim().length() > 0) {
+                      String expenseDescription = request.getParameter("expenseDescription");
+                      String expenseAmountStr = request.getParameter("expenseAmount");
+                      String vendorIdStr = request.getParameter("vendorId");
+                      String username = request.getParameter("username");
+                      Date date = Date.valueOf(expenseDate);
+                      double amount = Double.parseDouble(expenseAmountStr);
+                      int vendorId = Integer.parseInt(vendorIdStr);
+                      Expense expense = new Expense();
+                      expense.setExpenseDate(date);
+                      expense.setExpenseDescription(expenseDescription);
+                      expense.setExpenseAmount(amount);
+                      expense.setVendorId(vendorId);
+                      expense.setUsername(username);
+                      try {
+                          expenseDao.insertExpense(expense);
+                      } catch (Exception e) {
+                          e.printStackTrace();
+                      }
+                    }
+                    VendorDAO vDao = new VendorDAO();
                     List<Vendor> vendors = vDao.getVendorsByUsername(username);
                     %>
                     <div class="container">
-                        <form action="addExpense" method="post">
+                        <form action="expense.list.jsp" method="post">
                             <h2>Add Expense</h2>
                             <div class="form-group">
                                 <label for="expenseDate">Expense Date:</label>
@@ -98,6 +123,7 @@
                                     %>
                                 </select>
                             </div>
+                            <HR>
                             <button type="submit" class="btn btn-primary">Add Expense</button>
                         </form>
                     </div>
