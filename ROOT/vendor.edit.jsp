@@ -81,14 +81,14 @@
           boolean isApproved = request.getParameter("is_approved") != null;
           Timestamp timeCreated = new Timestamp(new Date().getTime());
           Timestamp timeUpdated = timeCreated;
-          Vendor vendor = new Vendor(0, name, address, phone, email, isApproved, timeCreated, timeUpdated, username, notes);
+          Vendor vendor = new Vendor(vendorId, name, address, phone, email, isApproved, timeCreated, timeUpdated, username, notes);
 
           // Save the vendor to the database using the DAO
 
           try {
-              vendorDAO.insertVendor(vendor);
+              vendorDAO.updateVendorByIdAndUsername(vendor);
               %>
-              <HR>Vendor added successfully.
+              <HR>Vendor Updated successfully.
               <HR><%
           } catch (Exception e) {
               out.println("Error adding vendor: " + e.getMessage());
@@ -97,7 +97,8 @@
         Vendor vendorview = vendorDAO.getVendorByIdAndUsername(vendorId, username);
         %>
           <div class="container mt-5">
-                    <form method="post" action="vendor.add.jsp">
+    <form method="post" action="vendor.add.jsp">
+    <input type="hidden" class="form-control" id="vendorId" name="vendorId"  value="<%=vendorId%>">
     <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" class="form-control" id="name" name="name" required value="<%=vendorview.getName()%>">
