@@ -138,16 +138,46 @@
                         List<Expense> expenses ;
                         if(vendorId>0){
                           expenses = expenseDao.selectExpensesByVendor(vendorId, username);
+                          for (Expense expense : expenses) {
+                              %>
+                              <div class="row">
+                                <div class="col">
+                                  <a href="expense.list.jsp?vendorId=<%=expense.getVendor().getId()%>"><%=expense.getVendor().getId()%></a>
+                                </div>
+                                <div class="col">
+                                  <%=expense.getExpenseDate()%>
+                                </div>
+                                <div class="col">
+                                  <%=expense.getExpenseDescription()%>
+                                </div>
+                                <div class="col">
+                                  <%=expense.getVendor().getName()%>
+                                </div>
+                                <div class="col">
+                                  <%=expense.getExpenseAmount()%>
+                                </div>
+                              </div>
+                              <hr>
+                              <%
+                          }
                         }else{
                           expenses = expenseDao.selectExpensesByVendor(username);
-                        }
-                        for (Expense expense : expenses) {
-                            %>
-                            <a href="expense.list.jsp?vendorId=<%=expense.getVendor().getId()%>" ><%=expense.getVendor().getId()%></a>
-                            <%=expense.getVendor().getName()%>
-                            <%=expense.getExpenseAmount()%>
-                            <HR>
-                            <%
+                          for (Expense expense : expenses) {
+                              %>
+                              <div class="row">
+                                <div class="col">
+                                  <a href="expense.list.jsp?vendorId=<%=expense.getVendor().getId()%>"><%=expense.getVendor().getId()%></a>
+                                </div>
+                                <div class="col">
+                                  <%=expense.getVendor().getName()%>
+                                </div>
+                                <div class="col">
+                                  <%=expense.getExpenseAmount()%>
+                                </div>
+                              </div>
+                              <hr>
+                              <%
+                          }
                         }
                         %>
                     </div>
