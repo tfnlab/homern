@@ -132,6 +132,14 @@
                             <HR>
                             <button type="submit" class="btn btn-primary">Add Expense</button>
                         </form>
+                        <%
+                        List<Expense> expenses = expenseDao.selectExpensesByVendor(username);
+                        for (Expense expense : expenses) {
+                            %>
+                            <%=expense.getVendor().getName()%>
+                            <%=expense.getExpenseAmount()%> <BR><%
+                        }
+                        %>
                     </div>
 
           </div>
