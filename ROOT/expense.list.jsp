@@ -65,10 +65,10 @@
     </section>
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Template</h2>
+        <h2>Add Expense</h2>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
-          <div class="container mt-5">
+          <div class="container">
                     <%
 
                     String expenseDate = request.getParameter("expenseDate");
@@ -102,7 +102,6 @@
                     %>
                     <div class="container">
                         <form action="expense.list.jsp" method="post">
-                            <h2>Add Expense</h2>
                             <div class="form-group">
                                 <label for="expenseDate">Expense Date:</label>
                                 <input type="date" class="form-control" id="expenseDate" name="expenseDate" required>
@@ -137,7 +136,7 @@
                         List<Expense> expenses = expenseDao.selectExpensesByVendor(username);
                         for (Expense expense : expenses) {
                             %>
-                            <%=expense.getVendor().getId()%> 
+                            <%=expense.getVendor().getId()%>
                             <%=expense.getVendor().getName()%>
                             <%=expense.getExpenseAmount()%>
                             <HR>
