@@ -185,6 +185,12 @@
                                <%if(request.getParameter("expense_type_search")!=null){%>
                                 <input type="hidden"     name="expense_type_search" id="expense_type_search" value="<%=request.getParameter("expense_type_search")%>" >
                                <%}%>
+                               <%if(request.getParameter("expense_type_search_type")!=null){%>
+                                <input type="hidden"     name="expense_type_search_type" id="expense_type_search_type" value="<%=request.getParameter("expense_type_search_type")%>" >
+                               <%}%>
+                               <%if(vendorId>0){%>
+                                 <input type="hidden"     name="vendorId" id="vendorId" value="<%=vendorId%>" >                                
+                               <%}%>
                                <div class="col">
                                  From
                                  <input type="date" class="form-control" id="expenseDateFrom" name="expenseDateFrom" required value="<%=dateFormat.format(expenseDateFromDate)%>">
