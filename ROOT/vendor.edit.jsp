@@ -93,7 +93,7 @@
           } catch (Exception e) {
               out.println("Error adding vendor: " + e.getMessage());
           }
-          Vendor vendorview vendorDAO.getVendorByIdAndUsername(vendorId, username);
+          Vendor vendorview = vendorDAO.getVendorByIdAndUsername(vendorId, username);
         }
         %>
           <div class="container mt-5">
