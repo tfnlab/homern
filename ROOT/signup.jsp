@@ -258,7 +258,7 @@
         %>
             <!-- ======= Contact Section ======= -->
                 <p>
-                Are you a contractor looking to streamline your business operations? Look no further than Home Renovation Nation! Our platform offers a one-stop-shop for all your business needs, from order to cash. Join now and get access to our advanced tools, absolutely free for homeowners. Contractors can upgrade to our premium service for just $1 a day and unlock even more possibilities. Don't miss out on this opportunity to take your business to the next level. Sign up today and see the difference Home Renovation Nation can make.
+                Are you a field service professional looking to simplify your business operations? Look no further than Home Renovation Nation! Our platform provides a one-stop-shop for all your business needs, from order to cash. Join now and access our advanced tools for free as a homeowner. Field service professionals can upgrade to our premium service for just $1 a day and unlock even more possibilities. Don't miss out on this opportunity to take your business to the next level. Sign up today and experience the difference Home Renovation Nation can make.
                 </p>
 
                 <form action="signup.jsp" method="POST">
