@@ -203,7 +203,7 @@
                         <%
                         List<Expense> expenses ;
                         if (expense_type_search_type != null && expense_type_search_type.trim().length() > 0) {
-                          expenses = expenseDao.selectExpensesByExpenseType(expense_type_search_type, username);
+                          expenses = expenseDao.selectExpensesByExpenseType(expense_type_search_type, username, expenseDateFromDate, expenseDateToDate );
                           for (Expense expense : expenses) {
                             %>
                             <div class="row">
@@ -243,7 +243,7 @@
                             %>
                             <div class="row">
                               <div class="col">
-                                <a href="expense.list.jsp?expense_type_search_type=<%=expense.getExpense_type()%>">
+                                <a href="expense.list.jsp?expense_type_search_type=<%=expense.getExpense_type()%>&expenseDateFrom=<%=dateFormat.format(expenseDateFromDate)%>&expenseDateTo=<%=dateFormat.format(expenseDateToDate)%>">
                                 <%=expense.getExpense_type()%>
                                 </a>
                               </div>
