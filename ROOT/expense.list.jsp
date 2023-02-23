@@ -163,18 +163,57 @@
                         <%
                         List<Expense> expenses ;
                         String expense_type_search = request.getParameter("expense_type_search");
-                        if (expense_type_search != null && expense_type_search.trim().length() > 0) {
+                        String expense_type_search_type = request.getParameter("expense_type_search_type");
+                        if (expense_type_search_type != null && expense_type_search_type.trim().length() > 0) {
+                          expenses = expenseDao.selectExpensesByExpenseType(expense_type_search_type, username);
+                          for (Expense expense : expenses) {
+                            %>
+                            <div class="row">
+                              <div class="col">
+                                <%=expense.getExpenseId()%>
+                              </div>
+                              <div class="col">
+                                <a href="expense.list.jsp?vendorId=<%=expense.getVendor().getId()%>"><%=expense.getVendor().getId()%></a>
+                              </div>
+                              <div class="col">
+                                <%=expense.getExpenseDate()%>
+                              </div>
+                              <div class="col">
+                                <%=expense.getExpense_type()%>
+                              </div>
+                              <div class="col">
+                                <%=expense.getExpenseDescription()%>
+                              </div>
+                              <div class="col">
+                                <%=expense.getVendor().getName()%>
+                              </div>
+                              <div class="col">
+                                <%=expense.getExpenseAmount()%>
+                              </div>
+                              <div class="col">
+                                <a href="expense.list.jsp?expenseId=<%=expense.getExpenseId()%>&vendorId=<%=expense.getVendor().getId()%>">
+                                <i class="fas fa-trash-alt"></i>
+                                </a>
+                              </div>
+                            </div>
+                            <hr>
+                            <%
+                          }
+                        }else if (expense_type_search != null && expense_type_search.trim().length() > 0) {
                           expenses = expenseDao.selectExpensesByExpenseType( username);
                           for (Expense expense : expenses) {
                             %>
                             <div class="row">
                               <div class="col">
+                                <a href="expense.list.jsp?expense_type_search_type=<%=expense.getExpense_type()%>">
                                 <%=expense.getExpense_type()%>
+                                </a>
                               </div>
                                 <div class="col">
                                   <%=expense.getExpenseAmount()%>
                                 </div>
                             </div>
+                            <hr>
                             <%
                           }
                         }else if(vendorId>0){
