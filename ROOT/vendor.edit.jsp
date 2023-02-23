@@ -97,7 +97,7 @@
         Vendor vendorview = vendorDAO.getVendorByIdAndUsername(vendorId, username);
         %>
           <div class="container mt-5">
-    <form method="post" action="vendor.add.jsp">
+    <form method="post" action="vendor.edir.jsp">
     <input type="hidden" class="form-control" id="vendorId" name="vendorId"  value="<%=vendorId%>">
     <div class="form-group">
         <label for="name">Name:</label>
