@@ -66,7 +66,7 @@
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
                     <a href="vendor.add.jsp" >add vendor</a>
-                    <BR>
+                    <hr>
                     <%
                     VendorDAO vendorDAO = new VendorDAO();
                     List<Vendor> vendors = vendorDAO.getVendorsByUsername(username);
