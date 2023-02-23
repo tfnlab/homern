@@ -137,6 +137,7 @@
                         <%
                         List<Expense> expenses ;
                         if(vendorId>0){
+                          %><a href="expense.list.jsp" tabindex="13" >Expense List</a><%  
                           expenses = expenseDao.selectExpensesByVendor(vendorId, username);
                           for (Expense expense : expenses) {
                               %>
