@@ -87,6 +87,7 @@
                     if(expenseId>0){
                       expenseDao.deleteExpenseById(expenseId, username);
                     }
+
                     if (expenseDate != null && expenseDate.trim().length() > 0) {
                       String expenseDescription = request.getParameter("expenseDescription");
                       String expenseAmountStr = request.getParameter("expenseAmount");
@@ -181,6 +182,16 @@
                         List<Expense> expenses ;
                         String expense_type_search = request.getParameter("expense_type_search");
                         String expense_type_search_type = request.getParameter("expense_type_search_type");
+                        String expenseDateFrom = request.getParameter("expenseDateFrom");
+                        String expenseDateTo = request.getParameter("expenseDateTo");
+                        Date expenseDateFromDate = new Date();
+                        Date expenseDateToDate = new Date();
+                        if (expenseDateFrom != null && expenseDateFrom.trim().length() > 0) {
+                             expenseDateFromDate = dateFormat.parse(expenseDateFrom);
+                        }
+                        if (expenseDateTo != null && expenseDateTo.trim().length() > 0) {
+                             expenseDateToDate = dateFormat.parse(expenseDateTo);
+                        }
                         if (expense_type_search_type != null && expense_type_search_type.trim().length() > 0) {
                           expenses = expenseDao.selectExpensesByExpenseType(expense_type_search_type, username);
                           for (Expense expense : expenses) {
@@ -217,7 +228,7 @@
                             <%
                           }
                         }else if (expense_type_search != null && expense_type_search.trim().length() > 0) {
-                          expenses = expenseDao.selectExpensesByExpenseType( username);
+                          expenses = expenseDao.selectExpensesByExpenseType( username, expenseDateFromDate, expenseDateToDate );
                           for (Expense expense : expenses) {
                             %>
                             <div class="row">
