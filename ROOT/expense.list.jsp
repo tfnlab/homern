@@ -157,8 +157,9 @@
                             <button type="submit" class="btn btn-primary">Add Expense</button>
                         </form>
                         <HR>
-                          <a href="expense.list.jsp?expense_type_search=true" >Expense Type</a>
-                        <HR>  
+                          <a href="expense.list.jsp" >Vendor</a> |
+                           <a href="expense.list.jsp?expense_type_search=true" >Type</a>
+                        <HR>
                         <%
                         List<Expense> expenses ;
                         String expense_type_search = request.getParameter("expense_type_search");
