@@ -88,6 +88,8 @@
                     if (expenseDate != null && expenseDate.trim().length() > 0) {
                       String expenseDescription = request.getParameter("expenseDescription");
                       String expenseAmountStr = request.getParameter("expenseAmount");
+                      String expense_type = request.getParameter("expense_type");
+
                       // Parse the form data
 
                       SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -101,6 +103,7 @@
                       expense.setExpenseAmount(amount);
                       expense.setVendorId(vendorId);
                       expense.setUsername(username);
+                      expense.setExpense_type(expense_type);
                       try {
                           expenseDao.insertExpense(expense);
                       } catch (Exception e) {
@@ -112,6 +115,18 @@
                     %>
                     <div class="container">
                         <form action="expense.list.jsp" method="post">
+                          <div class="form-group">
+                          <select name="expense_type" id="expense_type">
+                            <option value="0">Select an expense type</option>
+                            <option value="Office Supplies">Office Supplies</option>
+                            <option value="Travel Expenses">Travel Expenses</option>
+                            <option value="Equipment Maintenance">Equipment Maintenance</option>
+                            <option value="Advertising and Promotion">Advertising and Promotion</option>
+                            <option value="Rent and Utilities">Rent and Utilities</option>
+                            <option value="Professional Fees">Professional Fees</option>
+                          </select>
+                        </div>
+
                             <div class="form-group">
                                 <label for="expenseDate">Expense Date:</label>
                                 <input type="date" class="form-control" id="expenseDate" name="expenseDate" required>
