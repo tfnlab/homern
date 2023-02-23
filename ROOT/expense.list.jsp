@@ -68,6 +68,7 @@
         <h2>Add Expense</h2>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
+        <HR>
           <div class="container">
                     <%
 
