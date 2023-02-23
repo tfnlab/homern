@@ -9,6 +9,7 @@
 <%@ page import="com.tfnlab.mysql.ProductDao" %>
 <%@ page import="java.sql.Timestamp" %>
 <%@ page import="java.util.Calendar" %>
+<%@ page import="java.util.Date" %>
 <%@ page import="java.math.BigDecimal" %>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.HashMap"%>
@@ -75,8 +76,6 @@
                       String expenseDescription = request.getParameter("expenseDescription");
                       String expenseAmountStr = request.getParameter("expenseAmount");
                       String vendorIdStr = request.getParameter("vendorId");
-                      String username = request.getParameter("username");
-                      Date date = Date.valueOf(expenseDate);
                       double amount = Double.parseDouble(expenseAmountStr);
                       int vendorId = Integer.parseInt(vendorIdStr);
                       Expense expense = new Expense();
