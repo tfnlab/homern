@@ -74,17 +74,19 @@
 
                     String expenseDate = request.getParameter("expenseDate");
                     ExpenseDao expenseDao = new ExpenseDao();
+                    int vendorId = 0;
+                    if (request.getParameter("vendorId") != null && !request.getParameter("vendorId").isEmpty()) {
+                      vendorId = Integer.parseInt(request.getParameter("vendorId"));
+                    }
                     if (expenseDate != null && expenseDate.trim().length() > 0) {
                       String expenseDescription = request.getParameter("expenseDescription");
                       String expenseAmountStr = request.getParameter("expenseAmount");
-                      String vendorIdStr = request.getParameter("vendorId");
                       // Parse the form data
 
                       SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                       Date date = dateFormat.parse(expenseDate);
 
                       double amount = Double.parseDouble(expenseAmountStr);
-                      int vendorId = Integer.parseInt(vendorIdStr);
 
                       Expense expense = new Expense();
                       expense.setExpenseDate(date);
@@ -134,10 +136,15 @@
                         </form>
                         <HR>
                         <%
-                        List<Expense> expenses = expenseDao.selectExpensesByVendor(username);
+                        List<Expense> expenses ;
+                        if(vendorId>0){
+                          expenses = expenseDao.selectExpensesByVendor(vendorId, username);
+                        }else{
+                          expenses = expenseDao.selectExpensesByVendor(username);
+                        }
                         for (Expense expense : expenses) {
                             %>
-                            <%=expense.getVendor().getId()%>
+                            <a href="expense.list.jsp?vendorId=<%=expense.getVendor().getId()%>" ><%=expense.getVendor().getId()%></a>
                             <%=expense.getVendor().getName()%>
                             <%=expense.getExpenseAmount()%>
                             <HR>
