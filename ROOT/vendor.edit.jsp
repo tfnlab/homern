@@ -71,7 +71,7 @@
         VendorDAO vendorDAO = new VendorDAO();
         int vendorId = 0;
         if (request.getParameter("vendorId") != null && !request.getParameter("vendorId").isEmpty()) {
-          vendorId = Integer.parseInt(request.getParameter("orderId"));
+          vendorId = Integer.parseInt(request.getParameter("vendorId"));
         }
         if (name != null && name.trim().length() > 0) {
           String address = request.getParameter("address");
