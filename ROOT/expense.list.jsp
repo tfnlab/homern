@@ -18,6 +18,8 @@
 <%@ page import="com.tfnlab.mysql.ProductDashBoard" %>
 <%@ page import="java.util.UUID" %>
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
+<%@ page import="com.tfnlab.mysql.VendorDAO" %>
+<%@ page import="com.tfnlab.mysql.Vendor" %>
 <%@ include file="auth.jsp" %>
 <%
           User user = (User)session.getAttribute("usernameOBJ");
@@ -64,6 +66,19 @@
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
                     CONTENT GO HERE
+                    <% VendorDAO vDao = new VendorDAO();
+                    List<Vendor> vendors = vendorDAO.getVendorsByUsername(username);
+                    %>
+                    <%-- Assuming you have a List<Vendor> vendors available --%>
+                    <select name="vendorId">
+                        <%
+                            for (Vendor vendor : vendors) {
+                        %>
+                            <option value="<%=vendor.getId()%>"><%=vendor.getName()%></option>
+                        <%
+                            }
+                        %>
+                    </select>
           </div>
       </div>
     </section><!-- End Blog Section -->
