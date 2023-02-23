@@ -159,6 +159,23 @@
                         <HR>
                           <a href="expense.list.jsp" >Vendor</a> |
                            <a href="expense.list.jsp?expense_type_search=true" >Type</a>
+
+                           <div class="row">
+                             <form action="expense.list.jsp" method="post">
+                               <div class="col">
+                                 From
+                                 <input type="date" class="form-control" id="expenseDate" name="expenseDateFrom" required value="<%=currentDate%>">
+                               </div>
+                               <div class="col">
+                                 To
+                                 <input type="date" class="form-control" id="expenseDate" name="expenseDateTo" required value="<%=currentDate%>">
+                               </div>
+                               <div class="col">
+                                 <button type="submit" class="btn btn-primary">Search</button>
+                               </div>
+                            </form>
+                          </div>
+
                         <HR>
                         <%
                         List<Expense> expenses ;
