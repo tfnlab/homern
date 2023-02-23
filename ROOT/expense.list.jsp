@@ -174,6 +174,9 @@
                                   <%=expense.getExpenseDate()%>
                                 </div>
                                 <div class="col">
+                                  <%=expense.getExpense_type()%>
+                                </div>
+                                <div class="col">
                                   <%=expense.getExpenseDescription()%>
                                 </div>
                                 <div class="col">
