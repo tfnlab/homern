@@ -178,56 +178,56 @@
 
               <div class="row">
                 <div class="col-3 link-col">
-                  <a href="#" tabindex="13" ><i class="fa fa-plane"></i></a>
+                  <a href="expense.list.jsp" tabindex="13" ><i class="fa fa-plane"></i></a>
                   <p>Expenses</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="user.edit.social.jsp" tabindex="3" ><i class="fa fa-share-square"></i></a>
+                  <a href="user.edit.social.jsp" tabindex="14" ><i class="fa fa-share-square"></i></a>
                   <p>Social Media</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="user.edit.referred_by.jsp" tabindex="3" ><i class="fa fa-people-arrows"></i></a>
+                  <a href="user.edit.referred_by.jsp" tabindex="15" ><i class="fa fa-people-arrows"></i></a>
                   <p>Referral</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="dmp.list.jsp" tabindex="3" ><i class="fa fa-database"></i></a>
+                  <a href="dmp.list.jsp" tabindex="16" ><i class="fa fa-database"></i></a>
                   <p>Data Management Platform</p>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-3 link-col">
-                  <a href="#" tabindex="13" ><i class="fa fa-money-bill-alt"></i></a>
+                  <a href="#" tabindex="17" ><i class="fa fa-money-bill-alt"></i></a>
                   <p>Assets</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="#" tabindex="3" ><i class="fa fa-file-invoice-dollar"></i></a>
+                  <a href="#" tabindex="18" ><i class="fa fa-file-invoice-dollar"></i></a>
                   <p>Liabilities</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="#" tabindex="3" ><i class="fa fa-chart-pie"></i></a>
+                  <a href="#" tabindex="19" ><i class="fa fa-chart-pie"></i></a>
                   <p>Equity</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="#" tabindex="3" ><i class="fa fa-chart-line"></i></a>
+                  <a href="#" tabindex="20" ><i class="fa fa-chart-line"></i></a>
                   <p>Forecasting</p>
                 </div>
               </div>
               <div class="row">
                 <div class="col-3 link-col">
-                  <a href="vendor.list.jsp" tabindex="13" ><i class="fa fa-truck"></i></a>
+                  <a href="vendor.list.jsp" tabindex="21" ><i class="fa fa-truck"></i></a>
                   <p>Vendors</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="#" tabindex="3" ><i class="fa fa-user-secret"></i></a>
+                  <a href="#" tabindex="22" ><i class="fa fa-user-secret"></i></a>
                   <p>[top secret]</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="#" tabindex="3" ><i class="fa fa-user-secret"></i></a>
+                  <a href="#" tabindex="23" ><i class="fa fa-user-secret"></i></a>
                   <p>[top secret]</p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="#" tabindex="3" ><i class="fa fa-user-secret"></i></a>
+                  <a href="#" tabindex="24" ><i class="fa fa-user-secret"></i></a>
                   <p>[top secret]</p>
                 </div>
               </div>
