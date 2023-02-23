@@ -263,15 +263,15 @@
 
                 </p>
                 <%
-                String[] values = {"general-contractor", "carpenter", "plumber", "electrician", "hers-rating-company", "hvac-technician", "landscaper", "roofing-contractor", "painter", "flooring-contractor"};
+                String[] values = {"home_owner","general-contractor", "carpenter", "plumber", "electrician", "hers-rating-company", "hvac-technician", "landscaper", "roofing-contractor", "painter", "flooring-contractor"};
 
-                String[] names = {"General contractor","Carpenter", "Plumber", "Electrician", "HERS rating company", "HVAC technician", "Landscaper", "Roofing contractor", "Painter", "Flooring contractor"};
+                String[] names = {"Home Owner","General contractor","Carpenter", "Plumber", "Electrician", "HERS rating company", "HVAC technician", "Landscaper", "Roofing contractor", "Painter", "Flooring contractor"};
 
                 %>
 
                 <form action="signup.jsp" method="POST">
                   <div class="form-group  mt-3">
-                    <label for="business-type">Select Your Role:</label>
+                    <label for="business-type"><%= (new Translate()).translate("Select Your Role",  request.getParameter("language"))%>:</label>
                     <select class="form-control  mt-1" id="business_type" name="business_type">
                     <%for(int j=0;j<names.length;j++){%>
                       <option value="<%=values[j]%>"><%= (new Translate()).translate(names[j],  request.getParameter("language"))%></option>
