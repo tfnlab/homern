@@ -138,7 +138,9 @@
                         for (Expense expense : expenses) {
                             %>
                             <%=expense.getVendor().getName()%>
-                            <%=expense.getExpenseAmount()%> <BR><%
+                            <%=expense.getExpenseAmount()%> <BR>
+                            <HR>
+                            <%
                         }
                         %>
                     </div>
