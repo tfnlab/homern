@@ -7,6 +7,7 @@
 <%@ page import="java.io.BufferedWriter" %>
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
 <%@ page import="java.util.UUID" %>
+<%@ page import="com.tfnlab.util.Translate" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -106,7 +107,7 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Sign-Up</h2>
+        <h2><%= (new Translate()).translate("Sign-Up", request.getParameter("language")) %></h2>
         <%
                 String firstName = request.getParameter("firstName");
                 String middleInitial = request.getParameter("middleInitial");
