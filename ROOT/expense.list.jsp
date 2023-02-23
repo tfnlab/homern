@@ -187,11 +187,11 @@
                                <%}%>
                                <div class="col">
                                  From
-                                 <input type="date" class="form-control" id="expenseDate" name="expenseDateFrom" required value="<%=dateFormat.format(expenseDateFromDate)%>">
+                                 <input type="date" class="form-control" id="expenseDateFrom" name="expenseDateFrom" required value="<%=dateFormat.format(expenseDateFromDate)%>">
                                </div>
                                <div class="col">
                                  To
-                                 <input type="date" class="form-control" id="expenseDate" name="expenseDateTo" required value="<%=dateFormat.format(expenseDateToDate)%>">
+                                 <input type="date" class="form-control" id="expenseDateTo" name="expenseDateTo" required value="<%=dateFormat.format(expenseDateToDate)%>">
                                </div>
                                <div class="col">
                                  <button type="submit" class="btn btn-primary">Search</button>
@@ -255,7 +255,7 @@
                             <%
                           }
                         }else if(vendorId>0){
-                          expenses = expenseDao.selectExpensesByVendor(vendorId, username);
+                          expenses = expenseDao.selectExpensesByVendor(vendorId, username,  expenseDateFromDate, expenseDateToDate );
                           for (Expense expense : expenses) {
                               %>
                               <div class="row">
@@ -295,7 +295,7 @@
                               %>
                               <div class="row">
                                 <div class="col">
-                                  <a href="expense.list.jsp?vendorId=<%=expense.getVendor().getId()%>"><%=expense.getVendor().getId()%></a>
+                                  <a href="expense.list.jsp?vendorId=<%=expense.getVendor().getId()%>&expenseDateFrom=<%=dateFormat.format(expenseDateFromDate)%>&expenseDateTo=<%=dateFormat.format(expenseDateToDate)%>" ><%=expense.getVendor().getId()%></a>
                                 </div>
                                 <div class="col">
                                   <%=expense.getVendor().getName()%>
