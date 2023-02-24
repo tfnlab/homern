@@ -163,7 +163,7 @@
                   for (String sstatus : statuses) {
                 %>
                 <tr>
-                  <td><a href="order.list.jsp?searchKey=<%= sstatus %>" ><%= sstatus %></a></td>
+                  <td><a href="order.list.jsp?searchKey=<%= sstatus %>" ><%= (new Translate()).translate(sstatus, usernameOBJ.getLanguage())%></a></td>
                   <td align="right">
                       <% int count = oDao.getCustomerOrderCount(username, sstatus);%>
                       <%= count %>
@@ -188,9 +188,9 @@
             </table>
 
             <HR>
-            Customers: <a href="customer.list.jsp"><%=eDao.getEntityCountByUsername(username)%></a>
+            <%= (new Translate()).translate("Customers", usernameOBJ.getLanguage())%>: <a href="customer.list.jsp"><%=eDao.getEntityCountByUsername(username)%></a>
             <HR>
-            Products:   <a href="product.list.jsp"><%=pDao.getCountByUsername(username)%></a>
+            <%= (new Translate()).translate("Products", usernameOBJ.getLanguage())%>:   <a href="product.list.jsp"><%=pDao.getCountByUsername(username)%></a>
             <HR>
             <%
                 ProductLineItemDao plDao = new ProductLineItemDao();
