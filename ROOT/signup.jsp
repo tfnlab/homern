@@ -86,7 +86,7 @@
 </head>
 
 <body>
-
+    <% User usernameOBJ  = null; %>
 
     <%@ include file="include.header.jsp" %>
 
@@ -141,7 +141,7 @@
                 String is_email_confirmed_code = String.format("%06d", num);
                 int nump = random.nextInt(900000) + 100000;
                 String is_phone_confirmed_code = String.format("%06d", nump);
-                User usernameOBJ  = null;
+
 
                 // Validate form data
                 if (firstName != null && firstName.trim().length() > 0) {

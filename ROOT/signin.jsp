@@ -82,6 +82,7 @@
 
 <body>
 
+  <% User usernameOBJ  = null; %>
   <%@ include file="include.header.jsp" %>
 
   <main id="main">
