@@ -24,9 +24,10 @@
 <%@ page import="com.tfnlab.mysql.ExpenseDao" %>
 <%@ page import="com.tfnlab.mysql.Expense" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.jsp" %>
 <%
-          User user = (User)session.getAttribute("usernameOBJ");
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
           String username = (String) session.getAttribute("username");
 
 %>
@@ -189,7 +190,7 @@
                                 <input type="hidden"     name="expense_type_search_type" id="expense_type_search_type" value="<%=request.getParameter("expense_type_search_type")%>" >
                                <%}%>
                                <%if(vendorId>0){%>
-                                 <input type="hidden"     name="vendorId" id="vendorId" value="<%=vendorId%>" >                                
+                                 <input type="hidden"     name="vendorId" id="vendorId" value="<%=vendorId%>" >
                                <%}%>
                                <div class="col">
                                  From
