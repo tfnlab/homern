@@ -12,7 +12,11 @@
 <%@ page import="com.tfnlab.mysql.TechnicianDao" %>
 <!DOCTYPE html>
 <html lang="en">
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
 
+%>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -113,7 +117,6 @@
           <a href="technician.new.jsp" tabindex="2" ><i class="fas fa-plus"></i> Technician</a>
         <HR>
         <%
-             String username = (String) session.getAttribute("username");
              TechnicianDao technicianDao = new TechnicianDao();
              List<Technician> technicians = technicianDao.getTechniciansByUsername(username);
          %>
