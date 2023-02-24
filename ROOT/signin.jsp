@@ -106,6 +106,13 @@
         <p>
         </p>
         <%
+          String language = request.getParameter("language");
+
+          if (language == null || language.trim().length() < 4) {
+            language = "english";
+          }
+        %>
+        <%
         String firstName = request.getParameter("firstName");
         String middleInitial = request.getParameter("middleInitial");
         String lastName = request.getParameter("lastName");
@@ -153,6 +160,7 @@
                         if(pv){
                           um  = "Thank you for signing in! You are now able to access the main menu. Simply click 'Next' to proceed";
                           user = dao.getUserByUsername(username);
+                          language = user.getLanguage();
                           session.setAttribute("username", username);
                           session.setAttribute("usernameOBJ", user);
                         }else{
@@ -202,13 +210,7 @@
 
         %>
         <form action="signin.jsp" method="POST" class="mx-5" name="login" id="login">
-        <%
-          String language = request.getParameter("language");
 
-          if (language == null || language.trim().length() < 4) {
-            language = "english";
-          }
-        %>
         <input type="hidden" id="language" name="language" value="<%=language%>" />
           <div class="form-group mt-5">
             <label for="username" class="h4"><%= (new Translate()).translate("Username", request.getParameter("language"))%>:</label>
