@@ -132,7 +132,6 @@
 
             <HR>
             <%
-            String username = (String) session.getAttribute("username");
             DiscountDao discountDao = new DiscountDao();
             %>
             <div class="container">
