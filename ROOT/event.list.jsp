@@ -18,7 +18,13 @@
 <%@ page import="com.tfnlab.mysql.TechnicianDao" %>
 <%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
 <%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
 
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -131,7 +137,6 @@
 
         <%
                 EventDao eDao = new EventDao();
-                String username = (String) session.getAttribute("username");
                 String remove = request.getParameter("remove");
 
                 TechnicianDao technicianDao = new TechnicianDao();
