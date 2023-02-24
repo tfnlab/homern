@@ -17,16 +17,16 @@
   String currentUrl = request.getRequestURL().toString();
 %>
 <select name="hrnnavbar" id="hrnnavbar" onchange="goToUrl()" tabindex="1">
-  <option value="#"  ><i class="fa fa-home"></i> more options</option>
-  <option value="user.menu.jsp" <%= currentUrl.indexOf("user.menu.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-home"></i> Home</option>
-  <option value="dashboard.jsp" <%= currentUrl.indexOf("dashboard.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-cog"></i> Dashboard</option>
-  <option value="user.edit.jsp" <%= currentUrl.indexOf("user.edit.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-cog"></i> Marketing</option>
-  <option value="technician.list.jsp" <%= currentUrl.indexOf("technician.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-wrench"></i> Technicians</option>
-  <option value="product.list.jsp" <%= currentUrl.indexOf("product.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-box"></i> Products</option>
-  <option value="customer.list.jsp" <%= currentUrl.indexOf("customer.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-users"></i> Customers</option>
-  <option value="order.list.jsp" <%= currentUrl.indexOf("order.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-shopping-cart"></i> Orders</option>
-  <option value="event.list.jsp" <%= currentUrl.indexOf("event.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-calendar"></i> Events</option>
-  <option value="timesheet.list.jsp" <%= currentUrl.indexOf("timesheet.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-clock"></i> Timesheets</option>
+  <option value="#"  ><i class="fa fa-home"></i> <%= (new Translate()).translate("more options", usernameOBJ.getLanguage())%></option>
+  <option value="user.menu.jsp" <%= currentUrl.indexOf("user.menu.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-home"></i> <%= (new Translate()).translate("Home", usernameOBJ.getLanguage())%></option>
+  <option value="dashboard.jsp" <%= currentUrl.indexOf("dashboard.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-cog"></i> <%= (new Translate()).translate("Dashboard", usernameOBJ.getLanguage())%></option>
+  <option value="user.edit.jsp" <%= currentUrl.indexOf("user.edit.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-cog"></i> <%= (new Translate()).translate("Marketing", usernameOBJ.getLanguage())%></option>
+  <option value="technician.list.jsp" <%= currentUrl.indexOf("technician.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-wrench"></i> <%= (new Translate()).translate("Technicians", usernameOBJ.getLanguage())%></option>
+  <option value="product.list.jsp" <%= currentUrl.indexOf("product.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-box"></i> <%= (new Translate()).translate("Products", usernameOBJ.getLanguage())%></option>
+  <option value="customer.list.jsp" <%= currentUrl.indexOf("customer.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-users"></i> <%= (new Translate()).translate("Customers", usernameOBJ.getLanguage())%></option>
+  <option value="order.list.jsp" <%= currentUrl.indexOf("order.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-shopping-cart"></i> <%= (new Translate()).translate("Orders", usernameOBJ.getLanguage())%></option>
+  <option value="event.list.jsp" <%= currentUrl.indexOf("event.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-calendar"></i> <%= (new Translate()).translate("Events", usernameOBJ.getLanguage())%></option>
+  <option value="timesheet.list.jsp" <%= currentUrl.indexOf("timesheet.list.jsp") != -1 ? "selected" : "" %> ><i class="fa fa-clock"></i> <%= (new Translate()).translate("Timesheets", usernameOBJ.getLanguage())%></option>
 </select>
 
     <%@ include file="include.shortcut.jsp" %>
