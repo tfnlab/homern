@@ -133,17 +133,15 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Technician</li>
+          <li><a href="index.html"><%= (new Translate()).translate("Home", usernameOBJ.getLanguage())%></a></li>
+          <li><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%></li>
         </ol>
-        <h2>Technician</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Technician</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
         <%
@@ -211,79 +209,79 @@
         <form action="technician.edit.jsp" method="post">
           <input type="hidden" name="technicianId" value="<%= technician.getTechnicianId() %>">
           <div class="form-group">
-              <label for="technicianName">Name</label>
+              <label for="technicianName"><%= (new Translate()).translate("Name", usernameOBJ.getLanguage())%></label>
               <input type="text" class="form-control" id="technicianName" name="technicianName" value="<%= technician.getTechnicianName() %>">
           </div>
           <div class="form-group">
-              <label for="technicianEmail">Email</label>
+              <label for="technicianEmail"><%= (new Translate()).translate("Email", usernameOBJ.getLanguage())%></label>
               <input type="email" class="form-control" id="technicianEmail" name="technicianEmail" value="<%= technician.getTechnicianEmail() %>">
           </div>
           <div class="form-group">
-              <label for="technicianPhone">Phone</label>
+              <label for="technicianPhone"><%= (new Translate()).translate("Phone", usernameOBJ.getLanguage())%></label>
               <input type="text" class="form-control" id="technicianPhone" name="technicianPhone" value="<%= technician.getTechnicianPhone() %>">
           </div>
           <div class="form-group">
-              <label for="technicianSkills">Skills</label>
+              <label for="technicianSkills"><%= (new Translate()).translate("Skills", usernameOBJ.getLanguage())%></label>
               <input type="text" class="form-control" id="technicianSkills" name="technicianSkills" value="<%= technician.getTechnicianSkills() %>">
           </div>
           <div class="form-group">
-              <label for="isTechnicianActive">Active</label>
+              <label for="isTechnicianActive"><%= (new Translate()).translate("Active", usernameOBJ.getLanguage())%></label>
               <input type="checkbox" class="form-control" id="isTechnicianActive" name="isTechnicianActive" value="true" <%= technician.isTechnicianActive() ? "checked" : "" %>>
           </div>
           <div class="form-group">
-            <label for="technicianInterviewed">Technician Interviewed</label>
+            <label for="technicianInterviewed"><%= (new Translate()).translate("Technician Interviewed", usernameOBJ.getLanguage())%></label>
             <input type="checkbox" class="form-control" id="technicianInterviewed" name="technicianInterviewed" value="true" <%= technician.isTechnicianInterviewed() ? "checked" : "" %>>
           </div>
           <div class="form-group">
-              <label for="technicianPassedBackgroundCheck">Passed Background Check</label>
+              <label for="technicianPassedBackgroundCheck"><%= (new Translate()).translate("Passed Background Check", usernameOBJ.getLanguage())%></label>
               <input type="checkbox" class="form-control" id="technicianPassedBackgroundCheck" name="technicianPassedBackgroundCheck" value="true" <%= technician.isTechnicianPassedBackgroundCheck() ? "checked" : "" %>>
           </div>
           <div class="form-group">
-              <label for="technicianPayrate">Payrate</label>
+              <label for="technicianPayrate"><%= (new Translate()).translate("Payrate", usernameOBJ.getLanguage())%></label>
               <input type="number" step="0.01" class="form-control" id="technicianPayrate" name="technicianPayrate" value="<%= technician.getTechnicianPayrate() %>">
           </div>
           <div class="form-group">
-              <label for="technicianLocation">Location</label>
+              <label for="technicianLocation"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Location</label>
               <input type="text" class="form-control" id="technicianLocation" name="technicianLocation" value="<%= technician.getTechnicianLocation() %>">
           </div>
           <div class="form-group">
-              <label for="technicianCertifications">Certifications</label>
+              <label for="technicianCertifications"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Certifications</label>
               <input type="text" class="form-control" id="technicianCertifications" name="technicianCertifications" value="<%= technician.getTechnicianCertifications() %>">
           </div>
           <div class="form-group">
-              <label for="technicianAvailability">Availability</label>
+              <label for="technicianAvailability"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Availability</label>
               <input type="text" class="form-control" id="technicianAvailability" name="technicianAvailability" value="<%= technician.getTechnicianAvailability() %>">
           </div>
           <div class="form-group">
-              <label for="wallet_id_private">Wallet Private Key</label>
+              <label for="wallet_id_private"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Wallet Private Key</label>
               <input type="text" class="form-control" id="wallet_id_private" name="wallet_id_private" value="<%= technician.getWallet_id_private() %>">
           </div>
           <div class="form-group">
-              <label for="wallet_id_public">Wallet Public</label> <a href="https://opensea.io/<%= technician.getWallet_id_public() %>" >OpenSea.io</a>
+              <label for="wallet_id_public"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Wallet Public</label> <a href="https://opensea.io/<%= technician.getWallet_id_public() %>" >OpenSea.io</a>
               <input type="text" class="form-control" id="wallet_id_public" name="wallet_id_public" value="<%= technician.getWallet_id_public() %>">
           </div>
           <div class="form-group">
-              <label for="wallet_id_public">Active <a href="https://opensea.io/collection/liquid-crystal-display" >Liquid Crystal Display</a> Token Identification Number <a href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%= technician.getWallet_id_active_nft_id() %>" ><%= technician.getWallet_id_active_nft_id() %></a></label>
+              <label for="wallet_id_public"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Active <a href="https://opensea.io/collection/liquid-crystal-display" >Liquid Crystal Display</a> Token Identification Number <a href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%= technician.getWallet_id_active_nft_id() %>" ><%= technician.getWallet_id_active_nft_id() %></a></label>
               <input type="text" class="form-control" id="wallet_id_active_nft_id" name="wallet_id_active_nft_id" value="<%= technician.getWallet_id_active_nft_id() %>" onkeyup="verifyOwner()">
               <HR>
               <img src="technician.edit.getowner.view.jsp?contract_id=0xcFE9f30CB7C339039782DC5E4a1a24632CaF0D83&token_id=<%= technician.getWallet_id_active_nft_id() %>" class="img-fluid" style="max-width: 50%;"/>
           </div>
           <div class="form-group">
-              <label for="technicianNotes">Notes</label>
+              <label for="technicianNotes"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Notes</label>
               <textarea class="form-control" id="technicianNotes" name="technicianNotes"><%= technician.getTechnicianNotes() %></textarea>
           </div>
           <div class="form-group">
-              Technician Photo
+              <%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Technician Photo
               <HR>
               <a href="technician.edit.image.jsp?technicianId=<%= technician.getTechnicianId() %>" >
               <img src="technician.edit.image.view.jsp?technicianId=<%=technician.getTechnicianId()%>" class="img-fluid" style="max-width: 50%;"/>
               </a>
           </div>
           <div class="form-group">
-              <label for="technicianPassword">Password</label>
+              <label for="technicianPassword"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Password</label>
               <input type="password" class="form-control" id="technicianPassword" name="technicianPassword" value="<%= technician.getTechnicianPassword() %>">
           </div>
- <button type="submit" class="btn btn-primary">Submit</button>
+ <button type="submit" class="btn btn-primary"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Submit</button>
  </form>
 
       </div>
