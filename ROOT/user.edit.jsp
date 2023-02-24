@@ -344,16 +344,16 @@
            <div class="form-group mt-3">
              <label for="business-type"><%= (new Translate()).translate("Select a type of business", usernameOBJ.getLanguage())%>:</label>
              <select class="form-control" id="businesstype" name="businesstype"  tabindex="16">
-               <option value="general-contractor" <% if (businessType.equals("general-contractor")) { %>selected<% } %>>General contractor</option>
-               <option value="carpenter" <% if (businessType.equals("carpenter")) { %>selected<% } %>>Carpenter</option>
-               <option value="plumber" <% if (businessType.equals("plumber")) { %>selected<% } %>>Plumber</option>
-               <option value="electrician" <% if (businessType.equals("electrician")) { %>selected<% } %>>Electrician</option>
-               <option value="hers-rating-company" <% if (businessType.equals("hers-rating-company")) { %>selected<% } %>>HERS rating company</option>
-               <option value="hvac-technician" <% if (businessType.equals("hvac-technician")) { %>selected<% } %>>HVAC technician</option>
-               <option value="landscaper" <% if (businessType.equals("landscaper")) { %>selected<% } %>>Landscaper</option>
-               <option value="roofing-contractor" <% if (businessType.equals("roofing-contractor")) { %>selected<% } %>>Roofing contractor</option>
-               <option value="painter" <% if (businessType.equals("painter")) { %>selected<% } %>>Painter</option>
-               <option value="flooring-contractor" <% if (businessType.equals("flooring-contractor")) { %>selected<% } %>>Flooring contractor</option>
+               <option value="general-contractor" <% if (businessType.equals("general-contractor")) { %>selected<% } %>><%= (new Translate()).translate("General contractor", usernameOBJ.getLanguage())%></option>
+               <option value="carpenter" <% if (businessType.equals("carpenter")) { %>selected<% } %>><%= (new Translate()).translate("Carpenter", usernameOBJ.getLanguage())%></option>
+               <option value="plumber" <% if (businessType.equals("plumber")) { %>selected<% } %>><%= (new Translate()).translate("Plumber", usernameOBJ.getLanguage())%></option>
+               <option value="electrician" <% if (businessType.equals("electrician")) { %>selected<% } %>><%= (new Translate()).translate("Electrician", usernameOBJ.getLanguage())%></option>
+               <option value="hers-rating-company" <% if (businessType.equals("hers-rating-company")) { %>selected<% } %>><%= (new Translate()).translate("HERS rating company", usernameOBJ.getLanguage())%></option>
+               <option value="hvac-technician" <% if (businessType.equals("hvac-technician")) { %>selected<% } %>><%= (new Translate()).translate("HVAC technician", usernameOBJ.getLanguage())%></option>
+               <option value="landscaper" <% if (businessType.equals("landscaper")) { %>selected<% } %>><%= (new Translate()).translate("Landscaper", usernameOBJ.getLanguage())%></option>
+               <option value="roofing-contractor" <% if (businessType.equals("roofing-contractor")) { %>selected<% } %>><%= (new Translate()).translate("Roofing contractor", usernameOBJ.getLanguage())%></option>
+               <option value="painter" <% if (businessType.equals("painter")) { %>selected<% } %>><%= (new Translate()).translate("Painter", usernameOBJ.getLanguage())%></option>
+               <option value="flooring-contractor" <% if (businessType.equals("flooring-contractor")) { %>selected<% } %>><%= (new Translate()).translate("Flooring contractor", usernameOBJ.getLanguage())%></option>
              </select>
            </div>
            <div class="form-group mt-3">
