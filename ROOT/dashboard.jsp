@@ -15,6 +15,7 @@
 <%@ page import="com.tfnlab.mysql.Product" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
 <%@ page import="com.tfnlab.mysql.ProductDashBoard" %>
+<%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.jsp" %>
 <%
           User usernameOBJ = (User)session.getAttribute("usernameOBJ");
