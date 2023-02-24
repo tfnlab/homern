@@ -265,23 +265,23 @@
               <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>" tabindex="5" >
             </div>
            <div class="form-group  mt-3">
-              <label for="firstName">First Name <a href="user.edit.qr.jsp?qrtype=name"><i class="fas fa-qrcode"></i></a></label>
+              <label for="firstName"><%= (new Translate()).translate("First Name", usernameOBJ.getLanguage())%> <a href="user.edit.qr.jsp?qrtype=name"><i class="fas fa-qrcode"></i></a></label>
               <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.getFirstName() %>"  tabindex="6">
            </div>
            <div class="form-group mt-3">
-              <label for="middleInitial">Middle Initial</label>
+              <label for="middleInitial"><%= (new Translate()).translate("Middle Initial", usernameOBJ.getLanguage())%></label>
               <input type="text" class="form-control" id="middleInitial" name="middleInitial" value="<%= user.getMiddleInitial() %>"  tabindex="7">
            </div>
            <div class="form-group mt-3">
-              <label for="lastName">Last Name</label>
+              <label for="lastName"><%= (new Translate()).translate("Last Name", usernameOBJ.getLanguage())%></label>
               <input type="text" class="form-control" id="lastName" name="lastName" value="<%= user.getLastName() %>"  tabindex="8">
            </div>
            <div class="form-group mt-3">
-              <label for="email">Email</label>
+              <label for="email"><%= (new Translate()).translate("Email", usernameOBJ.getLanguage())%></label>
               <input type="email" class="form-control" id="email" name="email" value="<%= user.getEmail() %>"  tabindex="9">
            </div>
            <div class="form-group mt-3">
-              <label for="phone">Phone</label>
+              <label for="phone"><%= (new Translate()).translate("Phone", usernameOBJ.getLanguage())%></label>
               <input type="text" class="form-control" id="phone" name="phone" value="<%= user.getPhone() %>"  tabindex="10">
            </div>
            <div class="form-group mt-3">
@@ -289,7 +289,7 @@
               <input type="text" class="form-control" id="ogId" name="ogId" value="<%= user.getOgId() %>"  tabindex="11">
            </div>
            <div class="form-group mt-3">
-              <label for="address">Address</label>
+              <label for="address"><%= (new Translate()).translate("Address", usernameOBJ.getLanguage())%></label>
               <input type="text" class="form-control" id="address" name="address" value="<%= user.getAddress() %>" onkeypress="callAC(this)"  tabindex="12">
            </div>
            <input type="hidden" id="addressaclat" name="addressaclat" value="<%= user.getAddresslat() %>">
@@ -319,7 +319,7 @@
 
            <%}%>
            <div class="form-group mt-3">
-              <label for="city">Address (Suite, Room or Apt) </label>
+              <label for="city"><%= (new Translate()).translate("Address", usernameOBJ.getLanguage())%> (<%= (new Translate()).translate("Suite, Room or Apt", usernameOBJ.getLanguage())%>) </label>
               <input type="text" class="form-control" id="address2" name="address2" value="<%= user.getAddress2() %>" tabindex="13">
            </div>
            <div class="form-group mt-3">
@@ -356,7 +356,7 @@
              </select>
            </div>
            <div class="form-group mt-3">
-           <label for="invoice_terms">Invoice Terms</label><br>
+           <label for="invoice_terms"><%= (new Translate()).translate("Invoice Terms", usernameOBJ.getLanguage())%></label><br>
            <textarea class="form-control" id="invoice_terms" name="invoice_terms" rows="5" tabindex="17"><%= user.getInvoice_terms() %></textarea>
            </div>
 
