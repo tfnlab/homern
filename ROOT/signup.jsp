@@ -184,6 +184,7 @@
                         user = dao.getUserByUsername(username);
                         session.setAttribute("username", username);
                         session.setAttribute("usernameOBJ", user);
+                        User usernameOBJ = user;
                         um  = "Thank you for joining";
                       }
                         %>
@@ -229,19 +230,18 @@
 
                             %>
                               <hr>
-                              Dear new customer,<BR><BR>
-
-                              Welcome to Home Renovation Nation! Whether you're a homeowner looking to renovate your home or a contractor looking to grow your business, our platform has everything you need to get started. Sign up for free to access expert advice, connect with a community of homeowners, use our project planner tool, and receive discounts on products and services. Our system, built with advanced artificial intelligence, offers a wealth of functionality and capabilities to help you succeed in your home renovation journey. Join today and start exploring all that Home Renovation Nation has to offer. If you have any questions or need assistance, don't hesitate to reach out to us.
+                              <%= (new Translate()).translate("Dear new customer", usernameOBJ.getLanguage())%>,<BR><BR>
+                              <%= (new Translate()).translate("Welcome to Home Renovation Nation! Whether you're a homeowner looking to renovate your home or a contractor looking to grow your business, our platform has everything you need to get started. Sign up for free to access expert advice, connect with a community of homeowners, use our project planner tool, and receive discounts on products and services. Our system, built with advanced artificial intelligence, offers a wealth of functionality and capabilities to help you succeed in your home renovation journey. Join today and start exploring all that Home Renovation Nation has to offer. If you have any questions or need assistance, don't hesitate to reach out to us.", usernameOBJ.getLanguage())%>
                               <BR><BR>
-                              To start, let's finish setting up your user account so you can start using 'Home Renovation Nation' right away. Once that's done, you'll have full access to all the tools and resources available on Home Renovation Nation. We hope you find this system useful and helpful in your home renovation journey. If you have any questions or need assistance, don't hesitate to reach out to us.
+                              <%= (new Translate()).translate("To start, let's finish setting up your user account so you can start using 'Home Renovation Nation' right away. Once that's done, you'll have full access to all the tools and resources available on Home Renovation Nation. We hope you find this system useful and helpful in your home renovation journey. If you have any questions or need assistance, don't hesitate to reach out to us.", usernameOBJ.getLanguage())%>
                               <BR><BR>
-                              Sincerely,
+                              <%= (new Translate()).translate("Sincerely", usernameOBJ.getLanguage())%>,
                               <BR><BR>
                               Home Renovation Nation
                               <%if(business_type.equals("home-owner")){%>
-                                <a href="https://homerenovationnation.com/customer/user.edit.jsp">Finish User Profile</a>
+                                <a href="https://homerenovationnation.com/customer/user.edit.jsp"><%= (new Translate()).translate("Finish User Profile", usernameOBJ.getLanguage())%></a>
                               <%}else{%>
-                                <a href="https://homerenovationnation.com/user.edit.jsp">Finish User Profile</a>
+                                <a href="https://homerenovationnation.com/user.edit.jsp"><%= (new Translate()).translate("Finish User Profile", usernameOBJ.getLanguage())%></a>
                               <%}%>
                           <%}%>
                         </p>
