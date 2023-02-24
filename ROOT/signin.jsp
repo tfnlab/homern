@@ -150,7 +150,7 @@
                         pv = dao.loginUser(user);
                       }
                         if(pv){
-                          um  = "Thank you for signing in! You are now able to access the main menu. Simply click 'Next' to proceed.";
+                          um  = "Thank you for signing in! You are now able to access the main menu. Simply click 'Next' to proceed";
                           user = dao.getUserByUsername(username);
                           session.setAttribute("username", username);
                           session.setAttribute("usernameOBJ", user);
@@ -159,7 +159,7 @@
                         }
                         %>
                         <p>
-                          <%= (new Translate()).translate(um, request.getParameter("language"))%>
+                          <%= (new Translate()).translate(um, request.getParameter("language"))%>.
                           <%
                           if(pv){
                           %>
