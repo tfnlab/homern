@@ -108,20 +108,7 @@
 
 <body>
 
-    <%@ include file="include.header.jsp" %>
 
-  <main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <ol>
-            <li><a href="user.menu.jsp">Home</a></li>
-            <li>Service Operations Center</li>
-        </ol>
-      </div>
-    </section><!-- End Breadcrumbs -->
     <%
     UserDao dao = new UserDao();
     String username = (String) session.getAttribute("username");
@@ -232,6 +219,20 @@
     User usernameOBJ = (User) session.getAttribute("usernameOBJ");
     user = dao.getUserByUsername(username);
     %>
+    <%@ include file="include.header.jsp" %>
+
+    <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+            <li><a href="user.menu.jsp">Home</a></li>
+            <li>Service Operations Center</li>
+        </ol>
+      </div>
+    </section><!-- End Breadcrumbs -->
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
