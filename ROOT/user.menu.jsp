@@ -6,7 +6,9 @@
 <%@ include file="auth.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
-
+<%
+User usernameOBJ = (User) session.getAttribute("usernameOBJ");
+%>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -100,9 +102,7 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
           <div class="container">
-            <h4><%
-            User usernameOBJ = (User) session.getAttribute("usernameOBJ");
-            %><%=usernameOBJ.getBusiness_name()%></h4>
+            <h4><%=usernameOBJ.getBusiness_name()%></h4>
               <style>
                 .fa {
                   font-size: 48px;
