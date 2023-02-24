@@ -159,7 +159,7 @@
                         }
                         %>
                         <p>
-                          <%=um%>
+                          <%= (new Translate()).translate(um, request.getParameter("language"))%>
                           <%
                           if(pv){
                           %>
@@ -201,6 +201,14 @@
 
         %>
         <form action="signin.jsp" method="POST" class="mx-5" name="login" id="login">
+        <%
+          String language = request.getParameter("language");
+
+          if (language == null || language.trim().length() < 4) {
+            language = "english";
+          }
+        %>
+        <input type="hidden" id="language" name="language" value="<%=language%>" />
           <div class="form-group mt-5">
             <label for="username" class="h4"><%= (new Translate()).translate("Username", request.getParameter("language"))%>:</label>
             <input type="text" class="form-control" id="username" name="username" required tabindex="1">
