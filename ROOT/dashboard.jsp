@@ -246,9 +246,9 @@
             %>
 
             <HR>
-            Technicians:  <a href="technician.list.jsp"><%=tDao.getTechnicianCountByUsername(username)%></a>
+            <%= (new Translate()).translate("Technicians", usernameOBJ.getLanguage())%>:  <a href="technician.list.jsp"><%=tDao.getTechnicianCountByUsername(username)%></a>
             <HR>
-            Events: <a href="event.list.jsp"><%=eventDao.getEventCountByUsername(username)%></a>
+            <%= (new Translate()).translate("Events", usernameOBJ.getLanguage())%>: <a href="event.list.jsp"><%=eventDao.getEventCountByUsername(username)%></a>
             <HR>
           </div>
       </div>
