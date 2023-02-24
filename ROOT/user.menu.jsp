@@ -90,8 +90,8 @@
     <section class="breadcrumbs">
       <div class="container">
         <ol>
-          <li><a href="user.menu.jsp">Home</a></li>
-          <li>Service Operations Center</li>
+          <li><a href="user.menu.jsp"><%= (new Translate()).translate("Home", usernameOBJ.getLanguage())%></a></li>
+          <li><%= (new Translate()).translate("Service Operations Center", usernameOBJ.getLanguage())%></li>
         </ol>
       </div>
     </section><!-- End Breadcrumbs -->
