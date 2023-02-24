@@ -91,17 +91,17 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Sign-In</li>
+          <li><a href="index.html"><%= (new Translate()).translate("Home", request.getParameter("language"))%></a></li>
+          <li><%= (new Translate()).translate("Sign-in", request.getParameter("language"))%></li>
         </ol>
-        <h2>Sign-In</h2>
+        <h2><%= (new Translate()).translate("Sign-in", request.getParameter("language"))%></h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Sign-In</h2>
+        <h2><%= (new Translate()).translate("Sign-in", request.getParameter("language"))%></h2>
         <p>
         </p>
         <%
@@ -220,7 +220,7 @@
             </div>
           </div>
           <hr class="my-5">
-          <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="sendTweet()" tabindex="4" >Sign-In</button>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="sendTweet()" tabindex="4" ><%= (new Translate()).translate("Sign-in", request.getParameter("language"))%></button>
 
         </form>
         <script>
