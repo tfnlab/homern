@@ -324,15 +324,15 @@
               <input type="text" class="form-control" id="address2" name="address2" value="<%= user.getAddress2() %>" tabindex="13">
            </div>
            <div class="form-group mt-3">
-              <label for="city">City</label>
+              <label for="city"><%= (new Translate()).translate("City", usernameOBJ.getLanguage())%></label>
               <input type="text" class="form-control" id="city" name="city" value="<%= user.getCity() %>" tabindex="13">
            </div>
            <div class="form-group mt-3">
-              <label for="state">State</label>
+              <label for="state"><%= (new Translate()).translate("State", usernameOBJ.getLanguage())%></label>
               <input type="text" class="form-control" id="state" name="state" value="<%= user.getState() %>" tabindex="14">
            </div>
            <div class="form-group mt-3">
-              <label for="zipcode">Zipcode</label>
+              <label for="zipcode"><%= (new Translate()).translate("Zipcode", usernameOBJ.getLanguage())%></label>
               <input type="text" class="form-control" id="zipcode" name="zipcode" value="<%= user.getZipcode() %>" tabindex="15">
            </div>
            <%
@@ -342,7 +342,7 @@
            }
            %>
            <div class="form-group mt-3">
-             <label for="business-type">Select a type of business:</label>
+             <label for="business-type"><%= (new Translate()).translate("Select a type of business", usernameOBJ.getLanguage())%>:</label>
              <select class="form-control" id="businesstype" name="businesstype"  tabindex="16">
                <option value="general-contractor" <% if (businessType.equals("general-contractor")) { %>selected<% } %>>General contractor</option>
                <option value="carpenter" <% if (businessType.equals("carpenter")) { %>selected<% } %>>Carpenter</option>
