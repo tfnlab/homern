@@ -165,6 +165,7 @@
          String stripe_key_pub = request.getParameter("stripe_key_pub");
          String sendgrid_key = request.getParameter("sendgrid_key");
          String sendgrid_email = request.getParameter("sendgrid_email");
+         String language = request.getParameter("language");
 
           BigDecimal stripe_fee = new BigDecimal("0");
           if (request.getParameter("stripe_fee") != null && !request.getParameter("stripe_fee").isEmpty()) {
@@ -215,6 +216,7 @@
          user.setStripe_fee(stripe_fee);
          user.setSendgrid_key(sendgrid_key);
          user.setSendgrid_email(sendgrid_email);
+         user.setLanguage(language);
 
 
          user.setWallet_id_private(request.getParameter("wallet_id_private"));
