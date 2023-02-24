@@ -130,7 +130,7 @@
         <%@ include file="user.menu.nav.jsp" %>
 
           <div class="container mt-5">
-            <h4><%=usernameOBJ.getBusiness_name()%> Dashboard</h4>
+            <h4><%=usernameOBJ.getBusiness_name()%> <%= (new Translate()).translate("Dashboard", usernameOBJ.getLanguage())%></h4>
             <HR>
               <%=usernameOBJ.getTs()%>
               <%
@@ -146,9 +146,9 @@
               // Divide the difference by the number of milliseconds in a day to get the number of days
               long diffDays = diff / (24 * 60 * 60 * 1000);
 
-              %> Member for <a href="user.edit.pay.jsp" ><%=diffDays%></a> Days
+              %> <%= (new Translate()).translate("Member for", usernameOBJ.getLanguage())%> <a href="user.edit.pay.jsp" ><%=diffDays%></a> <%= (new Translate()).translate("Days", usernameOBJ.getLanguage())%>
             <HR>
-            Orders: <%=oDao.getCustomerOrderCount(username)%>
+            <%= (new Translate()).translate("Orders", usernameOBJ.getLanguage())%>: <%=oDao.getCustomerOrderCount(username)%>
             <HR>
             <table class="table" border=1>
 
