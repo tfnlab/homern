@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
+<%@ page import="com.tfnlab.util.Translate" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -201,20 +202,20 @@
         %>
         <form action="signin.jsp" method="POST" class="mx-5" name="login" id="login">
           <div class="form-group mt-5">
-            <label for="username" class="h4">Username:</label>
+            <label for="username" class="h4"><%= (new Translate()).translate("Username", request.getParameter("language"))%>:</label>
             <input type="text" class="form-control" id="username" name="username" required tabindex="1">
-            <small id="usernameHelp" class="form-text text-muted mt-2">Enter your username to sign in.</small>
+            <small id="usernameHelp" class="form-text text-muted mt-2"><%= (new Translate()).translate("Enter your username to sign in", request.getParameter("language"))%>.</small>
           </div>
           <div class="form-group mt-5">
-            <label for="password" class="h4">Password:</label>
+            <label for="password" class="h4"><%= (new Translate()).translate("Password", request.getParameter("language"))%>:</label>
             <input type="password" class="form-control" id="password" name="password" required  tabindex="2">
-            <small id="passwordHelp" class="form-text text-muted mt-2">Enter your password to sign in. <a href="signin.password.forgot.jsp" >forgot password</a></small>
+            <small id="passwordHelp" class="form-text text-muted mt-2"><%= (new Translate()).translate("Enter your password to sign in", request.getParameter("language"))%>. <a href="signin.password.forgot.jsp" ><%= (new Translate()).translate("forgot password", request.getParameter("language"))%></a></small>
           </div>
           <div class="form-group mt-5">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="remember-me"  name="remember-me" tabindex="3">
               <label class="form-check-label" for="remember-me">
-                Remember me
+                <%= (new Translate()).translate("Remember me", request.getParameter("language"))%>
               </label>
             </div>
           </div>
