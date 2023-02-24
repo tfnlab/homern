@@ -153,9 +153,9 @@
             <table class="table" border=1>
 
                 <tr>
-                  <td >Status</th>
-                  <td align="right" sytle="text-align: right;">Count</td>
-                  <td align="right" sytle="text-align: right;">Total</td>
+                  <td ><%= (new Translate()).translate("Status", usernameOBJ.getLanguage())%></th>
+                  <td align="right" sytle="text-align: right;"><%= (new Translate()).translate("Count", usernameOBJ.getLanguage())%></td>
+                  <td align="right" sytle="text-align: right;"><%= (new Translate()).translate("Total", usernameOBJ.getLanguage())%></td>
                 </tr>
                 <%
 //                  String[] statuses = {};
