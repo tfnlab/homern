@@ -228,15 +228,15 @@
       <div class="container">
 
         <ol>
-            <li><a href="user.menu.jsp">Home</a></li>
-            <li>Service Operations Center</li>
+            <li><a href="user.menu.jsp"><%= (new Translate()).translate("Home", usernameOBJ.getLanguage())%></a></li>
+            <li><%= (new Translate()).translate("Service Operations Center", usernameOBJ.getLanguage())%></li>
         </ol>
       </div>
     </section><!-- End Breadcrumbs -->
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Marketing</h2>
+        <h2><%= (new Translate()).translate("Marketing", usernameOBJ.getLanguage())%></h2>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
 
