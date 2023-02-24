@@ -17,10 +17,7 @@
 <%@ page import="com.tfnlab.mysql.ProductDashBoard" %>
 <%@ include file="auth.jsp" %>
 <%
-          User user = (User)session.getAttribute("usernameOBJ");
-          if(user == null){
-                response.sendRedirect("index.html");
-          }
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
           String username = (String) session.getAttribute("username");
           OrderDao oDao = new OrderDao();
           EntityDao eDao = new EntityDao();
@@ -132,15 +129,15 @@
         <%@ include file="user.menu.nav.jsp" %>
 
           <div class="container mt-5">
-            <h4><%=user.getBusiness_name()%> Dashboard</h4>
+            <h4><%=usernameOBJ.getBusiness_name()%> Dashboard</h4>
             <HR>
-              <%=user.getTs()%>
+              <%=usernameOBJ.getTs()%>
               <%
               Calendar today = Calendar.getInstance();
 
               // Get the calendar object for the given java.sql.Timestamp object
               Calendar inputTimestamp = Calendar.getInstance();
-              inputTimestamp.setTimeInMillis(user.getTs().getTime());
+              inputTimestamp.setTimeInMillis(usernameOBJ.getTs().getTime());
 
               // Subtract the input timestamp from the current date
               long diff = today.getTimeInMillis() - inputTimestamp.getTimeInMillis();
