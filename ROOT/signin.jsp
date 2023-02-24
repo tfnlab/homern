@@ -95,7 +95,6 @@
           <li><a href="index.html"><%= (new Translate()).translate("Home", request.getParameter("language"))%></a></li>
           <li><%= (new Translate()).translate("Sign-in", request.getParameter("language"))%></li>
         </ol>
-        <h2><%= (new Translate()).translate("Sign-in", request.getParameter("language"))%></h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
