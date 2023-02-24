@@ -19,10 +19,14 @@
 <%@ page import="com.tfnlab.mysql.ProductDashBoard" %>
 <%@ page import="java.util.UUID" %>
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
+<%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.jsp" %>
 <%
-          User user = (User)session.getAttribute("usernameOBJ");
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
           String username = (String) session.getAttribute("username");
+
+%>
+<%
           String uuid = java.util.UUID.randomUUID().toString();
 
 %>
