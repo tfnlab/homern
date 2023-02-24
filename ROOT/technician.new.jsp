@@ -112,10 +112,7 @@
 </head>
 
 <body>
-
-
-      <%@ include file="include.header.jsp" %>
-
+  <%@ include file="include.header.jsp" %>
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -125,15 +122,12 @@
         <ol>
           <li><a href="index.html">Home</a></li>
           <li>Technician</li>
-        </ol>
-        <h2>Technician</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Technician</h2>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
         <%
