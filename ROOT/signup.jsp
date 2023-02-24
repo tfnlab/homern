@@ -270,6 +270,14 @@
                 %>
 
                 <form action="signup.jsp" method="POST">
+                  <%
+                    String language = request.getParameter("language");
+
+                    if (language != null && language.trim().length() > 0) {
+                      language = "english"
+                    }
+                  %>
+                  <input type="hidden" id="language" name="language" value="<%=language%>" />
                   <div class="form-group  mt-3">
                     <label for="business-type"><%= (new Translate()).translate("Select Your Role",  request.getParameter("language"))%>:</label>
                     <select class="form-control  mt-1" id="business_type" name="business_type">
