@@ -281,7 +281,7 @@
               <label for="technicianPassword"><%= (new Translate()).translate("Password", usernameOBJ.getLanguage())%></label>
               <input type="password" class="form-control" id="technicianPassword" name="technicianPassword" value="<%= technician.getTechnicianPassword() %>">
           </div>
- <button type="submit" class="btn btn-primary"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Submit</button>
+ <button type="submit" class="btn btn-primary"><%= (new Translate()).translate("Submit", usernameOBJ.getLanguage())%></button>
  </form>
 
       </div>
