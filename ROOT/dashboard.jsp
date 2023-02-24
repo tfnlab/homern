@@ -202,9 +202,9 @@
                                 <table class="table">
 
                 <tr>
-                  <td scope="col">Product</td>
-                  <td align="right" scope="col">Quantity</td>
-                  <td align="right" scope="col">Total</td>
+                  <td scope="col"><%= (new Translate()).translate("Product", usernameOBJ.getLanguage())%></td>
+                  <td align="right" scope="col"><%= (new Translate()).translate("Quantity", usernameOBJ.getLanguage())%></td>
+                  <td align="right" scope="col"><%= (new Translate()).translate("Total", usernameOBJ.getLanguage())%></td>
                 </tr>
      <% for (Map.Entry<Product, ProductDashBoard> entry : groupedProducts.entrySet()) { %>
     <tr>
@@ -226,9 +226,9 @@
                                 <table class="table">
 
                 <tr>
-                  <td scope="col">Excluded Product</td>
-                  <td align="right" scope="col">Quantity</td>
-                  <td align="right" scope="col">Total</td>
+                  <td scope="col"><%= (new Translate()).translate("Excluded Product", usernameOBJ.getLanguage())%></td>
+                  <td align="right" scope="col"><%= (new Translate()).translate("Quantity", usernameOBJ.getLanguage())%></td>
+                  <td align="right" scope="col"><%= (new Translate()).translate("Total", usernameOBJ.getLanguage())%></td>
                 </tr>
 
      <% for (Map.Entry<Product, ProductDashBoard> entry : groupedProducts.entrySet()) { %>
