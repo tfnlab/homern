@@ -167,7 +167,7 @@
                         }
                         %>
                         <p>
-                          <%= (new Translate()).translate(um, request.getParameter("language"))%>.
+                          <%= (new Translate()).translate(um, language)%>.
                           <%
                           if(pv){
                           %>
