@@ -4,6 +4,7 @@
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="java.net.URLDecoder" %>
 <%@ page import="java.math.BigDecimal" %>
+<%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
