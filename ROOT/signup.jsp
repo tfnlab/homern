@@ -275,7 +275,7 @@
                   <%
                     String language = request.getParameter("language");
 
-                    if (language != null && language.trim().length() > 0) {
+                    if (language == null || language.trim().length() < 4) {
                       language = "english";
                     }
                   %>
