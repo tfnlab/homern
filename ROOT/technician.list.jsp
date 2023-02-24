@@ -10,6 +10,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.tfnlab.mysql.Technician" %>
 <%@ page import="com.tfnlab.mysql.TechnicianDao" %>
+<%@ page import="com.tfnlab.util.Translate" %>
 <!DOCTYPE html>
 <html lang="en">
 <%
