@@ -256,11 +256,11 @@
           <HR>
         <form method="post" action="user.edit.jsp">
           <div class="form-group mt-3">
-            <label for="business_name" class="mr-2">Username:</label>
+            <label for="business_name" class="mr-2"><%= (new Translate()).translate("Username", usernameOBJ.getLanguage())%>:</label>
             <input type="text" class="form-control"  value="<%= user.getUsername() %>" disabled >
           </div>
             <div class="form-group mt-3">
-              <label for="business_name" class="mr-2">Business Name:</label>
+              <label for="business_name" class="mr-2"><%= (new Translate()).translate("Business Name", usernameOBJ.getLanguage())%>:</label>
               <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>" tabindex="5" >
             </div>
            <div class="form-group  mt-3">
