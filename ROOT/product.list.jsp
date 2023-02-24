@@ -10,9 +10,15 @@
 <%@ page import="com.tfnlab.mysql.Product" %>
 <%@ page import="com.tfnlab.mysql.ProductDao" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.tfnlab.util.Translate" %>
 <!DOCTYPE html>
 <html lang="en">
 
+  <%
+            User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+            String username = (String) session.getAttribute("username");
+
+  %>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -115,7 +121,6 @@
         <HR>
         <%
                 ProductDao productDao = new ProductDao();
-                String username = (String) session.getAttribute("username");
 
                 List<Product> products = productDao.searchByCustomerId(username);
 
