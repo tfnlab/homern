@@ -97,10 +97,10 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Sign-up</li>
+          <li><a href="index.html"><%= (new Translate()).translate("Home", request.getParameter("language"))%></a></li>
+          <li><%= (new Translate()).translate("Sign-up", request.getParameter("language"))%></li>
         </ol>
-        <h2>Sign-up</h2>
+        <h2><%= (new Translate()).translate("Sign-up", request.getParameter("language"))%></h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
