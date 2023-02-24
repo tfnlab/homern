@@ -274,7 +274,7 @@
                     String language = request.getParameter("language");
 
                     if (language != null && language.trim().length() > 0) {
-                      language = "english"
+                      language = "english";
                     }
                   %>
                   <input type="hidden" id="language" name="language" value="<%=language%>" />
