@@ -271,14 +271,14 @@
               <textarea class="form-control" id="technicianNotes" name="technicianNotes"><%= technician.getTechnicianNotes() %></textarea>
           </div>
           <div class="form-group">
-              <%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Technician Photo
+              <%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%> Photo
               <HR>
               <a href="technician.edit.image.jsp?technicianId=<%= technician.getTechnicianId() %>" >
               <img src="technician.edit.image.view.jsp?technicianId=<%=technician.getTechnicianId()%>" class="img-fluid" style="max-width: 50%;"/>
               </a>
           </div>
           <div class="form-group">
-              <label for="technicianPassword"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Password</label>
+              <label for="technicianPassword"><%= (new Translate()).translate("Password", usernameOBJ.getLanguage())%></label>
               <input type="password" class="form-control" id="technicianPassword" name="technicianPassword" value="<%= technician.getTechnicianPassword() %>">
           </div>
  <button type="submit" class="btn btn-primary"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Submit</button>
