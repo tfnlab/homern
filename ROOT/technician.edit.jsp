@@ -271,7 +271,7 @@
               <textarea class="form-control" id="technicianNotes" name="technicianNotes"><%= technician.getTechnicianNotes() %></textarea>
           </div>
           <div class="form-group">
-              <%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%> Photo
+              <%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%> <%= (new Translate()).translate("Photo", usernameOBJ.getLanguage())%>
               <HR>
               <a href="technician.edit.image.jsp?technicianId=<%= technician.getTechnicianId() %>" >
               <img src="technician.edit.image.view.jsp?technicianId=<%=technician.getTechnicianId()%>" class="img-fluid" style="max-width: 50%;"/>
