@@ -4,6 +4,13 @@
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="java.net.URLDecoder" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -114,9 +121,7 @@
     </section><!-- End Breadcrumbs -->
     <%
     UserDao dao = new UserDao();
-    String username = (String) session.getAttribute("username");
     User user = new User();
-    User usernameOBJ = (User) session.getAttribute("usernameOBJ");
     List<User> users = dao.getUsersReferredBy(username);
 
     %>
