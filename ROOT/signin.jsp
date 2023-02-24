@@ -167,9 +167,9 @@
                             <BR>
                             <HR>
                             <%if(user.getBusiness_type().equals("home-owner")){%>
-                              <a href="https://homerenovationnation.com/customer/user.menu.jsp">NEXT</a>
+                              <a href="https://homerenovationnation.com/customer/user.menu.jsp"><%= (new Translate()).translate("Next", request.getParameter("language"))%></a>
                             <%}else{%>
-                              <a href="https://homerenovationnation.com/user.menu.jsp">NEXT</a>
+                              <a href="https://homerenovationnation.com/user.menu.jsp"><%= (new Translate()).translate("Next", request.getParameter("language"))%></a>
                             <%}%>
                             <HR>
                           <%
