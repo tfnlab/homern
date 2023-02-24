@@ -190,7 +190,7 @@
                       }
                         %>
                         <p>
-                          <%=um%>
+                          <%= (new Translate()).translate(um, usernameOBJ.getLanguage())%>
                           <%if(pv){
 
 
