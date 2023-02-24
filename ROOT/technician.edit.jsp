@@ -241,33 +241,33 @@
               <input type="number" step="0.01" class="form-control" id="technicianPayrate" name="technicianPayrate" value="<%= technician.getTechnicianPayrate() %>">
           </div>
           <div class="form-group">
-              <label for="technicianLocation"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Location</label>
+              <label for="technicianLocation"><%= (new Translate()).translate("Location", usernameOBJ.getLanguage())%></label>
               <input type="text" class="form-control" id="technicianLocation" name="technicianLocation" value="<%= technician.getTechnicianLocation() %>">
           </div>
           <div class="form-group">
-              <label for="technicianCertifications"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Certifications</label>
+              <label for="technicianCertifications"><%= (new Translate()).translate("Certifications", usernameOBJ.getLanguage())%></label>
               <input type="text" class="form-control" id="technicianCertifications" name="technicianCertifications" value="<%= technician.getTechnicianCertifications() %>">
           </div>
           <div class="form-group">
-              <label for="technicianAvailability"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Availability</label>
+              <label for="technicianAvailability"><%= (new Translate()).translate("Availability", usernameOBJ.getLanguage())%></label>
               <input type="text" class="form-control" id="technicianAvailability" name="technicianAvailability" value="<%= technician.getTechnicianAvailability() %>">
           </div>
           <div class="form-group">
-              <label for="wallet_id_private"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Wallet Private Key</label>
+              <label for="wallet_id_private"><%= (new Translate()).translate("Wallet Private Key", usernameOBJ.getLanguage())%></label>
               <input type="text" class="form-control" id="wallet_id_private" name="wallet_id_private" value="<%= technician.getWallet_id_private() %>">
           </div>
           <div class="form-group">
-              <label for="wallet_id_public"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Wallet Public</label> <a href="https://opensea.io/<%= technician.getWallet_id_public() %>" >OpenSea.io</a>
+              <label for="wallet_id_public"><%= (new Translate()).translate("Wallet Public", usernameOBJ.getLanguage())%></label> <a href="https://opensea.io/<%= technician.getWallet_id_public() %>" >OpenSea.io</a>
               <input type="text" class="form-control" id="wallet_id_public" name="wallet_id_public" value="<%= technician.getWallet_id_public() %>">
           </div>
           <div class="form-group">
-              <label for="wallet_id_public"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Active <a href="https://opensea.io/collection/liquid-crystal-display" >Liquid Crystal Display</a> Token Identification Number <a href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%= technician.getWallet_id_active_nft_id() %>" ><%= technician.getWallet_id_active_nft_id() %></a></label>
+              <label for="wallet_id_public"><%= (new Translate()).translate("Active", usernameOBJ.getLanguage())%> <a href="https://opensea.io/collection/liquid-crystal-display" >Liquid Crystal Display</a> Token Identification Number <a href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%= technician.getWallet_id_active_nft_id() %>" ><%= technician.getWallet_id_active_nft_id() %></a></label>
               <input type="text" class="form-control" id="wallet_id_active_nft_id" name="wallet_id_active_nft_id" value="<%= technician.getWallet_id_active_nft_id() %>" onkeyup="verifyOwner()">
               <HR>
               <img src="technician.edit.getowner.view.jsp?contract_id=0xcFE9f30CB7C339039782DC5E4a1a24632CaF0D83&token_id=<%= technician.getWallet_id_active_nft_id() %>" class="img-fluid" style="max-width: 50%;"/>
           </div>
           <div class="form-group">
-              <label for="technicianNotes"><%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%>Notes</label>
+              <label for="technicianNotes"><%= (new Translate()).translate("Notes", usernameOBJ.getLanguage())%></label>
               <textarea class="form-control" id="technicianNotes" name="technicianNotes"><%= technician.getTechnicianNotes() %></textarea>
           </div>
           <div class="form-group">
