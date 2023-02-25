@@ -153,6 +153,7 @@
                   user.setLanguage(language_user);
                   user.setStripe_fee(stripe_fee);
                   user.setWallet_id_active_nft_id("1");
+                  user.setBusiness_name("");
                   UserDao dao = new UserDao();
                   try {
                       boolean pv = true;
