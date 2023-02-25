@@ -434,10 +434,6 @@
            <label for="license_no" class="mr-2">License No:</label>
            <input type="text" class="form-control" id="license_no" name="license_no" value="<%= user.getLicense_no() %>" tabindex="20" >
            </div>
-           <div class="form-group mt-3">
-           <label for="language" class="mr-2">Language:</label>
-           <input type="text" class="form-control" id="language" name="language" value="<%= user.getLanguage() %>" tabindex="20" >
-           </div>
            <%
            String language = user.getLanguage();
            if (language == null || language.isEmpty()) {
