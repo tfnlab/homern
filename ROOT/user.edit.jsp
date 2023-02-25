@@ -438,6 +438,20 @@
            <label for="language" class="mr-2">Language:</label>
            <input type="text" class="form-control" id="language" name="language" value="<%= user.getLanguage() %>" tabindex="20" >
            </div>
+           <%
+           String language = user.getLanguage();
+           if (language == null || language.isEmpty()) {
+             language = "english";
+           }
+           %>
+           <div class="form-group mt-3">
+             <label for="business-type">Language:</label>
+             <select class="form-control" id="language" name="language"  tabindex="16">
+               <option value="english" <% if (language.equals("english")) { %>selected<% } %>><%= (new Translate()).translate("English", usernameOBJ.getLanguage())%></option>
+               <option value="spanish" <% if (language.equals("spanish")) { %>selected<% } %>><%= (new Translate()).translate("Spanish", usernameOBJ.getLanguage())%></option>
+             </select>
+           </div>
+
            <div class="form-group mt-3">
            <label for="twilio_voice_forward_phone" class="mr-2">Twilio Voice Forward Phone:</label>
            <input type="text" class="form-control" id="twilio_voice_forward_phone" name="twilio_voice_forward_phone" value="<%= user.getTwilio_voice_forward_phone() %>" tabindex="21" >
