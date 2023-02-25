@@ -8,6 +8,7 @@
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
 <%@ page import="java.util.UUID" %>
 <%@ page import="java.math.BigDecimal" %>
+<%@ page import="java.io.*" %>
 <%@ page import="com.tfnlab.util.Translate" %>
 
 <!DOCTYPE html>
@@ -187,6 +188,8 @@
                         session.setAttribute("usernameOBJ", user);
                         usernameOBJ = user;
                         um  = "Thank you for joining";
+
+
                       }
                         %>
                         <p>
@@ -225,6 +228,33 @@
                                   String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
                                   String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
                                   rm = stdout + stderr + " TEST ";
+
+
+                                  String filename = username + ".png";
+                                  String filepath = ac.getPdfloc();
+                                  String destFile = filepath  +  "logo." + filename ;
+                                  String sourceFile = ac.getPdfloc() + "/logo.png";
+
+                                  try {
+                                      File file = new File(sourceFile);
+                                      FileInputStream fis = new FileInputStream(file);
+                                      FileOutputStream fos = new FileOutputStream(destFile);
+
+                                      byte[] buffer = new byte[1024];
+                                      int length;
+
+                                      while ((length = fis.read(buffer)) > 0) {
+                                          fos.write(buffer, 0, length);
+                                      }
+
+                                      fis.close();
+                                      fos.close();
+
+                                      out.println("File copied successfully.");
+                                  } catch (IOException e) {
+                                      out.println("An error occurred while copying the file: " + e.getMessage());
+                                  }
+                              %>
                               }catch(IOException ex){
                                   rm = ex.getMessage();
                               }
