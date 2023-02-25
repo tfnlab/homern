@@ -142,7 +142,7 @@
                 int nump = random.nextInt(900000) + 100000;
                 String is_phone_confirmed_code = String.format("%06d", nump);
 
-
+                BigDecimal stripe_fee = new BigDecimal("2.90");
                 // Validate form data
                 if (firstName != null && firstName.trim().length() > 0) {
                   username = username.toLowerCase();
@@ -151,6 +151,7 @@
                   user.setIs_phone_confirmed_code(is_phone_confirmed_code);
                   user.setIs_email_confirmed_code(is_email_confirmed_code);
                   user.setLanguage(language_user);
+                  user.setStripe_fee(stripe_fee);
                   UserDao dao = new UserDao();
                   try {
                       boolean pv = true;
