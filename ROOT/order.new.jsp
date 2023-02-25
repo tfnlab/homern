@@ -9,11 +9,11 @@
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.UUID" %>
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
 <%
-String usernameCheck = (String) session.getAttribute("username");
-if (usernameCheck == null || usernameCheck.isEmpty()) {
-response.sendRedirect("index.html");
-}
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -144,7 +144,6 @@ response.sendRedirect("index.html");
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
 
-                String username = (String) session.getAttribute("username");
 
 
 
