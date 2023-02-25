@@ -18,8 +18,12 @@
 <%@ page import="com.tfnlab.mysql.EventDao" %>
 <%@ page import="java.util.UUID" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-
-
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,8 +59,6 @@
     EventDao evd = new EventDao();
     TechnicianDao technicianDao = new TechnicianDao();
     int orderId = 0;
-    String username = (String) session.getAttribute("username");
-    User usernameOBJ = (User) session.getAttribute("usernameOBJ");
     if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
       orderId = Integer.parseInt(request.getParameter("orderId"));
     }
