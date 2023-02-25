@@ -18,6 +18,12 @@
 <%@ page import="com.tfnlab.mysql.TechnicianDao" %>
 <%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
 <%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -165,7 +171,6 @@
       <HR>
             <%
 
-                    String username = (String) session.getAttribute("username");
                     TechnicianDao technicianDao = new TechnicianDao();
                     List<Technician> technicians = technicianDao.getTechniciansByUsernameActive(username);
             %>
