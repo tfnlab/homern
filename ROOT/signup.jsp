@@ -233,7 +233,7 @@
                                   String filename = username + ".png";
                                   String filepath = ac.getPdfloc();
                                   String destFile = filepath  +  "logo." + filename ;
-                                  String sourceFile = ac.getPdfloc() + "/logo.png";
+                                  String sourceFile = ac.getPdfloc() + "/tmp.png";
 
                                   try {
                                       FileInputStream fis = new FileInputStream(new File(sourceFile));
