@@ -326,7 +326,7 @@
                 String[] statuses = {"Proposal", "Estimate", "Order Placement", "Invoicing", "Payment", "Delivery", "Fulfillment"};
                 for (String sstatus : statuses) {
               %>
-              <option value="<%= sstatus %>" <%= sstatus.equals(currentStatus) ? "selected" : "" %>><%= sstatus %></option>
+              <option value="<%= sstatus %>" <%= sstatus.equals(currentStatus) ? "selected" : "" %>><%= (new Translate()).translate(sstatus, usernameOBJ.getLanguage())%></option>
               <%
                 }
               %>
