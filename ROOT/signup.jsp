@@ -7,6 +7,7 @@
 <%@ page import="java.io.BufferedWriter" %>
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
 <%@ page import="java.util.UUID" %>
+<%@ page import="java.math.BigDecimal" %>
 <%@ page import="com.tfnlab.util.Translate" %>
 
 <!DOCTYPE html>
