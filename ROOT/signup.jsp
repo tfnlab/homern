@@ -236,8 +236,7 @@
                                   String sourceFile = ac.getPdfloc() + "/logo.png";
 
                                   try {
-                                      File file = new File(sourceFile);
-                                      FileInputStream fis = new FileInputStream(file);
+                                      FileInputStream fis = new FileInputStream(new File(sourceFile));
                                       FileOutputStream fos = new FileOutputStream(destFile);
 
                                       byte[] buffer = new byte[1024];
