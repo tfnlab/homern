@@ -251,7 +251,7 @@
 
                                       out.println("File copied successfully.");
                                   } catch (IOException e) {
-                                      %><%="An error occurred while copying the file: " + e.getMessage())%><%
+                                      %><%="An error occurred while copying the file: " + e.getMessage()%><%
                                   }
                               }catch(IOException ex){
                                   rm = ex.getMessage();
