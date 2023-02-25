@@ -17,8 +17,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Home Renovation Nation - Sign-up</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="Sign up for Home Renovation Nation and connect with a community of home owners and field service professionals dedicated to transforming houses into dream homes. As a member, you can access a wealth of resources, including project ideas, expert advice, and a network of trusted contractors. Whether you're a home owner looking to renovate your kitchen or a field service professional seeking new business opportunities, Home Renovation Nation has everything you need to bring your vision to life." name="description">
+  <meta content="Home Renovation Nation, sign up, home owners, field service professionals, community, renovation ideas, expert advice, trusted contractors, kitchen renovation, business opportunities." name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
