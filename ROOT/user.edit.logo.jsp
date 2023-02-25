@@ -11,6 +11,12 @@
 <%@ page import="javax.servlet.http.Part" %>
 <%@ page import="java.util.List" %>
 <%@ page import="org.apache.commons.fileupload.FileItem" %>
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,12 +76,10 @@
     </section><!-- End Breadcrumbs -->
     <%
     UserDao dao = new UserDao();
-    String username = (String) session.getAttribute("username");
     String firstName = request.getParameter("firstName");
 
 
 
-    User usernameOBJ = (User) session.getAttribute("usernameOBJ");
     User user = dao.getUserByUsername(username);
     %>
     <!-- ======= Blog Section ======= -->
