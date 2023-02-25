@@ -152,6 +152,7 @@
                   user.setIs_email_confirmed_code(is_email_confirmed_code);
                   user.setLanguage(language_user);
                   user.setStripe_fee(stripe_fee);
+                  user.setWallet_id_active_nft_id("1");
                   UserDao dao = new UserDao();
                   try {
                       boolean pv = true;
