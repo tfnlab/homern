@@ -24,10 +24,12 @@
 <%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
 <%@ page import="com.tfnlab.mysql.OrderCustomer" %>
 <%@ page import="com.tfnlab.mysql.OrderCustomerDao" %>
-
-
-
-
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,8 +67,6 @@
     TechnicianDao technicianDao = new TechnicianDao();
     ProductDao pDao = new ProductDao();
     int orderId = 0;
-    String username = (String) session.getAttribute("username");
-    User usernameOBJ = (User) session.getAttribute("usernameOBJ");
     if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
       orderId = Integer.parseInt(request.getParameter("orderId"));
     }
