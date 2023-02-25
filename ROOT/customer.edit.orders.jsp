@@ -13,8 +13,12 @@
 <%@ page import="java.text.ParseException" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.util.List" %>
-
-
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+%>
 <!DOCTYPE html>
 <html lang="en">
 
