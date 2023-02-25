@@ -17,9 +17,12 @@
 <%@ page import="com.tfnlab.mysql.ProductLineItem" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
 <%@ page import="java.util.UUID" %>
+<%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.jsp" %>
-
-
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,8 +55,6 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <%
     int eId = 0;
-    String username = (String) session.getAttribute("username");
-    User usernameOBJ = (User) session.getAttribute("usernameOBJ");
     if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
       eId = Integer.parseInt(request.getParameter("customerId"));
     }
@@ -303,7 +304,7 @@
               <HR>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-            <HR>            
+            <HR>
             <%
 
                 List<Payment> pList = pDao.getPayments(eId, username);
