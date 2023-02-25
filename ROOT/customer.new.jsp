@@ -19,6 +19,12 @@
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
 <%@ page import="java.io.*" %>
 <%@ page import="javax.servlet.http.*" %>
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -164,7 +170,6 @@
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
-                String username = (String) session.getAttribute("username");
                 String first_name = request.getParameter("firstName");
                 int orderId = 0;
                 String mfer_uuid = java.util.UUID.randomUUID().toString();

@@ -11,8 +11,12 @@
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.text.ParseException" %>
-
-
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,8 +49,6 @@
   <link href="assets/css/style.css" rel="stylesheet">
     <%
       int eId = 0;
-      String username = (String) session.getAttribute("username");
-      User usernameOBJ = (User) session.getAttribute("usernameOBJ");
       if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
         eId = Integer.parseInt(request.getParameter("customerId"));
       }
