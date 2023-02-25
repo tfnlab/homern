@@ -51,8 +51,6 @@
   <link href="assets/css/style.css" rel="stylesheet">
     <%
       int eId = 0;
-      String username = (String) session.getAttribute("username");
-      User usernameOBJ = (User) session.getAttribute("usernameOBJ");
       if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
         eId = Integer.parseInt(request.getParameter("customerId"));
       }
