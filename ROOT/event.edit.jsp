@@ -18,6 +18,12 @@
 <%@ page import="com.tfnlab.mysql.EventDao" %>
 <%@ page import="java.io.UnsupportedEncodingException" %>
 <%@ page import="java.net.URLEncoder" %>
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -163,8 +169,6 @@
         <%
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
-                String username = (String) session.getAttribute("username");
-                User usernameOBJ = (User) session.getAttribute("usernameOBJ");
                 String title = request.getParameter("title");
                 int eId = 0;
                 if (request.getParameter("eventid") != null && !request.getParameter("eventid").isEmpty()) {
