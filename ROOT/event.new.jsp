@@ -11,6 +11,12 @@
 <%@ page import="com.tfnlab.mysql.EventDao" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.UUID" %>
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -199,7 +205,6 @@ function nextQ(inputField , end_time, reminder_time) {
                 long currentTimeMillis = System.currentTimeMillis();
                 Timestamp currentTime = new Timestamp(currentTimeMillis);
 
-                String username = (String) session.getAttribute("username");
 
                   // Get the form data from the request
                   String title = request.getParameter("title");
