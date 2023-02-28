@@ -342,6 +342,10 @@
              businessType = "general-contractor";
            }
            %>
+           String[] values = {"home_owner","general-contractor", "carpenter", "plumber", "electrician", "hers-rating-company", "hvac-technician", "landscaper", "roofing-contractor", "painter", "flooring-contractor", ""};
+
+           String[] names = {"Home Owner","General contractor","Carpenter", "Plumber", "Electrician", "HERS rating company", "HVAC technician", "Landscaper", "Roofing contractor", "Painter", "Flooring contractor", "Solar Panel Installers"};
+
            <div class="form-group mt-3">
              <label for="business-type"><%= (new Translate()).translate("Select a type of business", usernameOBJ.getLanguage())%>:</label>
              <select class="form-control" id="businesstype" name="businesstype"  tabindex="16">
@@ -355,6 +359,7 @@
                <option value="roofing-contractor" <% if (businessType.equals("roofing-contractor")) { %>selected<% } %>><%= (new Translate()).translate("Roofing contractor", usernameOBJ.getLanguage())%></option>
                <option value="painter" <% if (businessType.equals("painter")) { %>selected<% } %>><%= (new Translate()).translate("Painter", usernameOBJ.getLanguage())%></option>
                <option value="flooring-contractor" <% if (businessType.equals("flooring-contractor")) { %>selected<% } %>><%= (new Translate()).translate("Flooring contractor", usernameOBJ.getLanguage())%></option>
+               <option value="solar-panel-installers" <% if (businessType.equals("solar-panel-installers")) { %>selected<% } %>><%= (new Translate()).translate("Solar Panel Installers", usernameOBJ.getLanguage())%></option>
              </select>
            </div>
            <div class="form-group mt-3">

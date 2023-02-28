@@ -296,9 +296,9 @@
 
                 </p>
                 <%
-                String[] values = {"home_owner","general-contractor", "carpenter", "plumber", "electrician", "hers-rating-company", "hvac-technician", "landscaper", "roofing-contractor", "painter", "flooring-contractor"};
+                String[] values = {"home_owner","general-contractor", "carpenter", "plumber", "electrician", "hers-rating-company", "hvac-technician", "landscaper", "roofing-contractor", "painter", "flooring-contractor", "solar-panel-installers"};
 
-                String[] names = {"Home Owner","General contractor","Carpenter", "Plumber", "Electrician", "HERS rating company", "HVAC technician", "Landscaper", "Roofing contractor", "Painter", "Flooring contractor"};
+                String[] names = {"Home Owner","General contractor","Carpenter", "Plumber", "Electrician", "HERS rating company", "HVAC technician", "Landscaper", "Roofing contractor", "Painter", "Flooring contractor", "Solar Panel Installers"};
 
                 %>
 
