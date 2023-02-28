@@ -342,10 +342,6 @@
              businessType = "general-contractor";
            }
            %>
-           String[] values = {"home_owner","general-contractor", "carpenter", "plumber", "electrician", "hers-rating-company", "hvac-technician", "landscaper", "roofing-contractor", "painter", "flooring-contractor", ""};
-
-           String[] names = {"Home Owner","General contractor","Carpenter", "Plumber", "Electrician", "HERS rating company", "HVAC technician", "Landscaper", "Roofing contractor", "Painter", "Flooring contractor", "Solar Panel Installers"};
-
            <div class="form-group mt-3">
              <label for="business-type"><%= (new Translate()).translate("Select a type of business", usernameOBJ.getLanguage())%>:</label>
              <select class="form-control" id="businesstype" name="businesstype"  tabindex="16">
