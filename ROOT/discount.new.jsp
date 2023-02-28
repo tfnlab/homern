@@ -9,6 +9,13 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.util.UUID" %>
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -143,7 +150,6 @@
         <%@ include file="user.menu.nav.jsp" %>
             <%
             String name = request.getParameter("name");
-            String username = (String) session.getAttribute("username");
             if (name != null && name.trim().length() > 0) {
                 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
                 BigDecimal percentage = new BigDecimal(request.getParameter("percentage"));

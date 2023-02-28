@@ -9,6 +9,13 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.util.UUID" %>
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -142,7 +149,6 @@
         <h2>Product</h2>
         <%@ include file="user.menu.nav.jsp" %>
             <%
-            String username = (String) session.getAttribute("username");
             int rebateId = 0;
             if (request.getParameter("rebateId") != null && !request.getParameter("rebateId").isEmpty()) {
               rebateId = Integer.parseInt(request.getParameter("rebateId"));
