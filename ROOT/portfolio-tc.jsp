@@ -103,7 +103,7 @@
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
-                <%for(int j=0;j<23;j++){%>
+                <%for(int j=100;j<123;j++){%>
                 <div class="swiper-slide">
                   <img src="https://meta.makotodigital.art/image/<%=j%>.png"  alt="">
                   <HR>
