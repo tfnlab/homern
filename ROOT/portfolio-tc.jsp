@@ -144,22 +144,17 @@
           <div class="col">
           Art Project:
           <HR>
-          The Liquid Crystal Display NFT Collection is an art project that celebrates the era of using liquid crystal displays to communicate in the late 90s. The collection consists of a set of 100% onchain English characters displayed in a liquid crystal display. Each character is unique and has been designed to evoke nostalgia for an earlier era of technology. The collection is a tribute to the legacy of the liquid crystal display and its role in shaping our culture and society.
+          Technicolor Dream is a unique collection of 8 by 8 pixel art created by Home Renovation Nation. It is an art project that also serves as a utility to identify community members. Each pixel art piece is a small but colorful and vibrant representation of a member of the community.
           <HR>
-          Utility Project:
+          The collection consists of 10,000 pixel art pieces, each one distinct and unique. The colors used in each pixel art piece are bright and bold, making each piece stand out. The collection is inspired by the retro pixel art style of the 1980s, but with a modern twist.
           <HR>
-          In addition to being an art project, the Liquid Crystal Display NFT Collection also serves a practical purpose. The collection will act as a verification badge for service professionals in the Home Renovation Nation network. This means that service professionals who own a character from the collection will be able to display it on their profiles, websites, and social media channels. This will provide potential clients with an added level of assurance that the service professional they are considering has been vetted by the Home Renovation Nation network and is qualified to perform the work they need.
+          One of the main functions of the Technicolor Dream collection is to identify community members. Each member is assigned a pixel art piece that represents them. This makes it easy for members of the community to recognize each other and feel a sense of belonging.
           <HR>
-          Benefits:
+          Aside from its utility, the Technicolor Dream collection is also an art project. Each pixel art piece is a work of art in itself, with its own unique color scheme and design. The collection as a whole is a colorful and vibrant representation of the community it represents.
           <HR>
-
-          The Liquid Crystal Display NFT Collection offers a unique combination of art and utility. The collection is a celebration of the legacy of the liquid crystal display and its impact on our culture and society. The collection also provides a practical benefit to service professionals in the Home Renovation Nation network, allowing them to differentiate themselves from their competitors and build trust with potential clients.
+          All of the pixel art pieces in the Technicolor Dream collection are available for purchase on OpenSea. This allows anyone to own a piece of the collection and support the Home Renovation Nation community. The pieces are also available as physical variations, which can be purchased from the community's online store.
           <HR>
-
-          Conclusion:
-          <HR>
-          The Liquid Crystal Display NFT Collection is an innovative project that combines art and utility. The collection celebrates the legacy of the liquid crystal display and its role in shaping our culture and society. The collection also serves a practical purpose by providing a verification badge for service professionals in the Home Renovation Nation network. This project has the potential to create a unique and valuable ecosystem of art, technology, and service professionals.
-
+          In conclusion, the Technicolor Dream collection is a unique and innovative project that combines art and utility. It serves as a way to identify community members while also providing a colorful and vibrant representation of the community. The collection is available for purchase on OpenSea and as physical variations from the community's online store, allowing anyone to own a piece of this unique project.
           <HR>
           </div>
         </div>
