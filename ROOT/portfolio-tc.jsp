@@ -107,7 +107,7 @@
                 <div class="swiper-slide">
                   <img src="https://meta.makotodigital.art/image/0.png"  alt="">
                   <HR>
-                  <p><a href="https://opensea.io/assets/ethereum/0xa07493367869fdac5d5f2a44cbe28f055404ce62/<%=review.getToken_id()%>" >Open Sea</a></p>
+                  <p><a href="https://opensea.io/assets/ethereum/0xa07493367869fdac5d5f2a44cbe28f055404ce62/0" >Open Sea</a></p>
                 </div>
                </div>
               <div class="swiper-pagination"></div>
