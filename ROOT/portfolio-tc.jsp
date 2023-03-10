@@ -5,6 +5,7 @@
 <%@ page import="com.tfnlab.mysql.Review" %>
 <%@ page import="com.tfnlab.mysql.ReviewDAO" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.Random" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -103,7 +104,11 @@
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
-                <%for(int j=100;j<123;j++){%>
+                <%
+                Random random = new Random();
+                int randomNumber = random.nextInt(5000);
+                %>
+                <%for(int j=randomNumber;j<randomNumber +50;j++){%>
                 <div class="swiper-slide">
                   <img src="https://meta.makotodigital.art/image/<%=j%>.png"  alt="">
                   <HR>
