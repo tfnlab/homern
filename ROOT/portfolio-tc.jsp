@@ -131,8 +131,7 @@
 
                 Overview:
                 <HR>
-
-                The Liquid Crystal Display NFT Collection is a 100% onchain collection of English characters displayed in a liquid crystal display. The project is both an art project and a utility project, and it is designed to serve a dual purpose. Firstly, it is an art project that celebrates the era of using liquid crystal displays to communicate in the late 90s. Secondly, it is a utility project that will act as a verification badge for service professionals in the Home Renovation Nation network.
+                Welcome to the world's largest collection of 8 x 8 pixel art, with over 10,000 pieces to explore and enjoy. Mint Website <a href="https://makotodigital.art" >Technicolor Dream</a> is an NFT collection of 10,000 8x8 pixel images. Each image is a unique and intricate design made up of individual pixels, with colors and shapes that come together to form a larger picture. These images are not only visually striking, but also provide a sense of nostalgia and whimsy, evoking memories of classic video game graphics and pixel art.
                 </p>
               </div>
             </div>
