@@ -109,8 +109,8 @@
                   <HR>
                   <p><a href="https://opensea.io/assets/ethereum/0xa07493367869fdac5d5f2a44cbe28f055404ce62/<%=j%>" >Open Sea</a></p>
                 </div>
-               </div>
                <%}%>
+             </div>
               <div class="swiper-pagination"></div>
             </div>
           </div>
