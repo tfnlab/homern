@@ -103,23 +103,12 @@
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
-                <%
-                ReviewDAO reviewDAO = new ReviewDAO();
-                List<Review> reviews = reviewDAO.getReviewsGroupedByTokenId();
-                int count = 1;
-                %>
-                <% for (Review review : reviews) { %>
+
                 <div class="swiper-slide">
-                  <a href="profile.jsp?token_id=<%=review.getToken_id()%>" >
-                  <img src="technician.edit.getowner.view.jsp?contract_id=0xcFE9f30CB7C339039782DC5E4a1a24632CaF0D83&token_id=<%=review.getToken_id()%>"  alt="">
-                  </a>
+                  <img src="https://meta.makotodigital.art/image/0.png"  alt="">
                   <HR>
-                  <h3>Rank #<%=count%> Digital ID <%=review.getToken_id()%> Average Rating <%=review.getAverage()%></h3>
-                  <HR>
-                  <p><a href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%=review.getToken_id()%>" >Open Sea</a></p>
+                  <p><a href="https://opensea.io/assets/ethereum/0xa07493367869fdac5d5f2a44cbe28f055404ce62/<%=review.getToken_id()%>" >Open Sea</a></p>
                 </div>
-                <% count += 1;%>
-                <% } %>
                </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -141,7 +130,7 @@
 
                 Overview:
                 <HR>
-                  
+
                 The Liquid Crystal Display NFT Collection is a 100% onchain collection of English characters displayed in a liquid crystal display. The project is both an art project and a utility project, and it is designed to serve a dual purpose. Firstly, it is an art project that celebrates the era of using liquid crystal displays to communicate in the late 90s. Secondly, it is a utility project that will act as a verification badge for service professionals in the Home Renovation Nation network.
                 </p>
               </div>
