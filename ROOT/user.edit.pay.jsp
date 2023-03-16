@@ -16,6 +16,12 @@
 <%@ page import="com.tfnlab.mysql.CustomerPayment" %>
 <%@ page import="com.tfnlab.mysql.CustomerPaymentDao" %>
 <%@ page import="java.math.BigDecimal" %>
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,12 +81,10 @@
     </section><!-- End Breadcrumbs -->
     <%
     UserDao dao = new UserDao();
-    String username = (String) session.getAttribute("username");
     String firstName = request.getParameter("firstName");
 
 
 
-    User usernameOBJ = (User) session.getAttribute("usernameOBJ");
     User user = dao.getUserByUsername(username);
     %>
     <!-- ======= Blog Section ======= -->
