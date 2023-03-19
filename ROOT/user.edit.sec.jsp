@@ -218,22 +218,7 @@
 
         <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
         <h4><%= (new Translate()).translate("Marketing", usernameOBJ.getLanguage())%></h4>
-        <script>
-          function goToUrlSUB() {
-            var select = document.getElementById("hrnnavbarsub");
-            var option = select.options[select.selectedIndex];
-            var url = option.value;
-            window.open(url, "_self");
-          }
-        </script>
-          <HR>
-          <select name="hrnnavbarsub" id="hrnnavbarsub" onchange="goToUrlSUB()" tabindex="1">
-            <option value="#" >more </option>
-            <option value="user.edit.logo.jsp" <%= currentUrl.indexOf("user.edit.referred_by.jsp") != -1 ? "selected" : "" %>><i class="fas fa-home"></i> Logo</option>
-            <option value="user.edit.social.jsp" <%= currentUrl.indexOf("user.edit.social.jsp") != -1 ? "selected" : "" %>><i class="fas fa-cog"></i> Social</option>
-            <option value="user.edit.referred_by.jsp" <%= currentUrl.indexOf("user.edit.referred_by.jsp") != -1 ? "selected" : "" %>><i class="fas fa-wrench"></i> Referrals</option>
-          </select>
-          <HR>
+        <HR>
         <form method="post" action="../user.edit.sec.jsp">
           <div class="form-group mt-3">
             <label for="business_name" class="mr-2"><%= (new Translate()).translate("Username", usernameOBJ.getLanguage())%>:</label>
