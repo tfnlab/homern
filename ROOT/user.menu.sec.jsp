@@ -36,6 +36,24 @@ if(rip.equals("144.202.119.205")){
 
           <div class="container">
             <h4><%=usernameOBJ.getBusiness_name()%></h4>
+            <style>
+              .fa {
+                font-size: 48px;
+                margin-right: 10px;
+              }
+              a:hover {
+                color: blue;
+                text-decoration: underline;
+              }
+              .link-col {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              }
+              a {
+                padding: 10px;
+              }
+            </style>            
             <div class="row">
 
               <div class="col-3 ">
