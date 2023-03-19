@@ -11,7 +11,7 @@ User usernameOBJ = (User) session.getAttribute("usernameOBJ");
 
 if(rip.equals("144.202.119.205")){
     UserDao uDao = new UserDao();
-    usernameOBJ = dao.getUserByUsername(request.getParameter("username"));
+    usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
 }
 %>
 <head>
