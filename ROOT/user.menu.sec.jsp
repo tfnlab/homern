@@ -35,9 +35,6 @@
 
 <body>
   <main id="main">
-
-
-    <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
           <div class="container mt-5">

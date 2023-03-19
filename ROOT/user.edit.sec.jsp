@@ -211,10 +211,11 @@
 
     user = dao.getUserByUsername(username);
     %>
-
     <main id="main">
-    <section id="blog" class="blog">
-      <div class="container px-4 px-lg-5">
+      <section id="blog" class="blog">
+        <div class="container px-4 px-lg-5">
+            <div class="container mt-5">
+
         <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
         <h4><%= (new Translate()).translate("Marketing", usernameOBJ.getLanguage())%></h4>
         <HR>
@@ -472,15 +473,12 @@
            </div>
            </form>
 
+         </div>
+     </div>
 
-      </div>
+   </section><!-- End Blog Section -->
 
-    </section><!-- End Blog Section -->
-
-  </main><!-- End #main -->
-
-
-
+ </main><!-- End #main -->
 </body>
 
 </html>
