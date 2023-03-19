@@ -52,7 +52,7 @@
           }
         };
         const encodedString = encodeURIComponent(sk);
-        var urlString = "GeocodingExample.jsp?search=" + encodedString + "&sfor=" + fNameLink;
+        var urlString = "../GeocodingExample.jsp?search=" + encodedString + "&sfor=" + fNameLink;
         xhttp.open("GET", urlString, true);
         xhttp.send();
     }
@@ -79,7 +79,7 @@
 
       if (search.length > 5) {
         document.getElementById(elName).innerHTML = "";
-        var urlString = "GoogleAutocomplete.jsp?search=" + search + "&sfor=" + sfor.name;
+        var urlString = "../GoogleAutocomplete.jsp?search=" + search + "&sfor=" + sfor.name;
         xhttp.open("GET", urlString, true);
         xhttp.send();
       }
@@ -93,7 +93,7 @@
           }
         };
         let search = document.getElementById('wallet_id_active_nft_id').value;
-        var urlString = "technician.edit.getowner.jsp?token_id=" + search;
+        var urlString = "../technician.edit.getowner.jsp?token_id=" + search;
         xhttp.open("GET", urlString, true);
         xhttp.send();
     }
