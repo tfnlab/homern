@@ -217,6 +217,7 @@
             <div class="container mt-5">
 
         <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
+        <HR>
         <h4><%= (new Translate()).translate("Marketing", usernameOBJ.getLanguage())%></h4>
         <HR>
         <form method="post" action="../user.edit.sec.jsp">
