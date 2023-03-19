@@ -216,7 +216,7 @@
         <div class="container px-4 px-lg-5">
             <div class="container mt-5">
 
-        <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
+        <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
         <HR>
         <h4><%= (new Translate()).translate("Marketing", usernameOBJ.getLanguage())%></h4>
         <HR>
