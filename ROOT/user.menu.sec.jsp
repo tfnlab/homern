@@ -84,111 +84,111 @@ if(rip.equals("144.202.119.205")){
 
 
               <div class="row">
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" ><i class="fa fa-home"></i></a>
                   <p><%= (new Translate()).translate("Home", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="<%=rootUpdate%>dashboard.sec.jsp" tabindex="2" ><i class="fa fa-tachometer-alt"></i></a>
                   <p><%= (new Translate()).translate("Dashboard", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="<%=rootUpdate%>user.edit.sec.jsp" tabindex="3" ><i class="fa fa-cog"></i></a>
                   <p><%= (new Translate()).translate("Settings", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="technician.list.sec.jsp" tabindex="4" ><i class="fa fa-wrench"></i></a>
                   <p><%= (new Translate()).translate("Technicians", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
               <div class="row">
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="product.list.jsp" tabindex="5" ><i class="fa fa-box"></i></a>
                   <p><%= (new Translate()).translate("Products", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="customer.list.jsp" tabindex="6" ><i class="fa fa-users"></i></a>
                   <p><%= (new Translate()).translate("Customers", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="order.list.jsp" tabindex="7" ><i class="fa fa-shopping-cart"></i></a>
                   <p><%= (new Translate()).translate("Orders", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="event.list.jsp" tabindex="8" ><i class="fa fa-calendar"></i></a>
                   <p><%= (new Translate()).translate("Events", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
               <div class="row">
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="discount.list.jsp" tabindex="9" ><i class="fa fa-gift"></i></a>
                   <p><%= (new Translate()).translate("Discounts", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="rebate.list.jsp" tabindex="10" ><i class="fa fa-wallet"></i></a>
                   <p><%= (new Translate()).translate("Rebates", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="inventory.list.jsp" tabindex="11" ><i class="fa fa-box-open"></i></a>
                   <p><%= (new Translate()).translate("Inventory", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="timesheet.list.jsp" tabindex="12" ><i class="fa fa-clock"></i></a>
                   <p><%= (new Translate()).translate("Time Sheet", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
 
               <div class="row">
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="expense.list.jsp" tabindex="13" ><i class="fa fa-plane"></i></a>
                   <p><%= (new Translate()).translate("Expenses", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="user.edit.social.jsp" tabindex="14" ><i class="fa fa-share-square"></i></a>
                   <p><%= (new Translate()).translate("Social Media", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="user.edit.referred_by.jsp" tabindex="15" ><i class="fa fa-people-arrows"></i></a>
                   <p><%= (new Translate()).translate("Referral", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="dmp.list.jsp" tabindex="16" ><i class="fa fa-database"></i></a>
                   <p><%= (new Translate()).translate("Data Management Platform", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
 
               <div class="row">
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="#" tabindex="17" ><i class="fa fa-money-bill-alt"></i></a>
                   <p><%= (new Translate()).translate("Assets", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="#" tabindex="18" ><i class="fa fa-file-invoice-dollar"></i></a>
                   <p><%= (new Translate()).translate("Liabilities", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="#" tabindex="19" ><i class="fa fa-chart-pie"></i></a>
                   <p><%= (new Translate()).translate("Equity", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="#" tabindex="20" ><i class="fa fa-chart-line"></i></a>
                   <p><%= (new Translate()).translate("Forecasting", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
               <div class="row">
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="vendor.list.jsp" tabindex="21" ><i class="fa fa-truck"></i></a>
                   <p><%= (new Translate()).translate("Vendors", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="#" tabindex="22" ><i class="fa fa-user-secret"></i></a>
                   <p><%= (new Translate()).translate("top secret", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="#" tabindex="23" ><i class="fa fa-user-secret"></i></a>
                   <p><%= (new Translate()).translate("top secret", usernameOBJ.getLanguage())%></p>
                 </div>
-                <div class="col-3 link-col">
+                <div class="col-3 ">
                   <a href="#" tabindex="24" ><i class="fa fa-user-secret"></i></a>
                   <p><%= (new Translate()).translate("top secret", usernameOBJ.getLanguage())%></p>
                 </div>
