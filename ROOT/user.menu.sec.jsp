@@ -93,9 +93,11 @@ if(rip.equals("144.202.119.205")){
 
                   <a href="<%=rootUpdate%>user.edit.sec.jsp" tabindex="3" ><i class="fa fa-cog"></i></a>
                   <p><%= (new Translate()).translate("Settings", usernameOBJ.getLanguage())%></p>
- 
+
                   <a href="technician.list.sec.jsp" tabindex="4" ><i class="fa fa-wrench"></i></a>
                   <p><%= (new Translate()).translate("Technicians", usernameOBJ.getLanguage())%></p>
+
+                  TEST
                 </div>
               </div>
               <div class="row">
