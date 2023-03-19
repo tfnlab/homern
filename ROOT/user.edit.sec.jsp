@@ -218,8 +218,6 @@
 
         <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
         <HR>
-        <h4><%= (new Translate()).translate("Marketing", usernameOBJ.getLanguage())%></h4>
-        <HR>
         <form method="post" action="../user.edit.sec.jsp/">
           <div class="form-group mt-3">
             <label for="business_name" class="mr-2"><%= (new Translate()).translate("Username", usernameOBJ.getLanguage())%>:</label>
