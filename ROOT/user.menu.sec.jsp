@@ -42,6 +42,7 @@ if(rip.equals("144.202.119.205")){
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
             <h4><%=usernameOBJ.getBusiness_name()%></h4>
+            <HR>
             <style>
               .fa {
                 font-size: 48px;
