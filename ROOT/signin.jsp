@@ -105,12 +105,15 @@
         <p>
         </p>
         <%
+
+        String rip = request.getRemoteAddr();
           String language = request.getParameter("language");
 
           if (language == null || language.trim().length() < 4) {
             language = "english";
           }
         %>
+        <%=rip%>
         <%
         String firstName = request.getParameter("firstName");
         String middleInitial = request.getParameter("middleInitial");
