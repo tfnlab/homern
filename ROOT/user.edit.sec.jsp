@@ -448,7 +448,7 @@
                <label for="wallet_id_public">Active <a href="https://opensea.io/collection/liquid-crystal-display" >Liquid Crystal Display</a> Token Identification Number <a href="https://opensea.io/assets/ethereum/0xcfe9f30cb7c339039782dc5e4a1a24632caf0d83/<%= user.getWallet_id_active_nft_id() %>" ><%= user.getWallet_id_active_nft_id() %></a></label>
                <input type="text" class="form-control" id="wallet_id_active_nft_id" name="wallet_id_active_nft_id" value="<%= user.getWallet_id_active_nft_id() %>" onkeyup="verifyOwner()">
                <HR>
-               <img src="../technician.edit.getowner.view.jsp?contract_id=0xcFE9f30CB7C339039782DC5E4a1a24632CaF0D83&token_id=<%= user.getWallet_id_active_nft_id() %>" class="img-fluid" style="max-width: 50%;"/>
+               <img src="../technician.edit.getowner.view.sec.jsp?contract_id=0xcFE9f30CB7C339039782DC5E4a1a24632CaF0D83&token_id=<%= user.getWallet_id_active_nft_id() %>" class="img-fluid" style="max-width: 50%;"/>
            </div>
            <div class="form-group mt-3">
              <button type="submit" class="btn btn-primary" tabindex="26">Submit</button>
