@@ -18,9 +18,17 @@
 <%@ page import="org.apache.commons.fileupload.disk.DiskFileItemFactory" %>
 <%@ page import="java.util.UUID" %>
 <%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+          String rootUpdate = "";
+          if(rip.equals("144.202.119.205")){
+              UserDao uDao = new UserDao();
+              username = request.getParameter("username");
+              usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
+              rootUpdate = "../";
+          }
+          
     UserDao dao = new UserDao();
-    String username = (String) session.getAttribute("username");
-    User usernameOBJ = (User) session.getAttribute("usernameOBJ");
     User user = dao.getUserByUsername(username);
     String contract_id = request.getParameter("contract_id");
     String token_id = request.getParameter("token_id");
