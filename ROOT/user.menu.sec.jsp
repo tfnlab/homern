@@ -33,8 +33,13 @@ if(rip.equals("144.202.119.205")){
 </head>
 
 <body>
+  <main id="main">
 
-          <div class="container">
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container px-4 px-lg-5">
+          <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
             <h4><%=usernameOBJ.getBusiness_name()%></h4>
             <style>
@@ -171,6 +176,11 @@ if(rip.equals("144.202.119.205")){
                 </div>
               </div>
             </div>
+        </div>
+
+      </section><!-- End Blog Section -->
+
+    </main><!-- End #main -->
 </body>
 
 </html>
