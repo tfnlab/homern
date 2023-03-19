@@ -78,20 +78,7 @@ if(rip.equals("144.202.119.205")){
 </head>
 
 <body>
-  <main id="main">
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-        <ol>
-          <li><a href="user.menu.jsp"><%= (new Translate()).translate("Home", usernameOBJ.getLanguage())%></a></li>
-          <li><%= (new Translate()).translate("Service Operations Center", usernameOBJ.getLanguage())%></li>
-        </ol>
-      </div>
-    </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog">
-      <div class="container px-4 px-lg-5">
           <div class="container">
             <h4><%=usernameOBJ.getBusiness_name()%></h4>
 
@@ -206,30 +193,10 @@ if(rip.equals("144.202.119.205")){
                   <p><%= (new Translate()).translate("top secret", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
-
-            <HR>
-            <p>Our home service software offers a range of features to help companies streamline their operations:</p>
-            <ul>
-              <li><strong>Scheduling and dispatch:</strong> our software can help schedule and dispatch technicians to service calls and manage their work schedules.</li>
-              <li><strong>Customer relationship management (CRM):</strong> our software can help companies manage customer relationships by storing customer information, tracking interactions, and managing communication with customers.</li>
-              <li><strong>Invoicing and billing:</strong> our software can help companies create and manage invoices, process payments, and track billing.</li>
-              <li><strong>Inventory management:</strong> our software can help companies track inventory levels, reorder supplies, and manage the purchase and use of parts and equipment.</li>
-              <li><strong>Service history:</strong> our software can help companies track service history for individual customers and equipment, including the type of service provided, the technician who performed the service, and the parts used.</li>
-              <li><strong>Reporting:</strong> our software can generate reports on a variety of metrics, such as service history, customer interactions, and financial performance.</li>
-              <li><strong>Mobile functionality:</strong> many of our software programs have mobile apps that allow technicians to access and update information on the go.</li>
-              <li><strong>Integration with other systems:</strong> our software may integrate with other business systems, such as accounting software or CRM software, to streamline workflows and improve efficiency.</li>
-            </ul>
-            <HR>
-            <h4>Mind-Blowing Updates: What's in Store</h4>
-            <p>Get ready to have your minds blown, because we've got a whole bunch of new features and bug fixes that are sure to blow your socks off. These updates are going to take your user experience to a whole new level, and we can't wait for you to get your hands on them. Trust us, these are the kinds of features and bug fixes that you'll be talking about for years to come. So stay tuned and get ready to take your productivity (or whatever else you're using our product for) to the next level!</p>
+            </div>
 
 
-          </div>
-      </div>
 
-    </section><!-- End Blog Section -->
-
-  </main><!-- End #main -->
 
 </body>
 
