@@ -74,7 +74,7 @@ if(rip.equals("144.202.119.205")){
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -94,24 +94,7 @@ if(rip.equals("144.202.119.205")){
       <div class="container px-4 px-lg-5">
           <div class="container">
             <h4><%=usernameOBJ.getBusiness_name()%></h4>
-              <style>
-                .fa {
-                  font-size: 48px;
-                  margin-right: 10px;
-                }
-                a:hover {
-                  color: blue;
-                  text-decoration: underline;
-                }
-                .link-col {
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                }
-                a {
-                  padding: 10px;
-                }
-              </style>
+
 
               <div class="row">
                 <div class="col-3 link-col">
