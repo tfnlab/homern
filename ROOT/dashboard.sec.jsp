@@ -64,8 +64,9 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
           <div class="container mt-5">
-            <h4><%=usernameOBJ.getBusiness_name()%> <%= (new Translate()).translate("Dashboard", usernameOBJ.getLanguage())%></h4>
-            <a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" ><</a>
+            <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
+            <h4><%=usernameOBJ.getBusiness_name()%> <%= (new Translate()).translate("Dashboard", usernameOBJ.getLanguage())%>
+            </h4>
             <HR>
               <%=usernameOBJ.getTs()%>
               <%
