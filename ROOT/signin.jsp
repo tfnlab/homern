@@ -114,9 +114,9 @@
           }
         %>
 
-        <% String remoteAddr = request.getHeader("X-Forwarded-For"); %>
+        <% String remoteAddr = request.getHeader("X-Real-IP"); %>
         <p>The IP address of the original client is <%= remoteAddr %></p>
-                    
+
         <%=rip%>
         <%
         String firstName = request.getParameter("firstName");
