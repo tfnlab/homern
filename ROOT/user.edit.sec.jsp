@@ -220,7 +220,7 @@
         <HR>
         <h4><%= (new Translate()).translate("Marketing", usernameOBJ.getLanguage())%></h4>
         <HR>
-        <form method="post" action="../user.edit.sec.jsp/">
+        <form method="post" action="../user.edit.sec.jsp">
           <div class="form-group mt-3">
             <label for="business_name" class="mr-2"><%= (new Translate()).translate("Username", usernameOBJ.getLanguage())%>:</label>
             <input type="text" class="form-control"  value="<%= user.getUsername() %>" disabled >
