@@ -36,18 +36,28 @@ if(rip.equals("144.202.119.205")){
 
           <div class="container">
             <h4><%=usernameOBJ.getBusiness_name()%></h4>
+            <div class="row">
 
+              <div class="col-3 ">
                   <a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" ><i class="fa fa-home"></i></a>
                   <p><%= (new Translate()).translate("Home", usernameOBJ.getLanguage())%></p>
+                </div>
 
+                  <div class="col-3 ">
                   <a href="<%=rootUpdate%>dashboard.sec.jsp" tabindex="2" ><i class="fa fa-tachometer-alt"></i></a>
                   <p><%= (new Translate()).translate("Dashboard", usernameOBJ.getLanguage())%></p>
+                </div>
 
+                  <div class="col-3 ">
                   <a href="<%=rootUpdate%>user.edit.sec.jsp" tabindex="3" ><i class="fa fa-cog"></i></a>
                   <p><%= (new Translate()).translate("Settings", usernameOBJ.getLanguage())%></p>
+                </div>
 
+                  <div class="col-3 ">
                   <a href="technician.list.sec.jsp" tabindex="4" ><i class="fa fa-wrench"></i></a>
                   <p><%= (new Translate()).translate("Technicians", usernameOBJ.getLanguage())%></p>
+                </div>
+              </div>
 
               <div class="row">
                 <div class="col-3 ">
