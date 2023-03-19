@@ -35,6 +35,7 @@ if(rip.equals("144.202.119.205")){
 <body>
 
           <div class="container">
+            <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
             <h4><%=usernameOBJ.getBusiness_name()%></h4>
             <style>
               .fa {
@@ -53,7 +54,7 @@ if(rip.equals("144.202.119.205")){
               a {
                 padding: 10px;
               }
-            </style>            
+            </style>
             <div class="row">
 
               <div class="col-3 ">
