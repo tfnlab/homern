@@ -4,18 +4,19 @@
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+          String rootUpdate = "";
+          if(rip.equals("144.202.119.205")){
+              UserDao uDao = new UserDao();
+              username = request.getParameter("username");
+              usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
+              rootUpdate = "../";
+          }
+%>
 <!DOCTYPE html>
 <html lang="en">
-<%
-User usernameOBJ = (User) session.getAttribute("usernameOBJ");
-String rootUpdate = "";
-if(rip.equals("144.202.119.205")){
-    UserDao uDao = new UserDao();
-    usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
-    rootUpdate = "../";
-
-}
-%>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
