@@ -211,7 +211,6 @@
 
     user = dao.getUserByUsername(username);
     %>
-    <%=request.getParameter("firstName")%>
     <main id="main">
       <section id="blog" class="blog">
         <div class="container px-4 px-lg-5">
