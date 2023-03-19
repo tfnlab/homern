@@ -94,6 +94,7 @@
         };
         let search = document.getElementById('wallet_id_active_nft_id').value;
         var urlString = "../technician.edit.getowner.jsp?token_id=" + search;
+        alert(urlString);
         xhttp.open("GET", urlString, true);
         xhttp.send();
     }
