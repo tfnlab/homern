@@ -17,6 +17,7 @@
 <%@ page import="org.apache.commons.fileupload.servlet.ServletFileUpload" %>
 <%@ page import="org.apache.commons.fileupload.disk.DiskFileItemFactory" %>
 <%@ page import="java.util.UUID" %>
+<%@ include file="auth.jsp" %>
 <%
           User usernameOBJ = (User)session.getAttribute("usernameOBJ");
           String username = (String) session.getAttribute("username");
@@ -27,7 +28,7 @@
               usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
               rootUpdate = "../";
           }
-          
+
     UserDao dao = new UserDao();
     User user = dao.getUserByUsername(username);
     String contract_id = request.getParameter("contract_id");
