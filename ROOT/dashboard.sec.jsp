@@ -61,9 +61,6 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2><%= (new Translate()).translate("Dashboard", usernameOBJ.getLanguage())%></h2>
-        <HR>
-
           <div class="container mt-5">
             <h4><%=usernameOBJ.getBusiness_name()%> <%= (new Translate()).translate("Dashboard", usernameOBJ.getLanguage())%></h4>
             <HR>
