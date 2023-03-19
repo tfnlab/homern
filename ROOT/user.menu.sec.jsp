@@ -82,9 +82,6 @@ if(rip.equals("144.202.119.205")){
           <div class="container">
             <h4><%=usernameOBJ.getBusiness_name()%></h4>
 
-
-              <div class="row">
-                <div class="col-3 ">
                   <a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" ><i class="fa fa-home"></i></a>
                   <p><%= (new Translate()).translate("Home", usernameOBJ.getLanguage())%></p>
 
@@ -96,10 +93,7 @@ if(rip.equals("144.202.119.205")){
 
                   <a href="technician.list.sec.jsp" tabindex="4" ><i class="fa fa-wrench"></i></a>
                   <p><%= (new Translate()).translate("Technicians", usernameOBJ.getLanguage())%></p>
-
-                  TEST
-                </div>
-              </div>
+ 
               <div class="row">
                 <div class="col-3 ">
                   <a href="product.list.jsp" tabindex="5" ><i class="fa fa-box"></i></a>
