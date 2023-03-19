@@ -72,7 +72,7 @@
                 </div>
 
                   <div class="col-3 ">
-                  <a href="<%=rootUpdate%>user.edit.sec.jsp" tabindex="3" ><i class="fa fa-cog"></i></a>
+                  <a href="<%=rootUpdate%>user.edit.sec.jsp/" tabindex="3" ><i class="fa fa-cog"></i></a>
                   <p><%= (new Translate()).translate("Settings", usernameOBJ.getLanguage())%></p>
                 </div>
 
