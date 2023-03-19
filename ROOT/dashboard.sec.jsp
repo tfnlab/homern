@@ -57,23 +57,12 @@
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <ol>
-          <li><a href="user.menu.jsp"><%= (new Translate()).translate("Home", usernameOBJ.getLanguage())%></a></li>
-          <li><%= (new Translate()).translate("Service Operations Center", usernameOBJ.getLanguage())%></li>
-        </ol>
-      </div>
-    </section><!-- End Breadcrumbs -->
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2><%= (new Translate()).translate("Dashboard", usernameOBJ.getLanguage())%></h2>
         <HR>
-        <%@ include file="user.menu.nav.jsp" %>
 
           <div class="container mt-5">
             <h4><%=usernameOBJ.getBusiness_name()%> <%= (new Translate()).translate("Dashboard", usernameOBJ.getLanguage())%></h4>
