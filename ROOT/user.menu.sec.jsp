@@ -24,55 +24,10 @@ if(rip.equals("144.202.119.205")){
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-
-
-  <!-- =======================================================
-  * Template Name: Presento - v3.9.1
-  * Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script>
-    function callTFNLab() {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("status").innerHTML = this.responseText;
-          const el = document.createElement('textarea');
-          el.value =  this.responseText;
-          el.setAttribute('readonly', '');
-          el.style.position = 'absolute';
-          el.style.left = '-9999px';
-          document.body.appendChild(el);
-          el.select();
-          document.execCommand('copy');
-          document.body.removeChild(el);
-
-        }
-      };
-      var urlString = "gennft.jsp?walletid=" + document.getElementById("walletid").value
-      document.getElementById("start").style.display="none";
-      document.getElementById("status").innerHTML = "Started Avatar Generation, give it a minute. <img src=\"assets/img/wait.gif\" />";
-      xhttp.open("GET", urlString, true);
-      xhttp.send();
-    }
-
-    function callCopy() {
-      const el = document.createElement('textarea');
-      el.value =  document.getElementById("status").innerHTML;
-      el.setAttribute('readonly', '');
-      el.style.position = 'absolute';
-      el.style.left = '-9999px';
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-    }
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </head>
@@ -93,7 +48,7 @@ if(rip.equals("144.202.119.205")){
 
                   <a href="technician.list.sec.jsp" tabindex="4" ><i class="fa fa-wrench"></i></a>
                   <p><%= (new Translate()).translate("Technicians", usernameOBJ.getLanguage())%></p>
- 
+
               <div class="row">
                 <div class="col-3 ">
                   <a href="product.list.jsp" tabindex="5" ><i class="fa fa-box"></i></a>
