@@ -155,7 +155,7 @@
                 }else{
 
         %>
-        <form action="<%=rootUpdate%>technician.new.jsp" method="post">
+        <form action="<%=rootUpdate%>technician.new.jsp/" method="post">
   <div class="form-group">
     <label for="technicianName">Technician Name</label>
     <input type="text" class="form-control" name="technicianName" id="technicianName" placeholder="Enter Technician Name" required>
