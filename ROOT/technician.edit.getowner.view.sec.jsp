@@ -22,7 +22,7 @@
           User usernameOBJ = (User)session.getAttribute("usernameOBJ");
           String username = (String) session.getAttribute("username");
           String rootUpdate = "";
-          if(rip.equals("144.202.119.205")){
+          if(rip.equals("144.202.119.205") || rip.equals("96.40.155.153")){
               UserDao uDao = new UserDao();
               username = request.getParameter("username");
               usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
