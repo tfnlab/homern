@@ -201,11 +201,11 @@
               <input type="checkbox" id="isTechnicianActive" name="isTechnicianActive" value="true" <%= technician.isTechnicianActive() ? "checked" : "" %>>
               <HR>
             <label for="technicianInterviewed"><%= (new Translate()).translate("Technician Interviewed", usernameOBJ.getLanguage())%></label>
-            <input type="checkbox" class="form-control" id="technicianInterviewed" name="technicianInterviewed" value="true" <%= technician.isTechnicianInterviewed() ? "checked" : "" %>>
+            <input type="checkbox" id="technicianInterviewed" name="technicianInterviewed" value="true" <%= technician.isTechnicianInterviewed() ? "checked" : "" %>>
 
            <HR>
               <label for="technicianPassedBackgroundCheck"><%= (new Translate()).translate("Passed Background Check", usernameOBJ.getLanguage())%></label>
-              <input type="checkbox" class="form-control" id="technicianPassedBackgroundCheck" name="technicianPassedBackgroundCheck" value="true" <%= technician.isTechnicianPassedBackgroundCheck() ? "checked" : "" %>>
+              <input type="checkbox" id="technicianPassedBackgroundCheck" name="technicianPassedBackgroundCheck" value="true" <%= technician.isTechnicianPassedBackgroundCheck() ? "checked" : "" %>>
 
           <div class="form-group">
               <label for="technicianPayrate"><%= (new Translate()).translate("Payrate", usernameOBJ.getLanguage())%></label>
