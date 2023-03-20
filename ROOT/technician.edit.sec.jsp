@@ -196,7 +196,7 @@
               <label for="technicianSkills"><%= (new Translate()).translate("Skills", usernameOBJ.getLanguage())%></label>
               <input type="text" class="form-control" id="technicianSkills" name="technicianSkills" value="<%= technician.getTechnicianSkills() %>">
           </div>
-
+<HR>
               <label for="isTechnicianActive"><%= (new Translate()).translate("Active", usernameOBJ.getLanguage())%></label>
               <input type="checkbox" id="isTechnicianActive" name="isTechnicianActive" value="true" <%= technician.isTechnicianActive() ? "checked" : "" %>>
               <HR>
@@ -206,7 +206,7 @@
            <HR>
               <label for="technicianPassedBackgroundCheck"><%= (new Translate()).translate("Passed Background Check", usernameOBJ.getLanguage())%></label>
               <input type="checkbox" id="technicianPassedBackgroundCheck" name="technicianPassedBackgroundCheck" value="true" <%= technician.isTechnicianPassedBackgroundCheck() ? "checked" : "" %>>
-
+<HR>
           <div class="form-group">
               <label for="technicianPayrate"><%= (new Translate()).translate("Payrate", usernameOBJ.getLanguage())%></label>
               <input type="number" step="0.01" class="form-control" id="technicianPayrate" name="technicianPayrate" value="<%= technician.getTechnicianPayrate() %>">
