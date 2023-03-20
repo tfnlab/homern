@@ -77,7 +77,7 @@
                 </div>
 
                   <div class="col-3 ">
-                  <a href="<%=rootUpdate%>technician.list.sec.jsp" tabindex="4" ><i class="fa fa-wrench"></i></a>
+                  <a href="<%=rootUpdate%>technician.list.sec.jsp/" tabindex="4" ><i class="fa fa-wrench"></i></a>
                   <p><%= (new Translate()).translate("Technicians", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
