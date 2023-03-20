@@ -18,15 +18,15 @@
 <%@ page import="org.apache.commons.fileupload.disk.DiskFileItemFactory" %>
 <%@ page import="java.util.UUID" %>
 <%
-          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
-          String username = (String) session.getAttribute("username");
-          String rootUpdate = "";
-          if(rip.equals("144.202.119.205") || rip.equals("96.40.155.153")){
-              UserDao uDao = new UserDao();
-              username = request.getParameter("username");
-              usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
-              rootUpdate = "../";
-          }
+    User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+    String username = (String) session.getAttribute("username");
+    String rootUpdate = "";
+    if(request.getHeader("X-Real-IP").equals("144.202.119.205") || request.getHeader("X-Real-IP").equals("96.40.155.153")){
+        UserDao uDao = new UserDao();
+        username = request.getParameter("username");
+        usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
+        rootUpdate = "../";
+    }
 
     UserDao dao = new UserDao();
     User user = dao.getUserByUsername(username);
