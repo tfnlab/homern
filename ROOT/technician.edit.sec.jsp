@@ -178,7 +178,7 @@
                 }
                 technician = td.getTechnicianById(id);
         %>
-        <form action="<%=rootUpdate%>technician.edit.jsp/" method="post">
+        <form action="<%=rootUpdate%>technician.edit.sec.jsp/" method="post">
           <input type="hidden" name="technicianId" value="<%= technician.getTechnicianId() %>">
           <div class="form-group">
               <label for="technicianName"><%= (new Translate()).translate("Name", usernameOBJ.getLanguage())%></label>
