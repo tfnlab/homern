@@ -228,7 +228,7 @@
               <input type="text" class="form-control" id="business_name" name="business_name" value="<%= user.getBusiness_name() %>" tabindex="5" >
             </div>
            <div class="form-group  mt-3">
-              <label for="firstName"><%= (new Translate()).translate("First Name", usernameOBJ.getLanguage())%> <a href="user.edit.qr.jsp?qrtype=name"><i class="fas fa-qrcode"></i></a></label>
+              <label for="firstName"><%= (new Translate()).translate("First Name", usernameOBJ.getLanguage())%> <a href="../user.edit.qr.jsp?qrtype=name"><i class="fas fa-qrcode"></i></a></label>
               <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.getFirstName() %>"  tabindex="6">
            </div>
            <div class="form-group mt-3">
