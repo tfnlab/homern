@@ -21,20 +21,8 @@
 try{
     User usernameOBJ = (User)session.getAttribute("usernameOBJ");
     String username = (String) session.getAttribute("username");
-    String rootUpdate = "";
-    if(request.getHeader("X-Real-IP").equals("144.202.119.205") || request.getHeader("X-Real-IP").equals("96.40.155.153")){
-        UserDao uDao = new UserDao();
-        username = request.getParameter("username");
-        usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
-        rootUpdate = "../";
-    }
+    String rootUpdate = ""; 
 
-    UserDao dao = new UserDao();
-    User user = dao.getUserByUsername(username);
-    String contract_id = request.getParameter("contract_id");
-    String token_id = request.getParameter("token_id");
-    APIConfig conf = new APIConfig();
-    
 }catch(Exception Ex){
 
   %>ERROR <%
