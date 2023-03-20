@@ -325,7 +325,7 @@
            </div>
 
            <div class="form-group mt-3">
-             <label for="url_website">Website <a href="user.edit.qr.jsp?qrtype=website"><i class="fas fa-qrcode"></i></a> </label>
+             <label for="url_website">Website <a href="../user.edit.qr.sec.jsp/?qrtype=website"><i class="fas fa-qrcode"></i></a> </label>
              <input type="text" class="form-control" id="url_website" name="url_website" value="<%= user.getUrl_website() %>"  tabindex="18">
            </div>
            <div class="form-group mt-3">
