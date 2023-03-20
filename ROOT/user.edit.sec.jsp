@@ -93,7 +93,7 @@
           }
         };
         let search = document.getElementById('wallet_id_active_nft_id').value;
-        var urlString = "/access_backend_request/technician.edit.getowner.sec.jsp?token_id=" + search;
+        var urlString = "https://store.homerenovationnation.com/access_backend_request/technician.edit.getowner.sec.jsp?token_id=" + search;
         alert(urlString);
         xhttp.open("GET", urlString, true);
         xhttp.send();
