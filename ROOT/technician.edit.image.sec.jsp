@@ -171,7 +171,6 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>Technician</h2>
-        <%@ include file="user.menu.nav.jsp" %>
         <HR>
         <HR>
 
