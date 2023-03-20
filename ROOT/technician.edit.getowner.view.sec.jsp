@@ -48,6 +48,6 @@ try{
     fis.close();
 }catch(Exception Ex){
 
-  %>ERROR <%=Ex.getMessage()%><%
+  %>ERROR <%
 }
 %>
