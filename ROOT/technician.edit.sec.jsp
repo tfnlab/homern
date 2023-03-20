@@ -110,11 +110,12 @@
 </head>
 
 <body>
-
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog">
-      <div class="container px-4 px-lg-5">
-        <HR>
+        <main id="main">
+          <section id="blog" class="blog">
+            <div class="container px-4 px-lg-5">
+                <div class="container mt-5">
+              <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
+              <HR>
         <%
 
                 int id = Integer.parseInt(request.getParameter("technicianId"));
@@ -254,12 +255,12 @@
           </div>
  <button type="submit" class="btn btn-primary"><%= (new Translate()).translate("Submit", usernameOBJ.getLanguage())%></button>
  </form>
+                        </div>
+                    </div>
 
-      </div>
+                  </section><!-- End Blog Section -->
 
-    </section><!-- End Blog Section -->
-
-  </main><!-- End #main -->
+                </main><!-- End #main -->
 
   <!-- Initialize the datepicker on the text input field -->
   <script>
