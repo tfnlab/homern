@@ -103,7 +103,7 @@
          <div class="container-fluid p-5" style="background-color: <%=color%>">
            <div class="card p-3">
             <p> Technician ID:
-           <a href="technician.edit.jsp?technicianId=<%= technician.getTechnicianId() %>" tabindex=<%=tabindex+""%> ><%= technician.getTechnicianId() %></a> <BR>
+           <a href="<%=rootUpdate%>technician.edit.sec.jsp/?technicianId=<%= technician.getTechnicianId() %>" tabindex=<%=tabindex+""%> ><%= technician.getTechnicianId() %></a> <BR>
            Name: <%= technician.getTechnicianName() %><br>
            Email: <%= technician.getTechnicianEmail() %><br>
            Phone: <%= technician.getTechnicianPhone() %><br>
