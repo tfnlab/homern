@@ -18,6 +18,7 @@
 <%@ page import="org.apache.commons.fileupload.disk.DiskFileItemFactory" %>
 <%@ page import="java.util.UUID" %>
 <%
+try{
     User usernameOBJ = (User)session.getAttribute("usernameOBJ");
     String username = (String) session.getAttribute("username");
     String rootUpdate = "";
@@ -45,4 +46,8 @@
       response.getOutputStream().write(buffer, 0, length);
     }
     fis.close();
+}catch(Exception Ex){
+
+  %><%=Ex.getMessage()%><%
+}
 %>
