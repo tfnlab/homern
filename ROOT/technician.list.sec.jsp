@@ -84,23 +84,12 @@
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <ol>
-          <li><a href="user.menu.jsp">Home</a></li>
-          <li>Technicians</li>
-        </ol>
-      </div>
-    </section><!-- End Breadcrumbs -->
-
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Technicians</h2>
+        <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
         <HR>
-          <a href="technician.new.jsp" tabindex="2" ><i class="fas fa-plus"></i> Technician</a>
+          <a href="<%=rootUpdate%>technician.new.jsp" tabindex="2" ><i class="fas fa-plus"></i> Technician</a>
         <HR>
         <%
              TechnicianDao technicianDao = new TechnicianDao();
