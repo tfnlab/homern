@@ -245,8 +245,8 @@
           <div class="form-group">
               <%= (new Translate()).translate("Technician", usernameOBJ.getLanguage())%> <%= (new Translate()).translate("Photo", usernameOBJ.getLanguage())%>
               <HR>
-              <a href="technician.edit.image.jsp?technicianId=<%= technician.getTechnicianId() %>" >
-              <img src="technician.edit.image.view.jsp?technicianId=<%=technician.getTechnicianId()%>" class="img-fluid" style="max-width: 50%;"/>
+              <a href="<%=rootUpdate%>technician.edit.image.sec.jsp/?technicianId=<%= technician.getTechnicianId() %>" >
+              <img src="<%=rootUpdate%>technician.edit.image.view.sec.jsp/?technicianId=<%=technician.getTechnicianId()%>" class="img-fluid" style="max-width: 50%;"/>
               </a>
           </div>
           <div class="form-group">
