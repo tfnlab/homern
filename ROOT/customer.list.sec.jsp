@@ -107,7 +107,7 @@
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
             <HR>
-              <a href="<%=rootUpdate%>customer.new.jsp/"  tabindex="2"><i class="fas fa-plus"></i> Customer</a>
+              <a href="<%=rootUpdate%>customer.new.sec.jsp/"  tabindex="2"><i class="fas fa-plus"></i> Customer</a>
               <HR>
               <%
                  String searchKey = request.getParameter("searchKey");
