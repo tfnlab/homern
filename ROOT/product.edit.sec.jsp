@@ -151,7 +151,7 @@
                   Product product = dao.getProductById(id, username);
 
         %>
-            		<form action="<%=rootUpdate%>product.edit.jsp/" method="post" class="form">
+            		<form action="<%=rootUpdate%>product.edit.sec.jsp/" method="post" class="form">
             			<div class="form-group">
             				<label for="sku">ID:</label>
             				<input type="text" class="form-control" name="productId" id="productId" value="<%= product.getId() %>">
