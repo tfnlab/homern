@@ -121,7 +121,7 @@
                     es = cDao.getEntitiesByUsername(username);
                 }
                 %>
-                <form action="customer.list.jsp" method="post">
+                <form action="<%=rootUpdate%>customer.list.jsp/" method="post">
                   <div class="form-group mt-3">
                     <div class="row">
                       <div class="col">
