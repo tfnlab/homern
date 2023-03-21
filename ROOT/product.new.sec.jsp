@@ -202,9 +202,9 @@
         %>
             <!-- ======= Contact Section ======= -->
             <HR>
-                <a href="<%=rootUpdate%>product.new.batch.jsp/" >Bulk Create</a>
+                <a href="<%=rootUpdate%>product.new.batch.sec.jsp/" >Bulk Create</a>
             <HR>
-            <form action="<%=rootUpdate%>product.new.jsp/" method="post">
+            <form action="<%=rootUpdate%>product.new.sec.jsp/" method="post">
               <div class="form-group">
                 <label for="sku">SKU:</label>
                 <input type="text" class="form-control" id="sku" name="sku" tabindex="2">
