@@ -267,11 +267,6 @@
               }
               %>
 
-        <form method="post" action="<%=rootUpdate%>customer.new.jsp/" enctype="multipart/form-data">
-          <input type="file" name="file" />
-          <input type="submit" value="Upload" />
-        </form>
-        <HR>
                     <form action="<%=rootUpdate%>customer.new.sec.jsp/" method="post">
                     <input type="hidden" name="orderId" id="orderId" value="<%=orderId%>" />
                     <div class="form-group">
