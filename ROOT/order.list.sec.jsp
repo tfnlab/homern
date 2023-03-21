@@ -89,6 +89,8 @@
                   <div class="container mt-5">
                     <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
           <HR>
+            <a href="<%=rootUpdate%>order.new.sec.jsp/" tabindex="2" ><i class="fas fa-plus"></i> Order</a>
+          <HR>
         <%
                 String searchKey = request.getParameter("searchKey");
                 OrderDao orderDao = new OrderDao();
@@ -107,7 +109,7 @@
                 }
                     ordersMap = orderDao.getCustomerOrdersDetailsPaid(username);
                 %>
-                <form action="order.list.jsp" method="post">
+                <form action="<%=rootUpdate%>order.list.jsp/" method="post">
                   <div class="form-group">
                     <label for="firstName">Search Key</label>
                     <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>" tabindex="3">
@@ -162,13 +164,13 @@
                     <%
                     }catch(Exception ex){
                         %>
-                        <a href="order.edit.products.jsp?orderId=<%=order.getOrderId()%>" >(No Products)</a>
+                        <a href="<%=rootUpdate%>order.edit.products.sec.jsp/?orderId=<%=order.getOrderId()%>" >(No Products)</a>
                         <%
                     }
                     %>
                     </div>
                     <hr>
-                    <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
+                    <a href="<%=rootUpdate%>order.edit.sec.jsp/?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
 
                 <%
                   tabindex +=1;
