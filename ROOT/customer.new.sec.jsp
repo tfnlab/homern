@@ -267,12 +267,12 @@
               }
               %>
 
-        <form method="post" action="customer.new.jsp" enctype="multipart/form-data">
+        <form method="post" action="<%=rootUpdate%>customer.new.jsp/" enctype="multipart/form-data">
           <input type="file" name="file" />
           <input type="submit" value="Upload" />
         </form>
         <HR>
-                    <form action="customer.new.jsp" method="post">
+                    <form action="<%=rootUpdate%>customer.new.sec.jsp/" method="post">
                     <input type="hidden" name="orderId" id="orderId" value="<%=orderId%>" />
                     <div class="form-group">
                       <label for="firstName">Company Name</label>
@@ -426,7 +426,7 @@
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
               <HR>
-              <a href="customer.new.bulk.jsp" >Bulk Upload</a>
+              <a href="<%=rootUpdate%>customer.new.bulk.sec.jsp/" >Bulk Upload</a>
               <HR>
                  <%}%>
 
