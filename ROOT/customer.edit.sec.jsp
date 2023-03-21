@@ -252,7 +252,7 @@
                 }
                   entity = ed.getEntityById(eId, username);
         %>
-                    <form action="customer.edit.jsp" method="post">
+                    <form action="<%=rootUpdate%>customer.edit.jsp/" method="post">
                       <input type="hidden" class="form-control" id="customerId" name="customerId" value="<%= entity.getId() %>" readonly>
                       <!--
                       <div class="form-group">
