@@ -83,7 +83,7 @@
 
 <body>
 
-  <button type="button" class="btn btn-primary" id="viewCustomerButton" data-toggle="modal" data-target="#customerModal" style="display: none;"/>
+  <button type="button"  id="viewCustomerButton" data-toggle="modal" data-target="#customerModal" style="display: none;"/>
     View Customer Details
   </button>
 
