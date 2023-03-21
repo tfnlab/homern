@@ -99,14 +99,14 @@
 
       if (search.length > 5) {
         document.getElementById(elName).innerHTML = "";
-        var urlString = "<%=rootUpdate%>GoogleAutocomplete.sec.jsp?search=" + search + "&sfor=" + sfor.name;
+        var urlString = "<%=rootUpdate%>GoogleAutocomplete.sec.jsp/?search=" + search + "&sfor=" + sfor.name;
         xhttp.open("GET", urlString, true);
         xhttp.send();
       }
     }
     function getPayments(){
         var eId = <%=eId%>;
-        var url = "<%=rootUpdate%>customer.edit.payments.sec.jsp?customerId=" + eId ;
+        var url = "<%=rootUpdate%>customer.edit.payments.sec.jsp/?customerId=" + eId ;
         window.open(url, "_self");
     }
     function getCom() {
@@ -114,7 +114,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var com = selectedOption.value;
       var eId = <%=eId%>;
-      var url = "<%=rootUpdate%>customer.edit.com.sec.jsp?customerId=" + eId +  "&comType=" + com;
+      var url = "<%=rootUpdate%>customer.edit.com.sec.jsp/?customerId=" + eId +  "&comType=" + com;
       window.open(url, "_self");
     }
     function getOrders() {
