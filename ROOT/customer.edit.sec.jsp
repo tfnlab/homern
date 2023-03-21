@@ -72,7 +72,7 @@
           }
         };
         const encodedString = encodeURIComponent(sk);
-        var urlString = "GeocodingExample.jsp?search=" + encodedString + "&sfor=" + fNameLink;
+        var urlString = "<%=rootUpdate%>GeocodingExample.sec.jsp?search=" + encodedString + "&sfor=" + fNameLink;
         xhttp.open("GET", urlString, true);
         xhttp.send();
     }
@@ -99,14 +99,14 @@
 
       if (search.length > 5) {
         document.getElementById(elName).innerHTML = "";
-        var urlString = "GoogleAutocomplete.jsp?search=" + search + "&sfor=" + sfor.name;
+        var urlString = "<%=rootUpdate%>GoogleAutocomplete.sec.jsp?search=" + search + "&sfor=" + sfor.name;
         xhttp.open("GET", urlString, true);
         xhttp.send();
       }
     }
     function getPayments(){
         var eId = <%=eId%>;
-        var url = "customer.edit.payments.jsp?customerId=" + eId ;
+        var url = "<%=rootUpdate%>customer.edit.payments.sec.jsp?customerId=" + eId ;
         window.open(url, "_self");
     }
     function getCom() {
@@ -114,12 +114,12 @@
       var selectedOption = select.options[select.selectedIndex];
       var com = selectedOption.value;
       var eId = <%=eId%>;
-      var url = "customer.edit.com.jsp?customerId=" + eId +  "&comType=" + com;
+      var url = "<%=rootUpdate%>customer.edit.com.sec.jsp?customerId=" + eId +  "&comType=" + com;
       window.open(url, "_self");
     }
     function getOrders() {
       var eId = <%=eId%>;
-      var url = "customer.edit.orders.jsp?customerId=" + eId;
+      var url = "<%=rootUpdate%>customer.edit.orders.sec.jsp/?customerId=" + eId;
       window.open(url, "_self");
     }
   </script>
