@@ -89,7 +89,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var text = selectedOption.text;
       const encodedString = encodeURIComponent(text);
-      var urlString = "genmessage.jsp?customerId=" + document.getElementById("customerId").value + "&comType=" + encodedString ;
+      var urlString = "<%=rootUpdate%>genmessage.sec.jsp/?customerId=" + document.getElementById("customerId").value + "&comType=" + encodedString ;
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
@@ -237,7 +237,7 @@
           %>
                     <div class="form-group">
                       Customer:
-                        <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %> - <%= entity.getFirstName() %></a><br>
+                        <a href="<%=rootUpdate%>customer.edit.jsp/?customerId=<%= entity.getId() %>" ><%= entity.getId() %> - <%= entity.getFirstName() %></a><br>
                     </div>
         <HR>
           <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
