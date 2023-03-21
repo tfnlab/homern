@@ -213,7 +213,7 @@
                   Phone: <%= entity.getPhone() %><br>
                   <%}%>
                   Email: <%= entity.getEmail() %><br>
-                  Customer ID: <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a><br>
+                  Customer ID: <a href="<%=rootUpdate%>customer.edit.sec.jsp/?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a><br>
                   <%}catch(Exception ex){%>
                         <%=ex.getMessage()%>
                   <%}%>
