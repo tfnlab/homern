@@ -82,7 +82,6 @@
 </head>
 
 <body>
-  <%@ include file="include.header.jsp" %>
 
   <button type="button" class="btn btn-primary" id="viewCustomerButton" data-toggle="modal" data-target="#customerModal" style="display: none;"/>
     View Customer Details
@@ -111,6 +110,8 @@
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
             <HR>
+              <a href="customer.new.jsp"  tabindex="2"><i class="fas fa-plus"></i> Customer</a>
+              <HR>
               <%
                  String searchKey = request.getParameter("searchKey");
                 EntityDao cDao = new EntityDao();
