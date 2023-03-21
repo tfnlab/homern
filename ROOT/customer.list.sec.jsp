@@ -83,9 +83,6 @@
 
 <body>
 
-  <button type="button"  id="viewCustomerButton" data-toggle="modal" data-target="#customerModal" style="display: none;"/>
-    View Customer Details
-  </button>
 
   <!-- Modal -->
   <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="customerModalLabel" aria-hidden="true">
@@ -230,6 +227,10 @@
                                                         </section><!-- End Blog Section -->
 
                                                       </main><!-- End #main -->
+
+                                                        <button type="button"  id="viewCustomerButton" data-toggle="modal" data-target="#customerModal" style="display: none;"/>
+                                                          View Customer Details
+                                                        </button>
 
 </body>
 
