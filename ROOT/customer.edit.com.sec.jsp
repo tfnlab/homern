@@ -257,12 +257,12 @@
           <button class="btn btn-primary" onclick="sendMail()" id="emailButton" name="emailButton">Email</button>
           <button class="btn btn-primary" onclick="sendSMS()" id="emailButton" name="emailButton">SMS</button>
 
-                                                                                          </div>
-                                                                                      </div>
+                                                                                        </div>
+                                                                                    </div>
 
-                                                                                    </section><!-- End Blog Section -->
+                                                                                  </section><!-- End Blog Section -->
 
-                                                                                  </main><!-- End #main -->
+                                                                                </main><!-- End #main -->
 
 </body>
 
