@@ -237,7 +237,7 @@
           %>
                     <div class="form-group">
                       Customer:
-                        <a href="<%=rootUpdate%>customer.edit.jsp/?customerId=<%= entity.getId() %>" ><%= entity.getId() %> - <%= entity.getFirstName() %></a><br>
+                        <a href="<%=rootUpdate%>customer.edit.sec.jsp/?customerId=<%= entity.getId() %>" ><%= entity.getId() %> - <%= entity.getFirstName() %></a><br>
                     </div>
         <HR>
           <a href="javascript:void(0)" onclick="getMessage()">Generate Message</a>
