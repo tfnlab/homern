@@ -218,10 +218,10 @@
                }
            %>
                   Products Total <%=invTotal%>
-        <form action="customer.edit.payments.jsp" method="post">
+        <form action="<%=rootUpdate%>customer.edit.payments.jsp/" method="post">
             <hr>
           <div class="form-group">
-            <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getId() %> - <%= entity.getFirstName() %> <%= entity.getLastName() %></a>
+            <a href="<%=rootUpdate%>customer.edit.sec.jsp/?customerId=<%= entity.getId() %>" ><%= entity.getId() %> - <%= entity.getFirstName() %> <%= entity.getLastName() %></a>
           </div>
             <input type="hidden" id="customerId" name="customerId" value="<%= entity.getId() %>" />
                       <hr>
