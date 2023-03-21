@@ -149,19 +149,19 @@ if(rip.equals("144.202.119.205")){
               </div>
               <div class="row">
                 <div class="col-3 link-col">
-                  <a href="product.list.jsp" tabindex="5" ><i class="fa fa-box"></i></a>
+                  <a href="<%=rootUpdate%>product.list.sec.jsp/" tabindex="5" ><i class="fa fa-box"></i></a>
                   <p><%= (new Translate()).translate("Products", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="customer.list.jsp" tabindex="6" ><i class="fa fa-users"></i></a>
+                  <a href="<%=rootUpdate%>customer.list.sec.jsp/" tabindex="6" ><i class="fa fa-users"></i></a>
                   <p><%= (new Translate()).translate("Customers", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="order.list.jsp" tabindex="7" ><i class="fa fa-shopping-cart"></i></a>
+                  <a href="<%=rootUpdate%>order.list.sec.jsp/" tabindex="7" ><i class="fa fa-shopping-cart"></i></a>
                   <p><%= (new Translate()).translate("Orders", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="event.list.jsp" tabindex="8" ><i class="fa fa-calendar"></i></a>
+                  <a href="<%=rootUpdate%>event.list.sec.jsp/" tabindex="8" ><i class="fa fa-calendar"></i></a>
                   <p><%= (new Translate()).translate("Events", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
