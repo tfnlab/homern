@@ -218,10 +218,10 @@
                   %>
                   <%if(showItem){%>
                 Event Name: <%= event.getTitle() %><br>
-                Event ID: <a href="<%=rootUpdate%>event.edit.sec.jsp?eventid=<%= event.getId() %>" ><%= event.getId() %></a><br>
+                Event ID: <a href="<%=rootUpdate%>event.edit.sec.jsp/?eventid=<%= event.getId() %>" ><%= event.getId() %></a><br>
                 Event Description: <%= event.getDescription() %><br>
                 Event Date: <%= event.getStartTime() %> - <%= event.getEndTime() %> <BR>
-                <a href="<%=rootUpdate%>event.list.sec.jsp?eventid=<%= event.getId() %>&remove=yes" >REMOVE</a><br>
+                <a href="<%=rootUpdate%>event.list.sec.jsp/?eventid=<%= event.getId() %>&remove=yes" >REMOVE</a><br>
                 <hr>
                   <%}%>
               <% } %>
