@@ -286,7 +286,7 @@
         %>
         <!-- ======= Contact Section ======= -->
 
-        <form action="<%=rootUpdate%>order.edit.jsp/" method="POST">
+        <form action="<%=rootUpdate%>order.edit.sec.jsp/" method="POST">
           <div class="form-group">
             <label for="order-status">Order Status</label>
             <select class="form-control" id="status" name="status">
