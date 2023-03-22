@@ -169,12 +169,12 @@
 
     function getInv() {
       var orderId = <%=orderId%>;
-      var url = "order.edit.products.print.jsp?orderId=" + orderId;
+      var url = "<%=rootUpdate%>order.edit.products.print.sec.jsp/?orderId=" + orderId;
       window.open(url, "_blank");
     }
     function searchCustomer() {
       var orderId = <%=orderId%>;
-      var url = "order.edit.customers.search.jsp?searchKey=" + document.getElementById("search").value  + "&orderId=" + orderId ;
+      var url = "<%=rootUpdate%>order.edit.customers.search.sec.jsp/?searchKey=" + document.getElementById("search").value  + "&orderId=" + orderId ;
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
