@@ -1,4 +1,4 @@
-<%@page import="java.util.List, java.util.ArrayList, com.tfnlab.mysql.Event, com.tfnlab.mysql.EventDao, java.sql.SQLException, java.text.SimpleDateFormat"%><%@ include file="auth.jsp" %><%
+<%@page import="com.tfnlab.mysql.User,com.tfnlab.mysql.UserDao,java.util.List, java.util.ArrayList, com.tfnlab.mysql.Event, com.tfnlab.mysql.EventDao, java.sql.SQLException, java.text.SimpleDateFormat"%><%@ include file="auth.jsp" %><%
 List<Event> events = new ArrayList<Event>();
 EventDao dao = new EventDao();
 
