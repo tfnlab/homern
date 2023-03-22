@@ -109,7 +109,7 @@
                 }
                     ordersMap = orderDao.getCustomerOrdersDetailsPaid(username);
                 %>
-                <form action="<%=rootUpdate%>order.list.jsp/" method="post">
+                <form action="<%=rootUpdate%>order.list.sec.jsp/" method="post">
                   <div class="form-group">
                     <label for="firstName">Search Key</label>
                     <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>" tabindex="3">
