@@ -243,7 +243,7 @@
                            <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" >
                             <%= order.getOrderId() %> - <%=ot.getEvent().getOrder().getOrderName()%> </a>
                            <HR>
-                           TEchnician:
+                           Technician:
                            <a href="technician.edit.jsp?technicianId=<%= ot.getEvent().getTechnician().getTechnicianId() %>"  >
                             <%=ot.getEvent().getTechnician().getTechnicianName()%></a>
 
