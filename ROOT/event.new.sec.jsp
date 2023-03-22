@@ -220,7 +220,7 @@ function nextQ(inputField , end_time, reminder_time) {
                          <%
                     SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
                  %>
-        <form method="post" action="<%=rootUpdate%>event.new.sec.jsp">
+        <form method="post" action="<%=rootUpdate%>event.new.sec.jsp/">
           <div class="form-group">
             <label for="title">Title</label>
             <input type="text" class="form-control" id="title" name="title" required>
