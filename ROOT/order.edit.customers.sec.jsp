@@ -256,25 +256,25 @@
                  for (OrderCustomer ocItem : ocList) {
                 %>
 
-                    <a href="customer.edit.jsp?customerId=<%= ocItem.getCustomer().getId() %>" > <%= ocItem.getCustomer().getFirstName() %></a><br>
+                    <a href="<%=rootUpdate%>customer.edit.jsp/?customerId=<%= ocItem.getCustomer().getId() %>" > <%= ocItem.getCustomer().getFirstName() %></a><br>
                     <HR>
                     <%= ocItem.getCustomer().getEmail() %><br>
                     <%= ocItem.getCustomer().getPhone() %><br>
                     <%= ocItem.getCustomer_approval_status() %><br>
                     <HR>
-                    <a href="customer.edit.payments.jsp?action=remove&orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" ><i class="fas fa-plus"></i> Payment<a><br>
+                    <a href="<%=rootUpdate%>customer.edit.payments.jsp/?action=remove&orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" ><i class="fas fa-plus"></i> Payment<a><br>
                     <HR>
-                    <a href="order.edit.customers.sign.jsp?orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" ><i class="fas fa-plus"></i> Signature<a><br>
+                    <a href="<%=rootUpdate%>order.edit.customers.sign.jsp/?orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" ><i class="fas fa-plus"></i> Signature<a><br>
                     <HR>
-                    <a href="order.edit.customers.sign.jsp?orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" ><img src="order.edit.customers.sign.view.jsp?orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" /><a>
+                    <a href="<%=rootUpdate%>order.edit.customers.sign.jsp/?orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" ><img src="order.edit.customers.sign.view.jsp?orderId=<%=orderId%>&customerId=<%=ocItem.getCustomer().getId() %>" /><a>
                     <hr>
-                    <a href="order.edit.customers.jsp?action=remove&orderId=<%=orderId%>&ocId=<%= ocItem.getId() %>" class="btn btn-danger">REMOVE CUSTOMER</a>
+                    <a href="<%=rootUpdate%>order.edit.customers.jsp/?action=remove&orderId=<%=orderId%>&ocId=<%= ocItem.getId() %>" class="btn btn-danger">REMOVE CUSTOMER</a>
                     <HR>
              <%
                  }
              %>
              <HR>
-               <a href="customer.new.jsp?orderId=<%=order.getOrderId()%>" >add customer</a>
+               <a href="<%=rootUpdate%>customer.new.jsp/?orderId=<%=order.getOrderId()%>" >add customer</a>
            </div>
           <hr>
 
