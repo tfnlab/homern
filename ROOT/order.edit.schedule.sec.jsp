@@ -279,10 +279,8 @@
                         <a href="<%=rootUpdate%>order.edit.sec.jsp/?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                     </div>
         <HR>
-        <form action="order.edit.schedule.jsp" method="POST" >
           <p>Order Dates: <%= order.getOrderDate() %> - <%= order.getShipDate() %></p><br>
           <p>Order Description: <%= order.getOrderDescription() %></p>
-        </form>
         <%
              List<OrderTechnicians> lI = otD.getOrderTechniciansByOrderId(order.getOrderId());
              List<Technician> technicians = technicianDao.getTechniciansByUsernameActive(username);
