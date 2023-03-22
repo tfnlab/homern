@@ -276,7 +276,7 @@
 
                     <div class="form-group">
                       Order:
-                        <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
+                        <a href="<%=rootUpdate%>order.edit.sec.jsp/?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                     </div>
         <HR>
         <form action="order.edit.schedule.jsp" method="POST" >
