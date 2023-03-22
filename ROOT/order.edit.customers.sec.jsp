@@ -256,7 +256,7 @@
                  for (OrderCustomer ocItem : ocList) {
                 %>
 
-                    <a href="<%=rootUpdate%>customer.edit.jsp/?customerId=<%= ocItem.getCustomer().getId() %>" > <%= ocItem.getCustomer().getFirstName() %></a><br>
+                    <a href="<%=rootUpdate%>customer.edit.sec.jsp/?customerId=<%= ocItem.getCustomer().getId() %>" > <%= ocItem.getCustomer().getFirstName() %></a><br>
                     <HR>
                     <%= ocItem.getCustomer().getEmail() %><br>
                     <%= ocItem.getCustomer().getPhone() %><br>
