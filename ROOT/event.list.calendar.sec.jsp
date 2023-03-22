@@ -143,7 +143,7 @@
           %>
           <td >
             <div class="order-state-box" >
-                <a href="event.new.jsp" >
+                <a href="<%=rootUpdate%>event.new.jsp/" >
                 <i class="fas fa-plus"></i>
                 </a>
             </div>
