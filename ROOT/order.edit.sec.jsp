@@ -122,43 +122,43 @@
     }
     function getCom() {
       var orderId = <%=orderId%>;
-      var url = "<%=rootUpdate%>order.edit.com.jsp/?orderId=" + orderId +  "&comType=greeting";
+      var url = "<%=rootUpdate%>order.edit.com.sec.jsp/?orderId=" + orderId +  "&comType=greeting";
       window.open(url, "_self");
     }
     function getSchedule() {
       var orderId = <%=orderId%>;
-      var url = "order.edit.schedule.jsp?orderId=" + orderId ;
+      var url = "<%=rootUpdate%>order.edit.schedule.sec.jsp/?orderId=" + orderId ;
       window.open(url, "_self");
     }
     function getProducts() {
       var orderId = <%=orderId%>;
-      var url = "order.edit.products.jsp?orderId=" + orderId ;
+      var url = "<%=rootUpdate%>order.edit.products.sec.jsp/?orderId=" + orderId ;
       window.open(url, "_self");
     }
     function getDiscounts() {
       var orderId = <%=orderId%>;
-      var url = "order.edit.discounts.jsp?orderId=" + orderId ;
+      var url = "<%=rootUpdate%>order.edit.discounts.sec.jsp/?orderId=" + orderId ;
       window.open(url, "_self");
     }
 
     function getCustomers() {
       var orderId = <%=orderId%>;
-      var url = "order.edit.customers.jsp?orderId=" + orderId ;
+      var url = "<%=rootUpdate%>order.edit.customers.sec.jsp/?orderId=" + orderId ;
       window.open(url, "_self");
     }
     function getPayments() {
       var orderId = <%=orderId%>;
-      var url = "order.edit.payments.jsp?orderId=" + orderId ;
+      var url = "<%=rootUpdate%>order.edit.payments.sec.jsp/?orderId=" + orderId ;
       window.open(url, "_self");
     }
     function getRebates() {
       var orderId = <%=orderId%>;
-      var url = "order.edit.rebates.jsp?orderId=" + orderId ;
+      var url = "<%=rootUpdate%>order.edit.rebates.sec.jsp/?orderId=" + orderId ;
       window.open(url, "_self");
     }
     function getImages() {
       var orderId = <%=orderId%>;
-      var url = "order.edit.images.jsp?orderId=" + orderId ;
+      var url = "<%=rootUpdate%>order.edit.images.sec.jsp/?orderId=" + orderId ;
       window.open(url, "_self");
     }
 
