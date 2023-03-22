@@ -136,7 +136,7 @@
                 EntityDao ed = new EntityDao();
                   entity = ed.getEntityById(eId, username);
         %>
-        <a href="customer.edit.jsp?customerId=<%= entity.getId() %>" ><%= entity.getFirstName() %>, <%= entity.getLastName() %></a><br>
+        <a href="<%=rootUpdate%>customer.edit.sec.jsp?customerId=<%= entity.getId() %>" ><%= entity.getFirstName() %>, <%= entity.getLastName() %></a><br>
         <%= entity.getEmail() %><BR>
         <%= entity.getPhone() %><BR>
         <HR>
