@@ -98,11 +98,11 @@
               <div class="container mt-5">
                 <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
         <HR>
-          <a href="event.new.jsp"><i class="fas fa-plus"></i> Event</a>
+          <a href="<%=rootUpdate%>event.new.sec.jsp/"><i class="fas fa-plus"></i> Event</a>
         <HR>
-        <a href="event.list.calendar.jsp" >Calendar</a> |
-        <a href="event.list.jsp?sortBy=eventDate">Latest</a> |
-        <a href="event.list.jsp?sortBy=eventDateDESC">Oldest</a>
+        <a href="<%=rootUpdate%>event.list.calendar.sec.jsp/" >Calendar</a> |
+        <a href="<%=rootUpdate%>event.list.sec.jsp/?sortBy=eventDate">Latest</a> |
+        <a href="<%=rootUpdate%>event.list.sec.jsp/?sortBy=eventDateDESC">Oldest</a>
         <HR>
 
         <%
@@ -176,7 +176,7 @@
                   }
                 %>
 
-                <form method="post" action="event.list.jsp">
+                <form method="post" action="<%=rootUpdate%>event.list.sec.jsp/">
                   <div class="form-group">
                    <label for="technicianId">Technician:</label>
                    <select class="form-group" id="technicianId" name="technicianId" >
@@ -218,10 +218,10 @@
                   %>
                   <%if(showItem){%>
                 Event Name: <%= event.getTitle() %><br>
-                Event ID: <a href="event.edit.jsp?eventid=<%= event.getId() %>" ><%= event.getId() %></a><br>
+                Event ID: <a href="<%=rootUpdate%>event.edit.sec.jsp?eventid=<%= event.getId() %>" ><%= event.getId() %></a><br>
                 Event Description: <%= event.getDescription() %><br>
                 Event Date: <%= event.getStartTime() %> - <%= event.getEndTime() %> <BR>
-                <a href="event.list.jsp?eventid=<%= event.getId() %>&remove=yes" >REMOVE</a><br>
+                <a href="<%=rootUpdate%>event.list.sec.jsp?eventid=<%= event.getId() %>&remove=yes" >REMOVE</a><br>
                 <hr>
                   <%}%>
               <% } %>
