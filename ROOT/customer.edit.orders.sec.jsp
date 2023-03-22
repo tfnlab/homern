@@ -136,11 +136,11 @@
                 EntityDao ed = new EntityDao();
                   entity = ed.getEntityById(eId, username);
         %>
-        <a href="<%=rootUpdate%>customer.edit.sec.jsp?customerId=<%= entity.getId() %>" ><%= entity.getFirstName() %>, <%= entity.getLastName() %></a><br>
+        <a href="<%=rootUpdate%>customer.edit.sec.jsp/?customerId=<%= entity.getId() %>" ><%= entity.getFirstName() %>, <%= entity.getLastName() %></a><br>
         <%= entity.getEmail() %><BR>
         <%= entity.getPhone() %><BR>
         <HR>
-        <a href="order.edit.customers.jsp?action=add&customerId=<%= entity.getId() %>" >Add Order</a>
+        <a href="<%=rootUpdate%>order.edit.customers.sec.jsp/?action=add&customerId=<%= entity.getId() %>" >Add Order</a>
         <HR>
                     <%
 
@@ -171,7 +171,7 @@
                     Payment Method: <%= order.getPaymentMethod() %><br>
                     Total: <%= order.getOrderTotal() %><br>
                     <hr>
-                    <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
+                    <a href="<%=rootUpdate%>order.edit.jsp/?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
 
                     <%
                       tabindex +=1;
