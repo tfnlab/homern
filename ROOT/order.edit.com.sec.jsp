@@ -90,7 +90,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var text = selectedOption.text;
       const encodedString = encodeURIComponent(text);
-      var urlString = "genmessage.jsp?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
+      var urlString = "<%=rootUpdate%>genmessage.sec.jsp/?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
@@ -124,7 +124,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var com = selectedOption.value;
       var orderId = <%=orderId%>;
-      var url = "order.edit.com.jsp?orderId=" + orderId +  "&comType=" + com;
+      var url = "<%=rootUpdate%>order.edit.com.jsp/?orderId=" + orderId +  "&comType=" + com;
       window.open(url, "_self");
     }
   </script>
