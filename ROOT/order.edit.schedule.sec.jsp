@@ -295,7 +295,7 @@
               %>
 
 
-         <form action="order.edit.schedule.jsp" method="POST" >
+         <form action="<%=rootUpdate%>order.edit.schedule.sec.jsp/" method="POST" >
          <p>
 
 
