@@ -189,7 +189,7 @@
             var technicianId = technicianIdSelect.options[technicianIdSelect.selectedIndex].value;
               $.ajax({
                 type: "GET",
-                url: "event.list.calendar.event.jsp?technicianId=" + technicianId ,
+                url: "<%=rootUpdate%>event.list.calendar.event.sec.jsp/?technicianId=" + technicianId ,
                 dataType: "json",
                 success: function(events) {
                   $('#calendar').fullCalendar('destroy');
