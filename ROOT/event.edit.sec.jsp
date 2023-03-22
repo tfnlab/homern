@@ -110,9 +110,9 @@
             <div class="container mt-5">
               <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
         <HR>
-        <a href="event.list.calendar.jsp" >Calendar</a> |
-        <a href="event.list.jsp?sortBy=eventDate">Latest</a> |
-        <a href="event.list.jsp?sortBy=eventDateDESC">Oldest</a>
+        <a href="<%=rootUpdate%>event.list.calendar.sec.jsp/" >Calendar</a> |
+        <a href="<%=rootUpdate%>event.list.sec.jsp/?sortBy=eventDate">Latest</a> |
+        <a href="<%=rootUpdate%>event.list.sec.jsp/?sortBy=eventDateDESC">Oldest</a>
         <HR>
         <%
                 long currentTimeMillis = System.currentTimeMillis();
