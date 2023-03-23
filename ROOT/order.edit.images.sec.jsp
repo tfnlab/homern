@@ -68,12 +68,11 @@
     Order order = dao.getOrderByOrderId(orderId, username);
      String uuid = java.util.UUID.randomUUID().toString();
 %>
-                <div class="form-group">
+                <HR>
                   Order:
                     <a href="<%=rootUpdate%>order.edit.sec.jsp/?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a>
                     &nbsp;
                     (<a href="<%=rootUpdate%>order.edit.images.sec.jsp/?orderId=<%= order.getOrderId() %>" >new</a>)
-                </div>
   <HR>
 <form>
   <label for="orderId">Select Image Type:</label><br>
@@ -153,7 +152,7 @@
       var orderId = document.getElementById('orderId').value;
       var client_request_key = document.getElementById('client_request_key').value;
       var csrfmiddlewaretoken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
-      
+
 
       fileInput.addEventListener('change', function(e) {
         for (var i = 0; i < fileInput.files.length; i++) {
