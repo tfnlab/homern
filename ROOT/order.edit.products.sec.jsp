@@ -364,7 +364,7 @@
             </div>
                 </div>
                   <hr>
-                <a href="<%=rootUpdate%>order.edit.products.sec.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
+                <a href="<%=rootUpdate%>order.edit.products.sec.jsp/?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
                   <hr>
            <%
                }
