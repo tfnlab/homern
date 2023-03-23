@@ -100,6 +100,10 @@
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
             <%
+            int discountId = 0;
+            if (request.getParameter("discountId") != null && !request.getParameter("discountId").isEmpty()) {
+              discountId = Integer.parseInt(request.getParameter("discountId"));
+            }
             String name = request.getParameter("name");
             if (name != null && name.trim().length() > 0) {
                 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -107,44 +111,53 @@
                 BigDecimal amount = new BigDecimal(request.getParameter("amount"));
                 Date startDate = format.parse(request.getParameter("startDate"));
                 Date endDate = format.parse(request.getParameter("endDate"));
-                Discount discount = new Discount(UUID.randomUUID().toString(), name, percentage, amount, startDate, endDate, username);
+                Discount du = new Discount(UUID.randomUUID().toString(), name, percentage, amount, startDate, endDate, username);
+                du.setDiscountId(discountId);
                 DiscountDao discountDao = new DiscountDao();
-                discountDao.insert(discount);
-
+                discountDao.updateDiscount(du);
             }
+            DiscountDao discountDao = new DiscountDao();
+            Discount discount = discountDao.getDiscountByIdAndUsername(discountId ,username);
             %>
             <hr>
               <h1>Add Discount</h1>
-          		<form action="<%=rootUpdate%>discount.new.sec.jsp/" method="post">
-          			<div class="form-group">
-          				<label for="name">Name</label> <input type="text"
-          					class="form-control" id="name" name="name" required>
-          			</div>
-          			<div class="form-group">
-          				<label for="percentage">Percentage</label> <input type="text"
-          					class="form-control" id="percentage" name="percentage">
-          			</div>
-          			<div class="form-group">
-          				<label for="amount">Amount</label> <input type="text"
-          					class="form-control" id="amount" name="amount">
-          			</div>
-          			<div class="form-group">
-          				<label for="startDate">Start Date</label> <input type="date"
-          					class="form-control" id="startDate" name="startDate" required>
-          			</div>
-          			<div class="form-group">
-          				<label for="endDate">End Date</label> <input type="date"
-          					class="form-control" id="endDate" name="endDate" required>
-          			</div>
-          			<button type="submit" class="btn btn-primary">Save</button>
-          		</form>
+              <form action="discount.edit.jsp" method="post">
+              <input type="hidden" class="form-control" id="discountId" name="discountId" value="<%= discount.getDiscountId() %>" >
 
-    </div>
-</div>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="<%= discount.getName() %>" >
+              </div>
+              <div class="form-group">
+                <label for="percentage">Percentage</label>
+                <input type="text" class="form-control" id="percentage" name="percentage" value="<%= discount.getPercentage() %>" >
+              </div>
+              <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="text" class="form-control" id="amount" name="amount" value="<%= discount.getAmount() %>" >
+              </div>
+              <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <input type="text" class="form-control" id="startDate" name="startDate" value="<%= discount.getStartDate() %>" >
+              </div>
+              <div class="form-group">
+                <label for="endDate">End Date</label>
+                <input type="text" class="form-control" id="endDate" name="endDate" value="<%= discount.getEndDate() %>" >
+              </div>
+              <div class="form-group">
+                <label for="active">Active</label>
+                <input type="text" class="form-control" id="active" name="active" value="<%= discount.isActive() %>" >
+              </div>
 
-</section><!-- End Blog Section -->
+              <button type="submit" class="btn btn-primary">Save</button>
+            </form>
 
-</main><!-- End #main -->
+          </div>
+      </div>
+
+    </section><!-- End Blog Section -->
+
+  </main><!-- End #main -->
 
 </body>
 
