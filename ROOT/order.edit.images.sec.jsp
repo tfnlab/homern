@@ -152,8 +152,8 @@
       var submitButton = document.getElementById('submitButton');
       var orderId = document.getElementById('orderId').value;
       var client_request_key = document.getElementById('client_request_key').value;
-      var csrfmiddlewaretoken = document.getElementByName('csrfmiddlewaretoken').value;
-
+      var csrfmiddlewaretoken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
+      
 
       fileInput.addEventListener('change', function(e) {
         for (var i = 0; i < fileInput.files.length; i++) {
