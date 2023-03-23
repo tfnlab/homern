@@ -203,10 +203,9 @@
       var text = selectedOption.text;
       var encodedString = encodeURIComponent(text);
       var urlString = "<%=rootUpdate%>genmessage.sec.jsp/?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
-      alert(document.getElementsByName("csrfmiddlewaretoken").value);
       xhttp.open("POST", urlString, true);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhttp.send("orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString + "&csrfmiddlewaretoken=" + document.getElementsByName("csrfmiddlewaretoken").value);
+      xhttp.send("orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString );
     }
   </script>
 </head>
