@@ -205,7 +205,7 @@
       var urlString = "<%=rootUpdate%>genmessage.sec.jsp/?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
       xhttp.open("POST", urlString, true);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhttp.send("orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString + "&csrfmiddlewaretoken=" + document.getElementById("csrfmiddlewaretoken").value);
+      xhttp.send("orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString + "&csrfmiddlewaretoken=" + document.getElementByName("csrfmiddlewaretoken").value);
     }
   </script>
 </head>
