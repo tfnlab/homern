@@ -205,7 +205,7 @@
       var urlString = "<%=rootUpdate%>genmessage.sec.jsp/?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
       xhttp.open("POST", urlString, true);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhttp.send("orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString);
+      xhttp.send("orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString + "&csrfmiddlewaretoken=" + document.getElementById("csrfmiddlewaretoken").value);
     }
   </script>
 </head>
@@ -300,7 +300,6 @@
 
          <form action="<%=rootUpdate%>order.edit.products.sec.jsp" method="POST" >
          <p>
-
               <div class="form-group">
                <label for="technicianId">Product:</label>
                 <select class="form-group" id="productsId" name="productsId" onchange="getProductDetail()">
@@ -308,7 +307,6 @@
                      <option value="<%= product.getId() %>"><%= product.getName() %></option>
                    <% } %>
                 </select>
-
              </div>
              <HR>
              <div class="form-group">
