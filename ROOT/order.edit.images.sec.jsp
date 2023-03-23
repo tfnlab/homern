@@ -178,7 +178,7 @@
                 e.preventDefault();
 
                 var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'order.edit.images.upload.jsp');
+                xhr.open('POST', '<%=rootUpdate%>order.edit.images.upload.jsp/');
                 xhr.onload = function() {
                   if (xhr.status === 200) {
                     document.getElementById("submitButton").classList.remove("btn-warning");
