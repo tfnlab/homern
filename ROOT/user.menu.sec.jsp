@@ -102,19 +102,19 @@
               </div>
               <div class="row">
                 <div class="col-3 ">
-                  <a href="<%=rootUpdate%>discount.list.sec.jsp" tabindex="9" ><i class="fa fa-gift"></i></a>
+                  <a href="<%=rootUpdate%>discount.list.sec.jsp/" tabindex="9" ><i class="fa fa-gift"></i></a>
                   <p><%= (new Translate()).translate("Discounts", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
-                  <a href="<%=rootUpdate%>rebate.list.sec.jsp" tabindex="10" ><i class="fa fa-wallet"></i></a>
+                  <a href="<%=rootUpdate%>rebate.list.sec.jsp/" tabindex="10" ><i class="fa fa-wallet"></i></a>
                   <p><%= (new Translate()).translate("Rebates", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
-                  <a href="<%=rootUpdate%>inventory.list.sec.jsp" tabindex="11" ><i class="fa fa-box-open"></i></a>
+                  <a href="<%=rootUpdate%>inventory.list.sec.jsp/" tabindex="11" ><i class="fa fa-box-open"></i></a>
                   <p><%= (new Translate()).translate("Inventory", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
-                  <a href="<%=rootUpdate%>timesheet.list.sec.jsp" tabindex="12" ><i class="fa fa-clock"></i></a>
+                  <a href="<%=rootUpdate%>timesheet.list.sec.jsp/" tabindex="12" ><i class="fa fa-clock"></i></a>
                   <p><%= (new Translate()).translate("Time Sheet", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
