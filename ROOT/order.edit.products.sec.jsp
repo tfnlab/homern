@@ -106,7 +106,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var text = selectedOption.text;
       var encodedString = encodeURIComponent(text);
-      var urlString = "genmessage.jsp?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
+      var urlString = "<%=rootUpdate%>genmessage.sec.jsp/?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
@@ -130,7 +130,7 @@
 
       if (search.length > 5) {
         document.getElementById(elName).innerHTML = "";
-        var urlString = "GoogleAutocomplete.jsp?search=" + search + "&sfor=" + sfor.name;
+        var urlString = "<%=rootUpdate%>GoogleAutocomplete.sec.jsp?search=" + search + "&sfor=" + sfor.name;
         xhttp.open("GET", urlString, true);
         xhttp.send();
       }
@@ -140,7 +140,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var com = selectedOption.value;
       var orderId = <%=orderId%>;
-      var url = "order.edit.com.jsp?orderId=" + orderId +  "&comType=" + com;
+      var url = "<%=rootUpdate%>order.edit.com.sec.jsp?orderId=" + orderId +  "&comType=" + com;
       window.open(url, "_self");
     }
     function getProductDetail() {
@@ -176,7 +176,7 @@
       var orderId = <%=orderId%>;
       var encodedString = encodeURIComponent(document.getElementById("orderCom").value);
 
-      var url = "order.edit.products.email.jsp?orderId=" + orderId + "&type=" + type +"&message=" + encodedString;
+      var url = "<%=rootUpdate%>order.edit.products.email.sec.jsp?orderId=" + orderId + "&type=" + type +"&message=" + encodedString;
       window.open(url, "_blank");
          }
     }
@@ -185,7 +185,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var type = selectedOption.value;
       var orderId = <%=orderId%>;
-      var url = "order.edit.products.print.jsp?orderId=" + orderId + "&type=" + type;
+      var url = "<%=rootUpdate%>order.edit.products.print.sec.jsp?orderId=" + orderId + "&type=" + type;
       window.open(url, "_blank");
     }
 
@@ -202,7 +202,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var text = selectedOption.text;
       var encodedString = encodeURIComponent(text);
-      var urlString = "genmessage.jsp?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
+      var urlString = "<%=rootUpdate%>genmessage.sec.jsp?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
       xhttp.open("POST", urlString, true);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xhttp.send("orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString);
@@ -375,8 +375,6 @@
            %>
                   Products Total $<%=invTotal%>
                   <hr>
-
-
     </div>
     </div>
 
