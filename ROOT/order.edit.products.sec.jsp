@@ -202,7 +202,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var text = selectedOption.text;
       var encodedString = encodeURIComponent(text);
-      var urlString = "<%=rootUpdate%>genmessage.sec.jsp?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
+      var urlString = "<%=rootUpdate%>genmessage.sec.jsp/?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
       xhttp.open("POST", urlString, true);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xhttp.send("orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString);
