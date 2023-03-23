@@ -112,8 +112,8 @@
                 %>
                             <div class="col-sm-6 col-md-4">
                               <div class="thumbnail">
-                                <a href="<%=rootUpdate%>order.edit.images.view.sec.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" >
-                                <img src="<%=rootUpdate%>order.edit.images.view.sec.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" class="img-fluid" alt="Responsive Image" style="width: 100px; height: 100px;" />
+                                <a href="<%=rootUpdate%>order.edit.images.view.sec.jsp/?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" >
+                                <img src="<%=rootUpdate%>order.edit.images.view.sec.jsp/?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" class="img-fluid" alt="Responsive Image" style="width: 100px; height: 100px;" />
                                 <a>
                                 <div class="caption">
                                   <h3>Title <%=image.getType()%></h3>
