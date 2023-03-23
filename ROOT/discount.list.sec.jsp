@@ -102,7 +102,7 @@
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
         <HR>
 
-            <a href="discount.new.jsp" tabindex="2" ><i class="fas fa-plus"></i> Discount</a>
+            <a href="<%=rootUpdate%>discount.new.sec.jsp/" tabindex="2" ><i class="fas fa-plus"></i> Discount</a>
 
             <HR>
             <%
@@ -116,7 +116,7 @@
                 %>
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="discount.edit.jsp?discountId=<%= discount.getDiscountId() %>" ><%= discount.getName() %></a></h5>
+                        <h5 class="card-title"><a href="<%=rootUpdate%>discount.edit.sec.jsp?discountId=<%= discount.getDiscountId() %>" ><%= discount.getName() %></a></h5>
                         <p class="card-text">Percentage: <%= discount.getPercentage() %></p>
                         <p class="card-text">Amount: <%= discount.getAmount() %></p>
                         <p class="card-text">Start Date: <%= discount.getStartDate() %></p>
