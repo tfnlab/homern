@@ -296,7 +296,7 @@
                 <HR>
                 <div class="form-group">
                   Order:
-                    <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
+                    <a href="<%=rootUpdate%>order.edit.sec.jsp/?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                 </div>
                 <HR>
              <h3>Payments</h3>
@@ -305,7 +305,7 @@
 
                     List<OrderCustomer> ocList = ocDao.getCustomersByOrderId(order.getOrderId());
                %>
-               <form action="<%=rootUpdate%>order.edit.payments.jsp/" method="POST">
+               <form action="<%=rootUpdate%>order.edit.payments.sec.jsp/" method="POST">
                     <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" />
              <div class="form-group">
               <label for="ocId">Customers:</label>
