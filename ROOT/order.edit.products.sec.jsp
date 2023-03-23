@@ -296,7 +296,7 @@
 
 
 
-         <form action="<%=rootUpdate%>order.edit.products.sec.jsp" method="POST" >
+         <form action="<%=rootUpdate%>order.edit.products.sec.jsp/" method="POST" >
          <p>
               <div class="form-group">
                <label for="technicianId">Product:</label>
