@@ -70,9 +70,9 @@
 %>
                 <div class="form-group">
                   Order:
-                    <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a>
+                    <a href="<%=rootUpdate%>order.edit.sec.jsp/?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a>
                     &nbsp;
-                    (<a href="order.edit.images.jsp?orderId=<%= order.getOrderId() %>" >new</a>)
+                    (<a href="<%=rootUpdate%>order.edit.images.sec.jsp/?orderId=<%= order.getOrderId() %>" >new</a>)
                 </div>
   <HR>
 <form>
@@ -113,8 +113,8 @@
                 %>
                             <div class="col-sm-6 col-md-4">
                               <div class="thumbnail">
-                                <a href="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" >
-                                <img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" class="img-fluid" alt="Responsive Image" style="width: 100px; height: 100px;" />
+                                <a href="<%=rootUpdate%>order.edit.images.view.sec.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" >
+                                <img src="<%=rootUpdate%>order.edit.images.view.sec.jsp?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" class="img-fluid" alt="Responsive Image" style="width: 100px; height: 100px;" />
                                 <a>
                                 <div class="caption">
                                   <h3>Title <%=image.getType()%></h3>
@@ -152,6 +152,7 @@
       var submitButton = document.getElementById('submitButton');
       var orderId = document.getElementById('orderId').value;
       var client_request_key = document.getElementById('client_request_key').value;
+      var csrfmiddlewaretoken = document.getElementByNames('csrfmiddlewaretoken').value;
 
 
       fileInput.addEventListener('change', function(e) {
@@ -170,6 +171,7 @@
               formData.append('file', blob);
               formData.append('orderId', orderId);
               formData.append('client_request_key', client_request_key);
+              formData.append('csrfmiddlewaretoken', csrfmiddlewaretoken);
 
 
 
