@@ -121,7 +121,7 @@
             %>
             <hr>
               <h1>Add Discount</h1>
-              <form action="<%=rootUpdate%>discount.edit.sec.jsp" method="post">
+              <form action="<%=rootUpdate%>discount.edit.sec.jsp/" method="post">
               <input type="hidden" class="form-control" id="discountId" name="discountId" value="<%= discount.getDiscountId() %>" >
 
               <div class="form-group">
