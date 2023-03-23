@@ -305,7 +305,7 @@
 
                     List<OrderCustomer> ocList = ocDao.getCustomersByOrderId(order.getOrderId());
                %>
-               <form action="order.edit.payments.jsp" method="POST">
+               <form action="<%=rootUpdate%>order.edit.payments.jsp/" method="POST">
                     <input type="hidden" id="orderId" name="orderId" value="<%= order.getOrderId() %>" />
              <div class="form-group">
               <label for="ocId">Customers:</label>
