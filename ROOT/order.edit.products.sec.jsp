@@ -252,7 +252,7 @@
 
                     <div class="form-group">
                       Order:
-                        <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
+                        <a href="<%=rootUpdate%>order.edit.sec.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                     </div>
 
                               <HR>
@@ -298,7 +298,7 @@
 
 
 
-         <form action="order.edit.products.jsp" method="POST" >
+         <form action="<%=rootUpdate%>order.edit.products.sec.jsp" method="POST" >
          <p>
 
               <div class="form-group">
@@ -368,14 +368,14 @@
             </div>
                 </div>
                   <hr>
-                <a href="order.edit.products.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
+                <a href="<%=rootUpdate%>order.edit.products.sec.jsp?remove=yes&orderId=<%=orderId%>&plid=<%= plItem.getId() %>" >remove<a><br>
                   <hr>
            <%
                }
            %>
                   Products Total $<%=invTotal%>
                   <hr>
-  
+
 
     </div>
     </div>
