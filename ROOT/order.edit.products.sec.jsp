@@ -194,7 +194,6 @@
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-
           document.getElementById("orderCom").innerHTML = this.responseText.trim();
         }
       };
@@ -203,9 +202,9 @@
       var text = selectedOption.text;
       var encodedString = encodeURIComponent(text);
       var urlString = "<%=rootUpdate%>genmessage.sec.jsp/?orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString ;
-      xhttp.open("POST", urlString, true);
-      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhttp.send("orderId=" + document.getElementById("orderId").value + "&comType=" + encodedString );
+      alert(document.getElementsByName("csrfmiddlewaretoken").value);
+      xhttp.open("GET", urlString, true);
+      xhttp.send();
     }
   </script>
 </head>
