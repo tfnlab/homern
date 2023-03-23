@@ -233,7 +233,7 @@
                 %>
                 <div class="form-group">
                   Order:
-                    <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
+                    <a href="<%=rootUpdate%>order.edit.sec.jsp/?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                 </div>
         <hr>
            <div class="container" id="searchR" name="searchR" >
@@ -247,13 +247,13 @@
                        %>
                        <div class="card">
                            <div class="card-body">
-                               <h5 class="card-title"><a href="rebate.edit.jsp?rebateId=<%= rebate.getRebateId() %>" ><%= rebate.getName() %></a></h5>
+                               <h5 class="card-title"><a href="<%=rootUpdate%>rebate.edit.sec.jsp/?rebateId=<%= rebate.getRebateId() %>" ><%= rebate.getName() %></a></h5>
                                <p class="card-text">Percentage: <%= rebate.getPercentage() %></p>
                                <p class="card-text">Amount: <%= rebate.getAmount() %></p>
                                <p class="card-text">Start Date: <%= rebate.getStartDate() %></p>
                                <p class="card-text">End Date: <%= rebate.getEndDate() %></p>
                                <p class="card-text">
-                                 <a href="order.edit.rebates.jsp?action=add&orderId=<%=orderId%>&rebateId=<%= rebate.getRebateId() %>" >Add</a><br>
+                                 <a href="<%=rootUpdate%>order.edit.rebates.sec.jsp/?action=add&orderId=<%=orderId%>&rebateId=<%= rebate.getRebateId() %>" >Add</a><br>
                                </p>
                            </div>
                        </div>
@@ -276,7 +276,7 @@
                         <p>
                     <%=orItem.getRebate().getName()%> <BR>
                     <%=orItem.getRebate().getAmount()%> <BR>
-                    <a href="order.edit.rebates.jsp?action=remove&orderId=<%=orderId%>&orId=<%= orItem.getId() %>" class="btn btn-danger">REMOVE</a><BR>
+                    <a href="<%=rootUpdate%>order.edit.rebates.sec.jsp?action=remove&orderId=<%=orderId%>&orId=<%= orItem.getId() %>" class="btn btn-danger">REMOVE</a><BR>
                         </p>
                         </div>
                     </div>
