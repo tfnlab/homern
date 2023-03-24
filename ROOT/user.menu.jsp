@@ -7,14 +7,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <%
-User usernameOBJ = (User) session.getAttribute("usernameOBJ");
-String rootUpdate = "";
-if(rip.equals("144.202.119.205")){
-    UserDao uDao = new UserDao();
-    usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
-    rootUpdate = "../";
-
-}
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
 %>
 <head>
   <meta charset="utf-8">
