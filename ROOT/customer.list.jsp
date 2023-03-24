@@ -137,7 +137,7 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-          <a href="customer.new.sec.jsp/"  tabindex="2"><i class="fas fa-plus"></i> Customer</a>
+          <a href="customer.new.jsp"  tabindex="2"><i class="fas fa-plus"></i> Customer</a>
           <HR>
               <%
                  String searchKey = request.getParameter("searchKey");
