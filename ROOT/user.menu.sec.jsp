@@ -62,12 +62,12 @@
             <div class="row">
 
               <div class="col-3 ">
-                  <a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" ><i class="fa fa-home"></i></a>
+                  <a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" ><i class="fa fa-home"></i></a>
                   <p><%= (new Translate()).translate("Home", usernameOBJ.getLanguage())%></p>
                 </div>
 
                   <div class="col-3 ">
-                  <a href="<%=rootUpdate%>dashboard.sec.jsp" tabindex="2" ><i class="fa fa-tachometer-alt"></i></a>
+                  <a href="<%=rootUpdate%>dashboard.sec.jsp/" tabindex="2" ><i class="fa fa-tachometer-alt"></i></a>
                   <p><%= (new Translate()).translate("Dashboard", usernameOBJ.getLanguage())%></p>
                 </div>
 
