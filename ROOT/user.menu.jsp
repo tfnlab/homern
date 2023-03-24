@@ -125,15 +125,15 @@
 
               <div class="row">
                 <div class="col-3 link-col">
-                  <a href="<%=rootUpdate%>user.menu.jsp" tabindex="1" ><i class="fa fa-home"></i></a>
+                  <a href="user.menu.jsp" tabindex="1" ><i class="fa fa-home"></i></a>
                   <p><%= (new Translate()).translate("Home", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="<%=rootUpdate%>dashboard.jsp" tabindex="2" ><i class="fa fa-tachometer-alt"></i></a>
+                  <a href="dashboard.jsp" tabindex="2" ><i class="fa fa-tachometer-alt"></i></a>
                   <p><%= (new Translate()).translate("Dashboard", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="<%=rootUpdate%>user.edit.jsp" tabindex="3" ><i class="fa fa-cog"></i></a>
+                  <a href="user.edit.jsp" tabindex="3" ><i class="fa fa-cog"></i></a>
                   <p><%= (new Translate()).translate("Settings", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 link-col">
