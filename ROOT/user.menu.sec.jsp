@@ -164,15 +164,15 @@
                 </div>
                 <div class="col-3 ">
                   <a href="#" tabindex="22" ><i class="fa fa-user-secret"></i></a>
-                  <p><%= (new Translate()).translate("Subscribe", usernameOBJ.getLanguage())%></p>
+                  <p><%= (new Translate()).translate("Subscriptions", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
                   <a href="#" tabindex="23" ><i class="fa fa-user-secret"></i></a>
-                  <p><%= (new Translate()).translate("Contact", usernameOBJ.getLanguage())%></p>
+                  <p><%= (new Translate()).translate("Contacts", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
                   <a href="#" tabindex="24" ><i class="fa fa-user-secret"></i></a>
-                  <p><%= (new Translate()).translate("Quote", usernameOBJ.getLanguage())%></p>
+                  <p><%= (new Translate()).translate("Quotes", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
             </div>
