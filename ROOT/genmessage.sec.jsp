@@ -1,5 +1,5 @@
 <%@ page language="java" import="com.tfnlab.mysql.UserDao,com.tfnlab.mysql.Entity,com.tfnlab.mysql.EntityDao,com.tfnlab.mysql.Order,com.tfnlab.mysql.OrderDao,com.tfnlab.mysql.User,com.tfnlab.mysql.TemplateDao,com.tfnlab.mysql.Template,java.util.UUID,java.lang.Thread,org.apache.commons.io.IOUtils,org.apache.commons.io.output.*,java.nio.charset.Charset,java.io.*,java.util.*,java.awt.image.BufferedImage,javax.imageio.ImageIO,java.io.OutputStream,java.io.FileInputStream,java.io.File"%>
-<%@ include file="auth.jsp" %>
+<%@ include file="auth.sec.jsp" %>
 <%
           User usernameOBJ = (User)session.getAttribute("usernameOBJ");
           String username = (String) session.getAttribute("username");

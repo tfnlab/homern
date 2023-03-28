@@ -29,7 +29,7 @@
 <%@ page import="com.tfnlab.mysql.Rebate"%>
 <%@ page import="com.tfnlab.mysql.RebateDao"%>
 <%@ page import="com.tfnlab.util.Translate" %>
-<%@ include file="auth.jsp" %>
+<%@ include file="auth.sec.jsp" %>
 <%
           User usernameOBJ = (User)session.getAttribute("usernameOBJ");
           String username = (String) session.getAttribute("username");

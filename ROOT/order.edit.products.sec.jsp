@@ -23,7 +23,7 @@
 <%@ page import="com.tfnlab.mysql.ProductLineItem" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
 <%@ page import="com.tfnlab.util.Translate" %>
-<%@ include file="auth.jsp" %>
+<%@ include file="auth.sec.jsp" %>
 <%
           User usernameOBJ = (User)session.getAttribute("usernameOBJ");
           String username = (String) session.getAttribute("username");

@@ -12,7 +12,7 @@
 <%@ page import="java.io.BufferedWriter" %>
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
 <%@ page import="com.tfnlab.business.QRCodeGenerator" %>
-<%@ include file="auth.jsp" %>
+<%@ include file="auth.sec.jsp" %>
 <%
           User usernameOBJ = (User)session.getAttribute("usernameOBJ");
           String username = (String) session.getAttribute("username");

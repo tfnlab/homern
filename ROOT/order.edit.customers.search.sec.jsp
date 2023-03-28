@@ -10,7 +10,7 @@
 <%@ page import="java.util.HashMap" %>
 <%@ page import="com.tfnlab.mysql.Entity" %>
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
-<%@ include file="auth.jsp" %>
+<%@ include file="auth.sec.jsp" %>
 <%
           User usernameOBJ = (User)session.getAttribute("usernameOBJ");
           String username = (String) session.getAttribute("username");

@@ -22,7 +22,7 @@
 <%@ page import="org.apache.commons.fileupload.FileItem" %>
 <%@ page import="java.util.Collection" %>
 <%@ page import="javax.servlet.http.Part" %>
-<%@ include file="auth.jsp" %>
+<%@ include file="auth.sec.jsp" %>
 <%
           User usernameOBJ = (User)session.getAttribute("usernameOBJ");
           String username = (String) session.getAttribute("username");
