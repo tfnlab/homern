@@ -7,7 +7,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <%
-User usernameOBJ = (User) session.getAttribute("usernameOBJ");
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
 %>
 <head>
   <meta charset="utf-8">

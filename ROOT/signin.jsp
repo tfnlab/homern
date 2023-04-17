@@ -105,12 +105,19 @@
         <p>
         </p>
         <%
+
+        String rip = request.getRemoteAddr();
           String language = request.getParameter("language");
 
           if (language == null || language.trim().length() < 4) {
             language = "english";
           }
         %>
+
+        <% String remoteAddr = request.getHeader("X-Real-IP"); %>
+        <p>The IP address of the original client is <%= remoteAddr %></p>
+
+        <%=rip%>
         <%
         String firstName = request.getParameter("firstName");
         String middleInitial = request.getParameter("middleInitial");
