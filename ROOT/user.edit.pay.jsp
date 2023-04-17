@@ -166,7 +166,7 @@
 
   </main><!-- End #main -->
   <script>
-    var stripe = Stripe('pk_live_51MOr0QDUDMr9kEdwlALHcoImQwqHdYmr13cSRAcZz7MLezXjbU3iIbvXJDg34SkYxQlewUPW9uCkbFyi2IIXJXot00F7Eu5WxR');
+    var stripe = Stripe('pk_live_51Mm5XGLLpu03noQ07W153qfNBlwxnviE8UhcLvoSjffhDylJQ2YFUx5dDXVMvNdpIuo7f4UtqtbgppYggfyPioxq00f0KRR4kY');
     // Create an instance of Elements.
     var elements = stripe.elements();
 
