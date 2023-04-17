@@ -221,15 +221,15 @@
                   <p><%= (new Translate()).translate("Vendors", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="#" tabindex="22" ><i class="fa fa-user-secret"></i></a>
+                  <a href="#" tabindex="22" ><i class="fa fa-newspaper"></i></a>
                   <p><%= (new Translate()).translate("Subscriptions", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="#" tabindex="23" ><i class="fa fa-user-secret"></i></a>
+                  <a href="#" tabindex="23" ><i class="fa fa-address-book"></i></a>
                   <p><%= (new Translate()).translate("Contacts", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="#" tabindex="24" ><i class="fa fa-user-secret"></i></a>
+                  <a href="#" tabindex="24" ><i class="fa fa-file-invoice-dollar"></i></a>
                   <p><%= (new Translate()).translate("Quotes", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
