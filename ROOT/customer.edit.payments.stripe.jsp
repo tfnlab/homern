@@ -13,6 +13,7 @@
 <%@ page import="java.text.ParseException" %>
 <%@ page import="com.tfnlab.mysql.Payment" %>
 <%@ page import="com.tfnlab.mysql.PaymentDao" %>
+<%@ page import="com.tfnlab.util.Translate" %>
 <%@ page import="java.util.List" %>
 
 
