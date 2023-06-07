@@ -79,7 +79,7 @@
             try {
                 subscriptionDAO.insert(subscription);
                 message = "Subscription added successfully!";
-            } catch (SQLException e) {
+            } catch (Exception e) {
                 message = "Error occurred while adding subscription!";
             }
         }
@@ -87,6 +87,9 @@
         <HR>
           <a href="subscription.list.jsp" tabindex="2"><i class="fas fa-list"></i> Subscriptions</a>
         <HR>
+          <% if(message != null) { %>
+              <p><%= message %></p>
+          <% } %>
           <div class="container mt-5">
             <form action="subscription.new.jsp" method="post">
               <div class="form-group">
