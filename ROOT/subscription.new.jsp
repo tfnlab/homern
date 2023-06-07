@@ -66,6 +66,25 @@
         <h2>Template</h2>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
+        <%
+        String username = request.getParameter("username");
+        String email = request.getParameter("email");
+        String source = "HomeRenovationNation.com";
+        String message = null;
+
+        if (email != null) {
+            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+            Subscription subscription = new Subscription(0, username, email, timestamp, source);
+            SubscriptionDAO subscriptionDAO = new SubscriptionDAO();
+
+            try {
+                subscriptionDAO.insert(subscription);
+                message = "Subscription added successfully!";
+            } catch (SQLException e) {
+                message = "Error occurred while adding subscription!";
+            }
+        }
+        %>
         <HR>
           <a href="subscription.list.jsp" tabindex="2"><i class="fas fa-list"></i> Subscriptions</a>
         <HR>
