@@ -161,6 +161,14 @@
 
 
               }
+              if(apiAction.equals("addSub")){
+                MotherfuckerDao mferDao = new MotherfuckerDao();
+                String customerId = request.getParameter("customerId");
+                String api_key = request.getParameter("api_key");
+                %>
+                  ADD SUB DONE
+                <%
+              }
               if(apiAction.equals("getOrder")){
                 MotherfuckerDao mferDao = new MotherfuckerDao();
                 String customerId = request.getParameter("customerId");
