@@ -67,21 +67,16 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <HR>
-          <a href="subscription.new.jsp" tabindex="2"><i class="fas fa-plus"></i> Subscription</a>
+          <a href="subscription.list.jsp" tabindex="2"><i class="fas fa-list"></i> Subscriptions</a>
         <HR>
           <div class="container mt-5">
-            <%
-                    SubscriptionDAO dao = new SubscriptionDAO();
-                    List<Subscription> subscriptions = dao.getSubscriptionsByUsername(username);
-
-                    // Display the subscriptions
-                    for (Subscription subscription : subscriptions) {
-                        out.println("Subscription ID: " + subscription.getId() + "<br>");
-                        out.println("Email: " + subscription.getEmail() + "<br>");
-                        out.println("Subscribed At: " + subscription.getSubscribedAt() + "<br>");
-                        out.println("Source: " + subscription.getSource() + "<br><br>");
-                    }
-            %>
+            <form action="subscription.new.jsp" method="post">
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
           </div>
       </div>
     </section><!-- End Blog Section -->
