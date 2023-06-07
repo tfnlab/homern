@@ -67,7 +67,6 @@
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <%
-        String username = request.getParameter("username");
         String email = request.getParameter("email");
         String source = "HomeRenovationNation.com";
         String message = null;
