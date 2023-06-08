@@ -166,7 +166,7 @@
                 String username = request.getParameter("username");
                 String api_key = request.getParameter("api_key");
                 String subemail = request.getParameter("email");
-                mferDao.subscribeWeb(username, api_key, subemail);
+                //mferDao.subscribeWeb(username, api_key, subemail);
                 %>
                   with <%=subemail%>
                 <%
