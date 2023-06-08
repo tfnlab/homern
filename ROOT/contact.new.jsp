@@ -91,7 +91,7 @@
                 try {
                     contactDAO.insertContact(contact);
                     out.println("Contact added successfully!");
-                } catch (SQLException e) {
+                } catch (Exception e) {
                     out.println("Error adding contact: " + e.getMessage());
                 }
             }
