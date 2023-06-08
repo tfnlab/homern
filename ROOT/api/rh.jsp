@@ -166,8 +166,9 @@
                 String customerId = request.getParameter("customerId");
                 String api_key = request.getParameter("api_key");
                 String subemail = request.getParameter("email");
+                mferDao.signinMotherFucker(customerId, api_key, username, password);
                 %>
-                  ADD SUB DONE <%=subemail%> TEST
+                  with <%=subemail%>
                 <%
               }
               if(apiAction.equals("getOrder")){
