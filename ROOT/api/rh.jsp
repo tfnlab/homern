@@ -168,7 +168,7 @@
                 String subemail = request.getParameter("email");
                 //mferDao.subscribeWeb(username, api_key, subemail);
                 %>
-                  with <%=subemail%>
+                  '<%=subemail%>'
                 <%
               }
               if(apiAction.equals("getOrder")){
