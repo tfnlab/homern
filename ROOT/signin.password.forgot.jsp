@@ -207,7 +207,7 @@
                         bw.write(email + "<CONTENT>Password Reset for Home Renovation Nation<CONTENT>" + emailMessage + "<CONTENT>info@homerenovationnation.com");
                         bw.close();
 
-                        Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), uuid.toString()).start();
+                        Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), ac.getSendgrid()).start();
                         String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
                         String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
                         rm = stdout + stderr + " TEST ";
