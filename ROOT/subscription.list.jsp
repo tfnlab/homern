@@ -71,17 +71,20 @@
         <HR>
           <div class="container mt-5">
             <%
-                    SubscriptionDAO dao = new SubscriptionDAO();
-                    List<Subscription> subscriptions = dao.getSubscriptionsByUsername(username);
+                SubscriptionDAO dao = new SubscriptionDAO();
+                List<Subscription> subscriptions = dao.getSubscriptionsByUsername(username);
 
-                    // Display the subscriptions
-                    for (Subscription subscription : subscriptions) {
-                        out.println("Subscription ID: " + subscription.getId() + "<br>");
-                        out.println("Email: " + subscription.getEmail() + "<br>");
-                        out.println("Subscribed At: " + subscription.getSubscribedAt() + "<br>");
-                        out.println("Source: " + subscription.getSource() + "<br><br>");
-                    }
+                // Display the subscriptions
+                for (Subscription subscription : subscriptions) {
+                    %>
+                    Subscription ID: <%= subscription.getId() %><br>
+                    Email: <%= subscription.getEmail() %><br>
+                    Subscribed At: <%= subscription.getSubscribedAt() %><br>
+                    Source: <%= subscription.getSource() %><br><br>
+                    <%
+                }
             %>
+
           </div>
       </div>
     </section><!-- End Blog Section -->
