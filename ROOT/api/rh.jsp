@@ -244,7 +244,9 @@
 
               }
           }catch(Exception ex){
-                %>EXCEPTION RAISED : <%=ex.getMessage()%><%
+                %>
+                We apologize for the inconvenience. A system error has occurred and our team is investigating. Thank you for your patience.
+                more info : <%=ex.getMessage()%><%
           }
         }
 %>
