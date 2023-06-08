@@ -244,8 +244,6 @@
 
               }
           }catch(Exception ex){
-                %><%=request.getParameter("api_key")%><%
-                %><%=request.getParameter("customerId")%><%
                 %>EXCEPTION RAISED : <%=ex.getMessage()%><%
           }
         }
