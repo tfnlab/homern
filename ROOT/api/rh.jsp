@@ -166,7 +166,7 @@
                 String customerId = request.getParameter("customerId");
                 String api_key = request.getParameter("api_key");
                 String subemail = request.getParameter("email");
-                mferDao.signinMotherFucker(customerId, api_key, username, password);
+                mferDao.subscribeWeb(customerId, api_key, subemail);
                 %>
                   with <%=subemail%>
                 <%
