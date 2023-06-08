@@ -204,7 +204,7 @@
                                                 + "Best regards,\n"
                                                 + "Home Renovation Nation Team";
 
-                        bw.write(email + "<CONTENT>Password Reset for Home Renovation Nation<CONTENT>" + emailMessage);
+                        bw.write(email + "<CONTENT>Password Reset for Home Renovation Nation<CONTENT>" + emailMessage + "<CONTENT>info@homerenovationnation.com");
                         bw.close();
 
                         Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), uuid.toString()).start();
