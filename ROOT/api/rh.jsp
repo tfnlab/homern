@@ -15,6 +15,8 @@
 <%@ page import="com.tfnlab.mysql.EventDao" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 
+<%@ page import="com.tfnlab.mysql.Contact" %>
+<%@ page import="com.tfnlab.mysql.ContactDAO" %>
 <%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
 <%@ page import="com.tfnlab.mysql.ProductLineItem" %>
 <%@ page import="com.tfnlab.mysql.OrderCustomer" %>
@@ -175,8 +177,21 @@
                 MotherfuckerDao mferDao = new MotherfuckerDao();
                 String customerId = request.getParameter("customerId");
                 String api_key = request.getParameter("api_key");
-                String subemail = request.getParameter("email");
-                mferDao.subscribeWeb(customerId, api_key, subemail);
+
+                String name = request.getParameter("contactname");
+                String email = request.getParameter("email");
+                String subject = request.getParameter("subject");
+                String message = request.getParameter("message");
+
+                // Create a new Contact object
+                Contact contact = new Contact();
+                contact.setUsername(customerId);
+                contact.setName(name);
+                contact.setEmail(email);
+                contact.setSubject(subject);
+                contact.setMessage(message);
+
+                mferDao.contactWeb(customerId, api_key, contact);
                 %>
                   '<%=subemail%>'
                 <%
