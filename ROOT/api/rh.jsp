@@ -165,9 +165,9 @@
                 MotherfuckerDao mferDao = new MotherfuckerDao();
                 String customerId = request.getParameter("customerId");
                 String api_key = request.getParameter("api_key");
-                String email = request.getParameter("email");
+                String subemail = request.getParameter("email");
                 %>
-                  ADD SUB DONE <%=email%> TEST
+                  ADD SUB DONE <%=subemail%> TEST
                 <%
               }
               if(apiAction.equals("getOrder")){
