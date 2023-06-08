@@ -74,7 +74,7 @@
         %>
         <%
             if (request.getMethod().equalsIgnoreCase("post")) {
-                String name = request.getParameter("name");
+                String name = request.getParameter("contactname");
                 String email = request.getParameter("email");
                 String subject = request.getParameter("subject");
                 String message = request.getParameter("message");
@@ -102,7 +102,7 @@
 
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control" name="name" id="name" required>
+                    <input type="text" class="form-control" name="contactname" id="contactname" required>
                 </div>
 
                 <div class="form-group">
