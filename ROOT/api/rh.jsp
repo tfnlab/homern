@@ -178,7 +178,7 @@
                 String customerId = request.getParameter("customerId");
                 String api_key = request.getParameter("api_key");
 
-                String name = request.getParameter("contactname");
+                String name = request.getParameter("name");
                 String email = request.getParameter("email");
                 String subject = request.getParameter("subject");
                 String message = request.getParameter("message");
