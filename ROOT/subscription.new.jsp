@@ -63,7 +63,7 @@
     </section>
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Template</h2>
+        <h2>Subscription</h2>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
         <%

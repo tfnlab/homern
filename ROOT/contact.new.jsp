@@ -21,8 +21,6 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="com.tfnlab.util.Translate" %>
-<%@ page import="com.tfnlab.mysql.Subscription" %>
-<%@ page import="com.tfnlab.mysql.SubscriptionDAO" %>
 <%@ include file="auth.jsp" %>
 <%
           User usernameOBJ = (User)session.getAttribute("usernameOBJ");
@@ -63,28 +61,11 @@
     </section>
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Subscriptions</h2>
+        <h2>Template</h2>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
-        <HR>
-          <a href="subscription.new.jsp" tabindex="2"><i class="fas fa-plus"></i> Subscription</a>
-        <HR>
           <div class="container mt-5">
-            <%
-                SubscriptionDAO dao = new SubscriptionDAO();
-                List<Subscription> subscriptions = dao.getSubscriptionsByUsername(username);
-
-                // Display the subscriptions
-                for (Subscription subscription : subscriptions) {
-                    %>
-                    Subscription ID: <%= subscription.getId() %><br>
-                    Email: <%= subscription.getEmail() %><br>
-                    Subscribed At: <%= subscription.getSubscribedAt() %><br>
-                    Source: <%= subscription.getSource() %><br><br>
-                    <%
-                }
-            %>
-
+                    CONTENT GO HERE
           </div>
       </div>
     </section><!-- End Blog Section -->
