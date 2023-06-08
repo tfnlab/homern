@@ -163,10 +163,10 @@
               }
               if(apiAction.equals("addSub")){
                 MotherfuckerDao mferDao = new MotherfuckerDao();
-                String username = request.getParameter("username");
+                String customerId = request.getParameter("customerId");
                 String api_key = request.getParameter("api_key");
                 String subemail = request.getParameter("email");
-                mferDao.subscribeWeb(username, api_key, subemail);
+                mferDao.subscribeWeb(customerId, api_key, subemail);
                 %>
                   '<%=subemail%>'
                 <%
