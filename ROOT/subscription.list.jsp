@@ -66,12 +66,14 @@
         <h2>Subscriptions</h2>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
+        <%  SubscriptionDAO dao = new SubscriptionDAO();%>
         <HR>
           <a href="subscription.new.jsp" tabindex="2"><i class="fas fa-plus"></i> Subscription</a>
         <HR>
           <div class="container mt-5">
+
+            <h3>Subscriptions List (<%=dao.getSubscriptionCountByUsername(username)%>)</h3>
             <%
-                SubscriptionDAO dao = new SubscriptionDAO();
                 List<Subscription> subscriptions = dao.getSubscriptionsByUsername(username);
 
                 // Display the subscriptions

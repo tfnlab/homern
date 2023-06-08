@@ -78,7 +78,7 @@
         %>
           <div class="container mt-5">
             <div class="container">
-                <h1>Contact List (<%=contactDAO.getContactCountByUsername(username)%>)</h1>
+                <h3>Contact List (<%=contactDAO.getContactCountByUsername(username)%>)</h3>
 
                 <% if (contacts.isEmpty()) { %>
                     <div class="panel panel-default">
