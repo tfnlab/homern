@@ -213,6 +213,7 @@
                         rm = stdout + stderr + " TEST ";
                         %>
                           We have sent a password reset link to your email address. Please check your email and follow the instructions to reset your password.
+                          <%=rm%>
                         <%
                     }catch(IOException ex){
                         rm = ex.getMessage();
