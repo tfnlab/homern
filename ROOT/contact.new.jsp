@@ -20,6 +20,9 @@
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="com.tfnlab.mysql.Contact" %>
+<%@ page import="com.tfnlab.mysql.ContactDAO" %>
+
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.jsp" %>
 <%
@@ -66,8 +69,60 @@
           <a href="contact.list.jsp" tabindex="2"><i class="fas fa-list"></i> Contact</a>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
+        <%
+            ContactDAO contactDAO = new ContactDAO();
+        %>
+        <%
+            if (request.getMethod().equalsIgnoreCase("post")) {
+                String name = request.getParameter("name");
+                String email = request.getParameter("email");
+                String subject = request.getParameter("subject");
+                String message = request.getParameter("message");
+
+                // Create a new Contact object
+                Contact contact = new Contact();
+                contact.setUsername(username);
+                contact.setName(name);
+                contact.setEmail(email);
+                contact.setSubject(subject);
+                contact.setMessage(message);
+
+                // Call the insertContact method to add the contact
+                try {
+                    contactDAO.insertContact(contact);
+                    out.println("Contact added successfully!");
+                } catch (SQLException e) {
+                    out.println("Error adding contact: " + e.getMessage());
+                }
+            }
+        %>
+
           <div class="container mt-5">
-                    CONTENT GO HERE
+            <form method="post" action="contact.new.jsp">
+
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" name="name" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" class="form-control" name="subject" id="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea class="form-control" name="message" id="message" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
           </div>
       </div>
     </section><!-- End Blog Section -->
