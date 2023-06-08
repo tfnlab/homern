@@ -193,7 +193,7 @@
 
                 mferDao.contactWeb(customerId, api_key, contact);
                 %>
-                  '<%=subemail%>'
+                  '<%=email%>'
                 <%
               }
               if(apiAction.equals("getOrder")){
