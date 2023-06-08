@@ -61,7 +61,9 @@
     </section>
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Template</h2>
+        <h2>Contact</h2>
+        <HR>
+          <a href="contact.list.jsp" tabindex="2"><i class="fas fa-list"></i> Contact</a>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
