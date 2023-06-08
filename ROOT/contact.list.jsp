@@ -20,6 +20,8 @@
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="com.tfnlab.mysql.ContactDAO" %>
+<%@ page import="com.tfnlab.mysql.Contact" %>
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.jsp" %>
 <%
@@ -61,11 +63,46 @@
     </section>
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Template</h2>
+        <h2>Contacts</h2>
         <HR>
         <%@ include file="user.menu.nav.jsp" %>
+        <HR>
+          <a href="contact.new.jsp" tabindex="2"><i class="fas fa-plus"></i> Contact</a>
+        <HR>
+        <%
+        // Create an instance of the ContactDAO
+        ContactDAO contactDAO = new ContactDAO();
+
+        // Get the contacts by username
+        List<Contact> contacts = contactDAO.getContactsByUsername(username);
+        %>
           <div class="container mt-5">
-                    CONTENT GO HERE
+            <div class="container">
+                <h1>Contact List</h1>
+
+                <% if (contacts.isEmpty()) { %>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            No contacts found.
+                        </div>
+                    </div>
+                <% } else { %>
+                    <% for (Contact contact : contacts) { %>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Contact ID: <%= contact.getId() %>
+                            </div>
+                            <div class="panel-body">
+                                <p><strong>Name:</strong> <%= contact.getName() %></p>
+                                <p><strong>Email:</strong> <%= contact.getEmail() %></p>
+                                <p><strong>Subject:</strong> <%= contact.getSubject() %></p>
+                                <p><strong>Message:</strong> <%= contact.getMessage() %></p>
+                                <p><strong>Created At:</strong> <%= contact.getCreatedAt() %></p>
+                            </div>
+                        </div>
+                    <% } %>
+                <% } %>
+            </div>
           </div>
       </div>
     </section><!-- End Blog Section -->
