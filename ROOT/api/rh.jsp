@@ -171,6 +171,16 @@
                   '<%=subemail%>'
                 <%
               }
+              if(apiAction.equals("addContact")){
+                MotherfuckerDao mferDao = new MotherfuckerDao();
+                String customerId = request.getParameter("customerId");
+                String api_key = request.getParameter("api_key");
+                String subemail = request.getParameter("email");
+                mferDao.subscribeWeb(customerId, api_key, subemail);
+                %>
+                  '<%=subemail%>'
+                <%
+              }
               if(apiAction.equals("getOrder")){
                 MotherfuckerDao mferDao = new MotherfuckerDao();
                 String customerId = request.getParameter("customerId");
