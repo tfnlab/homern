@@ -73,6 +73,7 @@
                 QuoteDAO quoteDAO = new QuoteDAO();
 
                 // Get the username from the request parameter
+                String username = request.getParameter("username");
 
                 // Retrieve quotes by username
                 List<Quote> quotes;
@@ -82,8 +83,9 @@
                     out.println("Error retrieving quotes: " + e.getMessage());
                     return;
                 }
+
+                for (Quote quote : quotes) {
             %>
-          <div class="container mt-5">
             <div class="col-md-6">
                 <div class="card mb-4">
                     <div class="card-body">
@@ -101,6 +103,9 @@
                     </div>
                 </div>
             </div>
+            <%
+                }
+            %>
           </div>
       </div>
     </section><!-- End Blog Section -->
