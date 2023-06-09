@@ -56,4 +56,4 @@ String username = (String) session.getAttribute("username");
     // Write the CSV content to the response output stream
     response.getWriter().write(csvContent.toString());
   }
-%>test
+%>

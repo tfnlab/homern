@@ -78,7 +78,7 @@
         %>
           <div class="container mt-5">
             <div class="container">
-                <h3>Contact List (<%=contactDAO.getContactCountByUsername(username)%>)</h3>
+                <h3>Contact List (<%=contactDAO.getContactCountByUsername(username)%>) <a href="contact.list.csv.jsp?csv=true" tabindex="2"><i class="fas fa-plus"></i> CSV</a></h3>
 
                 <% if (contacts.isEmpty()) { %>
                     <div class="panel panel-default">
