@@ -20,6 +20,8 @@
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="com.tfnlab.mysql.Quote" %>
+<%@ page import="com.tfnlab.mysql.QuoteDAO" %>
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.jsp" %>
 <%
@@ -62,12 +64,54 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
         <h2>Template</h2>
+        <%
+            // Create an instance of the QuoteDAO
+            QuoteDAO quoteDAO = new QuoteDAO();
+
+            // Get the form data
+            String customerName = request.getParameter("customer_name");
+            String email = request.getParameter("email");
+            String phoneNumber = request.getParameter("phone_number");
+            String requestDate = request.getParameter("request_date");
+            String productName = request.getParameter("product_name");
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
+            String additionalNotes = request.getParameter("additional_notes");
+            String installationAddress = request.getParameter("installation_address");
+            String roofType = request.getParameter("roof_type");
+            int avgMonthlyEnergyUsage = Integer.parseInt(request.getParameter("avg_monthly_energy_usage"));
+            String additionalMessage = request.getParameter("additional_message");
+
+            // Create a new Quote object
+            if (customerName != null) {
+              Quote quote = new Quote();
+              quote.setCustomerName(customerName);
+              quote.setEmail(email);
+              quote.setPhoneNumber(phoneNumber);
+              quote.setRequestDate(java.sql.Date.valueOf(requestDate));
+              quote.setProductName(productName);
+              quote.setQuantity(quantity);
+              quote.setAdditionalNotes(additionalNotes);
+              quote.setInstallationAddress(installationAddress);
+              quote.setRoofType(roofType);
+              quote.setAvgMonthlyEnergyUsage(avgMonthlyEnergyUsage);
+              quote.setAdditionalMessage(additionalMessage);
+
+              try {
+                  // Insert the Quote into the database
+                  quoteDAO.insertQuote(quote);
+                  out.println("Quote saved successfully!");
+              } catch (SQLException e) {
+                  out.println("Error saving the quote: " + e.getMessage());
+              }
+            }
+        %>
+
             <HR>
               <a href="quote.list.jsp" tabindex="2"><i class="fas fa-list"></i> Quotes</a>
             <HR>
         <%@ include file="user.menu.nav.jsp" %>
           <div class="container mt-5">
-            <form action="save_quote.php" method="POST">
+            <form action="quote.new.jsp" method="POST">
               <div class="form-group">
                 <label for="customer_name">Customer Name:</label>
                 <input type="text" class="form-control" id="customer_name" name="customer_name" required>
