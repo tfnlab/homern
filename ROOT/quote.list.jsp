@@ -20,6 +20,8 @@
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="com.tfnlab.mysql.Quote" %>
+<%@ page import="com.tfnlab.mysql.QuoteDAO" %>
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.jsp" %>
 <%
@@ -98,7 +100,7 @@
                         <p class="card-text"><strong>Additional Message: </strong><%= quote.getAdditionalMessage() %></p>
                     </div>
                 </div>
-            </div>                  
+            </div>
           </div>
       </div>
     </section><!-- End Blog Section -->
