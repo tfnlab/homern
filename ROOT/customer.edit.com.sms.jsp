@@ -8,7 +8,6 @@
 <%@ page import="com.tfnlab.mysql.OrderDao" %>
 <%@ page import="com.tfnlab.mysql.User"%>
 <%@ page import="com.tfnlab.mysql.UserDao" %>
-<%@ page import="com.tfnlab.business.Email_Manager" %>
 <%@ page import="java.util.UUID" %>
 <%@ page import="com.tfnlab.mysql.Entity" %>
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
@@ -32,7 +31,6 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
                         Entity entity = new Entity();
                         EntityDao ed = new EntityDao();
                         entity = ed.getEntityById(customerId, username);
-                        Email_Manager eM = new Email_Manager();
                         try{
                               File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
                               FileWriter fw = new FileWriter(file);
