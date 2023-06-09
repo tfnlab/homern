@@ -105,7 +105,7 @@
               quote.setRoofType(roofType);
               quote.setAvgMonthlyEnergyUsage(avgMonthlyEnergyUsage);
               quote.setAdditionalMessage(additionalMessage);
-
+              quote.setUsername(username);
               try {
                   // Insert the Quote into the database
                   quoteDAO.insertQuote(quote);
