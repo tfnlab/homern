@@ -223,7 +223,16 @@
                 String additionalNotes = request.getParameter("additional_notes");
                 String installationAddress = request.getParameter("installation_address");
                 String roofType = request.getParameter("roof_type");
-                int avgMonthlyEnergyUsage = Integer.parseInt(request.getParameter("energy_usage"));
+                String energyUsageParam = request.getParameter("energy_usage");
+                int avgMonthlyEnergyUsage = 0;
+
+                if (energyUsageParam != null) {
+                    avgMonthlyEnergyUsage = Integer.parseInt(energyUsageParam);
+                } else {
+                    // Handle the case when the parameter is null
+                    // Assign a default value or display an error message
+                }
+
                 String additionalMessage = request.getParameter("additional_message");
                 Quote quote = new Quote();
                 quote.setCustomerName(customerName);
@@ -238,7 +247,7 @@
                 quote.setAvgMonthlyEnergyUsage(avgMonthlyEnergyUsage);
                 quote.setAdditionalMessage(additionalMessage);
                 quote.setUsername(customerId);
-                
+
                 //mferDao.quoteWeb(customerId, api_key, quote);
 
 //                mferDao.contactWeb(customerId, api_key, contact);
