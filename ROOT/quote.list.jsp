@@ -77,7 +77,7 @@
                 List<Quote> quotes;
                 try {
                     quotes = quoteDAO.selectQuotesByUsername(username);
-                } catch (SQLException e) {
+                } catch (Exception e) {
                     out.println("Error retrieving quotes: " + e.getMessage());
                     return;
                 }
