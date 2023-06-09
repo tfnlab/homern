@@ -198,11 +198,12 @@
                   '<%=email%>'
                 <%
               }
+
               if(apiAction.equals("addQuote")){
                 MotherfuckerDao mferDao = new MotherfuckerDao();
                 String customerId = request.getParameter("customerId");
                 String api_key = request.getParameter("api_key");
-                /*
+
                 String customerName = request.getParameter("customer_name");
                 String email = request.getParameter("email");
                 String phoneNumber = request.getParameter("phone_number");
@@ -237,7 +238,7 @@
                 quote.setAvgMonthlyEnergyUsage(avgMonthlyEnergyUsage);
                 quote.setAdditionalMessage(additionalMessage);
                 quote.setUsername(customerId);
-                */
+                
                 //mferDao.quoteWeb(customerId, api_key, quote);
 
 //                mferDao.contactWeb(customerId, api_key, contact);
