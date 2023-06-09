@@ -72,8 +72,6 @@
                 // Create an instance of the QuoteDAO
                 QuoteDAO quoteDAO = new QuoteDAO();
 
-                // Get the username from the request parameter
-                String username = request.getParameter("username");
 
                 // Retrieve quotes by username
                 List<Quote> quotes;
