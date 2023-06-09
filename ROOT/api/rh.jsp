@@ -206,6 +206,7 @@
 
                 String customerName = request.getParameter("customer_name");
                 String email = request.getParameter("email");
+                /*
                 String phoneNumber = request.getParameter("phone_number");
                 String requestDate = request.getParameter("request_date");
                 String productName = request.getParameter("product_name");
@@ -247,7 +248,7 @@
                 quote.setAvgMonthlyEnergyUsage(avgMonthlyEnergyUsage);
                 quote.setAdditionalMessage(additionalMessage);
                 quote.setUsername(customerId);
-
+                */
                 //mferDao.quoteWeb(customerId, api_key, quote);
 
 //                mferDao.contactWeb(customerId, api_key, contact);
