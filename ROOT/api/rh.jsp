@@ -206,9 +206,7 @@
 
                 String customerName = request.getParameter("customer_name");
                 String email = request.getParameter("email");
-                /*
                 String phoneNumber = request.getParameter("phone_number");
-                String requestDate = request.getParameter("request_date");
                 String productName = request.getParameter("product_name");
                 String quantityParam = request.getParameter("quantity");
                 int quantity = 0; // Default value in case the parameter is null or cannot be parsed
@@ -239,7 +237,6 @@
                 quote.setCustomerName(customerName);
                 quote.setEmail(email);
                 quote.setPhoneNumber(phoneNumber);
-                quote.setRequestDate(java.sql.Date.valueOf(requestDate));
                 quote.setProductName(productName);
                 quote.setQuantity(quantity);
                 quote.setAdditionalNotes(additionalNotes);
@@ -248,7 +245,7 @@
                 quote.setAvgMonthlyEnergyUsage(avgMonthlyEnergyUsage);
                 quote.setAdditionalMessage(additionalMessage);
                 quote.setUsername(customerId);
-                */
+
                 //mferDao.quoteWeb(customerId, api_key, quote);
 
 //                mferDao.contactWeb(customerId, api_key, contact);
