@@ -229,7 +229,7 @@
                   <p><%= (new Translate()).translate("Contacts", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 link-col">
-                  <a href="#" tabindex="24" ><i class="fa fa-file-invoice-dollar"></i></a>
+                  <a href="quote.list.jsp" tabindex="24" ><i class="fa fa-file-invoice-dollar"></i></a>
                   <p><%= (new Translate()).translate("Quotes", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
