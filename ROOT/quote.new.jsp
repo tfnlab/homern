@@ -100,7 +100,7 @@
                   // Insert the Quote into the database
                   quoteDAO.insertQuote(quote);
                   out.println("Quote saved successfully!");
-              } catch (SQLException e) {
+              } catch (Exception e) {
                   out.println("Error saving the quote: " + e.getMessage());
               }
             }
