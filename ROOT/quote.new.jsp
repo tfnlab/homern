@@ -70,19 +70,29 @@
 
             // Get the form data
             String customerName = request.getParameter("customer_name");
-            String email = request.getParameter("email");
-            String phoneNumber = request.getParameter("phone_number");
-            String requestDate = request.getParameter("request_date");
-            String productName = request.getParameter("product_name");
-            int quantity = Integer.parseInt(request.getParameter("quantity"));
-            String additionalNotes = request.getParameter("additional_notes");
-            String installationAddress = request.getParameter("installation_address");
-            String roofType = request.getParameter("roof_type");
-            int avgMonthlyEnergyUsage = Integer.parseInt(request.getParameter("avg_monthly_energy_usage"));
-            String additionalMessage = request.getParameter("additional_message");
 
             // Create a new Quote object
             if (customerName != null) {
+              String email = request.getParameter("email");
+              String phoneNumber = request.getParameter("phone_number");
+              String requestDate = request.getParameter("request_date");
+              String productName = request.getParameter("product_name");
+              String quantityParam = request.getParameter("quantity");
+              int quantity = 0; // Default value in case the parameter is null or cannot be parsed
+
+              if (quantityParam != null && !quantityParam.isEmpty()) {
+                  try {
+                      quantity = Integer.parseInt(quantityParam);
+                  } catch (NumberFormatException e) {
+                      // Handle the exception if the parameter cannot be parsed as an integer
+                      // You can log the error or perform any necessary error handling here
+                  }
+              }
+              String additionalNotes = request.getParameter("additional_notes");
+              String installationAddress = request.getParameter("installation_address");
+              String roofType = request.getParameter("roof_type");
+              int avgMonthlyEnergyUsage = Integer.parseInt(request.getParameter("avg_monthly_energy_usage"));
+              String additionalMessage = request.getParameter("additional_message");
               Quote quote = new Quote();
               quote.setCustomerName(customerName);
               quote.setEmail(email);
