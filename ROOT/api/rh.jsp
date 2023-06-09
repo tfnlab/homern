@@ -246,9 +246,8 @@
                 quote.setAdditionalMessage(additionalMessage);
                 quote.setUsername(customerId);
 
-                //mferDao.quoteWeb(customerId, api_key, quote);
+                mferDao.quoteWeb(customerId, api_key, quote);
 
-//                mferDao.contactWeb(customerId, api_key, contact);
                 %>
                   '<%=email%>'
                 <%
