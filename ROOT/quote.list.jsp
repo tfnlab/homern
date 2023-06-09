@@ -64,7 +64,7 @@
         <h2>Template</h2>
         <%@ include file="user.menu.nav.jsp" %>
           <HR>
-            <a href="quote.plus.jsp" tabindex="2"><i class="fas fa-plus"></i> Quote</a>
+            <a href="quote.new.jsp" tabindex="2"><i class="fas fa-plus"></i> Quote</a>
           <HR>
           <div class="container mt-5">
                     CONTENT GO HERE
