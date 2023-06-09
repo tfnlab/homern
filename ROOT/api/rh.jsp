@@ -222,7 +222,7 @@
                 String additionalNotes = request.getParameter("additional_notes");
                 String installationAddress = request.getParameter("installation_address");
                 String roofType = request.getParameter("roof_type");
-                int avgMonthlyEnergyUsage = Integer.parseInt(request.getParameter("avg_monthly_energy_usage"));
+                int avgMonthlyEnergyUsage = Integer.parseInt(request.getParameter("energy_usage"));
                 String additionalMessage = request.getParameter("additional_message");
                 Quote quote = new Quote();
                 quote.setCustomerName(customerName);
