@@ -203,6 +203,7 @@
                 String customerId = request.getParameter("customerId");
                 String api_key = request.getParameter("api_key");
 
+                String customerName = request.getParameter("customer_name");
                 String email = request.getParameter("email");
                 String phoneNumber = request.getParameter("phone_number");
                 String requestDate = request.getParameter("request_date");
