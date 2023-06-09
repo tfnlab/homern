@@ -66,8 +66,39 @@
           <HR>
             <a href="quote.new.jsp" tabindex="2"><i class="fas fa-plus"></i> Quote</a>
           <HR>
+            <%
+                // Create an instance of the QuoteDAO
+                QuoteDAO quoteDAO = new QuoteDAO();
+
+                // Get the username from the request parameter
+
+                // Retrieve quotes by username
+                List<Quote> quotes;
+                try {
+                    quotes = quoteDAO.selectQuotesByUsername(username);
+                } catch (SQLException e) {
+                    out.println("Error retrieving quotes: " + e.getMessage());
+                    return;
+                }
+            %>
           <div class="container mt-5">
-                    CONTENT GO HERE
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= quote.getCustomerName() %></h5>
+                        <p class="card-text"><strong>Email: </strong><%= quote.getEmail() %></p>
+                        <p class="card-text"><strong>Phone Number: </strong><%= quote.getPhoneNumber() %></p>
+                        <p class="card-text"><strong>Request Date: </strong><%= quote.getRequestDate() %></p>
+                        <p class="card-text"><strong>Product Name: </strong><%= quote.getProductName() %></p>
+                        <p class="card-text"><strong>Quantity: </strong><%= quote.getQuantity() %></p>
+                        <p class="card-text"><strong>Additional Notes: </strong><%= quote.getAdditionalNotes() %></p>
+                        <p class="card-text"><strong>Installation Address: </strong><%= quote.getInstallationAddress() %></p>
+                        <p class="card-text"><strong>Roof Type: </strong><%= quote.getRoofType() %></p>
+                        <p class="card-text"><strong>Average Monthly Energy Usage: </strong><%= quote.getAvgMonthlyEnergyUsage() %></p>
+                        <p class="card-text"><strong>Additional Message: </strong><%= quote.getAdditionalMessage() %></p>
+                    </div>
+                </div>
+            </div>                  
           </div>
       </div>
     </section><!-- End Blog Section -->
