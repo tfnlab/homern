@@ -15,6 +15,8 @@
 <%@ page import="com.tfnlab.mysql.EventDao" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 
+<%@ page import="com.tfnlab.mysql.Quote" %>
+<%@ page import="com.tfnlab.mysql.QuoteDAO" %>
 <%@ page import="com.tfnlab.mysql.Contact" %>
 <%@ page import="com.tfnlab.mysql.ContactDAO" %>
 <%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
@@ -192,6 +194,51 @@
                 contact.setMessage(message);
 
                 mferDao.contactWeb(customerId, api_key, contact);
+                %>
+                  '<%=email%>'
+                <%
+              }
+              if(apiAction.equals("addQuote")){
+                MotherfuckerDao mferDao = new MotherfuckerDao();
+                String customerId = request.getParameter("customerId");
+                String api_key = request.getParameter("api_key");
+
+                String email = request.getParameter("email");
+                String phoneNumber = request.getParameter("phone_number");
+                String requestDate = request.getParameter("request_date");
+                String productName = request.getParameter("product_name");
+                String quantityParam = request.getParameter("quantity");
+                int quantity = 0; // Default value in case the parameter is null or cannot be parsed
+
+                if (quantityParam != null && !quantityParam.isEmpty()) {
+                    try {
+                        quantity = Integer.parseInt(quantityParam);
+                    } catch (NumberFormatException e) {
+                        // Handle the exception if the parameter cannot be parsed as an integer
+                        // You can log the error or perform any necessary error handling here
+                    }
+                }
+                String additionalNotes = request.getParameter("additional_notes");
+                String installationAddress = request.getParameter("installation_address");
+                String roofType = request.getParameter("roof_type");
+                int avgMonthlyEnergyUsage = Integer.parseInt(request.getParameter("avg_monthly_energy_usage"));
+                String additionalMessage = request.getParameter("additional_message");
+                Quote quote = new Quote();
+                quote.setCustomerName(customerName);
+                quote.setEmail(email);
+                quote.setPhoneNumber(phoneNumber);
+                quote.setRequestDate(java.sql.Date.valueOf(requestDate));
+                quote.setProductName(productName);
+                quote.setQuantity(quantity);
+                quote.setAdditionalNotes(additionalNotes);
+                quote.setInstallationAddress(installationAddress);
+                quote.setRoofType(roofType);
+                quote.setAvgMonthlyEnergyUsage(avgMonthlyEnergyUsage);
+                quote.setAdditionalMessage(additionalMessage);
+                quote.setUsername(customerId);
+
+
+//                mferDao.contactWeb(customerId, api_key, contact);
                 %>
                   '<%=email%>'
                 <%
