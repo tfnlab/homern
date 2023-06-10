@@ -222,7 +222,7 @@
                 </div>
                 <div class="col-3 link-col">
                   <a href="subscription.list.jsp" tabindex="22" ><i class="fa fa-newspaper"></i></a>
-                  <p><%= (new Translate()).translate("subscriptions", usernameOBJ.getLanguage())%></p>
+                  <p><%= (new Translate()).translate("Subscriptions", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 link-col">
                   <a href="contact.list.jsp" tabindex="23" ><i class="fa fa-address-book"></i></a>
