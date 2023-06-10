@@ -63,11 +63,12 @@
     </section>
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Quotes</h2>
+        <h2>Quotes <a href="quote.list.csv.jsp?csv=true" tabindex="2"><i class="fas fa-plus"></i> CSV</a></h2>
         <%@ include file="user.menu.nav.jsp" %>
           <HR>
             <a href="quote.new.jsp" tabindex="2"><i class="fas fa-plus"></i> Quote</a>
           <HR>
+
             <%
                 // Create an instance of the QuoteDAO
                 QuoteDAO quoteDAO = new QuoteDAO();
