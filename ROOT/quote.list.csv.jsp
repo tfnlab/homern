@@ -40,7 +40,7 @@ if (isCSV) {
   // Create a StringBuilder to store the CSV content
 
   QuoteDAO dao = new QuoteDAO();
-  List<Quote> quotes = dao.getQuotesByUsername(username);
+  List<Quote> quotes = dao.selectQuotesByUsername(username);
 
   // Append each subscription's data to the CSV content
   StringBuilder sb = new StringBuilder();
