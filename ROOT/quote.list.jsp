@@ -57,13 +57,13 @@
       <div class="container">
         <ol>
           <li><a href="user.menu.jsp">Home</a></li>
-          <li>Service Operations Center</li>
+          <li>Service Operations Center </li>
         </ol>
       </div>
     </section>
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Template</h2>
+        <h2>Quotes</h2>
         <%@ include file="user.menu.nav.jsp" %>
           <HR>
             <a href="quote.new.jsp" tabindex="2"><i class="fas fa-plus"></i> Quote</a>
