@@ -21,6 +21,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="org.apache.commons.fileupload.FileItem" %>
 <%@ page import="java.util.Collection" %>
+<%@ page import="com.tfnlab.util.Translate" %>
 <%@ page import="javax.servlet.http.Part" %>
 <!DOCTYPE html>
 <html lang="en">
