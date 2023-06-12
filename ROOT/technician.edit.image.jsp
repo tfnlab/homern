@@ -21,8 +21,13 @@
 <%@ page import="java.util.List" %>
 <%@ page import="org.apache.commons.fileupload.FileItem" %>
 <%@ page import="java.util.Collection" %>
-<%@ page import="com.tfnlab.util.Translate" %>
 <%@ page import="javax.servlet.http.Part" %>
+<%@ page import="com.tfnlab.util.Translate" %>
+<%@ include file="auth.jsp" %>
+<%
+          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
+          String username = (String) session.getAttribute("username");
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -172,7 +177,6 @@
 
         <%
           boolean isMultipart = ServletFileUpload.isMultipartContent(request);
-                String username = (String) session.getAttribute("username");
           if (isMultipart) {
               APIConfig conf = new APIConfig();
 
