@@ -50,7 +50,6 @@
         <h2>Contact</h2>
         <HR>
           <a href="<%=rootUpdate%>contact.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Contact</a>
-        <HR>
         <%
             ContactDAO contactDAO = new ContactDAO();
         %>
