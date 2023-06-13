@@ -44,10 +44,10 @@
     // Append each subscription's data to the CSV content
     for (Contact contact : contacts) {
       csvContent.append(contact.getId()).append(",");
-      csvContent.append(contact.getName()).append(",");
+      csvContent.append(contact.getName().replace(",", " ")).append(",");
       csvContent.append(contact.getEmail()).append(",");
-      csvContent.append(contact.getSubject()).append(",");
-      csvContent.append(contact.getMessage()).append(",");
+      csvContent.append(contact.getSubject().replace(",", " ")).append(",");
+      csvContent.append(contact.getMessage().replace(",", " ")).append(",");
       csvContent.append(contact.getCreatedAt()).append("\n");
     }
 
