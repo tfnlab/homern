@@ -79,7 +79,7 @@
         %>
 
           <div class="container mt-5">
-            <form method="post" action="<%=rootUpdate%>contact.new.sec.jsp">
+            <form method="post" action="<%=rootUpdate%>contact.new.sec.jsp/">
 
                 <div class="form-group">
                     <label for="name">Name:</label>
