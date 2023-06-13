@@ -4,17 +4,6 @@
 <%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.sec.jsp" %>
-<%
-          User usernameOBJ = null;
-          String username = null;
-          String rootUpdate = "";
-          if(rip.equals("149.28.77.249")){
-              UserDao uDao = new UserDao();
-              username = request.getParameter("username");
-              usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
-              rootUpdate = "../";
-          }
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>

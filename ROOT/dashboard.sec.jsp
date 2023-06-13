@@ -18,15 +18,6 @@
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.sec.jsp" %>
 <%
-          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
-          String username = (String) session.getAttribute("username");
-          String rootUpdate = "";
-          if(rip.equals("149.28.74.16")){
-              UserDao uDao = new UserDao();
-              username = request.getParameter("username");
-              usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
-              rootUpdate = "../";
-          }
           OrderDao oDao = new OrderDao();
           EntityDao eDao = new EntityDao();
           EventDao eventDao = new EventDao();
