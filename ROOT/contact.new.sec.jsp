@@ -83,22 +83,22 @@
 
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control" name="contactname" id="contactname" required>
+                    <input type="text" class="form-control" name="contactname" id="contactname" required tabindex="1">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" name="email" id="email" required>
+                    <input type="email" class="form-control" name="email" id="email" required tabindex="2">
                 </div>
 
                 <div class="form-group">
                     <label for="subject">Subject:</label>
-                    <input type="text" class="form-control" name="subject" id="subject" required>
+                    <input type="text" class="form-control" name="subject" id="subject" required tabindex="3">
                 </div>
 
                 <div class="form-group">
                     <label for="message">Message:</label>
-                    <textarea class="form-control" name="message" id="message" required></textarea>
+                    <textarea class="form-control" name="message" id="message" required tabindex="4" ></textarea>
                 </div>
                 <hr>
                 <button type="submit" class="btn btn-primary">Submit</button>
