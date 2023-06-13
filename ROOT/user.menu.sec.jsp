@@ -152,15 +152,15 @@
                   <p><%= (new Translate()).translate("Vendors", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
-                  <a href="#" tabindex="22" ><i class="fa fa-newspaper"></i></a>
+                  <a href="<%=rootUpdate%>subscription.list.sec.jsp/" tabindex="22" ><i class="fa fa-newspaper"></i></a>
                   <p><%= (new Translate()).translate("Subscriptions", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
-                  <a href="#" tabindex="23" ><i class="fa fa-address-book"></i></a>
+                  <a href="<%=rootUpdate%>contact.list.sec.jsp/" tabindex="23" ><i class="fa fa-address-book"></i></a>
                   <p><%= (new Translate()).translate("Contacts", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
-                  <a href="#" tabindex="24" ><i class="fa fa-file-invoice-dollar"></i></a>
+                  <a href="<%=rootUpdate%>quote.list.sec.jsp/" tabindex="24" ><i class="fa fa-file-invoice-dollar"></i></a>
                   <p><%= (new Translate()).translate("Quotes", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
