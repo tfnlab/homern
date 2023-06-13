@@ -71,7 +71,7 @@
               // Divide the difference by the number of milliseconds in a day to get the number of days
               long diffDays = diff / (24 * 60 * 60 * 1000);
 
-              %> <%= (new Translate()).translate("Member for", usernameOBJ.getLanguage())%> <a href="user.edit.pay.sec.jsp/" ><%=diffDays%></a> <%= (new Translate()).translate("Days", usernameOBJ.getLanguage())%>
+              %> <%= (new Translate()).translate("Member for", usernameOBJ.getLanguage())%> <a href="<%=rootUpdate%>user.edit.pay.sec.jsp/" ><%=diffDays%></a> <%= (new Translate()).translate("Days", usernameOBJ.getLanguage())%>
             <HR>
             <%= (new Translate()).translate("Orders", usernameOBJ.getLanguage())%>: <%=oDao.getCustomerOrderCount(username)%>
             <HR>
