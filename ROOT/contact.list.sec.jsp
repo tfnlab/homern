@@ -61,7 +61,7 @@
         %>
           <div class="container mt-5">
             <div class="container">
-                <h3>Contact List (<%=contactDAO.getContactCountByUsername(username)%>) <a href="<%=rootUpdate%>contact.list.csv.sec.jsp?csv=true" tabindex="2"><i class="fas fa-download"></i> CSV</a></h3>
+                <h3>Contact List (<%=contactDAO.getContactCountByUsername(username)%>) <a href="<%=rootUpdate%>contact.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i> CSV</a></h3>
 
                 <% if (contacts.isEmpty()) { %>
                     <div class="panel panel-default">
@@ -90,6 +90,6 @@
         </div>
       </div>
     </section><!-- End Blog Section -->
-  </main> 
+  </main>
 </body>
 </html>
