@@ -77,9 +77,10 @@
             <form action="<%=rootUpdate%>subscription.new.sec.jsp/" method="post">
               <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" tabindex="1">
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <HR>
+              <button type="submit" class="btn btn-primary" tabindex="2" >Submit</button>
             </form>
           </div>
         </div>
