@@ -21,8 +21,8 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="com.tfnlab.util.Translate" %>
-<%@ page import="com.tfnlab.mysql.Subscription" %>
-<%@ page import="com.tfnlab.mysql.SubscriptionDAO" %>
+<%@ page import="com.tfnlab.mysql.Contact" %>
+<%@ page import="com.tfnlab.mysql.ContactDAO" %>
 <%@ include file="auth.sec.jsp" %>
 <%
   boolean isCSV = false;
