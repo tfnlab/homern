@@ -102,7 +102,7 @@
                     <label for="message">Message:</label>
                     <textarea class="form-control" name="message" id="message" required></textarea>
                 </div>
-
+                <hr>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
