@@ -1,6 +1,6 @@
 <%
 String rip = request.getHeader("X-Real-IP");
-String usernameCheck = (String) session.getAttribute("username");
+String usernameCheck = null;
 if(rip.equals("149.28.77.249") || rip.equals("96.40.155.153")){
     usernameCheck = request.getParameter("username");
 
