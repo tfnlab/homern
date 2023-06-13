@@ -39,7 +39,7 @@
     csvContent.append("Contact ID,Name,Email,Subject,Message,Created At\n");
 
     ContactDAO dao = new ContactDAO();
-    List<Contact> contacts = contactDAO.getContactsByUsername(username);
+    List<Contact> contacts = dao.getContactsByUsername(username);
 
     // Append each subscription's data to the CSV content
     for (Contact contact : contacts) {
