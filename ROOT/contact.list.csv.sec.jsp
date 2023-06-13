@@ -32,23 +32,23 @@
 
   if (isCSV) {
     response.setContentType("text/csv");
-    response.setHeader("Content-Disposition", "attachment; filename=\"subscriptions.csv\"");
+    response.setHeader("Content-Disposition", "attachment; filename=\"contact.csv\"");
 
     // Create a StringBuilder to store the CSV content
     StringBuilder csvContent = new StringBuilder();
-    csvContent.append("Subscription ID,Email,Subscribed At,Source\n");
+    csvContent.append("Contact ID,Name,Email,Subject,Message,Created At\n");
 
-    SubscriptionDAO dao = new SubscriptionDAO();
-    List<Subscription> subscriptions = dao.getSubscriptionsByUsername(username);
+    ContactDAO dao = new ContactDAO();
+    List<Contact> contacts = contactDAO.getContactsByUsername(username);
 
     // Append each subscription's data to the CSV content
-    for (Subscription subscription : subscriptions) {
-      csvContent.append(subscription.getId()).append(",");
-      csvContent.append(subscription.getEmail()).append(",");
-      csvContent.append(subscription.getSubject()).append(",");
-      csvContent.append(subscription.getMessage()).append(",");      
-      csvContent.append(subscription.getSubscribedAt()).append(",");
-      csvContent.append(subscription.getSource()).append("\n");
+    for (Contact contact : contacts) {
+      csvContent.append(contact.getId()).append(",");
+      csvContent.append(contact.getName()).append(",");
+      csvContent.append(contact.getEmail()).append(",");
+      csvContent.append(contact.getSubject()).append(",");
+      csvContent.append(contact.getMessage()).append(",");
+      csvContent.append(contact.getCreatedAt()).append("\n");
     }
 
     // Write the CSV content to the response output stream
