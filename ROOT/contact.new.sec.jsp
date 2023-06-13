@@ -51,7 +51,6 @@
         <HR>
           <a href="<%=rootUpdate%>contact.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Contact</a>
         <HR>
-        <%@ include file="user.menu.nav.jsp" %>
         <%
             ContactDAO contactDAO = new ContactDAO();
         %>
