@@ -47,16 +47,6 @@
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-
-        <ol>
-              <li><a href="user.menu.jsp">Home</a></li>
-              <li>Billing Center</li>
-        </ol>
-      </div>
-    </section><!-- End Breadcrumbs -->
     <%
     UserDao dao = new UserDao();
     String firstName = request.getParameter("firstName");
@@ -68,9 +58,10 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-        <h2>Home Renovation Nation Billing</h2>
+        <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
         <HR>
-        <%@ include file="user.menu.nav.jsp" %>
+
+
         <HR>
           <%
           Calendar today = Calendar.getInstance();
