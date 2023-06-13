@@ -5,8 +5,8 @@
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.sec.jsp" %>
 <%
-          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
-          String username = (String) session.getAttribute("username");
+          User usernameOBJ = null;
+          String username = null;
           String rootUpdate = "";
           if(rip.equals("149.28.77.249")){
               UserDao uDao = new UserDao();
