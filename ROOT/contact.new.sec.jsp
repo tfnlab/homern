@@ -88,7 +88,7 @@
 
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" name="email" id="email" required tabindex="2">
+                    <input type="email" class="form-control" name="emailother" id="emailother" required tabindex="2">
                 </div>
 
                 <div class="form-group">
