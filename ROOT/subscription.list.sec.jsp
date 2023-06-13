@@ -51,7 +51,7 @@
         <HR>
         <%  SubscriptionDAO dao = new SubscriptionDAO();%>
         <HR>
-          <a href="<%=rootUpdate%>subscription.new.sec.jsp" tabindex="2"><i class="fas fa-plus"></i> Subscription</a>
+          <a href="<%=rootUpdate%>subscription.new.sec.jsp/" tabindex="2"><i class="fas fa-plus"></i> Subscription</a>
         <HR>
           <div class="container mt-5">
 
