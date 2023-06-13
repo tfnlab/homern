@@ -45,6 +45,8 @@
     for (Subscription subscription : subscriptions) {
       csvContent.append(subscription.getId()).append(",");
       csvContent.append(subscription.getEmail()).append(",");
+      csvContent.append(subscription.getSubject()).append(",");
+      csvContent.append(subscription.getMessage()).append(",");      
       csvContent.append(subscription.getSubscribedAt()).append(",");
       csvContent.append(subscription.getSource()).append("\n");
     }
