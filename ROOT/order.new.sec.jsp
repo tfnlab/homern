@@ -193,11 +193,11 @@
                             %><%=e.getMessage()%><%
                       }
                       %>
-                        <HR>
-                        Order Saved
-                        <HR>
-                        <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="2" >More Info</a><br>
-
+                        <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="2" >
+                        <div class="alert alert-success" role="alert">
+                          Order Saved. ID: <%= order.getOrderId() %>
+                        </div>
+                        </a>
                       <%
                 }else{
 
