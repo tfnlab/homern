@@ -51,6 +51,7 @@
             <a href="<%=rootUpdate%>quote.new.sec.jsp/" tabindex="2"><i class="fas fa-plus"></i> Quote</a>
           <HR>
               <h3>Quote List <a href="<%=rootUpdate%>quote.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i> CSV</a></h3>
+
             <%
                 // Create an instance of the QuoteDAO
                 QuoteDAO quoteDAO = new QuoteDAO();
@@ -67,6 +68,7 @@
 
                 for (Quote quote : quotes) {
             %>
+            <HR>
             <div class="col-md-6">
                 <div class="card mb-4">
                     <div class="card-body">
