@@ -45,7 +45,7 @@
       <div class="container px-4 px-lg-5">
 
             <div class="container mt-5">
-              <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="4" >Home Renovation Nation</a></h2>
+              <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
               <HR>
         <h2>Subscription</h2>
         <HR>
@@ -68,7 +68,7 @@
         }
         %>
         <HR>
-          <a href="<%=rootUpdate%>subscription.list.sec.jsp/" tabindex="3"><i class="fas fa-list"></i> Subscriptions</a>
+          <a href="<%=rootUpdate%>subscription.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Subscriptions</a>
         <HR>
           <% if(message != null) { %>
               <p><%= message %></p>
@@ -77,10 +77,10 @@
             <form action="<%=rootUpdate%>subscription.new.sec.jsp/" method="post">
               <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" tabindex="0">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" tabindex="3">
               </div>
               <HR>
-              <button type="submit" class="btn btn-primary" tabindex="1" >Submit</button>
+              <button type="submit" class="btn btn-primary" tabindex="4" >Submit</button>
             </form>
           </div>
         </div>
