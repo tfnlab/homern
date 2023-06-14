@@ -104,6 +104,8 @@
                 <div class="container mt-5">
               <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
               <HR>
+        <h2>Technician</h2>
+        <HR>
         <%
 
                 int id = Integer.parseInt(request.getParameter("technicianId"));
