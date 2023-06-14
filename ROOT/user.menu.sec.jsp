@@ -29,8 +29,7 @@
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
             <HR>
-            <h4><%=usernameOBJ.getBusiness_name()%></h4>
-            <h4><%=request.getParameter("hrnemail")%></h4>
+            <h4><%=usernameOBJ.getBusiness_name()%> (<%=request.getParameter("hrnemail")%>)</h4>
             <HR>
             <style>
               .fa {
