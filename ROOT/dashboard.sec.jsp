@@ -86,7 +86,7 @@
                   for (String sstatus : statuses) {
                 %>
                 <tr>
-                  <td><a href="order.list.jsp?searchKey=<%= sstatus %>" ><%= (new Translate()).translate(sstatus, usernameOBJ.getLanguage())%></a></td>
+                  <td><a href="<%=rootUpdate%>order.list.sec.jsp/?searchKey=<%= sstatus %>" ><%= (new Translate()).translate(sstatus, usernameOBJ.getLanguage())%></a></td>
                   <td align="right">
                       <% int count = oDao.getCustomerOrderCount(username, sstatus);%>
                       <%= count %>
@@ -111,9 +111,9 @@
             </table>
 
             <HR>
-            <%= (new Translate()).translate("Customers", usernameOBJ.getLanguage())%>: <a href="customer.list.jsp"><%=eDao.getEntityCountByUsername(username)%></a>
+            <%= (new Translate()).translate("Customers", usernameOBJ.getLanguage())%>: <a href="<%=rootUpdate%>customer.list.sec.jsp/"><%=eDao.getEntityCountByUsername(username)%></a>
             <HR>
-            <%= (new Translate()).translate("Products", usernameOBJ.getLanguage())%>:   <a href="product.list.jsp"><%=pDao.getCountByUsername(username)%></a>
+            <%= (new Translate()).translate("Products", usernameOBJ.getLanguage())%>:   <a href="<%=rootUpdate%>product.list.sec.jsp/"><%=pDao.getCountByUsername(username)%></a>
             <HR>
             <%
                 ProductLineItemDao plDao = new ProductLineItemDao();
@@ -169,9 +169,9 @@
             %>
 
             <HR>
-            <%= (new Translate()).translate("Technicians", usernameOBJ.getLanguage())%>:  <a href="technician.list.jsp"><%=tDao.getTechnicianCountByUsername(username)%></a>
+            <%= (new Translate()).translate("Technicians", usernameOBJ.getLanguage())%>:  <a href="<%=rootUpdate%>technician.list.sec.jsp/"><%=tDao.getTechnicianCountByUsername(username)%></a>
             <HR>
-            <%= (new Translate()).translate("Events", usernameOBJ.getLanguage())%>: <a href="event.list.jsp"><%=eventDao.getEventCountByUsername(username)%></a>
+            <%= (new Translate()).translate("Events", usernameOBJ.getLanguage())%>: <a href="<%=rootUpdate%>event.list.sec.jsp/"><%=eventDao.getEventCountByUsername(username)%></a>
             <HR>
           </div>
       </div>
