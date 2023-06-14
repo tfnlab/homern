@@ -71,7 +71,7 @@
                     </div>
                 <% } else { %>
                     <% for (Contact contact : contacts) { %>
-                        <div class="panel panel-default">
+                        <div class="panel panel-default mt-5" >
                             <div class="panel-heading">
                                 Contact ID: <%= contact.getId() %>
                             </div>
