@@ -20,7 +20,7 @@
 <%@ page import="java.io.*" %>
 <%@ page import="javax.servlet.http.*" %>
 <%@ page import="com.tfnlab.util.Translate" %>
-<%@ include file="auth.sec.jsp" %> 
+<%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -101,9 +101,10 @@
       <section id="blog" class="blog">
         <div class="container px-4 px-lg-5">
             <div class="container mt-5">
-              <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
-
-        <HR>
+              <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
+              <HR>
+              <h2>Customer</h2>
+              <HR>
 
 
         <%
