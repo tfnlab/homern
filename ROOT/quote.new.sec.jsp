@@ -155,6 +155,7 @@
                 <label for="additional_message">Additional Message:</label>
                 <textarea class="form-control" id="additional_message" name="additional_message"></textarea>
               </div>
+              <HR>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
           </div>

@@ -50,7 +50,7 @@
           <HR>
             <a href="<%=rootUpdate%>quote.new.sec.jsp/" tabindex="2"><i class="fas fa-plus"></i> Quote</a>
           <HR>
-              <h3>Quote List <a href="<%=rootUpdate%>quote.list.csv.sec.jsp?csv=true" tabindex="2"><i class="fas fa-download"></i> CSV</a></h3>
+              <h3>Quote List <a href="<%=rootUpdate%>quote.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i> CSV</a></h3>
             <%
                 // Create an instance of the QuoteDAO
                 QuoteDAO quoteDAO = new QuoteDAO();
