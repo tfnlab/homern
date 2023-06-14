@@ -8,7 +8,7 @@
 <%@ page import="com.tfnlab.mysql.Product" %>
 <%@ page import="com.tfnlab.mysql.ProductDao" %>
 <%@ page import="com.tfnlab.util.Translate" %>
-<%@ include file="auth.sec.jsp" %> 
+<%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,6 +88,8 @@
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
             <HR>
+        <h2>Product</h2>
+        <HR>
 
         <%
 
