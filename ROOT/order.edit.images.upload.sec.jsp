@@ -25,17 +25,8 @@
 <%@ page import="java.util.Collection" %>
 <%@ page import="javax.servlet.http.Part" %>
 <%@ page import="java.util.UUID" %>
-<%@ include file="auth.jsp" %>
+<%@ include file="auth.sec.jsp" %>
 <%
-          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
-          String username = (String) session.getAttribute("username");
-          String rootUpdate = "";
-          if(rip.equals("144.202.119.205")){
-              UserDao uDao = new UserDao();
-              username = request.getParameter("username");
-              usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
-              rootUpdate = "../";
-          }
     int orderId = 0;
     String client_request_key = "none";
     String description = "none";
