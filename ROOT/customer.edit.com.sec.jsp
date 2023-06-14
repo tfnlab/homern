@@ -112,7 +112,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var com = selectedOption.value;
       var eId = <%=eId%>;
-      var url = "customer.edit.com.jsp?customerId=" + eId +  "&comType=" + com;
+      var url = "<%=rootUpdate%>customer.edit.com.sec.jsp/?customerId=" + eId +  "&comType=" + com;
       window.open(url, "_self");
     }
     function sendMail() {
@@ -133,7 +133,7 @@
       const encodedStringsub = encodeURIComponent(com);
 
 
-      var urlString = "customer.edit.com.email.jsp?customerId=" + eId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
+      var urlString = "<%=rootUpdate%>customer.edit.com.email.sec.jsp/?customerId=" + eId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
 //      alert(urlString);
       xhttp.open("GET", urlString, true);
       xhttp.send();
@@ -156,7 +156,7 @@
       const encodedStringsub = encodeURIComponent(com);
 
 
-      var urlString = "customer.edit.com.sms.jsp?customerId=" + eId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
+      var urlString = "<%=rootUpdate%>customer.edit.com.sms.sec.jsp/?customerId=" + eId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
 //      alert(urlString);
       xhttp.open("GET", urlString, true);
       xhttp.send();
