@@ -163,12 +163,12 @@
     }
     function getPayments(){
         var eId = <%=eId%>;
-        var url = "<%=rootUpdate%>customer.edit.payments.jsp/?customerId=" + eId ;
+        var url = "<%=rootUpdate%>customer.edit.payments.sec.jsp/?customerId=" + eId ;
         window.open(url, "_self");
     }
     function getOrders() {
       var eId = <%=eId%>;
-      var url = "<%=rootUpdate%>customer.edit.orders.jsp/?customerId=" + eId;
+      var url = "<%=rootUpdate%>customer.edit.orders.sec.jsp/?customerId=" + eId;
       window.open(url, "_self");
     }
   </script>
