@@ -19,7 +19,7 @@
 <%@ page import="java.util.UUID" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="com.tfnlab.util.Translate" %>
-<%@ include file="auth.sec.jsp" %> 
+<%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -262,14 +262,18 @@
         %>
 
         <HR>
-
+          <h2>Event</h2>
+          <HR>
                     <div class="form-group">
                       Order:
                         <a href="<%=rootUpdate%>order.edit.sec.jsp/?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                     </div>
         <HR>
+
+        <!--
           <p>Order Dates: <%= order.getOrderDate() %> - <%= order.getShipDate() %></p><br>
           <p>Order Description: <%= order.getOrderDescription() %></p>
+        -->
         <%
              List<OrderTechnicians> lI = otD.getOrderTechniciansByOrderId(order.getOrderId());
              List<Technician> technicians = technicianDao.getTechniciansByUsernameActive(username);
