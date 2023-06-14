@@ -35,7 +35,7 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
   String filename = uuid + ".pdf";
   String filepath = conf.getPdfloc();
   response.setContentType("application/pdf");
-  response.setHeader("Content-Disposition", "attachment; filename=\"" + filename + "\"");
+  response.setHeader("Content-Disposition", "attachment; filename=\"Test.pdf\"");
 
 
   java.io.FileInputStream fileInputStream=new java.io.FileInputStream(filepath + filename);
