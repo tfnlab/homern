@@ -234,9 +234,9 @@
 
                       ed.updateEntityById(entity);
                     %>
-
-
-                        Customer Saved
+                          <div class="alert alert-success mt-4" role="alert">
+                           Customer Saved
+                          </div>
                       <%
                 }
                   entity = ed.getEntityById(eId, username);
