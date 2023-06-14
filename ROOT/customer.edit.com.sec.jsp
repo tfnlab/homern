@@ -161,6 +161,16 @@
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
+    function getPayments(){
+        var eId = <%=eId%>;
+        var url = "<%=rootUpdate%>customer.edit.payments.jsp/?customerId=" + eId ;
+        window.open(url, "_self");
+    }
+    function getOrders() {
+      var eId = <%=eId%>;
+      var url = "<%=rootUpdate%>customer.edit.orders.jsp/?customerId=" + eId;
+      window.open(url, "_self");
+    }
   </script>
 </head>
 

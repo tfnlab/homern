@@ -191,8 +191,9 @@
                         payment.setPayment_uuid(uuid);
                         pDao.insertPayment(payment);
                       %>
-
-                        Payment Saved
+                        <div class="alert alert-success mt-4" role="alert">
+                         Payment Saved
+                        </div>
                       <%
                 }
                   entity = ed.getEntityById(eId, username);
@@ -206,7 +207,7 @@
                       invTotal = invTotal.add(plItem.getTotal());
                }
            %>
-                  Products Total <%=invTotal%>
+                  Customer Has Ordered <%=invTotal%> Products
         <form action="<%=rootUpdate%>customer.edit.payments.sec.jsp/" method="post">
             <hr>
           <div class="form-group">
