@@ -12,7 +12,7 @@
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
 <%@ include file="auth.sec.jsp" %>
 <%
-           
+
     int orderId = 0;
     if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
       orderId = Integer.parseInt(request.getParameter("orderId"));
