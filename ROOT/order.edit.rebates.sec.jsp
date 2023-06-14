@@ -30,17 +30,6 @@
 <%@ page import="com.tfnlab.mysql.RebateDao"%>
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.sec.jsp" %>
-<%
-          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
-          String username = (String) session.getAttribute("username");
-          String rootUpdate = "";
-          if(rip.equals("144.202.119.205")){
-              UserDao uDao = new UserDao();
-              username = request.getParameter("username");
-              usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
-              rootUpdate = "../";
-          }
-%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -195,7 +184,7 @@
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
           <div class="container mt-5">
-            <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
+            <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
         <HR>
                 <%
                 ProductLineItemDao plDao = new ProductLineItemDao();
