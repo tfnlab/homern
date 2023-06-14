@@ -20,18 +20,7 @@
 <%@ page import="java.io.*" %>
 <%@ page import="javax.servlet.http.*" %>
 <%@ page import="com.tfnlab.util.Translate" %>
-<%@ include file="auth.sec.jsp" %>
-<%
-          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
-          String username = (String) session.getAttribute("username");
-          String rootUpdate = "";
-          if(rip.equals("144.202.119.205")){
-              UserDao uDao = new UserDao();
-              username = request.getParameter("username");
-              usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
-              rootUpdate = "../";
-          }
-%>
+<%@ include file="auth.sec.jsp" %> 
 <!DOCTYPE html>
 <html lang="en">
 
