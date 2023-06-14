@@ -236,7 +236,7 @@
                     %>
 
 
-                        Order Saved
+                        Customer Saved
                       <%
                 }
                   entity = ed.getEntityById(eId, username);
@@ -397,6 +397,7 @@
                 <label for="youtubeChannel">YouTube Channel</label>
                 <input type="text" class="form-control" id="youtubeChannel" name="youtubeChannel" >
               </div>
+              <HR>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
