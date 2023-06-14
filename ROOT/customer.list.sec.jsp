@@ -143,7 +143,7 @@
                   <div id="map" style="width: 100%; height: 400px;"></div>
                   <HR>
                   <!-- Include the Google Maps JavaScript API -->
-                  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBicfOJqKecv8AunaLFvEC0bRBWMVUtQus"></script>
+                  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUKVoXBzf5g_IieS2qpkWPWp2P7D2HFI"></script>
                   <script>
                     // Create a map
                     var map = new google.maps.Map(document.getElementById('map'), {
