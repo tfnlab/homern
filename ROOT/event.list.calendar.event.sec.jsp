@@ -1,16 +1,7 @@
-<%@page import="com.tfnlab.mysql.User,com.tfnlab.mysql.UserDao,java.util.List, java.util.ArrayList, com.tfnlab.mysql.Event, com.tfnlab.mysql.EventDao, java.sql.SQLException, java.text.SimpleDateFormat"%><%@ include file="auth.jsp" %><%
+<%@page import="com.tfnlab.mysql.User,com.tfnlab.mysql.UserDao,java.util.List, java.util.ArrayList, com.tfnlab.mysql.Event, com.tfnlab.mysql.EventDao, java.sql.SQLException, java.text.SimpleDateFormat"%><%@ include file="auth.sec.jsp" %><%
 List<Event> events = new ArrayList<Event>();
 EventDao dao = new EventDao();
 
-User usernameOBJ = (User)session.getAttribute("usernameOBJ");
-String username = (String) session.getAttribute("username");
-String rootUpdate = "";
-if(rip.equals("144.202.119.205")){
-    UserDao uDao = new UserDao();
-    username = request.getParameter("username");
-    usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
-    rootUpdate = "../";
-}
 try {
 
     if(request.getParameter("technicianId").equals("all")){
