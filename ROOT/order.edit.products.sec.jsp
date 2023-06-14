@@ -137,7 +137,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var productsId = selectedOption.value;
       var orderId = <%=orderId%>;
-      var url = "product.xml.jsp?productId=" + productsId ;
+      var url = "<%=rootUpdate%>product.xml.sec.jsp/?productId=" + productsId ;
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
