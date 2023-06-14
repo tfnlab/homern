@@ -55,7 +55,7 @@
         <HR>
           <div class="container mt-5">
 
-            <h3>Subscriptions List (<%=dao.getSubscriptionCountByUsername(username)%>)  <a href="<%=rootUpdate%>subscription.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i> CSV</a></h3>
+            <h3>Subscriptions List (<%=dao.getSubscriptionCountByUsername(username)%>)  <a href="<%=rootUpdate%>subscription.list.csv.sec.jsp/?csv=true" tabindex="3"><i class="fas fa-download"></i> CSV</a></h3>
             <%
                 List<Subscription> subscriptions = dao.getSubscriptionsByUsername(username);
 
