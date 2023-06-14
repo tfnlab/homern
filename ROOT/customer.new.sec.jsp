@@ -201,9 +201,9 @@
                       entity = ed.getEntityByUuid(mfer_uuid, username);
                     %>
 
-
-                        Customer Saved
-                        <a href="<%=rootUpdate%>customer.edit.sec.jsp/?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a>
+                    <div class="alert alert-success mt-4" role="alert">
+                     <a href="<%=rootUpdate%>customer.edit.sec.jsp/?customerId=<%= entity.getId() %>" >Customer Saved (<%= entity.getId() %>)</a>
+                    </div>
                         <%if(orderId!=0){%>
                           Add to Order : <a href="<%=rootUpdate%>order.edit.customers.sec.jsp/?action=add&orderId=<%=orderId%>&customerId=<%= entity.getId() %>" ><%= orderId %></a><br>
                         <%}%>
