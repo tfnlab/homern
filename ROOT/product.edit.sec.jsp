@@ -133,7 +133,10 @@
                   // Insert the Product object into the database
                   dao.updateProductById(product);
                 %>
-                <p>Product successfully Saved to the database.</p>
+                <div class="alert alert-success" role="alert">
+                  Product Saved.
+                </div>
+
                 <%
 
               }
@@ -216,10 +219,7 @@
             				<label for="dimensions">Dimensions:</label>
             				<input type="text" class="form-control" name="dimensions" id="dimensions" value="<%= product.getDimensions() %>">
             			</div>
-            			<div class="form-group">
-            				<label for="customerId">Customer ID:</label>
-            				<input type="text" class="form-control" name="customerId" id="customerId" value="<%= product.getCustomerId() %>">
-            			</div>
+                  <HR>
             			<button type="submit" class="btn btn-primary">Save</button>
             		</form>
 
