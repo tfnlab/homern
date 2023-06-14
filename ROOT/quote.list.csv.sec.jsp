@@ -51,11 +51,11 @@ if (isCSV) {
       sb.append(quote.getRequestDate() + ",");
       sb.append(quote.getProductName() + ",");
       sb.append(quote.getQuantity() + ",");
-      sb.append(quote.getAdditionalNotes() + ",");
+      sb.append(quote.getAdditionalNotes().replace(",", " ").replaceAll("\\r\\n|\\r|\\n", "") + ",");
       sb.append(quote.getInstallationAddress() + ",");
       sb.append(quote.getRoofType() + ",");
       sb.append(quote.getAvgMonthlyEnergyUsage() + ",");
-      sb.append(quote.getAdditionalMessage() + "\n");
+      sb.append(quote.getAdditionalMessage().replace(",", " ").replaceAll("\\r\\n|\\r|\\n", "") + "\n");
   }
 
   // Write the CSV content to the response output stream
