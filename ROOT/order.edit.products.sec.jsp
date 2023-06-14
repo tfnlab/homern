@@ -24,17 +24,6 @@
 <%@ page import="com.tfnlab.mysql.ProductLineItemDao" %>
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.sec.jsp" %>
-<%
-          User usernameOBJ = (User)session.getAttribute("usernameOBJ");
-          String username = (String) session.getAttribute("username");
-          String rootUpdate = "";
-          if(rip.equals("144.202.119.205")){
-              UserDao uDao = new UserDao();
-              username = request.getParameter("username");
-              usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
-              rootUpdate = "../";
-          }
-%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -176,7 +165,7 @@
       var orderId = <%=orderId%>;
       var encodedString = encodeURIComponent(document.getElementById("orderCom").value);
 
-      var url = "<%=rootUpdate%>order.edit.products.email.sec.jsp?orderId=" + orderId + "&type=" + type +"&message=" + encodedString;
+      var url = "<%=rootUpdate%>order.edit.products.email.sec.jsp/?orderId=" + orderId + "&type=" + type +"&message=" + encodedString;
       window.open(url, "_blank");
          }
     }
@@ -185,7 +174,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var type = selectedOption.value;
       var orderId = <%=orderId%>;
-      var url = "<%=rootUpdate%>order.edit.products.print.sec.jsp?orderId=" + orderId + "&type=" + type;
+      var url = "<%=rootUpdate%>order.edit.products.print.sec.jsp/?orderId=" + orderId + "&type=" + type;
       window.open(url, "_blank");
     }
 
@@ -213,7 +202,7 @@
       <section id="blog" class="blog">
         <div class="container px-4 px-lg-5">
             <div class="container mt-5">
-              <h2><a href="<%=rootUpdate%>user.menu.sec.jsp" tabindex="1" >Home Renovation Nation</a></h2>
+              <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
                 <%
                 Order order = dao.getOrderByOrderId(orderId, username);
 
