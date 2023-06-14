@@ -30,14 +30,13 @@ if (request.getParameter("customerId") != null && !request.getParameter("custome
   Create_PDF cpdf = new Create_PDF();
 
   cpdf.createPD(uuid + ".pdf", entity, request.getParameter("orderCom"));
-%>DONE
 
-<%
   APIConfig conf = new APIConfig();
   String filename = uuid + ".pdf";
   String filepath = conf.getPdfloc();
-  response.setContentType("APPLICATION/OCTET-STREAM");
-  response.setHeader("Content-Disposition","attachment; filename=\"" + filename + "\"");
+  response.setContentType("application/pdf");
+  response.setHeader("Content-Disposition", "attachment; filename=\"" + filename + "\"");
+
 
   java.io.FileInputStream fileInputStream=new java.io.FileInputStream(filepath + filename);
 
