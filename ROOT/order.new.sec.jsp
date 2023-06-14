@@ -195,7 +195,7 @@
                       %>
 
                         <div class="alert alert-success" role="alert">
-                          <a href="order.edit.jsp?orderId=<%= order.getOrderId() %>" tabindex="2" >
+                          <a href="<%=rootUpdate%>order.edit.sec.jsp/?orderId=<%= order.getOrderId() %>" tabindex="2" >
                           Order Saved. ID: <%= order.getOrderId() %>
                           </a>
                         </div>
