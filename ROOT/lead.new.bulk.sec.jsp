@@ -102,17 +102,12 @@
                 for (CSVRecord csvRecord : csvParser) {
 
 
-                      GeocodingExample geocodingExample = new GeocodingExample();
-                      String[] results = geocodingExample.search(csvRecord.get(11) + ", " + csvRecord.get(12));
-
+                                          GeocodingExample geocodingExample = new GeocodingExample();
+                                          String[] results = geocodingExample.search(csvRecord.get(11) + ", " + csvRecord.get(12));
                                           long currentTimeMillis = System.currentTimeMillis();
                                           Timestamp currentTime = new Timestamp(currentTimeMillis);
                                           Lead lead = new Lead();
-
-                        //                      entity.setId(Integer.parseInt(request.getParameter("id")));
                                           lead.setUsername(username);
-
-
                                           SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                                           String external_id = csvRecord.get(0);
                                           String name = csvRecord.get(3);
@@ -284,10 +279,7 @@
 
 
 
-                    %>
-                    <HR>
-                    <%
-                }
+                    }
                 reader.close();
               } catch (Exception e) {
                 e.printStackTrace();
