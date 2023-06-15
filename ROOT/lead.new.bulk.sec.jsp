@@ -31,6 +31,8 @@
 <%@ page import="java.io.*" %>
 <%@ page import="javax.servlet.http.*" %>
 <%@ page import="org.apache.commons.fileupload.FileItem" %>
+<%@ page import="com.tfnlab.api.con.GoogleAutocomplete" %>
+<%@ page import="com.tfnlab.api.con.GeocodingExample" %>
 <%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
