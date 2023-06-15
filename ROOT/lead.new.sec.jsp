@@ -210,6 +210,8 @@
               lead.setConvertedOpportunity(convertedOpportunity);
               lead.setUsername(username);
               lead.setUseremail(useremail);
+              lead.setLocation_pointlat("0");
+              lead.setLocation_pointlng("0");
               leadDAO.insertLead(lead);
             }
           %>

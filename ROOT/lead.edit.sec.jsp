@@ -155,6 +155,8 @@
                   String convertedOrganization = request.getParameter("convertedOrganization");
                   String convertedOpportunity = request.getParameter("convertedOpportunity");
 
+                  lead.setLocation_pointlat(request.getParameter("location_pointlat"));
+                  lead.setLocation_pointlng(request.getParameter("location_pointlng"));
                   // Create an instance of the Lead class and populate it with the form data
                   lead.setName(name);
                   lead.setPhone(phone);
@@ -224,6 +226,8 @@
               <h4>Lead ID: <%=lead.getRecordId()%></h4>
               <form action="<%=rootUpdate%>lead.edit.sec.jsp/" method="post">
                 <input type="hidden" class="form-control" name="lead_id" value="<%=lead.getRecordId()%>">
+                <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
+                <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" value="<%= lead.getLocation_pointlng() %>">
                 <div class="form-group">
                     <label>Name:</label>
                     <input type="text" class="form-control" name="name" value="<%=lead.getName()%>">

@@ -105,7 +105,7 @@
                     %><%=lineNumber%><%
                     if(customers.length>21){
                       GeocodingExample geocodingExample = new GeocodingExample();
-                      String[] results = geocodingExample.search(customers[17] + ", " + customers[19]);
+                      String[] results = geocodingExample.search(customers[11] + ", " + customers[19]);
                   %>
                   <%=customers[0]%>
                   <%=customers[1]%>
@@ -133,7 +133,161 @@
 
               //                      entity.setId(Integer.parseInt(request.getParameter("id")));
                                 lead.setUsername(username);
-                                lead.setName(customers[3]);
+
+
+                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                                String external_id = customers[0];
+                                String name = customers[3];
+                                String phone = customers[6];
+                                String address = customers[11];
+                                String city = request.getParameter("city");
+                                String emailAddress = request.getParameter("emailAddress");
+                                String leadStatus = request.getParameter("leadStatus");
+                                String change = request.getParameter("change");
+                                String interconnectionStatus = request.getParameter("interconnectionStatus");
+                                String salesNotes = request.getParameter("salesNotes");
+                                String linkEmailAddress = request.getParameter("linkEmailAddress");
+                                String userResponsible = request.getParameter("userResponsible");
+                                String leadRating = request.getParameter("leadRating");
+                                String organization = request.getParameter("organization");
+                                String leadSource = request.getParameter("leadSource");
+                                String accountingNotes = request.getParameter("accountingNotes");
+                                String contractAmountParam = request.getParameter("contractAmount");
+                                double contractAmount;
+
+                                if (contractAmountParam != null && !contractAmountParam.isEmpty()) {
+                                    contractAmount = Double.parseDouble(contractAmountParam);
+                                } else {
+                                    // Handle the case when contractAmount is not provided or empty
+                                    // For example, you can assign a default value or show an error message.
+                                    contractAmount = 0.0; // Default value or appropriate handling
+                                }
+
+                                String financingType = request.getParameter("financingType");
+                                String cashPriceParam = request.getParameter("cashPrice");
+                                double cashPrice;
+
+                                if (cashPriceParam != null && !cashPriceParam.isEmpty()) {
+                                    cashPrice = Double.parseDouble(cashPriceParam);
+                                } else {
+                                    // Handle the case when cashPrice is not provided or empty
+                                    // For example, you can assign a default value or show an error message.
+                                    cashPrice = 0.0; // Default value or appropriate handling
+                                }
+
+                                String projectNotes = request.getParameter("projectNotes");
+
+                                String dcKwParam = request.getParameter("dcKw");
+                                double dcKw;
+
+                                if (dcKwParam != null && !dcKwParam.isEmpty()) {
+                                    dcKw = Double.parseDouble(dcKwParam);
+                                } else {
+                                    // Handle the case when dcKw is not provided or empty
+                                    // For example, you can assign a default value or show an error message.
+                                    dcKw = 0.0; // Default value or appropriate handling
+                                }
+
+                                String solarModules = request.getParameter("solarModules");
+
+                                String solarPanelQuantityParam = request.getParameter("solarPanelQuantity");
+                                int solarPanelQuantity;
+
+                                if (solarPanelQuantityParam != null && !solarPanelQuantityParam.isEmpty()) {
+                                    solarPanelQuantity = Integer.parseInt(solarPanelQuantityParam);
+                                } else {
+                                    // Handle the case when solarPanelQuantity is not provided or empty
+                                    // For example, you can assign a default value or show an error message.
+                                    solarPanelQuantity = 0; // Default value or appropriate handling
+                                }
+
+                                String inverters = request.getParameter("inverters");
+
+                                String inverterQuantityParam = request.getParameter("inverterQuantity");
+                                int inverterQuantity;
+
+                                if (inverterQuantityParam != null && !inverterQuantityParam.isEmpty()) {
+                                    inverterQuantity = Integer.parseInt(inverterQuantityParam);
+                                } else {
+                                    // Handle the case when inverterQuantity is not provided or empty
+                                    // For example, you can assign a default value or show an error message.
+                                    inverterQuantity = 0; // Default value or appropriate handling
+                                }
+
+                                String otherAdders = request.getParameter("otherAdders");
+                                String ev = request.getParameter("ev");
+                                String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
+                                String battery = request.getParameter("battery");
+                                String meterspotRequested = request.getParameter("meterspotRequested");
+                                String utilityCo = request.getParameter("utilityCo");
+                                String roofInformation = request.getParameter("roofInformation");
+                                String companyCamLink = request.getParameter("companyCamLink");
+                                String actualClosedDate = request.getParameter("actualClosedDate");
+                                String layoutDrafted = request.getParameter("layoutDrafted");
+                                String leadCreated = request.getParameter("leadCreated");
+                                String dateOfLastActivity = request.getParameter("dateOfLastActivity");
+                                String dateOfNextActivity = request.getParameter("dateOfNextActivity");
+                                String convertedContact = request.getParameter("convertedContact");
+                                String convertedOrganization = request.getParameter("convertedOrganization");
+                                String convertedOpportunity = request.getParameter("convertedOpportunity");
+
+                                // Create an instance of the Lead class and populate it with the form data
+                                lead.setName(name);
+                                lead.setPhone(phone);
+                                lead.setAddress(address);
+                                lead.setCity(city);
+                                lead.setEmailAddress(emailAddress);
+                                lead.setLeadStatus(leadStatus);
+                                lead.setChange(change);
+                                lead.setInterconnectionStatus(interconnectionStatus);
+                                lead.setSalesNotes(salesNotes);
+                                lead.setLinkEmailAddress(linkEmailAddress);
+                                lead.setUserResponsible(userResponsible);
+                                lead.setLeadRating(leadRating);
+                                lead.setOrganization(organization);
+                                lead.setLeadSource(leadSource);
+                                lead.setAccountingNotes(accountingNotes);
+                                lead.setContractAmount(contractAmount);
+                                lead.setFinancingType(financingType);
+                                lead.setCashPrice(cashPrice);
+                                lead.setProjectNotes(projectNotes);
+                                lead.setDcKw(dcKw);
+                                lead.setSolarModules(solarModules);
+                                lead.setSolarPanelQuantity(solarPanelQuantity);
+                                lead.setInverters(inverters);
+                                lead.setInverterQuantity(inverterQuantity);
+                                lead.setOtherAdders(otherAdders);
+                                lead.setEv(ev);
+                                lead.setMainPanelUpgrade(mainPanelUpgrade);
+                                lead.setBattery(battery);
+                                lead.setMeterspotRequested(meterspotRequested);
+                                lead.setUtilityCo(utilityCo);
+                                lead.setRoofInformation(roofInformation);
+                                lead.setCompanyCamLink(companyCamLink);
+                                if (actualClosedDate != null && !actualClosedDate.isEmpty()) {
+                                    lead.setActualClosedDate(dateFormat.parse(actualClosedDate));
+                                }
+                                lead.setLayoutDrafted(layoutDrafted);
+
+                                if (leadCreated != null && !leadCreated.isEmpty()) {
+                                    lead.setLeadCreated(dateFormat.parse(leadCreated));
+                                }
+
+                                if (dateOfLastActivity != null && !dateOfLastActivity.isEmpty()) {
+                                    lead.setDateOfLastActivity(dateFormat.parse(dateOfLastActivity));
+                                }
+
+                                if (dateOfNextActivity != null && !dateOfNextActivity.isEmpty()) {
+                                    lead.setDateOfNextActivity(dateFormat.parse(dateOfNextActivity));
+                                }
+
+                                lead.setConvertedContact(convertedContact);
+                                lead.setConvertedOrganization(convertedOrganization);
+                                lead.setConvertedOpportunity(convertedOpportunity);
+                                lead.setUsername(username);
+                                lead.setUseremail(useremail);
+                                lead.setExternal_id(external_id);
+
 
                                 // parse createdDate as a Date object
               //                      entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request
