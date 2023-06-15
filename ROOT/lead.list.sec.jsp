@@ -74,6 +74,9 @@
                         <tr>
                             <th>Lead ID</th>
                             <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Status</th>
                             <!-- Add more table headers for other lead properties -->
                         </tr>
                     </thead>
@@ -82,6 +85,9 @@
                         <tr>
                             <td><a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%= lead.getRecordId() %>" tabindex="2"><%= lead.getRecordId() %></a></td>
                             <td><%= lead.getName() %></td>
+                            <td><%= lead.getPhone() %></td>
+                            <td><%= lead.getEmailAddress() %></td>
+                            <td><%= lead.getLeadStatus() %></td>
                             <!-- Add more table cells for other lead properties -->
                         </tr>
                         <% } %>
