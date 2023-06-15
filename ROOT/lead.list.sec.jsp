@@ -80,17 +80,7 @@
                 <%@ page import="java.sql.SQLException" %>
                 <%@ page import="your.package.name.LeadDAO" %> <!-- Replace "your.package.name" with the actual package name of LeadDAO -->
 
-                    Inside the JSP, retrieve the username parameter from the request:
 
-                jsp
-
-                <%
-                String username = request.getParameter("username");
-                %>
-
-                    Call the getLeadsByUsername method and retrieve the leads:
-
-                jsp
 
                 <%
                 List<Lead> leads = null;
@@ -101,10 +91,6 @@
                     e.printStackTrace();
                 }
                 %>
-
-                    Iterate over the leads and display them in a table or any desired format:
-
-                jsp
 
                 <table>
                     <thead>
