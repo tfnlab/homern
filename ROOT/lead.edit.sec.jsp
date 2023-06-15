@@ -212,6 +212,8 @@
                   lead.setConvertedOpportunity(convertedOpportunity);
                   lead.setUsername(username);
                   lead.setUseremail(useremail);
+                  lead.setLocation_pointlat(request.getParameter("location_pointlat"));
+                  lead.setLocation_pointlng(request.getParameter("location_pointlng"));
                   lead.setRecordId(Integer.parseInt(request.getParameter("lead_id")));
                   leadDAO.updateLead(lead);
                 }
