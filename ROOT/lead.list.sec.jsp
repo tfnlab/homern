@@ -78,6 +78,7 @@
                             <th>Email</th>
                             <th>Status</th>
                             <th>User Email</th>
+                            <th>External Id</th>
                             <!-- Add more table headers for other lead properties -->
                         </tr>
                     </thead>
@@ -90,6 +91,7 @@
                             <td><%= lead.getEmailAddress() %></td>
                             <td><%= lead.getLeadStatus() %></td>
                             <td><%= lead.getUseremail() %></td>
+                            <td><%= lead.getExternal_id() %></td>
                             <!-- Add more table cells for other lead properties -->
                         </tr>
                         <% } %>
