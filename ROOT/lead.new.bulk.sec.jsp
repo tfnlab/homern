@@ -141,11 +141,11 @@
                                 String phone = customers[6];
                                 String address = customers[11];
                                 String city = customers[12];
-                                String emailAddress = customers[46];
+                                String emailAddress = customers[9];
                                 String leadStatus = customers[21];
                                 String change = request.getParameter("change");
                                 String interconnectionStatus = request.getParameter("interconnectionStatus");
-                                String salesNotes = request.getParameter("salesNotes");
+                                String salesNotes = customers[58];
                                 String linkEmailAddress = request.getParameter("linkEmailAddress");
                                 String userResponsible = request.getParameter("userResponsible");
                                 String leadRating = request.getParameter("leadRating");
@@ -175,7 +175,7 @@
                                     cashPrice = 0.0; // Default value or appropriate handling
                                 }
 
-                                String projectNotes = request.getParameter("projectNotes");
+                                String projectNotes = customers[45];
 
                                 String dcKwParam = request.getParameter("dcKw");
                                 double dcKw;
