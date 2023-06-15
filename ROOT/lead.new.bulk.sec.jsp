@@ -54,165 +54,114 @@
         <HR>
           <a href="<%=rootUpdate%>lead.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Leads</a>
           <%
-          if (request.getMethod().equalsIgnoreCase("post")) {
-              // Create an instance of the LeadDAO class
-              LeadDAO leadDAO = new LeadDAO();
-              SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+          boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+          String ocrDescription = new String();
+          LeadDAO leadDAO = new LeadDAO();
+          if (isMultipart) {
 
-              String name = request.getParameter("name");
-              String phone = request.getParameter("phone");
-              String address = request.getParameter("address");
-              String city = request.getParameter("city");
-              String emailAddress = request.getParameter("emailAddress");
-              String leadStatus = request.getParameter("leadStatus");
-              String change = request.getParameter("change");
-              String interconnectionStatus = request.getParameter("interconnectionStatus");
-              String salesNotes = request.getParameter("salesNotes");
-              String linkEmailAddress = request.getParameter("linkEmailAddress");
-              String userResponsible = request.getParameter("userResponsible");
-              String leadRating = request.getParameter("leadRating");
-              String organization = request.getParameter("organization");
-              String leadSource = request.getParameter("leadSource");
-              String accountingNotes = request.getParameter("accountingNotes");
-              String contractAmountParam = request.getParameter("contractAmount");
-              double contractAmount;
-
-              if (contractAmountParam != null && !contractAmountParam.isEmpty()) {
-                  contractAmount = Double.parseDouble(contractAmountParam);
-              } else {
-                  // Handle the case when contractAmount is not provided or empty
-                  // For example, you can assign a default value or show an error message.
-                  contractAmount = 0.0; // Default value or appropriate handling
+              UUID uuid = UUID.randomUUID();
+              APIConfig conf = new APIConfig();
+              String filename = "lead.bulk." + username + "." + uuid + ".csv";
+              String filepath = conf.getPdfloc();
+              DiskFileItemFactory factory = new DiskFileItemFactory();
+              factory.setSizeThreshold(1024 * 1024); // Set the size threshold for storing files in memory
+              factory.setRepository(new File(filepath)); // Set the repository location for temporarily storing files
+              ServletFileUpload upload = new ServletFileUpload(factory);
+              List<FileItem> items = upload.parseRequest(request);
+              for (FileItem item : items) {
+                if (!item.isFormField()) { // Check if the item is an uploaded file
+                  InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
+                  FileOutputStream fos = new FileOutputStream(filepath   + filename);
+                  byte[] buffer = new byte[1024];
+                  int length;
+                  while ((length = fileContent.read(buffer)) > 0) {
+                    fos.write(buffer, 0, length);
+                  }
+                  fos.close();
+                  fileContent.close();
+                }
               }
 
-              String financingType = request.getParameter("financingType");
-              String cashPriceParam = request.getParameter("cashPrice");
-              double cashPrice;
 
-              if (cashPriceParam != null && !cashPriceParam.isEmpty()) {
-                  cashPrice = Double.parseDouble(cashPriceParam);
-              } else {
-                  // Handle the case when cashPrice is not provided or empty
-                  // For example, you can assign a default value or show an error message.
-                  cashPrice = 0.0; // Default value or appropriate handling
+              try {
+                BufferedReader reader = new BufferedReader(new FileReader(filepath   + filename));
+                String line;
+                int lineNumber = 0;
+                while ((line = reader.readLine()) != null) {
+
+                    String[] customers = line.split(",");
+                    if(lineNumber==0){
+                      for(int k=0;k<customers.length;k++){
+                        %> ___ <%=k + " - " + customers[k]%> ____ <%
+                      }
+                    }
+                    %><%=lineNumber%><%
+                    if(customers.length>21){
+                      GeocodingExample geocodingExample = new GeocodingExample();
+                      String[] results = geocodingExample.search(customers[17] + ", " + customers[19]);
+                  %>
+                  <%=customers[0]%>
+                  <%=customers[1]%>
+                  <%=customers[3]%>
+                  <%=customers[5]%>
+                  <BR>
+                  NOTES
+                  <%=customers[10]%>
+                  <%=customers[11]%>
+                  <BR>
+                  A <%=customers[17]%>
+                  A2 <%=customers[18]%>
+                  C <%=customers[19]%>
+                  S <%=customers[20]%>
+                  Z <%=customers[21]%>
+                  <BR>
+                  lat <%=results[0]%>
+                  lng <%=results[1]%>
+                  <%
+                          if(lineNumber!=0){
+                              try{
+                                long currentTimeMillis = System.currentTimeMillis();
+                                Timestamp currentTime = new Timestamp(currentTimeMillis);
+                                Lead lead = new Lead();
+
+              //                      entity.setId(Integer.parseInt(request.getParameter("id")));
+                                lead.setUsername(username);
+                                lead.setName(customers[3]);
+
+                                // parse createdDate as a Date object
+              //                      entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request
+                                // parse createdDate as a Date object
+                                //entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("createdDate")));
+                                //entity.setLastModifiedBy(request.getParameter("lastModifiedBy"));
+                                // parse lastModifiedDate as a Timestamp object
+                                //entity.setLastModifiedDate(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("lastModifiedDate")).getTime()));
+                                leadDAO.insertLead(lead);
+                              } catch (Exception e) {
+                                e.printStackTrace();
+                                %><%=e.getMessage()%><%
+                              }
+                          }
+
+                    }
+                    lineNumber += 1;
+                    %>
+                    <HR>
+                    <%
+                }
+                reader.close();
+              } catch (Exception e) {
+                e.printStackTrace();
+                %><%=e.getMessage()%><%
               }
 
-              String projectNotes = request.getParameter("projectNotes");
-
-              String dcKwParam = request.getParameter("dcKw");
-              double dcKw;
-
-              if (dcKwParam != null && !dcKwParam.isEmpty()) {
-                  dcKw = Double.parseDouble(dcKwParam);
-              } else {
-                  // Handle the case when dcKw is not provided or empty
-                  // For example, you can assign a default value or show an error message.
-                  dcKw = 0.0; // Default value or appropriate handling
-              }
-
-              String solarModules = request.getParameter("solarModules");
-
-              String solarPanelQuantityParam = request.getParameter("solarPanelQuantity");
-              int solarPanelQuantity;
-
-              if (solarPanelQuantityParam != null && !solarPanelQuantityParam.isEmpty()) {
-                  solarPanelQuantity = Integer.parseInt(solarPanelQuantityParam);
-              } else {
-                  // Handle the case when solarPanelQuantity is not provided or empty
-                  // For example, you can assign a default value or show an error message.
-                  solarPanelQuantity = 0; // Default value or appropriate handling
-              }
-
-              String inverters = request.getParameter("inverters");
-
-              String inverterQuantityParam = request.getParameter("inverterQuantity");
-              int inverterQuantity;
-
-              if (inverterQuantityParam != null && !inverterQuantityParam.isEmpty()) {
-                  inverterQuantity = Integer.parseInt(inverterQuantityParam);
-              } else {
-                  // Handle the case when inverterQuantity is not provided or empty
-                  // For example, you can assign a default value or show an error message.
-                  inverterQuantity = 0; // Default value or appropriate handling
-              }
-
-              String otherAdders = request.getParameter("otherAdders");
-              String ev = request.getParameter("ev");
-              String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
-              String battery = request.getParameter("battery");
-              String meterspotRequested = request.getParameter("meterspotRequested");
-              String utilityCo = request.getParameter("utilityCo");
-              String roofInformation = request.getParameter("roofInformation");
-              String companyCamLink = request.getParameter("companyCamLink");
-              String actualClosedDate = request.getParameter("actualClosedDate");
-              String layoutDrafted = request.getParameter("layoutDrafted");
-              String leadCreated = request.getParameter("leadCreated");
-              String dateOfLastActivity = request.getParameter("dateOfLastActivity");
-              String dateOfNextActivity = request.getParameter("dateOfNextActivity");
-              String convertedContact = request.getParameter("convertedContact");
-              String convertedOrganization = request.getParameter("convertedOrganization");
-              String convertedOpportunity = request.getParameter("convertedOpportunity");
-
-              // Create an instance of the Lead class and populate it with the form data
-              Lead lead = new Lead();
-              lead.setName(name);
-              lead.setPhone(phone);
-              lead.setAddress(address);
-              lead.setCity(city);
-              lead.setEmailAddress(emailAddress);
-              lead.setLeadStatus(leadStatus);
-              lead.setChange(change);
-              lead.setInterconnectionStatus(interconnectionStatus);
-              lead.setSalesNotes(salesNotes);
-              lead.setLinkEmailAddress(linkEmailAddress);
-              lead.setUserResponsible(userResponsible);
-              lead.setLeadRating(leadRating);
-              lead.setOrganization(organization);
-              lead.setLeadSource(leadSource);
-              lead.setAccountingNotes(accountingNotes);
-              lead.setContractAmount(contractAmount);
-              lead.setFinancingType(financingType);
-              lead.setCashPrice(cashPrice);
-              lead.setProjectNotes(projectNotes);
-              lead.setDcKw(dcKw);
-              lead.setSolarModules(solarModules);
-              lead.setSolarPanelQuantity(solarPanelQuantity);
-              lead.setInverters(inverters);
-              lead.setInverterQuantity(inverterQuantity);
-              lead.setOtherAdders(otherAdders);
-              lead.setEv(ev);
-              lead.setMainPanelUpgrade(mainPanelUpgrade);
-              lead.setBattery(battery);
-              lead.setMeterspotRequested(meterspotRequested);
-              lead.setUtilityCo(utilityCo);
-              lead.setRoofInformation(roofInformation);
-              lead.setCompanyCamLink(companyCamLink);
-              if (actualClosedDate != null && !actualClosedDate.isEmpty()) {
-                  lead.setActualClosedDate(dateFormat.parse(actualClosedDate));
-              }
-              lead.setLayoutDrafted(layoutDrafted);
-
-              if (leadCreated != null && !leadCreated.isEmpty()) {
-                  lead.setLeadCreated(dateFormat.parse(leadCreated));
-              }
-
-              if (dateOfLastActivity != null && !dateOfLastActivity.isEmpty()) {
-                  lead.setDateOfLastActivity(dateFormat.parse(dateOfLastActivity));
-              }
-
-              if (dateOfNextActivity != null && !dateOfNextActivity.isEmpty()) {
-                  lead.setDateOfNextActivity(dateFormat.parse(dateOfNextActivity));
-              }
-
-              lead.setConvertedContact(convertedContact);
-              lead.setConvertedOrganization(convertedOrganization);
-              lead.setConvertedOpportunity(convertedOpportunity);
-              lead.setUsername(username);
-              lead.setUseremail(useremail);
-              leadDAO.insertLead(lead);
             }
-          %>
+            %>
 
+            <form method="post" action="<%=rootUpdate%>lead.new.bulk.sec.jsp/" enctype="multipart/form-data">
+              <input type="file" name="file" />
+              <input type="submit" value="Upload" />
+            </form>
+            <HR>
             </div>
           </div>
         </div>
