@@ -57,8 +57,7 @@
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
             <HR>
-        <h2>Lead</h2>
-        <HR>
+        <h2>Lead CSV UPLOAD</h2>
         <HR>
           <a href="<%=rootUpdate%>lead.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Leads</a>
           <%
@@ -164,7 +163,7 @@
 
             }
             %>
-
+            <HR>
             <form method="post" action="<%=rootUpdate%>lead.new.bulk.sec.jsp/" enctype="multipart/form-data">
               <input type="file" name="file" />
               <input type="submit" value="Upload" />
