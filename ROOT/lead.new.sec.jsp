@@ -192,15 +192,15 @@
               }
               lead.setLayoutDrafted(layoutDrafted);
 
-              if (leadCreated != null) {
+              if (leadCreated != null && !leadCreated.isEmpty()) {
                   lead.setLeadCreated(dateFormat.parse(leadCreated));
               }
 
-              if (dateOfLastActivity != null) {
+              if (dateOfLastActivity != null && !dateOfLastActivity.isEmpty()) {
                   lead.setDateOfLastActivity(dateFormat.parse(dateOfLastActivity));
               }
 
-              if (dateOfNextActivity != null) {
+              if (dateOfNextActivity != null && !dateOfNextActivity.isEmpty()) {
                   lead.setDateOfNextActivity(dateFormat.parse(dateOfNextActivity));
               }
 
