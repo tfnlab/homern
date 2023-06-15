@@ -155,7 +155,7 @@
                                     cashPrice = 0.0; // Default value or appropriate handling
                                 }
 
-                                String projectNotes = customers[45];
+                                String projectNotes = csvRecord.get(45);
 
                                 String dcKwParam = request.getParameter("dcKw");
                                 double dcKw;
