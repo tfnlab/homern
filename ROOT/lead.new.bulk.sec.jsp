@@ -140,9 +140,9 @@
                                 String name = customers[3];
                                 String phone = customers[6];
                                 String address = customers[11];
-                                String city = request.getParameter("city");
-                                String emailAddress = request.getParameter("emailAddress");
-                                String leadStatus = request.getParameter("leadStatus");
+                                String city = customers[12];
+                                String emailAddress = customers[46];
+                                String leadStatus = customers[21];
                                 String change = request.getParameter("change");
                                 String interconnectionStatus = request.getParameter("interconnectionStatus");
                                 String salesNotes = request.getParameter("salesNotes");
