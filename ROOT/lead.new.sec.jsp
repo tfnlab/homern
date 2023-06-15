@@ -143,7 +143,7 @@
               lead.setConvertedOrganization(convertedOrganization);
               lead.setConvertedOpportunity(convertedOpportunity);
               lead.setUsername(username);
-              lead.setUseremail(useremail)
+              lead.setUseremail(useremail);
               leadDAO.insertLead(lead);
             }
           %>
