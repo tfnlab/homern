@@ -55,6 +55,8 @@
           <a href="<%=rootUpdate%>lead.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Leads</a>
           <%
               LeadDAO leadDAO = new LeadDAO();
+
+              Lead lead = new Lead();
               if (request.getMethod().equalsIgnoreCase("post")) {
                   // Create an instance of the LeadDAO class
                   LeadDAO leadDAO = new LeadDAO();
@@ -155,7 +157,6 @@
                   String convertedOpportunity = request.getParameter("convertedOpportunity");
 
                   // Create an instance of the Lead class and populate it with the form data
-                  Lead lead = new Lead();
                   lead.setName(name);
                   lead.setPhone(phone);
                   lead.setAddress(address);
@@ -212,7 +213,7 @@
                   lead.setUseremail(useremail);
                 }
 
-              Lead lead = leadDAO.getLead(username, Integer.parseInt(request.getParameter("lead_id")));
+              lead = leadDAO.getLead(username, Integer.parseInt(request.getParameter("lead_id")));
 
               SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
           %>
