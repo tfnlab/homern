@@ -57,30 +57,7 @@
           <div class="container mt-5">
             <div class="container">
                 <h3>Lead List  <a href="<%=rootUpdate%>contact.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i> CSV</a></h3>
-
-                <%
-                List<Lead> leads = null;
-                try {
-                    LeadDAO leadDAO = new LeadDAO();
-                    leads = leadDAO.getLeadsByUsername(username);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                %>
-                To create a JSP that calls the getLeadsByUsername method and displays the results, follow these steps:
-
-                    Create a new JSP file (e.g., leadsByUsername.jsp) in your web project.
-
-                    In the JSP file, import the necessary classes at the top:
-
-                jsp
-
-                <%@ page import="com.tfnlab.mysql.Lead" %>
-                <%@ page import="java.util.List" %>
-                <%@ page import="java.sql.SQLException" %>
-                <%@ page import="your.package.name.LeadDAO" %> <!-- Replace "your.package.name" with the actual package name of LeadDAO -->
-
-
+ 
 
                 <%
                 List<Lead> leads = null;
