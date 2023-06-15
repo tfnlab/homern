@@ -50,4 +50,4 @@
               String csvString = csv.toString();
               System.out.println(csvString);
 
-                %>
+                %><%=csvString%>
