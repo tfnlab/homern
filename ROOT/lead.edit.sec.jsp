@@ -56,7 +56,7 @@
           <%
               LeadDAO leadDAO = new LeadDAO();
               Lead lead = new Lead();
-              
+
               if (request.getMethod().equalsIgnoreCase("post")) {
                   // Create an instance of the LeadDAO class
                   SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -220,6 +220,7 @@
           <div class="container mt-5">
             <div class="container">
               <form action="<%=rootUpdate%>lead.edit.sec.jsp/" method="post">
+                <input type="hidden" class="form-control" name="lead_id" value="<%=lead.getRecordId()%>">
                 <div class="form-group">
                     <label>Name:</label>
                     <input type="text" class="form-control" name="name" value="<%=lead.getName()%>">
