@@ -105,192 +105,185 @@
                       GeocodingExample geocodingExample = new GeocodingExample();
                       String[] results = geocodingExample.search(csvRecord.get(11) + ", " + csvRecord.get(12));
 
-                          if(lineNumber!=0){
-                              try{
-                                long currentTimeMillis = System.currentTimeMillis();
-                                Timestamp currentTime = new Timestamp(currentTimeMillis);
-                                Lead lead = new Lead();
+                                          long currentTimeMillis = System.currentTimeMillis();
+                                          Timestamp currentTime = new Timestamp(currentTimeMillis);
+                                          Lead lead = new Lead();
 
-              //                      entity.setId(Integer.parseInt(request.getParameter("id")));
-                                lead.setUsername(username);
+                        //                      entity.setId(Integer.parseInt(request.getParameter("id")));
+                                          lead.setUsername(username);
 
 
-                                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                                String external_id = csvRecord.get(0);
-                                String name = csvRecord.get(3);
-                                String phone = csvRecord.get(6);
-                                String address = csvRecord.get(11);
-                                String city = csvRecord.get(12);
-                                String emailAddress = csvRecord.get(9);
-                                String leadStatus = csvRecord.get(21);
-                                String change = request.getParameter("change");
-                                String interconnectionStatus = request.getParameter("interconnectionStatus");
-                                String salesNotes = csvRecord.get(58);
-                                String linkEmailAddress = request.getParameter("linkEmailAddress");
-                                String userResponsible = request.getParameter("userResponsible");
-                                String leadRating = request.getParameter("leadRating");
-                                String organization = request.getParameter("organization");
-                                String leadSource = request.getParameter("leadSource");
-                                String accountingNotes = request.getParameter("accountingNotes");
-                                String contractAmountParam = request.getParameter("contractAmount");
-                                double contractAmount;
+                                          SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                                          String external_id = csvRecord.get(0);
+                                          String name = csvRecord.get(3);
+                                          String phone = csvRecord.get(6);
+                                          String address = csvRecord.get(11);
+                                          String city = csvRecord.get(12);
+                                          String emailAddress = csvRecord.get(9);
+                                          String leadStatus = csvRecord.get(21);
+                                          String change = request.getParameter("change");
+                                          String interconnectionStatus = request.getParameter("interconnectionStatus");
+                                          String salesNotes = csvRecord.get(58);
+                                          String linkEmailAddress = request.getParameter("linkEmailAddress");
+                                          String userResponsible = request.getParameter("userResponsible");
+                                          String leadRating = request.getParameter("leadRating");
+                                          String organization = request.getParameter("organization");
+                                          String leadSource = request.getParameter("leadSource");
+                                          String accountingNotes = request.getParameter("accountingNotes");
+                                          String contractAmountParam = request.getParameter("contractAmount");
+                                          double contractAmount;
 
-                                if (contractAmountParam != null && !contractAmountParam.isEmpty()) {
-                                    contractAmount = Double.parseDouble(contractAmountParam);
-                                } else {
-                                    // Handle the case when contractAmount is not provided or empty
-                                    // For example, you can assign a default value or show an error message.
-                                    contractAmount = 0.0; // Default value or appropriate handling
-                                }
+                                          if (contractAmountParam != null && !contractAmountParam.isEmpty()) {
+                                              contractAmount = Double.parseDouble(contractAmountParam);
+                                          } else {
+                                              // Handle the case when contractAmount is not provided or empty
+                                              // For example, you can assign a default value or show an error message.
+                                              contractAmount = 0.0; // Default value or appropriate handling
+                                          }
 
-                                String financingType = request.getParameter("financingType");
-                                String cashPriceParam = request.getParameter("cashPrice");
-                                double cashPrice;
+                                          String financingType = request.getParameter("financingType");
+                                          String cashPriceParam = request.getParameter("cashPrice");
+                                          double cashPrice;
 
-                                if (cashPriceParam != null && !cashPriceParam.isEmpty()) {
-                                    cashPrice = Double.parseDouble(cashPriceParam);
-                                } else {
-                                    // Handle the case when cashPrice is not provided or empty
-                                    // For example, you can assign a default value or show an error message.
-                                    cashPrice = 0.0; // Default value or appropriate handling
-                                }
+                                          if (cashPriceParam != null && !cashPriceParam.isEmpty()) {
+                                              cashPrice = Double.parseDouble(cashPriceParam);
+                                          } else {
+                                              // Handle the case when cashPrice is not provided or empty
+                                              // For example, you can assign a default value or show an error message.
+                                              cashPrice = 0.0; // Default value or appropriate handling
+                                          }
 
-                                String projectNotes = csvRecord.get(45);
+                                          String projectNotes = csvRecord.get(45);
 
-                                String dcKwParam = request.getParameter("dcKw");
-                                double dcKw;
+                                          String dcKwParam = request.getParameter("dcKw");
+                                          double dcKw;
 
-                                if (dcKwParam != null && !dcKwParam.isEmpty()) {
-                                    dcKw = Double.parseDouble(dcKwParam);
-                                } else {
-                                    // Handle the case when dcKw is not provided or empty
-                                    // For example, you can assign a default value or show an error message.
-                                    dcKw = 0.0; // Default value or appropriate handling
-                                }
+                                          if (dcKwParam != null && !dcKwParam.isEmpty()) {
+                                              dcKw = Double.parseDouble(dcKwParam);
+                                          } else {
+                                              // Handle the case when dcKw is not provided or empty
+                                              // For example, you can assign a default value or show an error message.
+                                              dcKw = 0.0; // Default value or appropriate handling
+                                          }
 
-                                String solarModules = request.getParameter("solarModules");
+                                          String solarModules = request.getParameter("solarModules");
 
-                                String solarPanelQuantityParam = request.getParameter("solarPanelQuantity");
-                                int solarPanelQuantity;
+                                          String solarPanelQuantityParam = request.getParameter("solarPanelQuantity");
+                                          int solarPanelQuantity;
 
-                                if (solarPanelQuantityParam != null && !solarPanelQuantityParam.isEmpty()) {
-                                    solarPanelQuantity = Integer.parseInt(solarPanelQuantityParam);
-                                } else {
-                                    // Handle the case when solarPanelQuantity is not provided or empty
-                                    // For example, you can assign a default value or show an error message.
-                                    solarPanelQuantity = 0; // Default value or appropriate handling
-                                }
+                                          if (solarPanelQuantityParam != null && !solarPanelQuantityParam.isEmpty()) {
+                                              solarPanelQuantity = Integer.parseInt(solarPanelQuantityParam);
+                                          } else {
+                                              // Handle the case when solarPanelQuantity is not provided or empty
+                                              // For example, you can assign a default value or show an error message.
+                                              solarPanelQuantity = 0; // Default value or appropriate handling
+                                          }
 
-                                String inverters = request.getParameter("inverters");
+                                          String inverters = request.getParameter("inverters");
 
-                                String inverterQuantityParam = request.getParameter("inverterQuantity");
-                                int inverterQuantity;
+                                          String inverterQuantityParam = request.getParameter("inverterQuantity");
+                                          int inverterQuantity;
 
-                                if (inverterQuantityParam != null && !inverterQuantityParam.isEmpty()) {
-                                    inverterQuantity = Integer.parseInt(inverterQuantityParam);
-                                } else {
-                                    // Handle the case when inverterQuantity is not provided or empty
-                                    // For example, you can assign a default value or show an error message.
-                                    inverterQuantity = 0; // Default value or appropriate handling
-                                }
+                                          if (inverterQuantityParam != null && !inverterQuantityParam.isEmpty()) {
+                                              inverterQuantity = Integer.parseInt(inverterQuantityParam);
+                                          } else {
+                                              // Handle the case when inverterQuantity is not provided or empty
+                                              // For example, you can assign a default value or show an error message.
+                                              inverterQuantity = 0; // Default value or appropriate handling
+                                          }
 
-                                String otherAdders = request.getParameter("otherAdders");
-                                String ev = request.getParameter("ev");
-                                String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
-                                String battery = request.getParameter("battery");
-                                String meterspotRequested = request.getParameter("meterspotRequested");
-                                String utilityCo = request.getParameter("utilityCo");
-                                String roofInformation = request.getParameter("roofInformation");
-                                String companyCamLink = request.getParameter("companyCamLink");
-                                String actualClosedDate = request.getParameter("actualClosedDate");
-                                String layoutDrafted = request.getParameter("layoutDrafted");
-                                String leadCreated = request.getParameter("leadCreated");
-                                String dateOfLastActivity = request.getParameter("dateOfLastActivity");
-                                String dateOfNextActivity = request.getParameter("dateOfNextActivity");
-                                String convertedContact = request.getParameter("convertedContact");
-                                String convertedOrganization = request.getParameter("convertedOrganization");
-                                String convertedOpportunity = request.getParameter("convertedOpportunity");
+                                          String otherAdders = request.getParameter("otherAdders");
+                                          String ev = request.getParameter("ev");
+                                          String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
+                                          String battery = request.getParameter("battery");
+                                          String meterspotRequested = request.getParameter("meterspotRequested");
+                                          String utilityCo = request.getParameter("utilityCo");
+                                          String roofInformation = request.getParameter("roofInformation");
+                                          String companyCamLink = request.getParameter("companyCamLink");
+                                          String actualClosedDate = request.getParameter("actualClosedDate");
+                                          String layoutDrafted = request.getParameter("layoutDrafted");
+                                          String leadCreated = request.getParameter("leadCreated");
+                                          String dateOfLastActivity = request.getParameter("dateOfLastActivity");
+                                          String dateOfNextActivity = request.getParameter("dateOfNextActivity");
+                                          String convertedContact = request.getParameter("convertedContact");
+                                          String convertedOrganization = request.getParameter("convertedOrganization");
+                                          String convertedOpportunity = request.getParameter("convertedOpportunity");
 
-                                // Create an instance of the Lead class and populate it with the form data
-                                lead.setName(name);
-                                lead.setPhone(phone);
-                                lead.setAddress(address);
-                                lead.setCity(city);
-                                lead.setEmailAddress(emailAddress);
-                                lead.setLeadStatus(leadStatus);
-                                lead.setChange(change);
-                                lead.setInterconnectionStatus(interconnectionStatus);
-                                lead.setSalesNotes(salesNotes);
-                                lead.setLinkEmailAddress(linkEmailAddress);
-                                lead.setUserResponsible(userResponsible);
-                                lead.setLeadRating(leadRating);
-                                lead.setOrganization(organization);
-                                lead.setLeadSource(leadSource);
-                                lead.setAccountingNotes(accountingNotes);
-                                lead.setContractAmount(contractAmount);
-                                lead.setFinancingType(financingType);
-                                lead.setCashPrice(cashPrice);
-                                lead.setProjectNotes(projectNotes);
-                                lead.setDcKw(dcKw);
-                                lead.setSolarModules(solarModules);
-                                lead.setSolarPanelQuantity(solarPanelQuantity);
-                                lead.setInverters(inverters);
-                                lead.setInverterQuantity(inverterQuantity);
-                                lead.setOtherAdders(otherAdders);
-                                lead.setEv(ev);
-                                lead.setMainPanelUpgrade(mainPanelUpgrade);
-                                lead.setBattery(battery);
-                                lead.setMeterspotRequested(meterspotRequested);
-                                lead.setUtilityCo(utilityCo);
-                                lead.setRoofInformation(roofInformation);
-                                lead.setCompanyCamLink(companyCamLink);
-                                if (actualClosedDate != null && !actualClosedDate.isEmpty()) {
-                                    lead.setActualClosedDate(dateFormat.parse(actualClosedDate));
-                                }
-                                lead.setLayoutDrafted(layoutDrafted);
+                                          // Create an instance of the Lead class and populate it with the form data
+                                          lead.setName(name);
+                                          lead.setPhone(phone);
+                                          lead.setAddress(address);
+                                          lead.setCity(city);
+                                          lead.setEmailAddress(emailAddress);
+                                          lead.setLeadStatus(leadStatus);
+                                          lead.setChange(change);
+                                          lead.setInterconnectionStatus(interconnectionStatus);
+                                          lead.setSalesNotes(salesNotes);
+                                          lead.setLinkEmailAddress(linkEmailAddress);
+                                          lead.setUserResponsible(userResponsible);
+                                          lead.setLeadRating(leadRating);
+                                          lead.setOrganization(organization);
+                                          lead.setLeadSource(leadSource);
+                                          lead.setAccountingNotes(accountingNotes);
+                                          lead.setContractAmount(contractAmount);
+                                          lead.setFinancingType(financingType);
+                                          lead.setCashPrice(cashPrice);
+                                          lead.setProjectNotes(projectNotes);
+                                          lead.setDcKw(dcKw);
+                                          lead.setSolarModules(solarModules);
+                                          lead.setSolarPanelQuantity(solarPanelQuantity);
+                                          lead.setInverters(inverters);
+                                          lead.setInverterQuantity(inverterQuantity);
+                                          lead.setOtherAdders(otherAdders);
+                                          lead.setEv(ev);
+                                          lead.setMainPanelUpgrade(mainPanelUpgrade);
+                                          lead.setBattery(battery);
+                                          lead.setMeterspotRequested(meterspotRequested);
+                                          lead.setUtilityCo(utilityCo);
+                                          lead.setRoofInformation(roofInformation);
+                                          lead.setCompanyCamLink(companyCamLink);
+                                          if (actualClosedDate != null && !actualClosedDate.isEmpty()) {
+                                              lead.setActualClosedDate(dateFormat.parse(actualClosedDate));
+                                          }
+                                          lead.setLayoutDrafted(layoutDrafted);
 
-                                if (leadCreated != null && !leadCreated.isEmpty()) {
-                                    lead.setLeadCreated(dateFormat.parse(leadCreated));
-                                }
+                                          if (leadCreated != null && !leadCreated.isEmpty()) {
+                                              lead.setLeadCreated(dateFormat.parse(leadCreated));
+                                          }
 
-                                if (dateOfLastActivity != null && !dateOfLastActivity.isEmpty()) {
-                                    lead.setDateOfLastActivity(dateFormat.parse(dateOfLastActivity));
-                                }
+                                          if (dateOfLastActivity != null && !dateOfLastActivity.isEmpty()) {
+                                              lead.setDateOfLastActivity(dateFormat.parse(dateOfLastActivity));
+                                          }
 
-                                if (dateOfNextActivity != null && !dateOfNextActivity.isEmpty()) {
-                                    lead.setDateOfNextActivity(dateFormat.parse(dateOfNextActivity));
-                                }
+                                          if (dateOfNextActivity != null && !dateOfNextActivity.isEmpty()) {
+                                              lead.setDateOfNextActivity(dateFormat.parse(dateOfNextActivity));
+                                          }
 
-                                lead.setConvertedContact(convertedContact);
-                                lead.setConvertedOrganization(convertedOrganization);
-                                lead.setConvertedOpportunity(convertedOpportunity);
-                                lead.setUsername(username);
-                                lead.setUseremail(useremail);
-                                lead.setExternal_id(external_id);
-                                if(results[1].contains("ZERO_RESULTS")){
-                                  lead.setLocation_pointlat("0");
-                                  lead.setLocation_pointlng("0");
-                                }else{
-                                  lead.setLocation_pointlat(results[0]);
-                                  lead.setLocation_pointlng(results[1]);
-                                }
+                                          lead.setConvertedContact(convertedContact);
+                                          lead.setConvertedOrganization(convertedOrganization);
+                                          lead.setConvertedOpportunity(convertedOpportunity);
+                                          lead.setUsername(username);
+                                          lead.setUseremail(useremail);
+                                          lead.setExternal_id(external_id);
+                                          if(results[1].contains("ZERO_RESULTS")){
+                                            lead.setLocation_pointlat("0");
+                                            lead.setLocation_pointlng("0");
+                                          }else{
+                                            lead.setLocation_pointlat(results[0]);
+                                            lead.setLocation_pointlng(results[1]);
+                                          }
 
-                                // parse createdDate as a Date object
-              //                      entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request
-                                // parse createdDate as a Date object
-                                //entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("createdDate")));
-                                //entity.setLastModifiedBy(request.getParameter("lastModifiedBy"));
-                                // parse lastModifiedDate as a Timestamp object
-                                //entity.setLastModifiedDate(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("lastModifiedDate")).getTime()));
-                                leadDAO.insertLead(lead);
-                              } catch (Exception e) {
-                                e.printStackTrace();
-                                %><%=e.getMessage()%><%
-                              }
-                          }
+                                          // parse createdDate as a Date object
+                        //                      entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request
+                                          // parse createdDate as a Date object
+                                          //entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("createdDate")));
+                                          //entity.setLastModifiedBy(request.getParameter("lastModifiedBy"));
+                                          // parse lastModifiedDate as a Timestamp object
+                                          //entity.setLastModifiedDate(new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(request.getParameter("lastModifiedDate")).getTime()));
+                                          leadDAO.insertLead(lead);
 
-                    }
-                    lineNumber += 1;
+
+
                     %>
                     <HR>
                     <%
