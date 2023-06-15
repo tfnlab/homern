@@ -25,6 +25,10 @@
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ page import="com.tfnlab.mysql.LeadDAO" %>
 <%@ page import="com.tfnlab.mysql.Lead" %>
+<%@ page import="org.apache.commons.fileupload.servlet.ServletFileUpload" %>
+<%@ page import="org.apache.commons.fileupload.disk.DiskFileItemFactory" %>
+<%@ page import="javax.servlet.http.Part" %>
+<%@ page import="org.apache.commons.fileupload.FileItem" %>
 <%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
