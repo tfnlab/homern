@@ -210,6 +210,8 @@
                   lead.setConvertedOpportunity(convertedOpportunity);
                   lead.setUsername(username);
                   lead.setUseremail(useremail);
+                  lead.setRecordId(Integer.parseInt(request.getParameter("lead_id")));
+                  leadDAO.updateLead(lead);
                 }
 
               lead = leadDAO.getLead(username, Integer.parseInt(request.getParameter("lead_id")));
