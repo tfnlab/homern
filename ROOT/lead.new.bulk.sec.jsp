@@ -105,7 +105,7 @@
                     %><%=lineNumber%><%
                     if(customers.length>21){
                       GeocodingExample geocodingExample = new GeocodingExample();
-                      String[] results = geocodingExample.search(customers[11] + ", " + customers[19]);
+                      String[] results = geocodingExample.search(customers[11] + ", " + customers[12]);
                   %>
                   <%=customers[0]%>
                   <%=customers[1]%>
@@ -287,7 +287,13 @@
                                 lead.setUsername(username);
                                 lead.setUseremail(useremail);
                                 lead.setExternal_id(external_id);
-
+                                if(results[1].contains("ZERO_RESULTS")){
+                                  lead.setLocation_pointlat("0");
+                                  lead.setLocation_pointlng("0");
+                                }else{
+                                  lead.setLocation_pointlat(results[0]);
+                                  lead.setLocation_pointlng(results[1]);
+                                }
 
                                 // parse createdDate as a Date object
               //                      entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request
