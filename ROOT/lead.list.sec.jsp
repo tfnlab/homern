@@ -77,6 +77,7 @@
                             <th>Phone</th>
                             <th>Email</th>
                             <th>Status</th>
+                            <th>User Email</th>
                             <!-- Add more table headers for other lead properties -->
                         </tr>
                     </thead>
@@ -88,6 +89,7 @@
                             <td><%= lead.getPhone() %></td>
                             <td><%= lead.getEmailAddress() %></td>
                             <td><%= lead.getLeadStatus() %></td>
+                            <td><%= lead.getUseremail() %></td>
                             <!-- Add more table cells for other lead properties -->
                         </tr>
                         <% } %>
