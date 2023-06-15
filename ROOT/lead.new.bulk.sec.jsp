@@ -33,6 +33,9 @@
 <%@ page import="org.apache.commons.fileupload.FileItem" %>
 <%@ page import="com.tfnlab.api.con.GoogleAutocomplete" %>
 <%@ page import="com.tfnlab.api.con.GeocodingExample" %>
+<%@ page import="org.apache.commons.csv.CSVFormat" %>
+<%@ page import="org.apache.commons.csv.CSVParser" %>
+<%@ page import="org.apache.commons.csv.CSVRecord" %>
 <%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,37 +97,14 @@
                 BufferedReader reader = new BufferedReader(new FileReader(filepath   + filename));
                 String line;
                 int lineNumber = 0;
-                while ((line = reader.readLine()) != null) {
+                CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT)) {
 
-                    String[] customers = line.split(",");
-                    if(lineNumber==0){
-                      for(int k=0;k<customers.length;k++){
-                        %> ___ <%=k + " - " + customers[k]%> ____ <%
-                      }
-                    }
-                    %><%=lineNumber%><%
-                    if(customers.length>21){
+                for (CSVRecord csvRecord : csvParser) {
+
+
                       GeocodingExample geocodingExample = new GeocodingExample();
-                      String[] results = geocodingExample.search(customers[11] + ", " + customers[12]);
-                  %>
-                  <%=customers[0]%>
-                  <%=customers[1]%>
-                  <%=customers[3]%>
-                  <%=customers[5]%>
-                  <BR>
-                  NOTES
-                  <%=customers[10]%>
-                  <%=customers[11]%>
-                  <BR>
-                  A <%=customers[17]%>
-                  A2 <%=customers[18]%>
-                  C <%=customers[19]%>
-                  S <%=customers[20]%>
-                  Z <%=customers[21]%>
-                  <BR>
-                  lat <%=results[0]%>
-                  lng <%=results[1]%>
-                  <%
+                      String[] results = geocodingExample.search(csvRecord.get(11) + ", " + csvRecord.get(12));
+
                           if(lineNumber!=0){
                               try{
                                 long currentTimeMillis = System.currentTimeMillis();
@@ -136,16 +116,16 @@
 
 
                                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                                String external_id = customers[0];
-                                String name = customers[3];
-                                String phone = customers[6];
-                                String address = customers[11];
-                                String city = customers[12];
-                                String emailAddress = customers[9];
-                                String leadStatus = customers[21];
+                                String external_id = csvRecord.get(0);
+                                String name = csvRecord.get(3);
+                                String phone = csvRecord.get(6);
+                                String address = csvRecord.get(11);
+                                String city = csvRecord.get(12);
+                                String emailAddress = csvRecord.get(9);
+                                String leadStatus = csvRecord.get(21);
                                 String change = request.getParameter("change");
                                 String interconnectionStatus = request.getParameter("interconnectionStatus");
-                                String salesNotes = customers[58];
+                                String salesNotes = csvRecord.get(58);
                                 String linkEmailAddress = request.getParameter("linkEmailAddress");
                                 String userResponsible = request.getParameter("userResponsible");
                                 String leadRating = request.getParameter("leadRating");
