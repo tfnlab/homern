@@ -221,6 +221,7 @@
         <HR>
           <div class="container mt-5">
             <div class="container">
+              <h4>Lead ID: <%=lead.getRecordId()%></h4>
               <form action="<%=rootUpdate%>lead.edit.sec.jsp/" method="post">
                 <input type="hidden" class="form-control" name="lead_id" value="<%=lead.getRecordId()%>">
                 <div class="form-group">
