@@ -51,10 +51,101 @@
         <HR>
         <HR>
           <a href="<%=rootUpdate%>lead.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Leads</a>
+          <%
+          if (request.getMethod().equalsIgnoreCase("post")) {
+              // Create an instance of the LeadDAO class
+              LeadDAO leadDAO = new LeadDAO();
+
+              String name = request.getParameter("name");
+              String phone = request.getParameter("phone");
+              String address = request.getParameter("address");
+              String city = request.getParameter("city");
+              String emailAddress = request.getParameter("emailAddress");
+              String leadStatus = request.getParameter("leadStatus");
+              String change = request.getParameter("change");
+              String interconnectionStatus = request.getParameter("interconnectionStatus");
+              String salesNotes = request.getParameter("salesNotes");
+              String linkEmailAddress = request.getParameter("linkEmailAddress");
+              String userResponsible = request.getParameter("userResponsible");
+              String leadRating = request.getParameter("leadRating");
+              String organization = request.getParameter("organization");
+              String leadSource = request.getParameter("leadSource");
+              String accountingNotes = request.getParameter("accountingNotes");
+              double contractAmount = Double.parseDouble(request.getParameter("contractAmount"));
+              String financingType = request.getParameter("financingType");
+              double cashPrice = Double.parseDouble(request.getParameter("cashPrice"));
+              String projectNotes = request.getParameter("projectNotes");
+              double dcKw = Double.parseDouble(request.getParameter("dcKw"));
+              String solarModules = request.getParameter("solarModules");
+              int solarPanelQuantity = Integer.parseInt(request.getParameter("solarPanelQuantity"));
+              String inverters = request.getParameter("inverters");
+              int inverterQuantity = Integer.parseInt(request.getParameter("inverterQuantity"));
+              String otherAdders = request.getParameter("otherAdders");
+              String ev = request.getParameter("ev");
+              String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
+              String battery = request.getParameter("battery");
+              String meterspotRequested = request.getParameter("meterspotRequested");
+              String utilityCo = request.getParameter("utilityCo");
+              String roofInformation = request.getParameter("roofInformation");
+              String companyCamLink = request.getParameter("companyCamLink");
+              String actualClosedDate = request.getParameter("actualClosedDate");
+              String layoutDrafted = request.getParameter("layoutDrafted");
+              String leadCreated = request.getParameter("leadCreated");
+              String dateOfLastActivity = request.getParameter("dateOfLastActivity");
+              String dateOfNextActivity = request.getParameter("dateOfNextActivity");
+              String convertedContact = request.getParameter("convertedContact");
+              String convertedOrganization = request.getParameter("convertedOrganization");
+              String convertedOpportunity = request.getParameter("convertedOpportunity");
+
+              // Create an instance of the Lead class and populate it with the form data
+              Lead lead = new Lead();
+              lead.setName(name);
+              lead.setPhone(phone);
+              lead.setAddress(address);
+              lead.setCity(city);
+              lead.setEmailAddress(emailAddress);
+              lead.setLeadStatus(leadStatus);
+              lead.setChange(change);
+              lead.setInterconnectionStatus(interconnectionStatus);
+              lead.setSalesNotes(salesNotes);
+              lead.setLinkEmailAddress(linkEmailAddress);
+              lead.setUserResponsible(userResponsible);
+              lead.setLeadRating(leadRating);
+              lead.setOrganization(organization);
+              lead.setLeadSource(leadSource);
+              lead.setAccountingNotes(accountingNotes);
+              lead.setContractAmount(contractAmount);
+              lead.setFinancingType(financingType);
+              lead.setCashPrice(cashPrice);
+              lead.setProjectNotes(projectNotes);
+              lead.setDcKw(dcKw);
+              lead.setSolarModules(solarModules);
+              lead.setSolarPanelQuantity(solarPanelQuantity);
+              lead.setInverters(inverters);
+              lead.setInverterQuantity(inverterQuantity);
+              lead.setOtherAdders(otherAdders);
+              lead.setEv(ev);
+              lead.setMainPanelUpgrade(mainPanelUpgrade);
+              lead.setBattery(battery);
+              lead.setMeterspotRequested(meterspotRequested);
+              lead.setUtilityCo(utilityCo);
+              lead.setRoofInformation(roofInformation);
+              lead.setCompanyCamLink(companyCamLink);
+              lead.setActualClosedDate(actualClosedDate);
+              lead.setLayoutDrafted(layoutDrafted);
+              lead.setLeadCreated(leadCreated);
+              lead.setDateOfLastActivity(dateOfLastActivity);
+              lead.setDateOfNextActivity(dateOfNextActivity);
+              lead.setConvertedContact(convertedContact);
+              lead.setConvertedOrganization(convertedOrganization);
+              lead.setConvertedOpportunity(convertedOpportunity);
+              leadDAO.insertLead(lead);
+            }
+          %>
         <HR>
           <div class="container mt-5">
             <div class="container">
-              <form action="" method="post">
+              <form action="<%=rootUpdate%>lead.new.sec.jsp/" method="post">
                 <div class="form-group">
                     <label>Name:</label>
                     <input type="text" class="form-control" name="name">
