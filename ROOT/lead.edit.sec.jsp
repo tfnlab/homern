@@ -65,46 +65,46 @@
                     <label>Name:</label>
                     <input type="text" class="form-control" name="name" value="<%=lead.getName()%>">
                 </div>
-
                 <div class="form-group">
-                    <label>Phone:</label>
-                    <input type="text" class="form-control" name="phone">
+                  <label>Phone:</label>
+                  <input type="text" class="form-control" name="phone" value="<%= lead.getPhone() %>">
                 </div>
 
                 <div class="form-group">
-                    <label>Address:</label>
-                    <input type="text" class="form-control" name="address">
+                  <label>Address:</label>
+                  <input type="text" class="form-control" name="address" value="<%= lead.getAddress() %>">
                 </div>
 
                 <div class="form-group">
-                    <label>City:</label>
-                    <input type="text" class="form-control" name="city">
+                  <label>City:</label>
+                  <input type="text" class="form-control" name="city" value="<%= lead.getCity() %>">
                 </div>
 
                 <div class="form-group">
-                    <label>Email Address:</label>
-                    <input type="text" class="form-control" name="emailAddress">
+                  <label>Email Address:</label>
+                  <input type="text" class="form-control" name="emailAddress" value="<%= lead.getEmailAddress() %>">
                 </div>
 
                 <div class="form-group">
-                    <label>Lead Status:</label>
-                    <input type="text" class="form-control" name="leadStatus">
+                  <label>Lead Status:</label>
+                  <input type="text" class="form-control" name="leadStatus" value="<%= lead.getLeadStatus() %>">
                 </div>
 
                 <div class="form-group">
-                    <label>Change:</label>
-                    <input type="text" class="form-control" name="change">
+                  <label>Change:</label>
+                  <input type="text" class="form-control" name="change" value="<%= lead.getChange() %>">
                 </div>
 
                 <div class="form-group">
-                    <label>Interconnection Status:</label>
-                    <input type="text" class="form-control" name="interconnectionStatus">
+                  <label>Interconnection Status:</label>
+                  <input type="text" class="form-control" name="interconnectionStatus" value="<%= lead.getInterconnectionStatus() %>">
                 </div>
 
                 <div class="form-group">
-                    <label>Sales Notes:</label>
-                    <textarea class="form-control" name="salesNotes"></textarea>
+                  <label>Sales Notes:</label>
+                  <textarea class="form-control" name="salesNotes"><%= lead.getSalesNotes() %></textarea>
                 </div>
+                 
                 <div class="form-group">
                   <label for="linkEmailAddress">Link Email Address:</label>
                   <input type="text" class="form-control" id="linkEmailAddress" name="linkEmailAddress">
