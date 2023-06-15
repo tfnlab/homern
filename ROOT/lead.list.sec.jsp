@@ -78,6 +78,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <% for (Lead lead : leads) { %>
+                        <tr>
+                            <td><%= lead.getRecordId() %></td>
+                            <!-- Add more table cells for other lead properties -->
+                        </tr>
+                        <% } %>
                     </tbody>
                 </table>
 
