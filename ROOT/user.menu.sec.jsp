@@ -164,6 +164,24 @@
                   <p><%= (new Translate()).translate("Quotes", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
+              <div class="row">
+                <div class="col-3 ">
+                  <a href="<%=rootUpdate%>lead.list.sec.jsp" tabindex="21" ><i class="fa fa-truck"></i></a>
+                  <p><%= (new Translate()).translate("Leads", usernameOBJ.getLanguage())%></p>
+                </div>
+                <div class="col-3 ">
+                  <a href="<%=rootUpdate%>subscription.list.sec.jsp/" tabindex="22" ><i class="fa fa-newspaper"></i></a>
+                  <p><%= (new Translate()).translate("Opportunities", usernameOBJ.getLanguage())%></p>
+                </div>
+                <div class="col-3 ">
+                  <a href="<%=rootUpdate%>contact.list.sec.jsp/" tabindex="23" ><i class="fa fa-address-book"></i></a>
+                  <p><%= (new Translate()).translate("Projects", usernameOBJ.getLanguage())%></p>
+                </div>
+                <div class="col-3 ">
+                  <a href="#" tabindex="24" ><i class="fa fa-file-invoice-dollar"></i></a>
+                  <p><%= (new Translate()).translate("TDB", usernameOBJ.getLanguage())%></p>
+                </div>
+              </div>
             </div>
         </div>
 
