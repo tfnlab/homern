@@ -134,11 +134,11 @@
               lead.setUtilityCo(utilityCo);
               lead.setRoofInformation(roofInformation);
               lead.setCompanyCamLink(companyCamLink);
-              lead.setActualClosedDate(dateFormat.parse(actualClosedDateStr));
+              lead.setActualClosedDate(dateFormat.parse(actualClosedDate));
               lead.setLayoutDrafted(layoutDrafted);
-              lead.setLeadCreated(leadCreated);
-              lead.setDateOfLastActivity(dateOfLastActivity);
-              lead.setDateOfNextActivity(dateOfNextActivity);
+              lead.setLeadCreated(dateFormat.parse(leadCreated));
+              lead.setDateOfLastActivity(dateFormat.parse(dateOfLastActivity));
+              lead.setDateOfNextActivity(dateFormat.parse(dateOfNextActivity));
               lead.setConvertedContact(convertedContact);
               lead.setConvertedOrganization(convertedOrganization);
               lead.setConvertedOpportunity(convertedOpportunity);
