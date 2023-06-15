@@ -243,7 +243,27 @@
 
                 <div class="form-group">
                     <label>Lead Status:</label>
-                    <input type="text" class="form-control" name="leadStatus">
+                      <select class="form-control" name="leadStatus" >
+                        <option value="lead_generation">Lead Generation</option>
+                        <option value="initial_contact">Initial Contact</option>
+                        <option value="site_assessment">Site Assessment</option>
+                        <option value="roof_check">Roof Check</option>
+                        <option value="electrical_panel_check">Electrical Panel Check</option>
+                        <option value="shade_analysis">Shade Analysis</option>
+                        <option value="proposal_preparation">Proposal Preparation</option>
+                        <option value="proposal_presentation">Proposal Presentation</option>
+                        <option value="financial_analysis">Financial Analysis</option>
+                        <option value="incentives_and_rebates">Incentives and Rebates</option>
+                        <option value="negotiation_and_agreement">Negotiation and Agreement</option>
+                        <option value="permitting_and_documentation">Permitting and Documentation</option>
+                        <option value="equipment_procurement">Equipment Procurement</option>
+                        <option value="installation_scheduling">Installation Scheduling</option>
+                        <option value="installation_and_commissioning">Installation and Commissioning</option>
+                        <option value="inspections_and_approvals">Inspections and Approvals</option>
+                        <option value="system_activation_and_monitoring">System Activation and Monitoring</option>
+                        <option value="customer_satisfaction_and_referrals">Customer Satisfaction and Referrals</option>
+                        <option value="ongoing_customer_relationship">Ongoing Customer Relationship</option>
+                      </select>
                 </div>
 
                 <div class="form-group">

@@ -250,7 +250,27 @@
 
                 <div class="form-group">
                   <label>Lead Status:</label>
-                  <input type="text" class="form-control" name="leadStatus" value="<%= lead.getLeadStatus() %>">
+                  <select class="form-control" name="leadStatus">
+                    <option value="lead_generation" <%= lead.getLeadStatus().equals("lead_generation") ? "selected" : "" %>>Lead Generation</option>
+                    <option value="initial_contact" <%= lead.getLeadStatus().equals("initial_contact") ? "selected" : "" %>>Initial Contact</option>
+                    <option value="site_assessment" <%= lead.getLeadStatus().equals("site_assessment") ? "selected" : "" %>>Site Assessment</option>
+                    <option value="roof_check" <%= lead.getLeadStatus().equals("roof_check") ? "selected" : "" %>>Roof Check</option>
+                    <option value="electrical_panel_check" <%= lead.getLeadStatus().equals("electrical_panel_check") ? "selected" : "" %>>Electrical Panel Check</option>
+                    <option value="shade_analysis" <%= lead.getLeadStatus().equals("shade_analysis") ? "selected" : "" %>>Shade Analysis</option>
+                    <option value="proposal_preparation" <%= lead.getLeadStatus().equals("proposal_preparation") ? "selected" : "" %>>Proposal Preparation</option>
+                    <option value="proposal_presentation" <%= lead.getLeadStatus().equals("proposal_presentation") ? "selected" : "" %>>Proposal Presentation</option>
+                    <option value="financial_analysis" <%= lead.getLeadStatus().equals("financial_analysis") ? "selected" : "" %>>Financial Analysis</option>
+                    <option value="incentives_and_rebates" <%= lead.getLeadStatus().equals("incentives_and_rebates") ? "selected" : "" %>>Incentives and Rebates</option>
+                    <option value="negotiation_and_agreement" <%= lead.getLeadStatus().equals("negotiation_and_agreement") ? "selected" : "" %>>Negotiation and Agreement</option>
+                    <option value="permitting_and_documentation" <%= lead.getLeadStatus().equals("permitting_and_documentation") ? "selected" : "" %>>Permitting and Documentation</option>
+                    <option value="equipment_procurement" <%= lead.getLeadStatus().equals("equipment_procurement") ? "selected" : "" %>>Equipment Procurement</option>
+                    <option value="installation_scheduling" <%= lead.getLeadStatus().equals("installation_scheduling") ? "selected" : "" %>>Installation Scheduling</option>
+                    <option value="installation_and_commissioning" <%= lead.getLeadStatus().equals("installation_and_commissioning") ? "selected" : "" %>>Installation and Commissioning</option>
+                    <option value="inspections_and_approvals" <%= lead.getLeadStatus().equals("inspections_and_approvals") ? "selected" : "" %>>Inspections and Approvals</option>
+                    <option value="system_activation_and_monitoring" <%= lead.getLeadStatus().equals("system_activation_and_monitoring") ? "selected" : "" %>>System Activation and Monitoring</option>
+                    <option value="customer_satisfaction_and_referrals" <%= lead.getLeadStatus().equals("customer_satisfaction_and_referrals") ? "selected" : "" %>>Customer Satisfaction and Referrals</option>
+                    <option value="ongoing_customer_relationship" <%= lead.getLeadStatus().equals("ongoing_customer_relationship") ? "selected" : "" %>>Ongoing Customer Relationship</option>
+                  </select>
                 </div>
 
                 <div class="form-group">
