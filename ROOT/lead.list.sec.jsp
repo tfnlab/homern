@@ -56,7 +56,7 @@
         <HR>
           <div class="container mt-5">
             <div class="container">
-                <h3>Lead List  <a href="<%=rootUpdate%>lead.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i> CSV</a></h3>
+                <h3>Lead List  <a href="<%=rootUpdate%>lead.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i></a> <a href="<%=rootUpdate%>lead.new.bulk.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-upload"></i></a> CSV </h3>
 
 
                 <%
