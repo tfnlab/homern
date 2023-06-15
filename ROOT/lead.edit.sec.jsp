@@ -104,85 +104,87 @@
                   <label>Sales Notes:</label>
                   <textarea class="form-control" name="salesNotes"><%= lead.getSalesNotes() %></textarea>
                 </div>
-                 
+
                 <div class="form-group">
-                  <label for="linkEmailAddress">Link Email Address:</label>
-                  <input type="text" class="form-control" id="linkEmailAddress" name="linkEmailAddress">
+                  <label>Link Email Address:</label>
+                  <input type="text" class="form-control" name="linkEmailAddress" value="<%= lead.getLinkEmailAddress() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="userResponsible">User Responsible:</label>
-                  <input type="text" class="form-control" id="userResponsible" name="userResponsible">
+                  <label>User Responsible:</label>
+                  <input type="text" class="form-control" name="userResponsible" value="<%= lead.getUserResponsible() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="leadRating">Lead Rating:</label>
-                  <input type="text" class="form-control" id="leadRating" name="leadRating">
+                  <label>Lead Rating:</label>
+                  <input type="text" class="form-control" name="leadRating" value="<%= lead.getLeadRating() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="organization">Organization:</label>
-                  <input type="text" class="form-control" id="organization" name="organization">
+                  <label>Organization:</label>
+                  <input type="text" class="form-control" name="organization" value="<%= lead.getOrganization() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="leadSource">Lead Source:</label>
-                  <input type="text" class="form-control" id="leadSource" name="leadSource">
+                  <label>Lead Source:</label>
+                  <input type="text" class="form-control" name="leadSource" value="<%= lead.getLeadSource() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="accountingNotes">Accounting Notes:</label>
-                  <textarea class="form-control" id="accountingNotes" name="accountingNotes"></textarea>
+                  <label>Accounting Notes:</label>
+                  <textarea class="form-control" name="accountingNotes"><%= lead.getAccountingNotes() %></textarea>
                 </div>
 
                 <div class="form-group">
-                  <label for="contractAmount">Contract Amount:</label>
-                  <input type="number" step="0.01" class="form-control" id="contractAmount" name="contractAmount">
-                </div>
-                <div class="form-group">
-                  <label for="financingType">Financing Type:</label>
-                  <input type="text" class="form-control" id="financingType" name="financingType">
+                  <label>Contract Amount:</label>
+                  <input type="number" step="0.01" class="form-control" name="contractAmount" value="<%= lead.getContractAmount() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="cashPrice">CASH Price:</label>
-                  <input type="number" step="0.01" class="form-control" id="cashPrice" name="cashPrice">
+                  <label>Financing Type:</label>
+                  <input type="text" class="form-control" name="financingType" value="<%= lead.getFinancingType() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="projectNotes">Project Notes:</label>
-                  <textarea class="form-control" id="projectNotes" name="projectNotes"></textarea>
+                  <label>CASH Price:</label>
+                  <input type="number" step="0.01" class="form-control" name="cashPrice" value="<%= lead.getCashPrice() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="dcKw">DC KW:</label>
-                  <input type="number" step="0.01" class="form-control" id="dcKw" name="dcKw">
+                  <label>Project Notes:</label>
+                  <textarea class="form-control" name="projectNotes"><%= lead.getProjectNotes() %></textarea>
                 </div>
 
                 <div class="form-group">
-                  <label for="solarModules">Solar Modules:</label>
-                  <input type="text" class="form-control" id="solarModules" name="solarModules">
+                  <label>DC KW:</label>
+                  <input type="number" step="0.01" class="form-control" name="dcKw" value="<%= lead.getDcKw() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="solarPanelQuantity">Solar Panel Quantity:</label>
-                  <input type="number" class="form-control" id="solarPanelQuantity" name="solarPanelQuantity">
+                  <label>Solar Modules:</label>
+                  <input type="text" class="form-control" name="solarModules" value="<%= lead.getSolarModules() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="inverters">Inverter's: </label>
-                  <input type="text" class="form-control" id="inverters" name="inverters">
+                  <label>Solar Panel Quantity:</label>
+                  <input type="number" class="form-control" name="solarPanelQuantity" value="<%= lead.getSolarPanelQuantity() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="inverterQuantity">Inverter Quantity:</label>
-                  <input type="number" class="form-control" id="inverterQuantity" name="inverterQuantity">
+                  <label>Inverter's:</label>
+                  <input type="text" class="form-control" name="inverters" value="<%= lead.getInverters() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="otherAdders">Other Adders:</label>
-                  <input type="text" class="form-control" id="otherAdders" name="otherAdders">
+                  <label>Inverter Quantity:</label>
+                  <input type="number" class="form-control" name="inverterQuantity" value="<%= lead.getInverterQuantity() %>">
                 </div>
+
+                <div class="form-group">
+                  <label>Other Adders:</label>
+                  <input type="text" class="form-control" name="otherAdders" value="<%= lead.getOtherAdders() %>">
+                </div>
+
                 <div class="form-group">
                   <label for="ev">EV:</label>
                   <input type="text" class="form-control" id="ev" name="ev">
@@ -207,55 +209,79 @@
                   <label for="utilityCo">Utility Co:</label>
                   <input type="text" class="form-control" id="utilityCo" name="utilityCo">
                 </div>
-
                 <div class="form-group">
-                  <label for="roofInformation">Roof Information:</label>
-                  <input type="text" class="form-control" id="roofInformation" name="roofInformation">
+                  <label>EV:</label>
+                  <input type="text" class="form-control" name="ev" value="<%= lead.getEv() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="companyCamLink">Company Cam Link:</label>
-                  <input type="text" class="form-control" id="companyCamLink" name="companyCamLink">
+                  <label>Main Panel Upgrade:</label>
+                  <input type="text" class="form-control" name="mainPanelUpgrade" value="<%= lead.getMainPanelUpgrade() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="actualClosedDate">Actual Closed Date:</label>
-                  <input type="date" class="form-control" id="actualClosedDate" name="actualClosedDate">
+                  <label>Battery:</label>
+                  <input type="text" class="form-control" name="battery" value="<%= lead.getBattery() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="layoutDrafted">Layout Drafted:</label>
-                  <input type="text" class="form-control" id="layoutDrafted" name="layoutDrafted">
+                  <label>Meterspot Requested:</label>
+                  <input type="text" class="form-control" name="meterspotRequested" value="<%= lead.getMeterspotRequested() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="leadCreated">Lead Created:</label>
-                  <input type="date" class="form-control" id="leadCreated" name="leadCreated">
+                  <label>Utility Co:</label>
+                  <input type="text" class="form-control" name="utilityCo" value="<%= lead.getUtilityCo() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="dateOfLastActivity">Date of Last Activity:</label>
-                  <input type="date" class="form-control" id="dateOfLastActivity" name="dateOfLastActivity">
+                  <label>Roof Information:</label>
+                  <input type="text" class="form-control" name="roofInformation" value="<%= lead.getRoofInformation() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="dateOfNextActivity">Date of Next Activity:</label>
-                  <input type="date" class="form-control" id="dateOfNextActivity" name="dateOfNextActivity">
+                  <label>Company Cam Link:</label>
+                  <input type="text" class="form-control" name="companyCamLink" value="<%= lead.getCompanyCamLink() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="convertedContact">Converted Contact:</label>
-                  <input type="text" class="form-control" id="convertedContact" name="convertedContact">
+                  <label>Actual Closed Date:</label>
+                  <input type="date" class="form-control" name="actualClosedDate" value="<%= formatDate(lead.getActualClosedDate()) %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="convertedOrganization">Converted Organization:</label>
-                  <input type="text" class="form-control" id="convertedOrganization" name="convertedOrganization">
+                  <label>Layout Drafted:</label>
+                  <input type="text" class="form-control" name="layoutDrafted" value="<%= lead.getLayoutDrafted() %>">
                 </div>
 
                 <div class="form-group">
-                  <label for="convertedOpportunity">Converted Opportunity:</label>
-                  <input type="text" class="form-control" id="convertedOpportunity" name="convertedOpportunity">
+                  <label>Lead Created:</label>
+                  <input type="date" class="form-control" name="leadCreated" value="<%= formatDate(lead.getLeadCreated()) %>">
+                </div>
+
+                <div class="form-group">
+                  <label>Date of Last Activity:</label>
+                  <input type="date" class="form-control" name="dateOfLastActivity" value="<%= formatDate(lead.getDateOfLastActivity()) %>">
+                </div>
+
+                <div class="form-group">
+                  <label>Date of Next Activity:</label>
+                  <input type="date" class="form-control" name="dateOfNextActivity" value="<%= formatDate(lead.getDateOfNextActivity()) %>">
+                </div>
+
+                <div class="form-group">
+                  <label>Converted Contact:</label>
+                  <input type="text" class="form-control" name="convertedContact" value="<%= lead.getConvertedContact() %>">
+                </div>
+
+                <div class="form-group">
+                  <label>Converted Organization:</label>
+                  <input type="text" class="form-control" name="convertedOrganization" value="<%= lead.getConvertedOrganization() %>">
+                </div>
+
+                <div class="form-group">
+                  <label>Converted Opportunity:</label>
+                  <input type="text" class="form-control" name="convertedOpportunity" value="<%= lead.getConvertedOpportunity() %>">
                 </div>
 
 
