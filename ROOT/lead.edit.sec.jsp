@@ -55,7 +55,7 @@
           <a href="<%=rootUpdate%>lead.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Leads</a>
           <%
               LeadDAO leadDAO = new LeadDAO();
-              Lead lead = leadDAO.getLead(username, Integer.parseInt(request.getParameter("lead_id"));
+              Lead lead = leadDAO.getLead(username, Integer.parseInt(request.getParameter("lead_id")));
           %>
         <HR>
           <div class="container mt-5">
