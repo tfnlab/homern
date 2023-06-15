@@ -80,7 +80,7 @@
                     <tbody>
                         <% for (Lead lead : leads) { %>
                         <tr>
-                            <td><%= lead.getId() %></td>
+                            <td><%= lead.getRecordId() %></td>
                             <td><%= lead.getName() %></td>
                             <!-- Add more table cells for other lead properties -->
                         </tr>
