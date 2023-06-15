@@ -97,7 +97,7 @@
                 BufferedReader reader = new BufferedReader(new FileReader(filepath   + filename));
                 String line;
                 int lineNumber = 0;
-                CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT)) 
+                CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT)); 
 
                 for (CSVRecord csvRecord : csvParser) {
 
