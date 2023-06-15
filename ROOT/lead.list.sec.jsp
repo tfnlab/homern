@@ -63,7 +63,7 @@
                 List<Lead> leads = null;
                 try {
                     LeadDAO leadDAO = new LeadDAO();
-                    leads = leadDAO.getLeadsByUsername(username);
+                    leads = leadDAO.getLeadsByUsername(username);  );
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
