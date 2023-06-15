@@ -4,7 +4,6 @@ String usernameCheck = null;
 User usernameOBJ = null;
 String username = null;
 String useremail = null;
-request.getParameter("hrnemail")
 String rootUpdate = "";
 if(rip.equals("149.28.77.249") || rip.equals("96.40.155.153")){
     usernameCheck = request.getParameter("username");
