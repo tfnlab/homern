@@ -187,7 +187,7 @@
               lead.setUtilityCo(utilityCo);
               lead.setRoofInformation(roofInformation);
               lead.setCompanyCamLink(companyCamLink);
-              if (actualClosedDate != null) {
+              if (actualClosedDate != null && !actualClosedDate.isEmpty()) {
                   lead.setActualClosedDate(dateFormat.parse(actualClosedDate));
               }
               lead.setLayoutDrafted(layoutDrafted);
