@@ -56,6 +56,8 @@
           <%
               LeadDAO leadDAO = new LeadDAO();
               Lead lead = leadDAO.getLead(username, Integer.parseInt(request.getParameter("lead_id")));
+
+              SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
           %>
         <HR>
           <div class="container mt-5">
