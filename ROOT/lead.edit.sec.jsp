@@ -55,11 +55,10 @@
           <a href="<%=rootUpdate%>lead.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Leads</a>
           <%
               LeadDAO leadDAO = new LeadDAO();
-
               Lead lead = new Lead();
+              
               if (request.getMethod().equalsIgnoreCase("post")) {
                   // Create an instance of the LeadDAO class
-                  LeadDAO leadDAO = new LeadDAO();
                   SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
                   String name = request.getParameter("name");
