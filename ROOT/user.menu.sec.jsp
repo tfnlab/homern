@@ -166,7 +166,7 @@
               </div>
               <div class="row">
                 <div class="col-3 ">
-                  <a href="<%=rootUpdate%>lead.list.sec.jsp" tabindex="21" ><i class="fa fa-truck"></i></a>
+                  <a href="<%=rootUpdate%>lead.list.sec.jsp/" tabindex="21" ><i class="fa fa-user-friends"></i></a>
                   <p><%= (new Translate()).translate("Leads", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
