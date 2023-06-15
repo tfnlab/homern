@@ -57,14 +57,14 @@
           <div class="container mt-5">
             <div class="container">
                 <h3>Lead List  <a href="<%=rootUpdate%>contact.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i> CSV</a></h3>
- 
+
 
                 <%
                 List<Lead> leads = null;
                 try {
                     LeadDAO leadDAO = new LeadDAO();
                     leads = leadDAO.getLeadsByUsername(username);
-                } catch (SQLException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 %>
