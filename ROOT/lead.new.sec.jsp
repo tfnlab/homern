@@ -57,6 +57,7 @@
           if (request.getMethod().equalsIgnoreCase("post")) {
               // Create an instance of the LeadDAO class
               LeadDAO leadDAO = new LeadDAO();
+              SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
               String name = request.getParameter("name");
               String phone = request.getParameter("phone");
@@ -133,7 +134,7 @@
               lead.setUtilityCo(utilityCo);
               lead.setRoofInformation(roofInformation);
               lead.setCompanyCamLink(companyCamLink);
-              lead.setActualClosedDate(actualClosedDate);
+              lead.setActualClosedDate(dateFormat.parse(actualClosedDateStr));
               lead.setLayoutDrafted(layoutDrafted);
               lead.setLeadCreated(leadCreated);
               lead.setDateOfLastActivity(dateOfLastActivity);
