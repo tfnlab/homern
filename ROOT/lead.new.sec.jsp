@@ -74,15 +74,68 @@
               String organization = request.getParameter("organization");
               String leadSource = request.getParameter("leadSource");
               String accountingNotes = request.getParameter("accountingNotes");
-              double contractAmount = Double.parseDouble(request.getParameter("contractAmount"));
+              String contractAmountParam = request.getParameter("contractAmount");
+              double contractAmount;
+
+              if (contractAmountParam != null && !contractAmountParam.isEmpty()) {
+                  contractAmount = Double.parseDouble(contractAmountParam);
+              } else {
+                  // Handle the case when contractAmount is not provided or empty
+                  // For example, you can assign a default value or show an error message.
+                  contractAmount = 0.0; // Default value or appropriate handling
+              }
+
               String financingType = request.getParameter("financingType");
-              double cashPrice = Double.parseDouble(request.getParameter("cashPrice"));
+              String cashPriceParam = request.getParameter("cashPrice");
+              double cashPrice;
+
+              if (cashPriceParam != null && !cashPriceParam.isEmpty()) {
+                  cashPrice = Double.parseDouble(cashPriceParam);
+              } else {
+                  // Handle the case when cashPrice is not provided or empty
+                  // For example, you can assign a default value or show an error message.
+                  cashPrice = 0.0; // Default value or appropriate handling
+              }
+
               String projectNotes = request.getParameter("projectNotes");
-              double dcKw = Double.parseDouble(request.getParameter("dcKw"));
+
+              String dcKwParam = request.getParameter("dcKw");
+              double dcKw;
+
+              if (dcKwParam != null && !dcKwParam.isEmpty()) {
+                  dcKw = Double.parseDouble(dcKwParam);
+              } else {
+                  // Handle the case when dcKw is not provided or empty
+                  // For example, you can assign a default value or show an error message.
+                  dcKw = 0.0; // Default value or appropriate handling
+              }
+
               String solarModules = request.getParameter("solarModules");
-              int solarPanelQuantity = Integer.parseInt(request.getParameter("solarPanelQuantity"));
+
+              String solarPanelQuantityParam = request.getParameter("solarPanelQuantity");
+              int solarPanelQuantity;
+
+              if (solarPanelQuantityParam != null && !solarPanelQuantityParam.isEmpty()) {
+                  solarPanelQuantity = Integer.parseInt(solarPanelQuantityParam);
+              } else {
+                  // Handle the case when solarPanelQuantity is not provided or empty
+                  // For example, you can assign a default value or show an error message.
+                  solarPanelQuantity = 0; // Default value or appropriate handling
+              }
+
               String inverters = request.getParameter("inverters");
-              int inverterQuantity = Integer.parseInt(request.getParameter("inverterQuantity"));
+
+              String inverterQuantityParam = request.getParameter("inverterQuantity");
+              int inverterQuantity;
+
+              if (inverterQuantityParam != null && !inverterQuantityParam.isEmpty()) {
+                  inverterQuantity = Integer.parseInt(inverterQuantityParam);
+              } else {
+                  // Handle the case when inverterQuantity is not provided or empty
+                  // For example, you can assign a default value or show an error message.
+                  inverterQuantity = 0; // Default value or appropriate handling
+              }
+
               String otherAdders = request.getParameter("otherAdders");
               String ev = request.getParameter("ev");
               String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
@@ -134,11 +187,23 @@
               lead.setUtilityCo(utilityCo);
               lead.setRoofInformation(roofInformation);
               lead.setCompanyCamLink(companyCamLink);
-              lead.setActualClosedDate(dateFormat.parse(actualClosedDate));
+              if (actualClosedDate != null) {
+                  lead.setActualClosedDate(dateFormat.parse(actualClosedDate));
+              }
               lead.setLayoutDrafted(layoutDrafted);
-              lead.setLeadCreated(dateFormat.parse(leadCreated));
-              lead.setDateOfLastActivity(dateFormat.parse(dateOfLastActivity));
-              lead.setDateOfNextActivity(dateFormat.parse(dateOfNextActivity));
+
+              if (leadCreated != null) {
+                  lead.setLeadCreated(dateFormat.parse(leadCreated));
+              }
+
+              if (dateOfLastActivity != null) {
+                  lead.setDateOfLastActivity(dateFormat.parse(dateOfLastActivity));
+              }
+
+              if (dateOfNextActivity != null) {
+                  lead.setDateOfNextActivity(dateFormat.parse(dateOfNextActivity));
+              }
+
               lead.setConvertedContact(convertedContact);
               lead.setConvertedOrganization(convertedOrganization);
               lead.setConvertedOpportunity(convertedOpportunity);
