@@ -251,25 +251,25 @@
                 <div class="form-group">
                   <label>Lead Status:</label>
                   <select class="form-control" name="leadStatus">
-                    <option value="lead_generation" <%= lead.getLeadStatus().equals("lead_generation") ? "selected" : "" %>>Lead Generation</option>
-                    <option value="initial_contact" <%= lead.getLeadStatus().equals("initial_contact") ? "selected" : "" %>>Initial Contact</option>
-                    <option value="site_assessment" <%= lead.getLeadStatus().equals("site_assessment") ? "selected" : "" %>>Site Assessment</option>
-                    <option value="roof_check" <%= lead.getLeadStatus().equals("roof_check") ? "selected" : "" %>>Roof Check</option>
-                    <option value="electrical_panel_check" <%= lead.getLeadStatus().equals("electrical_panel_check") ? "selected" : "" %>>Electrical Panel Check</option>
-                    <option value="shade_analysis" <%= lead.getLeadStatus().equals("shade_analysis") ? "selected" : "" %>>Shade Analysis</option>
-                    <option value="proposal_preparation" <%= lead.getLeadStatus().equals("proposal_preparation") ? "selected" : "" %>>Proposal Preparation</option>
-                    <option value="proposal_presentation" <%= lead.getLeadStatus().equals("proposal_presentation") ? "selected" : "" %>>Proposal Presentation</option>
-                    <option value="financial_analysis" <%= lead.getLeadStatus().equals("financial_analysis") ? "selected" : "" %>>Financial Analysis</option>
-                    <option value="incentives_and_rebates" <%= lead.getLeadStatus().equals("incentives_and_rebates") ? "selected" : "" %>>Incentives and Rebates</option>
-                    <option value="negotiation_and_agreement" <%= lead.getLeadStatus().equals("negotiation_and_agreement") ? "selected" : "" %>>Negotiation and Agreement</option>
-                    <option value="permitting_and_documentation" <%= lead.getLeadStatus().equals("permitting_and_documentation") ? "selected" : "" %>>Permitting and Documentation</option>
-                    <option value="equipment_procurement" <%= lead.getLeadStatus().equals("equipment_procurement") ? "selected" : "" %>>Equipment Procurement</option>
-                    <option value="installation_scheduling" <%= lead.getLeadStatus().equals("installation_scheduling") ? "selected" : "" %>>Installation Scheduling</option>
-                    <option value="installation_and_commissioning" <%= lead.getLeadStatus().equals("installation_and_commissioning") ? "selected" : "" %>>Installation and Commissioning</option>
-                    <option value="inspections_and_approvals" <%= lead.getLeadStatus().equals("inspections_and_approvals") ? "selected" : "" %>>Inspections and Approvals</option>
-                    <option value="system_activation_and_monitoring" <%= lead.getLeadStatus().equals("system_activation_and_monitoring") ? "selected" : "" %>>System Activation and Monitoring</option>
-                    <option value="customer_satisfaction_and_referrals" <%= lead.getLeadStatus().equals("customer_satisfaction_and_referrals") ? "selected" : "" %>>Customer Satisfaction and Referrals</option>
-                    <option value="ongoing_customer_relationship" <%= lead.getLeadStatus().equals("ongoing_customer_relationship") ? "selected" : "" %>>Ongoing Customer Relationship</option>
+                    <option value="Lead Generation" <%= lead.getLeadStatus().equals("Lead Generation") ? "selected" : "" %>>Lead Generation</option>
+                    <option value="Initial Contact" <%= lead.getLeadStatus().equals("Initial Contact") ? "selected" : "" %>>Initial Contact</option>
+                    <option value="Site Assessment" <%= lead.getLeadStatus().equals("Site Assessment") ? "selected" : "" %>>Site Assessment</option>
+                    <option value="Roof Check" <%= lead.getLeadStatus().equals("Roof Check") ? "selected" : "" %>>Roof Check</option>
+                    <option value="Electrical Panel Check" <%= lead.getLeadStatus().equals("Electrical Panel Check") ? "selected" : "" %>>Electrical Panel Check</option>
+                    <option value="Shade Analysis" <%= lead.getLeadStatus().equals("Shade Analysis") ? "selected" : "" %>>Shade Analysis</option>
+                    <option value="Proposal Preparation" <%= lead.getLeadStatus().equals("Proposal Preparation") ? "selected" : "" %>>Proposal Preparation</option>
+                    <option value="Proposal Presentation" <%= lead.getLeadStatus().equals("Proposal Presentation") ? "selected" : "" %>>Proposal Presentation</option>
+                    <option value="Financial Analysis" <%= lead.getLeadStatus().equals("Financial Analysis") ? "selected" : "" %>>Financial Analysis</option>
+                    <option value="Incentives and Rebates" <%= lead.getLeadStatus().equals("Incentives and Rebates") ? "selected" : "" %>>Incentives and Rebates</option>
+                    <option value="Negotiation and Agreement" <%= lead.getLeadStatus().equals("Negotiation and Agreement") ? "selected" : "" %>>Negotiation and Agreement</option>
+                    <option value="Permitting and Documentation" <%= lead.getLeadStatus().equals("Permitting and Documentation") ? "selected" : "" %>>Permitting and Documentation</option>
+                    <option value="Equipment Procurement" <%= lead.getLeadStatus().equals("Equipment Procurement") ? "selected" : "" %>>Equipment Procurement</option>
+                    <option value="Installation Scheduling" <%= lead.getLeadStatus().equals("Installation Scheduling") ? "selected" : "" %>>Installation Scheduling</option>
+                    <option value="Installation and Commissioning" <%= lead.getLeadStatus().equals("Installation and Commissioning") ? "selected" : "" %>>Installation and Commissioning</option>
+                    <option value="Inspections and Approvals" <%= lead.getLeadStatus().equals("Inspections and Approvals") ? "selected" : "" %>>Inspections and Approvals</option>
+                    <option value="System Activation and Monitoring" <%= lead.getLeadStatus().equals("System Activation and Monitoring") ? "selected" : "" %>>System Activation and Monitoring</option>
+                    <option value="Customer Satisfaction and Referrals" <%= lead.getLeadStatus().equals("Customer Satisfaction and Referrals") ? "selected" : "" %>>Customer Satisfaction and Referrals</option>
+                    <option value="Ongoing Customer Relationship" <%= lead.getLeadStatus().equals("Ongoing Customer Relationship") ? "selected" : "" %>>Ongoing Customer Relationship</option>
                   </select>
                 </div>
 
