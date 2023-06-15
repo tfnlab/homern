@@ -248,7 +248,7 @@
 
                 <div class="form-group">
                   <label>Actual Closed Date:</label>
-                  <input type="date" class="form-control" name="actualClosedDate" value="<%= formatDate.format((lead.getActualClosedDate()) %>">
+                  <input type="date" class="form-control" name="actualClosedDate" value="<%= formatDate.format(lead.getActualClosedDate()) %>">
                 </div>
 
                 <div class="form-group">
@@ -258,17 +258,17 @@
 
                 <div class="form-group">
                   <label>Lead Created:</label>
-                  <input type="date" class="form-control" name="leadCreated" value="<%= formatDate.format((lead.getLeadCreated()) %>">
+                  <input type="date" class="form-control" name="leadCreated" value="<%= formatDate.format(lead.getLeadCreated()) %>">
                 </div>
 
                 <div class="form-group">
                   <label>Date of Last Activity:</label>
-                  <input type="date" class="form-control" name="dateOfLastActivity" value="<%= formatDate.format((lead.getDateOfLastActivity()) %>">
+                  <input type="date" class="form-control" name="dateOfLastActivity" value="<%= formatDate.format(lead.getDateOfLastActivity()) %>">
                 </div>
 
                 <div class="form-group">
                   <label>Date of Next Activity:</label>
-                  <input type="date" class="form-control" name="dateOfNextActivity" value="<%= formatDate.format((lead.getDateOfNextActivity()) %>">
+                  <input type="date" class="form-control" name="dateOfNextActivity" value="<%= formatDate.format(lead.getDateOfNextActivity()) %>">
                 </div>
 
                 <div class="form-group">
