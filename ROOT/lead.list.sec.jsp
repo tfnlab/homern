@@ -80,7 +80,7 @@
                     <tbody>
                         <% for (Lead lead : leads) { %>
                         <tr>
-                            <td><%= lead.getRecordId() %></td>
+                            <td><a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%= lead.getRecordId() %>" tabindex="2"><%= lead.getRecordId() %></a></td>
                             <td><%= lead.getName() %></td>
                             <!-- Add more table cells for other lead properties -->
                         </tr>
