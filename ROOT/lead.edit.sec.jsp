@@ -246,7 +246,45 @@
                   <input type="text" class="form-control" name="companyCamLink" value="<%= lead.getCompanyCamLink() %>">
                 </div>
 
+                <div class="form-group">
+                  <label>Actual Closed Date:</label>
+                  <input type="date" class="form-control" name="actualClosedDate" value="<% if (lead.getActualClosedDate() != null) { %><%= formatDate.format(lead.getActualClosedDate()) %><%}%>">
+                </div>
 
+                <div class="form-group">
+                  <label>Layout Drafted:</label>
+                  <input type="text" class="form-control" name="layoutDrafted" value="<%= lead.getLayoutDrafted() %>">
+                </div>
+
+                <div class="form-group">
+                  <label>Lead Created:</label>
+                  <input type="date" class="form-control" name="leadCreated" value="<% if (lead.getLeadCreated() != null) { %><%= formatDate.format(lead.getLeadCreated()) %><%}%>">
+                </div>
+
+                <div class="form-group">
+                  <label>Date of Last Activity:</label>
+                  <input type="date" class="form-control" name="dateOfLastActivity" value="<% if (lead.getDateOfLastActivity() != null) { %><%= formatDate.format(lead.getDateOfLastActivity()) %><%}%>">
+                </div>
+
+                <div class="form-group">
+                  <label>Date of Next Activity:</label>
+                  <input type="date" class="form-control" name="dateOfNextActivity" value="<% if (lead.getDateOfNextActivity() != null) { %><%= formatDate.format(lead.getDateOfNextActivity()) %><%}%>">
+                </div>
+
+                <div class="form-group">
+                  <label>Converted Contact:</label>
+                  <input type="text" class="form-control" name="convertedContact" value="<%= lead.getConvertedContact() %>">
+                </div>
+
+                <div class="form-group">
+                  <label>Converted Organization:</label>
+                  <input type="text" class="form-control" name="convertedOrganization" value="<%= lead.getConvertedOrganization() %>">
+                </div>
+
+                <div class="form-group">
+                  <label>Converted Opportunity:</label>
+                  <input type="text" class="form-control" name="convertedOpportunity" value="<%= lead.getConvertedOpportunity() %>">
+                </div>
 
 
                     <input type="submit" value="Create">
