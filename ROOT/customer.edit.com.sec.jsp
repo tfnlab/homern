@@ -250,7 +250,7 @@ function sendSMS() {
     }
   };
   var eId = <%=eId%>;
-  var text = document.getElementById("orderCom").innerHTML;
+  var text = document.getElementById("orderCom").value;
   alert(text);
 
   const encodedString = encodeURIComponent(text);
