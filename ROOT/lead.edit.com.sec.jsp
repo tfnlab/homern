@@ -111,14 +111,7 @@
               lead = leadDAO.getLead(username, recordId);
 
               List<LeadCorrespondence> correspondences = null;
-              try {
-                  // Call the DAO method to get the correspondences
-                  correspondences = cdao.getCorrespondenceByUsernameAndLeadId(username, recordId);
-              } catch (SQLException e) {
-                  // Handle any potential exceptions
-                  e.printStackTrace();
-                  // You can add appropriate error handling logic here
-              }
+              correspondences = cdao.getCorrespondenceByUsernameAndLeadId(username, recordId);
           %>
         <HR>
           <div class="container mt-5">
