@@ -76,7 +76,7 @@
         }
       };
       var lId = <%=recordId%>;
-      var text = document.getElementById("orderCom").innerHTML;
+      var text = document.getElementById("orderCom").value;
       const encodedString = encodeURIComponent(text);
 
       var select = document.getElementById("leadStatus");
