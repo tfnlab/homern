@@ -82,7 +82,7 @@
           <%
               LeadDAO leadDAO = new LeadDAO();
               Lead lead = new Lead();
-
+              %>HEELlO<%
               if (request.getMethod().equalsIgnoreCase("post")) {
                   // Create an instance of the LeadDAO class
                   %>HEELO<%
