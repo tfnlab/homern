@@ -42,22 +42,30 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
     <script >
-      function getMessage() {
-        //genmessage.jsp?comType=latepaymentrequest
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("orderCom").innerHTML = this.responseText.trim();
+    function getMessage() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("orderCom").innerHTML = this.responseText.trim();
+          // Set textarea color or border based on success
+          if (this.responseText.trim() === "success") {
+            document.getElementById("orderCom").style.backgroundColor = "green"; // Set background color to green
+            document.getElementById("orderCom").style.borderColor = "green"; // Set border color to green
+          } else {
+            document.getElementById("orderCom").style.backgroundColor = "orange"; // Set background color to warning color
+            document.getElementById("orderCom").style.borderColor = "orange"; // Set border color to warning color
           }
-        };
-        var select = document.getElementById("leadStatus");
-        var selectedOption = select.options[select.selectedIndex];
-        var text = selectedOption.text;
-        const encodedString = encodeURIComponent(text);
-        var urlString = "<%=rootUpdate%>genmessage.lead.sec.jsp/?lead_id=" + document.getElementById("lead_id").value + "&comType=" + encodedString ;
-        xhttp.open("GET", urlString, true);
-        xhttp.send();
-      }
+        }
+      };
+      var select = document.getElementById("leadStatus");
+      var selectedOption = select.options[select.selectedIndex];
+      var text = selectedOption.text;
+      const encodedString = encodeURIComponent(text);
+      var urlString = "<%=rootUpdate%>genmessage.lead.sec.jsp/?lead_id=" + document.getElementById("lead_id").value + "&comType=" + encodedString;
+      xhttp.open("GET", urlString, true);
+      xhttp.send();
+    }
+
 
     </script>
   </head>
