@@ -15,26 +15,37 @@
 <%@ page import="java.io.FileWriter" %>
 <%@ page import="java.io.BufferedWriter" %>
 <%@ page import="com.tfnlab.api.con.APIConfig" %>
+<%@ page import="com.tfnlab.mysql.LeadDAO" %>
+<%@ page import="com.tfnlab.mysql.Lead" %>
 <%@ include file="auth.sec.jsp" %><%
 
 UUID uuid = UUID.randomUUID();
 int customerId = 0;
 String rm = "";
+String email = "";
 if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
   customerId = Integer.parseInt(request.getParameter("customerId"));
+  Entity entity = new Entity();
+  EntityDao ed = new EntityDao();
+  entity = ed.getEntityById(customerId, username);
+  email = entity.getEmail();
+}
+if (request.getParameter("lead_id") != null && !request.getParameter("lead_id").isEmpty()) {
+  int lead_id = Integer.parseInt(request.getParameter("lead_id"));
+  LeadDAO leadDAO = new LeadDAO();
+  Lead lead = new Lead();
+  lead = leadDAO.getLead(username, lead_id);
+  email = lead.getEmailAddress();
 }
   // Get the content from the query parameter
             APIConfig ac = new APIConfig();
 
 
-                        Entity entity = new Entity();
-                        EntityDao ed = new EntityDao();
-                        entity = ed.getEntityById(customerId, username);
                         try{
                               File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
                               FileWriter fw = new FileWriter(file);
                               BufferedWriter bw = new BufferedWriter(fw);
-                              bw.write(entity.getEmail() + "<CONTENT>" + request.getParameter("sub") + "<CONTENT>" +request.getParameter("com")+ "<CONTENT>" + usernameOBJ.getSendgrid_email());
+                              bw.write(email + "<CONTENT>" + request.getParameter("sub") + "<CONTENT>" +request.getParameter("com")+ "<CONTENT>" + usernameOBJ.getSendgrid_email());
                               bw.close();
 
                               Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), usernameOBJ.getSendgrid_key()).start();

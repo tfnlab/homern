@@ -221,6 +221,25 @@
     xhttp.open("GET", urlString, true);
     xhttp.send();
   }
+  function sendMail() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        alert(this.responseText);
+        // document.getElementById("orderCom").innerHTML = this.responseText.trim();
+      }
+    };
+    var lId = <%=recordId%>;
+    var text = document.getElementById("orderCom").value;
+    const encodedString = encodeURIComponent(text);
+    var select = document.getElementById("leadStatus");
+    var selectedOption = select.options[select.selectedIndex];
+    var com = selectedOption.text;
+    const encodedStringsub = encodeURIComponent(com);
+    var urlString = "<%=rootUpdate%>customer.edit.com.email.sec.jsp/?lead_id=" + lId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
+    xhttp.open("GET", urlString, true);
+    xhttp.send();
+  }
   </script>
 </body>
 </html>
