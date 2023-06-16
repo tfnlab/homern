@@ -114,6 +114,8 @@
                                           Timestamp currentTime = new Timestamp(currentTimeMillis);
                                           Lead lead = new Lead();
                                           lead.setUsername(username);
+                                          SimpleDateFormat inputFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+
                                           SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy hh:mm:ss a");
                                           SimpleDateFormat datedFormat = new SimpleDateFormat("M/d/yyyy");
                                           String external_id = csvRecord.get(0);
@@ -252,7 +254,7 @@
                                           lead.setLayoutDrafted(layoutDrafted);
 
                                           if (leadCreated != null && !leadCreated.isEmpty()) {
-                                              lead.setLeadCreated(dateFormat.parse(leadCreated));
+                                              lead.setLeadCreated(inputFormat.parse(leadCreated));
                                           }
 
                                           if (dateOfLastActivity != null && !dateOfLastActivity.isEmpty()) {
