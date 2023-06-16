@@ -227,7 +227,7 @@
         <HR>
           <div class="container mt-5">
             <div class="container">
-              <h4>Lead ID: <%=lead.getRecordId()%> (<a href="<%=rootUpdate%>lead.edit.com.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2"><i class="fas fa-list"></i>Messaging</a>)</h4> 
+              <h4>Lead ID: <%=lead.getRecordId()%> (<a href="<%=rootUpdate%>lead.edit.com.sec.jsp/" tabindex="2"><i class="fas fa-list"></i>Messaging</a>)</h4>
               <form action="<%=rootUpdate%>lead.edit.sec.jsp/" method="post">
                 <input type="hidden" class="form-control" name="lead_id" value="<%=lead.getRecordId()%>">
                 <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
@@ -286,178 +286,12 @@
                 </div>
 
                 <div class="form-group">
-                  <label>Change:</label>
-                  <input type="text" class="form-control" name="change" value="<%= lead.getChange() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Interconnection Status:</label>
-                  <input type="text" class="form-control" name="interconnectionStatus" value="<%= lead.getInterconnectionStatus() %>">
-                </div>
-
-                <div class="form-group">
                   <label>Sales Notes:</label>
-                  <textarea class="form-control" name="salesNotes"><%= lead.getSalesNotes() %></textarea>
+                  <textarea class="form-control" name="message"> </textarea>
                 </div>
 
-                <div class="form-group">
-                  <label>Link Email Address:</label>
-                  <input type="text" class="form-control" name="linkEmailAddress" value="<%= lead.getLinkEmailAddress() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>User Responsible:</label>
-                  <input type="text" class="form-control" name="userResponsible" value="<%= lead.getUserResponsible() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Lead Rating:</label>
-                  <input type="text" class="form-control" name="leadRating" value="<%= lead.getLeadRating() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Organization:</label>
-                  <input type="text" class="form-control" name="organization" value="<%= lead.getOrganization() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Lead Source:</label>
-                  <input type="text" class="form-control" name="leadSource" value="<%= lead.getLeadSource() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Accounting Notes:</label>
-                  <textarea class="form-control" name="accountingNotes"><%= lead.getAccountingNotes() %></textarea>
-                </div>
-
-                <div class="form-group">
-                  <label>Contract Amount:</label>
-                  <input type="number" step="0.01" class="form-control" name="contractAmount" value="<%= lead.getContractAmount() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Financing Type:</label>
-                  <input type="text" class="form-control" name="financingType" value="<%= lead.getFinancingType() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>CASH Price:</label>
-                  <input type="number" step="0.01" class="form-control" name="cashPrice" value="<%= lead.getCashPrice() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Project Notes:</label>
-                  <textarea class="form-control" name="projectNotes"><%= lead.getProjectNotes() %></textarea>
-                </div>
-
-                <div class="form-group">
-                  <label>DC KW:</label>
-                  <input type="number" step="0.01" class="form-control" name="dcKw" value="<%= lead.getDcKw() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Solar Modules:</label>
-                  <input type="text" class="form-control" name="solarModules" value="<%= lead.getSolarModules() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Solar Panel Quantity:</label>
-                  <input type="number" class="form-control" name="solarPanelQuantity" value="<%= lead.getSolarPanelQuantity() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Inverter's:</label>
-                  <input type="text" class="form-control" name="inverters" value="<%= lead.getInverters() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Inverter Quantity:</label>
-                  <input type="number" class="form-control" name="inverterQuantity" value="<%= lead.getInverterQuantity() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Other Adders:</label>
-                  <input type="text" class="form-control" name="otherAdders" value="<%= lead.getOtherAdders() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>EV:</label>
-                  <input type="text" class="form-control" name="ev" value="<%= lead.getEv() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Main Panel Upgrade:</label>
-                  <input type="text" class="form-control" name="mainPanelUpgrade" value="<%= lead.getMainPanelUpgrade() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Battery:</label>
-                  <input type="text" class="form-control" name="battery" value="<%= lead.getBattery() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Meterspot Requested:</label>
-                  <input type="text" class="form-control" name="meterspotRequested" value="<%= lead.getMeterspotRequested() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Utility Co:</label>
-                  <input type="text" class="form-control" name="utilityCo" value="<%= lead.getUtilityCo() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Roof Information:</label>
-                  <input type="text" class="form-control" name="roofInformation" value="<%= lead.getRoofInformation() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Company Cam Link:</label>
-                  <input type="text" class="form-control" name="companyCamLink" value="<%= lead.getCompanyCamLink() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Actual Closed Date:</label>
-                  <input type="date" class="form-control" name="actualClosedDate" value="<% if (lead.getActualClosedDate() != null) { %><%= formatDate.format(lead.getActualClosedDate()) %><%}%>">
-                </div>
-
-                <div class="form-group">
-                  <label>Layout Drafted:</label>
-                  <input type="text" class="form-control" name="layoutDrafted" value="<%= lead.getLayoutDrafted() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Lead Created:</label>
-                  <input type="date" class="form-control" name="leadCreated" value="<% if (lead.getLeadCreated() != null) { %><%= formatDate.format(lead.getLeadCreated()) %><%}%>">
-                </div>
-
-                <div class="form-group">
-                  <label>Date of Last Activity:</label>
-                  <input type="date" class="form-control" name="dateOfLastActivity" value="<% if (lead.getDateOfLastActivity() != null) { %><%= formatDate.format(lead.getDateOfLastActivity()) %><%}%>">
-                </div>
-
-                <div class="form-group">
-                  <label>Date of Next Activity:</label>
-                  <input type="date" class="form-control" name="dateOfNextActivity" value="<% if (lead.getDateOfNextActivity() != null) { %><%= formatDate.format(lead.getDateOfNextActivity()) %><%}%>">
-                </div>
-
-                <div class="form-group">
-                  <label>Converted Contact:</label>
-                  <input type="text" class="form-control" name="convertedContact" value="<%= lead.getConvertedContact() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Converted Organization:</label>
-                  <input type="text" class="form-control" name="convertedOrganization" value="<%= lead.getConvertedOrganization() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>Converted Opportunity:</label>
-                  <input type="text" class="form-control" name="convertedOpportunity" value="<%= lead.getConvertedOpportunity() %>">
-                </div>
-
-
-                    <input type="submit" value="Create">
                 </form>
+                                    <input type="submit" value="Create">
 
             </div>
           </div>
