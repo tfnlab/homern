@@ -186,7 +186,7 @@
                 String message = request.getParameter("message");
 
                 name = name.replaceAll("[^a-zA-Z0-9.,\\s]", "");
-                email = email.replaceAll("[^a-zA-Z0-9.,\\s]", "");
+                email = email.replaceAll("[^a-zA-Z0-9.,\\s@]", "");
                 subject = subject.replaceAll("[^a-zA-Z0-9.,\\s]", "");
                 message = message.replaceAll("[^a-zA-Z0-9.,\\s]", "");
 
