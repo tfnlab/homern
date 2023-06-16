@@ -86,7 +86,7 @@
                         <% for (Lead lead : leads) { %>
                         <tr>
                             <td><a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%= lead.getRecordId() %>" tabindex="2"><%= lead.getRecordId() %></a></td>
-                            <td><%= lead.getName() %></td>
+                            <td><%= lead.getName() %> <%= lead.getLname() %></td>
                             <td><%= lead.getPhone() %></td>
                             <td><%= lead.getEmailAddress() %></td>
                             <td><%= lead.getLeadStatus() %></td>
