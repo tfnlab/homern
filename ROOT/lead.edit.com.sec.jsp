@@ -25,8 +25,8 @@
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ page import="com.tfnlab.mysql.LeadDAO" %>
 <%@ page import="com.tfnlab.mysql.Lead" %>
-<%@ page import="your.package.name.LeadCorrespondenceDAO" %>
-<%@ page import="your.package.name.LeadCorrespondence" %>
+<%@ page import="com.tfnlab.mysql.LeadCorrespondenceDAO" %>
+<%@ page import="com.tfnlab.mysql.LeadCorrespondence" %>
 <%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +83,7 @@
               LeadDAO leadDAO = new LeadDAO();
               Lead lead = new Lead();
               %>HEELlO<%
-              
+
               if (request.getMethod().equalsIgnoreCase("post")) {
                   // Create an instance of the LeadDAO class
                   %>HEELO<%
