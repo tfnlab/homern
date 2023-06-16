@@ -185,6 +185,11 @@
                 String subject = request.getParameter("subject");
                 String message = request.getParameter("message");
 
+                name = name.replaceAll("[^a-zA-Z0-9.,]", "");
+                email = email.replaceAll("[^a-zA-Z0-9.,]", "");
+                subject = subject.replaceAll("[^a-zA-Z0-9.,]", "");
+                message = message.replaceAll("[^a-zA-Z0-9.,]", "");
+
                 // Create a new Contact object
                 Contact contact = new Contact();
                 contact.setUsername(customerId);
