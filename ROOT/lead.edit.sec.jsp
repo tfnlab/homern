@@ -456,8 +456,8 @@
                   <input type="text" class="form-control" name="convertedOpportunity" value="<%= lead.getConvertedOpportunity() %>">
                 </div>
 
-
-                    <input type="submit" value="Create">
+                <BR>
+                    <input type="submit" value="Save">
                 </form>
 
             </div>
