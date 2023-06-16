@@ -373,31 +373,7 @@
                   <label>Other Adders:</label>
                   <input type="text" class="form-control" name="otherAdders" value="<%= lead.getOtherAdders() %>">
                 </div>
-
-                <div class="form-group">
-                  <label for="ev">EV:</label>
-                  <input type="text" class="form-control" id="ev" name="ev">
-                </div>
-
-                <div class="form-group">
-                  <label for="mainPanelUpgrade">Main Panel Upgrade:</label>
-                  <input type="text" class="form-control" id="mainPanelUpgrade" name="mainPanelUpgrade">
-                </div>
-
-                <div class="form-group">
-                  <label for="battery">Battery:</label>
-                  <input type="text" class="form-control" id="battery" name="battery">
-                </div>
-
-                <div class="form-group">
-                  <label for="meterspotRequested">Meterspot Requested:</label>
-                  <input type="text" class="form-control" id="meterspotRequested" name="meterspotRequested">
-                </div>
-
-                <div class="form-group">
-                  <label for="utilityCo">Utility Co:</label>
-                  <input type="text" class="form-control" id="utilityCo" name="utilityCo">
-                </div>
+ 
                 <div class="form-group">
                   <label>EV:</label>
                   <input type="text" class="form-control" name="ev" value="<%= lead.getEv() %>">
