@@ -90,7 +90,7 @@
                   String name = request.getParameter("name");
                   String lname = request.getParameter("lname");
 
-                  int recordId = Integer.parseInt(request.getParameter("recordId"));
+                  int recordId = Integer.parseInt(request.getParameter("lead_id"));
                   String correspondenceType = request.getParameter("correspondenceType");
                   String message = request.getParameter("orderCom");
                   Date dateCreated = new Date();
