@@ -20,11 +20,10 @@
 <%@ include file="auth.sec.jsp" %><%
 
 UUID uuid = UUID.randomUUID();
-int customerId = 0;
 String rm = "";
 String email = "";
 if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
-  customerId = Integer.parseInt(request.getParameter("customerId"));
+  int  customerId = Integer.parseInt(request.getParameter("customerId"));
   Entity entity = new Entity();
   EntityDao ed = new EntityDao();
   entity = ed.getEntityById(customerId, username);
