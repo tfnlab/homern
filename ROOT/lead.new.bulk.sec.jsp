@@ -124,8 +124,8 @@
                                           String leadRating = csvRecord.get(18);
                                           String organization = csvRecord.get(4);
                                           String leadSource = csvRecord.get(20);
-                                          String accountingNotes = request.getParameter("accountingNotes");
-                                          String contractAmountParam = request.getParameter("contractAmount");
+                                          String accountingNotes = csvRecord.get(64);
+                                          String contractAmountParam = csvRecord.get(43);
                                           double contractAmount;
 
                                           if (contractAmountParam != null && !contractAmountParam.isEmpty()) {
@@ -137,7 +137,7 @@
                                           }
 
                                           String financingType = request.getParameter("financingType");
-                                          String cashPriceParam = request.getParameter("cashPrice");
+                                          String cashPriceParam = csvRecord.get(56);;
                                           double cashPrice;
 
                                           if (cashPriceParam != null && !cashPriceParam.isEmpty()) {
@@ -191,8 +191,8 @@
                                           String ev = request.getParameter("ev");
                                           String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
                                           String battery = csvRecord.get(40);
-                                          String meterspotRequested = request.getParameter("meterspotRequested");
-                                          String utilityCo = request.getParameter("utilityCo");
+                                          String meterspotRequested = csvRecord.get(68);
+                                          String utilityCo = csvRecord.get(57);
                                           String roofInformation = request.getParameter("roofInformation");
                                           String companyCamLink = request.getParameter("companyCamLink");
                                           String actualClosedDate = request.getParameter("actualClosedDate");
