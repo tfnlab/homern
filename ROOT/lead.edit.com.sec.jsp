@@ -311,7 +311,7 @@
                 </div>
 
                 </form>
-                                    <input type="submit" value="Create">
+                                    <input type="submit" value="Create" href="javascript:void(0)" onclick="getMessage()" >
 
             </div>
           </div>

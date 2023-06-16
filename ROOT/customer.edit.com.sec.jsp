@@ -244,7 +244,7 @@
 
         <!-- ======= Contact Section ======= -->
 
-        <form action="<%=rootUpdate%>customer.edit.com.print.sec.jsp/" method="POST" target="_blank" > 
+        <form action="<%=rootUpdate%>customer.edit.com.print.sec.jsp/" method="POST" target="_blank" >
           <input type="hidden" id="customerId" name="customerId" value="<%= entity.getId() %>" >
           <label for="orderId">Touch Point</label><br>
           <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
