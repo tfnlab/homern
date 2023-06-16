@@ -153,6 +153,7 @@
                   <label>Message:</label>
                   <textarea class="form-control" name="orderCom" id="orderCom" rows="10"> </textarea>
                 </div>
+                <HR>
                 <input type="submit" class="btn btn-primary" value="Save" onclick="save()">
 
                 </form>
