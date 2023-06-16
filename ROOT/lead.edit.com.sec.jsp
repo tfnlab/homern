@@ -250,7 +250,7 @@
             <div class="container">
               <h4>Lead ID: <%=lead.getRecordId()%> (<a href="<%=rootUpdate%>lead.edit.com.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2">Messaging</a>)</h4>
               <form action="<%=rootUpdate%>lead.edit.sec.jsp/" method="post">
-                <input type="hidden" class="form-control" name="lead_id" value="<%=lead.getRecordId()%>">
+                <input type="hidden" class="form-control" name="lead_id" id="lead_id" value="<%=lead.getRecordId()%>">
                 <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
                 <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" value="<%= lead.getLocation_pointlng() %>">
                 <div class="form-group">
