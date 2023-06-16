@@ -41,6 +41,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script >
+      function getMessage() {
+        //genmessage.jsp?comType=latepaymentrequest
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+
+            document.getElementById("orderCom").innerHTML = this.responseText.trim();
+          }
+        };
+        var select = document.getElementById("leadStatus");
+        var selectedOption = select.options[select.selectedIndex];
+        var text = selectedOption.text;
+        const encodedString = encodeURIComponent(text);
+        var urlString = "<%=rootUpdate%>genmessage.lead.sec.jsp/?lead_id" + document.getElementById("lead_id").value + "&comType=" + encodedString ;
+        xhttp.open("GET", urlString, true);
+        xhttp.send();
+      }
+
+    </script>
   </head>
 <body>
   <main id="main">
@@ -227,7 +247,7 @@
         <HR>
           <div class="container mt-5">
             <div class="container">
-              <h4>Lead ID: <%=lead.getRecordId()%> (<a href="<%=rootUpdate%>lead.edit.com.sec.jsp/" tabindex="2"><i class="fas fa-list"></i>Messaging</a>)</h4>
+              <h4>Lead ID: <%=lead.getRecordId()%> (<a href="<%=rootUpdate%>lead.edit.com.sec.jsp/" tabindex="2">Messaging</a>)</h4>
               <form action="<%=rootUpdate%>lead.edit.sec.jsp/" method="post">
                 <input type="hidden" class="form-control" name="lead_id" value="<%=lead.getRecordId()%>">
                 <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
@@ -262,7 +282,7 @@
 
                 <div class="form-group">
                   <label>Lead Status:</label>
-                  <select class="form-control" name="leadStatus">
+                  <select class="form-control" name="leadStatus" id="leadStatus">
                     <option value="Lead Generation" <%= lead.getLeadStatus().equals("Lead Generation") ? "selected" : "" %>>Lead Generation</option>
                     <option value="Initial Contact" <%= lead.getLeadStatus().equals("Initial Contact") ? "selected" : "" %>>Initial Contact</option>
                     <option value="Site Assessment" <%= lead.getLeadStatus().equals("Site Assessment") ? "selected" : "" %>>Site Assessment</option>
@@ -287,7 +307,7 @@
 
                 <div class="form-group">
                   <label>Sales Notes:</label>
-                  <textarea class="form-control" name="message"> </textarea>
+                  <textarea class="form-control" name="orderCom" id="orderCom"> </textarea>
                 </div>
 
                 </form>
