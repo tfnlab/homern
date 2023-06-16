@@ -47,10 +47,11 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
-
+            alert(this.responseText);
             document.getElementById("orderCom").innerHTML = this.responseText.trim();
           }
         };
+        alert("SENDING");
         var select = document.getElementById("leadStatus");
         var selectedOption = select.options[select.selectedIndex];
         var text = selectedOption.text;
