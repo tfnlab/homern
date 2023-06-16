@@ -315,6 +315,8 @@
                 <input type="submit" class="btn btn-primary" value="SMS" onclick="sendSMS()">
                 <input type="submit" class="btn btn-primary" value="EMAIL" onclick="sendEmail()">
 
+                <HR>
+                <BR><BR>  
 
             </div>
           </div>
