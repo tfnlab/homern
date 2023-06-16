@@ -70,10 +70,6 @@
       getMessage();
     };
 
-    function getMessage() {
-      // Your code here
-      console.log("The onload event has occurred!");
-    }
 
 
     </script>
