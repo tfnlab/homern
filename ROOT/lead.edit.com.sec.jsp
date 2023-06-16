@@ -83,11 +83,13 @@
               LeadDAO leadDAO = new LeadDAO();
               Lead lead = new Lead();
 
+              LeadCorrespondenceDAO dao = new LeadCorrespondenceDAO();
+
+              int recordId = Integer.parseInt(request.getParameter("lead_id"));
               if (request.getMethod().equalsIgnoreCase("post")) {
                   // Create an instance of the LeadDAO class
                   SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-                  int recordId = Integer.parseInt(request.getParameter("lead_id"));
                   String correspondenceType = request.getParameter("leadStatus");
                   String message = request.getParameter("orderCom");
                   Date dateCreated = new Date();
@@ -102,14 +104,21 @@
                   leadCorrespondence.setDateCreated(new Timestamp(dateCreated.getTime()));
 
                   // Save the lead correspondence using the DAO
-                  LeadCorrespondenceDAO dao = new LeadCorrespondenceDAO();
                   dao.insertLeadCorrespondence(leadCorrespondence);
 
               }
 
-              lead = leadDAO.getLead(username, Integer.parseInt(request.getParameter("lead_id")));
+              lead = leadDAO.getLead(username, recordId);
 
-              SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
+              List<LeadCorrespondence> correspondences = null;
+              try {
+                  // Call the DAO method to get the correspondences
+                  correspondences = correspondenceDAO.getCorrespondenceByUsernameAndLeadId(username, recordId);
+              } catch (SQLException e) {
+                  // Handle any potential exceptions
+                  e.printStackTrace();
+                  // You can add appropriate error handling logic here
+              }
           %>
         <HR>
           <div class="container mt-5">
@@ -175,7 +184,19 @@
 
                 <HR>
                 <BR><BR>
-
+                  <% for (LeadCorrespondence correspondence : correspondences) { %>
+                      <div class="card my-2">
+                          <div class="card-body">
+                              <h5 class="card-title">Record ID: <%= correspondence.getRecordId() %></h5>
+                              <h6 class="card-subtitle mb-2 text-muted">User Email: <%= correspondence.getUseremail() %></h6>
+                              <p class="card-text">Correspondence Type: <%= correspondence.getCorrespondenceType() %></p>
+                              <p class="card-text">Message: <%= correspondence.getMessage() %></p>
+                              <p class="card-text">Date Created: <%= correspondence.getDateCreated() %></p>
+                          </div>
+                      </div>
+                  <% } %>
+              <HR>
+              <BR><BR>
             </div>
           </div>
         </div>
