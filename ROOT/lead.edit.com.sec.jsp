@@ -305,12 +305,15 @@
                 </div>
 
                 <div class="form-group">
-                  <label>Sales Notes:</label>
+                  <label>Message:</label>
                   <textarea class="form-control" name="orderCom" id="orderCom" rows="10"> </textarea>
                 </div>
 
                 </form>
                                     <input type="submit" value="Create" href="javascript:void(0)" onclick="getMessage()" >
+                                    <input type="submit" value="Save" href="javascript:void(0)" onclick="save()" >
+                                    <input type="submit" value="SMS" href="javascript:void(0)" onclick="sendSMS()" >
+                                    <input type="submit" value="EMAIL" href="javascript:void(0)" onclick="sendEmail()" >
 
             </div>
           </div>
