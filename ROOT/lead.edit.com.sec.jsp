@@ -85,6 +85,7 @@
 
               if (request.getMethod().equalsIgnoreCase("post")) {
                   // Create an instance of the LeadDAO class
+                  %>HEELO<%
                   SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
                   String name = request.getParameter("name");
