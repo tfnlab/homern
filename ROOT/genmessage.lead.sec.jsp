@@ -30,7 +30,7 @@
     if(orderId >0){
         agm =   request.getParameter("comType") + " message from my business named '"+ usernameOBJ.getBusiness_name() + "', this business is a '" + usernameOBJ.getBusiness_type() + "' type of business, this message is from '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + "', is for customer named '" + messageName + "' and order id " +  orderId;
     }
-    if(orderId==0 && customerId ==0){
+    if(orderId==0 && leadId ==0){
 
       String postType = "Linkedin";
       String twitter = request.getParameter("twitter");
