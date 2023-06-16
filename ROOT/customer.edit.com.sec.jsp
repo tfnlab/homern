@@ -138,31 +138,7 @@
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
-    function sendSMS() {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          alert(this.responseText);
-          //          document.getElementById("orderCom").innerHTML = this.responseText.trim();
-        }
-      };
-      var eId = <%=eId%>;
-      var text = document.getElementById("orderCom").innerHTML;
-      alert(text);
-      
-      const encodedString = encodeURIComponent(text);
 
-      var select = document.getElementById("touchPoints");
-      var selectedOption = select.options[select.selectedIndex];
-      var com = selectedOption.text;
-      const encodedStringsub = encodeURIComponent(com);
-
-
-      var urlString = "<%=rootUpdate%>customer.edit.com.sms.sec.jsp/?customerId=" + eId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
-//      alert(urlString);
-      xhttp.open("GET", urlString, true);
-      xhttp.send();
-    }
     function getPayments(){
         var eId = <%=eId%>;
         var url = "<%=rootUpdate%>customer.edit.payments.sec.jsp/?customerId=" + eId ;
@@ -264,7 +240,33 @@
                                                                                   </section><!-- End Blog Section -->
 
                                                                                 </main><!-- End #main -->
+<script>
+function sendSMS() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      alert(this.responseText);
+      //          document.getElementById("orderCom").innerHTML = this.responseText.trim();
+    }
+  };
+  var eId = <%=eId%>;
+  var text = document.getElementById("orderCom").innerHTML;
+  alert(text);
 
+  const encodedString = encodeURIComponent(text);
+
+  var select = document.getElementById("touchPoints");
+  var selectedOption = select.options[select.selectedIndex];
+  var com = selectedOption.text;
+  const encodedStringsub = encodeURIComponent(com);
+
+
+  var urlString = "<%=rootUpdate%>customer.edit.com.sms.sec.jsp/?customerId=" + eId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
+//      alert(urlString);
+  xhttp.open("GET", urlString, true);
+  xhttp.send();
+}
+</script>
 </body>
 
 </html>
