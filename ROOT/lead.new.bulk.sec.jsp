@@ -97,7 +97,7 @@
                 BufferedReader reader = new BufferedReader(new FileReader(filepath   + filename));
                 String line;
                 int lineNumber = 0;
-                CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT); 
+                CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT);
 
                 for (CSVRecord csvRecord : csvParser) {
 
@@ -121,9 +121,9 @@
                                           String salesNotes = csvRecord.get(58);
                                           String linkEmailAddress = request.getParameter("linkEmailAddress");
                                           String userResponsible = request.getParameter("userResponsible");
-                                          String leadRating = request.getParameter("leadRating");
-                                          String organization = request.getParameter("organization");
-                                          String leadSource = request.getParameter("leadSource");
+                                          String leadRating = csvRecord.get(18);
+                                          String organization = csvRecord.get(4);
+                                          String leadSource = csvRecord.get(20);
                                           String accountingNotes = request.getParameter("accountingNotes");
                                           String contractAmountParam = request.getParameter("contractAmount");
                                           double contractAmount;
@@ -190,7 +190,7 @@
                                           String otherAdders = request.getParameter("otherAdders");
                                           String ev = request.getParameter("ev");
                                           String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
-                                          String battery = request.getParameter("battery");
+                                          String battery = csvRecord.get(40);
                                           String meterspotRequested = request.getParameter("meterspotRequested");
                                           String utilityCo = request.getParameter("utilityCo");
                                           String roofInformation = request.getParameter("roofInformation");
