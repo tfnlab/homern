@@ -178,7 +178,7 @@
                   <p><%= (new Translate()).translate("Projects", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
-                  <a href="#" tabindex="24" ><i class="fas fa-user-secret"></i></a>
+                  <a href="#" tabindex="24" ><i class="fa fa-user-secret"></i></a>
                   <p><%= (new Translate()).translate("Black Ops", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
