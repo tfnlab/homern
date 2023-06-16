@@ -108,8 +108,8 @@
                                           CSVRecord csvRecord = iterator.next();
 
 
-                                          GeocodingExample geocodingExample = new GeocodingExample();
-                                          String[] results = geocodingExample.search(csvRecord.get(11) + ", " + csvRecord.get(12));
+//                                        GeocodingExample geocodingExample = new GeocodingExample();
+//                                        String[] results = geocodingExample.search(csvRecord.get(11) + ", " + csvRecord.get(12));
                                           long currentTimeMillis = System.currentTimeMillis();
                                           Timestamp currentTime = new Timestamp(currentTimeMillis);
                                           Lead lead = new Lead();
@@ -146,8 +146,8 @@
                                               contractAmount = 0.0; // Default value or appropriate handling
                                           }
 
-                                          String financingType = request.getParameter("financingType");
-                                          String cashPriceParam = csvRecord.get(56);;
+                                          String financingType = csvRecord.get(48);
+                                          String cashPriceParam = csvRecord.get(56);
                                           double cashPrice;
 
                                           if (cashPriceParam != null && !cashPriceParam.isEmpty()) {
@@ -160,7 +160,7 @@
 
                                           String projectNotes = csvRecord.get(45);
 
-                                          String dcKwParam = request.getParameter("dcKw");
+                                          String dcKwParam = csvRecord.get(44);
                                           double dcKw;
 
                                           if (dcKwParam != null && !dcKwParam.isEmpty()) {
@@ -171,9 +171,9 @@
                                               dcKw = 0.0; // Default value or appropriate handling
                                           }
 
-                                          String solarModules = request.getParameter("solarModules");
+                                          String solarModules = csvRecord.get(50);
 
-                                          String solarPanelQuantityParam = request.getParameter("solarPanelQuantity");
+                                          String solarPanelQuantityParam = csvRecord.get(53);
                                           int solarPanelQuantity;
 
                                           if (solarPanelQuantityParam != null && !solarPanelQuantityParam.isEmpty()) {
@@ -184,9 +184,9 @@
                                               solarPanelQuantity = 0; // Default value or appropriate handling
                                           }
 
-                                          String inverters = request.getParameter("inverters");
+                                          String inverters = csvRecord.get(62);
 
-                                          String inverterQuantityParam = request.getParameter("inverterQuantity");
+                                          String inverterQuantityParam = csvRecord.get(61);
                                           int inverterQuantity;
 
                                           if (inverterQuantityParam != null && !inverterQuantityParam.isEmpty()) {
@@ -197,9 +197,9 @@
                                               inverterQuantity = 0; // Default value or appropriate handling
                                           }
 
-                                          String otherAdders = request.getParameter("otherAdders");
-                                          String ev = request.getParameter("ev");
-                                          String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
+                                          String otherAdders = csvRecord.get(59);
+                                          String ev = csvRecord.get(47);
+                                          String mainPanelUpgrade = csvRecord.get(49);
                                           String battery = csvRecord.get(40);
                                           String meterspotRequested = csvRecord.get(68);
                                           String utilityCo = csvRecord.get(57);
@@ -271,6 +271,9 @@
                                           lead.setUsername(username);
                                           lead.setUseremail(useremail);
                                           lead.setExternal_id(external_id);
+                                          lead.setLocation_pointlat("0");
+                                          lead.setLocation_pointlng("0");
+                                          /*
                                           if(results[1].contains("ZERO_RESULTS")){
                                             lead.setLocation_pointlat("0");
                                             lead.setLocation_pointlng("0");
@@ -278,7 +281,7 @@
                                             lead.setLocation_pointlat(results[0]);
                                             lead.setLocation_pointlng(results[1]);
                                           }
-
+                                          */
                                           // parse createdDate as a Date object
                         //                      entity.setCreatedDate(new SimpleDateFormat("yyyy-MM-dd").parse(request
                                           // parse createdDate as a Date object
