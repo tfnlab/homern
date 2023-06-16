@@ -25,6 +25,8 @@
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ page import="com.tfnlab.mysql.LeadDAO" %>
 <%@ page import="com.tfnlab.mysql.Lead" %>
+<%@ page import="your.package.name.LeadCorrespondenceDAO" %>
+<%@ page import="your.package.name.LeadCorrespondence" %>
 <%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,6 +89,25 @@
 
                   String name = request.getParameter("name");
                   String lname = request.getParameter("lname");
+
+                  int recordId = Integer.parseInt(request.getParameter("recordId"));
+                  String correspondenceType = request.getParameter("correspondenceType");
+                  String message = request.getParameter("orderCom");
+                  Date dateCreated = new Date();
+
+                  // Create a new LeadCorrespondence object with the form data
+                  LeadCorrespondence leadCorrespondence = new LeadCorrespondence();
+                  leadCorrespondence.setRecordId(recordId);
+                  leadCorrespondence.setUsername(username);
+                  leadCorrespondence.setUseremail(useremail);
+                  leadCorrespondence.setCorrespondenceType(leadStatus);
+                  leadCorrespondence.setMessage(orderCom);
+                  leadCorrespondence.setDateCreated(new Timestamp(dateCreated.getTime()));
+
+                  // Save the lead correspondence using the DAO
+                  LeadCorrespondenceDAO dao = new LeadCorrespondenceDAO();
+                  dao.insertLeadCorrespondence(leadCorrespondence);
+
               }
 
               lead = leadDAO.getLead(username, Integer.parseInt(request.getParameter("lead_id")));
