@@ -310,10 +310,11 @@
                 </div>
 
                 </form>
-                                    <input type="submit" value="Create" href="javascript:void(0)" onclick="getMessage()" >
-                                    <input type="submit" value="Save" href="javascript:void(0)" onclick="save()" >
-                                    <input type="submit" value="SMS" href="javascript:void(0)" onclick="sendSMS()" >
-                                    <input type="submit" value="EMAIL" href="javascript:void(0)" onclick="sendEmail()" >
+                <input type="submit" class="btn btn-primary" value="Create" onclick="getMessage()">
+                <input type="submit" class="btn btn-primary" value="Save" onclick="save()">
+                <input type="submit" class="btn btn-primary" value="SMS" onclick="sendSMS()">
+                <input type="submit" class="btn btn-primary" value="EMAIL" onclick="sendEmail()">
+
 
             </div>
           </div>
