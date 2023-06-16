@@ -66,6 +66,14 @@
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
+    window.onload = function() {
+      getMessage();
+    };
+
+    function getMessage() {
+      // Your code here
+      console.log("The onload event has occurred!");
+    }
 
 
     </script>
@@ -241,7 +249,7 @@
         var urlString = "<%=rootUpdate%>customer.edit.com.email.sec.jsp/?lead_id=" + lId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
         xhttp.open("GET", urlString, true);
         xhttp.send();
-      }  
+      }
   </script>
 </body>
 </html>
