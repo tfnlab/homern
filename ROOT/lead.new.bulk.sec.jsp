@@ -202,7 +202,7 @@
                                           String utilityCo = csvRecord.get(57);
                                           String roofInformation = csvRecord.get(52);
                                           String companyCamLink = csvRecord.get(42);
-                                          String actualClosedDate = csvRecord.get(42);
+                                          String actualClosedDate = csvRecord.get(63);
                                           String layoutDrafted = request.getParameter("layoutDrafted");
                                           String leadCreated = request.getParameter("leadCreated");
                                           String dateOfLastActivity = request.getParameter("dateOfLastActivity");
