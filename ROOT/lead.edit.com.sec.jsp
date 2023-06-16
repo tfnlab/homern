@@ -83,7 +83,7 @@
               LeadDAO leadDAO = new LeadDAO();
               Lead lead = new Lead();
 
-              LeadCorrespondenceDAO dao = new LeadCorrespondenceDAO();
+              LeadCorrespondenceDAO cdao = new LeadCorrespondenceDAO();
 
               int recordId = Integer.parseInt(request.getParameter("lead_id"));
               if (request.getMethod().equalsIgnoreCase("post")) {
@@ -104,7 +104,7 @@
                   leadCorrespondence.setDateCreated(new Timestamp(dateCreated.getTime()));
 
                   // Save the lead correspondence using the DAO
-                  dao.insertLeadCorrespondence(leadCorrespondence);
+                  cdao.insertLeadCorrespondence(leadCorrespondence);
 
               }
 
@@ -113,7 +113,7 @@
               List<LeadCorrespondence> correspondences = null;
               try {
                   // Call the DAO method to get the correspondences
-                  correspondences = correspondenceDAO.getCorrespondenceByUsernameAndLeadId(username, recordId);
+                  correspondences = cdao.getCorrespondenceByUsernameAndLeadId(username, recordId);
               } catch (SQLException e) {
                   // Handle any potential exceptions
                   e.printStackTrace();
