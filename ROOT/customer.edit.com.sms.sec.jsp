@@ -55,4 +55,4 @@ if (request.getParameter("lead_id") != null && !request.getParameter("lead_id").
                               rm = ex.getMessage();
                           }
             //eM.sendMail(entity.getEmail(), request.getParameter("subject"), request.getParameter("orderCom"));
-%>TEST UPDATE : <%=uuid.toString()%> - DONE <%=rm%>
+%>TEST UPDATE : <%=phone%> <%=uuid.toString()%> - DONE <%=rm%>
