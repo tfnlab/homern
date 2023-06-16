@@ -113,17 +113,6 @@
                   <label>Phone:</label>
                   <input type="text" class="form-control" name="phone" value="<%= lead.getPhone() %>">
                 </div>
-
-                <div class="form-group">
-                  <label>Address:</label>
-                  <input type="text" class="form-control" name="address" value="<%= lead.getAddress() %>">
-                </div>
-
-                <div class="form-group">
-                  <label>City:</label>
-                  <input type="text" class="form-control" name="city" value="<%= lead.getCity() %>">
-                </div>
-
                 <div class="form-group">
                   <label>Email Address:</label>
                   <input type="text" class="form-control" name="emailAddress" value="<%= lead.getEmailAddress() %>">
