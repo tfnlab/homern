@@ -62,6 +62,7 @@
                   SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
                   String name = request.getParameter("name");
+                  String lname = request.getParameter("lname");
                   String phone = request.getParameter("phone");
                   String address = request.getParameter("address");
                   String city = request.getParameter("city");
@@ -159,6 +160,7 @@
                   lead.setLocation_pointlng(request.getParameter("location_pointlng"));
                   // Create an instance of the Lead class and populate it with the form data
                   lead.setName(name);
+                  lead.setLname(lname);
                   lead.setPhone(phone);
                   lead.setAddress(address);
                   lead.setCity(city);
@@ -231,8 +233,12 @@
                 <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
                 <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" value="<%= lead.getLocation_pointlng() %>">
                 <div class="form-group">
-                    <label>Name:</label>
+                    <label>First Name:</label>
                     <input type="text" class="form-control" name="name" value="<%=lead.getName()%>">
+                </div>
+                <div class="form-group">
+                    <label>Last Name:</label>
+                    <input type="text" class="form-control" name="lname" value="<%=lead.getLname()%>">
                 </div>
                 <div class="form-group">
                   <label>Phone:</label>
@@ -373,7 +379,7 @@
                   <label>Other Adders:</label>
                   <input type="text" class="form-control" name="otherAdders" value="<%= lead.getOtherAdders() %>">
                 </div>
- 
+
                 <div class="form-group">
                   <label>EV:</label>
                   <input type="text" class="form-control" name="ev" value="<%= lead.getEv() %>">

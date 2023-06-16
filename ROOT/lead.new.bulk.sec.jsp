@@ -116,7 +116,8 @@
                                           lead.setUsername(username);
                                           SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                                           String external_id = csvRecord.get(0);
-                                          String name = csvRecord.get(3);
+                                          String name = csvRecord.get(2);
+                                          String lname = csvRecord.get(3);
                                           String phone = csvRecord.get(6);
                                           String address = csvRecord.get(11);
                                           String city = csvRecord.get(12);
@@ -212,6 +213,7 @@
 
                                           // Create an instance of the Lead class and populate it with the form data
                                           lead.setName(name);
+                                          lead.setLname(lname);
                                           lead.setPhone(phone);
                                           lead.setAddress(address);
                                           lead.setCity(city);

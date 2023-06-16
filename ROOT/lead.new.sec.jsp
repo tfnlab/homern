@@ -61,6 +61,7 @@
               SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
               String name = request.getParameter("name");
+              String lname = request.getParameter("lname");
               String phone = request.getParameter("phone");
               String address = request.getParameter("address");
               String city = request.getParameter("city");
@@ -157,6 +158,7 @@
               // Create an instance of the Lead class and populate it with the form data
               Lead lead = new Lead();
               lead.setName(name);
+              lead.setLname(lname);
               lead.setPhone(phone);
               lead.setAddress(address);
               lead.setCity(city);
@@ -223,7 +225,10 @@
                     <label>Name:</label>
                     <input type="text" class="form-control" name="name">
                 </div>
-
+                <div class="form-group">
+                    <label>Last Name:</label>
+                    <input type="text" class="form-control" name="lname">
+                </div>
                 <div class="form-group">
                     <label>Phone:</label>
                     <input type="text" class="form-control" name="phone">
