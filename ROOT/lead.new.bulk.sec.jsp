@@ -98,8 +98,12 @@
                 String line;
                 int lineNumber = 0;
                 CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT);
-
-                for (CSVRecord csvRecord : csvParser) {
+                Iterator<CSVRecord> iterator = csvParser.iterator();
+                if (iterator.hasNext()) {
+                    iterator.next(); // Skip the first record
+                }
+                while (iterator.hasNext()) {
+                                          CSVRecord csvRecord = iterator.next();
 
 
                                           GeocodingExample geocodingExample = new GeocodingExample();
