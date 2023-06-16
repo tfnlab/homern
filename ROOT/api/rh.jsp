@@ -185,10 +185,10 @@
                 String subject = request.getParameter("subject");
                 String message = request.getParameter("message");
 
-                name = name.replaceAll("[^a-zA-Z0-9.,]", "");
-                email = email.replaceAll("[^a-zA-Z0-9.,]", "");
-                subject = subject.replaceAll("[^a-zA-Z0-9.,]", "");
-                message = message.replaceAll("[^a-zA-Z0-9.,]", "");
+                name = name.replaceAll("[^a-zA-Z0-9.,\\s]", "");
+                email = email.replaceAll("[^a-zA-Z0-9.,\\s]", "");
+                subject = subject.replaceAll("[^a-zA-Z0-9.,\\s]", "");
+                message = message.replaceAll("[^a-zA-Z0-9.,\\s]", "");
 
                 // Create a new Contact object
                 Contact contact = new Contact();
