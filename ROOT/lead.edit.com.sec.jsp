@@ -81,7 +81,12 @@
                   SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
                   String name = request.getParameter("name");
+                  String lname = request.getParameter("lname");
               }
+
+              lead = leadDAO.getLead(username, Integer.parseInt(request.getParameter("lead_id")));
+
+              SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
           %>
         <HR>
           <div class="container mt-5">
@@ -148,10 +153,10 @@
                   <label>Message:</label>
                   <textarea class="form-control" name="orderCom" id="orderCom" rows="10"> </textarea>
                 </div>
-
                 <input type="submit" class="btn btn-primary" value="Save" onclick="save()">
+
                 </form>
-                                <HR>
+                <HR>
                 <input type="submit" class="btn btn-primary" value="Create" onclick="getMessage()">
                 <input type="submit" class="btn btn-primary" value="SMS" onclick="sendSMS()">
                 <input type="submit" class="btn btn-primary" value="EMAIL" onclick="sendEmail()">
