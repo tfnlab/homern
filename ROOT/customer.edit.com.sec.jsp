@@ -148,6 +148,7 @@
       };
       var eId = <%=eId%>;
       var text = document.getElementById("orderCom").innerHTML;
+      alert(text);
       const encodedString = encodeURIComponent(text);
 
       var select = document.getElementById("touchPoints");
