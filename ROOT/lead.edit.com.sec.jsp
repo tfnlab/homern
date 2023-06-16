@@ -89,11 +89,8 @@
                   %>HEELO<%
                   SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-                  String name = request.getParameter("name");
-                  String lname = request.getParameter("lname");
-
                   int recordId = Integer.parseInt(request.getParameter("lead_id"));
-                  String correspondenceType = request.getParameter("correspondenceType");
+                  String correspondenceType = request.getParameter("leadStatus");
                   String message = request.getParameter("orderCom");
                   Date dateCreated = new Date();
 
@@ -102,8 +99,8 @@
                   leadCorrespondence.setRecordId(recordId);
                   leadCorrespondence.setUsername(username);
                   leadCorrespondence.setUseremail(useremail);
-                  leadCorrespondence.setCorrespondenceType(leadStatus);
-                  leadCorrespondence.setMessage(orderCom);
+                  leadCorrespondence.setCorrespondenceType(correspondenceType);
+                  leadCorrespondence.setMessage(message);
                   leadCorrespondence.setDateCreated(new Timestamp(dateCreated.getTime()));
 
                   // Save the lead correspondence using the DAO
