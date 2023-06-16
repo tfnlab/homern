@@ -115,6 +115,7 @@
                                           Lead lead = new Lead();
                                           lead.setUsername(username);
                                           SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy hh:mm:ss a");
+                                          SimpleDateFormat datedFormat = new SimpleDateFormat("M/d/yyyy");
                                           String external_id = csvRecord.get(0);
                                           String name = csvRecord.get(2);
                                           String lname = csvRecord.get(3);
@@ -204,9 +205,9 @@
                                           String companyCamLink = csvRecord.get(42);
                                           String actualClosedDate = csvRecord.get(63);
                                           String layoutDrafted = request.getParameter("layoutDrafted");
-                                          String leadCreated = request.getParameter("leadCreated");
-                                          String dateOfLastActivity = request.getParameter("dateOfLastActivity");
-                                          String dateOfNextActivity = request.getParameter("dateOfNextActivity");
+                                          String leadCreated = csvRecord.get(22);
+                                          String dateOfLastActivity = csvRecord.get(33);
+                                          String dateOfNextActivity = csvRecord.get(34);
                                           String convertedContact = request.getParameter("convertedContact");
                                           String convertedOrganization = request.getParameter("convertedOrganization");
                                           String convertedOpportunity = request.getParameter("convertedOpportunity");
@@ -255,11 +256,11 @@
                                           }
 
                                           if (dateOfLastActivity != null && !dateOfLastActivity.isEmpty()) {
-                                              lead.setDateOfLastActivity(dateFormat.parse(dateOfLastActivity));
+                                              lead.setDateOfLastActivity(datedFormat.parse(dateOfLastActivity));
                                           }
 
                                           if (dateOfNextActivity != null && !dateOfNextActivity.isEmpty()) {
-                                              lead.setDateOfNextActivity(dateFormat.parse(dateOfNextActivity));
+                                              lead.setDateOfNextActivity(datedFormat.parse(dateOfNextActivity));
                                           }
 
                                           lead.setConvertedContact(convertedContact);
