@@ -97,7 +97,7 @@
                         <% } %>
                     </tbody>
                 </table>
-
+                <HR>
             </div>
           </div>
         </div>
