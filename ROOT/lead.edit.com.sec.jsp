@@ -30,7 +30,9 @@
 <%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
-
+  <%
+     int recordId = Integer.parseInt(request.getParameter("lead_id"));
+  %>
   <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -65,7 +67,29 @@
       xhttp.send();
     }
 
+    function sendSMS() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          alert(this.responseText);
+          //          document.getElementById("orderCom").innerHTML = this.responseText.trim();
+        }
+      };
+      var lId = <%=recordId%>;
+      var text = document.getElementById("orderCom").innerHTML;
+      const encodedString = encodeURIComponent(text);
 
+      var select = document.getElementById("leadStatus");
+      var selectedOption = select.options[select.selectedIndex];
+      var com = selectedOption.text;
+      const encodedStringsub = encodeURIComponent(com);
+
+
+      var urlString = "<%=rootUpdate%>customer.edit.com.sms.sec.jsp/?lead_id=" + lId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
+//      alert(urlString);
+      xhttp.open("GET", urlString, true);
+      xhttp.send();
+    }
     </script>
   </head>
 <body>
@@ -85,7 +109,6 @@
 
               LeadCorrespondenceDAO cdao = new LeadCorrespondenceDAO();
 
-              int recordId = Integer.parseInt(request.getParameter("lead_id"));
               if (request.getMethod().equalsIgnoreCase("post")) {
                   // Create an instance of the LeadDAO class
                   SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

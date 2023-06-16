@@ -11,6 +11,8 @@
 <%@ page import="java.util.UUID" %>
 <%@ page import="com.tfnlab.mysql.Entity" %>
 <%@ page import="com.tfnlab.mysql.EntityDao" %>
+<%@ page import="com.tfnlab.mysql.LeadDAO" %>
+<%@ page import="com.tfnlab.mysql.Lead" %>
 <%@ page import="java.io.File" %>
 <%@ page import="java.io.FileWriter" %>
 <%@ page import="java.io.BufferedWriter" %>
@@ -18,23 +20,31 @@
 <%@ include file="auth.sec.jsp" %><%
 
 UUID uuid = UUID.randomUUID();
-int customerId = 0;
 String rm = "";
+String phone = "";
 if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
-  customerId = Integer.parseInt(request.getParameter("customerId"));
+  int customerId = Integer.parseInt(request.getParameter("customerId"));
+  Entity entity = new Entity();
+  EntityDao ed = new EntityDao();
+  entity = ed.getEntityById(customerId, username);
+  phone = entity.getPhone();
 }
   // Get the content from the query parameter
+if (request.getParameter("lead_id") != null && !request.getParameter("lead_id").isEmpty()) {
+  int lead_id = Integer.parseInt(request.getParameter("lead_id"));
+  LeadDAO leadDAO = new LeadDAO();
+  Lead lead = new Lead();
+  lead = leadDAO.getLead(username, lead_id);
+  phone = lead.getPhone();
+}
             APIConfig ac = new APIConfig();
 
 
-                        Entity entity = new Entity();
-                        EntityDao ed = new EntityDao();
-                        entity = ed.getEntityById(customerId, username);
                         try{
                               File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
                               FileWriter fw = new FileWriter(file);
                               BufferedWriter bw = new BufferedWriter(fw);
-                              bw.write(entity.getPhone() + "<CONTENT>" + request.getParameter("sub") + "<CONTENT>" +request.getParameter("com"));
+                              bw.write(phone + "<CONTENT>" + request.getParameter("sub") + "<CONTENT>" +request.getParameter("com"));
                               bw.close();
 
                               Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/smssend.py", uuid.toString(), uuid.toString()).start();
