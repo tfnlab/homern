@@ -48,7 +48,7 @@
         if (this.readyState == 4 && this.status == 200) {
           document.getElementById("orderCom").innerHTML = this.responseText.trim();
           // Set textarea color or border based on success
-            document.getElementById("orderCom").style.backgroundColor = "green"; // Set background color to green
+            document.getElementById("orderCom").style.backgroundColor = "white"; // Set background color to green
             document.getElementById("orderCom").style.borderColor = "green"; // Set border color to green
         }
       };
