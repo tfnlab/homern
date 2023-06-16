@@ -126,7 +126,7 @@
 
                 <div class="form-group">
                   <label>Lead Status:</label>
-                  <select class="form-control" name="leadStatus" id="leadStatus">
+                  <select class="form-control" name="leadStatus" id="leadStatus" onchange="getMessage()">
                     <option value="Lead Generation" <%= lead.getLeadStatus().equals("Lead Generation") ? "selected" : "" %>>Lead Generation</option>
                     <option value="Initial Contact" <%= lead.getLeadStatus().equals("Initial Contact") ? "selected" : "" %>>Initial Contact</option>
                     <option value="Site Assessment" <%= lead.getLeadStatus().equals("Site Assessment") ? "selected" : "" %>>Site Assessment</option>
@@ -158,7 +158,6 @@
 
                 </form>
                 <HR>
-                <input type="submit" class="btn btn-primary" value="Create" onclick="getMessage()">
                 <input type="submit" class="btn btn-primary" value="SMS" onclick="sendSMS()">
                 <input type="submit" class="btn btn-primary" value="EMAIL" onclick="sendEmail()">
 
