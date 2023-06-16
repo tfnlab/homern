@@ -114,7 +114,7 @@
                                           Timestamp currentTime = new Timestamp(currentTimeMillis);
                                           Lead lead = new Lead();
                                           lead.setUsername(username);
-                                          SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                                          SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy hh:mm:ss a");
                                           String external_id = csvRecord.get(0);
                                           String name = csvRecord.get(2);
                                           String lname = csvRecord.get(3);
@@ -200,9 +200,9 @@
                                           String battery = csvRecord.get(40);
                                           String meterspotRequested = csvRecord.get(68);
                                           String utilityCo = csvRecord.get(57);
-                                          String roofInformation = request.getParameter("roofInformation");
-                                          String companyCamLink = request.getParameter("companyCamLink");
-                                          String actualClosedDate = request.getParameter("actualClosedDate");
+                                          String roofInformation = csvRecord.get(52);
+                                          String companyCamLink = csvRecord.get(42);
+                                          String actualClosedDate = csvRecord.get(42);
                                           String layoutDrafted = request.getParameter("layoutDrafted");
                                           String leadCreated = request.getParameter("leadCreated");
                                           String dateOfLastActivity = request.getParameter("dateOfLastActivity");
