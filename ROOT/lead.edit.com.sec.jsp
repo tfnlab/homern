@@ -66,11 +66,6 @@
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
-    <% if (!request.getMethod().equalsIgnoreCase("post")) {%>
-    window.onload = function() {
-      getMessage();
-    };
-    <% } %>
 
     </script>
   </head>
@@ -122,10 +117,6 @@
           <div class="container mt-5">
             <div class="container">
               <h4>Lead ID: <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2"><%=lead.getRecordId()%></a> (<a href="<%=rootUpdate%>lead.edit.com.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2">Messaging</a>)</h4>
-              <form action="<%=rootUpdate%>lead.edit.com.sec.jsp/" method="post">
-                <input type="hidden" class="form-control" name="lead_id" id="lead_id" value="<%=lead.getRecordId()%>">
-                <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
-                <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" value="<%= lead.getLocation_pointlng() %>">
                 <div class="form-group">
                     <label>First Name:</label>
                     <input type="text" class="form-control" name="name" value="<%=lead.getName()%>">
@@ -145,7 +136,7 @@
 
                 <div class="form-group">
                   <label>Lead Status:</label>
-                  <select class="form-control" name="leadStatus" id="leadStatus" onchange="getMessage()">
+                  <select class="form-control" name="leadStatus" id="leadStatus"  >
                     <option value="Lead Generation" <%= lead.getLeadStatus().equals("Lead Generation") ? "selected" : "" %>>Lead Generation</option>
                     <option value="Initial Contact" <%= lead.getLeadStatus().equals("Initial Contact") ? "selected" : "" %>>Initial Contact</option>
                     <option value="Site Assessment" <%= lead.getLeadStatus().equals("Site Assessment") ? "selected" : "" %>>Site Assessment</option>
@@ -168,12 +159,19 @@
                   </select>
                 </div>
 
-                <div class="form-group">
-                  <label>Message:</label>
-                  <textarea class="form-control" name="orderCom" id="orderCom" rows="10"> </textarea>
-                </div>
                 <HR>
-                <input type="submit" class="btn btn-primary" value="Save" onclick="save()">
+                <input type="submit" class="btn btn-primary" value="Generate Message" onclick="getMessage()">
+                  <HR>
+                  <form action="<%=rootUpdate%>lead.edit.com.sec.jsp/" method="post">
+                    <input type="hidden" class="form-control" name="lead_id" id="lead_id" value="<%=lead.getRecordId()%>">
+                    <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
+                    <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" value="<%= lead.getLocation_pointlng() %>">
+                    <div class="form-group">
+                      <label>Message:</label>
+                      <textarea class="form-control" name="orderCom" id="orderCom" rows="10"> </textarea>
+                    </div>
+                    <HR>
+                    <input type="submit" class="btn btn-primary" value="Save" onclick="save()">
 
                 </form>
                 <HR>
