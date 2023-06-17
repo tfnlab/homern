@@ -53,7 +53,7 @@
         <HR>
         <HR>
           <a href="<%=rootUpdate%>lead.new.sec.jsp/" tabindex="2"><i class="fas fa-plus"></i> Lead</a> |
-            <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-tachometer-alt"></i> Dashboard</a>  
+            <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
 
         <HR>
           <div class="container mt-5">
@@ -65,7 +65,8 @@
                 List<Lead> leads = null;
                 try {
                     LeadDAO leadDAO = new LeadDAO();
-                    if(request.getParameter("lead_status")!=null) leads = leadDAO.getLeadsByUsernameandLeadStatus(username, request.getParameter("lead_status"));
+                    if(request.getParameter("lead_source")!=null) leads = leadDAO.getLeadsByUsernameandLeadSource(username, request.getParameter("lead_source"));
+                    else if(request.getParameter("lead_status")!=null) leads = leadDAO.getLeadsByUsernameandLeadStatus(username, request.getParameter("lead_status"));
                     else leads = leadDAO.getLeadsByUsername(username);
                 } catch (Exception e) {
                     e.printStackTrace();
