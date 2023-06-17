@@ -70,6 +70,15 @@
                     for (String option : optionValues) {
                         %><a href="<%=rootUpdate%>lead.list.sec.jsp/?lead_status=<%= option %>" tabindex="2"><%= option %></a> <% if (leadsByStatus.containsKey(option)) { %> <%=leadsByStatus.get(option)%> <%}%> <BR><%
                      }
+
+                     Map<String, Integer> leadsBySource = leadDAO.getLeadsBySource(username);
+
+                     // Iterate over the map and print lead status with lead count
+                     for (Map.Entry<String, Integer> entry : leadsBySource.entrySet()) {
+                         String leadSource = entry.getKey();
+                         int leadCount = entry.getValue();
+                         %><%="Lead Source: " + leadSource + ", Count: " + leadCount%><BR><%
+                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
