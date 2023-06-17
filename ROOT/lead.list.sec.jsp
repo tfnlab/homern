@@ -64,7 +64,8 @@
                 List<Lead> leads = null;
                 try {
                     LeadDAO leadDAO = new LeadDAO();
-                    leads = leadDAO.getLeadsByUsername(username);
+                    if(request.getParameter("lead_status")!=null) leads = leadDAO.getLeadsByUsernameandLeadStatus(username, request.getParameter("lead_status"));
+                    else leads = leadDAO.getLeadsByUsername(username);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
