@@ -84,7 +84,7 @@
                      for (Map.Entry<String, Integer> entry : leadsBySource.entrySet()) {
                          String leadSource = entry.getKey();
                          int leadCount = entry.getValue();
-                         %><a href="<%=rootUpdate%>lead.list.sec.jsp/?lead_source=<%= leadSource %>" tabindex="2"> <%=leadSource%></a><BR><%
+                         %><a href="<%=rootUpdate%>lead.list.sec.jsp/?lead_source=<%= leadSource %>" tabindex="2"> <%=leadSource%> </a> <%=leadCount%> <BR><%
                      }
                 } catch (Exception e) {
                     e.printStackTrace();
