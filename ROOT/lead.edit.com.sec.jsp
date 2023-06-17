@@ -134,6 +134,7 @@
                   <input type="text" class="form-control" name="emailAddress" value="<%= lead.getEmailAddress() %>">
                 </div>
 
+                <form action="<%=rootUpdate%>lead.edit.com.sec.jsp/" method="post">
                 <div class="form-group">
                   <label>Lead Status:</label>
                   <select class="form-control" name="leadStatus" id="leadStatus"  >
@@ -162,7 +163,6 @@
                 <HR>
                 <input type="submit" class="btn btn-primary" value="Generate Message" onclick="getMessage()">
                   <HR>
-                  <form action="<%=rootUpdate%>lead.edit.com.sec.jsp/" method="post">
                     <input type="hidden" class="form-control" name="lead_id" id="lead_id" value="<%=lead.getRecordId()%>">
                     <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
                     <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" value="<%= lead.getLocation_pointlng() %>">
