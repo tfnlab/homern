@@ -69,7 +69,7 @@
                     for (Map.Entry<String, Integer> entry : leadsByStatus.entrySet()) {
                         String leadStatus = entry.getKey();
                         int leadCount = entry.getValue();
-                        %><%="Lead Status: " + leadStatus + ", Count: " + leadCount%><%
+                        %><%="Lead Status: " + leadStatus + ", Count: " + leadCount%><BR><%
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
