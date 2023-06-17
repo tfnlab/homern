@@ -73,34 +73,29 @@
                 }
                 %>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Lead ID</th>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                            <th>Status</th>
-                            <th>User Email</th>
-                            <th>External Id</th>
-                            <!-- Add more table headers for other lead properties -->
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% for (Lead lead : leads) { %>
-                        <tr>
-                            <td><a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%= lead.getRecordId() %>" tabindex="2"><%= lead.getRecordId() %></a></td>
-                            <td><%= lead.getName() %> <%= lead.getLname() %></td>
-                            <td><%= lead.getPhone() %></td>
-                            <td><%= lead.getEmailAddress() %></td>
-                            <td><%= lead.getLeadStatus() %></td>
-                            <td><%= lead.getUseremail() %></td>
-                            <td><%= lead.getExternal_id() %></td>
-                            <!-- Add more table cells for other lead properties -->
-                        </tr>
-                        <% } %>
-                    </tbody>
-                </table>
+                <div class="row">
+                    <% for (Lead lead : leads) { %>
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%= lead.getRecordId() %>" tabindex="2">
+                                        <%= lead.getRecordId() %>
+                                    </a>
+                                </h5>
+                                <p class="card-text"><%= lead.getName() %> <%= lead.getLname() %></p>
+                                <p class="card-text"><%= lead.getPhone() %></p>
+                                <p class="card-text"><%= lead.getEmailAddress() %></p>
+                                <p class="card-text"><%= lead.getLeadStatus() %></p>
+                                <p class="card-text"><%= lead.getUseremail() %></p>
+                                <p class="card-text"><%= lead.getExternal_id() %></p>
+                                <!-- Add more card content for other lead properties -->
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+
                 <HR>
             </div>
           </div>
