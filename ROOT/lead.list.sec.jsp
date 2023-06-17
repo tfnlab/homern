@@ -53,7 +53,7 @@
         <HR>
         <HR>
           <a href="<%=rootUpdate%>lead.new.sec.jsp/" tabindex="2"><i class="fas fa-plus"></i> Lead</a> |
-            <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-plus"></i> Dashboard</a>
+            <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-meter"></i> Dashboard</a>
         <HR>
           <div class="container mt-5">
             <div class="container">
