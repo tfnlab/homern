@@ -52,8 +52,7 @@
         <h2>Leads</h2>
         <HR>
         <HR>
-          <a href="<%=rootUpdate%>lead.new.sec.jsp/" tabindex="2"><i class="fas fa-plus"></i> Lead</a> |
-            <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-plus"></i> Dashboard</a>
+          <a href="<%=rootUpdate%>lead.new.sec.jsp/" tabindex="2"><i class="fas fa-plus"></i> Lead</a>
         <HR>
           <div class="container mt-5">
             <div class="container">
@@ -64,40 +63,20 @@
                 List<Lead> leads = null;
                 try {
                     LeadDAO leadDAO = new LeadDAO();
-                    leads = leadDAO.getLeadsByUsername(username);
+                    Map<String, Integer> leadsByStatus = leadDAO.getLeadsByStatus(username);
+
+                    // Iterate over the map and print lead status with lead count
+                    for (Map.Entry<String, Integer> entry : leadsByStatus.entrySet()) {
+                        String leadStatus = entry.getKey();
+                        int leadCount = entry.getValue();
+                        %><%="Lead Status: " + leadStatus + ", Count: " + leadCount%><%
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
                 %>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Lead ID</th>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                            <th>Status</th>
-                            <th>User Email</th>
-                            <th>External Id</th>
-                            <!-- Add more table headers for other lead properties -->
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% for (Lead lead : leads) { %>
-                        <tr>
-                            <td><a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%= lead.getRecordId() %>" tabindex="2"><%= lead.getRecordId() %></a></td>
-                            <td><%= lead.getName() %> <%= lead.getLname() %></td>
-                            <td><%= lead.getPhone() %></td>
-                            <td><%= lead.getEmailAddress() %></td>
-                            <td><%= lead.getLeadStatus() %></td>
-                            <td><%= lead.getUseremail() %></td>
-                            <td><%= lead.getExternal_id() %></td>
-                            <!-- Add more table cells for other lead properties -->
-                        </tr>
-                        <% } %>
-                    </tbody>
-                </table>
+
                 <HR>
             </div>
           </div>
