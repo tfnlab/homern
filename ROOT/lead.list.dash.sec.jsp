@@ -71,15 +71,14 @@
                         int leadCount = entry.getValue();
                         %><%="Lead Status: " + leadStatus + ", Count: " + leadCount%><BR><%
                     }
+
+                    String[] optionValues = {"Lead Generation", "Initial Contact", "Site Assessment", "Roof Check", "Electrical Panel Check", "Shade Analysis", "Proposal Preparation", "Proposal Presentation", "Financial Analysis", "Incentives and Rebates", "Negotiation and Agreement", "Permitting and Documentation", "Equipment Procurement", "Installation Scheduling", "Installation and Commissioning", "Inspections and Approvals", "System Activation and Monitoring", "Customer Satisfaction and Referrals", "Ongoing Customer Relationship", "Site Plan Approval", "Unwilling to Engage", "LOST", "Not Viable", "Finalize Contract/Financing Docs", "Site Plan Creation/Meter Spot", "Converted", "NotContacted", "Contacted", "AttemptedContact", "Roof Check", "Site Evaluation", "Ready to Convert", "Appointment Set", "Lead Generation", "Incentives and Rebates", "Quoted", "Disqualified", "WON"};
+                    for (String option : optionValues) {
+                        %><%= option %> - <%=leadsByStatus.get(option)%><%
+                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                %>
-                <%
-                String[] optionValues = {"Lead Generation", "Initial Contact", "Site Assessment", "Roof Check", "Electrical Panel Check", "Shade Analysis", "Proposal Preparation", "Proposal Presentation", "Financial Analysis", "Incentives and Rebates", "Negotiation and Agreement", "Permitting and Documentation", "Equipment Procurement", "Installation Scheduling", "Installation and Commissioning", "Inspections and Approvals", "System Activation and Monitoring", "Customer Satisfaction and Referrals", "Ongoing Customer Relationship", "Site Plan Approval", "Unwilling to Engage", "LOST", "Not Viable", "Finalize Contract/Financing Docs", "Site Plan Creation/Meter Spot", "Converted", "NotContacted", "Contacted", "AttemptedContact", "Roof Check", "Site Evaluation", "Ready to Convert", "Appointment Set", "Lead Generation", "Incentives and Rebates", "Quoted", "Disqualified", "WON"};
-                for (String option : optionValues) {
-                    %><%= option %> - <%=leadsByStatus.get(option)%><%
-                 }
                 %>
 
                 <HR>
