@@ -66,11 +66,11 @@
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
+    <% if (!request.getMethod().equalsIgnoreCase("post")) {%>
     window.onload = function() {
       getMessage();
     };
-
-
+    <% } %>
 
     </script>
   </head>
