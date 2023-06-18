@@ -72,12 +72,10 @@
                 String linkedEmailAddress = request.getParameter("linkedEmailAddress");
                 String wifiInformation = request.getParameter("wifiInformation");
                 String salesNotes = request.getParameter("salesNotes");
-                BigDecimal probabilityOfWinning = new BigDecimal(request.getParameter("probabilityOfWinning"));
                 String userResponsible = request.getParameter("userResponsible");
                 String currentState = request.getParameter("currentState");
                 String siteEvaluation = request.getParameter("siteEvaluation");
                 String utilityCo = request.getParameter("utilityCo");
-                BigDecimal dcKw = new BigDecimal(request.getParameter("dcKw"));
                 String solarModules = request.getParameter("solarModules");
                 String inverters = request.getParameter("inverters");
                 int solarPanelQuantity = Integer.parseInt(request.getParameter("solarPanelQuantity"));
@@ -90,12 +88,57 @@
                 String battery = request.getParameter("battery");
                 String financingType = request.getParameter("financingType");
                 String accountingNotes = request.getParameter("accountingNotes");
-                BigDecimal roofingPrice = new BigDecimal(request.getParameter("roofingPrice"));
-                BigDecimal opportunityValue = new BigDecimal(request.getParameter("opportunityValue"));
-                BigDecimal cashPrice = new BigDecimal(request.getParameter("cashPrice"));
-                BigDecimal contractAmount = new BigDecimal(request.getParameter("contractAmount"));
                 String actualCloseDate = request.getParameter("actualCloseDate");
                 String opportunityCreated = request.getParameter("opportunityCreated");
+
+                BigDecimal probabilityOfWinning;
+                try {
+                    String probabilityOfWinningParam = request.getParameter("probabilityOfWinning");
+                    probabilityOfWinning = new BigDecimal(probabilityOfWinningParam);
+                } catch (NumberFormatException | NullPointerException e) {
+                    probabilityOfWinning = BigDecimal.ZERO;
+                }
+
+                BigDecimal dcKw;
+                try {
+                    String dcKwParam = request.getParameter("dcKw");
+                    dcKw = new BigDecimal(dcKwParam);
+                } catch (NumberFormatException | NullPointerException e) {
+                    dcKw = BigDecimal.ZERO;
+                }
+
+                BigDecimal roofingPrice;
+                try {
+                    String roofingPriceParam = request.getParameter("roofingPrice");
+                    roofingPrice = new BigDecimal(roofingPriceParam);
+                } catch (NumberFormatException | NullPointerException e) {
+                    roofingPrice = BigDecimal.ZERO;
+                }
+
+                BigDecimal opportunityValue;
+                try {
+                    String opportunityValueParam = request.getParameter("opportunityValue");
+                    opportunityValue = new BigDecimal(opportunityValueParam);
+                } catch (NumberFormatException | NullPointerException e) {
+                    opportunityValue = BigDecimal.ZERO;
+                }
+
+                BigDecimal cashPrice;
+                try {
+                    String cashPriceParam = request.getParameter("cashPrice");
+                    cashPrice = new BigDecimal(cashPriceParam);
+                } catch (NumberFormatException | NullPointerException e) {
+                    cashPrice = BigDecimal.ZERO;
+                }
+
+                BigDecimal contractAmount;
+                try {
+                    String contractAmountParam = request.getParameter("contractAmount");
+                    contractAmount = new BigDecimal(contractAmountParam);
+                } catch (NumberFormatException | NullPointerException e) {
+                    contractAmount = BigDecimal.ZERO;
+                }
+
 
                 Opportunity opportunity = new Opportunity();
                 opportunity.setHasAProjectBeenCreated(hasAProjectBeenCreated);
