@@ -207,235 +207,235 @@
                   </div>
                   <div class="form-group">
                     <label for="phoneNumber">Phone Number:</label>
-                    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" required>
+                    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" >
                   </div>
                   <div class="form-group">
                     <label for="address">Address:</label>
-                    <input type="text" class="form-control" id="address" name="address" required>
+                    <input type="text" class="form-control" id="address" name="address" >
                   </div>
                   <div class="form-group">
                     <label for="city">City:</label>
-                    <input type="text" class="form-control" id="city" name="city" required>
+                    <input type="text" class="form-control" id="city" name="city" >
                   </div>
                   <div class="form-group">
                     <label for="emailOrContactInformation">Email or Contact Information:</label>
-                    <input type="text" class="form-control" id="emailOrContactInformation" name="emailOrContactInformation" required>
+                    <input type="text" class="form-control" id="emailOrContactInformation" name="emailOrContactInformation" >
                   </div>
                   <div class="form-group">
                     <label for="interconnectionStatus">Interconnection Status:</label>
-                    <input type="text" class="form-control" id="interconnectionStatus" name="interconnectionStatus" required>
+                    <input type="text" class="form-control" id="interconnectionStatus" name="interconnectionStatus" >
                   </div>
                   <div class="form-group">
                     <label for="projectsStatus">Projects Status:</label>
-                    <input type="text" class="form-control" id="projectsStatus" name="projectsStatus" required>
+                    <input type="text" class="form-control" id="projectsStatus" name="projectsStatus" >
                   </div>
                   <div class="form-group">
                     <label for="wifiInformation">Wifi Information:</label>
-                    <input type="text" class="form-control" id="wifiInformation" name="wifiInformation" required>
+                    <input type="text" class="form-control" id="wifiInformation" name="wifiInformation" >
                   </div>
                   <div class="form-group">
                     <label for="wifiNetwork">Wifi Network:</label>
-                    <input type="text" class="form-control" id="wifiNetwork" name="wifiNetwork" required>
+                    <input type="text" class="form-control" id="wifiNetwork" name="wifiNetwork" >
                   </div>
                   <div class="form-group">
                     <label for="wifiPassword">Wifi Password:</label>
-                    <input type="text" class="form-control" id="wifiPassword" name="wifiPassword" required>
+                    <input type="text" class="form-control" id="wifiPassword" name="wifiPassword" >
                   </div>
                   <div class="form-group">
                     <label for="projectNotes">Project Notes:</label>
-                    <textarea class="form-control" id="projectNotes" name="projectNotes" required></textarea>
+                    <textarea class="form-control" id="projectNotes" name="projectNotes" ></textarea>
                   </div>
                   <div class="form-group">
                     <label for="userResponsible">User Responsible:</label>
-                    <input type="text" class="form-control" id="userResponsible" name="userResponsible" required>
+                    <input type="text" class="form-control" id="userResponsible" name="userResponsible" >
                   </div>
                   <div class="form-group">
                     <label for="projectsDescription">Projects Description:</label>
-                    <textarea class="form-control" id="projectsDescription" name="projectsDescription" required></textarea>
+                    <textarea class="form-control" id="projectsDescription" name="projectsDescription" ></textarea>
                   </div>
                           <div class="form-group">
                             <label for="installDate">Install Date:</label>
-                          <input type="date" class="form-control" id="installDate" name="installDate" required>
+                          <input type="date" class="form-control" id="installDate" name="installDate" >
                         </div>
                         <div class="form-group">
                           <label for="projectsOrganization">Projects Organization:</label>
-                          <input type="text" class="form-control" id="projectsOrganization" name="projectsOrganization" required>
+                          <input type="text" class="form-control" id="projectsOrganization" name="projectsOrganization" >
                         </div>
                         <div class="form-group">
                           <label for="siteEvaluation">Site Evaluation:</label>
-                          <input type="text" class="form-control" id="siteEvaluation" name="siteEvaluation" required>
+                          <input type="text" class="form-control" id="siteEvaluation" name="siteEvaluation" >
                         </div>
                         <div class="form-group">
                           <label for="meterspotRequested">Meterspot Requested:</label>
-                          <input type="text" class="form-control" id="meterspotRequested" name="meterspotRequested" required>
+                          <input type="text" class="form-control" id="meterspotRequested" name="meterspotRequested" >
                         </div>
                         <div class="form-group">
                           <label for="layoutDrafted">Layout Drafted:</label>
-                          <input type="text" class="form-control" id="layoutDrafted" name="layoutDrafted" required>
+                          <input type="text" class="form-control" id="layoutDrafted" name="layoutDrafted" >
                         </div>
                         <div class="form-group">
                           <label for="plansDrafted">Plans Drafted:</label>
-                          <input type="text" class="form-control" id="plansDrafted" name="plansDrafted" required>
+                          <input type="text" class="form-control" id="plansDrafted" name="plansDrafted" >
                         </div>
                         <div class="form-group">
                           <label for="submittedToPermitting">Submitted to Permitting:</label>
-                          <input type="text" class="form-control" id="submittedToPermitting" name="submittedToPermitting" required>
+                          <input type="text" class="form-control" id="submittedToPermitting" name="submittedToPermitting" >
                         </div>
                         <div class="form-group">
                           <label for="salesNotes">Sales Notes:</label>
-                          <textarea class="form-control" id="salesNotes" name="salesNotes" required></textarea>
+                          <textarea class="form-control" id="salesNotes" name="salesNotes" ></textarea>
                         </div>
                         <div class="form-group">
                           <label for="otherAdders">Other Adders:</label>
-                          <input type="text" class="form-control" id="otherAdders" name="otherAdders" required>
+                          <input type="text" class="form-control" id="otherAdders" name="otherAdders" >
                         </div>
                         <div class="form-group">
                           <label for="companyCamLink">Company Cam Link:</label>
-                          <input type="text" class="form-control" id="companyCamLink" name="companyCamLink" required>
+                          <input type="text" class="form-control" id="companyCamLink" name="companyCamLink" >
                         </div>
                         <div class="form-group">
                           <label for="utilityCo">Utility Co:</label>
-                          <input type="text" class="form-control" id="utilityCo" name="utilityCo" required>
+                          <input type="text" class="form-control" id="utilityCo" name="utilityCo" >
                         </div>
                         <div class="form-group">
                           <label for="solarModules">Solar Modules:</label>
-                          <input type="text" class="form-control" id="solarModules" name="solarModules" required>
+                          <input type="text" class="form-control" id="solarModules" name="solarModules" >
                         </div>
                         <div class="form-group">
                           <label for="inverters">Inverters:</label>
-                          <input type="text" class="form-control" id="inverters" name="inverters" required>
+                          <input type="text" class="form-control" id="inverters" name="inverters" >
                         </div>
                         <div class="form-group">
                           <label for="dcKw">DC kW:</label>
-                          <input type="number" step="0.01" class="form-control" id="dcKw" name="dcKw" required>
+                          <input type="number" step="0.01" class="form-control" id="dcKw" name="dcKw" >
                         </div>
                         <div class="form-group">
                                 <label for="solarPanelQuantity">Solar Panel Quantity:</label>
-                                <input type="number" class="form-control" id="solarPanelQuantity" name="solarPanelQuantity" required>
+                                <input type="number" class="form-control" id="solarPanelQuantity" name="solarPanelQuantity" >
                                       </div>
                                       <div class="form-group">
                                         <label for="inverterQuantity">Inverter Quantity:</label>
-                                        <input type="number" class="form-control" id="inverterQuantity" name="inverterQuantity" required>
+                                        <input type="number" class="form-control" id="inverterQuantity" name="inverterQuantity" >
                                       </div>
                                       <div class="form-group">
                                         <label for="battery">Battery:</label>
-                                        <input type="text" class="form-control" id="battery" name="battery" required>
+                                        <input type="text" class="form-control" id="battery" name="battery" >
                                       </div>
                                       <div class="form-group">
                                         <label for="sgipRebate">SGIP Rebate:</label>
-                                        <input type="number" step="0.01" class="form-control" id="sgipRebate" name="sgipRebate" required>
+                                        <input type="number" step="0.01" class="form-control" id="sgipRebate" name="sgipRebate" >
                                       </div>
                                       <div class="form-group">
                                         <label for="sgipRebateType">SGIP Rebate Type:</label>
-                                        <input type="text" class="form-control" id="sgipRebateType" name="sgipRebateType" required>
+                                        <input type="text" class="form-control" id="sgipRebateType" name="sgipRebateType" >
                                       </div>
                                       <div class="form-group">
                                         <label for="sgipRebateStatus">SGIP Rebate Status:</label>
-                                        <input type="text" class="form-control" id="sgipRebateStatus" name="sgipRebateStatus" required>
+                                        <input type="text" class="form-control" id="sgipRebateStatus" name="sgipRebateStatus" >
                                       </div>
                                       <div class="form-group">
                                         <label for="mainPanelUpgrade">Main Panel Upgrade:</label>
-                                        <input type="text" class="form-control" id="mainPanelUpgrade" name="mainPanelUpgrade" required>
+                                        <input type="text" class="form-control" id="mainPanelUpgrade" name="mainPanelUpgrade" >
                                       </div>
                                       <div class="form-group">
                                         <label for="breakerTypeNeeded">Breaker Type Needed:</label>
-                                        <input type="text" class="form-control" id="breakerTypeNeeded" name="breakerTypeNeeded" required>
+                                        <input type="text" class="form-control" id="breakerTypeNeeded" name="breakerTypeNeeded" >
                                       </div>
                                       <div class="form-group">
                                         <label for="downsizeNeeded">Downsize Needed:</label>
-                                        <input type="text" class="form-control" id="downsizeNeeded" name="downsizeNeeded" required>
+                                        <input type="text" class="form-control" id="downsizeNeeded" name="downsizeNeeded" >
                                       </div>
                                       <div class="form-group">
                                         <label for="isEv">Is EV:</label>
-                                        <input type="text" class="form-control" id="isEv" name="isEv" required>
+                                        <input type="text" class="form-control" id="isEv" name="isEv" >
                                       </div>
                                       <div class="form-group">
                                         <label for="subPanel">Sub Panel:</label>
-                                        <input type="text" class="form-control" id="subPanel" name="subPanel" required>
+                                        <input type="text" class="form-control" id="subPanel" name="subPanel" >
                                       </div>
                                       <div class="form-group">
                                         <label for="panelDescription">Panel Description:</label>
-                                        <input type="text" class="form-control" id="panelDescription" name="panelDescription" required>
+                                        <input type="text" class="form-control" id="panelDescription" name="panelDescription" >
                                       </div>
                                       <div class="form-group">
                                         <label for="inspectionDate">Inspection Date:</label>
-                                        <input type="date" class="form-control" id="inspectionDate" name="inspectionDate" required>
+                                        <input type="date" class="form-control" id="inspectionDate" name="inspectionDate" >
                                       </div>
                                       <div class="form-group">
                                         <label for="inspectionPassed">Inspection Passed:</label>
-                                        <input type="text" class="form-control" id="inspectionPassed" name="inspectionPassed" required>
+                                        <input type="text" class="form-control" id="inspectionPassed" name="inspectionPassed" >
                                       </div>
                                       <div class="form-group">
                                         <label for="reinspectionDate">Reinspection Date:</label>
-                                        <input type="date" class="form-control" id="reinspectionDate" name="reinspectionDate" required>
+                                        <input type="date" class="form-control" id="reinspectionDate" name="reinspectionDate" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="placardStatus">Placard Status:</label>
-                                                <input type="text" class="form-control" id="placardStatus" name="placardStatus" required>
+                                                <input type="text" class="form-control" id="placardStatus" name="placardStatus" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="placardsInPossession">Placards in Possession:</label>
-                                                <input type="text" class="form-control" id="placardsInPossession" name="placardsInPossession" required>
+                                                <input type="text" class="form-control" id="placardsInPossession" name="placardsInPossession" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="acDiscoPlacardsNeeded">AC Disco Placards Needed:</label>
-                                                <input type="text" class="form-control" id="acDiscoPlacardsNeeded" name="acDiscoPlacardsNeeded" required>
+                                                <input type="text" class="form-control" id="acDiscoPlacardsNeeded" name="acDiscoPlacardsNeeded" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="inspectionTech">Inspection Tech:</label>
-                                                <input type="text" class="form-control" id="inspectionTech" name="inspectionTech" required>
+                                                <input type="text" class="form-control" id="inspectionTech" name="inspectionTech" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="accountingNotes">Accounting Notes:</label>
-                                                <textarea class="form-control" id="accountingNotes" name="accountingNotes" required></textarea>
+                                                <textarea class="form-control" id="accountingNotes" name="accountingNotes" ></textarea>
                                               </div>
                                               <div class="form-group">
                                                 <label for="roofingPrice">Roofing Price:</label>
-                                                <input type="number" step="0.01" class="form-control" id="roofingPrice" name="roofingPrice" required>
+                                                <input type="number" step="0.01" class="form-control" id="roofingPrice" name="roofingPrice" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="otherAddersPrice">Other Adders Price:</label>
-                                                <input type="number" step="0.01" class="form-control" id="otherAddersPrice" name="otherAddersPrice" required>
+                                                <input type="number" step="0.01" class="form-control" id="otherAddersPrice" name="otherAddersPrice" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="contractAmount">Contract Amount:</label>
-                                                <input type="number" step="0.01" class="form-control" id="contractAmount" name="contractAmount" required>
+                                                <input type="number" step="0.01" class="form-control" id="contractAmount" name="contractAmount" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="cashPrice">Cash Price:</label>
-                                                <input type="number" step="0.01" class="form-control" id="cashPrice" name="cashPrice" required>
+                                                <input type="number" step="0.01" class="form-control" id="cashPrice" name="cashPrice" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="financingType">Financing Type:</label>
-                                                <input type="text" class="form-control" id="financingType" name="financingType" required>
+                                                <input type="text" class="form-control" id="financingType" name="financingType" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="m1Amount">M1 Amount:</label>
-                                                <input type="number" step="0.01" class="form-control" id="m1Amount" name="m1Amount" required>
+                                                <input type="number" step="0.01" class="form-control" id="m1Amount" name="m1Amount" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="m1PaymentRequested">M1 Payment Requested:</label>
-                                                <input type="number" step="0.01" class="form-control" id="m1PaymentRequested" name="m1PaymentRequested" required>
+                                                <input type="number" step="0.01" class="form-control" id="m1PaymentRequested" name="m1PaymentRequested" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="paymentReceivedM1">Payment Received M1:</label>
-                                                <input type="number" step="0.01" class="form-control" id="paymentReceivedM1" name="paymentReceivedM1" required>
+                                                <input type="number" step="0.01" class="form-control" id="paymentReceivedM1" name="paymentReceivedM1" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="m2Amount">M2 Amount:</label>
-                                                <input type="number" step="0.01" class="form-control" id="m2Amount" name="m2Amount" required>
+                                                <input type="number" step="0.01" class="form-control" id="m2Amount" name="m2Amount" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="m2PaymentRequested">M2 Payment Requested:</label>
-                                                <input type="number" step="0.01" class="form-control" id="m2PaymentRequested" name="m2PaymentRequested" required>
+                                                <input type="number" step="0.01" class="form-control" id="m2PaymentRequested" name="m2PaymentRequested" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="paymentReceivedM2">Payment Received M2:</label>
-                                                <input type="number" step="0.01" class="form-control" id="paymentReceivedM2" name="paymentReceivedM2" required>
+                                                <input type="number" step="0.01" class="form-control" id="paymentReceivedM2" name="paymentReceivedM2" >
                                               </div>
                                               <div class="form-group">
                                                 <label for="isSalesCommissionsPaid">Is Sales Commissions Paid:</label>
-                                                <input type="text" class="form-control" id="isSalesCommissionsPaid" name="isSalesCommissionsPaid" required>
+                                                <input type="text" class="form-control" id="isSalesCommissionsPaid" name="isSalesCommissionsPaid" >
                                               </div>
 
                                               <!-- Add more fields if needed -->
