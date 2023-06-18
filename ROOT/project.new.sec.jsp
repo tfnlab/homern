@@ -187,7 +187,7 @@
               try {
                   projectDAO.insertProject(project);
                   out.println("Project saved successfully!");
-              } catch (SQLException e) {
+              } catch (Exception e) {
                   out.println("Error saving project: " + e.getMessage());
               }
           }
