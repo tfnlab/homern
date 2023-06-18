@@ -84,8 +84,8 @@
                         <% for (Opportunity opportunity : opportunities) { %>
                             <tr>
                                 <td>
-                                <a href="<%=rootUpdate%>opportunity.edit.sec.jsp/?opportunity_id=<%= lead.getRecordId() %>" tabindex="2">
-                                    <%= lead.getRecordId() %>
+                                <a href="<%=rootUpdate%>opportunity.edit.sec.jsp/?opportunity_id=<%= opportunity.getRecordId() %>" tabindex="2">
+                                    <%= opportunity.getRecordId() %>
                                 </a>
                                 </td>
                                 <td><%= opportunity.getName() %></td>
