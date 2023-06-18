@@ -327,12 +327,12 @@
               project.setActualCloseDate(actualCloseDate);
               project.setUsername(username);
               project.setUserEmail(useremail);
-
+              project.setRecordId(Integer.parseInt(request.getParameter("project_id")));
               // Set more project properties as needed
 
               // Create a new ProjectDAO instance and save the project
               try {
-                  //projectDAO.insertProject(project);
+                  projectDAO.updateProjectByUsernameAndId(project);
                   out.println("Project saved successfully!");
               } catch (Exception e) {
                   out.println("Error saving project: " + e.getMessage());
@@ -349,6 +349,7 @@
             <div class="container">
                 <div class="row">
                   <form action="<%= rootUpdate %>project.edit.sec.jsp/" method="post">
+                    <input type="hidden"  id="project_id" name="project_id" value="<%= project.getRecordId() %>" >
                     <div class="form-group">
                       <label for="projectName">Project Name:</label>
                       <input type="text" class="form-control" id="projectName" name="projectName" required value="<%= project.getProjectName() %>">
