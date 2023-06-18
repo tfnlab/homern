@@ -206,186 +206,188 @@
           <div class="container mt-5">
             <div class="container">
                 <h2>Create Opportunity</h2>
-                <form action="<%=rootUpdate%>opportunity.new.sec.jsp/" method="post">
+                <form action="<%=rootUpdate%>opportunity.edit.sec.jsp/" method="post">
                 <div class="form-group">
                     <label>Has a Project Been Created?</label>
-                    <input type="text" class="form-control" name="hasAProjectBeenCreated">
+                    <input type="text" class="form-control" name="hasAProjectBeenCreated" value="<%=opportunity.getHasAProjectBeenCreated() != null ? opportunity.getHasAProjectBeenCreated() : ""%>">
                 </div>
 
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" class="form-control" name="name" value="<%=opportunity.getName()%>">
+                    <input type="text" class="form-control" name="name" value="<%=opportunity.getName() != null ? opportunity.getName() : ""%>">
                 </div>
 
                 <div class="form-group">
                     <label>Organization</label>
-                    <input type="text" class="form-control" name="organization">
+                    <input type="text" class="form-control" name="organization" value="<%=opportunity.getOrganization() != null ? opportunity.getOrganization() : ""%>">
                 </div>
 
                 <div class="form-group">
                     <label>Converted from Lead</label>
-                    <input type="text" class="form-control" name="convertedFromLead">
+                    <input type="text" class="form-control" name="convertedFromLead" value="<%=opportunity.getConvertedFromLead() != null ? opportunity.getConvertedFromLead() : ""%>">
                 </div>
 
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" class="form-control" name="email">
+                    <input type="email" class="form-control" name="email" value="<%=opportunity.getEmail() != null ? opportunity.getEmail() : ""%>">
                 </div>
 
                 <div class="form-group">
                     <label>Interconnection Status</label>
-                    <input type="text" class="form-control" name="interconnectionStatus">
+                    <input type="text" class="form-control" name="interconnectionStatus" value="<%=opportunity.getInterconnectionStatus() != null ? opportunity.getInterconnectionStatus() : ""%>">
                 </div>
 
                 <div class="form-group">
                     <label>Phone Number</label>
-                    <input type="text" class="form-control" name="phoneNumber">
+                    <input type="text" class="form-control" name="phoneNumber" value="<%=opportunity.getPhoneNumber() != null ? opportunity.getPhoneNumber() : ""%>">
                 </div>
 
                 <div class="form-group">
                     <label>Address</label>
-                    <input type="text" class="form-control" name="address">
+                    <input type="text" class="form-control" name="address" value="<%=opportunity.getAddress() != null ? opportunity.getAddress() : ""%>">
                 </div>
 
                 <div class="form-group">
                     <label>City</label>
-                    <input type="text" class="form-control" name="city">
+                    <input type="text" class="form-control" name="city" value="<%=opportunity.getCity() != null ? opportunity.getCity() : ""%>">
                 </div>
 
                 <div class="form-group">
                     <label>Linked Email Address</label>
-                    <input type="email" class="form-control" name="linkedEmailAddress">
+                    <input type="email" class="form-control" name="linkedEmailAddress" value="<%=opportunity.getLinkedEmailAddress() != null ? opportunity.getLinkedEmailAddress() : ""%>">
                 </div>
 
                 <div class="form-group">
                     <label>WiFi Information</label>
-                    <input type="text" class="form-control" name="wifiInformation">
+                    <input type="text" class="form-control" name="wifiInformation" value="<%=opportunity.getWifiInformation() != null ? opportunity.getWifiInformation() : ""%>">
                 </div>
 
                 <div class="form-group">
                     <label>Sales Notes</label>
-                    <textarea class="form-control" name="salesNotes"></textarea>
+                    <textarea class="form-control" name="salesNotes"><%=opportunity.getSalesNotes() != null ? opportunity.getSalesNotes() : ""%></textarea>
                 </div>
-
                 <div class="form-group">
-                    <label>Probability of Winning</label>
-                    <input type="text" class="form-control" name="probabilityOfWinning">
-                </div>
+                  <label>Probability of Winning</label>
+                  <input type="text" class="form-control" name="probabilityOfWinning" value="<%=opportunity.getProbabilityOfWinning() != null ? opportunity.getProbabilityOfWinning() : ""%>">
+                  </div>
+                  <div class="form-group">
+                      <label>User Responsible</label>
+                      <input type="text" class="form-control" name="userResponsible" value="<%=opportunity.getUserResponsible() != null ? opportunity.getUserResponsible() : ""%>">
+                  </div>
 
-                <div class="form-group">
-                    <label>User Responsible</label>
-                    <input type="text" class="form-control" name="userResponsible">
-                </div>
+                  <div class="form-group">
+                      <label>Current State</label>
+                      <input type="text" class="form-control" name="currentState" value="<%=opportunity.getCurrentState() != null ? opportunity.getCurrentState() : ""%>">
+                  </div>
 
-                <div class="form-group">
-                    <label>Current State</label>
-                    <input type="text" class="form-control" name="currentState">
-                </div>
+                  <div class="form-group">
+                      <label>Site Evaluation</label>
+                      <input type="text" class="form-control" name="siteEvaluation" value="<%=opportunity.getSiteEvaluation() != null ? opportunity.getSiteEvaluation() : ""%>">
+                  </div>
 
-                <div class="form-group">
-                    <label>Site Evaluation</label>
-                    <input type="text" class="form-control" name="siteEvaluation">
-                </div>
+                  <div class="form-group">
+                      <label>Utility Co</label>
+                      <input type="text" class="form-control" name="utilityCo" value="<%=opportunity.getUtilityCo() != null ? opportunity.getUtilityCo() : ""%>">
+                  </div>
 
-                <div class="form-group">
-                    <label>Utility Co</label>
-                    <input type="text" class="form-control" name="utilityCo">
-                </div>
-                    <!-- Include other input fields for Opportunity data -->
-                    <div class="form-group">
-                        <label>DC kW</label>
-                        <input type="text" class="form-control" name="dcKw">
-                    </div>
+                  <!-- Include other input fields for Opportunity data -->
 
-                    <div class="form-group">
-                        <label>Solar Modules</label>
-                        <input type="text" class="form-control" name="solarModules">
-                    </div>
+                  <div class="form-group">
+                      <label>DC kW</label>
+                      <input type="text" class="form-control" name="dcKw" value="<%=opportunity.getDcKw() != null ? opportunity.getDcKw() : ""%>">
+                  </div>
 
-                    <div class="form-group">
-                        <label>Inverters</label>
-                        <input type="text" class="form-control" name="inverters">
-                    </div>
+                  <div class="form-group">
+                      <label>Solar Modules</label>
+                      <input type="text" class="form-control" name="solarModules" value="<%=opportunity.getSolarModules() != null ? opportunity.getSolarModules() : ""%>">
+                  </div>
 
-                    <div class="form-group">
-                        <label>Solar Panel Quantity</label>
-                        <input type="number" class="form-control" name="solarPanelQuantity">
-                    </div>
+                  <div class="form-group">
+                      <label>Inverters</label>
+                      <input type="text" class="form-control" name="inverters" value="<%=opportunity.getInverters() != null ? opportunity.getInverters() : ""%>">
+                  </div>
 
-                    <div class="form-group">
-                        <label>Inverter Quantity</label>
-                        <input type="number" class="form-control" name="inverterQuantity">
-                    </div>
+                  <div class="form-group">
+                      <label>Solar Panel Quantity</label>
+                      <input type="number" class="form-control" name="solarPanelQuantity" value="<%=opportunity.getSolarPanelQuantity() != null ? opportunity.getSolarPanelQuantity() : ""%>">
+                  </div>
 
-                    <div class="form-group">
-                        <label>Main Panel Upgrade</label>
-                        <input type="text" class="form-control" name="mainPanelUpgrade">
-                    </div>
+                  <div class="form-group">
+                      <label>Inverter Quantity</label>
+                      <input type="number" class="form-control" name="inverterQuantity" value="<%=opportunity.getInverterQuantity() != null ? opportunity.getInverterQuantity() : ""%>">
+                  </div>
 
-                    <div class="form-group">
-                        <label>Other Adders</label>
-                        <input type="text" class="form-control" name="otherAdders">
-                    </div>
+                  <div class="form-group">
+                      <label>Main Panel Upgrade</label>
+                      <input type="text" class="form-control" name="mainPanelUpgrade" value="<%=opportunity.getMainPanelUpgrade() != null ? opportunity.getMainPanelUpgrade() : ""%>">
+                  </div>
 
-                    <div class="form-group">
-                        <label>Company CAM Link</label>
-                        <input type="text" class="form-control" name="companyCamLink">
-                    </div>
+                  <div class="form-group">
+                      <label>Other Adders</label>
+                      <input type="text" class="form-control" name="otherAdders" value="<%=opportunity.getOtherAdders() != null ? opportunity.getOtherAdders() : ""%>">
+                  </div>
 
-                    <div class="form-group">
-                        <label>Date of Next Activity</label>
-                        <input type="date" class="form-control" name="dateOfNextActivity">
-                    </div>
+                  <div class="form-group">
+                      <label>Company CAM Link</label>
+                      <input type="text" class="form-control"  name="companyCamLink" value="<%=opportunity.getCompanyCamLink() != null ? opportunity.getCompanyCamLink() : ""%>">
+                  </div>
 
-                    <div class="form-group">
-                        <label>Date of Last Activity</label>
-                        <input type="date" class="form-control" name="dateOfLastActivity">
-                    </div>
+    <div class="form-group">
+        <label>Date of Next Activity</label>
+        <input type="date" class="form-control" name="dateOfNextActivity" value="<%=opportunity.getDateOfNextActivity() != null ? opportunity.getDateOfNextActivity() : ""%>">
+    </div>
 
-                    <div class="form-group">
-                        <label>Battery</label>
-                        <input type="text" class="form-control" name="battery">
-                    </div>
+    <div class="form-group">
+        <label>Date of Last Activity</label>
+        <input type="date" class="form-control" name="dateOfLastActivity" value="<%=opportunity.getDateOfLastActivity() != null ? opportunity.getDateOfLastActivity() : ""%>">
+    </div>
 
-                    <div class="form-group">
-                        <label>Financing Type</label>
-                        <input type="text" class="form-control" name="financingType">
-                    </div>
+    <div class="form-group">
+        <label>Battery</label>
+        <input type="text" class="form-control" name="battery" value="<%=opportunity.getBattery() != null ? opportunity.getBattery() : ""%>">
+    </div>
 
-                    <div class="form-group">
-                        <label>Accounting Notes</label>
-                        <textarea class="form-control" name="accountingNotes"></textarea>
-                    </div>
+    <div class="form-group">
+        <label>Financing Type</label>
+        <input type="text" class="form-control" name="financingType" value="<%=opportunity.getFinancingType() != null ? opportunity.getFinancingType() : ""%>">
+    </div>
 
-                    <div class="form-group">
-                        <label>Roofing Price</label>
-                        <input type="text" class="form-control" name="roofingPrice">
-                    </div>
+    <div class="form-group">
+        <label>Accounting Notes</label>
+        <textarea class="form-control" name="accountingNotes"><%=opportunity.getAccountingNotes() != null ? opportunity.getAccountingNotes() : ""%></textarea>
+    </div>
 
-                    <div class="form-group">
-                        <label>Opportunity Value</label>
-                        <input type="text" class="form-control" name="opportunityValue">
-                    </div>
+    <div class="form-group">
+        <label>Roofing Price</label>
+        <input type="text" class="form-control" name="roofingPrice" value="<%=opportunity.getRoofingPrice() != null ? opportunity.getRoofingPrice() : ""%>">
+    </div>
 
-                    <div class="form-group">
-                        <label>Cash Price</label>
-                        <input type="text" class="form-control" name="cashPrice">
-                    </div>
+    <div class="form-group">
+        <label>Opportunity Value</label>
+        <input type="text" class="form-control" name="opportunityValue" value="<%=opportunity.getOpportunityValue() != null ? opportunity.getOpportunityValue() : ""%>">
+    </div>
 
-                    <div class="form-group">
-                        <label>Contract Amount</label>
-                        <input type="text" class="form-control" name="contractAmount">
-                    </div>
+    <div class="form-group">
+        <label>Cash Price</label>
+        <input type="text" class="form-control" name="cashPrice" value="<%=opportunity.getCashPrice() != null ? opportunity.getCashPrice() : ""%>">
+    </div>
 
-                    <div class="form-group">
-                        <label>Actual Close Date</label>
-                        <input type="date" class="form-control" name="actualCloseDate">
-                    </div>
+    <div class="form-group">
+        <label>Contract Amount</label>
+        <input type="text" class="form-control" name="contractAmount" value="<%=opportunity.getContractAmount() != null ? opportunity.getContractAmount() : ""%>">
+    </div>
 
-                    <div class="form-group">
-                        <label>Opportunity Created</label>
-                        <input type="date" class="form-control" name="opportunityCreated">
-                    </div>
+    <div class="form-group">
+        <label>Actual Close Date</label>
+        <input type="date" class="form-control" name="actualCloseDate" value="<%=opportunity.getActualCloseDate() != null ? opportunity.getActualCloseDate() : ""%>">
+    </div>
+
+    <div class="form-group">
+        <label>Opportunity Created</label>
+        <input type="date" class="form-control" name="opportunityCreated" value="<%=opportunity.getOpportunityCreated() != null ? opportunity.getOpportunityCreated() : ""%>">
+    </div>
+
+
 
 
                     <button type="submit" class="btn btn-primary">Submit</button>
