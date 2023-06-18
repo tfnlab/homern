@@ -64,7 +64,7 @@
                     Map<String, Integer> projectByStatus = projectDAO.getProjectStatusCountByUsername(username);
 
                     %>
-                    <h4>Lead Status</h4>
+                    <h4>Project Status</h4>
                     <%
 
                     String[] optionValues = {"Plan Set Creation", "Technical Review", "Ready for Permitting", "Permitting", "Plan Corrections", "Installation", "Punchlist Items", "Inspection", "Inspection Corrections", "PTO", "Configure Enlighten", "Finished"};

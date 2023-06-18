@@ -59,7 +59,10 @@
                 <h3>Project List CSV <a href="<%=rootUpdate%>project.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i></a> <a href="<%=rootUpdate%>project.new.bulk.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-upload"></i></a>  </h3>
                 <%
                 ProjectDAO projectDAO = new ProjectDAO();
-                List<Project> projects = projectDAO.getProjectsByUsername(username);
+                List<Project> projects = null;
+                if(request.getParameter("project_source")!=null) leads = leadDAO.getProjectsByUsernameAndStatus(username, request.getParameter("project_source"));
+                else leads = leadDAO.getProjectsByUsername(username);
+
 
                 %>
 
