@@ -58,6 +58,8 @@
             <a href="<%=rootUpdate%>opportunity.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
             <%
             if (request.getMethod().equalsIgnoreCase("post")) {
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
                 String hasAProjectBeenCreated = request.getParameter("hasAProjectBeenCreated");
                 String name = request.getParameter("name");
                 String organization = request.getParameter("organization");
@@ -121,6 +123,12 @@
                 opportunity.setMainPanelUpgrade(mainPanelUpgrade);
                 opportunity.setOtherAdders(otherAdders);
                 opportunity.setCompanyCamLink(companyCamLink);
+                if (dateOfNextActivity != null && !dateOfNextActivity.isEmpty()) {
+                    lead.setDateOfNextActivity(dateFormat.parse(dateOfNextActivity));
+                }
+                if (dateOfLastActivity != null && !dateOfLastActivity.isEmpty()) {
+                    lead.setDateOfLastActivity(dateFormat.parse(dateOfLastActivity));
+                }
                 opportunity.setDateOfNextActivity(dateOfNextActivity);
                 opportunity.setDateOfLastActivity(dateOfLastActivity);
                 opportunity.setBattery(battery);
@@ -130,8 +138,9 @@
                 opportunity.setOpportunityValue(opportunityValue);
                 opportunity.setCashPrice(cashPrice);
                 opportunity.setContractAmount(contractAmount);
-                opportunity.setActualCloseDate(actualCloseDate);
-                opportunity.setOpportunityCreated(opportunityCreated);
+                if (actualCloseDate != null && !actualCloseDate.isEmpty()) {
+                    lead.setActualCloseDate(dateFormat.parse(actualCloseDate));
+                }
                 opportunity.setUsername(username);
                 opportunity.setUseremail(useremail);
                 OpportunityDAO opportunityDAO = new OpportunityDAO();
