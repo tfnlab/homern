@@ -75,7 +75,6 @@
                                     </a>
                                 </h5>
                                 <p class="card-text"><%= project.getProjectName() %>  </p>
-                                <p class="card-text"><%= project.getPhone() %></p>
                                 <p class="card-text"><%= project.getPhoneNumber() %></p>
                                 <!-- Add more card content for other lead properties -->
                             </div>
