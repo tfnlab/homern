@@ -52,7 +52,8 @@
         <h2>Lead</h2>
         <HR>
         <HR>
-          <a href="<%=rootUpdate%>lead.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Leads</a>
+          <a href="<%=rootUpdate%>lead.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Leads</a> |
+            <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
           <%
               LeadDAO leadDAO = new LeadDAO();
               Lead lead = new Lead();
