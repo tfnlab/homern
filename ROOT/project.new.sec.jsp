@@ -219,7 +219,7 @@
                     } catch (NumberFormatException e) {
                         // Handle invalid double format
                     }
-                }              
+                }
                       double m2Amount = 0.0;
                       String m2AmountParam = request.getParameter("m2Amount");
                       if (m2AmountParam != null && !m2AmountParam.isBlank()) {
@@ -248,6 +248,7 @@
                           }
                       }
                       String isSalesCommissionsPaid = request.getParameter("isSalesCommissionsPaid");
+
                       java.sql.Date actualCloseDate = null;
                       String actualCloseDateParam = request.getParameter("actualCloseDate");
                       if (actualCloseDateParam != null && !actualCloseDateParam.isBlank()) {
@@ -329,7 +330,7 @@
               // Create a new ProjectDAO instance and save the project
               ProjectDAO projectDAO = new ProjectDAO();
               try {
-                  projectDAO.insertProject(project);
+                  //projectDAO.insertProject(project);
                   out.println("Project saved successfully!");
               } catch (Exception e) {
                   out.println("Error saving project: " + e.getMessage());
