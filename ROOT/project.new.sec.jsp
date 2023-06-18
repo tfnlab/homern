@@ -50,7 +50,7 @@
         <h2>Projects</h2>
         <HR>
         <HR>
-          <a href="<%=rootUpdate%>project.new.sec.jsp/" tabindex="2"><i class="fas fa-plus"></i> Project</a> |
+          <a href="<%=rootUpdate%>project.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Projects</a> |
             <a href="<%=rootUpdate%>project.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         <HR>
           <div class="container mt-5">
