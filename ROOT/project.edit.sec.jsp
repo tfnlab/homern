@@ -348,248 +348,258 @@
           <div class="container mt-5">
             <div class="container">
                 <div class="row">
-                  <form action="<%=rootUpdate%>project.edit.sec.jsp/" method="post">
-                  <div class="form-group">
-                    <label for="projectName">Project Name:</label>
-                    <input type="text" class="form-control" id="projectName" name="projectName" required value=<%=project.getProjectName()%>>
-                  </div>
-                  <div class="form-group">
-                    <label for="phoneNumber">Phone Number:</label>
-                    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" >
-                  </div>
-                  <div class="form-group">
-                    <label for="address">Address:</label>
-                    <input type="text" class="form-control" id="address" name="address" >
-                  </div>
-                  <div class="form-group">
-                    <label for="city">City:</label>
-                    <input type="text" class="form-control" id="city" name="city" >
-                  </div>
-                  <div class="form-group">
-                    <label for="emailOrContactInformation">Email or Contact Information:</label>
-                    <input type="text" class="form-control" id="emailOrContactInformation" name="emailOrContactInformation" >
-                  </div>
-                  <div class="form-group">
-                    <label for="interconnectionStatus">Interconnection Status:</label>
-                    <input type="text" class="form-control" id="interconnectionStatus" name="interconnectionStatus" >
-                  </div>
-                  <div class="form-group">
-                    <label for="projectsStatus">Projects Status:</label>
-                    <input type="text" class="form-control" id="projectsStatus" name="projectsStatus" >
-                  </div>
-                  <div class="form-group">
-                    <label for="wifiInformation">Wifi Information:</label>
-                    <input type="text" class="form-control" id="wifiInformation" name="wifiInformation" >
-                  </div>
-                  <div class="form-group">
-                    <label for="wifiNetwork">Wifi Network:</label>
-                    <input type="text" class="form-control" id="wifiNetwork" name="wifiNetwork" >
-                  </div>
-                  <div class="form-group">
-                    <label for="wifiPassword">Wifi Password:</label>
-                    <input type="text" class="form-control" id="wifiPassword" name="wifiPassword" >
-                  </div>
-                  <div class="form-group">
-                    <label for="projectNotes">Project Notes:</label>
-                    <textarea class="form-control" id="projectNotes" name="projectNotes" ></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="userResponsible">User Responsible:</label>
-                    <input type="text" class="form-control" id="userResponsible" name="userResponsible" >
-                  </div>
-                  <div class="form-group">
-                    <label for="projectsDescription">Projects Description:</label>
-                    <textarea class="form-control" id="projectsDescription" name="projectsDescription" ></textarea>
-                  </div>
-                          <div class="form-group">
-                            <label for="installDate">Install Date:</label>
-                          <input type="date" class="form-control" id="installDate" name="installDate" >
+                  <form action="<%= rootUpdate %>project.edit.sec.jsp/" method="post">
+                    <div class="form-group">
+                      <label for="projectName">Project Name:</label>
+                      <input type="text" class="form-control" id="projectName" name="projectName" required value="<%= project.getProjectName() %>">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="phoneNumber">Phone Number:</label>
+                      <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" value="<%= project.getPhoneNumber() %>">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="address">Address:</label>
+                      <input type="text" class="form-control" id="address" name="address" value="<%= project.getAddress() %>">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="city">City:</label>
+                      <input type="text" class="form-control" id="city" name="city" value="<%= project.getCity() %>">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="emailOrContactInformation">Email or Contact Information:</label>
+                      <input type="text" class="form-control" id="emailOrContactInformation" name="emailOrContactInformation" value="<%= project.getEmailOrContactInformation() %>">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="interconnectionStatus">Interconnection Status:</label>
+                      <input type="text" class="form-control" id="interconnectionStatus" name="interconnectionStatus" value="<%= project.getInterconnectionStatus() %>">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="projectsStatus">Projects Status:</label>
+                      <input type="text" class="form-control" id="projectsStatus" name="projectsStatus" value="<%= project.getProjectsStatus() %>">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="wifiInformation">Wifi Information:</label>
+                      <input type="text" class="form-control" id="wifiInformation" name="wifiInformation" value="<%= project.getWifiInformation() %>">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="wifiNetwork">Wifi Network:</label>
+                      <input type="text" class="form-control" id="wifiNetwork" name="wifiNetwork" value="<%= project.getWifiNetwork() %>">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="wifiPassword">Wifi Password:</label>
+                      <input type="text" class="form-control" id="wifiPassword" name="wifiPassword" value="<%= project.getWifiPassword() %>">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="projectNotes">Project Notes:</label>
+                      <textarea class="form-control" id="projectNotes" name="projectNotes"><%= project.getProjectNotes() %></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="userResponsible">User Responsible:</label>
+                      <input type="text" class="form-control" id="userResponsible" name="userResponsible" value="<%= project.getUserResponsible() %>">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="projectsDescription">Projects Description:</label>
+                      <textarea class="form-control" id="projectsDescription" name="projectsDescription"><%=project.getProjectsDescription() %></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="installDate">Install Date:</label>
+                          <input type="date" class="form-control" id="installDate" name="installDate" value="<%= project.getInstallDate() %>">
                         </div>
                         <div class="form-group">
                           <label for="projectsOrganization">Projects Organization:</label>
-                          <input type="text" class="form-control" id="projectsOrganization" name="projectsOrganization" >
+                          <input type="text" class="form-control" id="projectsOrganization" name="projectsOrganization" value="<%= project.getProjectsOrganization() %>">
                         </div>
                         <div class="form-group">
                           <label for="siteEvaluation">Site Evaluation:</label>
-                          <input type="text" class="form-control" id="siteEvaluation" name="siteEvaluation" >
+                          <input type="text" class="form-control" id="siteEvaluation" name="siteEvaluation" value="<%= project.getSiteEvaluation() %>">
                         </div>
                         <div class="form-group">
                           <label for="meterspotRequested">Meterspot Requested:</label>
-                          <input type="text" class="form-control" id="meterspotRequested" name="meterspotRequested" >
+                          <input type="text" class="form-control" id="meterspotRequested" name="meterspotRequested" value="<%= project.getMeterspotRequested() %>">
                         </div>
                         <div class="form-group">
                           <label for="layoutDrafted">Layout Drafted:</label>
-                          <input type="text" class="form-control" id="layoutDrafted" name="layoutDrafted" >
+                          <input type="text" class="form-control" id="layoutDrafted" name="layoutDrafted" value="<%= project.getLayoutDrafted() %>">
                         </div>
                         <div class="form-group">
                           <label for="plansDrafted">Plans Drafted:</label>
-                          <input type="text" class="form-control" id="plansDrafted" name="plansDrafted" >
+                          <input type="text" class="form-control" id="plansDrafted" name="plansDrafted" value="<%= project.getPlansDrafted() %>">
                         </div>
                         <div class="form-group">
                           <label for="submittedToPermitting">Submitted to Permitting:</label>
-                          <input type="text" class="form-control" id="submittedToPermitting" name="submittedToPermitting" >
+                          <input type="text" class="form-control" id="submittedToPermitting" name="submittedToPermitting" value="<%= project.getSubmittedToPermitting() %>">
                         </div>
                         <div class="form-group">
                           <label for="salesNotes">Sales Notes:</label>
-                          <textarea class="form-control" id="salesNotes" name="salesNotes" ></textarea>
+                          <textarea class="form-control" id="salesNotes" name="salesNotes"><%= project.getSalesNotes() %></textarea>
                         </div>
                         <div class="form-group">
                           <label for="otherAdders">Other Adders:</label>
-                          <input type="text" class="form-control" id="otherAdders" name="otherAdders" >
+                          <input type="text" class="form-control" id="otherAdders" name="otherAdders" value="<%= project.getOtherAdders() %>">
                         </div>
                         <div class="form-group">
                           <label for="companyCamLink">Company Cam Link:</label>
-                          <input type="text" class="form-control" id="companyCamLink" name="companyCamLink" >
+                          <input type="text" class="form-control" id="companyCamLink" name="companyCamLink" value="<%= project.getCompanyCamLink() %>">
                         </div>
                         <div class="form-group">
                           <label for="utilityCo">Utility Co:</label>
-                          <input type="text" class="form-control" id="utilityCo" name="utilityCo" >
+                          <input type="text" class="form-control" id="utilityCo" name="utilityCo" value="<%= project.getUtilityCo() %>">
                         </div>
                         <div class="form-group">
                           <label for="solarModules">Solar Modules:</label>
-                          <input type="text" class="form-control" id="solarModules" name="solarModules" >
+                          <input type="text" class="form-control" id="solarModules" name="solarModules" value="<%= project.getSolarModules() %>">
                         </div>
                         <div class="form-group">
                           <label for="inverters">Inverters:</label>
-                          <input type="text" class="form-control" id="inverters" name="inverters" >
-                        </div>
-                        <div class="form-group">
-                          <label for="dcKw">DC kW:</label>
-                          <input type="number" step="0.01" class="form-control" id="dcKw" name="dcKw" >
-                        </div>
-                        <div class="form-group">
-                                <label for="solarPanelQuantity">Solar Panel Quantity:</label>
-                                <input type="number" class="form-control" id="solarPanelQuantity" name="solarPanelQuantity" >
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="inverterQuantity">Inverter Quantity:</label>
-                                        <input type="number" class="form-control" id="inverterQuantity" name="inverterQuantity" >
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="battery">Battery:</label>
-                                        <input type="text" class="form-control" id="battery" name="battery" >
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="sgipRebate">SGIP Rebate:</label>
-                                        <input type="number" step="0.01" class="form-control" id="sgipRebate" name="sgipRebate" >
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="sgipRebateType">SGIP Rebate Type:</label>
-                                        <input type="text" class="form-control" id="sgipRebateType" name="sgipRebateType" >
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="sgipRebateStatus">SGIP Rebate Status:</label>
-                                        <input type="text" class="form-control" id="sgipRebateStatus" name="sgipRebateStatus" >
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="mainPanelUpgrade">Main Panel Upgrade:</label>
-                                        <input type="text" class="form-control" id="mainPanelUpgrade" name="mainPanelUpgrade" >
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="breakerTypeNeeded">Breaker Type Needed:</label>
-                                        <input type="text" class="form-control" id="breakerTypeNeeded" name="breakerTypeNeeded" >
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="downsizeNeeded">Downsize Needed:</label>
-                                        <input type="text" class="form-control" id="downsizeNeeded" name="downsizeNeeded" >
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="isEv">Is EV:</label>
-                                        <input type="text" class="form-control" id="isEv" name="isEv" >
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="subPanel">Sub Panel:</label>
-                                        <input type="text" class="form-control" id="subPanel" name="subPanel" >
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="panelDescription">Panel Description:</label>
-                                        <input type="text" class="form-control" id="panelDescription" name="panelDescription" >
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="inspectionDate">Inspection Date:</label>
-                                        <input type="date" class="form-control" id="inspectionDate" name="inspectionDate" >
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="inspectionPassed">Inspection Passed:</label>
-                                        <input type="text" class="form-control" id="inspectionPassed" name="inspectionPassed" >
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="reinspectionDate">Reinspection Date:</label>
-                                        <input type="date" class="form-control" id="reinspectionDate" name="reinspectionDate" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="placardStatus">Placard Status:</label>
-                                                <input type="text" class="form-control" id="placardStatus" name="placardStatus" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="placardsInPossession">Placards in Possession:</label>
-                                                <input type="text" class="form-control" id="placardsInPossession" name="placardsInPossession" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="acDiscoPlacardsNeeded">AC Disco Placards Needed:</label>
-                                                <input type="text" class="form-control" id="acDiscoPlacardsNeeded" name="acDiscoPlacardsNeeded" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="inspectionTech">Inspection Tech:</label>
-                                                <input type="text" class="form-control" id="inspectionTech" name="inspectionTech" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="accountingNotes">Accounting Notes:</label>
-                                                <textarea class="form-control" id="accountingNotes" name="accountingNotes" ></textarea>
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="roofingPrice">Roofing Price:</label>
-                                                <input type="number" step="0.01" class="form-control" id="roofingPrice" name="roofingPrice" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="otherAddersPrice">Other Adders Price:</label>
-                                                <input type="number" step="0.01" class="form-control" id="otherAddersPrice" name="otherAddersPrice" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="contractAmount">Contract Amount:</label>
-                                                <input type="number" step="0.01" class="form-control" id="contractAmount" name="contractAmount" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="cashPrice">Cash Price:</label>
-                                                <input type="number" step="0.01" class="form-control" id="cashPrice" name="cashPrice" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="financingType">Financing Type:</label>
-                                                <input type="text" class="form-control" id="financingType" name="financingType" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="m1Amount">M1 Amount:</label>
-                                                <input type="number" step="0.01" class="form-control" id="m1Amount" name="m1Amount" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="m1PaymentRequested">M1 Payment Requested:</label>
-                                                <input type="number" step="0.01" class="form-control" id="m1PaymentRequested" name="m1PaymentRequested" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="paymentReceivedM1">Payment Received M1:</label>
-                                                <input type="number" step="0.01" class="form-control" id="paymentReceivedM1" name="paymentReceivedM1" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="m2Amount">M2 Amount:</label>
-                                                <input type="number" step="0.01" class="form-control" id="m2Amount" name="m2Amount" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="m2PaymentRequested">M2 Payment Requested:</label>
-                                                <input type="number" step="0.01" class="form-control" id="m2PaymentRequested" name="m2PaymentRequested" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="paymentReceivedM2">Payment Received M2:</label>
-                                                <input type="number" step="0.01" class="form-control" id="paymentReceivedM2" name="paymentReceivedM2" >
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="isSalesCommissionsPaid">Is Sales Commissions Paid:</label>
-                                                <input type="text" class="form-control" id="isSalesCommissionsPaid" name="isSalesCommissionsPaid" >
-                                              </div>
+<input type="text" class="form-control" id="inverters" name="inverters" value="<%= project.getInverters() %>">
+  </div>
+  <div class="form-group">
+    <label for="dcKw">DC kW:</label>
+    <input type="number" step="0.01" class="form-control" id="dcKw" name="dcKw" value="<%= project.getDcKw() %>">
+  </div>
+  <div class="form-group">
+    <label for="solarPanelQuantity">Solar Panel Quantity:</label>
+    <input type="number" class="form-control" id="solarPanelQuantity" name="solarPanelQuantity" value="<%= project.getSolarPanelQuantity() %>">
+  </div>
+  <div class="form-group">
+    <label for="inverterQuantity">Inverter Quantity:</label>
+    <input type="number" class="form-control" id="inverterQuantity" name="inverterQuantity" value="<%= project.getInverterQuantity() %>">
+  </div>
+  <div class="form-group">
+    <label for="battery">Battery:</label>
+    <input type="text" class="form-control" id="battery" name="battery" value="<%= project.getBattery() %>">
+  </div>
+  <div class="form-group">
+    <label for="sgipRebate">SGIP Rebate:</label>
+    <input type="number" step="0.01" class="form-control" id="sgipRebate" name="sgipRebate" value="<%= project.getSgipRebate() %>">
+  </div>
+  <div class="form-group">
+    <label for="sgipRebateType">SGIP Rebate Type:</label>
+    <input type="text" class="form-control" id="sgipRebateType" name="sgipRebateType" value="<%= project.getSgipRebateType() %>">
+  </div>
+  <div class="form-group">
+    <label for="sgipRebateStatus">SGIP Rebate Status:</label>
+    <input type="text" class="form-control" id="sgipRebateStatus" name="sgipRebateStatus" value="<%= project.getSgipRebateStatus() %>">
+  </div>
+  <div class="form-group">
+    <label for="mainPanelUpgrade">Main Panel Upgrade:</label>
+    <input type="text" class="form-control" id="mainPanelUpgrade" name="mainPanelUpgrade" value="<%= project.getMainPanelUpgrade() %>">
+  </div>
+  <div class="form-group">
+    <label for="breakerTypeNeeded">Breaker Type Needed:</label>
+    <input type="text" class="form-control" id="breakerTypeNeeded" name="breakerTypeNeeded" value="<%= project.getBreakerTypeNeeded() %>">
+  </div>
+  <div class="form-group">
+    <label for="downsizeNeeded">Downsize Needed:</label>
+    <input type="text" class="form-control" id="downsizeNeeded" name="downsizeNeeded" value="<%= project.getDownsizeNeeded() %>">
+  </div>
+  <div class="form-group">
+    <label for="isEv">Is EV:</label>
+    <input type="text" class="form-control" id="isEv" name="isEv" value="<%= project.getIsEv() %>">
+  </div>
+  <div classclass="form-group">
+<label for="subPanel">Sub Panel:</label>
+<input type="text" class="form-control" id="subPanel" name="subPanel" value="<%= project.getSubPanel() %>">
+  </div>
+  <div class="form-group">
+    <label for="panelDescription">Panel Description:</label>
+    <input type="text" class="form-control" id="panelDescription" name="panelDescription" value="<%= project.getPanelDescription() %>">
+  </div>
+  <div class="form-group">
+    <label for="inspectionDate">Inspection Date:</label>
+    <input type="date" class="form-control" id="inspectionDate" name="inspectionDate" value="<%= project.getInspectionDate() %>">
+  </div>
+  <div class="form-group">
+    <label for="inspectionPassed">Inspection Passed:</label>
+    <input type="text" class="form-control" id="inspectionPassed" name="inspectionPassed" value="<%= project.getInspectionPassed() %>">
+  </div>
+  <div class="form-group">
+    <label for="reinspectionDate">Reinspection Date:</label>
+    <input type="date" class="form-control" id="reinspectionDate" name="reinspectionDate" value="<%= project.getReinspectionDate() %>">
+  </div>
+  <div class="form-group">
+    <label for="placardStatus">Placard Status:</label>
+    <input type="text" class="form-control" id="placardStatus" name="placardStatus" value="<%= project.getPlacardStatus() %>">
+  </div>
+  <div class="form-group">
+    <label for="placardsInPossession">Placards in Possession:</label>
+    <input type="text" class="form-control" id="placardsInPossession" name="placardsInPossession" value="<%= project.getPlacardsInPossession() %>">
+  </div>
+  <div class="form-group">
+    <label for="acDiscoPlacardsNeeded">AC Disco Placards Needed:</label>
+    <input type="text" class="form-control" id="acDiscoPlacardsNeeded" name="acDiscoPlacardsNeeded" value="<%= project.getAcDiscoPlacardsNeeded() %>">
+  </div>
+  <div class="form-group">
+    <label for="inspectionTech">Inspection Tech:</label>
+    <input type="text" class="form-control" id="inspectionTech" name="inspectionTech" value="<%= project.getInspectionTech() %>">
+  </div>
+  <div class="form-group">
+    <label for="accountingNotes">Accounting Notes:</label>
+    <textarea class="form-control" id="accountingNotes" name="accountingNotes"><%= project.getAccountingNotes() %></textarea>
+  </div>
+  <div class="form-group">
+    <label for="roofingPrice">Roofing Price:</label>
+    <input type="number" step="0.01" class="form-control" id="roofingPrice" name="roofingPrice" value="<%= project.getRoofingPrice() %>">
+  </div>
+  <div class="form-group">
+    <label for="otherAddersPrice">Other Adders Price:</label>
+    <input type="number" step="0.01" class="form-control" id="otherAddersPrice" name="otherAddersPrice" value="<%= project.getOtherAddersPrice() %>">
+  </div>
+  <div class="form-group">
+    <label for="contractAmount">Contract Amount:</label>
+    <input type="number" step="0.01" class="form-control" id="contractAmount" name="contractAmount" value="<%= project.getContractAmount() %>">
+  </div>
+  <div class="form-group">
+    <label for="cashPrice">Cash Price:</label>
+    <input type="number" step="0.01" class="form-control" id="cashPrice" name="cashPrice" value="<%= project.getCashPrice() %>">
+  </div>
+  <div class="form-group">
+    <label for="financingType">Financing Type:</label>
+    <input type="text" class="form-control" id="financingType" name="financingType" value="<%= project.getFinancingType() %>">
+  </div>
+  <div class="form-group">
+    <label for="m1Amount">M1 Amount:</label>
+    <input type="number" step="0.01" class="form-control" id="m1Amount" name="m1Amount" value="<%= project.getM1Amount() %>">
+  </div>
+  <div class="form-group">
+    <label for="m1PaymentRequested">M1 Payment Requested:</label>
+    <input type="number" step="0.01" class="form-control" id="m1PaymentRequested" name="m1PaymentRequested" value="<%= project.getM1PaymentRequested() %>">
+  </div>
+  <div class="form-group">
+    <label for="paymentReceivedM1">Payment Received M1:</label>
+    <input type="number" step="0.01" class="form-control" id="paymentReceivedM1" name="paymentReceivedM1" value="<%= project.getPaymentReceivedM1() %>">
+  </div>
+  <div class="form-group">
+    <label for="m2Amount">M2 Amount:</label>
+    <input type="number" step="0.01" class="form-control" id="m2Amount" name="m2Amount" value="<%= project.getM2Amount() %>">
+  </div>
+  <div class="form-group">
+    <label for="m2PaymentRequested">M2 Payment Requested:</label>
+    <input type="number" step="0.01" class="form-control" id="m2PaymentRequested" name="m2PaymentRequested" value="<%= project.getM2PaymentRequested() %>">
+  </div>
+  <div class="form-group">
+    <label for="paymentReceivedM2">Payment Received M2:</label>
+    <input type="number" step="0.01" class="form-control" id="paymentReceivedM2" name="paymentReceivedM2" value="<%= project.getPaymentReceivedM2() %>">
+  </div>
+  <div class="form-group">
+    <label for="isSalesCommissionsPaid">Is Sales Commissions Paid:</label>
+    <input type="text" class="form-control" id="isSalesCommissionsPaid" name="isSalesCommissionsPaid" value="<%= project.getIsSalesCommissionsPaid() %>">
+  </div>
 
-                                              <!-- Add more fields if needed -->
-
-                                              <button type="submit" class="btn btn-primary">Submit</button>
-                                            </form>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
                 </div>
 
                 <HR>
