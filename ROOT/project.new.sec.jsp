@@ -65,10 +65,18 @@
               String projectNotes = request.getParameter("projectNotes");
               String userResponsible = request.getParameter("userResponsible");
               String projectsDescription = request.getParameter("projectsDescription");
-              java.sql.Date installDate = java.sql.Date.valueOf(request.getParameter("installDate"));
+              java.sql.Date installDate = null;
+              String installDateParam = request.getParameter("installDate");
+              if (installDateParam != null && !installDateParam.isBlank()) {
+                  try {
+                      installDate = java.sql.Date.valueOf(installDateParam);
+                  } catch (IllegalArgumentException e) {
+                      // Handle invalid date format
+                  }
+              }
               String projectsOrganization = request.getParameter("projectsOrganization");
               String siteEvaluation = request.getParameter("siteEvaluation");
-              java.sql.Date projectCreated = new java.sql.Date(System.currentTimeMillis()); // You can use the current date or retrieve it from the form if needed
+              java.sql.Date projectCreated = new java.sql.Date(System.currentTimeMillis());
               String meterspotRequested = request.getParameter("meterspotRequested");
               String layoutDrafted = request.getParameter("layoutDrafted");
               String plansDrafted = request.getParameter("plansDrafted");
@@ -79,11 +87,43 @@
               String utilityCo = request.getParameter("utilityCo");
               String solarModules = request.getParameter("solarModules");
               String inverters = request.getParameter("inverters");
-              double dcKw = Double.parseDouble(request.getParameter("dcKw"));
-              int solarPanelQuantity = Integer.parseInt(request.getParameter("solarPanelQuantity"));
-              int inverterQuantity = Integer.parseInt(request.getParameter("inverterQuantity"));
+              double dcKw = 0.0;
+              String dcKwParam = request.getParameter("dcKw");
+              if (dcKwParam != null && !dcKwParam.isBlank()) {
+                  try {
+                      dcKw = Double.parseDouble(dcKwParam);
+                  } catch (NumberFormatException e) {
+                      // Handle invalid double format
+                  }
+              }
+              int solarPanelQuantity = 0;
+              String solarPanelQuantityParam = request.getParameter("solarPanelQuantity");
+              if (solarPanelQuantityParam != null && !solarPanelQuantityParam.isBlank()) {
+                  try {
+                      solarPanelQuantity = Integer.parseInt(solarPanelQuantityParam);
+                  } catch (NumberFormatException e) {
+                      // Handle invalid integer format
+                  }
+              }
+              int inverterQuantity = 0;
+              String inverterQuantityParam = request.getParameter("inverterQuantity");
+              if (inverterQuantityParam != null && !inverterQuantityParam.isBlank()) {
+                  try {
+                      inverterQuantity = Integer.parseInt(inverterQuantityParam);
+                  } catch (NumberFormatException e) {
+                      // Handle invalid integer format
+                  }
+              }
               String battery = request.getParameter("battery");
-              double sgipRebate = Double.parseDouble(request.getParameter("sgipRebate"));
+              double sgipRebate = 0.0;
+              String sgipRebateParam = request.getParameter("sgipRebate");
+              if (sgipRebateParam != null && !sgipRebateParam.isBlank()) {
+                  try {
+                      sgipRebate = Double.parseDouble(sgipRebateParam);
+                  } catch (NumberFormatException e) {
+                      // Handle invalid double format
+                  }
+              }
               String sgipRebateType = request.getParameter("sgipRebateType");
               String sgipRebateStatus = request.getParameter("sgipRebateStatus");
               String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
@@ -92,27 +132,131 @@
               String isEv = request.getParameter("isEv");
               String subPanel = request.getParameter("subPanel");
               String panelDescription = request.getParameter("panelDescription");
-              java.sql.Date inspectionDate = java.sql.Date.valueOf(request.getParameter("inspectionDate"));
+              java.sql.Date inspectionDate = null;
+              String inspectionDateParam = request.getParameter("inspectionDate");
+              if (inspectionDateParam != null && !inspectionDateParam.isBlank()) {
+                  try {
+                      inspectionDate = java.sql.Date.valueOf(inspectionDateParam);
+                  } catch (IllegalArgumentException e) {
+                      // Handle invalid date format
+                  }
+              }
               String inspectionPassed = request.getParameter("inspectionPassed");
-              java.sql.Date reinspectionDate = java.sql.Date.valueOf(request.getParameter("reinspectionDate"));
+              java.sql.Date reinspectionDate = null;
+              String reinspectionDateParam = request.getParameter("reinspectionDate");
+              if (reinspectionDateParam != null && !reinspectionDateParam.isBlank()) {
+                  try {
+                      reinspectionDate = java.sql.Date.valueOf(reinspectionDateParam);
+                  } catch (IllegalArgumentException e) {
+                      // Handle invalid date format
+                  }
+              }
               String placardStatus = request.getParameter("placardStatus");
               String placardsInPossession = request.getParameter("placardsInPossession");
               String acDiscoPlacardsNeeded = request.getParameter("acDiscoPlacardsNeeded");
               String inspectionTech = request.getParameter("inspectionTech");
               String accountingNotes = request.getParameter("accountingNotes");
-              double roofingPrice = Double.parseDouble(request.getParameter("roofingPrice"));
-              double otherAddersPrice = Double.parseDouble(request.getParameter("otherAddersPrice"));
-              double contractAmount = Double.parseDouble(request.getParameter("contractAmount"));
-              double cashPrice = Double.parseDouble(request.getParameter("cashPrice"));
+              double roofingPrice = 0.0;
+              String roofingPriceParam = request.getParameter("roofingPrice");
+              if (roofingPriceParam != null && !roofingPriceParam.isBlank()) {
+                  try {
+                      roofingPrice = Double.parseDouble(roofingPriceParam);
+                  } catch (NumberFormatException e) {
+                      // Handle invalid double format
+                  }
+              }
+              double otherAddersPrice = 0.0;
+              String otherAddersPriceParam = request.getParameter("otherAddersPrice");
+              if (otherAddersPriceParam != null && !otherAddersPriceParam.isBlank()) {
+                  try {
+                      otherAddersPrice = Double.parseDouble(otherAddersPriceParam);
+                  } catch (NumberFormatException e) {
+                      // Handle invalid double format
+                  }
+              }
+              double contractAmount = 0.0;
+              String contractAmountParam = request.getParameter("contractAmount");
+              if (contractAmountParam != null && !contractAmountParam.isBlank()) {
+                  try {
+                      contractAmount = Double.parseDouble(contractAmountParam);
+                  } catch (NumberFormatException e) {
+                      // Handle invalid double format
+                  }
+              }
+              double cashPrice = 0.0;
+              String cashPriceParam = request.getParameter("cashPrice");
+              if (cashPriceParam != null && !cashPriceParam.isBlank()) {
+                  try {
+                      cashPrice = Double.parseDouble(cashPriceParam);
+                  } catch (NumberFormatException e) {
+                      // Handle invalid double format
+                  }
+              }
               String financingType = request.getParameter("financingType");
-              double m1Amount = Double.parseDouble(request.getParameter("m1Amount"));
-              double m1PaymentRequested = Double.parseDouble(request.getParameter("m1PaymentRequested"));
-              double paymentReceivedM1 = Double.parseDouble(request.getParameter("paymentReceivedM1"));
-              double m2Amount = Double.parseDouble(request.getParameter("m2Amount"));
-              double m2PaymentRequested = Double.parseDouble(request.getParameter("m2PaymentRequested"));
-              double paymentReceivedM2 = Double.parseDouble(request.getParameter("paymentReceivedM2"));
-              String isSalesCommissionsPaid = request.getParameter("isSalesCommissionsPaid");
-              java.sql.Date actualCloseDate = java.sql.Date.valueOf(request.getParameter("actualCloseDate"));
+              double m1Amount = 0.0;
+              String m1AmountParam = request.getParameter("m1Amount");
+              if (m1AmountParam != null && !m1AmountParam.isBlank()) {
+                  try {
+                      m1Amount = Double.parseDouble(m1AmountParam);
+                  } catch (NumberFormatException e) {
+                      // Handle invalid double format
+                  }
+              }
+              double m1PaymentRequested = 0.0;
+              String m1PaymentRequestedParam = request.getParameter("m1PaymentRequested");
+              if (m1PaymentRequestedParam != null && !m1PaymentRequestedParam.isBlank()) {
+                  try {
+                      m1PaymentRequested = Double.parseDouble(m1PaymentRequestedParam);
+                  } catch (NumberFormatException e) {
+                      // Handle invalid double format
+                  }
+              }
+              double paymentReceivedM1 = 0.0;
+              String paymentReceivedM1Param = request.getParameter("paymentReceivedM1");
+              if (paymentReceivedM1Param != null && !paymentReceivedM1Param.isBlank()) {
+                  try {
+                      paymentReceivedM1 = Double.parseDouble(paymentReceivedM1Param);
+                    } catch (NumberFormatException e) {
+                        // Handle invalid double format
+                    }
+                }              
+                      double m2Amount = 0.0;
+                      String m2AmountParam = request.getParameter("m2Amount");
+                      if (m2AmountParam != null && !m2AmountParam.isBlank()) {
+                          try {
+                              m2Amount = Double.parseDouble(m2AmountParam);
+                          } catch (NumberFormatException e) {
+                              // Handle invalid double format
+                          }
+                      }
+                      double m2PaymentRequested = 0.0;
+                      String m2PaymentRequestedParam = request.getParameter("m2PaymentRequested");
+                      if (m2PaymentRequestedParam != null && !m2PaymentRequestedParam.isBlank()) {
+                          try {
+                              m2PaymentRequested = Double.parseDouble(m2PaymentRequestedParam);
+                          } catch (NumberFormatException e) {
+                              // Handle invalid double format
+                          }
+                      }
+                      double paymentReceivedM2 = 0.0;
+                      String paymentReceivedM2Param = request.getParameter("paymentReceivedM2");
+                      if (paymentReceivedM2Param != null && !paymentReceivedM2Param.isBlank()) {
+                          try {
+                              paymentReceivedM2 = Double.parseDouble(paymentReceivedM2Param);
+                          } catch (NumberFormatException e) {
+                              // Handle invalid double format
+                          }
+                      }
+                      String isSalesCommissionsPaid = request.getParameter("isSalesCommissionsPaid");
+                      java.sql.Date actualCloseDate = null;
+                      String actualCloseDateParam = request.getParameter("actualCloseDate");
+                      if (actualCloseDateParam != null && !actualCloseDateParam.isBlank()) {
+                          try {
+                              actualCloseDate = java.sql.Date.valueOf(actualCloseDateParam);
+                          } catch (IllegalArgumentException e) {
+                              // Handle invalid date format
+                          }
+                      }
 
               // Create a new project object
               Project project = new Project();
