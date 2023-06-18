@@ -41,6 +41,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHwbVpNgh3G5yG1cmT0HMe8TikX4DC2qE&libraries=places"></script>
+
   </head>
 <body>
   <main id="main">
@@ -221,6 +224,9 @@
           <div class="container mt-5">
             <div class="container">
               <form action="<%=rootUpdate%>lead.new.sec.jsp/" method="post">
+              <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" >
+              <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" >
+
                 <div class="form-group">
                     <label>Name:</label>
                     <input type="text" class="form-control" name="name">
@@ -451,5 +457,26 @@
       </div>
     </section><!-- End Blog Section -->
   </main>
+  <script>
+  $(document).ready(function() {
+    // Initialize the autocomplete object
+    var autocomplete = new google.maps.places.Autocomplete(document.getElementById('address'));
+    // Restrict autocomplete results to addresses only
+    autocomplete.setTypes(['address']);
+    // Handle the selection of an address
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+      var place = autocomplete.getPlace();
+      // Optionally, you can access various address components
+      var address = place.formatted_address;
+      var latitude = place.geometry.location.lat();
+      var longitude = place.geometry.location.lng();
+      alert(latitude);
+      // Use the selected address or its components as needed
+      console.log('Address:', address);
+      console.log('Latitude:', latitude);
+      console.log('Longitude:', longitude);
+    });
+  });
+  </script>
 </body>
 </html>
