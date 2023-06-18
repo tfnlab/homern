@@ -198,7 +198,8 @@
                 }
                 opportunity.setUsername(username);
                 opportunity.setUserEmail(useremail);
-                //opportunityDAO.insertOpportunity(opportunity);
+                opportunity.setRecordId(Integer.parseInt(request.getParameter("opportunity_id")));
+                opportunityDAO.updateOpportunity(opportunity);
             }
             opportunity = opportunityDAO.getOpportunityByUsernameANDID(Integer.parseInt(request.getParameter("opportunity_id")),username);
             %>
