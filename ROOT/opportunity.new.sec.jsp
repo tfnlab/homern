@@ -78,8 +78,20 @@
                 String utilityCo = request.getParameter("utilityCo");
                 String solarModules = request.getParameter("solarModules");
                 String inverters = request.getParameter("inverters");
-                int solarPanelQuantity = Integer.parseInt(request.getParameter("solarPanelQuantity"));
-                int inverterQuantity = Integer.parseInt(request.getParameter("inverterQuantity"));
+                String solarPanelQuantityParam = request.getParameter("solarPanelQuantity");
+                int solarPanelQuantity = 0; // Default value
+
+                if (solarPanelQuantityParam != null && !solarPanelQuantityParam.isEmpty()) {
+                    solarPanelQuantity = Integer.parseInt(solarPanelQuantityParam);
+                }
+
+                String inverterQuantityParam = request.getParameter("inverterQuantity");
+                int inverterQuantity = 0; // Default value
+
+                if (inverterQuantityParam != null && !inverterQuantityParam.isEmpty()) {
+                    inverterQuantity = Integer.parseInt(inverterQuantityParam);
+                }
+
                 String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
                 String otherAdders = request.getParameter("otherAdders");
                 String companyCamLink = request.getParameter("companyCamLink");
