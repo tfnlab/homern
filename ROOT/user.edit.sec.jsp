@@ -136,7 +136,7 @@
          String sendgrid_key = request.getParameter("sendgrid_key");
          String sendgrid_email = request.getParameter("sendgrid_email");
          String language = request.getParameter("language");
-
+         String hrn_access_email = request.getParameter("hrn_access_email");
           BigDecimal stripe_fee = new BigDecimal("0");
           if (request.getParameter("stripe_fee") != null && !request.getParameter("stripe_fee").isEmpty()) {
             stripe_fee = new BigDecimal(request.getParameter("stripe_fee"));
@@ -188,6 +188,7 @@
          user.setSendgrid_email(sendgrid_email);
          user.setLanguage(language);
 
+         user.setHrn_access_email(hrn_access_email);
 
          user.setWallet_id_private(request.getParameter("wallet_id_private"));
          user.setWallet_id_public(request.getParameter("wallet_id_public"));
@@ -438,6 +439,12 @@
                <HR>
                <img src="../technician.edit.getowner.view.sec.jsp/?contract_id=0xcFE9f30CB7C339039782DC5E4a1a24632CaF0D83&token_id=<%= user.getWallet_id_active_nft_id() %>" class="img-fluid" style="max-width: 50%;"/>
            </div>
+
+           <div class="form-group mt-3">
+           <label for="stripe_key_pub" class="mr-2">Access Emails:</label>
+           <input type="text" class="form-control" id="hrn_access_emails" name="hrn_access_emails" value="<%= user.getHrn_access_email() %>" tabindex="25" >
+           </div>
+
            <div class="form-group mt-3">
              <button type="submit" class="btn btn-primary" tabindex="26">Submit</button>
            </div>

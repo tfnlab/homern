@@ -490,6 +490,7 @@
                <HR>
                <img src="technician.edit.getowner.view.jsp?contract_id=0xcFE9f30CB7C339039782DC5E4a1a24632CaF0D83&token_id=<%= user.getWallet_id_active_nft_id() %>" class="img-fluid" style="max-width: 50%;"/>
            </div>
+
            <div class="form-group mt-3">
            <label for="stripe_key_pub" class="mr-2">Access Emails:</label>
            <input type="text" class="form-control" id="hrn_access_emails" name="hrn_access_emails" value="<%= user.getHrn_access_email() %>" tabindex="25" >
