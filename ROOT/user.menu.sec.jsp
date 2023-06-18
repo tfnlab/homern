@@ -170,11 +170,11 @@
                   <p><%= (new Translate()).translate("Leads", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
-                  <a href="<%=rootUpdate%>subscription.list.sec.jsp/" tabindex="22" ><i class="fa fa-bullseye"></i></a>
+                  <a href="<%=rootUpdate%>opportunity.list.sec.jsp/" tabindex="22" ><i class="fa fa-bullseye"></i></a>
                   <p><%= (new Translate()).translate("Opportunities", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
-                  <a href="<%=rootUpdate%>contact.list.sec.jsp/" tabindex="23" ><i class="fa fa-tasks"></i></a>
+                  <a href="<%=rootUpdate%>project.list.sec.jsp/" tabindex="23" ><i class="fa fa-tasks"></i></a>
                   <p><%= (new Translate()).translate("Projects", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
