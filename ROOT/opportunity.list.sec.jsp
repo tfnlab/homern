@@ -67,7 +67,7 @@
 
                 try {
                     opportunities = opportunityDAO.getOpportunitiesByUsername(username);
-                } catch (SQLException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 %>
