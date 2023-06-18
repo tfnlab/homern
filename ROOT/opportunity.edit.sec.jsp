@@ -57,6 +57,9 @@
           <a href="<%=rootUpdate%>opportunity.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Opportunity</a> |
             <a href="<%=rootUpdate%>opportunity.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
             <%
+
+            OpportunityDAO opportunityDAO = new OpportunityDAO();
+            Opportunity opportunity = new Opportunity();
             if (request.getMethod().equalsIgnoreCase("post")) {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -152,7 +155,6 @@
                 }
 
 
-                Opportunity opportunity = new Opportunity();
                 opportunity.setHasAProjectBeenCreated(hasAProjectBeenCreated);
                 opportunity.setName(name);
                 opportunity.setOrganization(organization);
@@ -196,9 +198,9 @@
                 }
                 opportunity.setUsername(username);
                 opportunity.setUserEmail(useremail);
-                OpportunityDAO opportunityDAO = new OpportunityDAO();
                 //opportunityDAO.insertOpportunity(opportunity);
             }
+            opportunity = opportunityDAO.getOpportunityByUsernameANDID(Integer.parseInt(request.getParameter("opportunity_id")),username);
             %>
         <HR>
           <div class="container mt-5">
@@ -212,7 +214,7 @@
 
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" class="form-control" name="name">
+                    <input type="text" class="form-control" name="name" value="<%=opportunity.getName()%>">
                 </div>
 
                 <div class="form-group">

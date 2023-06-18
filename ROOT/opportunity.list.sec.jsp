@@ -88,7 +88,7 @@
                                     <%= opportunity.getRecordId() %>
                                 </a>
                                 </td>
-                                
+
                                 <td><%= opportunity.getName() %></td>
                                 <td><%= opportunity.getEmail() %></td>
                                 <!-- Add more table cells for other properties -->
