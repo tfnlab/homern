@@ -124,10 +124,10 @@
                 opportunity.setOtherAdders(otherAdders);
                 opportunity.setCompanyCamLink(companyCamLink);
                 if (dateOfNextActivity != null && !dateOfNextActivity.isEmpty()) {
-                    lead.setDateOfNextActivity(dateFormat.parse(dateOfNextActivity));
+                    opportunity.setDateOfNextActivity(dateFormat.parse(dateOfNextActivity));
                 }
                 if (dateOfLastActivity != null && !dateOfLastActivity.isEmpty()) {
-                    lead.setDateOfLastActivity(dateFormat.parse(dateOfLastActivity));
+                    opportunity.setDateOfLastActivity(dateFormat.parse(dateOfLastActivity));
                 }
                 opportunity.setDateOfNextActivity(dateOfNextActivity);
                 opportunity.setDateOfLastActivity(dateOfLastActivity);
@@ -139,7 +139,7 @@
                 opportunity.setCashPrice(cashPrice);
                 opportunity.setContractAmount(contractAmount);
                 if (actualCloseDate != null && !actualCloseDate.isEmpty()) {
-                    lead.setActualCloseDate(dateFormat.parse(actualCloseDate));
+                    opportunity.setActualCloseDate(dateFormat.parse(actualCloseDate));
                 }
                 opportunity.setUsername(username);
                 opportunity.setUseremail(useremail);
