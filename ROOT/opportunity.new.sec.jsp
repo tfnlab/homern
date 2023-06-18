@@ -54,13 +54,14 @@
         <HR>
           <a href="<%=rootUpdate%>opportunity.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Opportunity</a> |
             <a href="<%=rootUpdate%>opportunity.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-
+            <%
+            if (request.getMethod().equalsIgnoreCase("post")) {
+              
+            }
+            %>
         <HR>
           <div class="container mt-5">
             <div class="container">
-                <h3>Opportunities List CSV <a href="<%=rootUpdate%>opportunity.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i></a> <a href="<%=rootUpdate%>opportunity.new.bulk.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-upload"></i></a>  </h3>
-
-
                 <h2>Create Opportunity</h2>
                 <form action="<%=rootUpdate%>opportunity.new.sec.jsp/" method="post">
                 <div class="form-group">
