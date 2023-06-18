@@ -180,11 +180,6 @@
               project.setUsername(username);
               project.setUserEmail(useremail);
 
-              // Create a new project object
-              Project project = new Project();
-              project.setProjectName(projectName);
-              project.setPhoneNumber(phoneNumber);
-              project.setAddress(address);
               // Set more project properties as needed
 
               // Create a new ProjectDAO instance and save the project
