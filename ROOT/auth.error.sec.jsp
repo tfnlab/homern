@@ -45,7 +45,21 @@
   <main id="main">
     <section id="blog" class="blog">
       <div class="container px-4 px-lg-5">
-         Auth Error Contact Support
+          <div class="container mt-5">
+            <h2> Home Renovation Nation </h2>
+            <HR>
+        <h2>Auth Error</h2>
+        <HR>
+         
+        <HR>
+          <div class="container mt-5">
+            <div class="container">
+
+                 Auth Error Contact Support
+
+            </div>
+          </div>
+        </div>
       </div>
     </section><!-- End Blog Section -->
   </main>
