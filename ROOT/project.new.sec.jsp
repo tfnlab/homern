@@ -178,7 +178,7 @@
               project.setIsSalesCommissionsPaid(isSalesCommissionsPaid);
               project.setActualCloseDate(actualCloseDate);
               project.setUsername(username);
-              project.setUserEmail(userEmail);
+              project.setUserEmail(useremail);
 
               // Create a new project object
               Project project = new Project();
