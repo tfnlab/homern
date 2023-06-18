@@ -23,6 +23,7 @@
 <%@ page import="com.tfnlab.mysql.ContactDAO" %>
 <%@ page import="com.tfnlab.mysql.Contact" %>
 <%@ page import="com.tfnlab.util.Translate" %>
+<%@ page import="com.tfnlab.mysql.Project,com.tfnlab.mysql.ProjectDAO" %>
 <%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,10 +57,31 @@
           <div class="container mt-5">
             <div class="container">
                 <h3>Project List CSV <a href="<%=rootUpdate%>project.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i></a> <a href="<%=rootUpdate%>project.new.bulk.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-upload"></i></a>  </h3>
+                <%
+                ProjectDAO projectDAO = new ProjectDAO();
+                List<Project> projects = projectDAO.getProjectsByUsername(username);
 
+                %>
 
 
                 <div class="row">
+                    <% for (Project project : projects) { %>
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="<%=rootUpdate%>project.edit.sec.jsp/?lead_id=<%= project.getRecordId() %>" tabindex="2">
+                                        <%= lead.getRecordId() %>
+                                    </a>
+                                </h5>
+                                <p class="card-text"><%= project.getProjectName() %>  </p>
+                                <p class="card-text"><%= project.getPhone() %></p>
+                                <p class="card-text"><%= project.getPhoneNumber() %></p>
+                                <!-- Add more card content for other lead properties -->
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
                 </div>
 
                 <HR>
