@@ -25,6 +25,8 @@
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ page import="com.tfnlab.mysql.Lead" %>
 <%@ page import="com.tfnlab.mysql.LeadDAO" %>
+<%@ page import="com.tfnlab.mysql.Opportunity" %>
+<%@ page import="com.tfnlab.mysql.OpportunityDAO" %>
 <%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +58,84 @@
             <a href="<%=rootUpdate%>opportunity.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
             <%
             if (request.getMethod().equalsIgnoreCase("post")) {
-              
+                String hasAProjectBeenCreated = request.getParameter("hasAProjectBeenCreated");
+                String name = request.getParameter("name");
+                String organization = request.getParameter("organization");
+                String convertedFromLead = request.getParameter("convertedFromLead");
+                String email = request.getParameter("email");
+                String interconnectionStatus = request.getParameter("interconnectionStatus");
+                String phoneNumber = request.getParameter("phoneNumber");
+                String address = request.getParameter("address");
+                String city = request.getParameter("city");
+                String linkedEmailAddress = request.getParameter("linkedEmailAddress");
+                String wifiInformation = request.getParameter("wifiInformation");
+                String salesNotes = request.getParameter("salesNotes");
+                BigDecimal probabilityOfWinning = new BigDecimal(request.getParameter("probabilityOfWinning"));
+                String userResponsible = request.getParameter("userResponsible");
+                String currentState = request.getParameter("currentState");
+                String siteEvaluation = request.getParameter("siteEvaluation");
+                String utilityCo = request.getParameter("utilityCo");
+                String dcKw = request.getParameter("dcKw");
+                String solarModules = request.getParameter("solarModules");
+                String inverters = request.getParameter("inverters");
+                int solarPanelQuantity = Integer.parseInt(request.getParameter("solarPanelQuantity"));
+                int inverterQuantity = Integer.parseInt(request.getParameter("inverterQuantity"));
+                String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
+                String otherAdders = request.getParameter("otherAdders");
+                String companyCamLink = request.getParameter("companyCamLink");
+                String dateOfNextActivity = request.getParameter("dateOfNextActivity");
+                String dateOfLastActivity = request.getParameter("dateOfLastActivity");
+                String battery = request.getParameter("battery");
+                String financingType = request.getParameter("financingType");
+                String accountingNotes = request.getParameter("accountingNotes");
+                BigDecimal roofingPrice = new BigDecimal(request.getParameter("roofingPrice"));
+                BigDecimal opportunityValue = new BigDecimal(request.getParameter("opportunityValue"));
+                BigDecimal cashPrice = new BigDecimal(request.getParameter("cashPrice"));
+                BigDecimal contractAmount = new BigDecimal(request.getParameter("contractAmount"));
+                String actualCloseDate = request.getParameter("actualCloseDate");
+                String opportunityCreated = request.getParameter("opportunityCreated");
+
+                Opportunity opportunity = new Opportunity();
+                opportunity.setHasAProjectBeenCreated(hasAProjectBeenCreated);
+                opportunity.setName(name);
+                opportunity.setOrganization(organization);
+                opportunity.setConvertedFromLead(convertedFromLead);
+                opportunity.setEmail(email);
+                opportunity.setInterconnectionStatus(interconnectionStatus);
+                opportunity.setPhoneNumber(phoneNumber);
+                opportunity.setAddress(address);
+                opportunity.setCity(city);
+                opportunity.setLinkedEmailAddress(linkedEmailAddress);
+                opportunity.setWifiInformation(wifiInformation);
+                opportunity.setSalesNotes(salesNotes);
+                opportunity.setProbabilityOfWinning(probabilityOfWinning);
+                opportunity.setUserResponsible(userResponsible);
+                opportunity.setCurrentState(currentState);
+                opportunity.setSiteEvaluation(siteEvaluation);
+                opportunity.setUtilityCo(utilityCo);
+                opportunity.setDcKw(dcKw);
+                opportunity.setSolarModules(solarModules);
+                opportunity.setInverters(inverters);
+                opportunity.setSolarPanelQuantity(solarPanelQuantity);
+                opportunity.setInverterQuantity(inverterQuantity);
+                opportunity.setMainPanelUpgrade(mainPanelUpgrade);
+                opportunity.setOtherAdders(otherAdders);
+                opportunity.setCompanyCamLink(companyCamLink);
+                opportunity.setDateOfNextActivity(dateOfNextActivity);
+                opportunity.setDateOfLastActivity(dateOfLastActivity);
+                opportunity.setBattery(battery);
+                opportunity.setFinancingType(financingType);
+                opportunity.setAccountingNotes(accountingNotes);
+                opportunity.setRoofingPrice(roofingPrice);
+                opportunity.setOpportunityValue(opportunityValue);
+                opportunity.setCashPrice(cashPrice);
+                opportunity.setContractAmount(contractAmount);
+                opportunity.setActualCloseDate(actualCloseDate);
+                opportunity.setOpportunityCreated(opportunityCreated);
+                lead.setUsername(username);
+                lead.setUseremail(useremail);
+                OpportunityDAO opportunityDAO = new OpportunityDAO();
+                opportunityDAO.insertOpportunity(opportunity);
             }
             %>
         <HR>
