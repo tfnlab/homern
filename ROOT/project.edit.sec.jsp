@@ -382,9 +382,29 @@
 
                     <div class="form-group">
                       <label for="projectsStatus">Projects Status:</label>
-                      <input type="text" class="form-control" id="projectsStatus" name="projectsStatus" value="<%= project.getProjectsStatus() %>">
+                      <select id="projectsStatus" name="projectsStatus" class="form-control">
+                        <option value="Plan Set Creation">Plan Set Creation</option>
+                        <option value="Technical Review">Technical Review</option>
+                        <option value="Ready for Permitting">Ready for Permitting</option>
+                        <option value="Permitting">Permitting</option>
+                        <option value="Plan Corrections">Plan Corrections</option>
+                        <option value="Installation">Installation</option>
+                        <option value="Punchlist Items">Punchlist Items</option>
+                        <option value="Inspection">Inspection</option>
+                        <option value="Inspection Corrections">Inspection Corrections</option>
+                        <option value="PTO">PTO</option>
+                        <option value="Configure Enlighten">Configure Enlighten</option>
+                        <option value="Finished">Finished</option>
+                      </select>
                     </div>
+                    <script>
+                    $(document).ready(function() {
+                      var projectStatus = '<%= project.getProjectsStatus() %>'; // Assuming this returns the project status value
 
+                      // Set the selected option based on the project status
+                      $('#projectsStatus').val(projectStatus);
+                    });
+                    </script>
                     <div class="form-group">
                       <label for="wifiInformation">Wifi Information:</label>
                       <input type="text" class="form-control" id="wifiInformation" name="wifiInformation" value="<%= project.getWifiInformation() %>">
