@@ -60,7 +60,7 @@
                 <%
                 ProjectDAO projectDAO = new ProjectDAO();
                 List<Project> projects = null;
-                if(request.getParameter("project_source")!=null) projects = leadDAO.getProjectsByUsernameAndStatus(username, request.getParameter("project_source"));
+                if(request.getParameter("project_source")!=null) projects = projectDAO.getProjectsByUsernameAndStatus(username, request.getParameter("project_source"));
                 else projects = leadDAO.getProjectsByUsername(username);
 
 
