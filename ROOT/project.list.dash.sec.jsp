@@ -48,18 +48,17 @@
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
             <HR>
-        <h2>Leads</h2>
+        <h2>Projects</h2>
         <HR>
         <HR>
-          <a href="<%=rootUpdate%>lead.new.sec.jsp/" tabindex="2"><i class="fas fa-plus"></i> Lead</a> |
-            <a href="<%=rootUpdate%>lead.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Leads</a>
+          <a href="<%=rootUpdate%>project.new.sec.jsp/" tabindex="2"><i class="fas fa-plus"></i> Project</a> |
+            <a href="<%=rootUpdate%>project.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Projects</a>
         <HR>
           <div class="container mt-5">
             <div class="container">
-                <h3>Lead List CSV <a href="<%=rootUpdate%>lead.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i></a> <a href="<%=rootUpdate%>lead.new.bulk.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-upload"></i></a>  </h3>
 
 
-                <% 
+                <%
                 try {
                     ProjectDAO projectDAO = new ProjectDAO();
                     Map<String, Integer> projectByStatus = projectDAO.getProjectStatusCountByUsername(username);
