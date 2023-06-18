@@ -23,8 +23,8 @@
 <%@ page import="com.tfnlab.mysql.ContactDAO" %>
 <%@ page import="com.tfnlab.mysql.Contact" %>
 <%@ page import="com.tfnlab.util.Translate" %>
-<%@ page import="com.tfnlab.mysql.Lead" %>
-<%@ page import="com.tfnlab.mysql.LeadDAO" %>
+<%@ page import="com.tfnlab.mysql.Opportunity" %>
+<%@ page import="com.tfnlab.mysql.OpportunityDAO" %>
 <%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
