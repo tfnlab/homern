@@ -75,7 +75,7 @@
                 String currentState = request.getParameter("currentState");
                 String siteEvaluation = request.getParameter("siteEvaluation");
                 String utilityCo = request.getParameter("utilityCo");
-                String dcKw = request.getParameter("dcKw");
+                BigDecimal dcKw = new BigDecimal(request.getParameter("dcKw"));
                 String solarModules = request.getParameter("solarModules");
                 String inverters = request.getParameter("inverters");
                 int solarPanelQuantity = Integer.parseInt(request.getParameter("solarPanelQuantity"));
@@ -132,8 +132,8 @@
                 opportunity.setContractAmount(contractAmount);
                 opportunity.setActualCloseDate(actualCloseDate);
                 opportunity.setOpportunityCreated(opportunityCreated);
-                lead.setUsername(username);
-                lead.setUseremail(useremail);
+                opportunity.setUsername(username);
+                opportunity.setUseremail(useremail);
                 OpportunityDAO opportunityDAO = new OpportunityDAO();
                 opportunityDAO.insertOpportunity(opportunity);
             }
