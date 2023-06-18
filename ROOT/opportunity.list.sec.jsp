@@ -71,31 +71,24 @@
                     e.printStackTrace();
                 }
                 %>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <!-- Add more table headers for other properties -->
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% for (Opportunity opportunity : opportunities) { %>
-                            <tr>
-                                <td>
-                                <a href="<%=rootUpdate%>opportunity.edit.sec.jsp/?opportunity_id=<%= opportunity.getRecordId() %>" tabindex="2">
-                                    <%= opportunity.getRecordId() %>
-                                </a>
-                                </td>
-
-                                <td><%= opportunity.getName() %></td>
-                                <td><%= opportunity.getEmail() %></td>
-                                <!-- Add more table cells for other properties -->
-                            </tr>
-                        <% } %>
-                    </tbody>
-                </table>
+                <div class="row">
+                    <% for (Opportunity opportunity : opportunities) { %>
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="<%=rootUpdate%>opportunity.edit.sec.jsp/?opportunity_id=<%= opportunity.getRecordId() %>" tabindex="2">
+                                        <%= opportunity.getRecordId() %>
+                                    </a>
+                                </h5>
+                                <p class="card-text"><%= opportunity.getName() %></p>
+                                <p class="card-text"><%= opportunity.getEmail() %></p>
+                                <!-- Add more card content for other opportunity properties -->
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
 
                 <HR>
             </div>
