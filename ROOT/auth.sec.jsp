@@ -16,7 +16,7 @@ if(rip.equals("149.28.77.249") || rip.equals("96.40.155.153")){
     if (useremail.equals(usernameOBJ.getEmail()) ) {
       auth = true;
     }
-    if (usernameOBJ.getHrn_access_email()!=null && usernameOBJ.getHrn_access_email().contains(useremail)) ) {
+    if (usernameOBJ.getHrn_access_email()!=null && usernameOBJ.getHrn_access_email().contains(useremail)) {
       auth = true;
     }
     if(!auth){
