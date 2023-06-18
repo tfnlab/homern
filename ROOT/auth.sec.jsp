@@ -12,9 +12,16 @@ if(rip.equals("149.28.77.249") || rip.equals("96.40.155.153")){
     useremail = request.getParameter("hrnemail");
     usernameOBJ = uDao.getUserByUsername(request.getParameter("username"));
     rootUpdate = "../";
-    if (!usernameOBJ.getHrn_access_email().contains(useremail) && !useremail.equals(usernameOBJ.getEmail())) {
-         RequestDispatcher dispatcher = request.getRequestDispatcher("auth.error.sec.jsp");
-         dispatcher.forward(request, response);
+    boolean auth = false;
+    if (useremail.equals(usernameOBJ.getEmail()) ) {
+      auth = true;
+    }
+    if (usernameOBJ.getHrn_access_email()!=null && usernameOBJ.getHrn_access_email().contains(useremail)) ) {
+      auth = true;
+    }
+    if(!auth){
+      RequestDispatcher dispatcher = request.getRequestDispatcher("auth.error.sec.jsp");
+      dispatcher.forward(request, response);
     }
 }
 if (usernameCheck == null || usernameCheck.isEmpty() || usernameCheck.length() < 2 ) {
