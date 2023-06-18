@@ -61,7 +61,191 @@
                 <h3>Opportunities List CSV <a href="<%=rootUpdate%>opportunity.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i></a> <a href="<%=rootUpdate%>opportunity.new.bulk.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-upload"></i></a>  </h3>
 
 
+                <h2>Create Opportunity</h2>
+                <form action="<%=rootUpdate%>opportunity.new.sec.jsp/" method="post">
+                <div class="form-group">
+                    <label>Has a Project Been Created?</label>
+                    <input type="text" class="form-control" name="hasAProjectBeenCreated">
+                </div>
 
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="name">
+                </div>
+
+                <div class="form-group">
+                    <label>Organization</label>
+                    <input type="text" class="form-control" name="organization">
+                </div>
+
+                <div class="form-group">
+                    <label>Converted from Lead</label>
+                    <input type="text" class="form-control" name="convertedFromLead">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label>Interconnection Status</label>
+                    <input type="text" class="form-control" name="interconnectionStatus">
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" class="form-control" name="phoneNumber">
+                </div>
+
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control" name="address">
+                </div>
+
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" class="form-control" name="city">
+                </div>
+
+                <div class="form-group">
+                    <label>Linked Email Address</label>
+                    <input type="email" class="form-control" name="linkedEmailAddress">
+                </div>
+
+                <div class="form-group">
+                    <label>WiFi Information</label>
+                    <input type="text" class="form-control" name="wifiInformation">
+                </div>
+
+                <div class="form-group">
+                    <label>Sales Notes</label>
+                    <textarea class="form-control" name="salesNotes"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Probability of Winning</label>
+                    <input type="text" class="form-control" name="probabilityOfWinning">
+                </div>
+
+                <div class="form-group">
+                    <label>User Responsible</label>
+                    <input type="text" class="form-control" name="userResponsible">
+                </div>
+
+                <div class="form-group">
+                    <label>Current State</label>
+                    <input type="text" class="form-control" name="currentState">
+                </div>
+
+                <div class="form-group">
+                    <label>Site Evaluation</label>
+                    <input type="text" class="form-control" name="siteEvaluation">
+                </div>
+
+                <div class="form-group">
+                    <label>Utility Co</label>
+                    <input type="text" class="form-control" name="utilityCo">
+                </div>
+                    <!-- Include other input fields for Opportunity data -->
+                    <div class="form-group">
+                        <label>DC kW</label>
+                        <input type="text" class="form-control" name="dcKw">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Solar Modules</label>
+                        <input type="text" class="form-control" name="solarModules">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Inverters</label>
+                        <input type="text" class="form-control" name="inverters">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Solar Panel Quantity</label>
+                        <input type="number" class="form-control" name="solarPanelQuantity">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Inverter Quantity</label>
+                        <input type="number" class="form-control" name="inverterQuantity">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Main Panel Upgrade</label>
+                        <input type="text" class="form-control" name="mainPanelUpgrade">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Other Adders</label>
+                        <input type="text" class="form-control" name="otherAdders">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Company CAM Link</label>
+                        <input type="text" class="form-control" name="companyCamLink">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date of Next Activity</label>
+                        <input type="date" class="form-control" name="dateOfNextActivity">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date of Last Activity</label>
+                        <input type="date" class="form-control" name="dateOfLastActivity">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Battery</label>
+                        <input type="text" class="form-control" name="battery">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Financing Type</label>
+                        <input type="text" class="form-control" name="financingType">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Accounting Notes</label>
+                        <textarea class="form-control" name="accountingNotes"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Roofing Price</label>
+                        <input type="text" class="form-control" name="roofingPrice">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Opportunity Value</label>
+                        <input type="text" class="form-control" name="opportunityValue">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Cash Price</label>
+                        <input type="text" class="form-control" name="cashPrice">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Contract Amount</label>
+                        <input type="text" class="form-control" name="contractAmount">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Actual Close Date</label>
+                        <input type="date" class="form-control" name="actualCloseDate">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Opportunity Created</label>
+                        <input type="date" class="form-control" name="opportunityCreated">
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
 
                 <HR>
             </div>
