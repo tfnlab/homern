@@ -330,7 +330,7 @@
               // Create a new ProjectDAO instance and save the project
               ProjectDAO projectDAO = new ProjectDAO();
               try {
-                  //projectDAO.insertProject(project);
+                  projectDAO.insertProject(project);
                   out.println("Project saved successfully!");
               } catch (Exception e) {
                   out.println("Error saving project: " + e.getMessage());
