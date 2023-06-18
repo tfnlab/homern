@@ -60,8 +60,35 @@
             <div class="container">
                 <h3>Opportunities List CSV <a href="<%=rootUpdate%>opportunity.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i></a> <a href="<%=rootUpdate%>opportunity.new.bulk.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-upload"></i></a>  </h3>
 
+                <%
 
+                OpportunityDAO opportunityDAO = new OpportunityDAO();
+                List<Opportunity> opportunities = null;
 
+                try {
+                    opportunities = opportunityDAO.getOpportunitiesByUsername(username);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <!-- Add more table headers for other properties -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (Opportunity opportunity : opportunities) { %>
+                            <tr>
+                                <td><%= opportunity.getName() %></td>
+                                <td><%= opportunity.getEmail() %></td>
+                                <!-- Add more table cells for other properties -->
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
 
                 <HR>
             </div>
