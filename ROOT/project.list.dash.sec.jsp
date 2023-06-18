@@ -71,7 +71,7 @@
 
 
                     for (String option : optionValues) {
-                        %><a href="<%=rootUpdate%>project.list.sec.jsp/?lead_status=<%= option %>" tabindex="2"><%= option %></a> <% if (projectByStatus.containsKey(option)) { %> <%=projectByStatus.get(option)%> <%}%> <BR><%
+                        %><a href="<%=rootUpdate%>project.list.sec.jsp/?project_status=<%= option %>" tabindex="2"><%= option %></a> <% if (projectByStatus.containsKey(option)) { %> <%=projectByStatus.get(option)%> <%}%> <BR><%
                      }
                 } catch (Exception e) {
                     e.printStackTrace();
