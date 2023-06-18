@@ -70,7 +70,7 @@
                         <div class="card mb-3">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <a href="<%=rootUpdate%>project.edit.sec.jsp/?lead_id=<%= project.getRecordId() %>" tabindex="2">
+                                    <a href="<%=rootUpdate%>project.edit.sec.jsp/?project_id=<%= project.getRecordId() %>" tabindex="2">
                                         <%= project.getRecordId() %>
                                     </a>
                                 </h5>
