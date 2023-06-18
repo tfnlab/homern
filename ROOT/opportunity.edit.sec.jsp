@@ -206,7 +206,7 @@
         <HR>
           <div class="container mt-5">
             <div class="container">
-                <h2>Create Opportunity</h2>
+                <h2>Update Opportunity</h2>
                 <form action="<%=rootUpdate%>opportunity.edit.sec.jsp/" method="post">
                   <input type="hidden" class="form-control" name="opportunity_id" value="<%=opportunity.getRecordId()%>">
                 <div class="form-group">
