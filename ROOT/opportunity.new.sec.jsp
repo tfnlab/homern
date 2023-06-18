@@ -129,8 +129,6 @@
                 if (dateOfLastActivity != null && !dateOfLastActivity.isEmpty()) {
                     opportunity.setDateOfLastActivity(dateFormat.parse(dateOfLastActivity));
                 }
-                opportunity.setDateOfNextActivity(dateOfNextActivity);
-                opportunity.setDateOfLastActivity(dateOfLastActivity);
                 opportunity.setBattery(battery);
                 opportunity.setFinancingType(financingType);
                 opportunity.setAccountingNotes(accountingNotes);
@@ -142,7 +140,7 @@
                     opportunity.setActualCloseDate(dateFormat.parse(actualCloseDate));
                 }
                 opportunity.setUsername(username);
-                opportunity.setUseremail(useremail);
+                opportunity.setUserEmail(useremail);
                 OpportunityDAO opportunityDAO = new OpportunityDAO();
                 opportunityDAO.insertOpportunity(opportunity);
             }
