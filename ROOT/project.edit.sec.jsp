@@ -618,7 +618,7 @@
     <label for="isSalesCommissionsPaid">Is Sales Commissions Paid:</label>
     <input type="text" class="form-control" id="isSalesCommissionsPaid" name="isSalesCommissionsPaid" value="<%= project.getIsSalesCommissionsPaid() %>">
   </div>
-
+<BR>
 <button type="submit" class="btn btn-primary">Submit</button>
 </form>
                 </div>
