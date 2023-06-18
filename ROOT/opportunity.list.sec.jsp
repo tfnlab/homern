@@ -74,6 +74,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
                             <!-- Add more table headers for other properties -->
@@ -82,6 +83,11 @@
                     <tbody>
                         <% for (Opportunity opportunity : opportunities) { %>
                             <tr>
+                                <td>
+                                <a href="<%=rootUpdate%>opportunity.edit.sec.jsp/?opportunity_id=<%= lead.getRecordId() %>" tabindex="2">
+                                    <%= lead.getRecordId() %>
+                                </a>
+                                </td>
                                 <td><%= opportunity.getName() %></td>
                                 <td><%= opportunity.getEmail() %></td>
                                 <!-- Add more table cells for other properties -->
