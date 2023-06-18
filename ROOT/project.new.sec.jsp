@@ -23,6 +23,7 @@
 <%@ page import="com.tfnlab.mysql.ContactDAO" %>
 <%@ page import="com.tfnlab.mysql.Contact" %>
 <%@ page import="com.tfnlab.util.Translate" %>
+<%@ page import="com.tfnlab.mysql.Project,com.tfnlab.mysql.ProjectDAO" %>
 <%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +48,155 @@
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
             <HR>
-        <h2>Projects</h2>
+        <h2>Project</h2>
+        <%
+          if (request.getMethod().equalsIgnoreCase("post")) {
+              // Retrieve form data
+              String projectName = request.getParameter("projectName");
+              String phoneNumber = request.getParameter("phoneNumber");
+              String address = request.getParameter("address");
+              String city = request.getParameter("city");
+              String emailOrContactInformation = request.getParameter("emailOrContactInformation");
+              String interconnectionStatus = request.getParameter("interconnectionStatus");
+              String projectsStatus = request.getParameter("projectsStatus");
+              String wifiInformation = request.getParameter("wifiInformation");
+              String wifiNetwork = request.getParameter("wifiNetwork");
+              String wifiPassword = request.getParameter("wifiPassword");
+              String projectNotes = request.getParameter("projectNotes");
+              String userResponsible = request.getParameter("userResponsible");
+              String projectsDescription = request.getParameter("projectsDescription");
+              java.sql.Date installDate = java.sql.Date.valueOf(request.getParameter("installDate"));
+              String projectsOrganization = request.getParameter("projectsOrganization");
+              String siteEvaluation = request.getParameter("siteEvaluation");
+              java.sql.Date projectCreated = new java.sql.Date(System.currentTimeMillis()); // You can use the current date or retrieve it from the form if needed
+              String meterspotRequested = request.getParameter("meterspotRequested");
+              String layoutDrafted = request.getParameter("layoutDrafted");
+              String plansDrafted = request.getParameter("plansDrafted");
+              String submittedToPermitting = request.getParameter("submittedToPermitting");
+              String salesNotes = request.getParameter("salesNotes");
+              String otherAdders = request.getParameter("otherAdders");
+              String companyCamLink = request.getParameter("companyCamLink");
+              String utilityCo = request.getParameter("utilityCo");
+              String solarModules = request.getParameter("solarModules");
+              String inverters = request.getParameter("inverters");
+              double dcKw = Double.parseDouble(request.getParameter("dcKw"));
+              int solarPanelQuantity = Integer.parseInt(request.getParameter("solarPanelQuantity"));
+              int inverterQuantity = Integer.parseInt(request.getParameter("inverterQuantity"));
+              String battery = request.getParameter("battery");
+              double sgipRebate = Double.parseDouble(request.getParameter("sgipRebate"));
+              String sgipRebateType = request.getParameter("sgipRebateType");
+              String sgipRebateStatus = request.getParameter("sgipRebateStatus");
+              String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
+              String breakerTypeNeeded = request.getParameter("breakerTypeNeeded");
+              String downsizeNeeded = request.getParameter("downsizeNeeded");
+              String isEv = request.getParameter("isEv");
+              String subPanel = request.getParameter("subPanel");
+              String panelDescription = request.getParameter("panelDescription");
+              java.sql.Date inspectionDate = java.sql.Date.valueOf(request.getParameter("inspectionDate"));
+              String inspectionPassed = request.getParameter("inspectionPassed");
+              java.sql.Date reinspectionDate = java.sql.Date.valueOf(request.getParameter("reinspectionDate"));
+              String placardStatus = request.getParameter("placardStatus");
+              String placardsInPossession = request.getParameter("placardsInPossession");
+              String acDiscoPlacardsNeeded = request.getParameter("acDiscoPlacardsNeeded");
+              String inspectionTech = request.getParameter("inspectionTech");
+              String accountingNotes = request.getParameter("accountingNotes");
+              double roofingPrice = Double.parseDouble(request.getParameter("roofingPrice"));
+              double otherAddersPrice = Double.parseDouble(request.getParameter("otherAddersPrice"));
+              double contractAmount = Double.parseDouble(request.getParameter("contractAmount"));
+              double cashPrice = Double.parseDouble(request.getParameter("cashPrice"));
+              String financingType = request.getParameter("financingType");
+              double m1Amount = Double.parseDouble(request.getParameter("m1Amount"));
+              double m1PaymentRequested = Double.parseDouble(request.getParameter("m1PaymentRequested"));
+              double paymentReceivedM1 = Double.parseDouble(request.getParameter("paymentReceivedM1"));
+              double m2Amount = Double.parseDouble(request.getParameter("m2Amount"));
+              double m2PaymentRequested = Double.parseDouble(request.getParameter("m2PaymentRequested"));
+              double paymentReceivedM2 = Double.parseDouble(request.getParameter("paymentReceivedM2"));
+              String isSalesCommissionsPaid = request.getParameter("isSalesCommissionsPaid");
+              java.sql.Date actualCloseDate = java.sql.Date.valueOf(request.getParameter("actualCloseDate"));
+
+              // Create a new project object
+              Project project = new Project();
+              project.setProjectName(projectName);
+              project.setPhoneNumber(phoneNumber);
+              project.setAddress(address);
+              project.setCity(city);
+              project.setEmailOrContactInformation(emailOrContactInformation);
+              project.setInterconnectionStatus(interconnectionStatus);
+              project.setProjectsStatus(projectsStatus);
+              project.setWifiInformation(wifiInformation);
+              project.setWifiNetwork(wifiNetwork);
+              project.setWifiPassword(wifiPassword);
+              project.setProjectNotes(projectNotes);
+              project.setUserResponsible(userResponsible);
+              project.setProjectsDescription(projectsDescription);
+              project.setInstallDate(installDate);
+              project.setProjectsOrganization(projectsOrganization);
+              project.setSiteEvaluation(siteEvaluation);
+              project.setProjectCreated(projectCreated);
+              project.setMeterspotRequested(meterspotRequested);
+              project.setLayoutDrafted(layoutDrafted);
+              project.setPlansDrafted(plansDrafted);
+              project.setSubmittedToPermitting(submittedToPermitting);
+              project.setSalesNotes(salesNotes);
+              project.setOtherAdders(otherAdders);
+              project.setCompanyCamLink(companyCamLink);
+              project.setUtilityCo(utilityCo);
+              project.setSolarModules(solarModules);
+              project.setInverters(inverters);
+              project.setDcKw(dcKw);
+              project.setSolarPanelQuantity(solarPanelQuantity);
+              project.setInverterQuantity(inverterQuantity);
+              project.setBattery(battery);
+              project.setSgipRebate(sgipRebate);
+              project.setSgipRebateType(sgipRebateType);
+              project.setSgipRebateStatus(sgipRebateStatus);
+              project.setMainPanelUpgrade(mainPanelUpgrade);
+              project.setBreakerTypeNeeded(breakerTypeNeeded);
+              project.setDownsizeNeeded(downsizeNeeded);
+              project.setIsEv(isEv);
+              project.setSubPanel(subPanel);
+              project.setPanelDescription(panelDescription);
+              project.setInspectionDate(inspectionDate);
+              project.setInspectionPassed(inspectionPassed);
+              project.setReinspectionDate(reinspectionDate);
+              project.setPlacardStatus(placardStatus);
+              project.setPlacardsInPossession(placardsInPossession);
+              project.setAcDiscoPlacardsNeeded(acDiscoPlacardsNeeded);
+              project.setInspectionTech(inspectionTech);
+              project.setAccountingNotes(accountingNotes);
+              project.setRoofingPrice(roofingPrice);
+              project.setOtherAddersPrice(otherAddersPrice);
+              project.setContractAmount(contractAmount);
+              project.setCashPrice(cashPrice);
+              project.setFinancingType(financingType);
+              project.setM1Amount(m1Amount);
+              project.setM1PaymentRequested(m1PaymentRequested);
+              project.setPaymentReceivedM1(paymentReceivedM1);
+              project.setM2Amount(m2Amount);
+              project.setM2PaymentRequested(m2PaymentRequested);
+              project.setPaymentReceivedM2(paymentReceivedM2);
+              project.setIsSalesCommissionsPaid(isSalesCommissionsPaid);
+              project.setActualCloseDate(actualCloseDate);
+              project.setUsername(username);
+              project.setUserEmail(userEmail);
+
+              // Create a new project object
+              Project project = new Project();
+              project.setProjectName(projectName);
+              project.setPhoneNumber(phoneNumber);
+              project.setAddress(address);
+              // Set more project properties as needed
+
+              // Create a new ProjectDAO instance and save the project
+              ProjectDAO projectDAO = new ProjectDAO();
+              try {
+                  projectDAO.insertProject(project);
+                  out.println("Project saved successfully!");
+              } catch (SQLException e) {
+                  out.println("Error saving project: " + e.getMessage());
+              }
+          }
+        %>
         <HR>
         <HR>
           <a href="<%=rootUpdate%>project.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Projects</a> |
@@ -55,7 +204,6 @@
         <HR>
           <div class="container mt-5">
             <div class="container">
-                <h3>Project List CSV <a href="<%=rootUpdate%>project.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i></a> <a href="<%=rootUpdate%>project.new.bulk.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-upload"></i></a>  </h3>
                 <div class="row">
                   <form action="<%=rootUpdate%>project.new.sec.jsp/" method="post">
                   <div class="form-group">
