@@ -59,8 +59,7 @@
                 <h3>Lead List CSV <a href="<%=rootUpdate%>lead.list.csv.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-download"></i></a> <a href="<%=rootUpdate%>lead.new.bulk.sec.jsp/?csv=true" tabindex="2"><i class="fas fa-upload"></i></a>  </h3>
 
 
-                <%
-                List<Lead> leads = null;
+                <% 
                 try {
                     ProjectDAO projectDAO = new ProjectDAO();
                     Map<String, Integer> projectByStatus = projectDAO.getProjectStatusCountByUsername(username);
