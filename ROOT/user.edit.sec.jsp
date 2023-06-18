@@ -442,7 +442,7 @@
 
            <div class="form-group mt-3">
            <label for="stripe_key_pub" class="mr-2">Access Emails:</label>
-           <input type="text" class="form-control" id="hrn_access_emails" name="hrn_access_emails" value="<%= user.getHrn_access_email() %>" tabindex="25" >
+           <input type="text" class="form-control" id="hrn_access_email" name="hrn_access_email" value="<%= user.getHrn_access_email() %>" tabindex="25" >
            </div>
 
            <div class="form-group mt-3">
