@@ -344,7 +344,7 @@
       const distanceY = Math.abs(secondClick.y - firstClick.y);
       const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
       console.log("Distance clicked in pixels:", distance);
-
+      alert(distance *0.11);
       // Reset click positions for future calculations
       firstClick = null;
       secondClick = null;
