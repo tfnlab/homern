@@ -284,13 +284,19 @@
 
     // Convert the address to geographic coordinates
     geocoder.geocode({ address: address }, (results, status) => {
-      if (status === 'OK') {
+      if (status === 'OK' && results.length > 0) {
         // Get the latitude and longitude of the address
         console.log('Geocode status:', status);
         console.log('Geocode results:', results);
-                
+
         const lat = results[0].geometry.location.lat();
         const lng = results[0].geometry.location.lng();
+
+        const lat = results[0].geometry.location.lat();
+        const lng = results[0].geometry.location.lng();
+
+        console.log('Latitude:', lat);
+        console.log('Longitude:', lng);
 
             console.log('Initializing map... LAT');
         // Build the map URL with the satellite map type
