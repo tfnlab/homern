@@ -65,6 +65,10 @@
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
         if (isMultipart) {
 
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy hh:mm:ss a");
+            SimpleDateFormat datedFormat = new SimpleDateFormat("M/d/yyyy");
+
             UUID uuid = UUID.randomUUID();
             APIConfig conf = new APIConfig();
             String filename = "project.bulk." + username + "." + uuid + ".csv";
@@ -103,29 +107,29 @@
               // Retrieve form data
               String external_id = csvRecord.get(0);
               String projectName = csvRecord.get(1);
-              String phoneNumber = request.getParameter("phoneNumber");
-              String address = request.getParameter("address");
-              String city = request.getParameter("city");
-              String emailOrContactInformation = request.getParameter("emailOrContactInformation");
-              String interconnectionStatus = request.getParameter("interconnectionStatus");
-              String projectsStatus = csvRecord.get(84);
-              String wifiInformation = request.getParameter("wifiInformation");
-              String wifiNetwork = request.getParameter("wifiNetwork");
-              String wifiPassword = request.getParameter("wifiPassword");
-              String projectNotes = request.getParameter("projectNotes");
-              String userResponsible = request.getParameter("userResponsible");
-              String projectsDescription = request.getParameter("projectsDescription");
+              String phoneNumber = csvRecord.get(25);
+              String address = csvRecord.get(24);
+              String city = "";
+              String emailOrContactInformation = csvRecord.get(79);
+              String interconnectionStatus = csvRecord.get(84);
+              String projectsStatus =  csvRecord.get(2);
+              String wifiInformation = csvRecord.get(62);
+              String wifiNetwork = "";
+              String wifiPassword = "";
+              String projectNotes = csvRecord.get(59);
+              String userResponsible = csvRecord.get(9);
+              String projectsDescription = csvRecord.get(44);
               java.sql.Date installDate = null;
-              String installDateParam = request.getParameter("installDate");
+              String installDateParam = csvRecord.get(56);
               if (installDateParam != null && !installDateParam.isBlank()) {
                   try {
-                      installDate = java.sql.Date.valueOf(installDateParam);
+                      installDate = datedFormat.parse(installDateParam);
                   } catch (IllegalArgumentException e) {
                       // Handle invalid date format
                   }
               }
-              String projectsOrganization = request.getParameter("projectsOrganization");
-              String siteEvaluation = request.getParameter("siteEvaluation");
+              String projectsOrganization = csvRecord.get(57);
+              String siteEvaluation = csvRecord.get(50);
               java.sql.Date projectCreated = new java.sql.Date(System.currentTimeMillis());
               String meterspotRequested = request.getParameter("meterspotRequested");
               String layoutDrafted = request.getParameter("layoutDrafted");
