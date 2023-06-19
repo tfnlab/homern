@@ -123,7 +123,7 @@
               String installDateParam = csvRecord.get(56);
               if (installDateParam != null && !installDateParam.isBlank()) {
                   try {
-                      installDate = datedFormat.parse(installDateParam);
+                      installDate = new java.sql.Date(datedFormat.parse(installDateParam).getTime());
                   } catch (IllegalArgumentException e) {
                       // Handle invalid date format
                   }
