@@ -362,8 +362,10 @@
       }
     }
     console.log("log start");
-    var overlay = document.getElementById('overlay');
-    overlay.addEventListener('click', handleClick);
+    document.addEventListener('DOMContentLoaded', function () {
+      var overlay = document.getElementById('overlay');
+      overlay.addEventListener('click', handleClick);
+    });
     console.log("log stop");
   </script>
 </body>
