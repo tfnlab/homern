@@ -225,13 +225,13 @@
               SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
           %>
         <HR>
-          <div class="container mt-3">
+          <div class="container mt-5">
             <div class="container">
               <h4>Lead ID: <%=lead.getRecordId()%>
               |          <a href="<%=rootUpdate%>lead.edit.com.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2">Messaging</a>
               |          <a href="<%=rootUpdate%>lead.edit.map.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2">Map</a>
               </h4>
-              <form action="<%=rootUpdate%>lead.edit.sec.jsp/" method="post" class="mt-3">
+              <form action="<%=rootUpdate%>lead.edit.sec.jsp/" method="post" class="mt-5">
 
                 <input type="hidden" class="form-control" name="lead_id" value="<%=lead.getRecordId()%>">
                 <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
