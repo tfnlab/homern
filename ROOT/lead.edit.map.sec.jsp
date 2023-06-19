@@ -365,8 +365,8 @@
 
       // Calculate the total distance
       const distance = distanceFirstToLast * 0.22;
-      alert("Distance From First Point to Last Point: " + distanceFirstToLast * 0.22);
-      alert("Distance From Last Point to Second-to-Last Point: " + distanceLastToSecondToLast * 0.22);
+      alert("Distance From First Point to Last Point: " + Math.round(distanceFirstToLast * 0.22) + " ft");
+      alert("Distance From Last Point to Second-to-Last Point: " + Math.round(distanceLastToSecondToLast * 0.22) + " ft");
 
 
       if (distance < 10 || fencePoints.length > 2 && isClosed(fencePoints)) {
