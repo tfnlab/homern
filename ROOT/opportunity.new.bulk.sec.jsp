@@ -107,8 +107,11 @@
                   }
                   while (iterator.hasNext()) {
                                             CSVRecord csvRecord = iterator.next();
+ 
+                SimpleDateFormat inputFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy hh:mm:ss a");
+                SimpleDateFormat datedFormat = new SimpleDateFormat("M/d/yyyy");
 
                 String external_id = csvRecord.get(0);
                 String hasAProjectBeenCreated = csvRecord.get(70);
