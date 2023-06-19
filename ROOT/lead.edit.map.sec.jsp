@@ -305,7 +305,7 @@
 
             console.log('Initializing map... LAT');
         // Build the map URL with the satellite map type
-        const mapUrl = 'https://maps.googleapis.com/maps/api/staticmap?center=' + lat + ',' + lng + '&zoom=21&size=640x640&maptype=satellite&key=AIzaSyDHwbVpNgh3G5yG1cmT0HMe8TikX4DC2qE';
+        const mapUrl = 'https://maps.googleapis.com/maps/api/staticmap?center=' + lat + ',' + lng + '&zoom=22&size=640x640&maptype=satellite&key=AIzaSyDHwbVpNgh3G5yG1cmT0HMe8TikX4DC2qE';
         console.log(mapUrl);
         // Set the background image of the map container div
         const imgElement = document.getElementById('map-container-img');
