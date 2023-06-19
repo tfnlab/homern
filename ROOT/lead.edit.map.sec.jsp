@@ -345,6 +345,15 @@
 
     // Store the click position as a fence point
     fencePoints.push(clickPosition);
+    if (fencePoints.length > 2) {
+      const secondLastPoint = fencePoints[fencePoints.length - 2];
+
+      // Calculate distance between last fence point and second-to-last fence point
+      const distanceX = Math.abs(lastPoint.x - secondLastPoint.x);
+      const distanceY = Math.abs(lastPoint.y - secondLastPoint.y);
+      const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
+      alert("Distance From Second-to-Last Point to Last Point: " + distance * 0.22);
+    }
 
     if (fencePoints.length > 1) {
       const firstPoint = fencePoints[0];
@@ -355,14 +364,13 @@
       const distanceY = Math.abs(lastPoint.y - firstPoint.y);
       const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
       console.log("Distance between first and last points:", distance);
-      alert(distanceY * 0.22);
-      alert(distance * 0.22);
+      alert("Distance From First Point to Last Point " + distance * 0.22);
 
       if (distance < 10 || fencePoints.length > 2 && isClosed(fencePoints)) {
         // Fence is closed, calculate area using Shoelace formula
         area = calculateArea(fencePoints);
         console.log("Fence is closed. Area:", area);
-        alert(area * 0.018);
+        alert("Area " + area * 0.018);
 
         // Reset fence points and area for future calculations
         fencePoints = [];
