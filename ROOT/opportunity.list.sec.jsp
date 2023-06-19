@@ -83,6 +83,7 @@
                                 </h5>
                                 <p class="card-text"><%= opportunity.getName() %></p>
                                 <p class="card-text"><%= opportunity.getEmail() %></p>
+                                <p class="card-text"><%= opportunity.getPhone() %></p>
                                 <!-- Add more card content for other opportunity properties -->
                             </div>
                         </div>
