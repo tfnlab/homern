@@ -331,6 +331,7 @@
   let secondClick = null;
 
   const image = document.getElementById('map-container-img');
+  const container = document.getElementById('map-container');
   // Event listener for the first click
   document.getElementById("map-container-img").addEventListener("click", function(event) {
     if (firstClick === null) {
@@ -354,6 +355,7 @@
   });
 
 
+  // Function to handle click event
   function markClick(event) {
     // Get the position of the click relative to the image
     const rect = image.getBoundingClientRect();
@@ -366,13 +368,17 @@
     marker.style.left = x + 'px';
     marker.style.top = y + 'px';
 
-    // Append the marker to the image container
-    image.parentNode.appendChild(marker);
+    // Append the marker to the container
+    container.appendChild(marker);
   }
 
   // Define CSS styles using a <style> tag
   const styleTag = document.createElement('style');
   styleTag.innerHTML = `
+    #map-container {
+      position: relative;
+    }
+
     .click-marker {
       position: absolute;
       width: 10px;
