@@ -325,6 +325,16 @@
 
 
   </script>
+  <style>
+    .marker {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      border-radius: 50%;
+    }
+  </style>
+
   <script>
     // Variables to store click positions
     let clicks = [];
@@ -399,7 +409,6 @@
       return 0; // Invalid shape, return 0 as the area
     }
 
-    // Function to calculate the distance between two points
     function distanceBetweenPoints(point1, point2) {
       const distanceX = Math.abs(point2.x - point1.x);
       const distanceY = Math.abs(point2.y - point1.y);
