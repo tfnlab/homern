@@ -352,6 +352,7 @@
       const distanceY = Math.abs(lastPoint.y - firstPoint.y);
       const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
       console.log("Distance between first and last points:", distance);
+      alert(distance * 0.004598);
 
       if (distance < 10 || fencePoints.length > 2 && isClosed(fencePoints)) {
         // Fence is closed, calculate area using Shoelace formula
