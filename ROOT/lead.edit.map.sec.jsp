@@ -292,8 +292,6 @@
         const lat = results[0].geometry.location.lat();
         const lng = results[0].geometry.location.lng();
 
-        const lat = results[0].geometry.location.lat();
-        const lng = results[0].geometry.location.lng();
 
         console.log('Latitude:', lat);
         console.log('Longitude:', lng);
