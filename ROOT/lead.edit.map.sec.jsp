@@ -339,7 +339,6 @@
   document.getElementById("map-container-img").addEventListener("click", function(event) {
     const clickPosition = { x: event.clientX, y: event.clientY };
     console.log("Click position:", clickPosition);
-    markClick(event); // Assuming you have a function called markClick to handle displaying the click visually
 
     // Store the click position as a fence point
     fencePoints.push(clickPosition);
@@ -365,6 +364,7 @@
         area = 0;
       }
     }
+    markClick(event); // Assuming you have a function called markClick to handle displaying the click visually
   });
 
   function isClosed(points) {
