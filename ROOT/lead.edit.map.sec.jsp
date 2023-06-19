@@ -357,7 +357,7 @@
         // Fence is closed, calculate area using Shoelace formula
         area = calculateArea(fencePoints);
         console.log("Fence is closed. Area:", area);
-        alert(area * 0.2278);
+        alert((area * 0.2278)*0.018);
 
         // Reset fence points and area for future calculations
         fencePoints = [];
