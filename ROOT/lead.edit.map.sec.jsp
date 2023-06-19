@@ -44,15 +44,9 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHwbVpNgh3G5yG1cmT0HMe8TikX4DC2qE&libraries=places"></script>
     <style>
-      #map-container {
-        position: relative;
-      }
-      #overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(255, 0, 0, 0.5);
-        pointer-events: none;
+      #map-container-img {
+        width: 640px;
+        height: 640px;
       }
     </style>
   </head>
@@ -271,7 +265,6 @@
 
                       <div id="map-container" style="">
                         <img id="map-container-img" />
-                        <div id="overlay"></div>
                     </div>
                 </form>
 
@@ -333,35 +326,30 @@
 
   </script>
   <script>
-    var startPoint = null;
-    var endPoint = null;
+  // Variables to store click positions
+  let firstClick = null;
+  let secondClick = null;
 
-    function calculateDistance() {
-      if (startPoint && endPoint) {
-        var distanceX = Math.abs(startPoint.x - endPoint.x);
-        var distanceY = Math.abs(startPoint.y - endPoint.y);
-        var pixelDistance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
-        console.log("Pixel distance:", pixelDistance);
-      }
+  // Event listener for the first click
+  document.getElementById("map-container-img").addEventListener("click", function(event) {
+    if (firstClick === null) {
+      firstClick = { x: event.clientX, y: event.clientY };
+      console.log("First click position:", firstClick);
+    } else if (secondClick === null) {
+      secondClick = { x: event.clientX, y: event.clientY };
+      console.log("Second click position:", secondClick);
+
+      // Calculate distance between clicks
+      const distanceX = Math.abs(secondClick.x - firstClick.x);
+      const distanceY = Math.abs(secondClick.y - firstClick.y);
+      const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
+      console.log("Distance clicked in pixels:", distance);
+
+      // Reset click positions for future calculations
+      firstClick = null;
+      secondClick = null;
     }
-
-    function handleClick(event) {
-      var image = document.getElementById('map-container-img');
-      var imageRect = image.getBoundingClientRect();
-
-      var x = event.offsetX;
-      var y = event.offsetY;
-
-      if (!startPoint) {
-        startPoint = { x: x, y: y };
-      } else if (!endPoint) {
-        endPoint = { x: x, y: y };
-        calculateDistance();
-      }
-    }
-
-    var overlay = document.getElementById('overlay');
-    overlay.addEventListener('click', handleClick);
-  </script>
+  });
+</script>
 </body>
 </html>
