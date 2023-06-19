@@ -358,6 +358,7 @@
   function markClick(event) {
     // Get the position of the click relative to the image
     const rect = image.getBoundingClientRect();
+    alert("hello");
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
