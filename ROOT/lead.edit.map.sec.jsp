@@ -333,26 +333,55 @@
   const image = document.getElementById('map-container-img');
   const container = document.getElementById('map-container');
   // Event listener for the first click
-  document.getElementById("map-container-img").addEventListener("click", function(event) {
-    if (firstClick === null) {
-      firstClick = { x: event.clientX, y: event.clientY };
-      console.log("First click position:", firstClick);
-    } else if (secondClick === null) {
-      secondClick = { x: event.clientX, y: event.clientY };
-      console.log("Second click position:", secondClick);
+  let fencePoints = []; // Array to store fence points
+  let area = 0; // Variable to store calculated area
 
-      // Calculate distance between clicks
-      const distanceX = Math.abs(secondClick.x - firstClick.x);
-      const distanceY = Math.abs(secondClick.y - firstClick.y);
-      const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
-      console.log("Distance clicked in pixels:", distance);
-      alert(distance *0.2278);
-      // Reset click positions for future calculations
-      firstClick = null;
-      secondClick = null;
-    }
+  document.getElementById("map-container-img").addEventListener("click", function(event) {
+    const clickPosition = { x: event.clientX, y: event.clientY };
+    console.log("Click position:", clickPosition);
+
+    // Store the click position as a fence point
+    fencePoints.push(clickPosition);
     markClick(event);
+
+    if (fencePoints.length > 1) {
+      const firstPoint = fencePoints[0];
+      const lastPoint = fencePoints[fencePoints.length - 1];
+
+      // Calculate distance between first and last fence points
+      const distanceX = Math.abs(lastPoint.x - firstPoint.x);
+      const distanceY = Math.abs(lastPoint.y - firstPoint.y);
+      const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
+      console.log("Distance between first and last points:", distance);
+
+      // Calculate area using Shoelace formula
+      area = calculateArea(fencePoints);
+
+      if (distance < 10) {
+        // Fence is closed, display area
+        console.log("Fence is closed. Area:", area);
+        alert(area * 0.2278);
+
+        // Reset fence points and area for future calculations
+        fencePoints = [];
+        area = 0;
+      }
+    }
   });
+
+  function calculateArea(points) {
+    let sum = 0;
+    const numPoints = points.length;
+
+    for (let i = 0; i < numPoints; i++) {
+      const currentPoint = points[i];
+      const nextPoint = points[(i + 1) % numPoints]; // Wrap around to the first point for the last iteration
+
+      sum += (currentPoint.x * nextPoint.y) - (nextPoint.x * currentPoint.y);
+    }
+
+    return Math.abs(sum) / 2;
+  }
 
 
   // Function to handle click event
