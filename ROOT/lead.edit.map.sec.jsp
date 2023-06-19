@@ -339,7 +339,8 @@
   document.getElementById("map-container-img").addEventListener("click", function(event) {
     const clickPosition = { x: event.clientX, y: event.clientY };
     console.log("Click position:", clickPosition);
-    markClick(event);
+    markClick(event); // Assuming you have a function called markClick to handle displaying the click visually
+
     // Store the click position as a fence point
     fencePoints.push(clickPosition);
 
@@ -347,7 +348,7 @@
       const firstPoint = fencePoints[0];
       const lastPoint = fencePoints[fencePoints.length - 1];
 
-      // Calculate distance between first and last fence points
+      // Calculate distance between last fence point and first fence point
       const distanceX = Math.abs(lastPoint.x - firstPoint.x);
       const distanceY = Math.abs(lastPoint.y - firstPoint.y);
       const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
@@ -355,9 +356,9 @@
 
       if (distance < 10 && fencePoints.length > 2) {
         // Fence is closed, calculate area using Shoelace formula
-        area = calculateArea(fencePoints.slice(0, -1)); // Exclude last click from fencePoints array
+        area = calculateArea(fencePoints);
         console.log("Fence is closed. Area:", area);
-        alert(area * 0.018);
+        alert(area * 0.2278);
 
         // Reset fence points and area for future calculations
         fencePoints = [];
@@ -379,6 +380,7 @@
 
     return Math.abs(sum) / 2;
   }
+
 
 
 
