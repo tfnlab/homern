@@ -289,6 +289,7 @@
         const lat = results[0].geometry.location.lat();
         const lng = results[0].geometry.location.lng();
 
+            console.log('Initializing map... LAT');
         // Build the map URL with the satellite map type
         const mapUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${lat},${lng}&zoom=18&size=640x640&maptype=satellite&key=AIzaSyDHwbVpNgh3G5yG1cmT0HMe8TikX4DC2qE`;
 
