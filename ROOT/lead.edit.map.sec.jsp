@@ -355,6 +355,7 @@
       const distanceY = Math.abs(lastPoint.y - firstPoint.y);
       const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
       console.log("Distance between first and last points:", distance);
+      alert(distanceY * 0.22);
       alert(distance * 0.22);
 
       if (distance < 10 || fencePoints.length > 2 && isClosed(fencePoints)) {
