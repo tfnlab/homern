@@ -364,14 +364,12 @@
       console.log("Distance between last and second-to-last points:", distanceLastToSecondToLast);
 
       // Calculate the total distance
-      const totalDistance = distanceFirstToLast + distanceLastToSecondToLast;
-      console.log("Total distance:", totalDistance);
+      const distance = distanceFirstToLast * 0.22;
       alert("Distance From First Point to Last Point: " + distanceFirstToLast * 0.22);
       alert("Distance From Last Point to Second-to-Last Point: " + distanceLastToSecondToLast * 0.22);
-      alert("Total Distance: " + totalDistance * 0.22);
 
 
-      if (distanceFirstToLast < 10 || fencePoints.length > 2 && isClosed(fencePoints)) {
+      if (distance < 10 || fencePoints.length > 2 && isClosed(fencePoints)) {
         // Fence is closed, calculate area using Shoelace formula
         area = calculateArea(fencePoints);
         console.log("Fence is closed. Area:", area);
