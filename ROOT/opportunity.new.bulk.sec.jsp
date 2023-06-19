@@ -57,12 +57,48 @@
           <a href="<%=rootUpdate%>opportunity.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Opportunity</a> |
             <a href="<%=rootUpdate%>opportunity.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
             <%
-            if (request.getMethod().equalsIgnoreCase("post")) {
+            if (isMultipart) {
+
+                UUID uuid = UUID.randomUUID();
+                APIConfig conf = new APIConfig();
+                String filename = "opportunity.bulk." + username + "." + uuid + ".csv";
+                String filepath = conf.getPdfloc();
+                DiskFileItemFactory factory = new DiskFileItemFactory();
+                factory.setSizeThreshold(1024 * 1024); // Set the size threshold for storing files in memory
+                factory.setRepository(new File(filepath)); // Set the repository location for temporarily storing files
+                ServletFileUpload upload = new ServletFileUpload(factory);
+                List<FileItem> items = upload.parseRequest(request);
+                for (FileItem item : items) {
+                  if (!item.isFormField()) { // Check if the item is an uploaded file
+                    InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
+                    FileOutputStream fos = new FileOutputStream(filepath   + filename);
+                    byte[] buffer = new byte[1024];
+                    int length;
+                    while ((length = fileContent.read(buffer)) > 0) {
+                      fos.write(buffer, 0, length);
+                    }
+                    fos.close();
+                    fileContent.close();
+                  }
+                }
+
+
+                try {
+                  BufferedReader reader = new BufferedReader(new FileReader(filepath   + filename));
+                  String line;
+                  int lineNumber = 0;
+                  CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT);
+                  Iterator<CSVRecord> iterator = csvParser.iterator();
+                  if (iterator.hasNext()) {
+                      iterator.next(); // Skip the first record
+                  }
+                  while (iterator.hasNext()) {
+
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
                 String hasAProjectBeenCreated = request.getParameter("hasAProjectBeenCreated");
-                String name = request.getParameter("name");
-                String organization = request.getParameter("organization");
+                String name = csvRecord.get(1);
+                String organization = csvRecord.get(3);
                 String convertedFromLead = request.getParameter("convertedFromLead");
                 String email = request.getParameter("email");
                 String interconnectionStatus = request.getParameter("interconnectionStatus");
@@ -198,7 +234,14 @@
                 opportunity.setUserEmail(useremail);
                 OpportunityDAO opportunityDAO = new OpportunityDAO();
                 opportunityDAO.insertOpportunity(opportunity);
-            }
+              }
+          reader.close();
+        } catch (Exception e) {
+          e.printStackTrace();
+          %><%=e.getMessage()%><%
+        }
+
+      }
             %>
         <HR>
           <div class="container mt-5">
