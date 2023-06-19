@@ -251,10 +251,7 @@
                   <label>Address:</label>
                   <input type="text" class="form-control" name="address" value="<%= lead.getAddress() %>">
                 </div>
-
-                <div id="map-container" >
-
-                </div>
+ 
 
                 <BR>
                     <input type="submit" value="Save">
@@ -267,6 +264,7 @@
     </section><!-- End Blog Section -->
   </main>
 
+    <div id="map-container"></div>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHwbVpNgh3G5yG1cmT0HMe8TikX4DC2qE&libraries=places"></script>
   <script>
   // Replace 'YOUR_API_KEY' with your own Google Maps API key
