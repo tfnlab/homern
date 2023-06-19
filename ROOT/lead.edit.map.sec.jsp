@@ -267,7 +267,7 @@
     </section><!-- End Blog Section -->
   </main>
 
-    <div id="map-container"></div>
+    <div id="map-container" style=""></div>
   <script>
   // Replace 'YOUR_API_KEY' with your own Google Maps API key
   window.onload = initMap();
