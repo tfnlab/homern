@@ -352,13 +352,13 @@
       const distanceY = Math.abs(lastPoint.y - firstPoint.y);
       const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
       console.log("Distance between first and last points:", distance);
-      alert(distance * 0.004598);
+      alert(distance * 0.22);
 
       if (distance < 10 || fencePoints.length > 2 && isClosed(fencePoints)) {
         // Fence is closed, calculate area using Shoelace formula
         area = calculateArea(fencePoints);
         console.log("Fence is closed. Area:", area);
-        alert(area * 0.004598);
+        alert(area * 0.22);
 
         // Reset fence points and area for future calculations
         fencePoints = [];
