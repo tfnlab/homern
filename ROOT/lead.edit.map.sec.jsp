@@ -236,7 +236,11 @@
         <HR>
           <div class="container mt-5">
             <div class="container">
-              <h4>Lead ID: <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2"><%=lead.getRecordId()%></a>  (<a href="<%=rootUpdate%>lead.edit.com.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2">Messaging</a>)</h4>
+              <h4>Lead ID: <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2"><%=lead.getRecordId()%></a>
+              <a href="<%=rootUpdate%>lead.edit.com.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2">Messaging</a>
+              <a href="https://sunroof.withgoogle.com/building/<%= lead.getLocation_pointlat() %>/<%= lead.getLocation_pointlng() %>/#?f=buy" tabindex="2" target="_blank" >Sunroof</a>
+              </h4>
+
               <form action="<%=rootUpdate%>lead.edit.sec.jsp/" method="post">
                 <input type="hidden" class="form-control" name="lead_id" value="<%=lead.getRecordId()%>">
                 <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
