@@ -270,6 +270,7 @@
     <div id="map-container"></div>
   <script>
   // Replace 'YOUR_API_KEY' with your own Google Maps API key
+  window.onload = initMap;
 
   // Address you want to retrieve the satellite map for
   const address = '1600 Amphitheatre Parkway, Mountain View, CA';
