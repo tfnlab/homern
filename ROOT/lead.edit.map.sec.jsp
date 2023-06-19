@@ -272,11 +272,11 @@
   // Replace 'YOUR_API_KEY' with your own Google Maps API key
   window.onload = initMap();
 
-  // Address you want to retrieve the satellite map for
-  const address = '1600 Amphitheatre Parkway, Mountain View, CA';
 
   // Function to initialize and load the map image
   function initMap() {
+
+    console.log('Initializing map...');
     const address = '1600 Amphitheatre Parkway, Mountain View, CA';
 
     // Create a new instance of the Geocoder
