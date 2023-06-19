@@ -335,14 +335,17 @@
   // Event listener for the first click
   let fencePoints = []; // Array to store fence points
   let area = 0; // Variable to store calculated area
+  let isFirstPointSelected = false; // Flag to track if the first point has been selected
 
   document.getElementById("map-container-img").addEventListener("click", function(event) {
     const clickPosition = { x: event.clientX, y: event.clientY };
     console.log("Click position:", clickPosition);
-    markClick(event); // Assuming you have a function called markClick to handle displaying the click visually
 
     // Store the click position as a fence point
-    fencePoints.push(clickPosition);
+    if (fencePoints.length === 0 || (fencePoints.length > 0 && !isFirstPointSelected)) {
+      fencePoints.push(clickPosition);
+      isFirstPointSelected = true;
+    }
 
     if (fencePoints.length > 1) {
       const firstPoint = fencePoints[0];
@@ -354,7 +357,7 @@
       const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
       console.log("Distance between first and last points:", distance);
 
-      if ((distance < 10 && fencePoints.length > 2) || fencePoints.length > 3) {
+      if (distance < 10 || fencePoints.length > 2 && isClosed(fencePoints)) {
         // Fence is closed, calculate area using Shoelace formula
         area = calculateArea(fencePoints);
         console.log("Fence is closed. Area:", area);
@@ -363,9 +366,23 @@
         // Reset fence points and area for future calculations
         fencePoints = [];
         area = 0;
+        isFirstPointSelected = false;
       }
     }
+    markClick(event); // Assuming you have a function called markClick to handle displaying the click visually
   });
+
+  function isClosed(points) {
+    const firstPoint = points[0];
+    const lastPoint = points[points.length - 1];
+
+    // Calculate distance between last fence point and first fence point
+    const distanceX = Math.abs(lastPoint.x - firstPoint.x);
+    const distanceY = Math.abs(lastPoint.y - firstPoint.y);
+    const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
+
+    return distance < 10;
+  }
 
   function calculateArea(points) {
     let sum = 0;
