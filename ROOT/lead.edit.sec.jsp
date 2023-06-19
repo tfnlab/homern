@@ -251,7 +251,7 @@
 
                 <div class="form-group">
                   <label>Address:</label>
-                  <input type="text" class="form-control" name="address" value="<%= lead.getAddress() %>">
+                  <input type="text" class="form-control" name="address" id="address" value="<%= lead.getAddress() %>">
                 </div>
 
                 <div class="form-group">
