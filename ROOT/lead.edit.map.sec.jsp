@@ -339,10 +339,9 @@
   document.getElementById("map-container-img").addEventListener("click", function(event) {
     const clickPosition = { x: event.clientX, y: event.clientY };
     console.log("Click position:", clickPosition);
-
+    markClick(event);
     // Store the click position as a fence point
     fencePoints.push(clickPosition);
-    markClick(event);
 
     if (fencePoints.length > 1) {
       const firstPoint = fencePoints[0];
@@ -354,11 +353,9 @@
       const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
       console.log("Distance between first and last points:", distance);
 
-      // Calculate area using Shoelace formula
-      area = calculateArea(fencePoints);
-
       if (distance < 10) {
-        // Fence is closed, display area
+        // Fence is closed, calculate area using Shoelace formula
+        area = calculateArea(fencePoints);
         console.log("Fence is closed. Area:", area);
         alert(area * 0.2278);
 
@@ -382,6 +379,7 @@
 
     return Math.abs(sum) / 2;
   }
+
 
 
   // Function to handle click event
