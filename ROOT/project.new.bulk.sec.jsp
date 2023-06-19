@@ -130,7 +130,8 @@
               }
               String projectsOrganization = csvRecord.get(57);
               String siteEvaluation = csvRecord.get(50);
-              java.sql.Date projectCreated = new java.sql.Date(System.currentTimeMillis());
+
+              java.sql.Date projectCreated = new java.sql.Date(datedFormat.parse(csvRecord.get(10)).getTime());
               String meterspotRequested = request.getParameter("meterspotRequested");
               String layoutDrafted = request.getParameter("layoutDrafted");
               String plansDrafted = request.getParameter("plansDrafted");
