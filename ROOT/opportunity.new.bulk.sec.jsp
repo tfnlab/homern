@@ -106,6 +106,7 @@
                       iterator.next(); // Skip the first record
                   }
                   while (iterator.hasNext()) {
+                                            CSVRecord csvRecord = iterator.next();
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
