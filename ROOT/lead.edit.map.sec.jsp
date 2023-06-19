@@ -328,9 +328,11 @@
   <script>
     // Variables to store click positions
     let clicks = [];
+    let canvas = document.getElementById("map-container-img");
+    let ctx = canvas.getContext("2d");
 
     // Event listener for the click
-    document.getElementById("map-container-img").addEventListener("click", function(event) {
+    canvas.addEventListener("click", function(event) {
       // Store the click position
       const click = { x: event.clientX, y: event.clientY };
       clicks.push(click);
@@ -343,22 +345,31 @@
           // Calculate the area based on the shape formed by the clicks
           const area = calculateArea(clicks);
           console.log("Area:", area);
-        } else {
-          console.log("Clicks do not form a closed fence.");
-        }
 
-        // Reset clicks array for future calculations
-        clicks = [];
+          // Reset clicks array for future calculations
+          clicks = [];
+
+          // Clear the canvas
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        } else {
+          console.log("Clicks do not form a closed fence. Continue drawing.");
+        }
       }
+
+      // Mark the clicked point on the canvas
+      ctx.beginPath();
+      ctx.arc(click.x, click.y, 5, 0, 2 * Math.PI);
+      ctx.fillStyle = "red";
+      ctx.fill();
+      ctx.closePath();
     });
 
     // Function to check if the clicks form a closed fence
     function isClosedFence(clicks) {
-      // Check if the first and last clicks are close to each other
       const firstClick = clicks[0];
       const lastClick = clicks[clicks.length - 1];
       const distance = distanceBetweenPoints(firstClick, lastClick);
-      return distance <= 10; // Adjust the threshold as needed
+      return Math.round(distance) <= 10; // Adjust the threshold as needed
     }
 
     // Function to calculate the area based on the shape formed by the clicks
@@ -389,6 +400,7 @@
       return distance;
     }
   </script>
+
 
 </body>
 </html>
