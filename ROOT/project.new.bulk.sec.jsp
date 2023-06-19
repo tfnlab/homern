@@ -101,6 +101,7 @@
               while (iterator.hasNext()) {
                                         CSVRecord csvRecord = iterator.next();
               // Retrieve form data
+              String external_id = csvRecord.get(0);
               String projectName = csvRecord.get(1);
               String phoneNumber = request.getParameter("phoneNumber");
               String address = request.getParameter("address");
@@ -373,6 +374,7 @@
               project.setActualCloseDate(actualCloseDate);
               project.setUsername(username);
               project.setUserEmail(useremail);
+              project.setExternal_id(external_id);
 
               // Set more project properties as needed
 

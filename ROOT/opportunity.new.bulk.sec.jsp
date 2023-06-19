@@ -110,52 +110,53 @@
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-                String hasAProjectBeenCreated = request.getParameter("hasAProjectBeenCreated");
+                String external_id = csvRecord.get(0);
+                String hasAProjectBeenCreated = csvRecord.get(70);
                 String name = csvRecord.get(1);
                 String organization = csvRecord.get(3);
                 String convertedFromLead = request.getParameter("convertedFromLead");
-                String email = request.getParameter("email");
-                String interconnectionStatus = request.getParameter("interconnectionStatus");
-                String phoneNumber = request.getParameter("phoneNumber");
-                String address = request.getParameter("address");
-                String city = request.getParameter("city");
-                String linkedEmailAddress = request.getParameter("linkedEmailAddress");
-                String wifiInformation = request.getParameter("wifiInformation");
-                String salesNotes = request.getParameter("salesNotes");
-                String userResponsible = request.getParameter("userResponsible");
-                String currentState = request.getParameter("currentState");
-                String siteEvaluation = request.getParameter("siteEvaluation");
-                String utilityCo = request.getParameter("utilityCo");
-                String solarModules = request.getParameter("solarModules");
-                String inverters = request.getParameter("inverters");
-                String solarPanelQuantityParam = request.getParameter("solarPanelQuantity");
+                String email = csvRecord.get(61);
+                String interconnectionStatus = csvRecord.get(80);
+                String phoneNumber = csvRecord.get(49);
+                String address = csvRecord.get(32);
+                String city = "";
+                String linkedEmailAddress = csvRecord.get(16);
+                String wifiInformation = csvRecord.get(64);
+                String salesNotes = csvRecord.get(59);
+                String userResponsible = csvRecord.get(16);
+                String currentState = csvRecord.get(12);
+                String siteEvaluation = csvRecord.get(58);
+                String utilityCo = csvRecord.get(57);
+                String solarModules = csvRecord.get(47);
+                String inverters = csvRecord.get(56);
+                String solarPanelQuantityParam = csvRecord.get(52);
                 int solarPanelQuantity = 0; // Default value
 
                 if (solarPanelQuantityParam != null && !solarPanelQuantityParam.isEmpty()) {
                     solarPanelQuantity = Integer.parseInt(solarPanelQuantityParam);
                 }
 
-                String inverterQuantityParam = request.getParameter("inverterQuantity");
+                String inverterQuantityParam = csvRecord.get(44);
                 int inverterQuantity = 0; // Default value
 
                 if (inverterQuantityParam != null && !inverterQuantityParam.isEmpty()) {
                     inverterQuantity = Integer.parseInt(inverterQuantityParam);
                 }
 
-                String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
-                String otherAdders = request.getParameter("otherAdders");
-                String companyCamLink = request.getParameter("companyCamLink");
-                String dateOfNextActivity = request.getParameter("dateOfNextActivity");
-                String dateOfLastActivity = request.getParameter("dateOfLastActivity");
-                String battery = request.getParameter("battery");
-                String financingType = request.getParameter("financingType");
-                String accountingNotes = request.getParameter("accountingNotes");
-                String actualCloseDate = request.getParameter("actualCloseDate");
-                String opportunityCreated = request.getParameter("opportunityCreated");
+                String mainPanelUpgrade = csvRecord.get(46);
+                String otherAdders = csvRecord.get(63);
+                String companyCamLink = csvRecord.get(35);
+                String dateOfNextActivity = csvRecord.get(28);
+                String dateOfLastActivity = csvRecord.get(29);
+                String battery = csvRecord.get(33);
+                String financingType = csvRecord.get(42);
+                String accountingNotes = csvRecord.get(60);
+                String actualCloseDate = csvRecord.get(29);
+                String opportunityCreated = csvRecord.get(17);
 
                 BigDecimal probabilityOfWinning;
                 try {
-                    String probabilityOfWinningParam = request.getParameter("probabilityOfWinning");
+                    String probabilityOfWinningParam = csvRecord.get(5);
                     probabilityOfWinning = new BigDecimal(probabilityOfWinningParam);
                 } catch (NumberFormatException | NullPointerException e) {
                     probabilityOfWinning = BigDecimal.ZERO;
@@ -163,7 +164,7 @@
 
                 BigDecimal dcKw;
                 try {
-                    String dcKwParam = request.getParameter("dcKw");
+                    String dcKwParam = csvRecord.get(37);
                     dcKw = new BigDecimal(dcKwParam);
                 } catch (NumberFormatException | NullPointerException e) {
                     dcKw = BigDecimal.ZERO;
@@ -171,7 +172,7 @@
 
                 BigDecimal roofingPrice;
                 try {
-                    String roofingPriceParam = request.getParameter("roofingPrice");
+                    String roofingPriceParam = csvRecord.get(77);
                     roofingPrice = new BigDecimal(roofingPriceParam);
                 } catch (NumberFormatException | NullPointerException e) {
                     roofingPrice = BigDecimal.ZERO;
@@ -179,7 +180,7 @@
 
                 BigDecimal opportunityValue;
                 try {
-                    String opportunityValueParam = request.getParameter("opportunityValue");
+                    String opportunityValueParam = csvRecord.get(7);
                     opportunityValue = new BigDecimal(opportunityValueParam);
                 } catch (NumberFormatException | NullPointerException e) {
                     opportunityValue = BigDecimal.ZERO;
@@ -187,7 +188,7 @@
 
                 BigDecimal cashPrice;
                 try {
-                    String cashPriceParam = request.getParameter("cashPrice");
+                    String cashPriceParam = csvRecord.get(54);
                     cashPrice = new BigDecimal(cashPriceParam);
                 } catch (NumberFormatException | NullPointerException e) {
                     cashPrice = BigDecimal.ZERO;
@@ -195,7 +196,7 @@
 
                 BigDecimal contractAmount;
                 try {
-                    String contractAmountParam = request.getParameter("contractAmount");
+                    String contractAmountParam = csvRecord.get(36);
                     contractAmount = new BigDecimal(contractAmountParam);
                 } catch (NumberFormatException | NullPointerException e) {
                     contractAmount = BigDecimal.ZERO;
@@ -246,6 +247,7 @@
                 }
                 opportunity.setUsername(username);
                 opportunity.setUserEmail(useremail);
+                opportunity.setExternal_id(external_id);
                 OpportunityDAO opportunityDAO = new OpportunityDAO();
                 opportunityDAO.insertOpportunity(opportunity);
               }
