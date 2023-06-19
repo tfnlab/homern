@@ -59,7 +59,7 @@
             <HR>
         <h2>Lead</h2>
         <HR>
-        <HR>
+
           <a href="<%=rootUpdate%>lead.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Leads</a> |
             <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
           <%
@@ -236,8 +236,7 @@
         <HR>
           <div class="container mt-5">
             <div class="container">
-
-              <h4>Lead ID: <%=lead.getRecordId()%> (<a href="<%=rootUpdate%>lead.edit.com.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2">Messaging</a>)</h4>
+              <h4>Lead ID: <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2"><%=lead.getRecordId()%></a>  (<a href="<%=rootUpdate%>lead.edit.com.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2">Messaging</a>)</h4>
               <form action="<%=rootUpdate%>lead.edit.sec.jsp/" method="post">
                 <input type="hidden" class="form-control" name="lead_id" value="<%=lead.getRecordId()%>">
                 <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
