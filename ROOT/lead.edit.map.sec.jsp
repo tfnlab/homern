@@ -340,7 +340,7 @@
     }
 
     function initializeCanvas(image) {
-      canvas = document.getElementById('map-canvas');
+      canvas = document.getElementById('map-container');
       context = canvas.getContext('2d');
       canvas.width = image.width;
       canvas.height = image.height;
