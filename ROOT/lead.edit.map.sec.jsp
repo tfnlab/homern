@@ -264,6 +264,8 @@
                 <BR>
 
                       <div id="map-container" style="">
+                        <canvas id="map-container-img-canva" width="640" height="640"></canvas>
+
                         <img id="map-container-img" />
                     </div>
                 </form>
@@ -328,7 +330,7 @@
   <script>
     // Variables to store click positions
     let clicks = [];
-    let canvas = document.getElementById("map-container-img");
+    let canvas = document.getElementById("map-container-img-canva");
     let ctx = canvas.getContext("2d");
 
     // Event listener for the click
