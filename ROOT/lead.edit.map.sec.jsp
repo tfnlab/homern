@@ -335,17 +335,13 @@
   // Event listener for the first click
   let fencePoints = []; // Array to store fence points
   let area = 0; // Variable to store calculated area
-  let isFirstPointSelected = false; // Flag to track if the first point has been selected
 
   document.getElementById("map-container-img").addEventListener("click", function(event) {
     const clickPosition = { x: event.clientX, y: event.clientY };
     console.log("Click position:", clickPosition);
 
     // Store the click position as a fence point
-    if (fencePoints.length === 0 || (fencePoints.length > 0 && !isFirstPointSelected)) {
-      fencePoints.push(clickPosition);
-      isFirstPointSelected = true;
-    }
+    fencePoints.push(clickPosition);
 
     if (fencePoints.length > 1) {
       const firstPoint = fencePoints[0];
@@ -366,7 +362,6 @@
         // Reset fence points and area for future calculations
         fencePoints = [];
         area = 0;
-        isFirstPointSelected = false;
       }
     }
     markClick(event); // Assuming you have a function called markClick to handle displaying the click visually
@@ -397,7 +392,6 @@
 
     return Math.abs(sum) / 2;
   }
-
 
 
 
