@@ -258,7 +258,7 @@
 
                 <BR>
 
-                      <div id="map-container" style=""></div>
+                      <div id="map-container" style=""><img id="map-container-img" /></div>
                 </form>
 
             </div>
@@ -301,7 +301,7 @@
         const mapUrl = 'https://maps.googleapis.com/maps/api/staticmap?center=' + lat + ',' + lng + '&zoom=21&size=640x640&maptype=satellite&key=AIzaSyDHwbVpNgh3G5yG1cmT0HMe8TikX4DC2qE';
         console.log(mapUrl);
         // Set the background image of the map container div
-        const imgElement = document.createElement('img');
+        const imgElement = document.getElementById('map-container-img');
         imgElement.src = mapUrl;
 
         // Append the <img> element to the map container div
@@ -318,6 +318,72 @@
 
 
   </script>
+  <script>
+    let canvas;
+    let context;
+    let startPoint;
+    let endPoint;
 
+    function loadImage(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        const imgElement = document.getElementById('map-container-img');
+        imgElement.src = e.target.result;
+        imgElement.onload = function () {
+          initializeCanvas(imgElement);
+        };
+      };
+
+      reader.readAsDataURL(file);
+    }
+
+    function initializeCanvas(image) {
+      canvas = document.getElementById('map-canvas');
+      context = canvas.getContext('2d');
+      canvas.width = image.width;
+      canvas.height = image.height;
+      context.drawImage(image, 0, 0);
+
+      canvas.addEventListener('mousedown', handleMouseDown);
+    }
+
+    function handleMouseDown(event) {
+      if (!startPoint) {
+        startPoint = getMousePosition(event);
+      } else if (!endPoint) {
+        endPoint = getMousePosition(event);
+
+        const distance = calculateDistance(startPoint, endPoint);
+        console.log('Distance:', distance, 'pixels');
+
+        // Draw a line between the two points
+        context.beginPath();
+        context.moveTo(startPoint.x, startPoint.y);
+        context.lineTo(endPoint.x, endPoint.y);
+        context.strokeStyle = 'red';
+        context.lineWidth = 2;
+        context.stroke();
+
+        // Reset the points for the next measurement
+        startPoint = null;
+        endPoint = null;
+      }
+    }
+
+    function getMousePosition(event) {
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      return { x, y };
+    }
+
+    function calculateDistance(point1, point2) {
+      const dx = point2.x - point1.x;
+      const dy = point2.y - point1.y;
+      return Math.sqrt(dx * dx + dy * dy);
+    }
+  </script>
 </body>
 </html>
