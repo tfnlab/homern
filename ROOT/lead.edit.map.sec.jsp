@@ -252,7 +252,7 @@
                   <input type="text" class="form-control" name="address" value="<%= lead.getAddress() %>">
                 </div>
 
-                <div id="map-container">
+                <div id="map-container" >
 
                 </div>
 
@@ -266,9 +266,10 @@
       </div>
     </section><!-- End Blog Section -->
   </main>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHwbVpNgh3G5yG1cmT0HMe8TikX4DC2qE&libraries=places"></script>
   <script>
   // Replace 'YOUR_API_KEY' with your own Google Maps API key
-  const apiKey = 'AIzaSyDHwbVpNgh3G5yG1cmT0HMe8TikX4DC2qE';
 
   // Address you want to retrieve the satellite map for
   const address = '1600 Amphitheatre Parkway, Mountain View, CA';
@@ -306,15 +307,7 @@
     });
   }
 
-  // Load the Google Maps API asynchronously
-  function loadScript() {
-    const script = document.createElement('script');
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&callback=initMap';
-    document.body.appendChild(script);
-  }
 
-  // Call the loadScript function to start the process
-  loadScript();
 
   </script>
 
