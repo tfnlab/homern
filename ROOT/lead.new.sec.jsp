@@ -217,6 +217,8 @@
               lead.setUseremail(useremail);
               lead.setLocation_pointlat("0");
               lead.setLocation_pointlng("0");
+              lead.setLocation_pointlat(request.getParameter("location_pointlat"));
+              lead.setLocation_pointlng(request.getParameter("location_pointlng"));
               leadDAO.insertLead(lead);
             }
           %>
@@ -472,7 +474,8 @@
       var address = place.formatted_address;
       var latitude = place.geometry.location.lat();
       var longitude = place.geometry.location.lng();
-      alert(latitude);
+      document.getElementById('location_pointlat').value = latitude;
+      document.getElementById('location_pointlng').value = longitude;
       // Use the selected address or its components as needed
       console.log('Address:', address);
       console.log('Latitude:', latitude);
