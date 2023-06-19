@@ -342,17 +342,15 @@
         var distanceY = Math.abs(startPoint.y - endPoint.y);
         var pixelDistance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
         console.log("Pixel distance:", pixelDistance);
-        alert(pixelDistance);
       }
     }
 
     function handleClick(event) {
-      console.log("log start");
       var image = document.getElementById('map-container-img');
       var imageRect = image.getBoundingClientRect();
 
-      var x = event.clientX - imageRect.left;
-      var y = event.clientY - imageRect.top;
+      var x = event.offsetX;
+      var y = event.offsetY;
 
       if (!startPoint) {
         startPoint = { x: x, y: y };
@@ -361,12 +359,9 @@
         calculateDistance();
       }
     }
-    console.log("log start");
-    document.addEventListener('DOMContentLoaded', function () {
-      var overlay = document.getElementById('overlay');
-      overlay.addEventListener('click', handleClick);
-    });
-    console.log("log stop");
+
+    var overlay = document.getElementById('overlay');
+    overlay.addEventListener('click', handleClick);
   </script>
 </body>
 </html>
