@@ -354,7 +354,7 @@
       const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
       console.log("Distance between first and last points:", distance);
 
-      if (distance < 10 && fencePoints.length > 2) {
+      if (distance < 10 || fencePoints.length > 2 && isClosed(fencePoints)) {
         // Fence is closed, calculate area using Shoelace formula
         area = calculateArea(fencePoints);
         console.log("Fence is closed. Area:", area);
@@ -366,6 +366,18 @@
       }
     }
   });
+
+  function isClosed(points) {
+    const firstPoint = points[0];
+    const lastPoint = points[points.length - 1];
+
+    // Calculate distance between last fence point and first fence point
+    const distanceX = Math.abs(lastPoint.x - firstPoint.x);
+    const distanceY = Math.abs(lastPoint.y - firstPoint.y);
+    const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
+
+    return distance < 10;
+  }
 
   function calculateArea(points) {
     let sum = 0;
@@ -380,6 +392,7 @@
 
     return Math.abs(sum) / 2;
   }
+
 
 
 
