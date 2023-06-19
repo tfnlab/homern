@@ -326,38 +326,69 @@
 
   </script>
   <script>
-    // Array to store click positions
-    let clickPositions = [];
+    // Variables to store click positions
+    let clicks = [];
 
-    // Event listener for the clicks
+    // Event listener for the click
     document.getElementById("map-container-img").addEventListener("click", function(event) {
       // Store the click position
-      clickPositions.push({ x: event.clientX, y: event.clientY });
-      console.log("Click position:", clickPositions[clickPositions.length - 1]);
+      const click = { x: event.clientX, y: event.clientY };
+      clicks.push(click);
+      console.log("Click position:", click);
 
-      // Check if we have collected enough points to calculate the area
-      if (clickPositions.length >= 3) {
-        // Calculate the area based on the shape formed by the clicks
-        let area = 0;
-        if (clickPositions.length === 3) {
-          // Calculate area of a triangle
-          const base = Math.abs(clickPositions[1].x - clickPositions[0].x);
-          const height = Math.abs(clickPositions[2].y - clickPositions[0].y);
-          area = (base * height) / 2;
-        } else if (clickPositions.length === 4) {
-          // Calculate area of a square
-          const side = Math.abs(clickPositions[1].x - clickPositions[0].x);
-          area = side * side;
+      // Check if we have enough clicks to calculate the area
+      if (clicks.length >= 3) {
+        // Check if the clicks form a closed fence
+        if (isClosedFence(clicks)) {
+          // Calculate the area based on the shape formed by the clicks
+          const area = calculateArea(clicks);
+          console.log("Area:", area);
+        } else {
+          console.log("Clicks do not form a closed fence.");
         }
 
-        console.log("Area:", area);
-
-        // Reset click positions for future calculations
-        clickPositions = [];
+        // Reset clicks array for future calculations
+        clicks = [];
       }
     });
-  </script>
 
+    // Function to check if the clicks form a closed fence
+    function isClosedFence(clicks) {
+      // Check if the first and last clicks are close to each other
+      const firstClick = clicks[0];
+      const lastClick = clicks[clicks.length - 1];
+      const distance = distanceBetweenPoints(firstClick, lastClick);
+      return distance <= 10; // Adjust the threshold as needed
+    }
+
+    // Function to calculate the area based on the shape formed by the clicks
+    function calculateArea(clicks) {
+      if (clicks.length === 3) {
+        // Calculate triangle area using Heron's formula
+        const a = distanceBetweenPoints(clicks[0], clicks[1]);
+        const b = distanceBetweenPoints(clicks[1], clicks[2]);
+        const c = distanceBetweenPoints(clicks[2], clicks[0]);
+        const s = (a + b + c) / 2; // Semiperimeter
+        const triangleArea = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+        return triangleArea;
+      } else if (clicks.length === 4) {
+        // Calculate rectangle area
+        const width = distanceBetweenPoints(clicks[0], clicks[1]);
+        const height = distanceBetweenPoints(clicks[1], clicks[2]);
+        const rectangleArea = width * height;
+        return rectangleArea;
+      }
+      return 0; // Invalid shape, return 0 as the area
+    }
+
+    // Function to calculate the distance between two points
+    function distanceBetweenPoints(point1, point2) {
+      const distanceX = Math.abs(point2.x - point1.x);
+      const distanceY = Math.abs(point2.y - point1.y);
+      const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
+      return distance;
+    }
+  </script>
 
 </body>
 </html>
