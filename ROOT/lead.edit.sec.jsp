@@ -51,7 +51,6 @@
             <HR>
         <h2>Lead</h2>
         <HR>
-        <HR>
           <a href="<%=rootUpdate%>lead.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Leads</a> |
             <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
           <%
@@ -226,9 +225,8 @@
               SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
           %>
         <HR>
-          <div class="container mt-5">
+          <div class="container mt-3">
             <div class="container">
-
               <h4>Lead ID: <%=lead.getRecordId()%>
               |          <a href="<%=rootUpdate%>lead.edit.com.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2">Messaging</a>
               |          <a href="<%=rootUpdate%>lead.edit.map.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2">Map</a>
