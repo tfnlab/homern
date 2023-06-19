@@ -337,20 +337,27 @@
 
       // Check if we have collected enough points to calculate the area
       if (clickPositions.length >= 3) {
-        // Calculate the area using the Shoelace formula
+        // Calculate the area based on the shape formed by the clicks
         let area = 0;
-        for (let i = 0; i < clickPositions.length - 1; i++) {
-          area += (clickPositions[i].x * clickPositions[i + 1].y) - (clickPositions[i].y * clickPositions[i + 1].x);
+        if (clickPositions.length === 3) {
+          // Calculate area of a triangle
+          const base = Math.abs(clickPositions[1].x - clickPositions[0].x);
+          const height = Math.abs(clickPositions[2].y - clickPositions[0].y);
+          area = (base * height) / 2;
+        } else if (clickPositions.length === 4) {
+          // Calculate area of a square
+          const side = Math.abs(clickPositions[1].x - clickPositions[0].x);
+          area = side * side;
         }
-        area += (clickPositions[clickPositions.length - 1].x * clickPositions[0].y) - (clickPositions[clickPositions.length - 1].y * clickPositions[0].x);
-        area = Math.abs(area / 2);
+
         console.log("Area:", area);
-        alert(area);
+
         // Reset click positions for future calculations
         clickPositions = [];
       }
     });
   </script>
+
 
 </body>
 </html>
