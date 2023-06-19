@@ -301,8 +301,13 @@
         const mapUrl = 'https://maps.googleapis.com/maps/api/staticmap?center=' + lat + ',' + lng + '&zoom=18&size=640x640&maptype=satellite&key=AIzaSyDHwbVpNgh3G5yG1cmT0HMe8TikX4DC2qE';
         console.log(mapUrl);
         // Set the background image of the map container div
+        const imgElement = document.createElement('img');
+        imgElement.src = mapUrl;
+
+        // Append the <img> element to the map container div
         const mapContainer = document.getElementById('map-container');
-        mapContainer.style.backgroundImage = `url(${mapUrl})`;
+        mapContainer.innerHTML = '';
+        mapContainer.appendChild(imgElement);
       } else {
         console.error('Geocode was not successful for the following reason: ' + status);
       }
