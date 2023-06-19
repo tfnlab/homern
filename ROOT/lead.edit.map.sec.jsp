@@ -258,7 +258,12 @@
 
                 <BR>
 
-                      <div id="map-container" style=""><img id="map-container-img" /></div>
+                      <div id="map-container" style="">
+                        <img id="map-container-img" />
+
+
+      <div id="overlay"></div>
+    </div>
                 </form>
 
             </div>
@@ -319,71 +324,36 @@
 
   </script>
   <script>
-    let canvas;
-    let context;
-    let startPoint;
-    let endPoint;
+    var startPoint = null;
+    var endPoint = null;
 
-    function loadImage(event) {
-      const file = event.target.files[0];
-      const reader = new FileReader();
-
-      reader.onload = function (e) {
-        const imgElement = document.getElementById('map-container-img');
-        imgElement.src = e.target.result;
-        imgElement.onload = function () {
-          initializeCanvas(imgElement);
-        };
-      };
-
-      reader.readAsDataURL(file);
-    }
-
-    function initializeCanvas(image) {
-      canvas = document.getElementById('map-container');
-      context = canvas.getContext('2d');
-      canvas.width = image.width;
-      canvas.height = image.height;
-      context.drawImage(image, 0, 0);
-
-      canvas.addEventListener('mousedown', handleMouseDown);
-    }
-
-    function handleMouseDown(event) {
-      if (!startPoint) {
-        startPoint = getMousePosition(event);
-      } else if (!endPoint) {
-        endPoint = getMousePosition(event);
-
-        const distance = calculateDistance(startPoint, endPoint);
-        console.log('Distance:', distance, 'pixels');
-
-        // Draw a line between the two points
-        context.beginPath();
-        context.moveTo(startPoint.x, startPoint.y);
-        context.lineTo(endPoint.x, endPoint.y);
-        context.strokeStyle = 'red';
-        context.lineWidth = 2;
-        context.stroke();
-
-        // Reset the points for the next measurement
-        startPoint = null;
-        endPoint = null;
+    function calculateDistance() {
+      if (startPoint && endPoint) {
+        var distanceX = Math.abs(startPoint.x - endPoint.x);
+        var distanceY = Math.abs(startPoint.y - endPoint.y);
+        var pixelDistance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
+        console.log("Pixel distance:", pixelDistance);
+        alert(pixelDistance);
       }
     }
 
-    function getMousePosition(event) {
-      const rect = canvas.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      return { x, y };
+    function handleClick(event) {
+      var image = document.getElementById('map-container-img');
+      var imageRect = image.getBoundingClientRect();
+
+      var x = event.clientX - imageRect.left;
+      var y = event.clientY - imageRect.top;
+
+      if (!startPoint) {
+        startPoint = { x: x, y: y };
+      } else if (!endPoint) {
+        endPoint = { x: x, y: y };
+        calculateDistance();
+      }
     }
 
-    function calculateDistance(point1, point2) {
-      const dx = point2.x - point1.x;
-      const dy = point2.y - point1.y;
-      return Math.sqrt(dx * dx + dy * dy);
-    }
+    var overlay = document.getElementById('overlay');
+    overlay.addEventListener('click', handleClick);
   </script>
 </body>
 </html>
