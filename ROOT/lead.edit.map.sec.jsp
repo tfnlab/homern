@@ -271,10 +271,8 @@
 
                       <div id="map-container" style="">
                         <img id="map-container-img" />
-
-
-        <div id="overlay"></div>
-    </div>
+                        <div id="overlay"></div>
+                    </div>
                 </form>
 
             </div>
@@ -349,6 +347,7 @@
     }
 
     function handleClick(event) {
+      console.log("log start");
       var image = document.getElementById('map-container-img');
       var imageRect = image.getBoundingClientRect();
 
@@ -362,9 +361,10 @@
         calculateDistance();
       }
     }
-
+    console.log("log start");
     var overlay = document.getElementById('overlay');
     overlay.addEventListener('click', handleClick);
+    console.log("log stop");
   </script>
 </body>
 </html>
