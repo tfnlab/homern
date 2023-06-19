@@ -57,6 +57,7 @@
           <a href="<%=rootUpdate%>opportunity.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Opportunity</a> |
             <a href="<%=rootUpdate%>opportunity.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
             <%
+            boolean isMultipart = ServletFileUpload.isMultipartContent(request);
             if (isMultipart) {
 
                 UUID uuid = UUID.randomUUID();
