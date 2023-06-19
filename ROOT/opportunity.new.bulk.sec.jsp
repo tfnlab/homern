@@ -107,7 +107,7 @@
                   }
                   while (iterator.hasNext()) {
                                             CSVRecord csvRecord = iterator.next();
- 
+
                 SimpleDateFormat inputFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy hh:mm:ss a");
@@ -233,10 +233,10 @@
                 opportunity.setOtherAdders(otherAdders);
                 opportunity.setCompanyCamLink(companyCamLink);
                 if (dateOfNextActivity != null && !dateOfNextActivity.isEmpty()) {
-                    opportunity.setDateOfNextActivity(dateFormat.parse(dateOfNextActivity));
+                    opportunity.setDateOfNextActivity(datedFormat.parse(dateOfNextActivity));
                 }
                 if (dateOfLastActivity != null && !dateOfLastActivity.isEmpty()) {
-                    opportunity.setDateOfLastActivity(dateFormat.parse(dateOfLastActivity));
+                    opportunity.setDateOfLastActivity(datedFormat.parse(dateOfLastActivity));
                 }
                 opportunity.setBattery(battery);
                 opportunity.setFinancingType(financingType);
@@ -246,7 +246,7 @@
                 opportunity.setCashPrice(cashPrice);
                 opportunity.setContractAmount(contractAmount);
                 if (actualCloseDate != null && !actualCloseDate.isEmpty()) {
-                    opportunity.setActualCloseDate(dateFormat.parse(actualCloseDate));
+                    opportunity.setActualCloseDate(datedFormat.parse(actualCloseDate));
                 }
                 opportunity.setUsername(username);
                 opportunity.setUserEmail(useremail);
