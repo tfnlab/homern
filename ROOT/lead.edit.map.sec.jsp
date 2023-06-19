@@ -270,15 +270,15 @@
     <div id="map-container"></div>
   <script>
   // Replace 'YOUR_API_KEY' with your own Google Maps API key
-  window.onload = initMap;
+  window.onload = initMap();
 
   // Address you want to retrieve the satellite map for
   const address = '1600 Amphitheatre Parkway, Mountain View, CA';
 
   // Function to initialize and load the map image
   function initMap() {
+    const address = '1600 Amphitheatre Parkway, Mountain View, CA';
 
-    console.log('Initializing map...');
     // Create a new instance of the Geocoder
     const geocoder = new google.maps.Geocoder();
 
@@ -289,17 +289,8 @@
         const lat = results[0].geometry.location.lat();
         const lng = results[0].geometry.location.lng();
 
-        // Create a new instance of the static map
-        const map = new google.maps.StaticMapService();
-
         // Build the map URL with the satellite map type
-        const mapUrl = map.getUrl({
-          center: { lat: lat, lng: lng },
-          zoom: 18,
-          size: '640x640',
-          mapType: 'satellite',
-          key: apiKey
-        });
+        const mapUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${lat},${lng}&zoom=18&size=640x640&maptype=satellite&key=AIzaSyDHwbVpNgh3G5yG1cmT0HMe8TikX4DC2qE`;
 
         // Set the background image of the map container div
         const mapContainer = document.getElementById('map-container');
@@ -309,6 +300,7 @@
       }
     });
   }
+
 
 
 
