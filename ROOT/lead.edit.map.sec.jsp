@@ -264,8 +264,6 @@
                 <BR>
 
                       <div id="map-container" style="">
-                        <canvas id="map-container-img-canva" width="640" height="640"></canvas>
-
                         <img id="map-container-img" />
                     </div>
                 </form>
@@ -330,11 +328,19 @@
   <script>
     // Variables to store click positions
     let clicks = [];
-    let canvas = document.getElementById("map-container-img-canva");
-    let ctx = canvas.getContext("2d");
+
+    // Function to mark the clicked point on the image
+    function markPointOnImage(click) {
+      const imageContainer = document.getElementById("map-container-img");
+      const marker = document.createElement("div");
+      marker.classList.add("marker");
+      marker.style.left = click.x + "px";
+      marker.style.top = click.y + "px";
+      imageContainer.appendChild(marker);
+    }
 
     // Event listener for the click
-    canvas.addEventListener("click", function(event) {
+    document.getElementById("map-container-img").addEventListener("click", function(event) {
       // Store the click position
       const click = { x: event.clientX, y: event.clientY };
       clicks.push(click);
@@ -351,19 +357,18 @@
           // Reset clicks array for future calculations
           clicks = [];
 
-          // Clear the canvas
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          // Clear all markers
+          const markers = document.getElementsByClassName("marker");
+          while (markers.length > 0) {
+            markers[0].parentNode.removeChild(markers[0]);
+          }
         } else {
           console.log("Clicks do not form a closed fence. Continue drawing.");
         }
       }
 
-      // Mark the clicked point on the canvas
-      ctx.beginPath();
-      ctx.arc(click.x, click.y, 5, 0, 2 * Math.PI);
-      ctx.fillStyle = "red";
-      ctx.fill();
-      ctx.closePath();
+      // Mark the clicked point on the image
+      markPointOnImage(click);
     });
 
     // Function to check if the clicks form a closed fence
@@ -402,6 +407,7 @@
       return distance;
     }
   </script>
+
 
 
 </body>
