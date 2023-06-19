@@ -43,7 +43,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHwbVpNgh3G5yG1cmT0HMe8TikX4DC2qE&libraries=places"></script>
-
+    <style>
+      #map-container {
+        position: relative;
+      }
+      #overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 0, 0, 0.5);
+        pointer-events: none;
+      }
+    </style>
   </head>
 <body>
   <main id="main">
@@ -262,7 +273,7 @@
                         <img id="map-container-img" />
 
 
-      <div id="overlay"></div>
+        <div id="overlay"></div>
     </div>
                 </form>
 
