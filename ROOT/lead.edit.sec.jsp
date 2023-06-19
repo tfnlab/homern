@@ -469,5 +469,28 @@
       </div>
     </section><!-- End Blog Section -->
   </main>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    // Initialize the autocomplete object
+    var autocomplete = new google.maps.places.Autocomplete(document.getElementById('address'));
+    // Restrict autocomplete results to addresses only
+    autocomplete.setTypes(['address']);
+    // Handle the selection of an address
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+      var place = autocomplete.getPlace();
+      // Optionally, you can access various address components
+      var address = place.formatted_address;
+      var latitude = place.geometry.location.lat();
+      var longitude = place.geometry.location.lng();
+      document.getElementById('location_pointlat').value = latitude;
+      document.getElementById('location_pointlng').value = longitude;
+      // Use the selected address or its components as needed
+      console.log('Address:', address);
+      console.log('Latitude:', latitude);
+      console.log('Longitude:', longitude);
+    });
+  });
+  </script>
 </body>
 </html>
