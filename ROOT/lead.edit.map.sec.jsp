@@ -286,6 +286,9 @@
     geocoder.geocode({ address: address }, (results, status) => {
       if (status === 'OK') {
         // Get the latitude and longitude of the address
+        console.log('Geocode status:', status);
+        console.log('Geocode results:', results);
+                
         const lat = results[0].geometry.location.lat();
         const lng = results[0].geometry.location.lng();
 
