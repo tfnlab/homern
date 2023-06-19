@@ -371,7 +371,20 @@
     // Append the marker to the image container
     image.parentNode.appendChild(marker);
   }
+  // Define CSS styles using a <style> tag
+  const styleTag = document.createElement('style');
+  styleTag.innerHTML = `
+    .click-marker {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      border-radius: 50%;
+    }
+  `;
 
+  // Append the <style> tag to the document's head
+  document.head.appendChild(styleTag);
 </script>
 </body>
 </html>
