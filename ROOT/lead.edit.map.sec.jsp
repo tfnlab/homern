@@ -345,28 +345,33 @@
 
     // Store the click position as a fence point
     fencePoints.push(clickPosition);
-    if (fencePoints.length > 2) {
-      const secondLastPoint = fencePoints[fencePoints.length - 2];
-
-      // Calculate distance between last fence point and second-to-last fence point
-      const distanceX = Math.abs(lastPoint.x - secondLastPoint.x);
-      const distanceY = Math.abs(lastPoint.y - secondLastPoint.y);
-      const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
-      alert("Distance From Second-to-Last Point to Last Point: " + distance * 0.22);
-    }
 
     if (fencePoints.length > 1) {
       const firstPoint = fencePoints[0];
       const lastPoint = fencePoints[fencePoints.length - 1];
+      const secondToLastPoint = fencePoints[fencePoints.length - 2];
 
-      // Calculate distance between last fence point and first fence point
+      // Calculate distance between first and last fence points
       const distanceX = Math.abs(lastPoint.x - firstPoint.x);
       const distanceY = Math.abs(lastPoint.y - firstPoint.y);
-      const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
-      console.log("Distance between first and last points:", distance);
-      alert("Distance From First Point to Last Point " + distance * 0.22);
+      const distanceFirstToLast = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
+      console.log("Distance between first and last points:", distanceFirstToLast);
 
-      if (distance < 10 || fencePoints.length > 2 && isClosed(fencePoints)) {
+      // Calculate distance between last and second-to-last fence points
+      const distanceX2 = Math.abs(secondToLastPoint.x - lastPoint.x);
+      const distanceY2 = Math.abs(secondToLastPoint.y - lastPoint.y);
+      const distanceLastToSecondToLast = Math.sqrt(Math.pow(distanceX2, 2) + Math.pow(distanceY2, 2));
+      console.log("Distance between last and second-to-last points:", distanceLastToSecondToLast);
+
+      // Calculate the total distance
+      const totalDistance = distanceFirstToLast + distanceLastToSecondToLast;
+      console.log("Total distance:", totalDistance);
+      alert("Distance From First Point to Last Point: " + distanceFirstToLast * 0.22);
+      alert("Distance From Last Point to Second-to-Last Point: " + distanceLastToSecondToLast * 0.22);
+      alert("Total Distance: " + totalDistance * 0.22);
+
+
+      if (distanceFirstToLast < 10 || fencePoints.length > 2 && isClosed(fencePoints)) {
         // Fence is closed, calculate area using Shoelace formula
         area = calculateArea(fencePoints);
         console.log("Fence is closed. Area:", area);
