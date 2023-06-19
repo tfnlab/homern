@@ -257,7 +257,8 @@
 
 
                 <BR>
-                    <input type="submit" value="Save">
+
+                      <div id="map-container" style=""></div>
                 </form>
 
             </div>
@@ -267,7 +268,6 @@
     </section><!-- End Blog Section -->
   </main>
 
-    <div id="map-container" style=""></div>
   <script>
   // Replace 'YOUR_API_KEY' with your own Google Maps API key
   window.onload = initMap();
@@ -298,7 +298,7 @@
 
             console.log('Initializing map... LAT');
         // Build the map URL with the satellite map type
-        const mapUrl = 'https://maps.googleapis.com/maps/api/staticmap?center=' + lat + ',' + lng + '&zoom=18&size=640x640&maptype=satellite&key=AIzaSyDHwbVpNgh3G5yG1cmT0HMe8TikX4DC2qE';
+        const mapUrl = 'https://maps.googleapis.com/maps/api/staticmap?center=' + lat + ',' + lng + '&zoom=12&size=640x640&maptype=satellite&key=AIzaSyDHwbVpNgh3G5yG1cmT0HMe8TikX4DC2qE';
         console.log(mapUrl);
         // Set the background image of the map container div
         const imgElement = document.createElement('img');
