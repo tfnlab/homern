@@ -326,30 +326,31 @@
 
   </script>
   <script>
-  // Variables to store click positions
-  let firstClick = null;
-  let secondClick = null;
+    // Array to store click positions
+    let clickPositions = [];
 
-  // Event listener for the first click
-  document.getElementById("map-container-img").addEventListener("click", function(event) {
-    if (firstClick === null) {
-      firstClick = { x: event.clientX, y: event.clientY };
-      console.log("First click position:", firstClick);
-    } else if (secondClick === null) {
-      secondClick = { x: event.clientX, y: event.clientY };
-      console.log("Second click position:", secondClick);
+    // Event listener for the clicks
+    document.getElementById("map-container-img").addEventListener("click", function(event) {
+      // Store the click position
+      clickPositions.push({ x: event.clientX, y: event.clientY });
+      console.log("Click position:", clickPositions[clickPositions.length - 1]);
 
-      // Calculate distance between clicks
-      const distanceX = Math.abs(secondClick.x - firstClick.x);
-      const distanceY = Math.abs(secondClick.y - firstClick.y);
-      const distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
-      console.log("Distance clicked in pixels:", distance);
-      alert(distance *0.2278);
-      // Reset click positions for future calculations
-      firstClick = null;
-      secondClick = null;
-    }
-  });
-</script>
+      // Check if we have collected enough points to calculate the area
+      if (clickPositions.length >= 3) {
+        // Calculate the area using the Shoelace formula
+        let area = 0;
+        for (let i = 0; i < clickPositions.length - 1; i++) {
+          area += (clickPositions[i].x * clickPositions[i + 1].y) - (clickPositions[i].y * clickPositions[i + 1].x);
+        }
+        area += (clickPositions[clickPositions.length - 1].x * clickPositions[0].y) - (clickPositions[clickPositions.length - 1].y * clickPositions[0].x);
+        area = Math.abs(area / 2);
+        console.log("Area:", area);
+        alert(area);
+        // Reset click positions for future calculations
+        clickPositions = [];
+      }
+    });
+  </script>
+
 </body>
 </html>
