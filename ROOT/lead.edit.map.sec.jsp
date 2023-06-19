@@ -253,7 +253,7 @@
                 </div>
 
                 <div id="map-container">
-                  
+
                 </div>
 
                 <BR>
@@ -271,7 +271,7 @@
   const apiKey = 'AIzaSyDHwbVpNgh3G5yG1cmT0HMe8TikX4DC2qE';
 
   // Address you want to retrieve the satellite map for
-  const address = document.getElementById('address').value;
+  const address = '1600 Amphitheatre Parkway, Mountain View, CA';
 
   // Function to initialize and load the map image
   function initMap() {
