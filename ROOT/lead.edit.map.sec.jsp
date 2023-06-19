@@ -354,11 +354,9 @@
   });
 
 
-  // Function to handle click event
   function markClick(event) {
     // Get the position of the click relative to the image
     const rect = image.getBoundingClientRect();
-    alert("hello");
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
@@ -371,6 +369,7 @@
     // Append the marker to the image container
     image.parentNode.appendChild(marker);
   }
+
   // Define CSS styles using a <style> tag
   const styleTag = document.createElement('style');
   styleTag.innerHTML = `
