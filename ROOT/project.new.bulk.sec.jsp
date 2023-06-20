@@ -172,7 +172,7 @@
               String battery = csvRecord.get(42);
               double sgipRebate = 0.0;
 
-              String sgipRebateParam = 0
+              String sgipRebateParam = 0;
               String sgipRebateType = csvRecord.get(58);
               String sgipRebateStatus = csvRecord.get(45);
               String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
