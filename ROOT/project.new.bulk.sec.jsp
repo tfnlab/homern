@@ -132,18 +132,18 @@
               String siteEvaluation = csvRecord.get(50);
 
               java.sql.Date projectCreated = new java.sql.Date(datedFormat.parse(csvRecord.get(10)).getTime());
-              String meterspotRequested = request.getParameter("meterspotRequested");
-              String layoutDrafted = request.getParameter("layoutDrafted");
-              String plansDrafted = request.getParameter("plansDrafted");
-              String submittedToPermitting = request.getParameter("submittedToPermitting");
-              String salesNotes = request.getParameter("salesNotes");
-              String otherAdders = request.getParameter("otherAdders");
-              String companyCamLink = request.getParameter("companyCamLink");
-              String utilityCo = request.getParameter("utilityCo");
-              String solarModules = request.getParameter("solarModules");
-              String inverters = request.getParameter("inverters");
+              String meterspotRequested = csvRecord.get(64);
+              String layoutDrafted = csvRecord.get(66);
+              String plansDrafted = csvRecord.get(65);
+              String submittedToPermitting = csvRecord.get(67);
+              String salesNotes = csvRecord.get(52);
+              String otherAdders = "";
+              String companyCamLink = csvRecord.get(41);
+              String utilityCo = csvRecord.get(49);
+              String solarModules = csvRecord.get(37);
+              String inverters = csvRecord.get(54);
               double dcKw = 0.0;
-              String dcKwParam = request.getParameter("dcKw");
+              String dcKwParam = csvRecord.get(29);
               if (dcKwParam != null && !dcKwParam.isBlank()) {
                   try {
                       dcKw = Double.parseDouble(dcKwParam);
@@ -152,7 +152,7 @@
                   }
               }
               int solarPanelQuantity = 0;
-              String solarPanelQuantityParam = request.getParameter("solarPanelQuantity");
+              String solarPanelQuantityParam = csvRecord.get(28);
               if (solarPanelQuantityParam != null && !solarPanelQuantityParam.isBlank()) {
                   try {
                       solarPanelQuantity = Integer.parseInt(solarPanelQuantityParam);
@@ -161,7 +161,7 @@
                   }
               }
               int inverterQuantity = 0;
-              String inverterQuantityParam = request.getParameter("inverterQuantity");
+              String inverterQuantityParam = csvRecord.get(30);
               if (inverterQuantityParam != null && !inverterQuantityParam.isBlank()) {
                   try {
                       inverterQuantity = Integer.parseInt(inverterQuantityParam);
@@ -169,18 +169,12 @@
                       // Handle invalid integer format
                   }
               }
-              String battery = request.getParameter("battery");
+              String battery = csvRecord.get(42);
               double sgipRebate = 0.0;
-              String sgipRebateParam = request.getParameter("sgipRebate");
-              if (sgipRebateParam != null && !sgipRebateParam.isBlank()) {
-                  try {
-                      sgipRebate = Double.parseDouble(sgipRebateParam);
-                  } catch (NumberFormatException e) {
-                      // Handle invalid double format
-                  }
-              }
-              String sgipRebateType = request.getParameter("sgipRebateType");
-              String sgipRebateStatus = request.getParameter("sgipRebateStatus");
+
+              String sgipRebateParam = 0
+              String sgipRebateType = csvRecord.get(58);
+              String sgipRebateStatus = csvRecord.get(45);
               String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
               String breakerTypeNeeded = request.getParameter("breakerTypeNeeded");
               String downsizeNeeded = request.getParameter("downsizeNeeded");
@@ -191,12 +185,21 @@
               String inspectionDateParam = request.getParameter("inspectionDate");
               if (inspectionDateParam != null && !inspectionDateParam.isBlank()) {
                   try {
-                      inspectionDate = java.sql.Date.valueOf(inspectionDateParam);
+                      inspectionDate = new java.sql.Date(datedFormat.parse(inspectionDateParam).getTime());
                   } catch (IllegalArgumentException e) {
                       // Handle invalid date format
                   }
               }
               String inspectionPassed = request.getParameter("inspectionPassed");
+              java.sql.Date inspectionPassedDate = null;
+              String inspectionPassedDateParam = request.getParameter("inspectionDate");
+              if (inspectionPassedDateParam != null && !inspectionDateParam.isBlank()) {
+                  try {
+                      inspectionPassedDate = java.sql.Date.valueOf(inspectionPassedDateParam);
+                  } catch (IllegalArgumentException e) {
+                      // Handle invalid date format
+                  }
+              }
               java.sql.Date reinspectionDate = null;
               String reinspectionDateParam = request.getParameter("reinspectionDate");
               if (reinspectionDateParam != null && !reinspectionDateParam.isBlank()) {
@@ -275,44 +278,44 @@
                         // Handle invalid double format
                     }
                 }
-                      double m2Amount = 0.0;
-                      String m2AmountParam = request.getParameter("m2Amount");
-                      if (m2AmountParam != null && !m2AmountParam.isBlank()) {
-                          try {
-                              m2Amount = Double.parseDouble(m2AmountParam);
-                          } catch (NumberFormatException e) {
-                              // Handle invalid double format
-                          }
-                      }
-                      double m2PaymentRequested = 0.0;
-                      String m2PaymentRequestedParam = request.getParameter("m2PaymentRequested");
-                      if (m2PaymentRequestedParam != null && !m2PaymentRequestedParam.isBlank()) {
-                          try {
-                              m2PaymentRequested = Double.parseDouble(m2PaymentRequestedParam);
-                          } catch (NumberFormatException e) {
-                              // Handle invalid double format
-                          }
-                      }
-                      double paymentReceivedM2 = 0.0;
-                      String paymentReceivedM2Param = request.getParameter("paymentReceivedM2");
-                      if (paymentReceivedM2Param != null && !paymentReceivedM2Param.isBlank()) {
-                          try {
-                              paymentReceivedM2 = Double.parseDouble(paymentReceivedM2Param);
-                          } catch (NumberFormatException e) {
-                              // Handle invalid double format
-                          }
-                      }
-                      String isSalesCommissionsPaid = request.getParameter("isSalesCommissionsPaid");
+              double m2Amount = 0.0;
+              String m2AmountParam = request.getParameter("m2Amount");
+              if (m2AmountParam != null && !m2AmountParam.isBlank()) {
+                  try {
+                      m2Amount = Double.parseDouble(m2AmountParam);
+                  } catch (NumberFormatException e) {
+                      // Handle invalid double format
+                  }
+              }
+              double m2PaymentRequested = 0.0;
+              String m2PaymentRequestedParam = request.getParameter("m2PaymentRequested");
+              if (m2PaymentRequestedParam != null && !m2PaymentRequestedParam.isBlank()) {
+                  try {
+                      m2PaymentRequested = Double.parseDouble(m2PaymentRequestedParam);
+                  } catch (NumberFormatException e) {
+                      // Handle invalid double format
+                  }
+              }
+              double paymentReceivedM2 = 0.0;
+              String paymentReceivedM2Param = request.getParameter("paymentReceivedM2");
+              if (paymentReceivedM2Param != null && !paymentReceivedM2Param.isBlank()) {
+                  try {
+                      paymentReceivedM2 = Double.parseDouble(paymentReceivedM2Param);
+                  } catch (NumberFormatException e) {
+                      // Handle invalid double format
+                  }
+              }
+              String isSalesCommissionsPaid = request.getParameter("isSalesCommissionsPaid");
 
-                      java.sql.Date actualCloseDate = null;
-                      String actualCloseDateParam = request.getParameter("actualCloseDate");
-                      if (actualCloseDateParam != null && !actualCloseDateParam.isBlank()) {
-                          try {
-                              actualCloseDate = java.sql.Date.valueOf(actualCloseDateParam);
-                          } catch (IllegalArgumentException e) {
-                              // Handle invalid date format
-                          }
-                      }
+              java.sql.Date actualCloseDate = null;
+              String actualCloseDateParam = request.getParameter("actualCloseDate");
+              if (actualCloseDateParam != null && !actualCloseDateParam.isBlank()) {
+                  try {
+                      actualCloseDate = java.sql.Date.valueOf(actualCloseDateParam);
+                  } catch (IllegalArgumentException e) {
+                      // Handle invalid date format
+                  }
+              }
 
               // Create a new project object
               Project project = new Project();
@@ -358,6 +361,7 @@
               project.setPanelDescription(panelDescription);
               project.setInspectionDate(inspectionDate);
               project.setInspectionPassed(inspectionPassed);
+              project.setInspectionPassedDate(inspectionPassedDate);
               project.setReinspectionDate(reinspectionDate);
               project.setPlacardStatus(placardStatus);
               project.setPlacardsInPossession(placardsInPossession);
