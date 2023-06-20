@@ -175,47 +175,47 @@
               String sgipRebateParam = "";
               String sgipRebateType = csvRecord.get(58);
               String sgipRebateStatus = csvRecord.get(45);
-              String mainPanelUpgrade = request.getParameter("mainPanelUpgrade");
-              String breakerTypeNeeded = request.getParameter("breakerTypeNeeded");
-              String downsizeNeeded = request.getParameter("downsizeNeeded");
-              String isEv = request.getParameter("isEv");
-              String subPanel = request.getParameter("subPanel");
-              String panelDescription = request.getParameter("panelDescription");
+              String mainPanelUpgrade = csvRecord.get(36);
+              String breakerTypeNeeded = csvRecord.get(63);
+              String downsizeNeeded = csvRecord.get(39);
+              String isEv = csvRecord.get(35);
+              String subPanel = csvRecord.get(38);
+              String panelDescription = csvRecord.get(44);
               java.sql.Date inspectionDate = null;
-              String inspectionDateParam = request.getParameter("inspectionDate");
+              String inspectionDateParam =  csvRecord.get(74);
               if (inspectionDateParam != null && !inspectionDateParam.isBlank()) {
                   try {
-                      inspectionDate = new java.sql.Date(datedFormat.parse(inspectionDateParam).getTime());
+                      inspectionDate = new java.sql.Date(dateFormat.parse(inspectionDateParam).getTime());
                   } catch (IllegalArgumentException e) {
                       // Handle invalid date format
                   }
               }
-              String inspectionPassed = request.getParameter("inspectionPassed");
+              String inspectionPassed = csvRecord.get(81);
               java.sql.Date inspectionPassedDate = null;
-              String inspectionPassedDateParam = request.getParameter("inspectionDate");
+              String inspectionPassedDateParam = "";
               if (inspectionPassedDateParam != null && !inspectionDateParam.isBlank()) {
                   try {
-                      inspectionPassedDate = java.sql.Date.valueOf(inspectionPassedDateParam);
+                      inspectionPassedDate = new java.sql.Date(dateFormat.parse(inspectionPassedDateParam).getTime());
                   } catch (IllegalArgumentException e) {
                       // Handle invalid date format
                   }
               }
               java.sql.Date reinspectionDate = null;
-              String reinspectionDateParam = request.getParameter("reinspectionDate");
+              String reinspectionDateParam = csvRecord.get(82);
               if (reinspectionDateParam != null && !reinspectionDateParam.isBlank()) {
                   try {
-                      reinspectionDate = java.sql.Date.valueOf(reinspectionDateParam);
+                      reinspectionDate = new java.sql.Date(dateFormat.parse(reinspectionDateParam).getTime());
                   } catch (IllegalArgumentException e) {
                       // Handle invalid date format
                   }
               }
-              String placardStatus = request.getParameter("placardStatus");
-              String placardsInPossession = request.getParameter("placardsInPossession");
-              String acDiscoPlacardsNeeded = request.getParameter("acDiscoPlacardsNeeded");
-              String inspectionTech = request.getParameter("inspectionTech");
-              String accountingNotes = request.getParameter("accountingNotes");
+              String placardStatus = csvRecord.get(75);
+              String placardsInPossession = csvRecord.get(75);
+              String acDiscoPlacardsNeeded = csvRecord.get(76);
+              String inspectionTech = csvRecord.get(80);
+              String accountingNotes = csvRecord.get(55);
               double roofingPrice = 0.0;
-              String roofingPriceParam = request.getParameter("roofingPrice");
+              String roofingPriceParam = csvRecord.get(77);
               if (roofingPriceParam != null && !roofingPriceParam.isBlank()) {
                   try {
                       roofingPrice = Double.parseDouble(roofingPriceParam);
@@ -224,7 +224,7 @@
                   }
               }
               double otherAddersPrice = 0.0;
-              String otherAddersPriceParam = request.getParameter("otherAddersPrice");
+              String otherAddersPriceParam =  csvRecord.get(60);
               if (otherAddersPriceParam != null && !otherAddersPriceParam.isBlank()) {
                   try {
                       otherAddersPrice = Double.parseDouble(otherAddersPriceParam);
@@ -233,7 +233,7 @@
                   }
               }
               double contractAmount = 0.0;
-              String contractAmountParam = request.getParameter("contractAmount");
+              String contractAmountParam = csvRecord.get(27);
               if (contractAmountParam != null && !contractAmountParam.isBlank()) {
                   try {
                       contractAmount = Double.parseDouble(contractAmountParam);
@@ -242,7 +242,7 @@
                   }
               }
               double cashPrice = 0.0;
-              String cashPriceParam = request.getParameter("cashPrice");
+              String cashPriceParam =  csvRecord.get(47);
               if (cashPriceParam != null && !cashPriceParam.isBlank()) {
                   try {
                       cashPrice = Double.parseDouble(cashPriceParam);
@@ -250,9 +250,9 @@
                       // Handle invalid double format
                   }
               }
-              String financingType = request.getParameter("financingType");
+              String financingType =  csvRecord.get(53);
               double m1Amount = 0.0;
-              String m1AmountParam = request.getParameter("m1Amount");
+              String m1AmountParam = csvRecord.get(72);
               if (m1AmountParam != null && !m1AmountParam.isBlank()) {
                   try {
                       m1Amount = Double.parseDouble(m1AmountParam);
@@ -261,7 +261,7 @@
                   }
               }
               double m1PaymentRequested = 0.0;
-              String m1PaymentRequestedParam = request.getParameter("m1PaymentRequested");
+              String m1PaymentRequestedParam = csvRecord.get(68);
               if (m1PaymentRequestedParam != null && !m1PaymentRequestedParam.isBlank()) {
                   try {
                       m1PaymentRequested = Double.parseDouble(m1PaymentRequestedParam);
@@ -391,7 +391,6 @@
               ProjectDAO projectDAO = new ProjectDAO();
               try {
                   projectDAO.insertProject(project);
-                  out.println("Project saved successfully!");
               } catch (Exception e) {
                   out.println("Error saving project: " + e.getMessage());
               }
