@@ -87,7 +87,6 @@
                                 <p class="card-text"><%= lead.getPhone() %></p>
                                 <p class="card-text"><%= lead.getEmailAddress() %></p>
                                 <p class="card-text"><%= lead.getLeadStatus() %></p>
-                                <p class="card-text"><%= lead.getUseremail() %></p>
                                 <p class="card-text"><%= lead.getExternal_id() %></p>
                                 <!-- Add more card content for other lead properties -->
                             </div>

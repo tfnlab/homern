@@ -80,6 +80,7 @@
                                 <p class="card-text"><%= project.getProjectName() %>  </p>
                                 <p class="card-text"><%= project.getPhoneNumber() %></p>
                                 <p class="card-text"><%= project.getEmailOrContactInformation() %></p>
+                                <p class="card-text"><%= opportunity.getExternal_id() %></p>
                                 <!-- Add more card content for other lead properties -->
                             </div>
                         </div>
