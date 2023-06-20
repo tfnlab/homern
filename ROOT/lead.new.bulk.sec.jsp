@@ -122,7 +122,7 @@
                                           String name = csvRecord.get(2);
                                           String lname = csvRecord.get(3);
                                           String phone = csvRecord.get(6);
-                                          String address = csvRecord.get(11);
+                                          String address = csvRecord.get(39);
                                           String city = csvRecord.get(12);
                                           String emailAddress = csvRecord.get(9);
                                           String leadStatus = csvRecord.get(21);

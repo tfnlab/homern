@@ -84,6 +84,7 @@
                                     </a>
                                 </h5>
                                 <p class="card-text"><%= lead.getName() %> <%= lead.getLname() %></p>
+                                <p class="card-text"><%= lead.getAddress() %></p>
                                 <p class="card-text"><%= lead.getPhone() %></p>
                                 <p class="card-text"><%= lead.getEmailAddress() %></p>
                                 <p class="card-text"><%= lead.getLeadStatus() %></p>
