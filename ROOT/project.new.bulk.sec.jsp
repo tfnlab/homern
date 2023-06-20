@@ -192,7 +192,7 @@
               }
               String inspectionPassed = csvRecord.get(81);
               java.sql.Date inspectionPassedDate = null;
-              String inspectionPassedDateParam = "";
+              String inspectionPassedDateParam = null;
               if (inspectionPassedDateParam != null && !inspectionDateParam.isBlank()) {
                   try {
                       inspectionPassedDate = new java.sql.Date(dateFormat.parse(inspectionPassedDateParam).getTime());
