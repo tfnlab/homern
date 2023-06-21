@@ -78,13 +78,13 @@
                   <table>
                     <thead>
                       <tr>
-                        <th>Record ID</th>
+                        <th>ID</th>
                         <th>Name</th>
                         <th>Address</th>
                         <th>Phone</th>
                         <th>Email</th>
                         <th>Lead Status</th>
-                        <th>External ID</th>
+                        <th>External</th>
                         <!-- Add more header cells for other lead properties -->
                       </tr>
                     </thead>
