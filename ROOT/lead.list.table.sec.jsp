@@ -53,7 +53,6 @@
         <HR>
         <HR>
           <a href="<%=rootUpdate%>lead.new.sec.jsp/" tabindex="2"><i class="fas fa-plus"></i> Lead</a> |
-            <a href="<%=rootUpdate%>lead.list.table.sec.jsp/" tabindex="2"><i class="fas fa-table"></i> Table</a> |
             <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
 
         <HR>
@@ -75,26 +74,39 @@
                 %>
 
                 <div class="row">
-                    <% for (Lead lead : leads) { %>
-                    <div class="col-md-4">
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%= lead.getRecordId() %>" tabindex="2">
-                                        <%= lead.getRecordId() %>
-                                    </a>
-                                </h5>
-                                <p class="card-text"><%= lead.getName() %> <%= lead.getLname() %></p>
-                                <p class="card-text"><%= lead.getAddress() %></p>
-                                <p class="card-text"><%= lead.getPhone() %></p>
-                                <p class="card-text"><%= lead.getEmailAddress() %></p>
-                                <p class="card-text"><%= lead.getLeadStatus() %></p>
-                                <p class="card-text"><%= lead.getExternal_id() %></p>
-                                <!-- Add more card content for other lead properties -->
-                            </div>
-                        </div>
-                    </div>
-                    <% } %>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Record ID</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Lead Status</th>
+                        <th>External ID</th>
+                        <!-- Add more header cells for other lead properties -->
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% for (Lead lead : leads) { %>
+                      <tr>
+                        <td>
+                          <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%= lead.getRecordId() %>" tabindex="2">
+                            <%= lead.getRecordId() %>
+                          </a>
+                        </td>
+                        <td><%= lead.getName() %> <%= lead.getLname() %></td>
+                        <td><%= lead.getAddress() %></td>
+                        <td><%= lead.getPhone() %></td>
+                        <td><%= lead.getEmailAddress() %></td>
+                        <td><%= lead.getLeadStatus() %></td>
+                        <td><%= lead.getExternal_id() %></td>
+                        <!-- Add more table cells for other lead properties -->
+                      </tr>
+                      <% } %>
+                    </tbody>
+                  </table>
+
                 </div>
 
                 <HR>
