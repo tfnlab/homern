@@ -55,10 +55,10 @@
         <h2>Add New Lead</h2>
         <HR>
         <HR>
-          <a href="<%=rootUpdate%>lead.new.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-plus"></i> Lead</a>
-          <a href="<%=rootUpdate%>lead.list.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-list"></i> Leads</a>
-          <a href="<%=rootUpdate%>lead.list.table.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-table"></i> Table</a>
-          <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+          <a href="<%=rootUpdate%>lead.new.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-plus"></i></a>
+          <a href="<%=rootUpdate%>lead.list.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-list"></i></a>
+          <a href="<%=rootUpdate%>lead.list.table.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-table"></i></a>
+          <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-tachometer-alt"></i></a>
 
           <%
           if (request.getMethod().equalsIgnoreCase("post")) {
