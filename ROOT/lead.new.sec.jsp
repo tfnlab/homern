@@ -54,7 +54,6 @@
             <HR>
         <h2>Add New Lead</h2>
         <HR>
-        <HR>
           <a href="<%=rootUpdate%>lead.new.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-plus"></i></a>
           <a href="<%=rootUpdate%>lead.list.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-list"></i></a>
           <a href="<%=rootUpdate%>lead.list.table.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-table"></i></a>
