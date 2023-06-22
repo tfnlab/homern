@@ -247,7 +247,7 @@
                 <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" value="<%= lead.getLocation_pointlng() %>">
                 <div class="form-group">
                     <label>ID:</label>
-                    <input type="text" class="form-control" name="lead_id" value="<%=lead.getRecordId()%>" disable>
+                    <input type="text" class="form-control" name="lead_id" value="<%=lead.getRecordId()%>" disabled >
                 </div>
                 <div class="form-group">
                     <label>First Name:</label>
