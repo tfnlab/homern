@@ -136,7 +136,9 @@
                     <tbody>
                       <%
                         int rowCounter = 0;
-                        for (Lead lead : leads) { %>
+                        for (Lead lead : leads) {
+                          SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy");
+                          %>
                         <tr <% if (rowCounter % 2 == 0) { %>class="light-green"<% } %> >
 
                         <td>
@@ -217,10 +219,10 @@
                           <% } %>
                         </td>
                         <td>
-                          <%=lead.getDateOfLastActivity().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })%>
+                          <%=sdf.format(lead.getDateOfLastActivity())%>
                         </td>
                         <td>
-                          <%=lead.getDateOfNextActivity().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })%>
+                          <%=sdf.format(lead.getDateOfNextActivity())%>
                         </td>
 
                         <!-- Add more table cells for other lead properties -->
