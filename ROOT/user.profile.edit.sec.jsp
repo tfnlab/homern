@@ -49,46 +49,73 @@
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
             <HR>
         <h2>User Profile</h2>
+
+        <%
+        UserProfile userProfile = new UserProfile();
+        UserProfileDao userProfileDao = new UserProfileDao();
+        userProfile = userProfileDao.getUserProfileByUsernameAndEmail(username, useremail);
+
+        if (request.getMethod().equalsIgnoreCase("post")) {
+            UserProfile existingUserProfile = userProfileDao.getUserProfileByUsernameAndEmail(username, useremail);
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
+            String email = request.getParameter("email");
+            String phone = request.getParameter("phone");
+            String settings = request.getParameter("settings");
+            userProfile.setFirstName(firstName);
+            userProfile.setLastName(lastName);
+            userProfile.setEmail(email);
+            userProfile.setPhone(phone);
+            userProfile.setDateCreated(new java.util.Date());
+            userProfile.setSettings(settings);
+            if (existingUserProfile == null) {
+              userProfileDao.createUserProfile(userProfile);
+            } else {
+              userProfileDao.createUserProfile(userProfile);
+            }
+        }
+        %>
         <HR>
           <div class="container mt-5">
             <div class="container">
                 <div class="row">
                   <form action="<%=rootUpdate%>user.profile.edit.sec.jsp/" method="post">
+                  <input type="hidden" class="form-control" id="id" name="id" value="<%=userProfile.getId()%>" >
                   <div class="form-group">
-                      <label for="firstName">First Name:</label>
-                      <input type="text" class="form-control" id="firstName" name="firstName" required>
-                  </div>
-                  <div class="form-group">
-                      <label for="lastName">Last Name:</label>
-                      <input type="text" class="form-control" id="lastName" name="lastName" required>
-                  </div>
-                  <div class="form-group">
-                      <label for="email">Email:</label>
-                      <input type="email" class="form-control" id="email" name="email" required>
-                  </div>
-                  <div class="form-group">
-                      <label for="phone">Phone:</label>
-                      <input type="tel" class="form-control" id="phone" name="phone" required>
-                  </div>
-                  <div class="form-group">
-                      <label for="username">Username:</label>
-                      <input type="text" class="form-control" id="username" name="username" required>
-                  </div>
-                  <div class="form-group">
-                      <label for="useremail">User Email:</label>
-                      <input type="email" class="form-control" id="useremail" name="useremail" required>
-                  </div>
-                  <div class="form-group">
-                      <label for="dateCreated">Date Created:</label>
-                      <input type="date" class="form-control" id="dateCreated" name="dateCreated" required>
-                  </div>
-                  <div class="form-group">
-                      <label for="settings">Settings:</label>
-                      <textarea class="form-control" id="settings" name="settings" rows="3"></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Add User Profile</button>
+                     <label for="firstName">First Name:</label>
+                     <input type="text" class="form-control" id="firstName" name="firstName" value="<%=userProfile.getFirstName()%>" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="lastName">Last Name:</label>
+                     <input type="text" class="form-control" id="lastName" name="lastName" value="<%=userProfile.getLastName()%>" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="email">Email:</label>
+                     <input type="email" class="form-control" id="email" name="email" value="<%=userProfile.getEmail()%>">
+                 </div>
+                 <div class="form-group">
+                     <label for="phone">Phone:</label>
+                     <input type="tel" class="form-control" id="phone" name="phone" value="<%=userProfile.getPhone()%>">
+                 </div>
+                 <div class="form-group">
+                     <label for="username">Username:</label>
+                     <input type="text" class="form-control" id="username" name="username" value="<%=userProfile.getUsername()%>">
+                 </div>
+                 <div class="form-group">
+                     <label for="useremail">User Email:</label>
+                     <input type="email" class="form-control" id="useremail" name="useremail" value="<%=userProfile.getUseremail()%>">
+                 </div>
+                 <div class="form-group">
+                     <label for="dateCreated">Date Created:</label>
+                     <input type="date" class="form-control" id="dateCreated" name="dateCreated" value="<%=userProfile.getDateCreated()%>">
+                 </div>
+                 <div class="form-group">
+                     <label for="settings">Settings:</label>
+                     <textarea class="form-control" id="settings" name="settings" rows="3"><%=userProfile.getSettings()%></textarea>
+                 </div>
+                 <button type="submit" class="btn btn-primary">Add User Profile</button>
 
-                                            </form>
+                  </form>
                 </div>
 
                 <HR>
