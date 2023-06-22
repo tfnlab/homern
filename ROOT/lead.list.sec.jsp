@@ -91,6 +91,7 @@
                     LeadDAO leadDAO = new LeadDAO();
                     if(request.getParameter("lead_source")!=null) leads = leadDAO.getLeadsByUsernameandLeadSource(username, request.getParameter("lead_source"));
                     else if(request.getParameter("lead_status")!=null) leads = leadDAO.getLeadsByUsernameandLeadStatus(username, request.getParameter("lead_status"));
+                    else if(request.getParameter("pipelinestatus")!=null) leads = leadDAO.getLeadsByUsernameandPipelinestatus(username, request.getParameter("pipelinestatus"));
                     else leads = leadDAO.getLeadsByUsername(username);
                 } catch (Exception e) {
                     e.printStackTrace();
