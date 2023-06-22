@@ -55,6 +55,10 @@
     </style>
     <style>
       @media (max-width: 576px) {
+        .table-responsive .table th:first-child,
+        .table-responsive .table td:first-child {
+          display: none;
+        }
         .table {
           font-size: 10px;
         }
@@ -163,7 +167,9 @@
                             <%= lead.getRecordId() %>
                           </a>
                         </td>
-                        <td><%= lead.getName() %> <%= lead.getLname() %></td>
+                        <td>
+                          <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%= lead.getRecordId() %>" tabindex="2"><%= lead.getName() %> <%= lead.getLname() %>
+                        </a></td>
                         <td>
                           <% String address = lead.getAddress(); %>
                           <% if (address != null && !address.isEmpty()) { %>
