@@ -168,7 +168,7 @@
                               formattedNumber.append(strippedNumber.substring(6));
                               out.println(formattedNumber);
                             } else {
-                                out.println("Invalid phone number");
+                                out.println(phoneNumber);
                             }
                             %>
                             </a>
