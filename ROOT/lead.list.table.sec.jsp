@@ -148,7 +148,27 @@
                         <td>
                           <% String phoneNumber = lead.getPhone(); %>
                           <% if (phoneNumber != null && !phoneNumber.isEmpty()) { %>
-                            <a href="tel:<%= phoneNumber %>"><%= phoneNumber %></a>
+                            <a href="tel:<%= phoneNumber %>">
+                            <%
+                            String strippedNumber = phoneNumber.replaceAll("[^0-9]", "");
+
+                            // Remove leading '1' if present
+                            if (strippedNumber.startsWith("1")) {
+                                strippedNumber = strippedNumber.substring(1);
+                            }
+
+                            // Format the phone number
+                            StringBuilder formattedNumber = new StringBuilder();
+                            formattedNumber.append("(");
+                            formattedNumber.append(strippedNumber.substring(0, 3));
+                            formattedNumber.append(") ");
+                            formattedNumber.append(strippedNumber.substring(3, 6));
+                            formattedNumber.append("-");
+                            formattedNumber.append(strippedNumber.substring(6));
+                            out.println(strippedNumber);
+
+                            %>
+                            </a>
                           <% } else { %>
                             N/A
                           <% } %>
