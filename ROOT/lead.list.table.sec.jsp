@@ -283,11 +283,19 @@
                       }
 
                       // Append the sorted rows to the table body
-                      rows.forEach(function(row) {
+                      rows.forEach(function(row, index) {
+                        // Add row class for alternate colors
+                        if (index % 2 === 0) {
+                          row.classList.add('light-green');
+                        } else {
+                          row.classList.remove('light-green');
+                        }
+
                         tableBody.appendChild(row);
                       });
                     }
                   </script>
+
 
 
                 </div>
