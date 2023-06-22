@@ -131,8 +131,16 @@
                           <% String address = lead.getAddress(); %>
                           <% if (address != null && !address.isEmpty()) { %>
                             <a href="https://www.google.com/maps/search/?api=1&query=<%= address %>" target="_blank" >
-                              <%= address.length > 20 ? address[0..9] + '...' + address[-8..-1] : address %>
-                          </a>
+                              <%
+                            if (address.length() > 20) {
+                                String truncatedAddress = address.substring(0, 10) + "..." + address.substring(address.length() - 8);
+                                out.println(truncatedAddress);
+                            } else {
+                                out.println(address);
+                            }
+                            %>
+
+                            </a>
                           <% } else { %>
                             N/A
                           <% } %>
