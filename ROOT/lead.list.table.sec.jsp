@@ -103,6 +103,8 @@
                 %>
 
                 <div class="row">
+
+                  <div class="table-responsive">
                   <table>
                     <thead>
                       <tr>
@@ -238,6 +240,7 @@
                   }
 
                   </script>
+                </div>
                 </div>
 
                 <HR>
