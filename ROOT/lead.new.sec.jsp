@@ -265,7 +265,26 @@
                 </div>
                 <div class="form-group">
                     <label>Pipeline Status:</label>
-                    <input type="text" class="form-control" name="pipelinestatus">
+                    <select class="form-control" name="pipelinestatus" id="pipelinestatus">
+                      <option value="">Select status</option>
+                      <option value="Site Plan Approval">Site Plan Approval</option>
+                      <option value="Unwilling to Engage">Unwilling to Engage</option>
+                      <option value="LOST">LOST</option>
+                      <option value="Not Viable">Not Viable</option>
+                      <option value="Finalize Contract/Financing Docs">Finalize Contract/Financing Docs</option>
+                      <option value="Site Plan Creation/ Meter Spot">Site Plan Creation/ Meter Spot</option>
+                      <option value="Converted">Converted</option>
+                      <option value="NotContacted">NotContacted</option>
+                      <option value="Contacted">Contacted</option>
+                      <option value="AttemptedContact">AttemptedContact</option>
+                      <option value="Site Evaluation">Site Evaluation</option>
+                      <option value="Ready to Convert">Ready to Convert</option>
+                      <option value="Appointment Set">Appointment Set</option>
+                      <option value="Quoted">Quoted</option>
+                      <option value="Disqualified">Disqualified</option>
+                      <option value="WON">WON</option>
+                    </select>
+                      
                 </div>
                 <div class="form-group">
                     <label>Lead Status:</label>

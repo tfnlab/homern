@@ -272,7 +272,25 @@
 
                 <div class="form-group">
                     <label>Pipeline Status:</label>
-                    <input type="text" class="form-control" name="pipelinestatus" value="<%= lead.getPipelinestatus() %>">
+                    <select class="form-control" name="pipelinestatus" id="pipelinestatus">
+                      <option value="">Select status</option>
+                      <option value="Site Plan Approval" <% if (lead.getPipelinestatus().equals("Site Plan Approval")) out.print("selected"); %>>Site Plan Approval</option>
+                      <option value="Unwilling to Engage" <% if (lead.getPipelinestatus().equals("Unwilling to Engage")) out.print("selected"); %>>Unwilling to Engage</option>
+                      <option value="LOST" <% if (lead.getPipelinestatus().equals("LOST")) out.print("selected"); %>>LOST</option>
+                      <option value="Not Viable" <% if (lead.getPipelinestatus().equals("Not Viable")) out.print("selected"); %>>Not Viable</option>
+                      <option value="Finalize Contract/Financing Docs" <% if (lead.getPipelinestatus().equals("Finalize Contract/Financing Docs")) out.print("selected"); %>>Finalize Contract/Financing Docs</option>
+                      <option value="Site Plan Creation/ Meter Spot" <% if (lead.getPipelinestatus().equals("Site Plan Creation/ Meter Spot")) out.print("selected"); %>>Site Plan Creation/ Meter Spot</option>
+                      <option value="Converted" <% if (lead.getPipelinestatus().equals("Converted")) out.print("selected"); %>>Converted</option>
+                      <option value="NotContacted" <% if (lead.getPipelinestatus().equals("NotContacted")) out.print("selected"); %>>NotContacted</option>
+                      <option value="Contacted" <% if (lead.getPipelinestatus().equals("Contacted")) out.print("selected"); %>>Contacted</option>
+                      <option value="AttemptedContact" <% if (lead.getPipelinestatus().equals("AttemptedContact")) out.print("selected"); %>>AttemptedContact</option>
+                      <option value="Site Evaluation" <% if (lead.getPipelinestatus().equals("Site Evaluation")) out.print("selected"); %>>Site Evaluation</option>
+                      <option value="Ready to Convert" <% if (lead.getPipelinestatus().equals("Ready to Convert")) out.print("selected"); %>>Ready to Convert</option>
+                      <option value="Appointment Set" <% if (lead.getPipelinestatus().equals("Appointment Set")) out.print("selected"); %>>Appointment Set</option>
+                      <option value="Quoted" <% if (lead.getPipelinestatus().equals("Quoted")) out.print("selected"); %>>Quoted</option>
+                      <option value="Disqualified" <% if (lead.getPipelinestatus().equals("Disqualified")) out.print("selected"); %>>Disqualified</option>
+                      <option value="WON" <% if (lead.getPipelinestatus().equals("WON")) out.print("selected"); %>>WON</option>
+                    </select>
                 </div>
                 <div class="form-group">
                   <label>Lead Status:</label>
