@@ -69,7 +69,7 @@
             userProfile.setDateCreated(new java.util.Date());
             userProfile.setSettings(settings);
             userProfile.setUsername(username);
-            userProfile.getUseremail(useremail);
+            userProfile.setUseremail(useremail);
             if (existingUserProfile == null) {
               userProfileDao.createUserProfile(userProfile);
             } else {
