@@ -122,8 +122,8 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Address</th>
-                        <th>Phone</th>
-                        <th>Email</th>
+                        <th><i class="fas fa-phone"></th>
+                        <th><i class="fas fa-envelope"></th>
                         <th>Lead Status</th>
                         <th>Pipeline</th>
                         <th>External</th>
