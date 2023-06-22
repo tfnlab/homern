@@ -60,6 +60,14 @@
           display: none;
         }
 
+        .table-responsive .table th:nth-child(9),
+        .table-responsive .table td:nth-child(9) {
+          display: none;
+        }
+        .table-responsive .table th:nth-child(7),
+        .table-responsive .table td:nth-child(7) {
+          display: none;
+        }
         .table-responsive .table th:nth-child(6),
         .table-responsive .table td:nth-child(6) {
           display: none;
