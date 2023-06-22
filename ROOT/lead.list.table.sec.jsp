@@ -190,7 +190,7 @@
                         <td>
                         <% String emailAddress = lead.getEmailAddress(); %>
                         <% if (emailAddress != null && !emailAddress.isEmpty()) { %>
-                          <a href="mailto:<%= emailAddress %>" ><%= emailAddress.split("@")[0] %></a>
+                          <a href="mailto:<%= emailAddress %>" title="<%= emailAddress.split("@")[0] %>" ><i class="fas fa-envelope"></i></a>
                         <% } else { %>
                           N/A
                         <% } %>
@@ -201,7 +201,7 @@
                         <td>
                           <% String emailAddressu = lead.getUserResponsible(); %>
                           <% if (emailAddressu != null && !emailAddressu.isEmpty()) { %>
-                            <a href="mailto:<%= emailAddressu %>" class="btn btn-primary" title="<%= emailAddressu.split("@")[0] %>" ><i class="fas fa-envelope"></i></a>
+                            <a href="mailto:<%= emailAddressu %>" class="btn btn-primary" title="<%= emailAddressu.split("@")[0] %>" ><%= emailAddressu.split("@")[0] %></a>
                           <% } else { %>
                             N/A
                           <% } %>
