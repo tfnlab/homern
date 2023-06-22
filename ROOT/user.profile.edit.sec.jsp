@@ -23,7 +23,7 @@
 <%@ page import="com.tfnlab.mysql.ContactDAO" %>
 <%@ page import="com.tfnlab.mysql.Contact" %>
 <%@ page import="com.tfnlab.util.Translate" %>
-<%@ page import="com.tfnlab.mysql.Project,com.tfnlab.mysql.ProjectDAO" %>
+<%@ page import="com.tfnlab.mysql.UserProfile,com.tfnlab.mysql.UserProfileDao" %>
 <%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
