@@ -70,6 +70,10 @@
 
                 if (userProfile == null) {
                   userProfile = new UserProfile();
+                  userProfile.setFirstName("");
+                  userProfile.setLastName("");
+                  userProfile.setEmail("");
+                  userProfile.setPhone("");
                   userProfile.setSettings("display=panel;");
                   userProfile.setUsername(username);
                   userProfile.setUseremail(useremail);
@@ -80,7 +84,6 @@
                     userProfile.getSettings().replace("display=table;", "display=panel;");
                     userProfileDao.updateUserProfile(userProfile);
                   }
-
                 }
                 List<Lead> leads = null;
                 try {
