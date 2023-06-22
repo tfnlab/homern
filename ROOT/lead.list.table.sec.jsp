@@ -182,9 +182,11 @@
                               formattedNumber.append(strippedNumber.substring(3, 6));
                               formattedNumber.append("-");
                               formattedNumber.append(strippedNumber.substring(6));
-                              out.println(formattedNumber);
+                              %><i class="fas fa-phone"></i><%
+                               //out.println(formattedNumber);
                             } else {
-                                out.println("Invalid");
+                              %><i class="fas fa-cross"></i><%
+                                //out.println("Invalid");
                             }
                             %>
                             </a>
