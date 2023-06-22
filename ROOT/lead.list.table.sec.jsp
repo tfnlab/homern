@@ -217,10 +217,10 @@
                           <% } %>
                         </td>
                         <td>
-                          <%=leadgetDateOfLastActivity()%>
+                          <%=lead.leadgetDateOfLastActivity()%>
                         </td>
                           <td>
-                            <%=leadgetDateOfNextActivity()%>
+                            <%=lead.leadgetDateOfNextActivity()%>
                           </td>
                         <!-- Add more table cells for other lead properties -->
                       </tr>
