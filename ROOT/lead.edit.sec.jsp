@@ -55,8 +55,6 @@
             <HR>
         <h2>Lead</h2>
         <HR>
-          <a href="<%=rootUpdate%>lead.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> Leads</a> |
-            <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" tabindex="2"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
           <%
               LeadDAO leadDAO = new LeadDAO();
               Lead lead = new Lead();
@@ -230,12 +228,20 @@
 
               SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
           %>
+          <a href="<%=rootUpdate%>lead.new.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-plus"></i></a>
+          <a href="<%=rootUpdate%>lead.new.bulk.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-cubes"></i></a>
+          <a href="<%=rootUpdate%>lead.list.sec.jsp/" class="btn btn-primary" tabindex="3"><i class="fas fa-list"></i></a>
+          <a href="<%=rootUpdate%>lead.list.table.sec.jsp/" class="btn btn-primary" tabindex="4"><i class="fas fa-table"></i></a>
+          <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" class="btn btn-primary" tabindex="5"><i class="fas fa-tachometer-alt"></i></a>
+          <a href="<%=rootUpdate%>lead.list.csv.sec.jsp/?csv=true" class="btn btn-primary" tabindex="6"><i class="fas fa-download"></i></a>
+          <a href="<%=rootUpdate%>lead.new.bulk.sec.jsp/?csv=true" class="btn btn-primary" tabindex="7"><i class="fas fa-upload"></i></a>
+          <a href="<%=rootUpdate%>lead.edit.com.sec.jsp/?lead_id=<%=lead.getRecordId()%>" class="btn btn-primary" tabindex="8"><i class="fas fa-envelope"></i></a>
+          <a href="<%=rootUpdate%>lead.edit.map.sec.jsp/?lead_id=<%=lead.getRecordId()%>" class="btn btn-primary" tabindex="9"><i class="fas fa-map"></a>
+          
         <HR>
           <div class="container mt-5">
             <div class="container">
               <h4>Lead ID: <%=lead.getRecordId()%>
-              |          <a href="<%=rootUpdate%>lead.edit.com.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2">Messaging</a>
-              |          <a href="<%=rootUpdate%>lead.edit.map.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2">Map</a>
               </h4>
               <form action="<%=rootUpdate%>lead.edit.sec.jsp/" method="post" class="mt-5">
 
