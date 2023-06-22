@@ -46,6 +46,12 @@
       .light-green {
         background-color: #00bf63;
       }
+      table {
+        border-collapse: collapse;
+      }
+      td {
+        padding: 5px;
+      }
     </style>
   </head>
 <body>
