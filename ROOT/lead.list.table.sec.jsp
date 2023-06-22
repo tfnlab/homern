@@ -238,42 +238,47 @@
                     </tbody>
                   </table>
                   <script>
-                  // Get the table element
-                  var table = document.querySelector('table');
+                    // Get the table element
+                    var table = document.querySelector('table');
 
-                  // Get all the header cells
-                  var headerCells = table.querySelectorAll('th');
+                    // Get all the header cells
+                    var headerCells = table.querySelectorAll('th');
 
-                  // Add click event listener to each header cell
-                  headerCells.forEach(function(cell, index) {
-                    cell.addEventListener('click', function() {
-                      sortTable(index);
-                    });
-                  });
-
-                  // Function to sort the table based on the given column index
-                  function sortTable(columnIndex) {
-                    var tableBody = table.querySelector('tbody');
-                    var rows = Array.from(tableBody.querySelectorAll('tr'));
-
-                    rows.sort(function(a, b) {
-                      var aValue = a.children[columnIndex].textContent.trim();
-                      var bValue = b.children[columnIndex].textContent.trim();
-                      return aValue.localeCompare(bValue);
+                    // Add click event listener to each header cell
+                    headerCells.forEach(function(cell, index) {
+                      cell.addEventListener('click', function() {
+                        sortTable(index);
+                      });
                     });
 
-                    // Clear the table body
-                    while (tableBody.firstChild) {
-                      tableBody.removeChild(tableBody.firstChild);
+                    // Function to sort the table based on the given column index and sort order
+                    function sortTable(columnIndex, sortOrder) {
+                      var tableBody = table.querySelector('tbody');
+                      var rows = Array.from(tableBody.querySelectorAll('tr'));
+
+                      rows.sort(function(a, b) {
+                        var aValue = a.children[columnIndex].textContent.trim();
+                        var bValue = b.children[columnIndex].textContent.trim();
+
+                        if (sortOrder === 'desc') {
+                          return bValue.localeCompare(aValue);
+                        } else {
+                          return aValue.localeCompare(bValue);
+                        }
+                      });
+
+                      // Clear the table body
+                      while (tableBody.firstChild) {
+                        tableBody.removeChild(tableBody.firstChild);
+                      }
+
+                      // Append the sorted rows to the table body
+                      rows.forEach(function(row) {
+                        tableBody.appendChild(row);
+                      });
                     }
-
-                    // Append the sorted rows to the table body
-                    rows.forEach(function(row) {
-                      tableBody.appendChild(row);
-                    });
-                  }
-
                   </script>
+
                 </div>
                 </div>
 
