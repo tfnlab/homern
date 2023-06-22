@@ -129,11 +129,25 @@
                         <td><%= lead.getName() %> <%= lead.getLname() %></td>
                         <td><%= lead.getAddress() %></td>
                         <td><%= lead.getPhone() %></td>
-                        <td><%= lead.getEmailAddress() %></td>
+                        <td>
+                        <% String emailAddress = lead.getEmailAddress(); %>
+                        <% if (emailAddress != null && !emailAddress.isEmpty()) { %>
+                          <a href="mailto:<%= emailAddress %>"><%= emailAddress.split("@")[0] %></a>
+                        <% } else { %>
+                          N/A
+                        <% } %>
+                        </td>
                         <td><%= lead.getLeadStatus() %></td>
                         <td><%= lead.getPipelinestatus() %></td>
                         <td><%= lead.getExternal_id() %></td>
-                        <td><%= lead.getUserResponsible() %></td>
+                        <td>
+                          <% String emailAddressu = lead.getUserResponsible(); %>
+                          <% if (emailAddressu != null && !emailAddressu.isEmpty()) { %>
+                            <a href="mailto:<%= emailAddressu %>"><%= emailAddressu.split("@")[0] %></a>
+                          <% } else { %>
+                            N/A
+                          <% } %>
+                        </td>
                         <!-- Add more table cells for other lead properties -->
                       </tr>
                       <% } %>
