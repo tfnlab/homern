@@ -247,9 +247,19 @@
                     // Add click event listener to each header cell
                     headerCells.forEach(function(cell, index) {
                       cell.addEventListener('click', function() {
-                        sortTable(index);
+                        toggleSortOrder(cell);
+                        sortTable(index, cell.dataset.sortOrder);
                       });
                     });
+
+                    // Function to toggle the sort order in the header cell
+                    function toggleSortOrder(cell) {
+                      if (cell.dataset.sortOrder === 'asc') {
+                        cell.dataset.sortOrder = 'desc';
+                      } else {
+                        cell.dataset.sortOrder = 'asc';
+                      }
+                    }
 
                     // Function to sort the table based on the given column index and sort order
                     function sortTable(columnIndex, sortOrder) {
@@ -278,6 +288,7 @@
                       });
                     }
                   </script>
+
 
                 </div>
                 </div>
