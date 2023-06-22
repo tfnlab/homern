@@ -85,6 +85,7 @@
                     userProfileDao.updateUserProfile(userProfile);
                   }
                 }
+
                 List<Lead> leads = null;
                 try {
                     LeadDAO leadDAO = new LeadDAO();
