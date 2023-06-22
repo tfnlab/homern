@@ -178,7 +178,7 @@
                   <p><%= (new Translate()).translate("Projects", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
-                  <a href="<%=rootUpdate%>profile.edit.sec.jsp/" tabindex="24" ><i class="fa fa-user"></i></a>
+                  <a href="<%=rootUpdate%>user.profile.edit.sec.jsp/" tabindex="24" ><i class="fa fa-user"></i></a>
                   <p><%= (new Translate()).translate("My Profile", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
