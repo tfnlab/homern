@@ -116,7 +116,7 @@
                 </div>
                 <div class="col-3 ">
                   <a href="user.edit.social.jsp" tabindex="14" ><i class="fa fa-share-square"></i></a>
-                  <p><%= (new Translate()).translate("Social Media", usernameOBJ.getLanguage())%></p>
+                  <p><%= (new Translate()).translate("Social", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
                   <a href="user.edit.referred_by.jsp" tabindex="15" ><i class="fa fa-people-arrows"></i></a>
@@ -124,7 +124,7 @@
                 </div>
                 <div class="col-3 ">
                   <a href="dmp.list.jsp" tabindex="16" ><i class="fa fa-database"></i></a>
-                  <p><%= (new Translate()).translate("Data Management Platform", usernameOBJ.getLanguage())%></p>
+                  <p><%= (new Translate()).translate("DMP", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
 
