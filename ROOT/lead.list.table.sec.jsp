@@ -53,6 +53,19 @@
         padding: 5px;
       }
     </style>
+    <style>
+      @media (max-width: 576px) {
+        .table {
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .table {
+          font-size: 14px;
+        }
+      }
+    </style>    
   </head>
 <body>
   <main id="main">
