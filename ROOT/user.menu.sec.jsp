@@ -153,7 +153,7 @@
                 </div>
                 <div class="col-3 ">
                   <a href="<%=rootUpdate%>subscription.list.sec.jsp/" tabindex="22" ><i class="fa fa-newspaper"></i></a>
-                  <p><%= (new Translate()).translate("Subscriptions", usernameOBJ.getLanguage())%></p>
+                  <p><%= (new Translate()).translate("Subs", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
                   <a href="<%=rootUpdate%>contact.list.sec.jsp/" tabindex="23" ><i class="fa fa-address-book"></i></a>
@@ -171,7 +171,7 @@
                 </div>
                 <div class="col-3 ">
                   <a href="<%=rootUpdate%>opportunity.list.sec.jsp/" tabindex="22" ><i class="fa fa-bullseye"></i></a>
-                  <p><%= (new Translate()).translate("Opportunities", usernameOBJ.getLanguage())%></p>
+                  <p><%= (new Translate()).translate("Opps", usernameOBJ.getLanguage())%></p>
                 </div>
                 <div class="col-3 ">
                   <a href="<%=rootUpdate%>project.list.sec.jsp/" tabindex="23" ><i class="fa fa-tasks"></i></a>
@@ -179,7 +179,7 @@
                 </div>
                 <div class="col-3 ">
                   <a href="<%=rootUpdate%>user.profile.edit.sec.jsp/" tabindex="24" ><i class="fa fa-user"></i></a>
-                  <p><%= (new Translate()).translate("My Profile", usernameOBJ.getLanguage())%></p>
+                  <p><%= (new Translate()).translate("Profile", usernameOBJ.getLanguage())%></p>
                 </div>
               </div>
             </div>
