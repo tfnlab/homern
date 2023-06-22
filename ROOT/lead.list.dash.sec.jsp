@@ -25,6 +25,7 @@
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ page import="com.tfnlab.mysql.Lead" %>
 <%@ page import="com.tfnlab.mysql.LeadDAO" %>
+<%@ page import="com.tfnlab.mysql.UserProfile,com.tfnlab.mysql.UserProfileDao" %>
 <%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +55,7 @@
           <a href="<%=rootUpdate%>lead.new.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-plus"></i></a>
           <a href="<%=rootUpdate%>lead.list.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-list"></i></a>
           <a href="<%=rootUpdate%>lead.list.table.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-table"></i></a>
-          <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-tachometer-alt"></i></a>          
+          <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-tachometer-alt"></i></a>
         <HR>
           <div class="container mt-5">
             <div class="container">
@@ -62,6 +63,14 @@
 
 
                 <%
+
+
+                UserProfile userProfile = new UserProfile();
+                UserProfileDao userProfileDao = new UserProfileDao();
+                userProfile = userProfileDao.getUserProfileByUsernameAndEmail(username, useremail);
+                if (userProfile == null) {
+                  userProfile = new UserProfile();
+                }
                 List<Lead> leads = null;
                 try {
                     LeadDAO leadDAO = new LeadDAO();
@@ -75,7 +84,11 @@
                     String[] optionValues = {"Lead Generation", "Initial Contact", "Site Assessment", "Roof Check", "Electrical Panel Check", "Shade Analysis", "Proposal Preparation", "Proposal Presentation", "Financial Analysis", "Incentives and Rebates", "Negotiation and Agreement", "Permitting and Documentation", "Equipment Procurement", "Installation Scheduling", "Installation and Commissioning", "Inspections and Approvals", "System Activation and Monitoring", "Customer Satisfaction and Referrals", "Ongoing Customer Relationship", "Site Plan Approval", "Unwilling to Engage", "LOST", "Not Viable", "Finalize Contract/Financing Docs", "Site Plan Creation/Meter Spot", "Converted", "NotContacted", "Contacted", "AttemptedContact", "Site Evaluation", "Ready to Convert", "Appointment Set", "Quoted", "Disqualified", "WON"};
 
                     for (String option : optionValues) {
+                        if(!userProfile.getSettings().contains("display=panel;")){
                         %><a href="<%=rootUpdate%>lead.list.sec.jsp/?lead_status=<%= option %>" tabindex="2"><%= option %></a> <% if (leadsByStatus.containsKey(option)) { %> <%=leadsByStatus.get(option)%> <%}%> <BR><%
+                        }else{
+                        %><a href="<%=rootUpdate%>lead.list.table.sec.jsp/?lead_status=<%= option %>" tabindex="2"><%= option %></a> <% if (leadsByStatus.containsKey(option)) { %> <%=leadsByStatus.get(option)%> <%}%> <BR><%
+                        }
                      }
                      %>
                      <BR>
@@ -88,7 +101,12 @@
                      for (Map.Entry<String, Integer> entry : leadsBySource.entrySet()) {
                          String leadSource = entry.getKey();
                          int leadCount = entry.getValue();
-                         %><a href="<%=rootUpdate%>lead.list.sec.jsp/?lead_source=<%= leadSource %>" tabindex="2"> <%=leadSource%> </a> <%=leadCount%> <BR><%
+
+                         if(!userProfile.getSettings().contains("display=panel;")){
+                           %><a href="<%=rootUpdate%>lead.list.sec.jsp/?lead_source=<%= leadSource %>" tabindex="2"> <%=leadSource%> </a> <%=leadCount%> <BR><%
+                        }else{
+                            %><a href="<%=rootUpdate%>lead.list.table.sec.jsp/?lead_source=<%= leadSource %>" tabindex="2"> <%=leadSource%> </a> <%=leadCount%> <BR><%
+                       }
                      }
                 } catch (Exception e) {
                     e.printStackTrace();
