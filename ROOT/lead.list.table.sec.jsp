@@ -82,7 +82,7 @@
                   userProfileDao.createUserProfile(userProfile);
                 }else{
                   if(!userProfile.getSettings().contains("display=table;")){
-                    userProfile.getSettings().replace("display=panel;", "display=table;");
+                    userProfile.setSettings(userProfile.getSettings().replace("display=panel;", "display=table;"));
                     userProfileDao.updateUserProfile(userProfile);
                     %>TEST DONE<%
                   }
