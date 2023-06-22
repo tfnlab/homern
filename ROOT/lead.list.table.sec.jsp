@@ -203,7 +203,9 @@
                         </td>
                         <!-- Add more table cells for other lead properties -->
                       </tr>
-                      <% } %>
+                      <%
+                      rowCounter++;
+                      } %>
                     </tbody>
                   </table>
                   <script>
