@@ -201,7 +201,7 @@
                         <td>
                           <% String emailAddressu = lead.getUserResponsible(); %>
                           <% if (emailAddressu != null && !emailAddressu.isEmpty()) { %>
-                            <a href="mailto:<%= emailAddressu %>" class="btn btn-primary" title="<%= emailAddressu.split("@")[0] %>" ><%= emailAddressu.split("@")[0] %></a>
+                            <a href="mailto:<%= emailAddressu %>" title="<%= emailAddressu.split("@")[0] %>" ><%= emailAddressu.split("@")[0] %></a>
                           <% } else { %>
                             N/A
                           <% } %>
