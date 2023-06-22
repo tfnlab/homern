@@ -130,7 +130,9 @@
                         <td>
                           <% String address = lead.getAddress(); %>
                           <% if (address != null && !address.isEmpty()) { %>
-                            <a href="https://www.google.com/maps/search/?api=1&query=<%= address %>" target="_blank" ><%= address %></a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=<%= address %>" target="_blank" >
+                              <%= address.length > 20 ? address[0..9] + '...' + address[-8..-1] : address %>
+                          </a>
                           <% } else { %>
                             N/A
                           <% } %>
