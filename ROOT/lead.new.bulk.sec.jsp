@@ -122,11 +122,12 @@
                                           String name = csvRecord.get(2);
                                           String lname = csvRecord.get(3);
                                           String phone = csvRecord.get(6);
-                                          
+
                                           String address = csvRecord.get(39);
                                           String city = csvRecord.get(12);
                                           String emailAddress = csvRecord.get(9);
-                                          String leadStatus = csvRecord.get(21);
+                                          String leadStatus = "";
+                                          String pipelinestatus = csvRecord.get(21);
                                           String change = request.getParameter("change");
                                           String interconnectionStatus = request.getParameter("interconnectionStatus");
                                           String salesNotes = csvRecord.get(58);
@@ -274,6 +275,7 @@
                                           lead.setExternal_id(external_id);
                                           lead.setLocation_pointlat("0");
                                           lead.setLocation_pointlng("0");
+                                          lead.setPipelinestatus(pipelinestatus);
                                           /*
                                           if(results[1].contains("ZERO_RESULTS")){
                                             lead.setLocation_pointlat("0");
