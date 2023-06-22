@@ -132,7 +132,8 @@
                                           String interconnectionStatus = request.getParameter("interconnectionStatus");
                                           String salesNotes = csvRecord.get(58);
                                           String linkEmailAddress = request.getParameter("linkEmailAddress");
-                                          String userResponsible = request.getParameter("userResponsible");
+                                          String[] emailparts = csvRecord.get(23).split(";");
+                                          String userResponsible = emailparts[1];
                                           String leadRating = csvRecord.get(18);
                                           String organization = csvRecord.get(4);
                                           String leadSource = csvRecord.get(20);
