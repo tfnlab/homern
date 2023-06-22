@@ -130,7 +130,7 @@
                         <td>
                           <% String address = lead.getAddress(); %>
                           <% if (address != null && !address.isEmpty()) { %>
-                            <a href="https://www.google.com/maps/search/?api=1&query=<%= address %>" target="_blank" alt="<%=address%>">
+                            <a href="https://www.google.com/maps/search/?api=1&query=<%= address %>" target="_blank" title="<%=address%>">
                               <%
                             if (address.length() > 20) {
                                 String truncatedAddress = address.substring(0, 10) + "..." + address.substring(address.length() - 8);
