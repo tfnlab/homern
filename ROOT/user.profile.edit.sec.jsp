@@ -68,6 +68,8 @@
             userProfile.setPhone(phone);
             userProfile.setDateCreated(new java.util.Date());
             userProfile.setSettings(settings);
+            userProfile.setUsername(username);
+            userProfile.getUseremail(useremail);
             if (existingUserProfile == null) {
               userProfileDao.createUserProfile(userProfile);
             } else {
