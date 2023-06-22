@@ -109,6 +109,8 @@
                        }
                      }
                      %>
+                     <BR>
+                     <HR>
                      <h4>Pipeline Status</h4>
                      <%
                      Map<String, Integer> leadsByPipelinestatus = leadDAO.getLeadsByPipelinestatus(username);
