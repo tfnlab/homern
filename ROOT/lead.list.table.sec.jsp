@@ -148,7 +148,7 @@
                         <td>
                           <% String phoneNumber = lead.getPhone(); %>
                           <% if (phoneNumber != null && !phoneNumber.isEmpty()) { %>
-                            <a href="tel:<%= phoneNumber %>">
+                            <a href="tel:<%= phoneNumber %>" title="<%=phoneNumber%>">
                             <%
                             String strippedNumber = phoneNumber.replaceAll("[^0-9]", "");
 
@@ -168,7 +168,7 @@
                               formattedNumber.append(strippedNumber.substring(6));
                               out.println(formattedNumber);
                             } else {
-                                out.println(phoneNumber);
+                                out.println("Invalid");
                             }
                             %>
                             </a>
