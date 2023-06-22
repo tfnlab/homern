@@ -114,6 +114,7 @@
                         <th>Lead Status</th>
                         <th>Pipeline</th>
                         <th>External</th>
+                        <th>Responsible</th>
                         <!-- Add more header cells for other lead properties -->
                       </tr>
                     </thead>
@@ -132,12 +133,49 @@
                         <td><%= lead.getLeadStatus() %></td>
                         <td><%= lead.getPipelinestatus() %></td>
                         <td><%= lead.getExternal_id() %></td>
+                        <td><%= lead.getUserResponsible() %></td>
                         <!-- Add more table cells for other lead properties -->
                       </tr>
                       <% } %>
                     </tbody>
                   </table>
+                  <script>
+                  // Get the table element
+                  var table = document.querySelector('table');
 
+                  // Get all the header cells
+                  var headerCells = table.querySelectorAll('th');
+
+                  // Add click event listener to each header cell
+                  headerCells.forEach(function(cell, index) {
+                    cell.addEventListener('click', function() {
+                      sortTable(index);
+                    });
+                  });
+
+                  // Function to sort the table based on the given column index
+                  function sortTable(columnIndex) {
+                    var tableBody = table.querySelector('tbody');
+                    var rows = Array.from(tableBody.querySelectorAll('tr'));
+
+                    rows.sort(function(a, b) {
+                      var aValue = a.children[columnIndex].textContent.trim();
+                      var bValue = b.children[columnIndex].textContent.trim();
+                      return aValue.localeCompare(bValue);
+                    });
+
+                    // Clear the table body
+                    while (tableBody.firstChild) {
+                      tableBody.removeChild(tableBody.firstChild);
+                    }
+
+                    // Append the sorted rows to the table body
+                    rows.forEach(function(row) {
+                      tableBody.appendChild(row);
+                    });
+                  }
+
+                  </script>
                 </div>
 
                 <HR>
