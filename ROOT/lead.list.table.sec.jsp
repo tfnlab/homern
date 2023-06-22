@@ -217,11 +217,12 @@
                           <% } %>
                         </td>
                         <td>
-                          <%=lead.getDateOfLastActivity()%>
+                          <%=lead.getDateOfLastActivity().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })%>
                         </td>
-                          <td>
-                            <%=lead.getDateOfNextActivity()%>
-                          </td>
+                        <td>
+                          <%=lead.getDateOfNextActivity().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })%>
+                        </td>
+
                         <!-- Add more table cells for other lead properties -->
                       </tr>
                       <%
