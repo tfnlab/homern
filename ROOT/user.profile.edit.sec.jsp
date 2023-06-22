@@ -54,7 +54,7 @@
         UserProfile userProfile = new UserProfile();
         UserProfileDao userProfileDao = new UserProfileDao();
         userProfile = userProfileDao.getUserProfileByUsernameAndEmail(username, useremail);
-
+        if (userProfile == null)userProfile = new UserProfile();
         if (request.getMethod().equalsIgnoreCase("post")) {
             UserProfile existingUserProfile = userProfileDao.getUserProfileByUsernameAndEmail(username, useremail);
             String firstName = request.getParameter("firstName");
