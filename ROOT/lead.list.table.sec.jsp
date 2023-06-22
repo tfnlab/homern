@@ -109,6 +109,7 @@
                         <th>Phone</th>
                         <th>Email</th>
                         <th>Lead Status</th>
+                        <th>Pipeline</th>
                         <th>External</th>
                         <!-- Add more header cells for other lead properties -->
                       </tr>
@@ -126,6 +127,7 @@
                         <td><%= lead.getPhone() %></td>
                         <td><%= lead.getEmailAddress() %></td>
                         <td><%= lead.getLeadStatus() %></td>
+                        <td><%= lead.getPipelinestatus() %></td>
                         <td><%= lead.getExternal_id() %></td>
                         <!-- Add more table cells for other lead properties -->
                       </tr>
