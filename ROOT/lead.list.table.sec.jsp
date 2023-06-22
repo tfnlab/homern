@@ -56,16 +56,20 @@
     <style>
       @media (max-width: 576px) {
         .table {
-          font-size: 12px;
+          font-size: 10px;
+        }
+        .td {
+          padding: 2px;
         }
       }
 
       @media (max-width: 768px) {
         .table {
           font-size: 14px;
+          padding: 5px;
         }
       }
-    </style>    
+    </style>
   </head>
 <body>
   <main id="main">
