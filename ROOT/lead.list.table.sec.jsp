@@ -116,7 +116,7 @@
                 <div class="row">
 
                   <div class="table-responsive">
-                  <table>
+                  <table  class="table table-sm" >
                     <thead>
                       <tr>
                         <th>ID</th>
