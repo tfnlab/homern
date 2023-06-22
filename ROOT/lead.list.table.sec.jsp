@@ -128,6 +128,8 @@
                         <th>Pipeline</th>
                         <th>External</th>
                         <th>Responsible</th>
+                        <TH>Last</th>
+                        <th>Next</th>
                         <!-- Add more header cells for other lead properties -->
                       </tr>
                     </thead>
@@ -214,6 +216,12 @@
                             N/A
                           <% } %>
                         </td>
+                        <td>
+                          <%=leadgetDateOfLastActivity()%>
+                        </td>
+                          <td>
+                            <%=leadgetDateOfNextActivity()%>
+                          </td>
                         <!-- Add more table cells for other lead properties -->
                       </tr>
                       <%
