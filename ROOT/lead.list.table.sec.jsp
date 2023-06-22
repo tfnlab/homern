@@ -124,7 +124,7 @@
                       <%
                         int rowCounter = 0;
                         for (Lead lead : leads) { %>
-                        <tr class="<%= rowCounter % 2 == 0 ? \"light-green\" : \"\" %>">
+                        <tr <% if (rowCounter % 2 == 0) { %>class="light-green"<% } %>>
 
                         <td>
                           <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%= lead.getRecordId() %>" tabindex="2">
