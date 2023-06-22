@@ -127,8 +127,23 @@
                           </a>
                         </td>
                         <td><%= lead.getName() %> <%= lead.getLname() %></td>
-                        <td><%= lead.getAddress() %></td>
-                        <td><%= lead.getPhone() %></td>
+                        <td>
+                          <% String address = lead.getAddress(); %>
+                          <% if (address != null && !address.isEmpty()) { %>
+                            <a href="https://www.google.com/maps/search/?api=1&query=<%= address %>"><%= address %></a>
+                          <% } else { %>
+                            N/A
+                          <% } %>
+                        </td>
+                        <td>
+                          <% String phoneNumber = lead.getPhone(); %>
+                          <% if (phoneNumber != null && !phoneNumber.isEmpty()) { %>
+                            <a href="tel:<%= phoneNumber %>"><%= phoneNumber %></a>
+                          <% } else { %>
+                            N/A
+                          <% } %>
+                        </td>
+
                         <td>
                         <% String emailAddress = lead.getEmailAddress(); %>
                         <% if (emailAddress != null && !emailAddress.isEmpty()) { %>
