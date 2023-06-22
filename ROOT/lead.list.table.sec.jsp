@@ -164,7 +164,7 @@
                         <td>
                           <% String phoneNumber = lead.getPhone(); %>
                           <% if (phoneNumber != null && !phoneNumber.isEmpty()) { %>
-                            <a href="tel:<%= phoneNumber %>" title="<%=phoneNumber%>">
+                            <a href="tel:<%= phoneNumber %>"
                             <%
                             String strippedNumber = phoneNumber.replaceAll("[^0-9]", "");
 
@@ -182,10 +182,10 @@
                               formattedNumber.append(strippedNumber.substring(3, 6));
                               formattedNumber.append("-");
                               formattedNumber.append(strippedNumber.substring(6));
-                              %><i class="fas fa-phone"></i><%
+                              %>title="<%=formattedNumber%>" ><i class="fas fa-phone"></i><%
                                //out.println(formattedNumber);
                             } else {
-                              %><i class="fas fa-cross"></i><%
+                              %>title="<%=phoneNumber%>" ><i class="fas fa-times"></i><%
                                 //out.println("Invalid");
                             }
                             %>
@@ -198,7 +198,7 @@
                         <td>
                         <% String emailAddress = lead.getEmailAddress(); %>
                         <% if (emailAddress != null && !emailAddress.isEmpty()) { %>
-                          <a href="mailto:<%= emailAddress %>" title="<%= emailAddress.split("@")[0] %>" ><i class="fas fa-envelope"></i></a>
+                          <a href="mailto:<%= emailAddress %>" title="<%= emailAddress %>" ><i class="fas fa-envelope"></i></a>
                         <% } else { %>
                           N/A
                         <% } %>
