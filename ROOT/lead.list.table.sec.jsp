@@ -219,11 +219,16 @@
                           <% } %>
                         </td>
                         <td>
-                          <%=sdf.format(lead.getDateOfLastActivity())%>
+                          <% if (lead.getDateOfLastActivity() != null) { %>
+                            <%= sdf.format(lead.getDateOfLastActivity()) %>
+                          <% } %>
                         </td>
                         <td>
-                          <%=sdf.format(lead.getDateOfNextActivity())%>
+                          <% if (lead.getDateOfNextActivity() != null) { %>
+                            <%= sdf.format(lead.getDateOfNextActivity()) %>
+                          <% } %>
                         </td>
+
 
                         <!-- Add more table cells for other lead properties -->
                       </tr>
