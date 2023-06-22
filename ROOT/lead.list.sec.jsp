@@ -25,6 +25,7 @@
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ page import="com.tfnlab.mysql.Lead" %>
 <%@ page import="com.tfnlab.mysql.LeadDAO" %>
+<%@ page import="com.tfnlab.mysql.UserProfile,com.tfnlab.mysql.UserProfileDao" %>
 <%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,6 +64,21 @@
 
 
                 <%
+                UserProfile userProfile = new UserProfile();
+                UserProfileDao userProfileDao = new UserProfileDao();
+                userProfile = userProfileDao.getUserProfileByUsernameAndEmail(username, useremail);
+
+                if (userProfile == null) {
+                  userProfile.setSettings("display=panel;");
+                  userProfile.setUsername(username);
+                  userProfile.setUseremail(useremail);
+                  userProfileDao.createUserProfile(userProfile);
+                }else{
+                  if(!userProfile.getSettings().contains("display=panel;")){
+                    userProfile.getSettings().replace("display=table;", "display=panel;")
+                  }
+
+                }
                 List<Lead> leads = null;
                 try {
                     LeadDAO leadDAO = new LeadDAO();

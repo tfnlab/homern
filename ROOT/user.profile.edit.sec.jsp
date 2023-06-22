@@ -73,7 +73,7 @@
             if (existingUserProfile == null) {
               userProfileDao.createUserProfile(userProfile);
             } else {
-              userProfileDao.createUserProfile(userProfile);
+              userProfileDao.updateUserProfile(userProfile);
             }
         }
         %>
@@ -115,7 +115,7 @@
                      <label for="settings">Settings:</label>
                      <textarea class="form-control" id="settings" name="settings" rows="3"><%=userProfile.getSettings()%></textarea>
                  </div>
-                 <button type="submit" class="btn btn-primary">Add User Profile</button>
+                 <button type="submit" class="btn btn-primary">Update User Profile</button>
 
                   </form>
                 </div>
