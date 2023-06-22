@@ -159,6 +159,7 @@
                   String convertedContact = request.getParameter("convertedContact");
                   String convertedOrganization = request.getParameter("convertedOrganization");
                   String convertedOpportunity = request.getParameter("convertedOpportunity");
+                  String pipelinestatus = request.getParameter("pipelinestatus");
 
                   lead.setLocation_pointlat(request.getParameter("location_pointlat"));
                   lead.setLocation_pointlng(request.getParameter("location_pointlng"));
@@ -221,6 +222,7 @@
                   lead.setLocation_pointlat(request.getParameter("location_pointlat"));
                   lead.setLocation_pointlng(request.getParameter("location_pointlng"));
                   lead.setRecordId(Integer.parseInt(request.getParameter("lead_id")));
+                  lead.setPipelinestatus(pipelinestatus);
                   leadDAO.updateLead(lead);
                 }
 
@@ -268,6 +270,10 @@
                   <input type="text" class="form-control" name="emailAddress" value="<%= lead.getEmailAddress() %>">
                 </div>
 
+                <div class="form-group">
+                    <label>Pipeline Status:</label>
+                    <input type="text" class="form-control" name="pipelinestatus" value="<%= lead.getPipelinestatus() %>">
+                </div>
                 <div class="form-group">
                   <label>Lead Status:</label>
                   <select class="form-control" name="leadStatus">
