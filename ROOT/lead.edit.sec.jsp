@@ -237,17 +237,18 @@
           <a href="<%=rootUpdate%>lead.new.bulk.sec.jsp/?csv=true" class="btn btn-primary" tabindex="7"><i class="fas fa-upload"></i></a>
           <a href="<%=rootUpdate%>lead.edit.com.sec.jsp/?lead_id=<%=lead.getRecordId()%>" class="btn btn-primary" tabindex="8"><i class="fas fa-envelope"></i></a>
           <a href="<%=rootUpdate%>lead.edit.map.sec.jsp/?lead_id=<%=lead.getRecordId()%>" class="btn btn-primary" tabindex="9"><i class="fas fa-map"></a>
-          
+
         <HR>
           <div class="container mt-5">
             <div class="container">
-              <h4>Lead ID: <%=lead.getRecordId()%>
-              </h4>
               <form action="<%=rootUpdate%>lead.edit.sec.jsp/" method="post" class="mt-5">
-
                 <input type="hidden" class="form-control" name="lead_id" value="<%=lead.getRecordId()%>">
                 <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
                 <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" value="<%= lead.getLocation_pointlng() %>">
+                <div class="form-group">
+                    <label>ID:</label>
+                    <input type="text" class="form-control" name="lead_id" value="<%=lead.getRecordId()%>" disable>
+                </div>
                 <div class="form-group">
                     <label>First Name:</label>
                     <input type="text" class="form-control" name="name" value="<%=lead.getName()%>">
