@@ -158,15 +158,18 @@
                             }
 
                             // Format the phone number
-                            StringBuilder formattedNumber = new StringBuilder();
-                            formattedNumber.append("(");
-                            formattedNumber.append(strippedNumber.substring(0, 3));
-                            formattedNumber.append(") ");
-                            formattedNumber.append(strippedNumber.substring(3, 6));
-                            formattedNumber.append("-");
-                            formattedNumber.append(strippedNumber.substring(6));
-                            out.println(strippedNumber);
-
+                            if (strippedNumber.length() > 9) {
+                              StringBuilder formattedNumber = new StringBuilder();
+                              formattedNumber.append("(");
+                              formattedNumber.append(strippedNumber.substring(0, 3));
+                              formattedNumber.append(") ");
+                              formattedNumber.append(strippedNumber.substring(3, 6));
+                              formattedNumber.append("-");
+                              formattedNumber.append(strippedNumber.substring(6));
+                              out.println(formattedNumber);
+                            } else {
+                                out.println("Invalid phone number");
+                            }
                             %>
                             </a>
                           <% } else { %>
