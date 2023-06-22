@@ -69,6 +69,7 @@
                 userProfile = userProfileDao.getUserProfileByUsernameAndEmail(username, useremail);
 
                 if (userProfile == null) {
+                  userProfileDao = new UserProfileDao();
                   userProfile.setSettings("display=panel;");
                   userProfile.setUsername(username);
                   userProfile.setUseremail(useremail);
