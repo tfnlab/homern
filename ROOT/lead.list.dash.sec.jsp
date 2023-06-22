@@ -126,6 +126,24 @@
                             %><a href="<%=rootUpdate%>lead.list.table.sec.jsp/?pipelinestatus=<%= leadSource %>" tabindex="2"> <%=leadSource%> </a> <%=leadCount%> <BR><%
                        }
                      }
+                     %>
+                     <BR>
+                     <HR>
+                     <h4>User Responsible</h4>
+                     <%
+                     Map<String, Integer> leadsByUR = leadDAO.getLeadsByUser_Resposible(username);
+
+                     // Iterate over the map and print lead status with lead count
+                     for (Map.Entry<String, Integer> entry : leadsByUR.entrySet()) {
+                         String leadSource = entry.getKey();
+                         int leadCount = entry.getValue();
+
+                         if(userProfile.getSettings().contains("display=panel;")){
+                           %><a href="<%=rootUpdate%>lead.list.sec.jsp/?user_responsible=<%= leadSource %>" tabindex="2"> <%=leadSource%> </a> <%=leadCount%> <BR><%
+                        }else{
+                            %><a href="<%=rootUpdate%>lead.list.table.sec.jsp/?user_responsible=<%= leadSource %>" tabindex="2"> <%=leadSource%> </a> <%=leadCount%> <BR><%
+                       }
+                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
