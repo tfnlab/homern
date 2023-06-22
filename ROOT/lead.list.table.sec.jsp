@@ -42,6 +42,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <style>
+      .light-green {
+        background-color: lightgreen;
+      }
+    </style>    
   </head>
 <body>
   <main id="main">
@@ -124,7 +129,7 @@
                       <%
                         int rowCounter = 0;
                         for (Lead lead : leads) { %>
-                        <tr <% if (rowCounter % 2 == 0) { %>class="light-green"<% } %>>
+                        <tr <% if (rowCounter % 2 == 0) { %>class="light-green"<% } %> >
 
                         <td>
                           <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%= lead.getRecordId() %>" tabindex="2">
