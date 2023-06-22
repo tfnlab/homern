@@ -73,6 +73,7 @@
                   userProfile.setSettings("display=panel;");
                   userProfile.setUsername(username);
                   userProfile.setUseremail(useremail);
+                  userProfile.setDateCreated(new java.util.Date());
                   userProfileDao.createUserProfile(userProfile);
                 }else{
                   if(!userProfile.getSettings().contains("display=panel;")){
