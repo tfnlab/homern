@@ -55,6 +55,10 @@
     </style>
     <style>
       @media (max-width: 576px) {
+        .table-responsive .table th:nth-child(11),
+        .table-responsive .table td:nth-child(11) {
+          display: none;
+        }
         .table-responsive .table th:nth-child(10),
         .table-responsive .table td:nth-child(10) {
           display: none;
