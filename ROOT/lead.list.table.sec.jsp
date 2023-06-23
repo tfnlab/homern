@@ -152,7 +152,7 @@
                     else if(request.getParameter("lead_status")!=null) leads = leadDAO.getLeadsByUsernameandLeadStatus(username, request.getParameter("lead_status"));
                     else if(request.getParameter("pipelinestatus")!=null) leads = leadDAO.getLeadsByUsernameandPipelinestatus(username, request.getParameter("pipelinestatus"));
                     else if(request.getParameter("user_responsible")!=null) leads = leadDAO.getLeadsByUsernameandUser_Responsible(username, request.getParameter("user_responsible"));
-                    else leads = leadDAO.getLeadsByUsernameDesc(username);
+                    else leads = leadDAO.getLeadsByUsernameAsc(username);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
