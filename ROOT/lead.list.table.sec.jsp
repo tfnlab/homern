@@ -266,18 +266,7 @@
                         </td>
                         <td>
                           <a href="<%=rootUpdate%>lead.list.table.sec.jsp/?pipelinestatus=<%=lead.getPipelinestatus()%>" title="<%=lead.getPipelinestatus()%>" >
-                          <%
-                            String pipelineStatus = lead.getPipelinestatus();
-                            words = pipelineStatus.split(" "); // Split the string into an array of words
-                            for (String word : words) {
-                              if (!word.isEmpty()) { // Skip empty words
-                                out.print(word.charAt(0)); // Output the first character of each word
-                                out.print(word.charAt(1)); // Output the first character of each word
-                                out.print(word.charAt(2)); // Output the first character of each word
-                                out.print(word.charAt(3)); // Output the first character of each word
-                              }
-                            }
-                          %>
+                          <%=lead.getPipelinestatus() %>
                           </a>
                         </td>
 
