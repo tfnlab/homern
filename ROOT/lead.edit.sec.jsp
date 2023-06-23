@@ -53,7 +53,7 @@
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
             <HR>
-        <h2>Lead</h2>
+        <h2>Edit Lead</h2>
         <HR>
           <%
               LeadDAO leadDAO = new LeadDAO();

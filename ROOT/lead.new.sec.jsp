@@ -52,7 +52,7 @@
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
             <HR>
-        <h2>Add New Lead</h2>
+        <h2>Add Lead</h2>
         <HR>
           <a href="<%=rootUpdate%>lead.new.sec.jsp/" class="btn btn-success" tabindex="2"><i class="fas fa-plus"></i></a>
           <a href="<%=rootUpdate%>lead.new.bulk.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-cubes"></i></a>
