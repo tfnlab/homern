@@ -110,11 +110,16 @@
                                     </a>
                                 </h5>
                                 <p class="card-text"><%= lead.getName() %> <%= lead.getLname() %></p>
-                                <p class="card-text"><%= lead.getAddress() %></p>
-                                <p class="card-text"><%= lead.getPhone() %></p>
-                                <p class="card-text"><%= lead.getEmailAddress() %></p>
-                                <p class="card-text"><%= lead.getLeadStatus() %></p>
-                                <p class="card-text"><%= lead.getExternal_id() %></p>
+                                <p class="card-text"><%= lead.getAddress() %>&nbsp;</p>
+                                <p class="card-text"><%= lead.getPhone() %>&nbsp;</p>
+                                <p class="card-text"><%= lead.getEmailAddress() %>&nbsp;</p>
+                                <p class="card-text"><%= lead.getLeadStatus() %>&nbsp;</p>
+                                <p class="card-text"><%= lead.getPipelinestatus() %></p>
+                                <p class="card-text"><%= lead.getExternal_id() %>&nbsp;</p>
+                                <p class="card-text"><%= lead.getDateOfLastActivity() %>&nbsp;</p>
+                                <p class="card-text"><%= lead.getDateOfNextActivity() %>&nbsp;</p>
+                                <p class="card-text"><%= lead.getUserResponsible() %>&nbsp;</p>
+
                                 <!-- Add more card content for other lead properties -->
                             </div>
                         </div>
