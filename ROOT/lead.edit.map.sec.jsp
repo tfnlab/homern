@@ -57,7 +57,7 @@
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
             <HR>
-        <h2>Lead</h2>
+        <h2>Lead <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%=recordId%>" tabindex="2"><%=recordId%></a></h2>
         <HR>
 
           <%
@@ -240,13 +240,10 @@
           <a href="<%=rootUpdate%>lead.new.bulk.sec.jsp/?csv=true" class="btn btn-primary" tabindex="7"><i class="fas fa-upload"></i></a>
           <a href="<%=rootUpdate%>lead.edit.com.sec.jsp/?lead_id=<%=lead.getRecordId()%>" class="btn btn-primary" tabindex="8"><i class="fas fa-envelope"></i></a>
           <a href="<%=rootUpdate%>lead.edit.map.sec.jsp/?lead_id=<%=lead.getRecordId()%>" class="btn btn-success" tabindex="9"><i class="fas fa-map"></a>
+          <a href="https://sunroof.withgoogle.com/building/<%= lead.getLocation_pointlat() %>/<%= lead.getLocation_pointlng() %>/#?f=buy" tabindex="2" class="btn btn-primary" target="_blank" ><i class="fas fa-sun"></a>
         <HR>
           <div class="container mt-5">
             <div class="container">
-              <h4>Lead ID: <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2"><%=lead.getRecordId()%></a> |
-              <a href="https://sunroof.withgoogle.com/building/<%= lead.getLocation_pointlat() %>/<%= lead.getLocation_pointlng() %>/#?f=buy" tabindex="2" target="_blank" >Sunroof</a>
-              </h4>
-
               <form action="<%=rootUpdate%>lead.edit.sec.jsp/" method="post">
                 <input type="hidden" class="form-control" name="lead_id" value="<%=lead.getRecordId()%>">
                 <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
