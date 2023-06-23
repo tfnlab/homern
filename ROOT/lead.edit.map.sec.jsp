@@ -57,7 +57,7 @@
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
             <HR>
-        <h2>Lead <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%=recordId%>" tabindex="2"><%=recordId%></a></h2>
+        <h2>Lead <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%=request.getParameter("lead_id")%>" tabindex="2"><%=request.getParameter("lead_id")%></a></h2>
         <HR>
 
           <%
