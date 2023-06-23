@@ -132,7 +132,7 @@
                                       formattedNumber.append(strippedNumber.substring(3, 6));
                                       formattedNumber.append("-");
                                       formattedNumber.append(strippedNumber.substring(6));
-                                      %>title="<%=formattedNumber%>" ><i class="fas fa-phone"></i><%=formattedNumber%><%
+                                      %>title="<%=formattedNumber%>" ><i class="fas fa-phone"></i> <%=formattedNumber%><%
                                        //out.println(formattedNumber);
                                     } else {
                                       %>title="<%=phoneNumber%>" ><i class="fas fa-times"></i><%
@@ -147,7 +147,8 @@
                                 <p class="card-text">
                                 <% String emailAddress = lead.getEmailAddress(); %>
                                 <% if (emailAddress != null && !emailAddress.isEmpty()) { %>
-                                  <a href="mailto:<%= emailAddress %>" title="<%= emailAddress %>" ><i class="fas fa-envelope"></i><%= emailAddress %></a>
+                                  <a href="mailto:<%= emailAddress %>" title="<%= emailAddress %>" ><i class="fas fa-envelope"></i></a>
+                                  <a href="mailto:<%= emailAddress %>" title="<%= emailAddress %>" ><%= emailAddress %></a>
                                 <% } else { %>
                                   N/A
                                 <% } %>
