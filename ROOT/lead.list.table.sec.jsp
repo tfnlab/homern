@@ -265,7 +265,7 @@
                         <td>
                           <%
                             String pipelineStatus = lead.getPipelinestatus();
-                            String[] words = pipelineStatus.split(" "); // Split the string into an array of words
+                            words = pipelineStatus.split(" "); // Split the string into an array of words
                             for (String word : words) {
                               if (!word.isEmpty()) { // Skip empty words
                                 out.print(word.charAt(0)); // Output the first character of each word
