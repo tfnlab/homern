@@ -64,10 +64,10 @@
 
           <%
           SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+          SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
           if (request.getMethod().equalsIgnoreCase("post")) {
               // Create an instance of the LeadDAO class
               LeadDAO leadDAO = new LeadDAO();
-              SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
               String name = request.getParameter("name");
               String lname = request.getParameter("lname");
@@ -474,7 +474,7 @@
 
                 <div class="form-group">
                   <label for="leadCreated">Lead Created:</label>
-                  <input type="date" class="form-control" id="leadCreated" name="leadCreated" value="<%=formatterHH.format(new Date())%>" >
+                  <input type="date" class="form-control" id="leadCreated" name="leadCreated" value="<%=dateFormat.format(new Date())%>" >
                 </div>
 
                 <div class="form-group">
