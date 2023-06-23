@@ -227,6 +227,7 @@
               lead = leadDAO.getLead(username, Integer.parseInt(request.getParameter("lead_id")));
 
               SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
+              SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
           %>
           <a href="<%=rootUpdate%>lead.new.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-plus"></i></a>
           <a href="<%=rootUpdate%>lead.new.bulk.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-cubes"></i></a>

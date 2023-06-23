@@ -63,6 +63,7 @@
           <a href="<%=rootUpdate%>lead.new.bulk.sec.jsp/?csv=true" class="btn btn-primary" tabindex="7"><i class="fas fa-upload"></i></a>
 
           <%
+          SimpleDateFormat formatterHH = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
           if (request.getMethod().equalsIgnoreCase("post")) {
               // Create an instance of the LeadDAO class
               LeadDAO leadDAO = new LeadDAO();
@@ -473,7 +474,7 @@
 
                 <div class="form-group">
                   <label for="leadCreated">Lead Created:</label>
-                  <input type="date" class="form-control" id="leadCreated" name="leadCreated">
+                  <input type="date" class="form-control" id="leadCreated" name="leadCreated" value="<%=formatterHH.format(new Date())%>" >
                 </div>
 
                 <div class="form-group">
