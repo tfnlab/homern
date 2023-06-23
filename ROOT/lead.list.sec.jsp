@@ -111,8 +111,47 @@
                                 </h5>
                                 <p class="card-text"><%= lead.getName() %> <%= lead.getLname() %></p>
                                 <p class="card-text"><%= lead.getAddress() %>&nbsp;</p>
-                                <p class="card-text"><%= lead.getPhone() %>&nbsp;</p>
-                                <p class="card-text"><%= lead.getEmailAddress() %>&nbsp;</p>
+                                <p class="card-text">
+                                  <% String phoneNumber = lead.getPhone(); %>
+                                  <% if (phoneNumber != null && !phoneNumber.isEmpty()) { %>
+                                    <a href="tel:<%= phoneNumber %>"
+                                    <%
+                                    String strippedNumber = phoneNumber.replaceAll("[^0-9]", "");
+
+                                    // Remove leading '1' if present
+                                    if (strippedNumber.startsWith("1")) {
+                                        strippedNumber = strippedNumber.substring(1);
+                                    }
+
+                                    // Format the phone number
+                                    if (strippedNumber.length() > 9) {
+                                      StringBuilder formattedNumber = new StringBuilder();
+                                      formattedNumber.append("(");
+                                      formattedNumber.append(strippedNumber.substring(0, 3));
+                                      formattedNumber.append(") ");
+                                      formattedNumber.append(strippedNumber.substring(3, 6));
+                                      formattedNumber.append("-");
+                                      formattedNumber.append(strippedNumber.substring(6));
+                                      %>title="<%=formattedNumber%>" ><i class="fas fa-phone"></i><%=formattedNumber%><%
+                                       //out.println(formattedNumber);
+                                    } else {
+                                      %>title="<%=phoneNumber%>" ><i class="fas fa-times"></i><%
+                                        //out.println("Invalid");
+                                    }
+                                    %>
+                                    </a>
+                                  <% } else { %>
+                                    N/A
+                                  <% } %>
+                                &nbsp;</p>
+                                <p class="card-text">
+                                <% String emailAddress = lead.getEmailAddress(); %>
+                                <% if (emailAddress != null && !emailAddress.isEmpty()) { %>
+                                  <a href="mailto:<%= emailAddress %>" title="<%= emailAddress %>" ><i class="fas fa-envelope"></i><%= emailAddress %></a>
+                                <% } else { %>
+                                  N/A
+                                <% } %>
+                                </p>
                                 <p class="card-text"><%= lead.getLeadStatus() %>&nbsp;</p>
                                 <p class="card-text"><%= lead.getPipelinestatus() %></p>
                                 <p class="card-text"><%= lead.getExternal_id() %>&nbsp;</p>
