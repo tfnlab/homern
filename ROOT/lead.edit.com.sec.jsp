@@ -53,12 +53,12 @@
         if (this.readyState == 4 && this.status == 200) {
           document.getElementById("orderCom").value = this.responseText.trim();
           // Set textarea color or border based on success
-            document.getElementById("orderCom").style.backgroundColor = "white"; // Set background color to green
-            document.getElementById("orderCom").style.borderColor = "green"; // Set border color to green
+            document.getElementById("orderCom").style.backgroundColor = "#FFFFFF"; // Set background color to green
+            document.getElementById("orderCom").style.borderColor = "#5CE1E6"; // Set border color to green
         }
       };
-      document.getElementById("orderCom").style.backgroundColor = "orange"; // Set background color to warning color
-      document.getElementById("orderCom").style.borderColor = "orange"; // Set border color to warning color
+      document.getElementById("orderCom").style.backgroundColor = "#5CE1E6"; // Set background color to warning color
+      document.getElementById("orderCom").style.borderColor = "#0097B2"; // Set border color to warning color
       var select = document.getElementById("leadStatus");
       var selectedOption = select.options[select.selectedIndex];
       var text = selectedOption.text;
