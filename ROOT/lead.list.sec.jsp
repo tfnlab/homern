@@ -110,7 +110,7 @@
                                     </a>
                                 </h5>
                                 <p class="card-text"><%= lead.getName() %> <%= lead.getLname() %></p>
-                                <p class="card-text"><%= lead.getAddress() %>&nbsp;</p>
+                                <p class="card-text"><small><%= lead.getAddress() %></small>&nbsp;</p>
                                 <p class="card-text">
                                   <% String phoneNumber = lead.getPhone(); %>
                                   <% if (phoneNumber != null && !phoneNumber.isEmpty()) { %>
