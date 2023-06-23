@@ -174,6 +174,8 @@
                         <th>Responsible</th>
                         <TH>Last</th>
                         <th>Next</th>
+                        <th>Created</th>
+                        <th>Updated</th>
                         <!-- Add more header cells for other lead properties -->
                       </tr>
                     </thead>
@@ -253,15 +255,7 @@
                         </td>
                         <td>
                           <a href="<%=rootUpdate%>lead.list.table.sec.jsp/?lead_status=<%=lead.getLeadStatus()%>" title="<%=lead.getLeadStatus()%>" >
-                          <%
-                            String leadStatus = lead.getLeadStatus();
-                            String[] words = leadStatus.split(" "); // Split the string into an array of words
-                            for (String word : words) {
-                              if (!word.isEmpty()) { // Skip empty words
-                                out.print(word.charAt(0)); // Output the first character of each word
-                              }
-                            }
-                          %>
+                          <%=lead.getLeadStatus()%>
                           </a>
                         </td>
                         <td>
@@ -287,6 +281,16 @@
                         <td>
                           <% if (lead.getDateOfNextActivity() != null) { %>
                             <%= sdf.format(lead.getDateOfNextActivity()) %>
+                          <% } %>
+                        </td>
+                        <td>
+                          <% if (lead.getTsC() != null) { %>
+                            <%= sdf.format(lead.getTsC()) %>
+                          <% } %>
+                        </td>
+                        <td>
+                          <% if (lead.getTsU() != null) { %>
+                            <%= sdf.format(lead.getTsU()) %>
                           <% } %>
                         </td>
 
