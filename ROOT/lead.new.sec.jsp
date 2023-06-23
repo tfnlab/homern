@@ -350,7 +350,7 @@
                 <div class="form-group">
                   <label for="leadSource">Lead Source:</label>
                     <select id="leadSource" name="leadSource" class="form-control">
-                      <option value="">Select a Lead Source</option>
+                      <option value="None">Select a Lead Source</option>
                       <option value="Website">Website</option>
                       <option value="Referral">Referral</option>
                       <option value="Social Media">Social Media</option>

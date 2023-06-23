@@ -104,9 +104,9 @@
                          int leadCount = entry.getValue();
 
                          if(userProfile.getSettings().contains("display=panel;")){
-                           %><a href="<%=rootUpdate%>lead.list.sec.jsp/?lead_source=<%= leadSource %>" tabindex="2"> <%=leadSource%> &nbsp;</a> <%=leadCount%> <BR><%
+                           %><a href="<%=rootUpdate%>lead.list.sec.jsp/?lead_source=<%= leadSource %>" tabindex="2"><%=leadSource%></a> <%=leadCount%> <BR><%
                         }else{
-                            %><a href="<%=rootUpdate%>lead.list.table.sec.jsp/?lead_source=<%= leadSource %>" tabindex="2"> <%=leadSource%> &nbsp;</a> <%=leadCount%> <BR><%
+                            %><a href="<%=rootUpdate%>lead.list.table.sec.jsp/?lead_source=<%= leadSource %>" tabindex="2"><%=leadSource%></a> <%=leadCount%> <BR><%
                        }
                      }
                      %>
