@@ -337,7 +337,7 @@
 
                 <div class="form-group">
                   <label>Sales Notes:</label>
-                  <textarea class="form-control" name="salesNotes"><%= lead.getSalesNotes() %></textarea>
+                  <textarea class="form-control" name="salesNotes" rows="8"><%= lead.getSalesNotes() %></textarea>
                 </div>
 
                 <div class="form-group">
@@ -367,7 +367,7 @@
 
                 <div class="form-group">
                   <label>Accounting Notes:</label>
-                  <textarea class="form-control" name="accountingNotes"><%= lead.getAccountingNotes() %></textarea>
+                  <textarea class="form-control" name="accountingNotes" rows="5"><%= lead.getAccountingNotes() %></textarea>
                 </div>
 
                 <div class="form-group">
