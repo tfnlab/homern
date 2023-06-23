@@ -212,7 +212,7 @@
                         <td>
                           <% String phoneNumber = lead.getPhone(); %>
                           <% if (phoneNumber != null && !phoneNumber.isEmpty()) { %>
-                            <a href="tel:<%= phoneNumber %>"
+
                             <%
                             String strippedNumber = phoneNumber.replaceAll("[^0-9]", "");
 
@@ -230,16 +230,16 @@
                               formattedNumber.append(strippedNumber.substring(3, 6));
                               formattedNumber.append("-");
                               formattedNumber.append(strippedNumber.substring(6));
-                              %>title="<%=formattedNumber%>" ><i class="fas fa-phone"></i><%
+                              %><a href="tel:<%= phoneNumber %>" title="<%=formattedNumber%>" ><i class="fas fa-phone"></i></a><%
                                //out.println(formattedNumber);
                             } else {
-                              %>title="<%=phoneNumber%>" ><i class="fas fa-times"></i><%
+                              %><i class="fas fa-times"></i><%
                                 //out.println("Invalid");
                             }
                             %>
-                            </a>
+
                           <% } else { %>
-                            N/A
+                            <i class="fas fa-times"></i>
                           <% } %>
                         </td>
 
