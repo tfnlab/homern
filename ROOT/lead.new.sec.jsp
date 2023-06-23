@@ -235,8 +235,8 @@
           <div class="container mt-5">
             <div class="container">
               <form action="<%=rootUpdate%>lead.new.sec.jsp/" method="post">
-              <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" >
-              <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" >
+              <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="0">
+              <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" value="0">
 
                 <div class="form-group">
                     <label>Name:</label>
