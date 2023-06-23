@@ -334,7 +334,7 @@
 
                 <div class="form-group">
                   <label for="userResponsible">User Responsible:</label>
-                  <input type="text" class="form-control" id="userResponsible" name="userResponsible">
+                  <input type="text" class="form-control" id="userResponsible" name="userResponsible" value="<%=useremail%>">
                 </div>
 
                 <div class="form-group">
