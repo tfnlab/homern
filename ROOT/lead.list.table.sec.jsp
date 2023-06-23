@@ -252,7 +252,7 @@
                         <% } %>
                         </td>
                         <td>
-                          <a href="<%=rootUpdate%>lead.list.table.sec.jsp/?lead_status=
+                          <a href="<%=rootUpdate%>lead.list.table.sec.jsp/?lead_status=<%=lead.getLeadStatus()%>" title="<%=lead.getLeadStatus()%>" >
                           <%
                             String leadStatus = lead.getLeadStatus();
                             String[] words = leadStatus.split(" "); // Split the string into an array of words
@@ -262,6 +262,7 @@
                               }
                             }
                           %>
+                          </a>
                         </td>
                         <td>
                           <a href="<%=rootUpdate%>lead.list.table.sec.jsp/?pipelinestatus=<%=lead.getPipelinestatus()%>" title="<%=lead.getPipelinestatus()%>" >
