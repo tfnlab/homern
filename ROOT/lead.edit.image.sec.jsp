@@ -27,6 +27,8 @@
 <%@ page import="com.tfnlab.mysql.Lead" %>
 <%@ page import="com.tfnlab.mysql.LeadCorrespondenceDAO" %>
 <%@ page import="com.tfnlab.mysql.LeadCorrespondence" %>
+<%@ page import="com.tfnlab.mysql.ImageRepository" %>
+<%@ page import="com.tfnlab.mysql.ImageRepositoryDAO" %>
 <%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -95,16 +97,73 @@
                   <input type="text" class="form-control" name="emailAddress" value="<%= lead.getEmailAddress() %>">
                 </div>
 
-                <form action="<%=rootUpdate%>lead.edit.com.sec.jsp/" method="post">
 
 
                     <input type="hidden" class="form-control" name="lead_id" id="lead_id" value="<%=lead.getRecordId()%>">
                     <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
                     <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" value="<%= lead.getLocation_pointlng() %>">
 
+                    <form>
+                      <label for="orderId">Select Image Type:</label><br>
+                    <select id="image_type">
+                      <option value="before">Before</option>
+                      <option value="during">During</option>
+                      <option value="after">After</option>
+                      <option value="damage">Damage</option>
+                      <option value="progress">Progress</option>
+                      <option value="special_note">Special Note</option>
+                      <option value="completed_work">Completed Work</option>
+                      <option value="materials">Materials</option>
+                      <option value="equipment">Equipment</option>
+                      <option value="other">Other</option>
+                    </select>
+                      <HR>
 
-                </form>
- 
+                      <label for="orderId">Add Image Description:</label><br>
+                      <input class="form-control" id="description" name="description" />
+                      <HR>
+                      <input type="file" id="fileInput" accept="image/*" multiple>
+                      <HR>
+                      <button type="submit" id="submitButton" name="submitButton" class="btn btn-primary" >Upload</button>
+                      <input type="hidden" id="lead_id" name="lead_id" value="<%=lead.getRecordId()%>" >
+                      <input type="hidden" id="client_request_key" name="client_request_key" value="<%=uuid%>" >
+
+                    </form>
+                     <HR>
+                             <div id="image_div" name="image_div">
+                                        <div class="d-flex flex-wrap">
+
+                        <%
+
+                         String uuid = java.util.UUID.randomUUID().toString();
+                         ImageRepositoryDAO iDao = new ImageRepositoryDAO();
+                         List<ImageRepository> images = iDao.selectByUsernameAndOrderId(username, lead.getRecordId());
+
+                            for (ImageRepository image : images) {
+                                    %>
+                                                <div class="col-sm-6 col-md-4">
+                                                  <div class="thumbnail">
+                                                    <a href="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=lead.getRecordId()%>" >
+                                                    <img src="order.edit.images.view.jsp?filename=<%=image.getFilename()%>&orderId=<%=lead.getRecordId()%>" class="img-fluid" alt="Responsive Image" style="width: 100px; height: 100px;" />
+                                                    <a>
+                                                    <div class="caption">
+                                                      <h3>Title <%=image.getType()%></h3>
+                                                      <p>ID: <%=image.getId()%></p>
+                                                      <p><%=image.getDescription()%></p>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                    <%
+                            }
+                        %>
+                                        </div>
+                              </div>
+
+                      <HR>
+                      <div id="image_div_canvas" name="image_div_canvas">
+                        <canvas id="canvas" style="display: none;" ></canvas>
+                      <div>
+
                 <BR>
             </div>
           </div>
@@ -112,5 +171,63 @@
       </div>
     </section><!-- End Blog Section -->
   </main>
+  <script>
+    var fileInput = document.getElementById('fileInput');
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var submitButton = document.getElementById('submitButton');
+    var lead_id = document.getElementById('lead_id').value;
+    var client_request_key = document.getElementById('client_request_key').value;
+
+
+    fileInput.addEventListener('change', function(e) {
+      for (var i = 0; i < fileInput.files.length; i++) {
+        var image = new Image();
+        image.src = URL.createObjectURL(fileInput.files[i]);
+
+        image.onload = function() {
+          canvas.width = image.width * 0.5;
+          canvas.height = image.height * 0.5;
+
+          ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+          canvas.toBlob(function(blob) {
+            var formData = new FormData();
+            formData.append('file', blob);
+            formData.append('lead_id', lead_id);
+            formData.append('client_request_key', client_request_key);
+
+
+
+            submitButton.addEventListener('click', function(e) {
+              e.preventDefault();
+
+              var xhr = new XMLHttpRequest();
+              xhr.open('POST', '<%=rootUpdate%>order.edit.images.upload.sec.jsp/');
+              xhr.onload = function() {
+                if (xhr.status === 200) {
+                  document.getElementById("submitButton").classList.remove("btn-warning");
+                  document.getElementById("submitButton").classList.add("btn-success");
+                  document.getElementById("image_div").innerHTML = this.responseText.trim();
+                } else {
+                  // Handle error
+                }
+              };
+              var description = document.getElementById('description').value;
+              formData.append('description', description);
+              var selectBox = document.getElementById("image_type");
+              var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+              formData.append('image_type', selectedValue);
+
+              document.getElementById("submitButton").classList.remove("btn-primary");
+              document.getElementById("submitButton").classList.add("btn-warning");
+
+              xhr.send(formData);
+            });
+          }, 'image/jpeg');
+        };
+      }
+    });
+  </script>
 </body>
 </html>
