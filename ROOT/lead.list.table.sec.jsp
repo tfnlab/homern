@@ -187,9 +187,7 @@
                         <tr <% if (rowCounter % 2 == 0) { %>class="light-green"<% } %> >
 
                         <td>
-                          <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%= lead.getRecordId() %>" tabindex="2">
-                            <%= lead.getRecordId() %>
-                          </a>
+                             <%= lead.getRecordId() %> 
                         </td>
                         <td>
                           <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%= lead.getRecordId() %>" tabindex="2"><%= lead.getName() %> <%= lead.getLname() %>
