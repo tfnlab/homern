@@ -104,9 +104,10 @@
                     <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
                     <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" value="<%= lead.getLocation_pointlng() %>">
 
+                      <HR>
                     <form>
                       <label for="orderId">Select Image Type:</label><br>
-                    <select id="image_type">
+                    <select id="image_type" class="form-control" >
                       <option value="before">Before</option>
                       <option value="during">During</option>
                       <option value="after">After</option>
@@ -118,8 +119,7 @@
                       <option value="equipment">Equipment</option>
                       <option value="other">Other</option>
                     </select>
-                      <HR>
-
+                      <BR>
                       <label for="orderId">Add Image Description:</label><br>
                       <input class="form-control" id="description" name="description" />
                       <HR>
@@ -135,7 +135,7 @@
                                         <div class="d-flex flex-wrap">
 
                         <%
- 
+
                          ImageRepositoryDAO iDao = new ImageRepositoryDAO();
                          List<ImageRepository> images = iDao.selectByUsernameAndOrderId(username, lead.getRecordId());
 
