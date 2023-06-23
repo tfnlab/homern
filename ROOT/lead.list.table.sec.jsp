@@ -251,8 +251,29 @@
                            <i class="fas fa-times"></i>
                         <% } %>
                         </td>
-                        <td><%= lead.getLeadStatus() %></td>
-                        <td><%= lead.getPipelinestatus() %></td>
+                        <td>
+                          <%
+                            String leadStatus = lead.getLeadStatus();
+                            String[] words = leadStatus.split(" "); // Split the string into an array of words
+                            for (String word : words) {
+                              if (!word.isEmpty()) { // Skip empty words
+                                out.print(word.charAt(0)); // Output the first character of each word
+                              }
+                            }
+                          %>
+                        </td>
+                        <td>
+                          <%
+                            String pipelineStatus = lead.getPipelinestatus();
+                            String[] words = pipelineStatus.split(" "); // Split the string into an array of words
+                            for (String word : words) {
+                              if (!word.isEmpty()) { // Skip empty words
+                                out.print(word.charAt(0)); // Output the first character of each word
+                              }
+                            }
+                          %>
+                        </td>
+
                         <td><%= lead.getExternal_id() %></td>
                         <td>
                           <% String emailAddressu = lead.getUserResponsible(); %>
