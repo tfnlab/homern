@@ -269,7 +269,7 @@
                 <div class="form-group">
                     <label>Pipeline Status:</label>
                     <select class="form-control" name="pipelinestatus" id="pipelinestatus">
-                      <option value="">Select status</option>
+                      <option value="None">Select status</option>
                       <option value="Site Plan Approval">Site Plan Approval</option>
                       <option value="Unwilling to Engage">Unwilling to Engage</option>
                       <option value="LOST">LOST</option>

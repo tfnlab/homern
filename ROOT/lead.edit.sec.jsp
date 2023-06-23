@@ -282,7 +282,7 @@
                 <div class="form-group">
                     <label>Pipeline Status:</label>
                     <select class="form-control" name="pipelinestatus" id="pipelinestatus">
-                      <option value="">Select status</option>
+                      <option value="None">Select status</option>
                       <option value="Site Plan Approval" <% if (lead.getPipelinestatus().equals("Site Plan Approval")) out.print("selected"); %>>Site Plan Approval</option>
                       <option value="Unwilling to Engage" <% if (lead.getPipelinestatus().equals("Unwilling to Engage")) out.print("selected"); %>>Unwilling to Engage</option>
                       <option value="LOST" <% if (lead.getPipelinestatus().equals("LOST")) out.print("selected"); %>>LOST</option>
