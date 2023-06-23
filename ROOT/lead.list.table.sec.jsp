@@ -50,7 +50,7 @@
         border-collapse: collapse;
       }
       td {
-        padding: 5px;
+        padding: 15px;
       }
     </style>
     <style>
@@ -88,14 +88,14 @@
           font-size: 10px;
         }
         .td {
-          padding: 2px;
+          padding: 5px;
         }
       }
 
       @media (max-width: 768px) {
         .table {
           font-size: 14px;
-          padding: 5px;
+          padding: 10px;
         }
       }
     </style>
