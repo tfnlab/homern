@@ -1,4 +1,4 @@
-<%@ page language="java" import="com.tfnlab.mysql.Lead,com.tfnlab.mysql.LeadDAO,com.tfnlab.mysql.UserDao,com.tfnlab.mysql.Entity,com.tfnlab.mysql.EntityDao,com.tfnlab.mysql.Order,com.tfnlab.mysql.OrderDao,com.tfnlab.mysql.User,com.tfnlab.mysql.TemplateDao,com.tfnlab.mysql.Template,java.util.UUID,java.lang.Thread,org.apache.commons.io.IOUtils,org.apache.commons.io.output.*,java.nio.charset.Charset,java.io.*,java.util.*,java.awt.image.BufferedImage,javax.imageio.ImageIO,java.io.OutputStream,java.io.FileInputStream,java.io.File"%>
+<%@ page language="java" import="com.tfnlab.mysql.UserProfile,com.tfnlab.mysql.UserProfileDao,com.tfnlab.mysql.Lead,com.tfnlab.mysql.LeadDAO,com.tfnlab.mysql.UserDao,com.tfnlab.mysql.Entity,com.tfnlab.mysql.EntityDao,com.tfnlab.mysql.Order,com.tfnlab.mysql.OrderDao,com.tfnlab.mysql.User,com.tfnlab.mysql.TemplateDao,com.tfnlab.mysql.Template,java.util.UUID,java.lang.Thread,org.apache.commons.io.IOUtils,org.apache.commons.io.output.*,java.nio.charset.Charset,java.io.*,java.util.*,java.awt.image.BufferedImage,javax.imageio.ImageIO,java.io.OutputStream,java.io.FileInputStream,java.io.File"%>
 <%@ include file="auth.sec.jsp" %>
 <%
 
@@ -25,10 +25,18 @@
         lead = ldao.getLead(username, leadId);
         messageName = lead.getName();
     }
+    String from_name = usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName();
+    UserProfile userProfile = new UserProfile();
+    UserProfileDao userProfileDao = new UserProfileDao();
+    userProfile = userProfileDao.getUserProfileByUsernameAndEmail(username, useremail);
+    if (userProfile != null && !userProfile.getFirstName().isEmpty() && !userProfile.getLastName().isEmpty()) {
+      from_name = userProfile.getFirstName() + " " + userProfile.getLastName();
+    }
+
 //    String agm =   request.getParameter("comType") + " message for my "+ usernameOBJ.getBusiness_name() + " company, the person sending the message is named  " + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + ", The project or person name is " + messageName;
-    String agm =   request.getParameter("comType") + " message from my business named '"+ usernameOBJ.getBusiness_name() + "', this business is a '" + usernameOBJ.getBusiness_type() + "' type of business, this message is from  '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + "', is for customer named '" + messageName + "'";
+    String agm =   request.getParameter("comType") + " message from my business named '"+ usernameOBJ.getBusiness_name() + "', this business is a '" + usernameOBJ.getBusiness_type() + "' type of business, this message is from  '" + from_name + "', is for customer named '" + messageName + "'";
     if(orderId >0){
-        agm =   request.getParameter("comType") + " message from my business named '"+ usernameOBJ.getBusiness_name() + "', this business is a '" + usernameOBJ.getBusiness_type() + "' type of business, this message is from '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + "', is for customer named '" + messageName + "' and order id " +  orderId;
+        agm =   request.getParameter("comType") + " message from my business named '"+ usernameOBJ.getBusiness_name() + "', this business is a '" + usernameOBJ.getBusiness_type() + "' type of business, this message is from '" + from_name + "', is for customer named '" + messageName + "' and order id " +  orderId;
     }
     if(orderId==0 && leadId ==0){
 
