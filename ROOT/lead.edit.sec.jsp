@@ -497,7 +497,7 @@
                 </div>
 
                 <BR>
-                    <input type="submit" value="Save">
+                <button type="submit" class="btn btn-primary">Save</button>
                 </form>
 
             </div>
