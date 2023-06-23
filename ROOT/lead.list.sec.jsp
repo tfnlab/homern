@@ -159,7 +159,7 @@
                                 <p class="card-text"><%= lead.getDateOfLastActivity() %>&nbsp;</p>
                                 <p class="card-text"><%= lead.getDateOfNextActivity() %>&nbsp;</p>
                                 <p class="card-text"><%= lead.getUserResponsible() %>&nbsp;</p>
-                                <p class="card-text"><%= lead.getSalesNotes() %>&nbsp;</p>
+                                <p class="card-text"><small><%= lead.getSalesNotes() %>&nbsp;</small></p>
 
                                 <!-- Add more card content for other lead properties -->
                             </div>
