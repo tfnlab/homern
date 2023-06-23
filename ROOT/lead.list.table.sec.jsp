@@ -263,8 +263,8 @@
                           <%=lead.getPipelinestatus() %>
                           </a>
                         </td>
+                        <td><%= lead.getExternal_id() != null && !lead.getExternal_id().isEmpty() ? lead.getExternal_id() : "" %></td>
 
-                        <td><%= lead.getExternal_id() %></td>
                         <td>
                           <% String emailAddressu = lead.getUserResponsible(); %>
                           <% if (emailAddressu != null && !emailAddressu.isEmpty()) { %>
