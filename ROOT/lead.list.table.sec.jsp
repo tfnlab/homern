@@ -140,8 +140,7 @@
                 }else{
                   if(!userProfile.getSettings().contains("display=table;")){
                     userProfile.setSettings(userProfile.getSettings().replace("display=panel;", "display=table;"));
-                    userProfileDao.updateUserProfile(userProfile);
-                    %>TEST DONE<%
+                    userProfileDao.updateUserProfile(userProfile);                     
                   }
                 }
 
@@ -187,7 +186,7 @@
                         <tr <% if (rowCounter % 2 == 0) { %>class="light-green"<% } %> >
 
                         <td>
-                             <%= lead.getRecordId() %> 
+                             <%= lead.getRecordId() %>
                         </td>
                         <td>
                           <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%= lead.getRecordId() %>" tabindex="2"><%= lead.getName() %> <%= lead.getLname() %>
