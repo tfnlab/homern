@@ -502,8 +502,8 @@
                   <input type="text" class="form-control" id="convertedOpportunity" name="convertedOpportunity">
                 </div>
 
-
-                    <input type="submit" value="Create">
+                <HR>
+                <button type="submit" class="btn btn-primary">Create Sales Lead</button>
                 </form>
 
             </div>
