@@ -348,28 +348,28 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="leadSource">Lead Source:</label> 
+                  <label for="leadSource">Lead Source:</label>
                     <select id="leadSource" name="leadSource" class="form-control">
                       <option value="">Select a Lead Source</option>
-                      <option value="website">Website</option>
-                      <option value="referral">Referral</option>
-                      <option value="social-media">Social Media</option>
-                      <option value="email-marketing">Email Marketing</option>
-                      <option value="trade-show">Trade Show</option>
-                      <option value="direct-mail">Direct Mail</option>
-                      <option value="phone-call">Phone Call</option>
-                      <option value="inbound-marketing">Inbound Marketing</option>
-                      <option value="outbound-marketing">Outbound Marketing</option>
-                      <option value="content-marketing">Content Marketing</option>
-                      <option value="online-advertising">Online Advertising</option>
-                      <option value="print-media">Print Media</option>
-                      <option value="television">Television</option>
-                      <option value="radio">Radio</option>
-                      <option value="cold-calling">Cold Calling</option>
-                      <option value="event">Event</option>
-                      <option value="partnership">Partnership</option>
-                      <option value="word-of-mouth">Word of Mouth</option>
-                      <option value="other">Other</option>
+                      <option value="Website">Website</option>
+                      <option value="Referral">Referral</option>
+                      <option value="Social Media">Social Media</option>
+                      <option value="Email Marketing">Email Marketing</option>
+                      <option value="Trade Show">Trade Show</option>
+                      <option value="Direct Mail">Direct Mail</option>
+                      <option value="Phone Call">Phone Call</option>
+                      <option value="Inbound Marketing">Inbound Marketing</option>
+                      <option value="Outbound Marketing">Outbound Marketing</option>
+                      <option value="Content Marketing">Content Marketing</option>
+                      <option value="Online Advertising">Online Advertising</option>
+                      <option value="Print Media">Print Media</option>
+                      <option value="Television">Television</option>
+                      <option value="Radio">Radio</option>
+                      <option value="Cold Calling">Cold Calling</option>
+                      <option value="Event">Event</option>
+                      <option value="Partnership">Partnership</option>
+                      <option value="Word of Mouth">Word of Mouth</option>
+                      <option value="Other">Other</option>
                     </select>
                 </div>
 
