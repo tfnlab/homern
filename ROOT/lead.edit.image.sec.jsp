@@ -59,7 +59,7 @@
           <%
               LeadDAO leadDAO = new LeadDAO();
               Lead lead = new Lead();
- 
+
 
               lead = leadDAO.getLead(username, recordId);
 
@@ -98,16 +98,13 @@
                 <form action="<%=rootUpdate%>lead.edit.com.sec.jsp/" method="post">
 
 
-                  <HR>
                     <input type="hidden" class="form-control" name="lead_id" id="lead_id" value="<%=lead.getRecordId()%>">
                     <input type="hidden" class="form-control" id="location_pointlat" name="location_pointlat" value="<%= lead.getLocation_pointlat() %>">
                     <input type="hidden" class="form-control" id="location_pointlng" name="location_pointlng" value="<%= lead.getLocation_pointlng() %>">
 
-                    <HR>
 
                 </form>
-
-                <HR>
+ 
                 <BR>
             </div>
           </div>
