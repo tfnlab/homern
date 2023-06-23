@@ -28,6 +28,7 @@
 <%@ include file="auth.sec.jsp" %>
 <%
     int orderId = 0;
+    int lead_id = 0;
     String client_request_key = "none";
     String description = "none";
     String image_type = "none";
@@ -50,6 +51,10 @@
             if (inputFieldName.equals("orderId")) {
                 orderId = Integer.parseInt(inputFieldValue);
             }
+            if (inputFieldName.equals("lead_id")) {
+                lead_id = Integer.parseInt(inputFieldValue);
+            }
+
            if (inputFieldName.equals("client_request_key")) {
                 client_request_key = inputFieldValue;
            }
@@ -84,6 +89,7 @@
                       ImageRepository ir = new ImageRepository();
                       ir.setFilename(uuid);
                       ir.setOrderId(orderId);
+                      ir.setLeadId(lead_id);
                       ir.setUsername(username);
                       ir.setUploadDate(currentTime);
                       ir.setFileType("PNG");
