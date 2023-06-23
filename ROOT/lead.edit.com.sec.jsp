@@ -77,7 +77,7 @@
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
             <HR>
-        <h2>Lead</h2>
+        <h2>Lead <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%=recordId%>" tabindex="2"><%=recordId%></a></h2>
         <HR>
           <%
               LeadDAO leadDAO = new LeadDAO();
@@ -125,7 +125,6 @@
         <HR>
           <div class="container mt-5">
             <div class="container">
-              <h4>Lead ID: <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%=lead.getRecordId()%>" tabindex="2"><%=lead.getRecordId()%></a> </h4>
                 <div class="form-group">
                     <label>First Name:</label>
                     <input type="text" class="form-control" name="name" value="<%=lead.getName()%>">
