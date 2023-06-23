@@ -63,6 +63,7 @@
               Lead lead = new Lead();
 
 
+              String uuid = java.util.UUID.randomUUID().toString();
               lead = leadDAO.getLead(username, recordId);
 
           %>
@@ -134,8 +135,7 @@
                                         <div class="d-flex flex-wrap">
 
                         <%
-
-                         String uuid = java.util.UUID.randomUUID().toString();
+ 
                          ImageRepositoryDAO iDao = new ImageRepositoryDAO();
                          List<ImageRepository> images = iDao.selectByUsernameAndOrderId(username, lead.getRecordId());
 
