@@ -140,7 +140,7 @@
                 }else{
                   if(!userProfile.getSettings().contains("display=table;")){
                     userProfile.setSettings(userProfile.getSettings().replace("display=panel;", "display=table;"));
-                    userProfileDao.updateUserProfile(userProfile);                     
+                    userProfileDao.updateUserProfile(userProfile);
                   }
                 }
 
@@ -248,7 +248,7 @@
                         <% if (emailAddress != null && !emailAddress.isEmpty()) { %>
                           <a href="mailto:<%= emailAddress %>" title="<%= emailAddress %>" ><i class="fas fa-envelope"></i></a>
                         <% } else { %>
-                          N/A
+                           <i class="fas fa-times"></i>
                         <% } %>
                         </td>
                         <td><%= lead.getLeadStatus() %></td>
@@ -259,7 +259,7 @@
                           <% if (emailAddressu != null && !emailAddressu.isEmpty()) { %>
                             <a href="mailto:<%= emailAddressu %>" title="<%= emailAddressu.split("@")[0] %>" ><%= emailAddressu.split("@")[0] %></a>
                           <% } else { %>
-                            N/A
+                            <i class="fas fa-times"></i>
                           <% } %>
                         </td>
                         <td>
