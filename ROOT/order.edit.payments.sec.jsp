@@ -174,7 +174,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var ocId = selectedOption.value;
       var orderId = <%=orderId%>;
-      var url = "<%=rootUpdate%>order.edit.payments.available.jsp/?ocId=" + ocId + "&orderId=" + orderId ;
+      var url = "<%=rootUpdate%>order.edit.payments.available.sec.jsp/?ocId=" + ocId + "&orderId=" + orderId ;
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
