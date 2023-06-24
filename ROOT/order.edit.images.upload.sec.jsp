@@ -75,7 +75,7 @@
                       APIConfig conf = new APIConfig();
                       String uuid = java.util.UUID.randomUUID().toString();
                       String filepath = conf.getPdfloc();
-                      String logofilepath  = filepath +  username + "." +  orderId + "." + uuid + ".png";
+                      String logofilepath  = filepath +  username + "." +  orderId + "." +  lead_id + "." + uuid + ".png";
                       InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
                       FileOutputStream fos = new FileOutputStream(logofilepath);
                       byte[] buffer = new byte[1024];

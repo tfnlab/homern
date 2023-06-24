@@ -23,8 +23,27 @@
     String filepath = conf.getPdfloc();
     //order.edit.images.view.jsp?imgId=37&orderId=102
     // allregioninctest.102.6d7ac2ae-e37f-4bd0-8104-9a80d4f19022.png
+    int order_id = 0;
+    try {
+        order_id = Integer.parseInt(request.getParameter("orderId"));
+        // Use the leadId variable in your code as needed
+    } catch (Exception e) {
+        // Handle the exception (e.g., display an error message or perform alternative logic)
+        // You can also log the exception for debugging purposes
+        e.printStackTrace();
+    }
+    int lead_id = 0;
+    try {
+        lead_id = Integer.parseInt(request.getParameter("lead_id"));
+        // Use the leadId variable in your code as needed
+    } catch (Exception e) {
+        // Handle the exception (e.g., display an error message or perform alternative logic)
+        // You can also log the exception for debugging purposes
+        e.printStackTrace();
+    }
 
-    String logofilepath  = filepath +  username + "." +  request.getParameter("orderId") + "." + request.getParameter("filename") + ".png";
+
+    String logofilepath  = filepath +  username + "." +  order_id + "." +  lead_id + "." + request.getParameter("filename") + ".png";
     response.setContentType("image/jpeg");
 //    response.setContentLength(new File(logofilepath).length());
     response.setHeader("Content-Length", String.valueOf(new File(logofilepath).length()));
