@@ -108,8 +108,8 @@
         for (ImageRepository image : images) {
                 %>
                     <div class="d-flex mb-4 mr-4">
-                <a href="<%=rootUpdate%>order.edit.images.view.sec.jsp/?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" >
-                    <img src="<%=rootUpdate%>order.edit.images.view.sec.jsp/?filename=<%=image.getFilename()%>&orderId=<%=orderId%>" class="img-fluid" alt="Responsive Image" style="width: 100px; height: 100px;" />
+                <a href="<%=rootUpdate%>order.edit.images.view.sec.jsp/?filename=<%=image.getFilename()%>&orderId=<%=orderId%>&lead_id=<%=lead_id%>" >
+                    <img src="<%=rootUpdate%>order.edit.images.view.sec.jsp/?filename=<%=image.getFilename()%>&orderId=<%=orderId%>&lead_id=<%=lead_id%>" class="img-fluid" alt="Responsive Image" style="width: 100px; height: 100px;" />
                 </a>
                     </div>
                 <%
