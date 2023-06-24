@@ -160,9 +160,6 @@
                               </div>
 
                       <HR>
-                      <div id="image_div_canvas" name="image_div_canvas">
-                        <canvas id="canvas" style="display: none;" ></canvas>
-                      <div>
 
                 <BR>
             </div>
@@ -171,6 +168,9 @@
       </div>
     </section><!-- End Blog Section -->
   </main>
+  <div id="image_div_canvas" name="image_div_canvas">
+    <canvas id="canvas" style="display: none;" ></canvas>
+  <div>
   <script>
     var fileInput = document.getElementById('fileInput');
     var canvas = document.getElementById('canvas');
