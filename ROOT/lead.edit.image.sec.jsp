@@ -206,11 +206,13 @@
               xhr.open('POST', '<%=rootUpdate%>order.edit.images.upload.sec.jsp/');
               xhr.onload = function() {
                 if (xhr.status === 200) {
+                  alert(this.responseText);
                   document.getElementById("submitButton").classList.remove("btn-warning");
                   document.getElementById("submitButton").classList.add("btn-success");
                   document.getElementById("image_div").innerHTML = this.responseText.trim();
                 } else {
                   // Handle error
+                  alert("Error");
                 }
               };
               var description = document.getElementById('description').value;
