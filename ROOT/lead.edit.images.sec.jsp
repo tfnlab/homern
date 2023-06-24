@@ -94,7 +94,7 @@
 
     <%
             ImageRepositoryDAO iDao = new ImageRepositoryDAO();
-      List<ImageRepository> images = iDao.selectByUsernameAndOrderId(username, order.getOrderId());
+      List<ImageRepository> images = iDao.selectByUsernameAndLeadId(username, recordId);
 
         for (ImageRepository image : images) {
                 %>
