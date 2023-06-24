@@ -137,8 +137,7 @@
   <div id="image_div_canvas" name="image_div_canvas">
     <canvas id="canvas" style="display: none;" ></canvas>
   <div>
-  <HR>
-
+  <BR><BR>  
   </div>
   </div>
 
