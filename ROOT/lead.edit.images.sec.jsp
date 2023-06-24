@@ -78,7 +78,6 @@
 
 <HR>
 
-  <HR>
 <form>
   <label for="orderId">Select Image Type:</label><br>
 <select id="image_type">
