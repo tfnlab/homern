@@ -212,6 +212,7 @@
                   document.getElementById("image_div").innerHTML = this.responseText.trim();
                 } else {
                   // Handle error
+                  alert(this.responseText);
                   alert("Error");
                 }
               };
