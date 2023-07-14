@@ -33,7 +33,7 @@
     OrderTechniciansDAO otD = new OrderTechniciansDAO();
     EventDao evd = new EventDao();
     TechnicianDao technicianDao = new TechnicianDao();
-    int orderId = 0; 
+    int orderId = 0;
     int ocId = 0;
     if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
       orderId = Integer.parseInt(request.getParameter("orderId"));
@@ -67,6 +67,6 @@
 </select>
 <HR>
         <%if(!(pList.size()>0)){%>
-            <a href="customer.edit.payments.jsp?customerId=<%=oc.getCustomerId()%>&orderId=<%=orderId%>" >Add Payment</a>
+            <a href="<%=rootUpdate%>customer.edit.payments.sec.jsp?customerId=<%=oc.getCustomerId()%>&orderId=<%=orderId%>" >Add Payment</a>
         <%}%>
 </div>

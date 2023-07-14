@@ -166,7 +166,7 @@
 
     function getInv() {
       var orderId = <%=orderId%>;
-      var url = "order.edit.products.print.jsp?orderId=" + orderId;
+      var url = "<%=rootUpdate%>order.edit.products.print.sec.jsp/?orderId=" + orderId;
       window.open(url, "_blank");
     }
     function getOpenPayments(){
