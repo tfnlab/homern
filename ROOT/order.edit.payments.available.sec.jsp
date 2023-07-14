@@ -67,6 +67,6 @@
 </select>
 <HR>
         <%if(!(pList.size()>0)){%>
-            <a href="<%=rootUpdate%>customer.edit.payments.sec.jsp?customerId=<%=oc.getCustomerId()%>&orderId=<%=orderId%>" >Add Payment</a>
+            <a href="<%=rootUpdate%>customer.edit.payments.sec.jsp/?customerId=<%=oc.getCustomerId()%>&orderId=<%=orderId%>" >Add Payment</a>
         <%}%>
 </div>
