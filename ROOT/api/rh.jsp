@@ -239,8 +239,8 @@
                 UserDao uDao = new UserDao();
                 User usernameOBJ = uDao.getUserByUsername(customerId);
                 String toEmail = uDao.getPush_notification_email();
-                String subject = "";
-                String emailContent = "";
+                String subject = "Test";
+                String emailContent = "Test";
                 //uDao.
                 // Get the content from the query parameter
                           APIConfig ac = new APIConfig();
