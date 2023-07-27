@@ -239,26 +239,28 @@
                 UserDao uDao = new UserDao();
                 User usernameOBJ = uDao.getUserByUsername(customerId);
                 String toEmail = usernameOBJ.getPush_notification_email();
+                String[] emailArray = toEmail.split(",");
                 String subject = "Quote Request";
                 String emailContent = "Customer Name: " + customerName + " <BR> Email: " + email + " <BR> Phone: " + phoneNumber + " <BR> Message: " + additionalMessage + " <BR> Address: " + installationAddress;
                 //uDao.
                 // Get the content from the query parameter
                           APIConfig ac = new APIConfig();
-                          try{
-                                File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
-                                FileWriter fw = new FileWriter(file);
-                                BufferedWriter bw = new BufferedWriter(fw);
-                                bw.write(toEmail + "<CONTENT>" + subject + "<CONTENT>" + emailContent + "<CONTENT>" + usernameOBJ.getSendgrid_email());
-                                bw.close();
+                          for (String recipient : emailArray) {
+                            try{
+                                  File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
+                                  FileWriter fw = new FileWriter(file);
+                                  BufferedWriter bw = new BufferedWriter(fw);
+                                  bw.write(recipient.trim() + "<CONTENT>" + subject + "<CONTENT>" + emailContent + "<CONTENT>" + usernameOBJ.getSendgrid_email());
+                                  bw.close();
 
-                                Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), usernameOBJ.getSendgrid_key()).start();
-                                String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
-                                String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
-                                rm = stdout + stderr + " TEST ";
-                            }catch(IOException ex){
-                                rm = ex.getMessage();
-                            }
-
+                                  Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), usernameOBJ.getSendgrid_key()).start();
+                                  String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
+                                  String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
+                                  rm = stdout + stderr + " TEST ";
+                              }catch(IOException ex){
+                                  rm = ex.getMessage();
+                              }
+                          }
                 %>
                   '<%=email%> | <%=rm%>'
                 <%
