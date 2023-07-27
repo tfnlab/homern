@@ -240,7 +240,7 @@
                 User usernameOBJ = uDao.getUserByUsername(customerId);
                 String toEmail = usernameOBJ.getPush_notification_email();
                 String subject = "Quote Request";
-                String emailContent = "Customer Name: " + customerName + " <BR> Email: " + email + " <BR> Phone: " + phoneNumber + " <BR> Message" + additionalMessage + " <BR> Address" + installationAddress;
+                String emailContent = "Customer Name: " + customerName + " <BR> Email: " + email + " <BR> Phone: " + phoneNumber + " <BR> Message: " + additionalMessage + " <BR> Address: " + installationAddress;
                 //uDao.
                 // Get the content from the query parameter
                           APIConfig ac = new APIConfig();
