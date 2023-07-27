@@ -1,28 +1,9 @@
-<%@ page import="com.tfnlab.mysql.User"%>
-<%@ page import="com.tfnlab.mysql.UserDao" %>
-<%@ page import="com.tfnlab.mysql.Entity" %>
-<%@ page import="com.tfnlab.business.MotherfuckerDao" %>
-<%@ page import="com.tfnlab.business.MFOrder" %>
-<%@ page import="java.util.Map" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.HashMap" %>
-<%@ page import="java.math.BigDecimal" %>
-<%@ page import="java.sql.Timestamp" %>
-<%@ page import="com.tfnlab.mysql.Technician" %>
-<%@ page import="com.tfnlab.mysql.TechnicianDao" %>
-<%@ page import="com.tfnlab.mysql.OrderTechniciansDAO" %>
-<%@ page import="com.tfnlab.mysql.Event" %>
-<%@ page import="com.tfnlab.mysql.EventDao" %>
-<%@ page import="java.text.SimpleDateFormat" %>
-
-<%@ page import="com.tfnlab.mysql.Quote" %>
-<%@ page import="com.tfnlab.mysql.QuoteDAO" %>
-<%@ page import="com.tfnlab.mysql.Contact" %>
-<%@ page import="com.tfnlab.mysql.ContactDAO" %>
-<%@ page import="com.tfnlab.mysql.OrderTechnicians" %>
-<%@ page import="com.tfnlab.mysql.ProductLineItem" %>
-<%@ page import="com.tfnlab.mysql.OrderCustomer" %>
-<%@ page import="java.util.Enumeration" %><%
+<%@ page language="java" %>
+<%@ page import="java.lang.Thread, java.nio.charset.Charset, java.io.*, java.util.*, java.awt.image.BufferedImage, javax.imageio.ImageIO"%>
+<%@ page import="com.tfnlab.mysql.Order, com.tfnlab.mysql.OrderDao, com.tfnlab.mysql.User, com.tfnlab.mysql.UserDao, com.tfnlab.mysql.OrderCustomer, com.tfnlab.mysql.OrderCustomerDao, com.tfnlab.mysql.PaymentPostDao, com.tfnlab.api.con.APIConfig, com.tfnlab.mysql.Technician, com.tfnlab.mysql.TechnicianDao, com.tfnlab.mysql.OrderTechniciansDAO, com.tfnlab.mysql.Event, com.tfnlab.mysql.EventDao, com.tfnlab.mysql.Quote, com.tfnlab.mysql.QuoteDAO, com.tfnlab.mysql.Contact, com.tfnlab.mysql.ContactDAO, com.tfnlab.mysql.OrderTechnicians, com.tfnlab.mysql.ProductLineItem"%>
+<%@ page import="com.tfnlab.business.CreateInvoice, com.tfnlab.business.MotherfuckerDao, com.tfnlab.business.MFOrder"%>
+<%@ page import="com.itextpdf.kernel.pdf.PdfDocument, com.itextpdf.kernel.pdf.PdfWriter, com.itextpdf.layout.Document, com.itextpdf.layout.element.Paragraph"%>
+<%@ page import="java.io.FileOutputStream, java.util.UUID, java.util.Map, java.util.List, java.util.HashMap, java.math.BigDecimal, java.sql.Timestamp, java.text.SimpleDateFormat"%><%
         String apiAction = request.getParameter("apiAction");
         SimpleDateFormat longFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm a");
         if (apiAction != null && apiAction.trim().length() > 0) {
@@ -253,8 +234,33 @@
 
                 mferDao.quoteWeb(customerId, api_key, quote);
 
+                UUID uuid = UUID.randomUUID();
+                String rm = "";
+                UserDao uDao = new UserDao();
+                User usernameOBJ = uDao.getUserByUsername(customerId);
+                String toEmail = uDao.getPush_notification_email();
+                String subject = "";
+                String emailContent = "";
+                //uDao.
+                // Get the content from the query parameter
+                          APIConfig ac = new APIConfig();
+                          try{
+                                File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
+                                FileWriter fw = new FileWriter(file);
+                                BufferedWriter bw = new BufferedWriter(fw);
+                                bw.write(toEmail + "<CONTENT>" + request.getParameter("sub") + "<CONTENT>" +request.getParameter("com")+ "<CONTENT>" + usernameOBJ.getSendgrid_email());
+                                bw.close();
+
+                                Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), usernameOBJ.getSendgrid_key()).start();
+                                String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
+                                String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
+                                rm = stdout + stderr + " TEST ";
+                            }catch(IOException ex){
+                                rm = ex.getMessage();
+                            }
+
                 %>
-                  '<%=email%>'
+                  '<%=email%> | <%=rm%>'
                 <%
               }
               if(apiAction.equals("getOrder")){
