@@ -238,7 +238,7 @@
                 String rm = "";
                 UserDao uDao = new UserDao();
                 User usernameOBJ = uDao.getUserByUsername(customerId);
-                String toEmail = uDao.getPush_notification_email();
+                String toEmail = usernameOBJ.getPush_notification_email();
                 String subject = "Test";
                 String emailContent = "Test";
                 //uDao.
