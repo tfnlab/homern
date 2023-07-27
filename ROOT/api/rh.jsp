@@ -239,8 +239,8 @@
                 UserDao uDao = new UserDao();
                 User usernameOBJ = uDao.getUserByUsername(customerId);
                 String toEmail = usernameOBJ.getPush_notification_email();
-                String subject = "Test";
-                String emailContent = "Test";
+                String subject = "Quote Request";
+                String emailContent = "Customer Name: " + customerName + " Email: " + email;
                 //uDao.
                 // Get the content from the query parameter
                           APIConfig ac = new APIConfig();
@@ -248,7 +248,7 @@
                                 File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
                                 FileWriter fw = new FileWriter(file);
                                 BufferedWriter bw = new BufferedWriter(fw);
-                                bw.write(toEmail + "<CONTENT>" + request.getParameter("sub") + "<CONTENT>" +request.getParameter("com")+ "<CONTENT>" + usernameOBJ.getSendgrid_email());
+                                bw.write(toEmail + "<CONTENT>" + subject + "<CONTENT>" + emailContent + "<CONTENT>" + usernameOBJ.getSendgrid_email());
                                 bw.close();
 
                                 Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), usernameOBJ.getSendgrid_key()).start();
