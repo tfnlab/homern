@@ -193,7 +193,8 @@
          user.setWallet_id_private(request.getParameter("wallet_id_private"));
          user.setWallet_id_public(request.getParameter("wallet_id_public"));
          user.setWallet_id_active_nft_id(request.getParameter("wallet_id_active_nft_id"));
-
+         user.setPush_notification_phone(request.getParameter("push_notification_phone"));
+         user.setPush_notification_email(request.getParameter("push_notification_email"));
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
@@ -444,7 +445,14 @@
            <label for="stripe_key_pub" class="mr-2">Access Emails:</label>
            <input type="text" class="form-control" id="hrn_access_email" name="hrn_access_email" value="<%= user.getHrn_access_email() %>" tabindex="25" >
            </div>
-
+           <div class="form-group mt-3">
+           <label for="stripe_key_pub" class="mr-2">Push Notification Phone:</label>
+           <input type="text" class="form-control" id="push_notification_phone" name="push_notification_phone" value="<%= user.getPush_notification_phone() %>" tabindex="25" >
+           </div>
+           <div class="form-group mt-3">
+           <label for="stripe_key_pub" class="mr-2">Push Notification Email:</label>
+           <input type="text" class="form-control" id="push_notification_email" name="push_notification_email" value="<%= user.getPush_notification_email() %>" tabindex="25" >
+           </div>
            <div class="form-group mt-3">
              <button type="submit" class="btn btn-primary" tabindex="26">Submit</button>
            </div>
