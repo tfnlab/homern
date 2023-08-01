@@ -181,7 +181,7 @@
 
                 mferDao.contactWeb(customerId, api_key, contact);
                 %>
-                  '<%=email%>'
+                  '<%=name%>'
                 <%
               }
 
