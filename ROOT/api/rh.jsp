@@ -181,7 +181,7 @@
 
                 mferDao.contactWeb(customerId, api_key, contact);
                 %>
-                  Thank you <%=name%> for reaching out to us. We will contact you shortly to discuss your solar needs!
+                  Thank you <%=name%>
                 <%
               }
 
