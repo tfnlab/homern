@@ -18,8 +18,8 @@ try {
       String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
 
       rm = stdout + stderr + " TEST ";
-      LeadDAO lDao = new LeadDAO()
-      Lead lead = lDao.getLeadbyPhone(username, request.getParameter("From") )
+      LeadDAO lDao = new LeadDAO();
+      Lead lead = lDao.getLeadbyPhone(username, request.getParameter("From") );
       if(lead!=null){
             LeadCorrespondenceDAO cdao = new LeadCorrespondenceDAO();
             // Create an instance of the LeadDAO class
