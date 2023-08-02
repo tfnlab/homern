@@ -10,7 +10,7 @@ try {
     File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
     FileWriter fw = new FileWriter(file);
     BufferedWriter bw = new BufferedWriter(fw);
-    bw.write(user.getTwilio_voice_forward_phone() + "<CONTENT>" + request.getParameter("From") + "<CONTENT>" + request.getParameter("SmsMessageSid") +  "<CONTENT>" +usernameOBJ.getTwilio_sms_phone() + "<CONTENT>" + usernameOBJ.getTwilio_api_sid() + "<CONTENT>" +usernameOBJ.getTwilio_api_key());
+    bw.write(user.getTwilio_voice_forward_phone() + "<CONTENT>" + request.getParameter("From") + "<CONTENT>" + request.getParameter("SmsMessageSid") +  "<CONTENT>" +user.getTwilio_sms_phone() + "<CONTENT>" + user.getTwilio_api_sid() + "<CONTENT>" +user.getTwilio_api_key());
     bw.close();
 
       Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/smsgetmymessage.py", uuid.toString(), uuid.toString()).start();
