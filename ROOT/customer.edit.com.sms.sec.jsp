@@ -44,13 +44,20 @@ if (request.getParameter("lead_id") != null && !request.getParameter("lead_id").
                               File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
                               FileWriter fw = new FileWriter(file);
                               BufferedWriter bw = new BufferedWriter(fw);
-                              bw.write(phone + "<CONTENT>" + request.getParameter("sub") + "<CONTENT>" +request.getParameter("com"));
+                              bw.write(phone + "<CONTENT>" + request.getParameter("sub") + "<CONTENT>" +request.getParameter("com") + "<CONTENT>" +usernameOBJ.getTwilio_sms_phone() + "<CONTENT>" + usernameOBJ.getTwilio_api_sid() + "<CONTENT>" +usernameOBJ.getTwilio_api_key());
                               bw.close();
+                              if (usernameOBJ.getTwilio_sms_phone() == null || usernameOBJ.getTwilio_sms_phone().equalsIgnoreCase("null") || usernameOBJ.getTwilio_sms_phone().equals("Null")) {
 
-                              Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/smssend.py", uuid.toString(), uuid.toString()).start();
-                              String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
-                              String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
-                              rm = stdout + stderr + " TEST ";
+                                Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/smssend.py", uuid.toString(), uuid.toString()).start();
+                                String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
+                                String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
+                                rm = stdout + stderr + " TEST ";
+                              }else{
+                                Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/smssendbyuser.py", uuid.toString(), uuid.toString()).start();
+                                String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
+                                String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
+                                rm = stdout + stderr + " TEST ";
+                              }
                           }catch(IOException ex){
                               rm = ex.getMessage();
                           }
