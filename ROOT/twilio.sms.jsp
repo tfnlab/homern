@@ -11,8 +11,7 @@ APIConfig ac = new APIConfig();
 try {
     File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
     FileWriter fw = new FileWriter(file);
-    BufferedWriter bw = new BufferedWriter(fw);
-    request.getParameter("From")
+    BufferedWriter bw = new BufferedWriter(fw); 
     bw.write(user.getTwilio_voice_forward_phone() + "<CONTENT>" + request.getParameter("From").substring(1) + "<CONTENT>" + request.getParameter("SmsMessageSid") +  "<CONTENT>" +user.getTwilio_sms_phone() + "<CONTENT>" + user.getTwilio_api_sid() + "<CONTENT>" +user.getTwilio_api_key());
     bw.close();
 
