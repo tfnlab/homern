@@ -124,6 +124,7 @@
           <a href="<%=rootUpdate%>lead.edit.map.sec.jsp/?lead_id=<%=lead.getRecordId()%>" class="btn btn-primary" tabindex="9"><i class="fas fa-map"></a>
           <a href="https://sunroof.withgoogle.com/building/<%= lead.getLocation_pointlat() %>/<%= lead.getLocation_pointlng() %>/#?f=buy" tabindex="2" class="btn btn-primary" target="_blank" ><i class="fas fa-sun"></a>
         <HR>
+          <div id="orderComRes"></div>
           <div class="container mt-5">
             <div class="container">
                 <div class="form-group">
@@ -239,7 +240,7 @@
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             alert(this.responseText);
-            // document.getElementById("orderCom").innerHTML = this.responseText.trim();
+            document.getElementById("orderComRes").innerHTML = this.responseText.trim();
           }
         };
         var lId = <%=recordId%>;
