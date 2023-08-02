@@ -1,4 +1,6 @@
 <%@ page language="java" import="com.tfnlab.mysql.LeadCorrespondence,com.tfnlab.mysql.LeadCorrespondenceDAO,com.tfnlab.mysql.Lead, com.tfnlab.mysql.LeadDAO, java.util.UUID, java.io.File, java.io.FileWriter, java.io.BufferedWriter, com.tfnlab.api.con.APIConfig, java.io.FileOutputStream, com.tfnlab.mysql.User, com.tfnlab.mysql.UserDao, java.lang.Thread, org.apache.commons.io.IOUtils, org.apache.commons.io.output.*, java.nio.charset.Charset, java.io.*, java.util.*, java.awt.image.BufferedImage, javax.imageio.ImageIO, java.io.OutputStream, java.io.FileInputStream, java.io.File" %>
+<%@ page import="java.sql.Timestamp" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%
 UserDao dao = new UserDao();
 String username = request.getParameter("username");
