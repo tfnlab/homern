@@ -43,4 +43,4 @@ try {
 } catch (IOException ex) {
     rm = ex.getMessage();
 }
-%>Thank You <%rm%>
+%>Thank You <%=rm%>
