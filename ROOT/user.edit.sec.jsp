@@ -138,6 +138,8 @@
          String language = request.getParameter("language");
          String hrn_access_email = request.getParameter("hrn_access_email");
          String twilio_api_key = request.getParameter("twilio_api_key");
+         String twilio_sms_phone = request.getParameter("twilio_sms_phone");
+         String twilio_api_sid = request.getParameter("twilio_api_sid");
 
           BigDecimal stripe_fee = new BigDecimal("0");
           if (request.getParameter("stripe_fee") != null && !request.getParameter("stripe_fee").isEmpty()) {
@@ -198,6 +200,8 @@
          user.setPush_notification_phone(request.getParameter("push_notification_phone"));
          user.setPush_notification_email(request.getParameter("push_notification_email"));
          user.setTwilio_api_key(twilio_api_key);
+         user.setTwilio_sms_phone(twilio_sms_phone);
+         user.setTwilio_api_sid(twilio_api_sid);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
@@ -455,6 +459,14 @@
            <div class="form-group mt-3">
            <label for="stripe_key_pub" class="mr-2">Push Notification Email:</label>
            <input type="text" class="form-control" id="push_notification_email" name="push_notification_email" value="<%= user.getPush_notification_email() %>" tabindex="25" >
+           </div>
+           <div class="form-group mt-3">
+           <label for="stripe_key_pub" class="mr-2">Twilio SMS Phone Number:</label>
+           <input type="text" class="form-control" id="twilio_sms_phone" name="twilio_sms_phone" value="<%= user.getTwilio_sms_phone() %>" tabindex="25" >
+           </div>
+           <div class="form-group mt-3">
+           <label for="stripe_key_pub" class="mr-2">Twilio API Sid:</label>
+           <input type="text" class="form-control" id="twilio_api_sid" name="twilio_api_sid" value="<%= user.getTwilio_api_sid() %>" tabindex="25" >
            </div>
            <div class="form-group mt-3">
            <label for="stripe_key_pub" class="mr-2">Twilio API KEY:</label>
