@@ -137,6 +137,8 @@
          String sendgrid_email = request.getParameter("sendgrid_email");
          String language = request.getParameter("language");
          String hrn_access_email = request.getParameter("hrn_access_email");
+         String twilio_api_key = request.getParameter("twilio_api_key");
+
           BigDecimal stripe_fee = new BigDecimal("0");
           if (request.getParameter("stripe_fee") != null && !request.getParameter("stripe_fee").isEmpty()) {
             stripe_fee = new BigDecimal(request.getParameter("stripe_fee"));
@@ -195,6 +197,7 @@
          user.setWallet_id_active_nft_id(request.getParameter("wallet_id_active_nft_id"));
          user.setPush_notification_phone(request.getParameter("push_notification_phone"));
          user.setPush_notification_email(request.getParameter("push_notification_email"));
+         user.setTwilio_api_key(twilio_api_key);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
@@ -452,6 +455,10 @@
            <div class="form-group mt-3">
            <label for="stripe_key_pub" class="mr-2">Push Notification Email:</label>
            <input type="text" class="form-control" id="push_notification_email" name="push_notification_email" value="<%= user.getPush_notification_email() %>" tabindex="25" >
+           </div>
+           <div class="form-group mt-3">
+           <label for="stripe_key_pub" class="mr-2">Twilio API KEY:</label>
+           <input type="text" class="form-control" id="twilio_api_key" name="twilio_api_key" value="<%= user.getTwilio_api_key() %>" tabindex="25" >
            </div>
            <div class="form-group mt-3">
              <button type="submit" class="btn btn-primary" tabindex="26">Submit</button>
