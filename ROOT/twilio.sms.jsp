@@ -11,7 +11,7 @@ APIConfig ac = new APIConfig();
 try {
     File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
     FileWriter fw = new FileWriter(file);
-    BufferedWriter bw = new BufferedWriter(fw); 
+    BufferedWriter bw = new BufferedWriter(fw);
     bw.write(user.getTwilio_voice_forward_phone() + "<CONTENT>" + request.getParameter("From").substring(1) + "<CONTENT>" + request.getParameter("SmsMessageSid") +  "<CONTENT>" +user.getTwilio_sms_phone() + "<CONTENT>" + user.getTwilio_api_sid() + "<CONTENT>" +user.getTwilio_api_key());
     bw.close();
 
@@ -19,7 +19,7 @@ try {
       String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
       String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
 
-      rm = stdout + stderr + " TEST ";
+      rm = stdout + stderr;
       LeadDAO lDao = new LeadDAO();
       Lead lead = lDao.getLeadbyPhone(username, request.getParameter("From").substring(1));
       if(lead!=null){
