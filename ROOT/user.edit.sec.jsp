@@ -140,7 +140,7 @@
          String twilio_api_key = request.getParameter("twilio_api_key");
          String twilio_sms_phone = request.getParameter("twilio_sms_phone");
          String twilio_api_sid = request.getParameter("twilio_api_sid");
-
+         String lead_pipeline_steps = request.getParameter("lead_pipeline_steps");
           BigDecimal stripe_fee = new BigDecimal("0");
           if (request.getParameter("stripe_fee") != null && !request.getParameter("stripe_fee").isEmpty()) {
             stripe_fee = new BigDecimal(request.getParameter("stripe_fee"));
@@ -202,6 +202,7 @@
          user.setTwilio_api_key(twilio_api_key);
          user.setTwilio_sms_phone(twilio_sms_phone);
          user.setTwilio_api_sid(twilio_api_sid);
+         user.setLead_pipeline_steps(lead_pipeline_steps);
          dao.updateUser(user);
 
          session.setAttribute("usernameOBJ", user);
@@ -471,6 +472,10 @@
            <div class="form-group mt-3">
            <label for="stripe_key_pub" class="mr-2">Twilio API KEY:</label>
            <input type="text" class="form-control" id="twilio_api_key" name="twilio_api_key" value="<%= user.getTwilio_api_key() %>" tabindex="25" >
+           </div>
+           <div class="form-group mt-3">
+           <label for="stripe_key_pub" class="mr-2">Lead Pipeline Steps</label>
+           <input type="text" class="form-control" id="lead_pipeline_steps" name="lead_pipeline_steps" value="<%= user.getLead_pipeline_steps() %>" tabindex="25" >
            </div>
            <div class="form-group mt-3">
              <button type="submit" class="btn btn-primary" tabindex="26">Submit</button>
