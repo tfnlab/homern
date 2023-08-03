@@ -82,7 +82,9 @@
                     <%
 
 
-                    String[] optionValues = {"Lead Generation", "Initial Contact", "Site Assessment", "Roof Check", "Electrical Panel Check", "Shade Analysis", "Proposal Preparation", "Proposal Presentation", "Financial Analysis", "Incentives and Rebates", "Negotiation and Agreement", "Permitting and Documentation", "Equipment Procurement", "Installation Scheduling", "Installation and Commissioning", "Inspections and Approvals", "System Activation and Monitoring", "Customer Satisfaction and Referrals", "Ongoing Customer Relationship"};
+                    String[] optionValues = usernameOBJ.getLead_pipeline_steps().split(",");
+
+                    // Iterating through the array elements
 
                     for (String option : optionValues) {
                         if(userProfile.getSettings().contains("display=panel;")){
