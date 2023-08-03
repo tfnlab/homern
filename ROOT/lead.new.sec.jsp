@@ -297,7 +297,9 @@
 
                         // Iterating through the array elements
                         for (String value : splitArray) {
+                            %>
                             <option value="<%=value%>"  ><%=value%></option>
+                            <%
                         }
 
                         %>
