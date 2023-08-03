@@ -310,7 +310,9 @@
 
                     // Iterating through the array elements
                     for (String value : splitArray) {
+                      %>
                         <option value="<%=value%>" <%= lead.getLeadStatus().equals(value) ? "selected" : "" %>><%=value%></option>
+                      <%  
                     }
 
                     %>
