@@ -291,26 +291,16 @@
                 </div>
                 <div class="form-group">
                     <label>Lead Status:</label>
-                      <select class="form-control" name="leadStatus"
-                        <option value="Lead Generation">Lead Generation</option>
-                        <option value="Initial Contact">Initial Contact</option>
-                        <option value="Site Assessment">Site Assessment</option>
-                        <option value="Roof Check">Roof Check</option>
-                        <option value="Electrical Panel Check">Electrical Panel Check</option>
-                        <option value="Shade Analysis">Shade Analysis</option>
-                        <option value="Proposal Preparation">Proposal Preparation</option>
-                        <option value="Proposal Presentation">Proposal Presentation</option>
-                        <option value="Financial Analysis">Financial Analysis</option>
-                        <option value="Incentives and Rebates">Incentives and Rebates</option>
-                        <option value="Negotiation and Agreement">Negotiation and Agreement</option>
-                        <option value="Permitting and Documentation">Permitting and Documentation</option>
-                        <option value="Equipment Procurement">Equipment Procurement</option>
-                        <option value="Installation Scheduling">Installation Scheduling</option>
-                        <option value="Installation and Commissioning">Installation and Commissioning</option>
-                        <option value="Inspections and Approvals">Inspections and Approvals</option>
-                        <option value="System Activation and Monitoring">System Activation and Monitoring</option>
-                        <option value="Customer Satisfaction and Referrals">Customer Satisfaction and Referrals</option>
-                        <option value="Ongoing Customer Relationship">Ongoing Customer Relationship</option>
+                      <select class="form-control" name="leadStatus"  >
+                        <%
+                        String[] splitArray = usernameOBJ.getLead_pipeline_steps().split(",");
+
+                        // Iterating through the array elements
+                        for (String value : splitArray) {
+                            <option value="<%=value%>"  ><%=value%></option>
+                        }
+
+                        %>
                       </select>
                 </div>
 
