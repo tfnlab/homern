@@ -316,7 +316,9 @@
                <option value="painter" <% if (businessType.equals("painter")) { %>selected<% } %>><%= (new Translate()).translate("Painter", usernameOBJ.getLanguage())%></option>
                <option value="flooring-contractor" <% if (businessType.equals("flooring-contractor")) { %>selected<% } %>><%= (new Translate()).translate("Flooring contractor", usernameOBJ.getLanguage())%></option>
                <option value="solar-panel-installers" <% if (businessType.equals("solar-panel-installers")) { %>selected<% } %>><%= (new Translate()).translate("Solar Panel Installers", usernameOBJ.getLanguage())%></option>
+               <option value="software-service" <% if (businessType.equals("software-service")) { %>selected<% } %>><%= (new Translate()).translate("Software Service", usernameOBJ.getLanguage())%></option>
              </select>
+
            </div>
            <div class="form-group mt-3">
            <label for="invoice_terms"><%= (new Translate()).translate("Invoice Terms", usernameOBJ.getLanguage())%></label><br>
