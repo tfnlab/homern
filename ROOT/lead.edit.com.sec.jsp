@@ -124,7 +124,7 @@
           <a href="<%=rootUpdate%>lead.edit.map.sec.jsp/?lead_id=<%=lead.getRecordId()%>" class="btn btn-primary mt-3" tabindex="9"><i class="fas fa-map"></a>
           <a href="https://sunroof.withgoogle.com/building/<%= lead.getLocation_pointlat() %>/<%= lead.getLocation_pointlng() %>/#?f=buy" tabindex="2" class="btn btn-primary mt-3" target="_blank" ><i class="fas fa-sun"></a>
         <HR>
-          <div id="orderComRes"  name="orderComRes" > HELLOW</div>
+          <div id="orderComRes"  name="orderComRes" ></div>
           <div class="container mt-5">
             <div class="container">
                 <div class="form-group">
