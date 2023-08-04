@@ -64,17 +64,17 @@
 <HR>
 <h2>Lead <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%=request.getParameter("lead_id")%>" tabindex="2"><%=request.getParameter("lead_id")%></a></h2>
 <HR>
-<a href="<%=rootUpdate%>lead.new.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-plus"></i></a>
-<a href="<%=rootUpdate%>lead.new.bulk.sec.jsp/" class="btn btn-primary" tabindex="2"><i class="fas fa-cubes"></i></a>
-<a href="<%=rootUpdate%>lead.list.sec.jsp/" class="btn btn-primary" tabindex="3"><i class="fas fa-list"></i></a>
-<a href="<%=rootUpdate%>lead.list.table.sec.jsp/" class="btn btn-primary" tabindex="4"><i class="fas fa-table"></i></a>
-<a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" class="btn btn-primary" tabindex="5"><i class="fas fa-tachometer-alt"></i></a>
-<a href="<%=rootUpdate%>lead.list.csv.sec.jsp/?csv=true" class="btn btn-primary" tabindex="6"><i class="fas fa-download"></i></a>
-<a href="<%=rootUpdate%>lead.new.bulk.sec.jsp/?csv=true" class="btn btn-primary" tabindex="7"><i class="fas fa-upload"></i></a>
-<a href="<%=rootUpdate%>lead.edit.images.sec.jsp/?lead_id=<%=lead.getRecordId()%>" class="btn btn-success" tabindex="8"><i class="fas fa-image"></i></a>
-<a href="<%=rootUpdate%>lead.edit.com.sec.jsp/?lead_id=<%=lead.getRecordId()%>" class="btn btn-primary" tabindex="9"><i class="fas fa-envelope"></i></a>
-<a href="<%=rootUpdate%>lead.edit.map.sec.jsp/?lead_id=<%=lead.getRecordId()%>" class="btn btn-primary" tabindex="10"><i class="fas fa-map"></a>
-<a href="https://sunroof.withgoogle.com/building/<%= lead.getLocation_pointlat() %>/<%= lead.getLocation_pointlng() %>/#?f=buy" tabindex="11" class="btn btn-primary" target="_blank" ><i class="fas fa-sun"></a>
+<a href="<%=rootUpdate%>lead.new.sec.jsp/" class="btn btn-primary mt-3" tabindex="2"><i class="fas fa-plus"></i></a>
+<a href="<%=rootUpdate%>lead.new.bulk.sec.jsp/" class="btn btn-primary mt-3" tabindex="2"><i class="fas fa-cubes"></i></a>
+<a href="<%=rootUpdate%>lead.list.sec.jsp/" class="btn btn-primary mt-3" tabindex="3"><i class="fas fa-list"></i></a>
+<a href="<%=rootUpdate%>lead.list.table.sec.jsp/" class="btn btn-primary mt-3" tabindex="4"><i class="fas fa-table"></i></a>
+<a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" class="btn btn-primary mt-3" tabindex="5"><i class="fas fa-tachometer-alt"></i></a>
+<a href="<%=rootUpdate%>lead.list.csv.sec.jsp/?csv=true" class="btn btn-primary mt-3" tabindex="6"><i class="fas fa-download"></i></a>
+<a href="<%=rootUpdate%>lead.new.bulk.sec.jsp/?csv=true" class="btn btn-primary mt-3" tabindex="7"><i class="fas fa-upload"></i></a>
+<a href="<%=rootUpdate%>lead.edit.images.sec.jsp/?lead_id=<%=lead.getRecordId()%>" class="btn btn-success mt-3" tabindex="8"><i class="fas fa-image"></i></a>
+<a href="<%=rootUpdate%>lead.edit.com.sec.jsp/?lead_id=<%=lead.getRecordId()%>" class="btn btn-primary mt-3" tabindex="9"><i class="fas fa-envelope"></i></a>
+<a href="<%=rootUpdate%>lead.edit.map.sec.jsp/?lead_id=<%=lead.getRecordId()%>" class="btn btn-primary mt-3" tabindex="10"><i class="fas fa-map"></a>
+<a href="https://sunroof.withgoogle.com/building/<%= lead.getLocation_pointlat() %>/<%= lead.getLocation_pointlng() %>/#?f=buy" tabindex="11" class="btn btn-primary mt-3" target="_blank" ><i class="fas fa-sun"></a>
 
 <HR>
 
