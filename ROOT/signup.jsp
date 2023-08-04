@@ -251,7 +251,7 @@
                                       fis.close();
                                       fos.close();
 
-                                      out.println("File copied successfully.");
+                                      //out.println("File copied successfully.");
                                   } catch (IOException e) {
                                       %><%="An error occurred while copying the file: " + e.getMessage()%><%
                                   }
