@@ -59,6 +59,7 @@
           <a href="<%=rootUpdate%>lead.list.dash.sec.jsp/" class="btn btn-primary" tabindex="5"><i class="fas fa-tachometer-alt"></i></a>
           <a href="<%=rootUpdate%>lead.list.csv.sec.jsp/?csv=true" class="btn btn-primary" tabindex="6"><i class="fas fa-download"></i></a>
           <a href="<%=rootUpdate%>lead.new.bulk.sec.jsp/?csv=true" class="btn btn-primary" tabindex="7"><i class="fas fa-upload"></i></a>
+          <a href="<%=rootUpdate%>lead.edit.com.list.sec.jsp/" class="btn btn-warning" tabindex="3"><i class="fas fa-list"></i></a>
 
         <HR>
           <div class="container mt-5">
