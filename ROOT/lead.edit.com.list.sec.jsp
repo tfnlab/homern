@@ -30,9 +30,6 @@
 <%@ include file="auth.sec.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
-  <%
-     int recordId = Integer.parseInt(request.getParameter("lead_id"));
-  %>
   <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -76,8 +73,7 @@
       <div class="container px-4 px-lg-5">
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
-            <HR>
-        <h2>Lead <a href="<%=rootUpdate%>lead.edit.sec.jsp/?lead_id=<%=recordId%>" tabindex="2"><%=recordId%></a></h2>
+            <HR> 
         <HR>
           <%
 
