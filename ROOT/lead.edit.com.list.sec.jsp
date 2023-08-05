@@ -73,7 +73,7 @@
       <div class="container px-4 px-lg-5">
           <div class="container mt-5">
             <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
-            <HR> 
+            <HR>
         <HR>
           <%
 
@@ -113,51 +113,6 @@
         </div>
       </div>
     </section><!-- End Blog Section -->
-  </main>
-  <script>
-  function sendSMS() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        alert(this.responseText);
-        document.getElementById("orderComRes").innerHTML = this.responseText.trim();
-        //          document.getElementById("orderCom").innerHTML = this.responseText.trim();
-      }
-    };
-    var lId = <%=recordId%>;
-    var text = document.getElementById("orderCom").value;
-    const encodedString = encodeURIComponent(text);
-
-    var select = document.getElementById("leadStatus");
-    var selectedOption = select.options[select.selectedIndex];
-    var com = selectedOption.text;
-    const encodedStringsub = encodeURIComponent(com);
-
-
-    var urlString = "<%=rootUpdate%>customer.edit.com.sms.sec.jsp/?lead_id=" + lId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
-//      alert(urlString);
-    xhttp.open("GET", urlString, true);
-    xhttp.send();
-  }
-
-      function sendEmail() {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            alert(this.responseText);
-          }
-        };
-        var lId = <%=recordId%>;
-        var text = document.getElementById("orderCom").value;
-        const encodedString = encodeURIComponent(text);
-        var select = document.getElementById("leadStatus");
-        var selectedOption = select.options[select.selectedIndex];
-        var com = selectedOption.text;
-        const encodedStringsub = encodeURIComponent(com);
-        var urlString = "<%=rootUpdate%>customer.edit.com.email.sec.jsp/?lead_id=" + lId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
-        xhttp.open("GET", urlString, true);
-        xhttp.send();
-      }
-  </script>
+  </main> 
 </body>
 </html>
