@@ -98,6 +98,7 @@
                   <% for (LeadCorrespondence correspondence : correspondences) { %>
                       <div class="card my-2">
                           <div class="card-body">
+                              <h5 class="card-title">Lead ID: <%= correspondence.getRecordId() %></h5>
                               <h5 class="card-title">ID: <%= correspondence.getCorrespondenceId() %></h5>
                               <h6 class="card-subtitle mb-2 text-muted">User Email: <%= correspondence.getUseremail() %></h6>
                               <p class="card-text">Correspondence Type: <%= correspondence.getCorrespondenceType() %></p>
@@ -113,6 +114,6 @@
         </div>
       </div>
     </section><!-- End Blog Section -->
-  </main> 
+  </main>
 </body>
 </html>
