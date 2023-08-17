@@ -71,6 +71,7 @@
                       }
                       fos.close();
                       fileContent.close();
+                      %>FILE SAVED<%
           }
       }
     } catch (FileUploadException e) {
