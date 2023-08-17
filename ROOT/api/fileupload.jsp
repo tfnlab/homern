@@ -79,3 +79,25 @@
     }
   }
 %>REQUEST DONE
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Upload Form</title>
+</head>
+<body>
+    <form action="fileupload.jsp" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="MAX_FILE_SIZE" value="1048576" /> <!-- Max file size in bytes -->
+        <label for="client_request_key">Client Request Key:</label>
+        <input type="text" name="client_request_key" value="<%=UUID.randomUUID().toString()%>"/><br/>
+
+        <label for="image_type">Image Type:</label>
+        <input type="text" name="image_type" /><br/>
+
+        <label for="image_file">Image File:</label>
+        <input type="file" name="image_file" /><br/>
+
+        <input type="submit" value="Upload Image" />
+    </form>
+</body>
+</html>
