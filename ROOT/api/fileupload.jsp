@@ -60,7 +60,12 @@
                       APIConfig conf = new APIConfig();
                       String uuid = java.util.UUID.randomUUID().toString();
                       String filepath = conf.getPdfloc();
-                      String logofilepath  = filepath + "serverupload." + client_request_key + "." + image_type ;
+                      int counter = 1;
+                      String logofilepath = filepath + "serverupload." + client_request_key + "." + image_type;
+                      while (new File(logofilepath).exists()) {
+                          logofilepath = filepath + "serverupload." + client_request_key + "." + counter + "." + image_type;
+                          counter++;
+                      }
                       InputStream fileContent = item.getInputStream(); // Get an InputStream for reading the file contents
                       FileOutputStream fos = new FileOutputStream(logofilepath);
                       byte[] buffer = new byte[1024];
