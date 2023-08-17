@@ -54,7 +54,6 @@
         }
       }
 
-      if(!dao.isClient_request_key(client_request_key)){
           for (FileItem item : items) {
             if (!item.isFormField()) {
 
@@ -71,9 +70,10 @@
                       }
                       fos.close();
                       fileContent.close();
-                      %>FILE SAVED<%
+                        %>FILE SAVED<%
+
           }
-      }
+        } 
     } catch (FileUploadException e) {
        %><%=e.getMessage()%><%
     }
