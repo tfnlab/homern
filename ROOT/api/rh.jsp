@@ -284,7 +284,7 @@
                                   if(hasFile){
                                     bw.write(recipient.trim() + "<CONTENT>" + subject + "<CONTENT>" + emailContent + "<CONTENT>" + usernameOBJ.getSendgrid_email() + "<CONTENT>" + uploadFileName + "<CONTENT>1");
                                     bw.close();
-                                    Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.file.py", uuidEmail.toString(), usernameOBJ.getSendgrid_key()).start();
+                                    Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.file.py", uuid.toString(), usernameOBJ.getSendgrid_key()).start();
                                     String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
                                     String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
                                     rm = stdout + stderr + " TEST ";
