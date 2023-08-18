@@ -250,12 +250,14 @@
                 String filepath = conf.getPdfloc();
                 String[] fileTypes = { "jpg", "png", "pdf", "jpeg", "jpg" };
                 boolean hasFile = false;
+                String uploadFileName = "";
                 for (String fileType : fileTypes) {
                     String logofilepath = filepath + "serverupload." + clientRequestKey + "." + fileType;
                     System.out.println("File type: " + logofilepath);
                     File file = new File(logofilepath);
                     if (file.exists()) {
                         System.out.println("File exists: " + logofilepath);
+                        uploadFileName = logofilepath;
                         hasFile = true;
                     } else {
                         System.out.println("File does not exist: " + logofilepath);
@@ -276,16 +278,24 @@
                           APIConfig ac = new APIConfig();
                           for (String recipient : emailArray) {
                             try{
-                                  File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
-                                  FileWriter fw = new FileWriter(file);
-                                  BufferedWriter bw = new BufferedWriter(fw);
-                                  bw.write(recipient.trim() + "<CONTENT>" + subject + "<CONTENT>" + emailContent + "<CONTENT>" + usernameOBJ.getSendgrid_email());
-                                  bw.close();
-
-                                  Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), usernameOBJ.getSendgrid_key()).start();
-                                  String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
-                                  String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
-                                  rm = stdout + stderr + " TEST ";
+                              File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
+                              FileWriter fw = new FileWriter(file);
+                              BufferedWriter bw = new BufferedWriter(fw);
+                                  if(hasFile){
+                                    bw.write(recipient.trim() + "<CONTENT>" + subject + "<CONTENT>" + emailContent + "<CONTENT>" + usernameOBJ.getSendgrid_email() + "<CONTENT>" + uploadFileName + "<CONTENT>1");
+                                    bw.close();
+                                    Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.file.py", uuidEmail.toString(), usernameOBJ.getSendgrid_key()).start();
+                                    String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
+                                    String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
+                                    rm = stdout + stderr + " TEST ";
+                                  }else{
+                                    bw.write(recipient.trim() + "<CONTENT>" + subject + "<CONTENT>" + emailContent + "<CONTENT>" + usernameOBJ.getSendgrid_email());
+                                    bw.close();
+                                    Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), usernameOBJ.getSendgrid_key()).start();
+                                    String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
+                                    String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
+                                    rm = stdout + stderr + " TEST ";
+                                  }
                               }catch(IOException ex){
                                   rm = ex.getMessage();
                               }
