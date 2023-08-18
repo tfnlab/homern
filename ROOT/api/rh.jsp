@@ -246,6 +246,22 @@
 
                     clientRequestKey = additionalMessage.substring(startIndex, endIndex).trim();
                 }
+                APIConfig conf = new APIConfig();
+                String filepath = conf.getPdfloc();
+                String[] fileTypes = { ".jpg", ".png", ".pdf", ".jpeg", ".jpg" };
+                boolean hasFile = false;
+                for (String fileType : fileTypes) {
+                    String logofilepath = filepath + "serverupload." + clientRequestKey + "." + fileType;
+                    System.out.println("File type: " + logofilepath);
+                    File file = new File(logofilepath);
+                    if (file.exists()) {
+                        System.out.println("File exists: " + logofilepath);
+                        hasFile = true;
+                    } else {
+                        System.out.println("File does not exist: " + logofilepath);
+                    }
+                }
+
 
                 UUID uuid = UUID.randomUUID();
                 String rm = "";
@@ -254,7 +270,7 @@
                 String toEmail = usernameOBJ.getPush_notification_email();
                 String[] emailArray = toEmail.split(",");
                 String subject = "Quote Request";
-                String emailContent = "Customer Name: " + customerName + " <BR> Email: " + email + " <BR> Phone: " + phoneNumber + " <BR> Message: " + additionalMessage + " <BR> Address: " + installationAddress + " <BR> PARSED KEY: " + clientRequestKey;
+                String emailContent = "Customer Name: " + customerName + " <BR> Email: " + email + " <BR> Phone: " + phoneNumber + " <BR> Message: " + additionalMessage + " <BR> Address: " + installationAddress + " <BR> PARSED KEY HAS FILE: " + hasFile;
                 //uDao.
                 // Get the content from the query parameter
                           APIConfig ac = new APIConfig();
