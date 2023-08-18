@@ -234,6 +234,20 @@
 
                 mferDao.quoteWeb(customerId, api_key, quote);
 
+                String[] keyValuePairs = additionalNotes.split(", ");
+
+                String clientRequestKey = null;
+
+                for (String pair : keyValuePairs) {
+                    if (pair.startsWith("client_request_key=")) {
+                        String[] parts = pair.split("=");
+                        if (parts.length == 2) {
+                            clientRequestKey = parts[1];
+                        }
+                        break; // Assuming there's only one occurrence of client_request_key
+                    }
+                }
+
                 UUID uuid = UUID.randomUUID();
                 String rm = "";
                 UserDao uDao = new UserDao();
@@ -241,7 +255,7 @@
                 String toEmail = usernameOBJ.getPush_notification_email();
                 String[] emailArray = toEmail.split(",");
                 String subject = "Quote Request";
-                String emailContent = "Customer Name: " + customerName + " <BR> Email: " + email + " <BR> Phone: " + phoneNumber + " <BR> Message: " + additionalMessage + " <BR> Address: " + installationAddress;
+                String emailContent = "Customer Name: " + customerName + " <BR> Email: " + email + " <BR> Phone: " + phoneNumber + " <BR> Message: " + additionalMessage + " <BR> Address: " + installationAddress + " <BR> PARSED KEY: " + clientRequestKey;
                 //uDao.
                 // Get the content from the query parameter
                           APIConfig ac = new APIConfig();
