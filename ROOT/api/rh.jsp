@@ -248,7 +248,7 @@
                 }
                 APIConfig conf = new APIConfig();
                 String filepath = conf.getPdfloc();
-                String[] fileTypes = { ".jpg", ".png", ".pdf", ".jpeg", ".jpg" };
+                String[] fileTypes = { "jpg", "png", "pdf", "jpeg", "jpg" };
                 boolean hasFile = false;
                 for (String fileType : fileTypes) {
                     String logofilepath = filepath + "serverupload." + clientRequestKey + "." + fileType;
