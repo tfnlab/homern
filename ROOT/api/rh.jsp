@@ -239,13 +239,13 @@
 
                 if (startIndex != -1) {
                     startIndex += "client_request_key=".length();
-                    int endIndex = additionalNotes.indexOf(",", startIndex);
+                    int endIndex = additionalMessage.indexOf(",", startIndex);
                     if (endIndex == -1) {
-                        endIndex = additionalNotes.length();
+                        endIndex = additionalMessage.length();
                     }
 
-                    clientRequestKey = additionalNotes.substring(startIndex, endIndex).trim();
-                }  
+                    clientRequestKey = additionalMessage.substring(startIndex, endIndex).trim();
+                }
 
                 UUID uuid = UUID.randomUUID();
                 String rm = "";
