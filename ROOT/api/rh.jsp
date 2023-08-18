@@ -234,9 +234,9 @@
 
                 mferDao.quoteWeb(customerId, api_key, quote);
 
-                String[] keyValuePairs = additionalNotes.split(", ");
+                String[] keyValuePairs = additionalMessage.split(", ");
 
-                String clientRequestKey = null;
+                String clientRequestKey = "";
 
                 for (String pair : keyValuePairs) {
                     if (pair.startsWith("client_request_key=")) {
