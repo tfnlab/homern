@@ -234,19 +234,18 @@
 
                 mferDao.quoteWeb(customerId, api_key, quote);
 
-                String[] keyValuePairs = additionalMessage.split(", ");
+                int startIndex = additionalMessage.indexOf("client_request_key=");
+                String clientRequestKey = "NONE";
 
-                String clientRequestKey = "";
-
-                for (String pair : keyValuePairs) {
-                    if (pair.startsWith("client_request_key=")) {
-                        String[] parts = pair.split("=");
-                        if (parts.length == 2) {
-                            clientRequestKey = parts[1];
-                        }
-                        break; // Assuming there's only one occurrence of client_request_key
+                if (startIndex != -1) {
+                    startIndex += "client_request_key=".length();
+                    int endIndex = additionalNotes.indexOf(",", startIndex);
+                    if (endIndex == -1) {
+                        endIndex = additionalNotes.length();
                     }
-                }
+
+                    clientRequestKey = additionalNotes.substring(startIndex, endIndex).trim();
+                }  
 
                 UUID uuid = UUID.randomUUID();
                 String rm = "";
