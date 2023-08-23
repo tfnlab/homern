@@ -295,7 +295,7 @@
                 String toEmail = usernameOBJ.getPush_notification_email();
                 String[] emailArray = toEmail.split(",");
                 String subject = "Applicant Request";
-                String emailContent = "Customer Name: " + customerName + " <BR> Email: " + email + " <BR> Phone: " + phoneNumber +  " <BR> Address: " + installationAddress + " <BR> PARSED KEY HAS FILE: " + hasFile;
+                String emailContent = "Applicant CLIENT KEY: " + clientRequestKey + " <BR> PARSED KEY HAS FILE: " + hasFile;
                 //uDao.
                 // Get the content from the query parameter
                           APIConfig ac = new APIConfig();
