@@ -206,7 +206,7 @@
                 String toEmail = usernameOBJ.getPush_notification_email();
                 String[] emailArray = toEmail.split(",");
                 String subject = "Add Partner Request";
-                String emailContent = "Subject : " + subjectClient + "Customer Name: " + name + " <BR> Email: " + email + " <BR> Phone: " + phoneNumber + " <BR> Company Name: " + companyName + " <BR> PARSED KEY HAS FILE: " + hasFile;
+                String emailContent = "Subject : " + subjectClient + "Customer Name: " + name + " <BR> Email: " + email + " <BR> Phone: " + phoneNumber + " <BR> Company Name: " + companyName;
                 //uDao.
                 // Get the content from the query parameter
                           APIConfig ac = new APIConfig();
