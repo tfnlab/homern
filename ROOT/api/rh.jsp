@@ -265,7 +265,7 @@
                     // Assign a default value or display an error message
                 }
 
-                String clientRequestKey = request.getParameter("client_request_key");
+                String clientRequestKey = request.getParameter("client_request_key").trim();
 
                 // Add Applicant to database
 
