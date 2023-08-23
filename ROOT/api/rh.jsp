@@ -184,6 +184,113 @@
                   Thank you <%=name%>
                 <%
               }
+              if(apiAction.equals("addPartner")){
+                MotherfuckerDao mferDao = new MotherfuckerDao();
+                String customerId = request.getParameter("customerId");
+                String api_key = request.getParameter("api_key");
+
+                String customerName = request.getParameter("customer_name");
+                String email = request.getParameter("email");
+                String phoneNumber = request.getParameter("phone_number");
+                String productName = request.getParameter("product_name");
+                String quantityParam = request.getParameter("quantity");
+                int quantity = 0; // Default value in case the parameter is null or cannot be parsed
+
+                if (quantityParam != null && !quantityParam.isEmpty()) {
+                    try {
+                        quantity = Integer.parseInt(quantityParam);
+                    } catch (NumberFormatException e) {
+                        // Handle the exception if the parameter cannot be parsed as an integer
+                        // You can log the error or perform any necessary error handling here
+                    }
+                }
+                String additionalNotes = request.getParameter("additional_notes");
+                String installationAddress = request.getParameter("installation_address");
+                String roofType = request.getParameter("roof_type");
+                String energyUsageParam = request.getParameter("energy_usage");
+                int avgMonthlyEnergyUsage = 0;
+
+                if (energyUsageParam != null) {
+                    avgMonthlyEnergyUsage = Integer.parseInt(energyUsageParam);
+                } else {
+                    // Handle the case when the parameter is null
+                    // Assign a default value or display an error message
+                }
+
+                String additionalMessage = request.getParameter("additional_message");
+
+                // Add Applicant to database
+
+                int startIndex = additionalMessage.indexOf("client_request_key=");
+                String clientRequestKey = "NONE";
+
+                if (startIndex != -1) {
+                    startIndex += "client_request_key=".length();
+                    int endIndex = additionalMessage.indexOf(",", startIndex);
+                    if (endIndex == -1) {
+                        endIndex = additionalMessage.length();
+                    }
+
+                    clientRequestKey = additionalMessage.substring(startIndex, endIndex).trim();
+                }
+                APIConfig conf = new APIConfig();
+                String filepath = conf.getPdfloc();
+                String[] fileTypes = { "jpg", "png", "pdf", "jpeg", "jpg" };
+                boolean hasFile = false;
+                String uploadFileName = "";
+                for (String fileType : fileTypes) {
+                    String logofilepath = filepath + "serverupload." + clientRequestKey + "." + fileType;
+                    System.out.println("File type: " + logofilepath);
+                    File file = new File(logofilepath);
+                    if (file.exists()) {
+                        System.out.println("File exists: " + logofilepath);
+                        uploadFileName = logofilepath;
+                        hasFile = true;
+                    } else {
+                        System.out.println("File does not exist: " + logofilepath);
+                    }
+                }
+
+
+                UUID uuid = UUID.randomUUID();
+                String rm = "";
+                UserDao uDao = new UserDao();
+                User usernameOBJ = uDao.getUserByUsername(customerId);
+                String toEmail = usernameOBJ.getPush_notification_email();
+                String[] emailArray = toEmail.split(",");
+                String subject = "Quote Request";
+                String emailContent = "Customer Name: " + customerName + " <BR> Email: " + email + " <BR> Phone: " + phoneNumber + " <BR> Message: " + additionalMessage + " <BR> Address: " + installationAddress + " <BR> PARSED KEY HAS FILE: " + hasFile;
+                //uDao.
+                // Get the content from the query parameter
+                          APIConfig ac = new APIConfig();
+                          for (String recipient : emailArray) {
+                            try{
+                              File file = new File(ac.getPdfloc() + uuid.toString() + ".txt");
+                              FileWriter fw = new FileWriter(file);
+                              BufferedWriter bw = new BufferedWriter(fw);
+                                  if(hasFile){
+                                    bw.write(recipient.trim() + "<CONTENT>" + subject + "<CONTENT>" + emailContent + "<CONTENT>" + usernameOBJ.getSendgrid_email() + "<CONTENT>" + uploadFileName + "<CONTENT>1");
+                                    bw.close();
+                                    Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.file.any.py", uuid.toString(), usernameOBJ.getSendgrid_key()).start();
+                                    String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
+                                    String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
+                                    rm = stdout + stderr + " TEST ";
+                                  }else{
+                                    bw.write(recipient.trim() + "<CONTENT>" + subject + "<CONTENT>" + emailContent + "<CONTENT>" + usernameOBJ.getSendgrid_email());
+                                    bw.close();
+                                    Process pweb3 = new ProcessBuilder("python3", "/var/lib/tomcat9/webapps/py/sendmail.py", uuid.toString(), usernameOBJ.getSendgrid_key()).start();
+                                    String stderr = IOUtils.toString(pweb3.getErrorStream(), Charset.defaultCharset());
+                                    String stdout = IOUtils.toString(pweb3.getInputStream(), Charset.defaultCharset());
+                                    rm = stdout + stderr + " TEST ";
+                                  }
+                              }catch(IOException ex){
+                                  rm = ex.getMessage();
+                              }
+                          }
+                %>
+                  '<%=email%> | <%=rm%>'
+                <%
+              }
 
               if(apiAction.equals("addApplicant")){
                 MotherfuckerDao mferDao = new MotherfuckerDao();
@@ -220,7 +327,7 @@
 
                 String additionalMessage = request.getParameter("additional_message");
 
-                // Add Applicant to database  
+                // Add Applicant to database
 
                 int startIndex = additionalMessage.indexOf("client_request_key=");
                 String clientRequestKey = "NONE";
