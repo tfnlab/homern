@@ -189,33 +189,12 @@
                 String customerId = request.getParameter("customerId");
                 String api_key = request.getParameter("api_key");
 
-                String customerName = request.getParameter("customer_name");
+                String name = request.getParameter("name");
+                String companyName = request.getParameter("companyName");
+                String phoneNumber = request.getParameter("phoneNumber");
                 String email = request.getParameter("email");
-                String phoneNumber = request.getParameter("phone_number");
-                String productName = request.getParameter("product_name");
-                String quantityParam = request.getParameter("quantity");
-                int quantity = 0; // Default value in case the parameter is null or cannot be parsed
-
-                if (quantityParam != null && !quantityParam.isEmpty()) {
-                    try {
-                        quantity = Integer.parseInt(quantityParam);
-                    } catch (NumberFormatException e) {
-                        // Handle the exception if the parameter cannot be parsed as an integer
-                        // You can log the error or perform any necessary error handling here
-                    }
-                }
-                String additionalNotes = request.getParameter("additional_notes");
-                String installationAddress = request.getParameter("installation_address");
-                String roofType = request.getParameter("roof_type");
-                String energyUsageParam = request.getParameter("energy_usage");
-                int avgMonthlyEnergyUsage = 0;
-
-                if (energyUsageParam != null) {
-                    avgMonthlyEnergyUsage = Integer.parseInt(energyUsageParam);
-                } else {
-                    // Handle the case when the parameter is null
-                    // Assign a default value or display an error message
-                }
+                String subject = request.getParameter("subject");
+                String additionalNotes = request.getParameter("message");
 
                 String additionalMessage = request.getParameter("additional_message");
 
@@ -259,7 +238,7 @@
                 String toEmail = usernameOBJ.getPush_notification_email();
                 String[] emailArray = toEmail.split(",");
                 String subject = "Quote Request";
-                String emailContent = "Customer Name: " + customerName + " <BR> Email: " + email + " <BR> Phone: " + phoneNumber + " <BR> Message: " + additionalMessage + " <BR> Address: " + installationAddress + " <BR> PARSED KEY HAS FILE: " + hasFile;
+                String emailContent = "Subject : " + subject + "Customer Name: " + name + " <BR> Email: " + email + " <BR> Phone: " + phoneNumber + " <BR> Message: " + additionalMessage + " <BR> Company Name: " + companyName + " <BR> PARSED KEY HAS FILE: " + hasFile;
                 //uDao.
                 // Get the content from the query parameter
                           APIConfig ac = new APIConfig();
