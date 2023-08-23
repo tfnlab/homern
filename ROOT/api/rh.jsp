@@ -336,7 +336,7 @@
                               }
                           }
                 %>
-                  '<%=email%> | <%=rm%>'
+                  'Response Saved | <%=rm%>'
                 <%
               }
               if(apiAction.equals("addQuote")){
@@ -455,7 +455,7 @@
                               }
                           }
                 %>
-                  'Response Saved | <%=rm%>'
+                  '<%=email%> | <%=rm%>'
                 <%
               }
               if(apiAction.equals("getOrder")){
