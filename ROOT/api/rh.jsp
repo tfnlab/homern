@@ -306,7 +306,7 @@
                 User usernameOBJ = uDao.getUserByUsername(customerId);
                 String toEmail = usernameOBJ.getPush_notification_email();
                 String[] emailArray = toEmail.split(",");
-                String subject = "Quote Request";
+                String subject = "Applicant Request";
                 String emailContent = "Customer Name: " + customerName + " <BR> Email: " + email + " <BR> Phone: " + phoneNumber + " <BR> Message: " + additionalMessage + " <BR> Address: " + installationAddress + " <BR> PARSED KEY HAS FILE: " + hasFile;
                 //uDao.
                 // Get the content from the query parameter
