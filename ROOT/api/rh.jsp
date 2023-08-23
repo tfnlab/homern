@@ -455,7 +455,7 @@
                               }
                           }
                 %>
-                  '<%=email%> | <%=rm%>'
+                  'Response Saved | <%=rm%>'
                 <%
               }
               if(apiAction.equals("getOrder")){
