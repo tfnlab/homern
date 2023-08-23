@@ -265,22 +265,10 @@
                     // Assign a default value or display an error message
                 }
 
-                String additionalMessage = request.getParameter("additional_message");
+                String clientRequestKey = request.getParameter("client_request_key");
 
                 // Add Applicant to database
-
-                int startIndex = additionalMessage.indexOf("client_request_key=");
-                String clientRequestKey = "NONE";
-
-                if (startIndex != -1) {
-                    startIndex += "client_request_key=".length();
-                    int endIndex = additionalMessage.indexOf(",", startIndex);
-                    if (endIndex == -1) {
-                        endIndex = additionalMessage.length();
-                    }
-
-                    clientRequestKey = additionalMessage.substring(startIndex, endIndex).trim();
-                }
+ 
                 APIConfig conf = new APIConfig();
                 String filepath = conf.getPdfloc();
                 String[] fileTypes = { "jpg", "png", "pdf", "jpeg", "jpg" };
