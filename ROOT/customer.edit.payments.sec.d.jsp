@@ -190,7 +190,7 @@
                         Payment payment = new Payment(0, customerId, paymentDate, expectedPostDate, effectiveDate, paymentAmount, paymentMethod, hasCleared, hasReversed, createdAt, lastUpdatedAt, createdBy, lastModifiedBy, totalAmount);
                         String uuid = java.util.UUID.randomUUID().toString();
                         payment.setPayment_uuid(uuid);
-                        pDao.insertPayment(payment);
+                        pDao.insertPayment(payment, username);
                       %>
                         <div class="alert alert-success mt-4" role="alert">
                          Payment Saved
