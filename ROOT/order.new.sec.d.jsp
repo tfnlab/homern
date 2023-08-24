@@ -161,7 +161,7 @@
                           shippingAddressEstPriceLow = new BigDecimal(request.getParameter("shippingAddressEstPriceLow"));
                       }
 
-                      Timestamp createdAt = currentTime; 
+                      Timestamp createdAt = currentTime;
                       Date orderDate = new Date();
                       Date shippingDate = new Date();
                       SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
@@ -193,7 +193,7 @@
                       %>
 
                         <div class="alert alert-success" role="alert">
-                          <a href="<%=rootUpdate%>order.edit.sec.jsp/?orderId=<%= order.getOrderId() %>" tabindex="2" >
+                          <a href="<%=rootUpdate%>order.edit.sec.d.jsp/?orderId=<%= order.getOrderId() %>" tabindex="2" >
                           Order Saved. ID: <%= order.getOrderId() %>
                           </a>
                         </div>
