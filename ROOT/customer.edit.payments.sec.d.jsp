@@ -180,7 +180,7 @@
                             }
                         }
 
-                        Payment payment = new Payment("", customerId, paymentDate, expectedPostDate, effectiveDate, paymentAmount, paymentMethod, hasCleared, hasReversed, createdAt, lastUpdatedAt, createdBy, lastModifiedBy, totalAmount);
+                        Payment payment = new Payment("", customerId, paymentDate, expectedPostDate, effectiveDate, paymentAmount, paymentMethod, hasCleared, hasReversed, createdAt, createdBy,  totalAmount);
                         String uuid = java.util.UUID.randomUUID().toString();
                         payment.setPayment_uuid(uuid);
                         pDao.insertPayment(payment, username);
