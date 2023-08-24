@@ -111,8 +111,8 @@
       var select = document.getElementById("touchPoints");
       var selectedOption = select.options[select.selectedIndex];
       var com = selectedOption.value;
-      var eId = <%=eId%>;
-      var url = "<%=rootUpdate%>customer.edit.com.sec.jsp/?customerId=" + eId +  "&comType=" + com;
+      var eId = '<%=eId%>';
+      var url = "<%=rootUpdate%>customer.edit.com.sec.d.jsp/?customerId=" + eId +  "&comType=" + com;
       window.open(url, "_self");
     }
     function sendMail() {
@@ -123,7 +123,7 @@
           // document.getElementById("orderCom").innerHTML = this.responseText.trim();
         }
       };
-      var eId = <%=eId%>;
+      var eId = '<%=eId%>';
       var text = document.getElementById("orderCom").innerHTML;
       const encodedString = encodeURIComponent(text);
 
@@ -133,20 +133,20 @@
       const encodedStringsub = encodeURIComponent(com);
 
 
-      var urlString = "<%=rootUpdate%>customer.edit.com.email.sec.jsp/?customerId=" + eId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
+      var urlString = "<%=rootUpdate%>customer.edit.com.email.sec.d.jsp/?customerId=" + eId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
 //      alert(urlString);
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
 
     function getPayments(){
-        var eId = <%=eId%>;
-        var url = "<%=rootUpdate%>customer.edit.payments.sec.jsp/?customerId=" + eId ;
+        var eId = '<%=eId%>';
+        var url = "<%=rootUpdate%>customer.edit.payments.sec.d.jsp/?customerId=" + eId ;
         window.open(url, "_self");
     }
     function getOrders() {
-      var eId = <%=eId%>;
-      var url = "<%=rootUpdate%>customer.edit.orders.sec.jsp/?customerId=" + eId;
+      var eId = '<%=eId%>';
+      var url = "<%=rootUpdate%>customer.edit.orders.sec.d.jsp/?customerId=" + eId;
       window.open(url, "_self");
     }
   </script>
@@ -212,7 +212,7 @@
             entity = ed.getEntityById(eId, username);
 
           %>
-                    <div class="form-group"> 
+                    <div class="form-group">
                         <a href="<%=rootUpdate%>customer.edit.sec.d.jsp/?customerId=<%= entity.getId() %>" ><%= entity.getFirstName() %></a><br>
                     </div>
         <HR>
