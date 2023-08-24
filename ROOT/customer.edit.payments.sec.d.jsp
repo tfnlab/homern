@@ -125,19 +125,12 @@
                 Entity entity = new Entity();
                 EntityDao ed = new EntityDao();
                 PaymentDao pDao = new PaymentDao();
-                String remove = request.getParameter("remove");
-                if (remove != null && remove.trim().length() > 0) {
-                  int pid = 0;
-                  if (!request.getParameter("pid").isEmpty()) {
-                    pid = Integer.parseInt(request.getParameter("pid"));
-                  }
-                  pDao.deletePayment(pid,username);
-                }
+
                 if (paymentAmountStr != null && paymentAmountStr.trim().length() > 0) {
                       %>
                       <%
                         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                        Integer customerId = Integer.parseInt(request.getParameter("customerId"));
+                        String customerId = request.getParameter("customerId");
                         Date paymentDate = dateFormat.parse("1980-24-10");
                         Date expectedPostDate = dateFormat.parse("1980-24-10");
                         Date effectiveDate = dateFormat.parse("1980-24-10");
