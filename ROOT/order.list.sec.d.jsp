@@ -78,7 +78,7 @@
                   <div class="container mt-5">
                     <h2><a href="<%=rootUpdate%>user.menu.sec.jsp/" tabindex="1" >Home Renovation Nation</a></h2>
           <HR>
-            <a href="<%=rootUpdate%>order.new.sec.jsp/" tabindex="2" ><i class="fas fa-plus"></i> Order</a>
+            <a href="<%=rootUpdate%>order.new.sec.d.jsp/" tabindex="2" ><i class="fas fa-plus"></i> Order</a>
           <HR>
         <%
                 String searchKey = request.getParameter("searchKey");
@@ -98,7 +98,7 @@
                 }
                     ordersMap = orderDao.getCustomerOrdersDetailsPaid(username);
                 %>
-                <form action="<%=rootUpdate%>order.list.sec.jsp/" method="post">
+                <form action="<%=rootUpdate%>order.list.sec.d.jsp/" method="post">
                   <div class="form-group">
                     <label for="firstName">Search Key</label>
                     <input type="text" class="form-control" id="searchKey" name="searchKey" value="<%= searchKey %>" tabindex="3">
