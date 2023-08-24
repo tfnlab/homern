@@ -5,10 +5,10 @@
 <%@ page import="java.math.BigDecimal" %>
 <%@ page import="java.sql.Timestamp" %>
 <%@ page import="java.util.Date" %>
-<%@ page import="com.tfnlab.mysql.Order" %>
-<%@ page import="com.tfnlab.mysql.OrderDao" %>
-<%@ page import="com.tfnlab.mysql.Entity" %>
-<%@ page import="com.tfnlab.mysql.EntityDao" %>
+<%@ page import="com.hrn.mysql.Order" %>
+<%@ page import="com.hrn.mysql.OrderDao" %>
+<%@ page import="com.hrn.mysql.Entity" %>
+<%@ page import="com.hrn.mysql.EntityDao" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.tfnlab.util.Translate" %>
 <%@ include file="auth.sec.jsp" %>
@@ -206,7 +206,7 @@
                   Phone: <%= entity.getPhone() %><br>
                   <%}%>
                   Email: <%= entity.getEmail() %><br>
-                  Customer ID: <a href="<%=rootUpdate%>customer.edit.sec.jsp/?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a><br>
+                  Customer ID: <a href="<%=rootUpdate%>customer.edit.sec.d.jsp/?customerId=<%= entity.getId() %>" ><%= entity.getId() %></a><br>
                   <%}catch(Exception ex){%>
                         <%=ex.getMessage()%>
                   <%}%>
