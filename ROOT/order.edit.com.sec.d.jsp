@@ -33,7 +33,7 @@
   <%
     OrderDao dao = new OrderDao();
 
-    String orderId = 0;
+    String orderId = "";
     if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
       orderId =  request.getParameter("orderId") ;
     }
@@ -112,7 +112,7 @@
       var select = document.getElementById("customer-touch-points");
       var selectedOption = select.options[select.selectedIndex];
       var com = selectedOption.value;
-      var orderId = <%=orderId%>;
+      var orderId = '<%=orderId%>';
       var url = "<%=rootUpdate%>order.edit.com.jsp/?orderId=" + orderId +  "&comType=" + com;
       window.open(url, "_self");
     }
