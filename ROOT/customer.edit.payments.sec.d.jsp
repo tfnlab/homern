@@ -211,7 +211,7 @@
         <form action="<%=rootUpdate%>customer.edit.payments.sec.d.jsp/" method="post">
             <hr>
           <div class="form-group">
-            <a href="<%=rootUpdate%>customer.edit.sec.jsp/?customerId=<%= entity.getId() %>" ><%= entity.getId() %> - <%= entity.getFirstName() %> <%= entity.getLastName() %></a>
+            <a href="<%=rootUpdate%>customer.edit.sec.d.jsp/?customerId=<%= entity.getId() %>" ><%= entity.getFirstName() %> <%= entity.getLastName() %></a>
           </div>
             <input type="hidden" id="customerId" name="customerId" value="<%= entity.getId() %>" />
                       <hr>
