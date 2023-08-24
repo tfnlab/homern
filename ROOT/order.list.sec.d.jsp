@@ -85,7 +85,7 @@
                 OrderDao orderDao = new OrderDao();
 
                 List<Order> orders = null;
-                HashMap<Integer, Order> ordersMap = new HashMap<>();
+                HashMap<String, Order> ordersMap = new HashMap<>();
                 if (searchKey != null && searchKey.trim().length() > 0) {
                     try{
                         orders = orderDao.getCustomerOrdersSearchKey(searchKey, username);
