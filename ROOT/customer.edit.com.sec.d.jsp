@@ -221,7 +221,7 @@
 
         <!-- ======= Contact Section ======= -->
 
-        <form action="<%=rootUpdate%>customer.edit.com.print.sec.jsp/" method="POST" target="_blank" >
+        <form action="<%=rootUpdate%>customer.edit.com.print.sec.d.jsp/" method="POST" target="_blank" >
           <input type="hidden" id="customerId" name="customerId" value="<%= entity.getId() %>" >
           <label for="orderId">Touch Point</label><br>
           <textarea class="form-control" id="orderCom" name="orderCom" rows="5"></textarea>
@@ -260,7 +260,7 @@ function sendSMS() {
   const encodedStringsub = encodeURIComponent(com);
 
 
-  var urlString = "<%=rootUpdate%>customer.edit.com.sms.sec.jsp/?customerId=" + eId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
+  var urlString = "<%=rootUpdate%>customer.edit.com.sms.sec.d.jsp/?customerId=" + eId + "&com=" + encodedString + "&sub=" + encodedStringsub ;
 //      alert(urlString);
   xhttp.open("GET", urlString, true);
   xhttp.send();
