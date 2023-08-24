@@ -248,7 +248,7 @@ function sendSMS() {
       //          document.getElementById("orderCom").innerHTML = this.responseText.trim();
     }
   };
-  var eId = <%=eId%>;
+  var eId = '<%=eId%>';
   var text = document.getElementById("orderCom").value;
   alert(text);
 
