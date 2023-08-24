@@ -212,8 +212,7 @@
             entity = ed.getEntityById(eId, username);
 
           %>
-                    <div class="form-group">
-                      Customer:
+                    <div class="form-group"> 
                         <a href="<%=rootUpdate%>customer.edit.sec.d.jsp/?customerId=<%= entity.getId() %>" ><%= entity.getFirstName() %></a><br>
                     </div>
         <HR>
