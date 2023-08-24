@@ -95,7 +95,7 @@
     }
     function getPayments(){
         var eId = '<%=eId%>';
-        var url = "<%=rootUpdate%>customer.edit.payments.sec.jsp/?customerId=" + eId ;
+        var url = "<%=rootUpdate%>customer.edit.payments.sec.d.jsp/?customerId=" + eId ;
         window.open(url, "_self");
     }
     function getCom() {
@@ -103,12 +103,12 @@
       var selectedOption = select.options[select.selectedIndex];
       var com = selectedOption.value;
       var eId = '<%=eId%>';
-      var url = "<%=rootUpdate%>customer.edit.com.sec.jsp/?customerId=" + eId +  "&comType=" + com;
+      var url = "<%=rootUpdate%>customer.edit.com.sec.d.jsp/?customerId=" + eId +  "&comType=" + com;
       window.open(url, "_self");
     }
     function getOrders() {
       var eId = '<%=eId%>';
-      var url = "<%=rootUpdate%>customer.edit.orders.sec.jsp/?customerId=" + eId;
+      var url = "<%=rootUpdate%>customer.edit.orders.sec.d.jsp/?customerId=" + eId;
       window.open(url, "_self");
     }
   </script>
