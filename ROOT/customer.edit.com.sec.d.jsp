@@ -78,7 +78,7 @@
       var selectedOption = select.options[select.selectedIndex];
       var text = selectedOption.text;
       const encodedString = encodeURIComponent(text);
-      var urlString = "<%=rootUpdate%>genmessage.sec.jsp/?customerId=" + document.getElementById("customerId").value + "&comType=" + encodedString ;
+      var urlString = "<%=rootUpdate%>genmessage.sec.d.jsp/?customerId=" + document.getElementById("customerId").value + "&comType=" + encodedString ;
       xhttp.open("GET", urlString, true);
       xhttp.send();
     }
