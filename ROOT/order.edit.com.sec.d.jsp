@@ -134,7 +134,7 @@
 
                     <div class="form-group">
                       Order:
-                        <a href="<%=rootUpdate%>order.edit.sec.jsp/?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
+                        <a href="<%=rootUpdate%>order.edit.sec.d.jsp/?orderId=<%= order.getOrderId() %>" ><%= order.getOrderId() %> - <%= order.getOrderName() %></a><br>
                     </div>
         <HR>
             <div class="form-group">
