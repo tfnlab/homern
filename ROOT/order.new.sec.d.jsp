@@ -120,9 +120,9 @@
 
                 // Validate form data
                 if (orderName != null && orderName.trim().length() > 0) {
-                      int orderId = 0;
+                      String orderId = "";
                       if (request.getParameter("orderId") != null && !request.getParameter("orderId").isEmpty()) {
-                        orderId = Integer.parseInt(request.getParameter("orderId"));
+                        orderId =  request.getParameter("orderId");
                       }
                       BigDecimal orderTotal = new BigDecimal("0");
                       if (request.getParameter("orderTotal") != null && !request.getParameter("orderTotal").isEmpty()) {
