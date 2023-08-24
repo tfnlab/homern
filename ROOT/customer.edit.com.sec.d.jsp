@@ -32,9 +32,9 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <%
-      int eId = 0;
+      String eId = "";
       if (request.getParameter("customerId") != null && !request.getParameter("customerId").isEmpty()) {
-        eId = Integer.parseInt(request.getParameter("customerId"));
+        eId = request.getParameter("customerId");
       }
 
     String comType = request.getParameter("comType");
