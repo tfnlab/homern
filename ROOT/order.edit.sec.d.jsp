@@ -111,7 +111,7 @@
     }
     function getCom() {
       var orderId = '<%=orderId%>';
-      var url = "<%=rootUpdate%>order.edit.com.sec.jsp/?orderId=" + orderId +  "&comType=greeting";
+      var url = "<%=rootUpdate%>order.edit.com.sec.d.jsp/?orderId=" + orderId +  "&comType=greeting";
       window.open(url, "_self");
     }
     function getSchedule() {
