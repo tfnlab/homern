@@ -255,7 +255,7 @@
               }
               %>
 
-                    <form action="<%=rootUpdate%>customer.new.sec.jsp/" method="post">
+                    <form action="<%=rootUpdate%>customer.new.sec.d.jsp/" method="post">
                     <input type="hidden" name="orderId" id="orderId" value="<%=orderId%>" />
                     <div class="form-group">
                       <label for="firstName">Company Name</label>
