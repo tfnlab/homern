@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.hrn.mysql.User"%>
-<%@ page import="com.hrn.mysql.UserDao" %>
+<%@ page import="com.tfnlab.mysql.User"%>
+<%@ page import="com.tfnlab.mysql.UserDao" %>
 <%@ page import="java.math.BigDecimal" %>
 <%@ page import="java.sql.Timestamp" %>
 <%@ page import="java.util.Date" %>
-<%@ page import="com.tfnlab.mysql.Order" %>
-<%@ page import="com.tfnlab.mysql.OrderDao" %>
+<%@ page import="com.hrn.mysql.Order" %>
+<%@ page import="com.hrn.mysql.OrderDao" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.HashMap" %>
