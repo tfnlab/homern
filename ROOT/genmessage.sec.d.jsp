@@ -24,7 +24,7 @@
       Order order = dao.getOrderByOrderId(orderId, username);
       messageName = order.getOrderName();
     }
-    if(customerId>0){
+    if(!customerId.equals("")){
       Entity entity = new Entity();
       EntityDao ed = new EntityDao();
         entity = ed.getEntityById(customerId, username);
@@ -32,10 +32,10 @@
     }
 //    String agm =   request.getParameter("comType") + " message for my "+ usernameOBJ.getBusiness_name() + " company, the person sending the message is named  " + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + ", The project or person name is " + messageName;
     String agm =   request.getParameter("comType") + " message from my business named '"+ usernameOBJ.getBusiness_name() + "', this business is a '" + usernameOBJ.getBusiness_type() + "' type of business, this message is from  '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + "', is for customer named '" + messageName + "'";
-    if(orderId >0){
+    if(!orderId.equals("")){
         agm =   request.getParameter("comType") + " message from my business named '"+ usernameOBJ.getBusiness_name() + "', this business is a '" + usernameOBJ.getBusiness_type() + "' type of business, this message is from '" + usernameOBJ.getFirstName() + " " + usernameOBJ.getLastName() + "', is for customer named '" + messageName + "' and order id " +  orderId;
     }
-    if(orderId==0 && customerId ==0){
+    if(orderId.equals("") && customerId.equals("")){
 
       String postType = "Linkedin";
       String twitter = request.getParameter("twitter");
