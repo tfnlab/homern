@@ -159,7 +159,7 @@
                     %>
                     </div>
                     <hr>
-                    <a href="<%=rootUpdate%>order.edit.sec.jsp/?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
+                    <a href="<%=rootUpdate%>order.edit.sec.d.jsp/?orderId=<%= order.getOrderId() %>" class="btn btn-primary" tabindex="<%=tabindex%>" >More Info</a><br>
 
                 <%
                   tabindex +=1;

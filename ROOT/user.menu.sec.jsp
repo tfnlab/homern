@@ -83,7 +83,9 @@
                 </div>
                 <div class="col-3 ">
                   <a href="<%=rootUpdate%>order.list.sec.jsp/" tabindex="7" ><i class="fa fa-shopping-cart"></i></a>
-                  <p><%= (new Translate()).translate("Orders", usernameOBJ.getLanguage())%></p>
+                  <p><%= (new Translate()).translate("Orders", usernameOBJ.getLanguage())%>
+                    <a href="<%=rootUpdate%>order.list.sec.d.jsp/" tabindex="7" >D</a>
+                  </p>
                 </div>
                 <div class="col-3 ">
                   <a href="<%=rootUpdate%>event.list.sec.jsp/" tabindex="8" ><i class="fa fa-calendar"></i></a>
