@@ -161,9 +161,7 @@
                           shippingAddressEstPriceLow = new BigDecimal(request.getParameter("shippingAddressEstPriceLow"));
                       }
 
-                      Timestamp createdAt = currentTime;
-                      Timestamp updatedAt = currentTime;
-                      Timestamp deletedAt = currentTime;
+                      Timestamp createdAt = currentTime; 
                       Date orderDate = new Date();
                       Date shippingDate = new Date();
                       SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
@@ -178,7 +176,7 @@
                           shippingDate = new Date(currentTime.getTime());
                         }
 
-                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt, updatedAt, deletedAt, orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng, status);
+                      Order order = new Order(orderId, username, orderDate, shippingDate, shippingAddress, billingAddress, paymentMethod, orderTotal, createdAt,  orderName, orderDescription, shippingAddressaclat, shippingAddressaclng, billingAddressaclat, billingAddressaclng, status);
                       order.setShippingAddressEstPrice(shippingAddressEstPrice);
                       order.setShippingAddressLastSalePrice(shippingAddressLastSalePrice);
                       order.setShippingAddressEstPriceHigh(shippingAddressEstPriceHigh);
