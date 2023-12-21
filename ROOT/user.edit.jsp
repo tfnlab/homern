@@ -358,6 +358,7 @@
                <option value="painter" <% if (businessType.equals("painter")) { %>selected<% } %>><%= (new Translate()).translate("Painter", usernameOBJ.getLanguage())%></option>
                <option value="flooring-contractor" <% if (businessType.equals("flooring-contractor")) { %>selected<% } %>><%= (new Translate()).translate("Flooring contractor", usernameOBJ.getLanguage())%></option>
                <option value="solar-panel-installers" <% if (businessType.equals("solar-panel-installers")) { %>selected<% } %>><%= (new Translate()).translate("Solar Panel Installers", usernameOBJ.getLanguage())%></option>
+               <option value="waste-management" <% if (businessType.equals("waste-management")) { %>selected<% } %>><%= (new Translate()).translate("Waste Management", usernameOBJ.getLanguage())%></option>
              </select>
            </div>
            <div class="form-group mt-3">
