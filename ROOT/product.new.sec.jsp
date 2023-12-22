@@ -181,10 +181,10 @@
                 %>
                 <p>Product successfully added to the database.</p>
                 <HR>
-                  <a href="<%=rootUpdate%>product.new.jsp/" tabindex="2"><i class="fas fa-plus"></i> Product</a>
+                  <a href="<%=rootUpdate%>product.new.sec.jsp/" tabindex="2"><i class="fas fa-plus"></i> Product</a>
                 <HR>
                 <HR>
-                  <a href="<%=rootUpdate%>product.list.jsp/" tabindex="2"><i class="fas fa-list"></i> List Products</a>
+                  <a href="<%=rootUpdate%>product.list.sec.jsp/" tabindex="2"><i class="fas fa-list"></i> List Products</a>
                 <HR>
                 <%
 
