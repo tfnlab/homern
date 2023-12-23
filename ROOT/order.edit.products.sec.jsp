@@ -255,6 +255,7 @@
                                     <option value="Past Due Invoice" >Past Due Invoice</option>
                                     <option value="Payment Request" >Payment Request</option>
                                     <option value="Payment Confirmation" >Payment Confirmation</option>
+                                    <option value="Paid In Full Invoice" >Paid In Full Invoice</option>
                                   </select>
                                   &nbsp;
                                   <button class="btn btn-primary" style="flex: 1;" onclick="getInv()">
